@@ -16,10 +16,11 @@
  *                     2026-11-08, more room (still finite): master 120 min/1 per day/120 min
  *                     across apps -> 30 min/6 per day/15 min across apps; stable and bastien
  *                     60 min/4 per day -> 15 min/12 per day. Failed builds do not count.
- *                     One hang-up retry may bypass spacing (it still waits >= 5 min).
+ *                     An automatic transport retry may bypass spacing (it still waits >= 5 min).
  *                     AggregateError still trips the breaker and is not cleared here.
  *   3. classify     : transient (socket hang up, ECONNRESET, ETIMEDOUT, 5xx, timeouts,
- *                     invalid_state) -> exactly 1 retry, backoff >= 5 min, breaker untouched;
+ *                     invalid_state) -> bumped retries (transport: 2 = 3 attempts, 5/15/30 min backoff;
+ *                     invalid_state: 1), breaker untouched;
  *                     real (AggregateError, processing_failed, validation) -> no retry, breaker
  *                     trips, diagnostic.
  *   4. breaker      : the single automatic retry of a transient failure is never blocked.
@@ -56,7 +57,14 @@ const APPS = {
   },
 };
 
-const RETRY = { maxRetries: 1, backoffMinS: 300, jitterS: 60, hangupRetryMinGapMin: 5 };
+// P3311 (15/11/2026, build #3704 socket hang up on the 347 diagnostic): a TRANSPORT failure (socket hang up,
+// ECONNRESET, ETIMEDOUT, 5xx, timeouts) gets up to 2 bumped retries = 3 attempts per chain, progressive backoff
+// 5 / 15 / 30 min (+ jitter). invalid_state keeps ONE retry, real rejections (AggregateError, processing_failed
+// without a transient cause, validation) keep NONE. Every retry is a strictly higher version, uploads only after
+// the idle wait, and the same-version guard + orphan logic (P3293) stop any duplicate build.
+const RETRY = { maxRetries: 1, maxTransportRetries: 2, backoffMinS: 300, backoffScheduleS: [300, 900, 1800], jitterS: 60, hangupRetryMinGapMin: 5 };
+const TRANSPORT_KINDS = new Set(['socket hang up', 'transient']);
+function retryBudget(kind) { return TRANSPORT_KINDS.has(kind) ? RETRY.maxTransportRetries : RETRY.maxRetries; }
 
 const TRANSIENT_RE = /socket hang up|ECONNRESET|ECONNABORTED|ETIMEDOUT|EPIPE|EAI_AGAIN|fetch failed|Timeout after \d+ms|timed? ?out|specified key|NoSuchKey|too many requests|\b429\b|\b5\d\d\b|Bad Gateway|Service Unavailable|Gateway Time-?out|Internal Server Error/i;
 const INVALID_STATE_RE = /invalid[_ ]state|another build .*processing|already (being )?processing/i;
@@ -111,14 +119,18 @@ function classify(input) {
   return { kind: 'unknown', cls: 'real' };
 }
 
-function backoffSeconds(rnd = Math.random()) {
+// retryIndex 0 = first retry (5 min), 1 = second (15 min), 2+ = 30 min; always + 0..jitterS s.
+function backoffSeconds(rnd = Math.random(), retryIndex = 0) {
   const r = Math.min(Math.max(Number(rnd) || 0, 0), 0.999999);
-  return RETRY.backoffMinS + Math.floor(r * (RETRY.jitterS + 1));
+  const sch = RETRY.backoffScheduleS;
+  const i = Math.min(Math.max(Math.floor(Number(retryIndex) || 0), 0), sch.length - 1);
+  return Math.max(RETRY.backoffMinS, sch[i]) + Math.floor(r * (RETRY.jitterS + 1));
 }
 
 /**
  * retryDecision({ kind|text, retriesDone, idleWaited }) -> { retry, kind, cls, backoffS, tripBreaker, diagnose, reason }
- * Transient: exactly one retry (retriesDone 0 -> retry), backoff >= 300 s, never trips the breaker.
+ * Transient: transport kinds get RETRY.maxTransportRetries (2) retries, invalid_state RETRY.maxRetries (1);
+ * backoff 300 / 900 / 1800 s (+ jitter) by retry index; never trips the breaker.
  * invalid_state retries only after the idle wait proved the previous build is final.
  * Real: no retry, trips the breaker, asks for a diagnostic.
  */
@@ -134,12 +146,14 @@ function retryDecision({ kind, cls, text, retriesDone = 0, idleWaited = true, rn
     return { retry: false, ...c, backoffS: 0, tripBreaker: false, diagnose: false,
       reason: 'invalid_state without a completed idle wait: no retry (next slot)' };
   }
-  if (done >= RETRY.maxRetries) {
+  const max = retryBudget(c.kind);
+  if (done >= max) {
     return { retry: false, ...c, backoffS: 0, tripBreaker: false, diagnose: true,
-      reason: `${c.kind}: the single automatic retry is already used, wait for the next slot` };
+      reason: `${c.kind}: ${max === 1 ? 'the single automatic retry is' : `all ${max} automatic retries are`} already used (${done + 1} attempts), stop and report` };
   }
-  return { retry: true, ...c, backoffS: backoffSeconds(rnd), tripBreaker: false, diagnose: false,
-    reason: `${c.kind} is transient: retry ${done + 1}/${RETRY.maxRetries} after >= ${RETRY.backoffMinS}s` };
+  const backoffS = backoffSeconds(rnd, done);
+  return { retry: true, ...c, backoffS, tripBreaker: false, diagnose: false,
+    reason: `${c.kind} is transient: retry ${done + 1}/${max} after >= ${RETRY.backoffScheduleS[Math.min(done, RETRY.backoffScheduleS.length - 1)]}s` };
 }
 
 // ── 4. breaker ───────────────────────────────────────────────────────────────────────────────
@@ -160,11 +174,13 @@ function isFailed(b) { return !!b && /processing_failed|failed|rejected/i.test(S
 function singleRetryExempt({ builds, transientRetry } = {}) {
   const n = retryCountOf(transientRetry);
   const latest = sortBuilds(builds)[0];
-  if (n !== 1) return { exempt: false, reason: n ? `retry ${n} exceeds the single retry` : 'not a retry run' };
+  if (!n) return { exempt: false, reason: 'not a retry run' };
+  if (n > RETRY.maxTransportRetries) return { exempt: false, reason: `retry ${n} exceeds the ${RETRY.maxTransportRetries} automatic retries` };
   if (!latest || !isFailed(latest)) return { exempt: false, reason: 'latest build is not a failure' };
   const c = classify(latest);
   if (c.cls !== 'transient') return { exempt: false, reason: `latest failure is ${c.kind} (real)` };
-  return { exempt: true, reason: `single automatic retry after ${c.kind} on #${latest.id}` };
+  if (n > retryBudget(c.kind)) return { exempt: false, reason: `retry ${n} exceeds the ${retryBudget(c.kind)} retry budget of ${c.kind}` };
+  return { exempt: true, reason: `automatic retry ${n}/${retryBudget(c.kind)} after ${c.kind} on #${latest.id}` };
 }
 
 /** breakerAssess({ builds, n }) -> tripped when the latest build failed for a real reason or the last n all failed. */
@@ -253,7 +269,7 @@ function slotDecision({ appId, builds, outcomes, snapshotOk = true, eventName, t
   const last = ev[0];
   if (exempt.exempt) {
     if (last && nowMs - last.t < RETRY.hangupRetryMinGapMin * 60000) {
-      return { go: false, reason: `single retry must wait >= ${RETRY.hangupRetryMinGapMin} min after the failed build`, deferred: true };
+      return { go: false, reason: `automatic retry must wait >= ${RETRY.hangupRetryMinGapMin} min after the failed build`, deferred: true };
     }
     return { go: true, reason: `${exempt.reason}: spacing bypassed once`, deferred: false };
   }
@@ -364,7 +380,7 @@ function publishDisposition({ breakerSkip, gateGo, payloadChanged, athomFinal } 
 
 module.exports = {
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
-  appPolicy, appIdForKey, classify, backoffSeconds, retryDecision,
+  appPolicy, appIdForKey, classify, backoffSeconds, retryDecision, retryBudget, TRANSPORT_KINDS,
   singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
   evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, affectsCiIdentity, packedPayloadChanged, publishDisposition, isTrue, versionOnlyDiff,
 };
@@ -553,7 +569,10 @@ async function main() {
     return;
   }
   if (cmd === 'fallback') {
-    const d = retryDecision({ text: readStdin(), retriesDone: isTrue(process.env.ATHOM_RETRY_USED) ? 1 : 0 });
+    // In-run fallback: ONE re-upload per run, whatever the chain budget (P3311 keeps it single).
+    const used = isTrue(process.env.ATHOM_RETRY_USED);
+    const d = used ? { retry: false, kind: classify(readStdin()).kind, reason: 'in-run fallback already used (one per run)' }
+      : retryDecision({ text: readStdin(), retriesDone: 0 });
     console.log(d.retry ? `RETRY ${d.backoffS}` : `STOP ${d.kind} ${d.reason}`);
     return;
   }
