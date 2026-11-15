@@ -107,7 +107,11 @@ describe('P2926 attachButtonPaths — optional listeners', () => {
     const node = { endpoints: { 1: { clusters: { multistateInput: ms, onOff: oo } }, 2: { clusters: {} } }, handleFrame: () => 'root' };
     const rep = attachButtonPaths(dev, node);
     assert.strictEqual(rep.multistate, 1); assert.strictEqual(rep.onoff_attr, 1); assert.ok(rep.raw);
-    ms.h['attr.presentValue'](2); oo.h['attr.onOff'](true);
+    ms.h['attr.presentValue'](2);
+    // P3318: first report only seeds, an unchanged value is a periodic report; a flip is the press.
+    oo.h['attr.onOff'](false); oo.h['attr.onOff'](false);
+    assert.strictEqual(calls.length, 1, 'seed + periodic onOff reports must not fire');
+    oo.h['attr.onOff'](true);
     const OM = require('../lib/zigbee/DeviceOperatingMode'); const o = OM.classifyOperatingFamily;
     OM.classifyOperatingFamily = () => ({ writeSceneAttr: true }); oo.h['attr.tuyaOperationMode'](1); OM.classifyOperatingFamily = o;
     assert.deepStrictEqual(calls[0], [1, 'double', 'multistate']);
