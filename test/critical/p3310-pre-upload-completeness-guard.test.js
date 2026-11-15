@@ -152,6 +152,28 @@ describe('P3310 pre-upload completeness guard', () => {
     assert.ok(m.files['app.json'] && m.fileCount > 10);
   });
 
+  it('this branch source never makes the guard block: images exist, repo-only dirs are .homeyignored', () => {
+    // stable-v5 run 43735981586 (v5.12.550): 152 compose files referenced xlarge.png files that never
+    // existed and specs/ shipped because .homeyignore missed it. Pin both on the committed tree.
+    const { ignoredTopDirs, STRAY_TOP } = require(GUARD);
+    const exists = (p) => fs.existsSync(path.join(ROOT, String(p).replace(/^\/+/, '')));
+    const missing = [];
+    const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+    for (const [k, p] of Object.entries(app.images || {})) if (!exists(p)) missing.push(`app.json images.${k} ${p}`);
+    for (const d of app.drivers || []) for (const [k, p] of Object.entries((d && d.images) || {})) if (!exists(p)) missing.push(`app.json ${d.id} ${k} ${p}`);
+    const dd = path.join(ROOT, 'drivers');
+    for (const id of fs.readdirSync(dd)) {
+      const f = path.join(dd, id, 'driver.compose.json');
+      if (!fs.existsSync(f)) continue;
+      const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+      for (const [k, p] of Object.entries(j.images || {})) if (typeof p === 'string' && !exists(p.replace('{{driverAssetsPath}}', `/drivers/${id}/assets`))) missing.push(`${id}/driver.compose.json ${k} ${p}`);
+    }
+    assert.deepEqual(missing.slice(0, 10), [], `${missing.length} image reference(s) to missing files`);
+    const ignored = new Set(ignoredTopDirs(ROOT));
+    const shipped = STRAY_TOP.filter((t) => !t.startsWith('.') && fs.existsSync(path.join(ROOT, t)) && fs.statSync(path.join(ROOT, t)).isDirectory() && !ignored.has(t));
+    assert.deepEqual(shipped, [], `repo-only dirs not in .homeyignore: ${shipped.join(', ')}`);
+  });
+
   it('the committed baseline holds a real accepted/complete build for each of the three apps', () => {
     const b = JSON.parse(fs.readFileSync(path.join(ROOT, '.github', 'publish-payload-baseline.json'), 'utf8'));
     for (const id of ['com.dlnraja.tuya.zigbee', 'com.dlnraja.tuya.zigbee.stable', 'com.dlnraja.tuya.zigbee.bastien']) {
