@@ -839,6 +839,20 @@ try {
     process.exit(1);
   }
 
+  // 5e) P3312: payload JavaScript written with every char above U+00FF as \uXXXX. V8 keeps the
+  // source text of each loaded module for the life of the app; one emoji or arrow makes the whole
+  // file a two-byte string (measured on bastien-home: 692 boot modules, 16.2 MB of source text
+  // instead of 8.1 MB). Same values at runtime, every rewritten file must compile, else FATAL.
+  try {
+    const { latin1JsTree } = require('./maintenance/latin1-js.cjs');
+    const j = latin1JsTree(destDir);
+    console.log(`[P3312] ${j.files} JS file(s) made Latin-1 (${j.skipped.length} left as is); module source heap ${(j.textHeapBefore / 1048576).toFixed(2)} -> ${(j.textHeapAfter / 1048576).toFixed(2)} MB, bytes ${(j.bytesBefore / 1048576).toFixed(2)} -> ${(j.bytesAfter / 1048576).toFixed(2)} MB`);
+    for (const k of j.skipped.slice(0, 20)) {console.log(`  [P3312] left as is: ${path.relative(destDir, k.file)} (${k.skipped})`);}
+  } catch (jsErr) {
+    console.error('FATAL(P3312): Latin-1 JS step failed:', jsErr.message);
+    process.exit(1);
+  }
+
   // WHY(P2323): export absolute publish dir so the next CI step uses the same path
   // (avoids "Prepared publish directory is missing" when TMPDIR / runner env drifts).
   if (process.env.GITHUB_ENV) {

@@ -213,6 +213,10 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         allDevices: (h) => require('./lib/utils/memwarn-cleaners')._allDevices(h),
       });
     } catch (_) { /* best-effort */ }
+    // P3312: an oversized setting is parsed again on every start (Bastien OOM in JsonParser); drop it once, named in the log.
+    try {
+      require('./lib/memory/SettingsBudget').enforceSettingsBudget(this.homey, { log: (...a) => this.log(...a) });
+    } catch (_e) { /* best-effort */ }
     this.initializeSettings();
 
     // P2351/P2373: re-bind soft getDriver on the live ManagerDrivers instance
