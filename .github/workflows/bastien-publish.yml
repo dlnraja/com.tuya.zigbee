@@ -396,7 +396,7 @@ jobs:
           fi
           if [ "$rc" -ne 0 ]; then
             node .github/scripts/publish-size-telemetry.js record draft-not-ready || true
-            echo "::warning::Bastien draft not ready (processing_failed / invalid_state) — skip promote"
+            echo "::warning::Bastien draft not ready (processing_failed / invalid_state / P3293 orphan waiting_for_files) — skip promote"
             echo "draft_ok=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -419,8 +419,11 @@ jobs:
           TARGET_APP_ID: ${{ env.EXPECTED_APP_ID }}
           HOMEY_DRAFT_WAIT_MS: ${{ env.HOMEY_DRAFT_WAIT_MS }}
           HOMEY_DRAFT_EARLY_FAIL_MS: ${{ env.HOMEY_DRAFT_EARLY_FAIL_MS }}
+          # P3293: wait_draft saw an orphan waiting_for_files (submit timeout, files never sent).
+          ORPHAN_FIRST: ${{ steps.wait_draft.outputs.orphan_waiting_for_files }}
         run: |
           set +e
+          ORPHAN_DONE=0
           PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
           # P2924: loop bound = largest budget; shouldRetry below still enforces the per-kind budget.
           MAXR=$(node .github/scripts/athom-retry-policy.js max)
@@ -435,9 +438,20 @@ jobs:
               # Athom often returns processing_failed with no error text (history: mostly socket hang up): transient budget.
               if [ "$KIND" = "unknown" ] && ! printf '%s' "$row" | grep -Eqi '"[a-zA-Z]*(err|reason|message|log)[a-zA-Z]*":'; then KIND=transient; fi
             fi
+            # P3293 (stable run 43710885652, #425): an orphan waiting_for_files is a transient failure, never ready:
+            # exactly ONE bump + ONE re-upload (shared helper), the same-version guard of direct-api-publish stays.
+            if [ "$ORPHAN_DONE" = "0" ] && [ "${ORPHAN_FIRST:-}" = "true" ] && printf '%s' "$row" | grep -qi 'waiting_for_files'; then
+              ODEC=$(node .github/scripts/athom-orphan-build.js decide true "$ORPHAN_DONE")
+              echo "[P3293] v$V orphan waiting_for_files -> $ODEC"
+              if [ "${ODEC%% *}" != "REUPLOAD" ]; then echo "::error::v$V orphan waiting_for_files: re-upload budget used (P3293)"; break; fi
+              ORPHAN_DONE=1; KIND=orphan_waiting_for_files
+              HOMEY_EXPECTED_VERSION=$V TRANSIENT_RETRY=$((retry-1)) node .github/scripts/publish-size-telemetry.js record processing_failed "$KIND"
+              (timeout 900 node .github/scripts/wait-athom-idle.js "$APP_ID") || true
+            else
             HOMEY_EXPECTED_VERSION=$V TRANSIENT_RETRY=$((retry-1)) node .github/scripts/publish-size-telemetry.js record processing_failed "$KIND"
             if ! printf '%s' "$row" | grep -qi 'processing_failed'; then echo "v$V is not processing_failed (tip-lag / in-flight): no re-upload"; break; fi
             if [ "$KIND" = "unknown" ] || [ "$(node -e "const p=require('./.github/scripts/athom-retry-policy');console.log(p.shouldRetry(process.argv[1],process.argv[2])?'RETRY':'STOP')" "$KIND" $((retry-1)))" != "RETRY" ]; then echo "::warning::v$V failed ($KIND): not retryable by policy"; break; fi
+            fi
             DELAY=$(node .github/scripts/athom-retry-policy.js backoff "$retry")
             echo "::warning::Athom processing_failed ($KIND) for v$V; backoff ${DELAY}s then rebuild as a new patch (retry $retry/$MAXR)"
             sleep "$DELAY"
