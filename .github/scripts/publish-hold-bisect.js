@@ -32,7 +32,7 @@ const F = {
 
 const parse = (v) => [...new Set(String(v || '').split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean))];
 const sig = (ids) => ids.slice().sort().join(',');
-const emptyState = () => ({ queue: [], attempts: {}, isolated: [], pending: null, doneRuns: [] });
+const emptyState = () => ({ queue: [], attempts: {}, isolated: [], pending: null, doneRuns: [], paused: null });
 const DONE_RUNS_MAX = 50; // P3106: bounded memory of verdict runs already applied
 const PENDING_TTL_MS = 6 * 3600000;
 
@@ -44,6 +44,8 @@ function normState(s) {
     isolated: Array.isArray(o.isolated) ? o.isolated.slice() : [],
     pending: o.pending && Array.isArray(o.pending.ids) && o.pending.ids.length ? { ids: o.pending.ids.slice(), at: o.pending.at || null } : null,
     doneRuns: Array.isArray(o.doneRuns) ? o.doneRuns.map(String).slice(-DONE_RUNS_MAX) : [],
+    // P3292: { reason, at } set by hand while a diagnostic upload runs; nothing is released until it is cleared.
+    paused: o.paused && typeof o.paused === 'object' && o.paused.reason ? { ...o.paused } : null,
   };
 }
 
@@ -107,6 +109,7 @@ function decide({ released, outcome, state, heldIds }) {
  */
 function dispatchDecision({ state, heldIds, activeRuns = 0, now = Date.now() }) {
   const st = normState(state);
+  if (st.paused) return { dispatch: false, reason: `paused since ${st.paused.at || '?'}: ${st.paused.reason}`, state: st };
   if (st.pending) {
     const age = now - (Date.parse(st.pending.at) || 0);
     if (age < PENDING_TTL_MS) return { dispatch: false, reason: `group ${st.pending.ids.join(',')} pending (${Math.round(age / 60000)} min)`, state: st };
@@ -154,15 +157,23 @@ function hypothesis({ outcome, released = [], history = [] }) {
   return alone.size >= 2 ? `manifest-size-limit: ${alone.size} distinct never-published drivers refused alone (${[...alone].slice(0, 6).join(', ')}); shrink manifest before releasing more` : null;
 }
 
+/** Ids a run releases: the explicit input wins; else the pending group, unless the bisect is paused (P3292). */
+function resolveForRun({ envRelease, state, heldIds }) {
+  const explicit = parse(envRelease);
+  if (explicit.length) return explicit;
+  const st = normState(state);
+  if (st.paused || !st.pending) return [];
+  const held = new Set(heldIds || []);
+  return st.pending.ids.filter((id) => held.has(id));
+}
+
 function main(argv) {
   const [cmd, outcome, version, build, run] = argv;
   const hold = readJson(F.hold, { drivers: [] });
   const state = readJson(F.state, emptyState());
   if (cmd === 'resolve') {
     // input wins; else the pending group (a P3036 deferred re-dispatch carries only the ref, not release_held)
-    const st = normState(state); const held = new Set(heldOf(hold));
-    const ids = parse(process.env.PUBLISH_HOLD_RELEASE).length ? parse(process.env.PUBLISH_HOLD_RELEASE)
-      : (st.pending ? st.pending.ids.filter((id) => held.has(id)) : []);
+    const ids = resolveForRun({ envRelease: process.env.PUBLISH_HOLD_RELEASE, state, heldIds: heldOf(hold) });
     if (ids.length) console.log(`PUBLISH_HOLD_RELEASE=${ids.join(',')}`);
     return 0;
   }
@@ -213,5 +224,5 @@ function main(argv) {
   return 0;
 }
 
-module.exports = { hypothesis, alreadyDone, markDone, DONE_RUNS_MAX, MAX_ATTEMPTS, PENDING_TTL_MS, parse, sig, resolveRelease, decide, dispatchDecision, seed, F };
+module.exports = { hypothesis, alreadyDone, markDone, DONE_RUNS_MAX, MAX_ATTEMPTS, PENDING_TTL_MS, parse, sig, resolveRelease, resolveForRun, decide, dispatchDecision, seed, F };
 if (require.main === module) process.exit(main(process.argv.slice(2)));

@@ -74,7 +74,10 @@ function sourceToPayload(manifest, repoRoot, opts = {}) {
   return view;
 }
 
-function checkBaseline(manifest, baseline) {
+// P3292: opts.swappedOut = drivers left out of a diagnostic swap Draft; only their couples are exempt.
+function checkBaseline(manifest, baseline, opts = {}) {
+  const swapped = opts.swappedOut instanceof Set ? opts.swappedOut : new Set(opts.swappedOut || []);
+  let swappedOut = 0;
   const have = payloadCouples(manifest);
   const exempt = new Set(((baseline && baseline.exemptions) || [])
     .filter((e) => e && e.mfr && e.pid && e.reason)
@@ -88,9 +91,12 @@ function checkBaseline(manifest, baseline) {
     seen.add(k);
     // P3206: a narrowed pin is satisfied by its canonical form or by the shipped fallback form.
     const fk = c.fallback ? `${c.fallback.mfr}\u0000${c.fallback.pid}` : null;
-    if (!have.has(k) && !(fk && have.has(fk)) && !exempt.has(k)) missing.push(`${c.mfr}+${c.pid} (was ${c.driverId})`);
+    if (!have.has(k) && !(fk && have.has(fk)) && !exempt.has(k)) {
+      if (swapped.has(c.driverId)) { swappedOut++; continue; }
+      missing.push(`${c.mfr}+${c.pid} (was ${c.driverId})`);
+    }
   }
-  return { total: seen.size, missing };
+  return { total: seen.size, missing, swappedOut };
 }
 
 if (require.main === module) {

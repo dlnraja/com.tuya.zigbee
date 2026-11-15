@@ -15,12 +15,36 @@ function parseRelease(value) {
   return new Set(String(value || '').split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean));
 }
 
-function effectiveHoldIds(hold, releaseValue) {
+// P3292: swapOut = ids left out of THIS payload only (diagnostic swap, see resolveSwap). Only the
+// prepare-publish hold step passes it: compaction and the source gates keep the swapped-out driver,
+// so its couples stay pinned where they live and only the final Draft payload lacks it.
+function effectiveHoldIds(hold, releaseValue, swapOut = '') {
   const release = parseRelease(releaseValue);
   const held = (hold && Array.isArray(hold.drivers) ? hold.drivers : []).map((d) => d && d.id).filter(Boolean);
   const ids = new Set(held.filter((id) => !release.has(id)));
   const released = held.filter((id) => release.has(id));
-  return { ids, released };
+  const swappedOut = [...parseRelease(swapOut)].filter((id) => !held.includes(id));
+  for (const id of swappedOut) ids.add(id);
+  return { ids, released, swappedOut };
+}
+
+/**
+ * P3292 (15/11/2026): diagnostic swap. Release N held ids and leave N other (published) drivers out of
+ * this one payload, so the payload driver count stays the same. Manual workflow_dispatch only, Draft only
+ * (the workflow skips Test/Live promotion). The source repo and the hold file are never changed.
+ * Returns the swapped-out ids ([] when no swap was asked) or throws on an invalid request.
+ */
+function resolveSwap(hold, env = process.env) {
+  const out = [...parseRelease(env && env.PUBLISH_DIAG_SWAP_OUT)];
+  if (!out.length) return [];
+  const rel = [...parseRelease(env && env.PUBLISH_HOLD_RELEASE)];
+  if (rel.length !== out.length) throw new Error(`diagnostic swap needs the same number of released and swapped-out ids (release ${rel.length}, out ${out.length})`);
+  const held = new Set((hold && Array.isArray(hold.drivers) ? hold.drivers : []).map((d) => d && d.id).filter(Boolean));
+  const notHeld = rel.filter((id) => !held.has(id));
+  if (notHeld.length) throw new Error(`diagnostic swap releases ids that are not held: ${notHeld.join(', ')}`);
+  const already = out.filter((id) => held.has(id));
+  if (already.length) throw new Error(`diagnostic swap-out ids are already held: ${already.join(', ')}`);
+  return out;
 }
 
 /** Every held id, comma-separated. The committed hold file is not modified. */
@@ -136,6 +160,6 @@ function dropHeld(manifest, ids) {
 }
 
 module.exports = {
-  parseRelease, effectiveHoldIds, diagnosticReleaseValue, resolveReleaseValue, assertDiagnosticCatalogue,
+  parseRelease, effectiveHoldIds, resolveSwap, diagnosticReleaseValue, resolveReleaseValue, assertDiagnosticCatalogue,
   foldHeldContinuations, foldContinuations, splitContinuations, dropHeld,
 };
