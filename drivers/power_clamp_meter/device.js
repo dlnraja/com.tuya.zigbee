@@ -4,6 +4,7 @@ const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUti
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const { MeterWriteCoalescer, KeyedLogThrottle } = require('../../lib/utils/MeterWriteCoalescer'); // P3298
 
 /**
  * CT Clamp Power Meter Device
@@ -256,7 +257,7 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     }
     if (this._echoDp(dp, value)) {return;}
     const profile = this.meterProfile;
-    this.log(`[DP${dp}] = ${value} (profile: ${profile})`);
+    this._p3298Log(dp, `[DP${dp}] = ${value} (profile: ${profile})`);
 
     // 
     // v5.7.5: PJ-1203A 2-CHANNEL BIDIRECTIONAL (FIXED per Z2M #18419)
@@ -269,18 +270,18 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
           this.safeSetCapabilityValue('measure_power.phase1', powerA).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         this._powerA = powerA;
-        this.log(`[PJ1203A]  Power A: ${powerA} W`);
+        this._p3298Log(dp, `[PJ1203A]  Power A: ${powerA} W`);
         this._updateTotalPowerPJ1203A();
         break;
 
       case 102: // Power direction A (0=forward/consuming, 1=reverse/producing)
         this._directionA = value;
-        this.log(`[PJ1203A]  Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
+        this._p3298Log(dp, `[PJ1203A]  Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
         break;
 
       case 104: // Power direction B
         this._directionB = value;
-        this.log(`[PJ1203A]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
+        this._p3298Log(dp, `[PJ1203A]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
         break;
 
       case 105: // Power B (W ÷ 10)
@@ -289,78 +290,78 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
           this.safeSetCapabilityValue('measure_power.phase2', powerB).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         this._powerB = powerB;
-        this.log(`[PJ1203A]  Power B: ${powerB} W`);
+        this._p3298Log(dp, `[PJ1203A]  Power B: ${powerB} W`);
         this._updateTotalPowerPJ1203A();
         break;
 
       case 106: // Energy forward A (kWh ÷ 100)
         this._energyForwardA = safeDivide(value, 100);
-        this.log(`[PJ1203A]  Energy Forward A: ${this._energyForwardA} kWh`);
+        this._p3298Log(dp, `[PJ1203A]  Energy Forward A: ${this._energyForwardA} kWh`);
         this._updateTotalEnergy();
         break;
 
       case 107: // Energy reverse A (kWh ÷ 100) - produced/exported
         this._energyReverseA = safeDivide(value, 100);
-        this.log(`[PJ1203A]  Energy Reverse A: ${this._energyReverseA} kWh`);
+        this._p3298Log(dp, `[PJ1203A]  Energy Reverse A: ${this._energyReverseA} kWh`);
         break;
 
       case 108: // Energy forward B (kWh ÷ 100)
         this._energyForwardB = safeDivide(value, 100);
-        this.log(`[PJ1203A]  Energy Forward B: ${this._energyForwardB} kWh`);
+        this._p3298Log(dp, `[PJ1203A]  Energy Forward B: ${this._energyForwardB} kWh`);
         this._updateTotalEnergy();
         break;
 
       case 109: // Energy reverse B (kWh ÷ 100) - produced/exported
         this._energyReverseB = safeDivide(value, 100);
-        this.log(`[PJ1203A]  Energy Reverse B: ${this._energyReverseB} kWh`);
+        this._p3298Log(dp, `[PJ1203A]  Energy Reverse B: ${this._energyReverseB} kWh`);
         break;
 
       case 110: // Power factor A (÷100)
         if (this.hasCapability('measure_power_factor')) {
           this.safeSetCapabilityValue('measure_power_factor', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
-        this.log(`[PJ1203A]  Power Factor A: ${value/100}`);
+        this._p3298Log(dp, `[PJ1203A]  Power Factor A: ${value/100}`);
         break;
 
       case 111: // AC frequency (Hz ÷100)
         if (this.hasCapability('measure_frequency')) {
           this.safeSetCapabilityValue('measure_frequency', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
-        this.log(`[PJ1203A]  AC Frequency: ${value/100} Hz`);
+        this._p3298Log(dp, `[PJ1203A]  AC Frequency: ${value/100} Hz`);
         break;
 
       case 112: // Voltage (V ÷ 10)
         this.safeSetCapabilityValue('measure_voltage', safeDivide(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-        this.log(`[PJ1203A]  Voltage: ${value/10} V`);
+        this._p3298Log(dp, `[PJ1203A]  Voltage: ${value/10} V`);
         break;
 
       case 113: // Current A (A ÷1000)
         this.safeSetCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-        this.log(`[PJ1203A]  Current A: ${value/1000} A`);
+        this._p3298Log(dp, `[PJ1203A]  Current A: ${value/1000} A`);
         break;
 
       case 114: // Current B (A ÷1000)
         if (this.hasCapability('measure_current.phase2')) {
           this.safeSetCapabilityValue('measure_current.phase2', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
-        this.log(`[PJ1203A]  Current B: ${value/1000} A`);
+        this._p3298Log(dp, `[PJ1203A]  Current B: ${value/1000} A`);
         break;
 
       case 115: // Power AB Total (W ÷ 10)
         const totalPower = safeDivide(value, 10);
         this.safeSetCapabilityValue('measure_power', totalPower).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-        this.log(`[PJ1203A]  Total Power: ${totalPower} W`);
+        this._p3298Log(dp, `[PJ1203A]  Total Power: ${totalPower} W`);
         break;
 
       case 121: // Power factor B (÷100)
         if (this.hasCapability('measure_power_factor')) {
           this.safeSetCapabilityValue('measure_power_factor', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
-        this.log(`[PJ1203A]  Power Factor B: ${value/100}`);
+        this._p3298Log(dp, `[PJ1203A]  Power Factor B: ${value/100}`);
         break;
 
       case 129: // Update frequency (seconds)
-        this.log(`[PJ1203A]  Update Frequency: ${value} s`);
+        this._p3298Log(dp, `[PJ1203A]  Update Frequency: ${value} s`);
         break;
       }
       return; // Exit after PJ-1203A handling
@@ -415,21 +416,21 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       if (this.hasCapability('meter_power.exported')) {
         this.safeSetCapabilityValue('meter_power.exported', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
-      this.log(`[3PHASE]  Energy Produced: ${safeDivide(value, 100)} kWh`);
+      this._p3298Log(dp, `[3PHASE]  Energy Produced: ${safeDivide(value, 100)} kWh`);
       break;
 
     case 29: // Total active power (W ÷ 10)
       if (this.hasCapability('measure_power.phase_total')) {
         this.safeSetCapabilityValue('measure_power.phase_total', safeDivide(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
-      this.log(`[3PHASE]  Total Active Power: ${safeDivide(value, 10)} W`);
+      this._p3298Log(dp, `[3PHASE]  Total Active Power: ${safeDivide(value, 10)} W`);
       break;
 
     case 132: // AC frequency (Hz ÷ 10)
       if (this.hasCapability('measure_frequency')) {
         this.safeSetCapabilityValue('measure_frequency', safeDivide(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
-      this.log(`[3PHASE]  AC Frequency: ${safeDivide(value, 10)} Hz`);
+      this._p3298Log(dp, `[3PHASE]  AC Frequency: ${safeDivide(value, 10)} Hz`);
       break;
 
       // v5.8.9: FALLBACK - Handle PJ-1203A DPs even when profile detection fails
@@ -437,20 +438,20 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       // Try PJ-1203A scaling first if value seems too high
       const powerVal = value > 10000 ? safeDivide(value, 10) : value;
       this.safeSetCapabilityValue('measure_power', powerVal).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-      this.log(`[FALLBACK]  Power: ${powerVal} W (raw: ${value})`);
+      this._p3298Log(dp, `[FALLBACK]  Power: ${powerVal} W (raw: ${value})`);
       break;
 
     case 102: //Total energy (kWh ÷ 100) - 3phase OR Direction A - PJ-1203A
       if (value <= 1) {
         // PJ-1203A direction (0 or 1)
-        this.log(`[FALLBACK]  Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
+        this._p3298Log(dp, `[FALLBACK]  Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
       } else {
         this.safeSetCapabilityValue('meter_power', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
 
     case 104: // PJ-1203A Direction B
-      this.log(`[FALLBACK]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
+      this._p3298Log(dp, `[FALLBACK]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
       break;
 
     case 105:
@@ -483,7 +484,7 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       break;
 
     default:
-      this.log(`[DP${dp}] Unhandled DP value: ${value}`);
+      this._p3298Log(dp, `[DP${dp}] Unhandled DP value: ${value}`);
     }
   }
 
@@ -505,13 +506,46 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     const energyB = this._energyForwardB || this._energyB || 0;
     const total = energyA + energyB;
     this.safeSetCapabilityValue('meter_power', total).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-    this.log(`[METER]  Total Energy: ${total} kWh (A:${energyA} + B:${energyB})`);
+    this._p3298Log('total_energy', `[METER]  Total Energy: ${total} kWh (A:${energyA} + B:${energyB})`);
   }
 
   // v5.7.10: Defensive guard against wrong-family energy divisors (forum ×660 bug).
   // safeSetCapabilityValue is installed on ZigBeeDevice.prototype by app.js
   // (lib/utils/SafeCapability mixin); fall back to raw set if mixin absent.
+  // WHY(P3298, CPU-limit diags b3f8c2c6/b2e9ffe8): bursts of clamp frames wrote every meter capability and logged
+  // every DP. Meter writes are now coalesced per capability (identical values skipped, bursts -> latest value
+  // within 2 s) and DP log lines are throttled per DP (one per minute with a muted count). No value is dropped
+  // for good: the newest one is always written.
+  _p3298Coalescer() {
+    if (!this.__p3298c) {
+      const h = this.homey;
+      this.__p3298c = new MeterWriteCoalescer({
+        setTimer: (fn, ms) => (h && typeof h.setTimeout === 'function' ? h.setTimeout(fn, ms) : setTimeout(fn, ms)),
+        clearTimer: (t) => (h && typeof h.clearTimeout === 'function' ? h.clearTimeout(t) : clearTimeout(t)),
+        onError: (cap, e) => this._p3298Log(`err:${cap}`, `[METER] write ${cap} failed: ${(e && e.message) || e}`),
+      });
+    }
+    return this.__p3298c;
+  }
+
+  _p3298Log(key, msg) {
+    if (!this.__p3298t) { this.__p3298t = new KeyedLogThrottle(); }
+    const line = this.__p3298t.line(String(key), msg);
+    if (line) { this.log(line); }
+  }
+
+  /** Newest accepted meter value (pending writes included), else the capability value. */
+  _p3298Value(cap) {
+    const v = this.__p3298c ? this.__p3298c.latest(cap) : undefined;
+    return v !== undefined ? v : this.getCapabilityValue(cap);
+  }
+
   async safeSetCapabilityValue(capability, value) {
+    if (!/^(measure_|meter_)/.test(String(capability))) { return this._p3298RawSet(capability, value); }
+    return this._p3298Coalescer().submit(capability, value, (v) => this._p3298RawSet(capability, v));
+  }
+
+  async _p3298RawSet(capability, value) {
     if (capability === 'meter_power' || capability === 'meter_power.exported') {
       value = EnergyJumpGuard.check(this, value);
     }
@@ -526,9 +560,9 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
   async _updateTotalPower() {
     if (this._destroyed) {return;}
     try {
-      const p1 = this.getCapabilityValue('measure_power.phase1') || 0;
-      const p2 = this.getCapabilityValue('measure_power.phase2') || 0;
-      const p3 = this.getCapabilityValue('measure_power.phase3') || 0;
+      const p1 = this._p3298Value('measure_power.phase1') || 0;
+      const p2 = this._p3298Value('measure_power.phase2') || 0;
+      const p3 = this._p3298Value('measure_power.phase3') || 0;
       await this.safeSetCapabilityValue('measure_power', p1 + p2 + p3);
     } catch (e) {
       this.error('Failed to update total power:', e);
@@ -551,6 +585,7 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
 
   async onDeleted() {
     this._destroyed = true;
+    if (this.__p3298c) { this.__p3298c.destroy(); }
     for (const [cluster, event, fn] of this._clusterListeners || []) {
       try { cluster.removeListener(event, fn); } catch (_) { /* cluster already gone */ }
     }
