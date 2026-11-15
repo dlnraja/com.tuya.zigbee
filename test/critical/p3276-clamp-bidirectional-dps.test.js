@@ -12,6 +12,7 @@ const { performance } = require('perf_hooks');
 
 const Device = require('../../drivers/power_clamp_meter/device');
 const Dyn = require('../../lib/dynamic/DynamicCapabilityManager');
+const { KeyedLogThrottle } = require('../../lib/utils/MeterWriteCoalescer');
 
 function clamp() {
   const writes = [];
@@ -54,11 +55,25 @@ describe('P3276 clamp reports on the 3-phase profile', () => {
 
   it('a repeated frame within 400ms does not write or log again', () => {
     const { dev, writes, logs } = clamp();
+    // P3298 (CPU-limit diags b3f8c2c6/b2e9ffe8) throttles DP log lines per DP:
+    // one line per minute, the muted lines are counted on the next one. A
+    // controlled clock makes that contract exact instead of time-dependent.
+    const clock = { t: 1_000_000 };
+    dev.__p3298t = new KeyedLogThrottle({ now: () => clock.t });
     dev._handleDP(111, 4908);
     dev._handleDP(111, 4908);
     dev._handleDP(111, 4910);
-    assert.equal(writes.length, 2);
-    assert.equal(logs.filter((line) => line.includes('[DP111]')).length, 2);
+    // The repeat is not written; the new reading is written at once.
+    assert.deepEqual(writes, [['measure_frequency', 49.08], ['measure_frequency', 49.1]]);
+    // The repeat never reaches the log; the new reading is muted inside the window...
+    assert.deepEqual(logs.filter((line) => line.includes('[DP111]')), ['[DP111] = 4908 (profile: 3phase)']);
+    // ...and is counted on the first line after the window (+1: the repeat was
+    // dropped before the log, only the 4910 reading was muted).
+    clock.t += 60_000;
+    dev._handleDP(111, 4912);
+    assert.deepEqual(writes[2], ['measure_frequency', 49.12]);
+    assert.deepEqual(logs.filter((line) => line.includes('[DP111]')),
+      ['[DP111] = 4908 (profile: 3phase)', '[DP111] = 4912 (profile: 3phase) (+1 muted in 60s)']);
   });
 
   it('the clamp owns those datapoints so the generic radar map does not', () => {
