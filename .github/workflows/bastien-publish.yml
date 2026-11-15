@@ -352,6 +352,8 @@ jobs:
           else
             echo "::notice::Bastien soft-expect publish (P2732/P2738) — no Homey CLI createBuild"
           fi
+          # P3310: block an empty, truncated or wrong package (exact upload dir; manifest saved as artifact).
+          HOMEY_EXPECTED_VERSION="${HOMEY_EXPECTED_VERSION:-$(node -p "require('$GITHUB_WORKSPACE/app.json').version")}" node "$GITHUB_WORKSPACE/.github/scripts/pre-upload-completeness-guard.js" "$PUBLISH_DIR" || { echo "::error::P3310 pre-upload completeness guard blocked the upload (wrong, empty or incomplete package; see lines above)"; exit 1; }
           publish_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-180000}" \
             node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" --channel test $FORCE_FLAG 2>&1)
           publish_status=$?
