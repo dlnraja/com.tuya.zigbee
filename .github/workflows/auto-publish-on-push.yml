@@ -643,6 +643,15 @@ jobs:
         run: |
           OUT=$(mktemp)
           GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js || true
+          # P3293 (stable run 43710885652, #425): an orphan waiting_for_files (CLI submit timeout, no files) is
+          # NEVER ready. Skip promotion; the final gate decides the single bumped retry (transient-publish-retry.js).
+          if grep -q '^orphan_waiting_for_files=true' "$OUT"; then
+            OBID=$(sed -n 's/^orphan_build_id=//p' "$OUT" | head -1)
+            { echo "athom_failed=true"; echo "orphan_waiting_for_files=true"; } >> "$GITHUB_OUTPUT"
+            echo "::error::Athom build #${OBID:-?} v$HOMEY_EXPECTED_VERSION is an orphan waiting_for_files (files never uploaded); not ready (P3293)"
+            echo "### Test NOT updated: v$HOMEY_EXPECTED_VERSION build #${OBID:-?} orphan waiting_for_files (P3293)" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
           if ! grep -q 'processing_failed_degraded=true' "$OUT"; then
             echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready"; exit 0
           fi
@@ -936,6 +945,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # P-KB4: master retries only a socket hang up, once (no AggregateError / processing_failed auto retry).
           ATHOM_RETRY_HANGUP_ONLY: '1'
+          # P3293: the draft wait confirmed an orphan waiting_for_files -> one bumped retry per chain.
+          ATHOM_ORPHAN_CONFIRMED: ${{ steps.waitdraft.outputs.orphan_waiting_for_files }}
           # P2830g: gate + retry decision must judge the version THIS run uploaded (app.json can be reset by the
           # metadata step; run 39211896020 judged v9.0.1533 while it had uploaded v9.0.1534 -> Test).
           HOMEY_EXPECTED_VERSION: ${{ steps.info.outputs.version }}

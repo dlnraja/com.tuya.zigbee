@@ -33,9 +33,20 @@ function parseRetryCount(v) {
 // validation) -> no retry, breaker trips, diagnostic. ATHOM_RETRY_USED=1 (in-run fallback already re-uploaded)
 // counts as the single retry. hangupOnly is accepted for old callers and no longer changes the rule (it is the rule now).
 const P3036 = require('./athom-publish-policy');
-function decide({ version, builds, alreadyRetried, retryCount, idleWaited = false, reachTest = process.env.ATHOM_REACH_TEST !== '0', retryUsed = process.env.ATHOM_RETRY_USED === '1' }) {
+const ORPHAN = require('./athom-orphan-build');
+function decide({ version, builds, alreadyRetried, retryCount, idleWaited = false, reachTest = process.env.ATHOM_REACH_TEST !== '0', retryUsed = process.env.ATHOM_RETRY_USED === '1', orphanConfirmed = process.env.ATHOM_ORPHAN_CONFIRMED === 'true' }) {
   const b = (builds || []).find((x) => String(x && x.version) === String(version));
   if (!b) return { retry: false, reason: `no Athom build for v${version}` };
+  // P3293 (stable run 43710885652, #425 v5.12.549): the CLI created the build then hit "Submitting... Timeout",
+  // so no files were sent and Athom left it in waiting_for_files forever. Transient, never ready: exactly ONE
+  // bumped retry per chain. The in-run fallback (ATHOM_RETRY_USED) stopped at the same-version guard without
+  // uploading anything, so only the chain counter counts here. Any other non-processing_failed state: no retry.
+  if (ORPHAN.isOrphanWaitingForFiles(b, { confirmed: orphanConfirmed })) {
+    const od = ORPHAN.decideOrphanReupload({ orphan: true, reuploadsDone: retryCount != null ? Number(retryCount) || 0 : (alreadyRetried ? 1 : 0) });
+    const out = { retry: od.action === 'reupload', kind: od.kind, cls: 'transient', reason: `P3293 ${od.reason} (v${version} #${b.id})` };
+    if (out.retry) out.next = (Number(retryCount) || 0) + 1;
+    return out;
+  }
   if (String(b.state || '') !== 'processing_failed') return { retry: false, reason: `v${version} state ${b.state}` };
   const c = P3036.classify(b);
   const done = Math.max(retryCount != null ? Number(retryCount) || 0 : (alreadyRetried ? 1 : 0), retryUsed ? 1 : 0);
