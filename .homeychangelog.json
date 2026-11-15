@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1624": {
+    "en": "Changed: keep the contract - a changed DP value still logs once more before the per-DP log throt....",
+    "fr": "Modifié : keep the contract - a changed DP value still logs once more before the per-DP log throt...."
+  },
   "9.0.1623": {
-    "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1622": {
     "en": "Fixed: pairing and device recognition. Behind the scenes: tests and publishing checks."
@@ -964,8 +967,5 @@
   },
   "9.0.1602": {
     "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id. Nine new drivers thanks to the MakeGood, Daewoo, Box, Beca, AutomatOn and Tervix device authors in zigbee-herdsman-converters: MG-AU03, MG-GPO02Z, WKE502Z keypad, EWS1154-Z, BVRF-L001, CH8Z, Pro Line X10, 3-channel bidirectional meter, TS0601 smoke sensor."
-  },
-  "9.0.1601": {
-    "en": "More TS0601 devices recognised again: device identifiers that were trimmed to save space are topped back up after packing. Publishing now waits for a green test run and spaces out uploads, so fewer broken builds reach the Test channel."
   }
 }
