@@ -1,0 +1,8 @@
+{
+  "_doc": "P3310: last accepted (or complete, uploaded-ok) package per app, from the publish-size-telemetry artifact of that run. The pre-upload completeness guard blocks a package with > 35 % fewer files / bytes / drivers. Refresh after an accepted build with a deliberately smaller package (copy the row of its publish-size.csv; set artifact if the name differs).",
+  "apps": {
+    "com.dlnraja.tuya.zigbee": { "version": "9.0.1621", "run": "43620409011", "state": "test", "payload_files": 4018, "payload_bytes": 31356317, "archive_gz_bytes": 9207039, "drivers": 347 },
+    "com.dlnraja.tuya.zigbee.stable": { "version": "5.12.549", "run": "43710885652", "state": "uploaded-ok (orphan #425: package complete, Athom never received the files)", "payload_files": 3879, "payload_bytes": 31281692, "archive_gz_bytes": 10749954, "drivers": 342 },
+    "com.dlnraja.tuya.zigbee.bastien": { "version": "1.0.237", "run": "43711569452", "state": "uploaded-ok", "payload_files": 1993, "payload_bytes": 19219406, "archive_gz_bytes": 4976103, "drivers": 27 }
+  }
+}
