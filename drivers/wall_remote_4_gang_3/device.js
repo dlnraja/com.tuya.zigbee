@@ -11,7 +11,7 @@ class WallRemote4Gang3Device extends ButtonDevice {
 
   /**
    * v9.7.4: _setGangOnOff for switch_multi_gang flow card compatibility.
-   * Button devices have no onoff capability — triggers button press flow instead.
+   * Button devices have no onoff capability - triggers button press flow instead.
    */
   async _setGangOnOff(gang, value) {
     this.log(`[FLOW] _setGangOnOff: gang=${gang} value=${value} (button device, triggering press)`);
@@ -23,7 +23,7 @@ class WallRemote4Gang3Device extends ButtonDevice {
 
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
-    this.log('[WALL_REMOTE_4_GANG_3] 🔘 v10.0.0 initialized via ButtonDevice');
+    this.log('[WALL_REMOTE_4_GANG_3] [BTN] v10.0.0 initialized via ButtonDevice');
   }
 
 }

@@ -8,7 +8,7 @@ class SmokeSensorHybridDevice extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     // v5.12.59 (P92.126): tamper bit was never fed on this hybrid
-    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] [WARN] ' + e.message); }
   }
 
   handleTuyaDataReport(data) {

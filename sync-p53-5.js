@@ -1,4 +1,4 @@
-// sync-p53-5.js — Sync P53.5 changes from master to stable-v5
+// sync-p53-5.js - Sync P53.5 changes from master to stable-v5
 // Bumps concurrency 10->30 in 4 scanners + xiaomi-miot refactor
 'use strict';
 const fs = require('fs');

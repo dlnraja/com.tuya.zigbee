@@ -7,7 +7,7 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 /**
  * Door/Window contact sensor (IAS zone).
  * v9.0.415 (P92.123): full IAS enrollment + initial read + invert setting
- * via DoorWindowContactHelper — the bare listener-only version left
+ * via DoorWindowContactHelper - the bare listener-only version left
  * devices un-enrolled (zoneState "notEnrolled"), so contact states never
  * changed (forum Peter_van_Werkhoven #2108/#2114/#2118).
  */

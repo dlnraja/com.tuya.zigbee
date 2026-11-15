@@ -5,20 +5,20 @@ const { isMainsCo2Mfr } = require('../../lib/helpers/batteryPowerSource');
 const SDK3BestPractices = require('../../lib/SDK3BestPractices');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      AIR QUALITY CO2 SENSOR - v5.5.317 INTELLIGENT INFERENCE                ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  🧠 v5.5.317: Cross-validates CO2/VOC readings for accuracy                  ║
- * ║ SensorBase handles: Tuya DP, battery                                 ║
- * ║  This class: dpMappings + ZCL temp/humidity listeners (specific to CO2)     ║
- * ║  DPs: 1,2,14,15,18,19,21-23 | ZCL: 1026,1029,1,EF00                        ║
- * ║  Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      AIR QUALITY CO2 SENSOR - v5.5.317 INTELLIGENT INFERENCE                |
+ * +==============================================================================+
+ * |  [SMART] v5.5.317: Cross-validates CO2/VOC readings for accuracy                  |
+ * | SensorBase handles: Tuya DP, battery                                 |
+ * |  This class: dpMappings + ZCL temp/humidity listeners (specific to CO2)     |
+ * |  DPs: 1,2,14,15,18,19,21-23 | ZCL: 1026,1029,1,EF00                        |
+ * |  Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               |
+ * +==============================================================================+
  */
 class AirQualityCO2Device extends SensorBase {
 
   get mainsPowered() {
-    // WHY(P2296): Homey battery-status — mains NDIR CO2 must not show measure/alarm_battery
+    // WHY(P2296): Homey battery-status - mains NDIR CO2 must not show measure/alarm_battery
     const mfr = (this.getManufacturerName() || this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
     if (isMainsCo2Mfr(mfr)) {return true;}
     return false;
@@ -46,10 +46,10 @@ class AirQualityCO2Device extends SensorBase {
       || this.getSetting?.('zb_manufacturer_name')
       || ''
     ).toUpperCase();
-    // WHY(P2538): Z2M TS0601_airbox / PM2.5_airbox — never invent climate DPs
+    // WHY(P2538): Z2M TS0601_airbox / PM2.5_airbox - never invent climate DPs
     const isAirboxZ2m = /8B9ZPAAV|IT9UTKRO/.test(mfr);
 
-    // WHY(P2291/P2296): Z2M ogkdpgy2/3ejwxpmu NDIR CO2 — DP2 only, mains router
+    // WHY(P2291/P2296): Z2M ogkdpgy2/3ejwxpmu NDIR CO2 - DP2 only, mains router
     if (this._isCo2OnlyMains()) {
       return {
         2: {
@@ -61,7 +61,7 @@ class AirQualityCO2Device extends SensorBase {
     }
 
     // P2538: Z2M meta.tuyaDatapoints for _TZE284_8b9zpaav / _TZE284_it9utkro
-    // Contre quoi: old DP1–4 layout (CO2/HCHO/temp/humidity) — wrong vs herdsman
+    // Contre quoi: old DP1-4 layout (CO2/HCHO/temp/humidity) - wrong vs herdsman
     if (isAirboxZ2m) {
       return {
         2: { capability: 'measure_co2', divisor: 1, transform: (v) => this._validateCO2(v) },
@@ -96,12 +96,12 @@ class AirQualityCO2Device extends SensorBase {
       // v5.5.317: VOC with inference tracking
       // v5.11.26: DP22=HCHO per Z2M (was incorrectly mapped to VOC)
       22: { capability: 'measure_formaldehyde', smartDivisor: true },
-      // WHY(P2296): Homey SDK — prefer measure_battery only; DP15 low-battery maps to % floor, not alarm_battery
+      // WHY(P2296): Homey SDK - prefer measure_battery only; DP15 low-battery maps to % floor, not alarm_battery
       14: { capability: 'measure_battery', divisor: 1 },
       15: {
         capability: 'measure_battery',
         transform: (v) => {
-          // battery_state enum 0/1/2 → keep existing % or map low→10
+          // battery_state enum 0/1/2 -> keep existing % or map low->10
           if (v === 1 || v === 'low' || v === 2) {return 10;}
           if (v === 0 || v === 'high') {return this.getCapabilityValue('measure_battery') ?? 100;}
           return null;
@@ -115,11 +115,11 @@ class AirQualityCO2Device extends SensorBase {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
 
-      // WHY(P2296): Homey apps.developer — never both measure_battery + alarm_battery;
+      // WHY(P2296): Homey apps.developer - never both measure_battery + alarm_battery;
       // mains CO2 strips both; battery variants keep measure_battery only.
       await SDK3BestPractices.ensureBatteryBestPractices(this).catch(() => {});
       if (this.mainsPowered) {
-        this.log('[CO2] Mains powered variant — pruning battery capabilities');
+        this.log('[CO2] Mains powered variant - pruning battery capabilities');
         for (const cap of ['measure_battery', 'alarm_battery']) {
           if (this.hasCapability(cap)) {await this.removeCapability(cap).catch(() => {});}
         }
@@ -127,7 +127,7 @@ class AirQualityCO2Device extends SensorBase {
         await this.removeCapability('alarm_battery').catch(() => {});
       }
 
-      // WHY(P2291/P2296): ogkdpgy2/3ejwxpmu report CO2 only — strip unused compose caps
+      // WHY(P2291/P2296): ogkdpgy2/3ejwxpmu report CO2 only - strip unused compose caps
       if (this._isCo2OnlyMains()) {
         for (const cap of ['measure_temperature', 'measure_humidity', 'measure_pm25', 'measure_voc', 'measure_formaldehyde', 'alarm_generic', 'measure_battery', 'alarm_battery']) {
           if (this.hasCapability(cap)) {
@@ -193,7 +193,7 @@ class AirQualityCO2Device extends SensorBase {
       if (!this._isCo2OnlyMains()) {
         await this._setupAirQualityZCL(zclNode);
       }
-      this.log('[CO2] ✅ Ready with cross-validation | mains=', this.mainsPowered);
+      this.log('[CO2] [OK] Ready with cross-validation | mains=', this.mainsPowered);
     }, 'onNodeInit');
   }
 
@@ -209,7 +209,7 @@ class AirQualityCO2Device extends SensorBase {
     // Calculate and log AQI
     const aqi = this._airQualityInference.calculateAQI();
     if (aqi !== null) {
-      this.log(`[CO2] 🌬️ Air Quality Index: ${aqi} (CO2: ${validatedCO2}ppm)`);
+      this.log(`[CO2] [AIR] Air Quality Index: ${aqi} (CO2: ${validatedCO2}ppm)`);
     }
 
     return validatedCO2;
@@ -229,7 +229,7 @@ class AirQualityCO2Device extends SensorBase {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1?.clusters) {return;}
 
-    // WHY(P2540): complementary ZCL RX alongside EF00 DP — never replace DP map.
+    // WHY(P2540): complementary ZCL RX alongside EF00 DP - never replace DP map.
     // Contre quoi: airbox/ZHA siblings that expose 0x040d CO2 / VOC / HCHO / PM2.5 while EF00 also runs.
     const commit = (cap, value) => {
       if (value === null || value === undefined || Number.isNaN(value)) {return;}
@@ -251,7 +251,7 @@ class AirQualityCO2Device extends SensorBase {
               commit(cap, transform(v));
             } catch (_e) { /* never break RX */ }
           });
-          this.log(`[CO2] ZCL complementary listen ${name} → ${cap}`);
+          this.log(`[CO2] ZCL complementary listen ${name} -> ${cap}`);
         } catch (e) {
           this.log(`[CO2] ZCL listen skip ${name}:`, e.message);
         }
@@ -298,7 +298,7 @@ class AirQualityCO2Device extends SensorBase {
         'measure_formaldehyde',
         (v) => {
           const n = parseFloat(v);
-          // Homey often gets µg/m³ or mg×100 — soft range gate only
+          // Homey often gets µg/m³ or mg×100 - soft range gate only
           if (n > 50) {return n / 100;}
           return n >= 0 && n <= 50 ? n : null;
         }

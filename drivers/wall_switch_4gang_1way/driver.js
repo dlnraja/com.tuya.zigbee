@@ -170,7 +170,7 @@ class WallSwitch4Gang1WayDriver extends BaseZigBeeDriver {
       this.log('set_switch_mode card error:', err.message);
     }
 
-    this.log(`✅ ${P}: flow cards registered`);
+    this.log(`[OK] ${P}: flow cards registered`);
   }
 }
 

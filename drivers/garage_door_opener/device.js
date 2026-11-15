@@ -5,10 +5,10 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 const DRIVER_CAPABILITIES = new Set(['garagedoor_closed', 'alarm_contact']);
 
-// DP1 intentionally absent — relay pulse (0→1 in ~100ms), not a state signal.
+// DP1 intentionally absent - relay pulse (0->1 in ~100ms), not a state signal.
 // transform: v => v on DP3 signals TuyaEF00Manager to use raw parsed value.
 // Without it, _applyDPValue falls through to temperature auto-conversion
-// (generic fallback maps DP3→'temperature_soil'), making dp-3 always emit 0.
+// (generic fallback maps DP3->'temperature_soil'), making dp-3 always emit 0.
 const DRIVER_DP_MAPPINGS = {
   3: { capability: 'alarm_contact', parser: v => !!v, transform: v => v },
 };
@@ -26,7 +26,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     // This is the primary guard against temperature auto-conversion of DP3.
     this.dpMappings = { 3: { capability: 'alarm_contact' } };
 
-    // Disable UniversalVariantManager — it incorrectly routes DP1→alarm_contact
+    // Disable UniversalVariantManager - it incorrectly routes DP1->alarm_contact
     if (this.variantManager) {
       this.variantManager.destroy?.();
       this.variantManager = null;
@@ -45,7 +45,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     }
 
     if (this.tuyaEF00Manager) {
-      // Lock tuyaEF00Manager.dpMappings — background init overwrites it with generic
+      // Lock tuyaEF00Manager.dpMappings - background init overwrites it with generic
       // passive defaults. The setter is a no-op; getter always returns DRIVER_DP_MAPPINGS.
       // DRIVER_DP_MAPPINGS[3].transform also triggers raw-value path in _applyDPValue
       // (secondary guard against temperature auto-conversion).
@@ -58,14 +58,14 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
       this.log('[GarageOpener] dpMappings locked');
 
       // DP3 = physical contact sensor = ground truth for both capabilities.
-      // DP1 is a relay pulse (0→1 within ~100ms) — intentionally not listened.
+      // DP1 is a relay pulse (0->1 within ~100ms) - intentionally not listened.
       this.tuyaEF00Manager.on('dp-3', (value) => {
         const isOpen = !!value;
         this.safeSetCapabilityValue('alarm_contact', isOpen)
           .catch(err => this.error(`[GarageOpener] alarm_contact set failed: ${err.message}`));
         this.safeSetCapabilityValue('garagedoor_closed', !isOpen)
           .catch(err => this.error(`[GarageOpener] garagedoor_closed set failed: ${err.message}`));
-        this.log(`[GarageOpener] DP3 → door ${isOpen ? 'OPEN' : 'CLOSED'} (raw=${value})`);
+        this.log(`[GarageOpener] DP3 -> door ${isOpen ? 'OPEN' : 'CLOSED'} (raw=${value})`);
       });
     }
 
@@ -76,12 +76,12 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
       return this.sendTuyaCommand(1, value ? 0 : 1, 'bool');
     });
 
-    this.log('[GarageOpener] ✅ Ready');
+    this.log('[GarageOpener] [OK] Ready');
   }
 
-  // Break the TuyaZigbeeDevice.setCapabilityValue → BaseUnifiedDevice.safeSetCapabilityValue
+  // Break the TuyaZigbeeDevice.setCapabilityValue -> BaseUnifiedDevice.safeSetCapabilityValue
   // circular reference introduced in v5.13.5: TZD.setCV calls this.safeSetCV which resolves
-  // (dynamic dispatch) to BUD.safeSetCV, which calls this.setCV again — ThrottleManager
+  // (dynamic dispatch) to BUD.safeSetCV, which calls this.setCV again - ThrottleManager
   // breaks the loop before the actual Homey write at TZD line 833 is ever reached.
   // TZD.safeSetCapabilityValue uses super.setCapabilityValue (lexically bound above TZD),
   // so calling it directly bypasses the loop while preserving sanity/calibration/throttle.
@@ -98,13 +98,13 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     return super.addCapability(capability);
   }
 
-  // Called polymorphically by BaseUnifiedDevice — cleans up after background init.
+  // Called polymorphically by BaseUnifiedDevice - cleans up after background init.
   async _runBackgroundInitialization() {
     this.log('[GarageOpener] background init: start');
     await super._runBackgroundInitialization();
     this.log('[GarageOpener] background init: super done, cleaning up');
 
-    // Destroy IntelligentDeviceAdapter — maps DP1/DP3/DP12 to wrong capabilities
+    // Destroy IntelligentDeviceAdapter - maps DP1/DP3/DP12 to wrong capabilities
     if (this.intelligentAdapter) {
       this.intelligentAdapter.destroy?.();
       this.intelligentAdapter = null;
@@ -124,7 +124,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     }
 
     // Set default CLOSED state if alarm_contact was never set (fresh install / upgrade).
-    // Must run here — not in onNodeInit — because setCapabilityValue needs the device
+    // Must run here - not in onNodeInit - because setCapabilityValue needs the device
     // to be fully initialized before Homey accepts the write.
     // Device is edge-triggered and passive (no active query), so this is the only
     // reliable way to provide a sane initial state before the first sensor change.
@@ -134,7 +134,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
       this.log('[GarageOpener] alarm_contact was null: defaulted to CLOSED (background init)');
     }
 
-    // Request current DP3 state — device only reports on edge change, not on connect.
+    // Request current DP3 state - device only reports on edge change, not on connect.
     // This device is passive-mode only so requestDP may return "no active query method"
     // but we still attempt it; some firmware versions respond.
     if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.requestDP === 'function') {

@@ -86,7 +86,7 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
       // Ne pas bloquer onNodeInit : sans endpoint 1, seules la luminosité et la
       // batterie sont indisponibles ; température/humidité restent tentées sur
       // l'endpoint de mesure. Un throw ici tuait l'init (risque zigbee-generic).
-      this.log('[QAAYS] Endpoint 1 unavailable — illuminance/battery bindings skipped');
+      this.log('[QAAYS] Endpoint 1 unavailable - illuminance/battery bindings skipped');
     }
 
     if (this.isFirstInit()) {

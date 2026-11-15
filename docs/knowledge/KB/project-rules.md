@@ -31,6 +31,7 @@ Full texts (SSOT):
 - [R22 architecture sources (spec 010 / T0)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/R22_ARCHITECTURE_SOURCES.md)
 - [🔐 Security Rules v8.5.0](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SECURITY_RULES.md)
 - [Session Stability & Heuristic Rules Specification](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SESSION_STABILITY_SUMMARY.md)
+- [Shipped JavaScript Latin-1 and package images (P3320)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SHIPPED_JS_LATIN1.md)
 - [The "56 Years Ago" Bug and Tuya Sleepy Devices](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SLEEPY_TUYA_56_YEARS_BUG.md)
 - [Unit-test anti-régression (P2469)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/UNIT_TEST_ANTI_REGRESSION.md)
 - [Rule (SSOT): unknown commands and method chains (P3016–P3017)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/UNKNOWN_AND_METHOD_CHAINS.md)

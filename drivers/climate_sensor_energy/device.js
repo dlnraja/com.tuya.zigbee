@@ -11,7 +11,7 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
     const parentMappings = Object.getPrototypeOf(this).dpMappings || {};
     return {
       ...parentMappings,
-      17: { capability: 'measure_current', smartDivisor: true },   // mA → A
+      17: { capability: 'measure_current', smartDivisor: true },   // mA -> A
       18: { capability: 'measure_power', smartDivisor: true },     // W * 10
       19: { capability: 'measure_voltage', smartDivisor: true },   // V * 10
       20: { capability: 'meter_power', smartDivisor: true }        // kWh * 100

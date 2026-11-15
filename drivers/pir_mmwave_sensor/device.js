@@ -111,13 +111,13 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
         zclNode.endpoints[1].clusters.tuya.on("datapoint", value => this.processResponse(value));
 
         // Read battery level directly since reporting is "NOT_FOUND" per interview data
-        this.log('🔋 Reading battery level directly (interview shows value: 200)...');
+        this.log('[BAT] Reading battery level directly (interview shows value: 200)...');
         try {
             const batteryData = await zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
-            this.log('🔋 Battery read result:', batteryData);
+            this.log('[BAT] Battery read result:', batteryData);
             
             if (batteryData && batteryData.batteryPercentageRemaining !== undefined) {
-                this.log('🔋 Found batteryPercentageRemaining:', batteryData.batteryPercentageRemaining);
+                this.log('[BAT] Found batteryPercentageRemaining:', batteryData.batteryPercentageRemaining);
                 this.handleBatteryPercentageReport(batteryData.batteryPercentageRemaining);
             }
             
@@ -130,14 +130,14 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
                         this.handleBatteryPercentageReport(battery.batteryPercentageRemaining);
                     }
                 } catch (error) {
-                    this.log('🔋 Periodic battery read failed:', error.message);
+                    this.log('[BAT] Periodic battery read failed:', error.message);
                 }
             }, 30 * 60 * 1000); // Read every 30 minutes
             
         } catch (error) {
-            this.log('🔋 Initial battery read failed:', error.message);
+            this.log('[BAT] Initial battery read failed:', error.message);
             // Fallback: set battery from interview data
-            this.log('🔋 Using fallback battery value from interview data (200 -> 100%)');
+            this.log('[BAT] Using fallback battery value from interview data (200 -> 100%)');
             this.handleBatteryPercentageReport(200);
         }
     }
@@ -158,7 +158,7 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
             batteryType: 'CR2032',
         });
         if (batteryLevel == null) {return;}
-        this.log('🔋 Battery handler called! Raw value:', batteryPercentageRemaining, 'Converted:', batteryLevel, '%');
+        this.log('[BAT] Battery handler called! Raw value:', batteryPercentageRemaining, 'Converted:', batteryLevel, '%');
         this.safeSetCapabilityValue('measure_battery', batteryLevel).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         this.safeSetCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
@@ -236,7 +236,7 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
             case 110:
                 // Battery percentage
                 if (typeof measuredValue === 'number') {
-                    this.log('🔋 Battery via Tuya DP110:', measuredValue, '%');
+                    this.log('[BAT] Battery via Tuya DP110:', measuredValue, '%');
                     this.safeSetCapabilityValue('measure_battery', measuredValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
                     const batteryThreshold = this.getSetting('batteryThreshold') || 20;
                     this.safeSetCapabilityValue('alarm_battery', measuredValue < batteryThreshold).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
@@ -332,9 +332,9 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
                 data
             });
 
-            this.log(`✅ Successfully sent Tuya DP${dp} with value:`, value);
+            this.log(`[OK] Successfully sent Tuya DP${dp} with value:`, value);
         } catch (error) {
-            this.error(`❌ Failed to send Tuya DP${dp}:`, error);
+            this.error(`[ERR] Failed to send Tuya DP${dp}:`, error);
             throw error;
         }
     }

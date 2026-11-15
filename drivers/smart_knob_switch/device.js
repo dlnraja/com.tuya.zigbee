@@ -14,7 +14,7 @@ class SmartKnobSwitchDevice extends ButtonDevice {
     
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
     
-    this.log('[SMART_KNOB_SWITCH] 🔘 v10.0.0 initialized via ButtonDevice');
+    this.log('[SMART_KNOB_SWITCH] [BTN] v10.0.0 initialized via ButtonDevice');
   }
 
 }

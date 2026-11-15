@@ -107,7 +107,7 @@ class GenericAirPurifierPresenceDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
     await this._setupTuyaDPListeners(zclNode);
-    this.log('[GENERIC-AIR-PURIFIER-PRESENCE] ✅ Device ready');
+    this.log('[GENERIC-AIR-PURIFIER-PRESENCE] [OK] Device ready');
   }
 
   _handleTuyaResponse(data) {

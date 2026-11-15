@@ -111,7 +111,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_n2egfsli'
     ].includes(mfr);
 
-    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` — reversed args, always false.
+    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` - reversed args, always false.
     // DP-only inverted ids (Z2M ZG-102ZL inverse) now apply; IAS ids stay with AlarmPolarityManager.
     const _pol = resolveContactInvert(mfr, userInvert, userReverse);
     this._invertedByDefault = _pol.invertedByDefault;

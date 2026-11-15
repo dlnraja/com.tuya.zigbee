@@ -39,7 +39,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
         this.error('Error when reading device attributes ', err);
       });
 
-    // BOTH: IAS path for TS0207 / HOBEIAN — EF00-only left sensors silent
+    // BOTH: IAS path for TS0207 / HOBEIAN - EF00-only left sensors silent
     try {
       this._iasManager = new IASZoneManager(this);
       this._iasEnrolled = await this._iasManager.enrollIASZone();
@@ -55,11 +55,11 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
             : attrs.zoneStatus?.alarm1 || attrs.zoneStatus?.alarm2 ? 1 : 0;
           this._receivedDpData = true;
           await this.safeSetCapabilityValue('alarm_water', Boolean(zs & 0x03)).catch(() => {});
-          this.log(`[WATER-TUYA] Initial IAS zoneStatus=${zs} → alarm_water=${Boolean(zs & 0x03)}`);
+          this.log(`[WATER-TUYA] Initial IAS zoneStatus=${zs} -> alarm_water=${Boolean(zs & 0x03)}`);
         }
       }
     } catch (err) {
-      this.log(`[WATER-TUYA] ⚠️ IAS setup error (non-critical): ${err.message}`);
+      this.log(`[WATER-TUYA] [WARN] IAS setup error (non-critical): ${err.message}`);
     }
 
     this._noDataTimer = safeSetTimeout(this, () => {
@@ -68,11 +68,11 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
       if (alarmValue !== null && alarmValue !== undefined) {return;}
       const ep = this.zclNode?.endpoints?.[1];
       const clusterIds = ep ? Object.keys(ep.clusters || {}) : [];
-      this.log('[WATER-TUYA] ⚠️ NO DATA after 5 min — verbose diagnostic');
+      this.log('[WATER-TUYA] [WARN] NO DATA after 5 min - verbose diagnostic');
       this.log(`[WATER-TUYA] mfr=${this.getSetting?.('zb_manufacturer_name') || 'unknown'} iasEnrolled=${this._iasEnrolled} clusters=${JSON.stringify(clusterIds)}`);
     }, 5 * 60 * 1000);
 
-    // Battery poll — guard destroyed / missing homey
+    // Battery poll - guard destroyed / missing homey
     const timerApi = this.homey && typeof this.homey.setInterval === 'function' ? this.homey : globalThis;
     this.batteryInterval = timerApi.setInterval(async () => {
       if (this._destroyed) {return;}

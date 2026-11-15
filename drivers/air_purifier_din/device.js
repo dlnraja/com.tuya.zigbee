@@ -9,7 +9,7 @@ const { CLUSTER } = require('zigbee-clusters');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ZCL_ENERGY_DIVISORS = {
   meter_power: { divisor: 1000 },
   measure_power: { divisor: 10 },

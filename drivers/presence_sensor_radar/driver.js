@@ -13,7 +13,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
-    // WHY(P2526 / VicHY 74e5cae7): register ALL compose conditions — motion_active was
+    // WHY(P2526 / VicHY 74e5cae7): register ALL compose conditions - motion_active was
     // declared but never wired; users confuse native motion WHEN vs custom presence WHEN.
     // WHY(P2534 / #2240): warm trigger cards so getDeviceTriggerCard().trigger works after tip.
     for (const id of [
@@ -26,11 +26,11 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     ]) {
       try {
         this.homey.flow.getDeviceTriggerCard(id);
-      } catch (_e) { /* soft — compose may omit zone cards */ }
+      } catch (_e) { /* soft - compose may omit zone cards */ }
     }
     const conditionCards = [
       {
-        // WHY(P2524): condition must accept alarm_human OR alarm_motion (presence≡motion)
+        // WHY(P2524): condition must accept alarm_human OR alarm_motion (presence==motion)
         id: 'presence_sensor_radar_is_present',
         fn: async (args) => {
           const d = args.device;

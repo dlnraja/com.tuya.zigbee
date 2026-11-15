@@ -110,7 +110,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
     // v5.12.59 (P92.126): tamper bit was never fed on this hybrid
-    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] [WARN] ' + e.message); }
     this.log('[PLUG] v5.6.0 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
     // Setup ZCL energy monitoring (parent doesn't do this)

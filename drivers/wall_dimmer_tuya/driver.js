@@ -42,7 +42,7 @@ class WallDimmerTuyaDriver extends Driver {
       return runTx(args.device, 'onoff', !v);
     });
     this.homey.flow.getActionCard('wall_dimmer_tuya_set_brightness')?.registerRunListener(async (args) => {
-      // Flow args historically named brightness; Homey capability is dim (0–1)
+      // Flow args historically named brightness; Homey capability is dim (0-1)
       const raw = args.brightness ?? args.dim;
       const dim = Math.max(0, Math.min(1, Number(raw)));
       return runTx(args.device, 'dim', Number.isFinite(dim) ? dim : 0);

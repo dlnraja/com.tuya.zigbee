@@ -1,4 +1,4 @@
-// fix-yaml-separators-v2.js — P54
+// fix-yaml-separators-v2.js - P54
 // Remove the `---` separator that P54 D1 commit 8565cb363 added
 // between `defaults:` and `name:` in 11 workflows. This `---` in the
 // MIDDLE of the file makes yaml.load() see 2 documents, breaking the

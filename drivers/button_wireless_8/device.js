@@ -14,7 +14,7 @@ class Button8GangDevice extends ButtonDevice {
     
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
     
-    this.log('[BUTTON_WIRELESS_8] 🔘 v10.0.0 initialized via ButtonDevice');
+    this.log('[BUTTON_WIRELESS_8] [BTN] v10.0.0 initialized via ButtonDevice');
   }
 
 }

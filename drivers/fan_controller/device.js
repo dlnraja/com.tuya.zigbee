@@ -4,12 +4,12 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * Fan Speed Controller Device — P123: TuyaZigbeeDevice (L14) + mainsPowered
+ * Fan Speed Controller Device - P123: TuyaZigbeeDevice (L14) + mainsPowered
  *
  * DP mappings (Z2M TS0601_fan_switch / Lerlink T2-Z67):
  * DP1: On/Off
- * DP2: Countdown seconds 0–43200 (P2396)
- * DP3: Speed enum 0–4 (speeds 1–5)
+ * DP2: Countdown seconds 0-43200 (P2396)
+ * DP3: Speed enum 0-4 (speeds 1-5)
  * DP6: Mode (normal, sleep, natural, etc)
  * DP11: Power-on behavior off/on (P2396)
  */
@@ -60,7 +60,7 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     const setSpeedCard = safeGetCard('action', 'fan_controller_set_speed');
     if (setSpeedCard) {
       setSpeedCard.registerRunListener(async (args) => {
-        // WHY: shared listener — target the Flow's device, not the last-registered one.
+        // WHY: shared listener - target the Flow's device, not the last-registered one.
         const dev = (args && args.device) || this;
         const speed = args.speed / 100;
         await dev['safeSetCapabilityValue']('dim', speed);
@@ -113,8 +113,8 @@ class FanControllerDevice extends TuyaZigbeeDevice {
     }
   }
 
-  // WHY(P2385): Z2M TS0601_fan_switch (_TZE200/204_r32ctezx) uses DP3 enum 0–4
-  // (speeds 1–5). Older value-type fans still accept datatype 2.
+  // WHY(P2385): Z2M TS0601_fan_switch (_TZE200/204_r32ctezx) uses DP3 enum 0-4
+  // (speeds 1-5). Older value-type fans still accept datatype 2.
   _isLerlinkFanSwitch() {
     const mfr = String(
       this.getSetting?.('zb_manufacturer_name')
@@ -127,7 +127,7 @@ class FanControllerDevice extends TuyaZigbeeDevice {
 
   _speedToDp3(value) {
     const clamped = Math.max(0, Math.min(1, Number(value) || 0));
-    return Math.round(clamped * 4); // 0..4 → fan speeds 1..5
+    return Math.round(clamped * 4); // 0..4 -> fan speeds 1..5
   }
 
   async _writeFanSpeedDp(tuyaCluster, speed) {
@@ -285,7 +285,7 @@ class FanControllerDevice extends TuyaZigbeeDevice {
         break;
       }
 
-      case 11: { // Power-on behavior — Z2M off/on only
+      case 11: { // Power-on behavior - Z2M off/on only
         const key = { 0: 'off', 1: 'on' }[Number(value)];
         if (key && this.getSetting?.('power_on_behavior') !== key) {
           this._isInternalSettingsSync = true;

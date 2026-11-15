@@ -50,7 +50,7 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device || args.device._isInitializing) {return false;}
-          // WHY P2466: route through safeSet → _setOnOff → IAS WD startWarning (Cleverio SA100)
+          // WHY P2466: route through safeSet -> _setOnOff -> IAS WD startWarning (Cleverio SA100)
           if (typeof args.device.safeSetCapabilityValue === 'function') {
             await args.device.safeSetCapabilityValue('onoff', true).catch(() => {});
           } else if (typeof args.device._setOnOff === 'function') {

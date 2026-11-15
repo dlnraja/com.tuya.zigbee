@@ -3,7 +3,7 @@
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
-// Energy scaling divisors — this ZCL-only driver performs no raw attribute
+// Energy scaling divisors - this ZCL-only driver performs no raw attribute
 // scaling (pass-through = divisor 1); measure_power is approximated by Homey
 // and Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
 const ENERGY_DIVISORS = {

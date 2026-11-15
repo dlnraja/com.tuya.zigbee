@@ -37,7 +37,7 @@ describe('P2380 UniversalDPSender honors false from sendDP', () => {
     const ok = await sender.sendTuyaDP(2, 100, 'value');
     assert.equal(ok, false);
     assert.ok(!logs.some((l) => /✅DP2 mgr/.test(l)), `unexpected success logs: ${logs.join('|')}`);
-    assert.ok(logs.some((l) => /❌DP2 all failed/.test(l)), `expected all-failed log, got: ${logs.join('|')}`);
+    assert.ok(logs.some((l) => /(?:❌|\[ERR\])DP2 all failed/.test(l)), `expected all-failed log, got: ${logs.join('|')}`);
   });
 });
 

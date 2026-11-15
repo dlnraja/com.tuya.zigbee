@@ -15,11 +15,11 @@ class IrRemoteDevice extends Homey.Device {
     // Register capability listeners
     this.registerCapabilityListener('onoff', this.onCapabilityOnOff.bind(this));
 
-    // v9.0.411 (P92.119): IR test button — resend the Power command through
+    // v9.0.411 (P92.119): IR test button - resend the Power command through
     // the associated blaster as a connectivity test.
     if (this.hasCapability('button.ir_test')) {
       this.registerCapabilityListener('button.ir_test', async () => {
-        this.log('[IR] button.ir_test → sending Power as connectivity test');
+        this.log('[IR] button.ir_test -> sending Power as connectivity test');
         try {
           await this._sendRemoteCommand(this.getSetting('ir_brand'), this.getSetting('ir_category'), 'Power');
         } catch (e) {
@@ -29,7 +29,7 @@ class IrRemoteDevice extends Homey.Device {
       });
     }
 
-    // v5.12.56 (P92.124): onoff.ir_learn — puts the ASSOCIATED blaster in
+    // v5.12.56 (P92.124): onoff.ir_learn - puts the ASSOCIATED blaster in
     // learn mode straight from the virtual remote (was a dead capability).
     if (this.hasCapability('onoff.ir_learn')) {
       this.registerCapabilityListener('onoff.ir_learn', async (value) => {
@@ -39,10 +39,10 @@ class IrRemoteDevice extends Homey.Device {
             .find((d) => d.getData().id === blasterId);
           if (!blaster) { throw new Error('Associated IR Blaster not found'); }
           if (value) {
-            this.log('[IR] ir_learn ON → blaster learn mode (30s)');
+            this.log('[IR] ir_learn ON -> blaster learn mode (30s)');
             await blaster._enableAdvancedLearnMode(30);
           } else if (typeof blaster._disableLearnMode === 'function') {
-            this.log('[IR] ir_learn OFF → blaster learn mode disabled');
+            this.log('[IR] ir_learn OFF -> blaster learn mode disabled');
             await blaster._disableLearnMode();
           }
         } catch (e) {

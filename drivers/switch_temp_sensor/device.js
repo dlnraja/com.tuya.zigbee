@@ -33,9 +33,9 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('═══════════════════════════════════════════════════════════');
+    this.log('===========================================================');
     this.log('Switch with Temperature Sensor v5.5.402 (Rolp forum fix)');
-    this.log('═══════════════════════════════════════════════════════════');
+    this.log('===========================================================');
     this.log('ManufacturerName:', this.getSetting('zb_manufacturer_name'));
     this.log('ModelId:', this.getSetting('zb_model_id'));
 
@@ -50,13 +50,13 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
       this.registerCapability('onoff', CLUSTER.ON_OFF, {
         endpoint: 1,
       });
-      this.log('✅ OnOff capability registered');
+      this.log('[OK] OnOff capability registered');
     }
 
     // Try ALL methods to get temperature/humidity data
     await this._setupTemperatureListeners(zclNode);
 
-    this.log('✅ Initialization complete');
+    this.log('[OK] Initialization complete');
   }
 
   /**
@@ -103,7 +103,7 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
         ep1?.clusters?.[String(CLUSTER_TUYA_E002)];
 
       if (cluster) {
-        this.log('✅ Found cluster 57346 (0xE002) - Tuya Temp/Humidity');
+        this.log('[OK] Found cluster 57346 (0xE002) - Tuya Temp/Humidity');
 
         // Listen for attribute reports
         cluster.on('attr', (attr, value) => {
@@ -155,7 +155,7 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
         ep1?.clusters?.['61184'];
 
       if (cluster) {
-        this.log('✅ Found Tuya EF00 cluster');
+        this.log('[OK] Found Tuya EF00 cluster');
 
         cluster.on('response', this._handleTuyaResponse.bind(this));
         cluster.on('reporting', this._handleTuyaResponse.bind(this));
@@ -178,7 +178,7 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
       const tempCluster = ep1?.clusters?.temperatureMeasurement ||
         ep1?.clusters?.[CLUSTER_TEMP];
       if (tempCluster) {
-        this.log('✅ Found ZCL Temperature cluster');
+        this.log('[OK] Found ZCL Temperature cluster');
         tempCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
             this._setTemperature(smartParse(value, null, { capability: 'measure_temperature' }));
@@ -192,7 +192,7 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
       const humCluster = ep1?.clusters?.relativeHumidity ||
         ep1?.clusters?.[CLUSTER_HUMIDITY];
       if (humCluster) {
-        this.log('✅ Found ZCL Humidity cluster');
+        this.log('[OK] Found ZCL Humidity cluster');
         humCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
             this._setHumidity(smartParse(value, null, { capability: 'measure_temperature' }));
@@ -217,7 +217,7 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
             minChange: 10 // 0.1°C
           }
         }).catch(() => { });
-        this.log('✅ Configured reporting on cluster 57346');
+        this.log('[OK] Configured reporting on cluster 57346');
       }
     } catch (e) { /* ignore */ }
   }
@@ -259,12 +259,12 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
 
     // Sanity check: -40°C to +80°C
     if (temp < -40 || temp > 80) {
-      this.log(`⚠️ Temperature out of range: ${temp}°C`);
+      this.log(`[WARN] Temperature out of range: ${temp}°C`);
       return;
     }
 
     const rounded = Math.round(temp * 10) / 10;
-    this.log(`🌡️ Temperature: ${rounded}°C`);
+    this.log(`[TEMP] Temperature: ${rounded}°C`);
 
     if (this.hasCapability('measure_temperature')) {
       await this.safeSetCapabilityValue('measure_temperature', parseFloat(rounded)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
@@ -279,12 +279,12 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
 
     // Sanity check: 0-100%
     if (hum < 0 || hum > 100) {
-      this.log(`⚠️ Humidity out of range: ${hum}%`);
+      this.log(`[WARN] Humidity out of range: ${hum}%`);
       return;
     }
 
     const rounded = Math.round(hum);
-    this.log(`💧 Humidity: ${rounded}%`);
+    this.log(`[WET] Humidity: ${rounded}%`);
 
     if (this.hasCapability('measure_humidity')) {
       await this.safeSetCapabilityValue('measure_humidity', parseFloat(rounded)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));

@@ -5,9 +5,9 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
 const { installTs004xDedicatedComplement } = require('../../lib/devices/Ts004xDedicatedComplement');
 
 /**
- * SceneSwitch3Device — 3-btn scene remote (TS0043 class)
+ * SceneSwitch3Device - 3-btn scene remote (TS0043 class)
  *
- * P2609/P2615: fleet hybrid RX + Homey Button 1–3 device view.
+ * P2609/P2615: fleet hybrid RX + Homey Button 1-3 device view.
  * P2616: complementary dedicated LevelControl + P2328 parseZclHeader raw (P2520 UNION).
  */
 class SceneSwitch3Device extends ButtonDevice {
@@ -28,7 +28,7 @@ class SceneSwitch3Device extends ButtonDevice {
       }
     };
 
-    // WHY(P2615): hybrid RX — Homey gap-fill for genOnOff 0xFD / E000 / EF00 / raw
+    // WHY(P2615): hybrid RX - Homey gap-fill for genOnOff 0xFD / E000 / EF00 / raw
     try {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 3,
@@ -39,7 +39,7 @@ class SceneSwitch3Device extends ButtonDevice {
       this.log('[SCENE_SWITCH_3] hybrid soft-fail:', e.message);
     }
 
-    // WHY(P2616 complementary): dedicated LevelControl + parseZclHeader — never wipe hybrid
+    // WHY(P2616 complementary): dedicated LevelControl + parseZclHeader - never wipe hybrid
     try {
       await installTs004xDedicatedComplement(this, zclNode, {
         maxButtons: 3,

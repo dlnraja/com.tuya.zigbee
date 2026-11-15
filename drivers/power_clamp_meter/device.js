@@ -18,21 +18,21 @@ const { smartParse } = require('../../lib/managers/SmartDivisorManager');
  * 
  * PJ-1203A 2-CHANNEL DP MAPPINGS (CORRECTED from Z2M #18419):
  * 
- * DP101: power_a (W Ã·10)
+ * DP101: power_a (W ÷10)
  * DP102: power_direction_a (0=forward, 1=reverse)
  * DP104: power_direction_b
- * DP105: power_b (W Ã·10)
- * DP106: energy_forward_a (kWh Ã·100)
- * DP107: energy_reverse_a (kWh Ã·100)
- * DP108: energy_forward_b (kWh Ã·100)
- * DP109: energy_reverse_b (kWh Ã·100)
- * DP110: power_factor_a (Ã·100)
- * DP111: ac_frequency (Hz Ã·100)
- * DP112: voltage (V Ã·10)
- * DP113: current_a (A Ã·1000)
- * DP114: current_b (A Ã·1000)
- * DP115: power_ab (W Ã·10) - Total power
- * DP121: power_factor_b (Ã·100)
+ * DP105: power_b (W ÷10)
+ * DP106: energy_forward_a (kWh ÷100)
+ * DP107: energy_reverse_a (kWh ÷100)
+ * DP108: energy_forward_b (kWh ÷100)
+ * DP109: energy_reverse_b (kWh ÷100)
+ * DP110: power_factor_a (÷100)
+ * DP111: ac_frequency (Hz ÷100)
+ * DP112: voltage (V ÷10)
+ * DP113: current_a (A ÷1000)
+ * DP114: current_b (A ÷1000)
+ * DP115: power_ab (W ÷10) - Total power
+ * DP121: power_factor_b (÷100)
  * DP129: update_frequency (seconds)
  *
  * 

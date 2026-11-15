@@ -5,8 +5,8 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
 const { installTs004xDedicatedComplement } = require('../../lib/devices/Ts004xDedicatedComplement');
 
 /**
- * WallRemote3GangDevice — 3-btn wall scene remote (TS0043 class)
- * P2609: hybrid RX fleet · P2615: Homey Button 1–3 device view
+ * WallRemote3GangDevice - 3-btn wall scene remote (TS0043 class)
+ * P2609: hybrid RX fleet · P2615: Homey Button 1-3 device view
  * P2616: complementary dedicated LevelControl + P2328 raw (P2520 UNION)
  */
 class WallRemote3GangDevice extends ButtonDevice {

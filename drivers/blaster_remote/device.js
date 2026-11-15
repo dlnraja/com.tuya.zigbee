@@ -117,11 +117,11 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
     // 1 send per 500ms and reject concurrent requests.
     const now = Date.now();
     if (now - (this._lastIRSend || 0) < 500) {
-      this.log('[IR-TX] 🛡️ Send throttled (anti-flood 500ms)');
+      this.log('[IR-TX] [GUARD] Send throttled (anti-flood 500ms)');
       return false;
     }
     if (this._pendingSend) {
-      this.log('[IR-TX] 🛡️ Send already in progress — dropping concurrent request');
+      this.log('[IR-TX] [GUARD] Send already in progress - dropping concurrent request');
       return false;
     }
     this._lastIRSend = now;

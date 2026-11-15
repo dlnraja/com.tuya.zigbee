@@ -14,7 +14,7 @@ const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixin
  *                                                                                
  *   NOTE: BSEED devices should use wall_switch_1gang_1way driver instead       
  *   (PR #118 by packetninja/Attilla)
- *   WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ *   WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
  * 
  */
 class Switch1GangDevice extends UnifiedSwitchBase {

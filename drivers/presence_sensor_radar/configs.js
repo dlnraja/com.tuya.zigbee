@@ -10,7 +10,7 @@ const normalize = (s) => (s || '').toLowerCase().trim();
 const containsCI = (s, sub) => normalize(s).includes(normalize(sub));
 
 const SENSOR_CONFIGS = {
-  // ─────────────────────────────────────────────────────────────────────────────
+  // -----------------------------------------------------------------------------
   // TYPE A: ZY-M100 Standard (most common)
   'ZY_M100_STANDARD': {
     sensors: [
@@ -51,7 +51,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_lyetpprm', '_TZE200_lyetpprm',
       '_TZE204_wukb7rhc', '_TZE200_wukb7rhc',
       '_TZE204_jva8ink8', '_TZE200_jva8ink8',
-      // P102: SZR07U 24GHz (Z2M) — presence + fading_time
+      // P102: SZR07U 24GHz (Z2M) - presence + fading_time
       '_TZE204_muvkrjr5', '_TZE200_muvkrjr5',
     ],
     battery: false,
@@ -89,7 +89,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_pfayrzcw', '_TZE284_4qznlkbu',
       '_TZE200_clrdrnya', '_TZE200_sbyx0lm6',
       '_TZE284_clrdrnya', // compose FP family; avoid DEFAULT DP fallback
-      // WHY(P2587): Z2M often lists dtzziy1e as MTG075-ZB-RL — same relay family as VicHY clrdrnya
+      // WHY(P2587): Z2M often lists dtzziy1e as MTG075-ZB-RL - same relay family as VicHY clrdrnya
       '_TZE200_dtzziy1e', '_TZE284_dtzziy1e',
       '_TZE200_iaeejhvf', '_TZE284_iaeejhvf',
       '_TZE200_pfayrzcw', '_TZE284_pfayrzcw',
@@ -110,42 +110,42 @@ const SENSOR_CONFIGS = {
     invertPresence: false,
     // WHY(P2389): VicHY/clrdrnya firmware floods DP9 distance + DP104 lux (~196 msg/min, Z2M#14742).
     // Presence (DP1) stays immediate; telemetry coalesced in device.js.
-    // WHY(P2589): same Contre quoi as Z2M debounce — miss clear frame when mesh saturated.
+    // WHY(P2589): same Contre quoi as Z2M debounce - miss clear frame when mesh saturated.
     floodCalm: true,
     ultraAggressiveDebounce: true,
     // WHY(P2534 / VicHY #2240 diag 74e5cae7 image): Z2M MTG075 presence = DP1 only.
     // clearPresenceOnZeroDistance + syncPresenceFromDistanceInference caused bathroom
-    // timeline flip-flop (Presence detected ↔ No presence / motion on↔off) so Homey
+    // timeline flip-flop (Presence detected <-> No presence / motion on<->off) so Homey
     // WHEN "Presence detected" never stayed edged for flows. Sticky DP1 is handled via
-    // unreliable+inference — not by treating target_distance 0m as absent.
+    // unreliable+inference - not by treating target_distance 0m as absent.
     clearPresenceOnZeroDistance: false,
     syncPresenceFromDistanceInference: false,
     // WHY(P2577 / VicHY #2247 screenshots): sticky Sí + distance "0 [object Object]".
     // Soft-clear empty room, then ignore sticky DP1 true until entry corroboration.
     antiFalsePositive: true,
     // WHY(P2579 / Z2M MTG075-ZB-RL docs + #18677): sensor=occupied forces permanent
-    // presence. Soft-clear may unlock DP115→on only when auto_unlock is on.
+    // presence. Soft-clear may unlock DP115->on only when auto_unlock is on.
     healForcedOccupiedOnSoftClear: true,
     // WHY(P2584): keep DP115=occupied if user wants it, but drive Homey presence from
-    // distance/lux/relay telemetry (DP1 is forced true forever under occupied — untrustworthy).
+    // distance/lux/relay telemetry (DP1 is forced true forever under occupied - untrustworthy).
     smartPresenceWhileOccupied: true,
     quantizedDistanceSoftClear: true,
     mtg24gMinDetectionRangeM: 2.5,
     softClearZeroDistanceMs: 30000,
     softClearStableDistanceMs: 30000,
     softClearIgnoreStickyDp1Ms: 90000,
-    // WHY(P2587): VMC / shower-glass micro-jitter (span ≤0.45m for ≥90s) → soft-clear
+    // WHY(P2587): VMC / shower-glass micro-jitter (span <=0.45m for >=90s) -> soft-clear
     softClearMicroJitterMs: 90000,
     softClearMicroJitterWindowMs: 120000,
     softClearMicroJitterMaxSpanM: 0.45,
     // WHY(P2581): bathroom watchdog ticks soft-clear without waiting for throttled DP9
     stickyPresenceWatchdogMs: 15000,
-    // WHY(P2590 Ultimate Stabilizer Module 2): miss clear frame → force absent after
+    // WHY(P2590 Ultimate Stabilizer Module 2): miss clear frame -> force absent after
     // departure_delay + margin (never paint presence true from distance alone).
     survivalWatchdog: true,
     survivalWatchdogMarginSec: 5,
     presenceConfirmMs: 3000,
-    // WHY(P2590 Module 1): distance Δ>10cm OR 5s; lux Δ>5 OR 10s
+    // WHY(P2590 Module 1): distance \u0394>10cm OR 5s; lux \u0394>5 OR 10s
     dpThrottleMs: { 9: 5000, 104: 10000 },
     dpMinDelta: { 9: 0.1, 104: 5 },
     dpMap: {
@@ -155,7 +155,7 @@ const SENSOR_CONFIGS = {
         useInference: true,
         // WHY(P2575 / VicHY #2246/#2247): MTG075 presence = DP1 only (Z2M / P2534).
         // unreliable:true + floodCalm DP9 throttle ignored real presence OR locked
-        // false positives via reflection distance — trust DP1 clears/sets.
+        // false positives via reflection distance - trust DP1 clears/sets.
         // P2577 gates sticky true via antiFalsePositive (not unreliable).
         unreliable: false,
       },
@@ -213,7 +213,7 @@ const SENSOR_CONFIGS = {
     configName: 'ZY_M100_CEILING_24G',
     sensors: [
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx', '_TZE284_gkfbdvyx',
-      // WHY(P2675): max sibling variants — Z2M ZY-M100-24GV3 TZE200/204/284
+      // WHY(P2675): max sibling variants - Z2M ZY-M100-24GV3 TZE200/204/284
       '_TZE204_ya4ft0w4', '_TZE200_ya4ft0w4', '_TZE284_ya4ft0w4',
       '_TZE204_laokfqwu', '_TZE200_laokfqwu', '_TZE284_laokfqwu',
     ],
@@ -224,7 +224,7 @@ const SENSOR_CONFIGS = {
     noTemperature: true,
     noHumidity: true,
     needsPolling: true,
-    // WHY(P2583 / GH#547): device left mesh / silent RX — soft DataQuery every 2 min
+    // WHY(P2583 / GH#547): device left mesh / silent RX - soft DataQuery every 2 min
     pollIntervalMs: 120000,
     // WHY(P2725 / GH#550 @ 9.0.1236): ultra debounce made lux feel "locked/slow/wrong direction"
     ultraAggressiveDebounce: false,
@@ -234,23 +234,23 @@ const SENSOR_CONFIGS = {
     presenceEnumMapping: { 0: false, 1: true, 2: true },
     clearPresenceOnZeroDistance: true,
     syncPresenceFromDistanceInference: true,
-    // WHY(P2705 / GH#550 HiepSVG @ 9.0.1207): sticky presence hung after leave —
+    // WHY(P2705 / GH#550 HiepSVG @ 9.0.1207): sticky presence hung after leave -
     // survival + soft-clear must arm on ceiling (was gated on floodCalm/relay only).
     survivalWatchdog: true,
     // WHY(P2719 / GH#550 @ 9.0.1222): soft-clear stagnant ghost distance after leave
-    // (clearPresenceOnZeroDistance alone never fires when MCU sticks at 2–3m).
+    // (clearPresenceOnZeroDistance alone never fires when MCU sticks at 2-3m).
     softClearStableDistanceMs: 75_000,
     softClearZeroDistanceMs: 30_000,
     stickyPresenceWatchdogMs: 15_000,
     softClearIgnoreStickyDp1Ms: 120_000,
     // WHY(P2719): gate sticky DP1 / distance re-assert after soft-clear
     antiFalsePositive: true,
-    // WHY(P2719 / Z2M state none|presence|move): Homey motion ≠ human presence
+    // WHY(P2719 / Z2M state none|presence|move): Homey motion != human presence
     splitMotionPresence: true,
-    // WHY(P2722 / GH#550 HiepSVG @ 9.0.1232): after stillness DP1 sticks at 1 —
+    // WHY(P2722 / GH#550 HiepSVG @ 9.0.1232): after stillness DP1 sticks at 1 -
     // re-arm alarm_motion when distance deltas while human YES (MCU often skips enum 2).
     rearmMotionOnDistanceDelta: true,
-    // WHY(P2730 / GH#550 @ 9.0.1243): 0.15m missed small re-moves → motion fails often
+    // WHY(P2730 / GH#550 @ 9.0.1243): 0.15m missed small re-moves -> motion fails often
     // WHY(P2740 / GH#550 residual): still misses micro re-moves after stillness
     rearmMotionDistanceDeltaM: 0.05,
     // WHY(P2743 / GH#550): lux steps re-arm motion when DP9 barely moves (walk in place)
@@ -258,22 +258,22 @@ const SENSOR_CONFIGS = {
     rearmMotionLuxDelta: 12,
     // WHY(P2744 / GH#550 C14): reject multipath farther ghost while walking closer
     rejectGhostFartherDistance: true,
-    // WHY(P2722): Homey shows ~1.2× tape — ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
+    // WHY(P2722): Homey shows ~1.2× tape - ceiling display scale 0.9 (UI only; soft-clear uses pre-scale).
     distanceDisplayScale: 0.9,
-    // WHY(P2730 / GH#550): snappier motion after stillness (was 2s/800ms → laggy)
-    // WHY(P2740): motion still fails often — tighten debounce/throttle further
+    // WHY(P2730 / GH#550): snappier motion after stillness (was 2s/800ms -> laggy)
+    // WHY(P2740): motion still fails often - tighten debounce/throttle further
     motionThrottleEnabled: true,
     motionThrottleMs: 600,
     motionDebounceMs: 200,
     ignoreMovementState: true,
     forceTimeUpdates: true,
-    // WHY(P2595 / GH#550): no relay — DynCap must strip Channel 1 / Button 1
+    // WHY(P2595 / GH#550): no relay - DynCap must strip Channel 1 / Button 1
     hasRelay: false,
-    // WHY(P2595): lux updates prove life when DP9 silent — paint presence from lux rate
+    // WHY(P2595): lux updates prove life when DP9 silent - paint presence from lux rate
     syncPresenceFromLuxInference: true,
-    // WHY(P2597 / Z2M ZY-M100-24GV3 find_switch): DP101 OFF → lux OK, distance forever null
+    // WHY(P2597 / Z2M ZY-M100-24GV3 find_switch): DP101 OFF -> lux OK, distance forever null
     enableFindSwitchOnBoot: true,
-    // WHY(P2597): ambient lux floods are small deltas — lower rate gate for lux→presence
+    // WHY(P2597): ambient lux floods are small deltas - lower rate gate for lux->presence
     luxPresenceRateThreshold: 3,
     luxPresenceMinAbsDelta: 8,
     dpMap: {
@@ -284,10 +284,10 @@ const SENSOR_CONFIGS = {
         useInference: true,
         unreliable: true,
       },
-      // WHY(P2705 / GH#550 + Z2M#25692): MCU amnesia — Homey settings must map to DPs
+      // WHY(P2705 / GH#550 + Z2M#25692): MCU amnesia - Homey settings must map to DPs
       // or restore/onSettings never push range/sensitivity/timeout (looks dead >3.5m).
       2: { cap: null, setting: 'radar_sensitivity', internal: 'move_sensitivity' },
-      // WHY(P2583): Z2M ÷100 vs ZHA ×0.1 — dual-scale via TuyaRadarRangeScale
+      // WHY(P2583): Z2M ÷100 vs ZHA ×0.1 - dual-scale via TuyaRadarRangeScale
       3: { cap: null, internal: 'detection_distance_min', radarRangeScale: true, maxMeters: 9 },
       4: {
         cap: null,
@@ -297,7 +297,7 @@ const SENSOR_CONFIGS = {
         maxMeters: 9,
       },
       // WHY(P2595 / Z2M ZY-M100-24GV3): DP9 distance = ÷10 preferred
-      // WHY(P2715 / GH#550): dual-scale when MCU sends cm (≥100) instead of dm
+      // WHY(P2715 / GH#550): dual-scale when MCU sends cm (>=100) instead of dm
       9: {
         cap: 'measure_luminance.distance',
         radarDistanceScale: true,
@@ -307,7 +307,7 @@ const SENSOR_CONFIGS = {
       // WHY(P2618 / GH#550 Gmail): V3 illuminance is DP103 ONLY (Z2M).
       // Mapping DP10 as lux_direct painted junk (lux=1) and killed real DP103 updates.
       10: { cap: null, internal: 'illuminance_v2_compat' },
-      // WHY(P2597 / Z2M DP101 find_switch): distance tracking — auto ON after pair
+      // WHY(P2597 / Z2M DP101 find_switch): distance tracking - auto ON after pair
       101: {
         cap: null,
         internal: 'distance_tracking',
@@ -316,7 +316,7 @@ const SENSOR_CONFIGS = {
       },
       102: { cap: null, setting: 'entry_sensitivity', internal: 'presence_sensitivity' },
       103: { cap: 'measure_luminance', type: 'lux_direct' },
-      // WHY(P2604 / Z2M ZY-M100-24GV3): V3 has NO DP104 presence — do not map as alarm_motion
+      // WHY(P2604 / Z2M ZY-M100-24GV3): V3 has NO DP104 presence - do not map as alarm_motion
       // (V2 used 104; mapping it on gkfbdvyx caused silent lux/distance races after re-pair).
       104: { cap: null, internal: 'motion_state_v2_compat' },
       105: { cap: null, setting: 'departure_delay', internal: 'fading_time' },
@@ -360,7 +360,7 @@ const SENSOR_CONFIGS = {
       '_TZE200_rhgsbacq', '_TZE204_rhgsbacq',
       '_TZE200_y8jijhba', '_TZE204_y8jijhba',
       'HOBEIAN',
-      // WHY(P2415): do NOT list _TZ3000_8bxrzyxz here — din_rail couple, not ZG-204ZV
+      // WHY(P2415): do NOT list _TZ3000_8bxrzyxz here - din_rail couple, not ZG-204ZV
     ],
     modelId: 'ZG-204ZV',
     battery: true,
@@ -403,7 +403,7 @@ const SENSOR_CONFIGS = {
     }
   },
 
-  // TYPE D: TZE284_IADRO9BF (Low DP) — with multi-zone support (Idea #21)
+  // TYPE D: TZE284_IADRO9BF (Low DP) - with multi-zone support (Idea #21)
   'TZE284_IADRO9BF': {
     configName: 'TZE284_IADRO9BF',
     sensors: [
@@ -468,7 +468,7 @@ const SENSOR_CONFIGS = {
     }
   },
 
-  // TYPE G: HOBEIAN_ZG204ZM (Hybrid) — Z2M herdsman tuya.ts canonical (P2421)
+  // TYPE G: HOBEIAN_ZG204ZM (Hybrid) - Z2M herdsman tuya.ts canonical (P2421)
   // WHY: old map invented large/small/micro DPs + used DP3 as distance; Z2M locks
   // DP2=static_detection_sensitivity, DP4=static_detection_distance/100, DP101=motion_state.
   'HOBEIAN_ZG204ZM': {
@@ -511,7 +511,7 @@ const SENSOR_CONFIGS = {
     }
   },
 
-  // TYPE G2: HOBEIAN ZG-204ZH — presence + climate (Z2M P2421)
+  // TYPE G2: HOBEIAN ZG-204ZH - presence + climate (Z2M P2421)
   'HOBEIAN_ZG204ZH': {
     configName: 'HOBEIAN_ZG204ZH',
     sensors: [
@@ -587,7 +587,7 @@ const SENSOR_CONFIGS = {
     }
   },
 
-  // TYPE G4: HOBEIAN ZG-302ZL motion sensing switch (Z2M P2421) — different DP layout
+  // TYPE G4: HOBEIAN ZG-302ZL motion sensing switch (Z2M P2421) - different DP layout
   'HOBEIAN_ZG302ZL': {
     configName: 'HOBEIAN_ZG302ZL',
     sensors: [
@@ -639,7 +639,7 @@ const SENSOR_CONFIGS = {
       4: { cap: 'measure_luminance.distance', smartDivisor: true }, // detection_distance (dp_registry/Z2M ZG-204ZK)
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       110: { cap: 'measure_battery', divisor: 1 },
-      121: { cap: 'measure_battery', divisor: 1 }, // battery (dp_registry/Z2M ZG-204ZK — alt DP to 110)
+      121: { cap: 'measure_battery', divisor: 1 }, // battery (dp_registry/Z2M ZG-204ZK - alt DP to 110)
     }
   },
 
@@ -744,9 +744,9 @@ const SENSOR_CONFIGS = {
   },
 
   // WHY(P2812 / #2262): _TZE*_gnpflcoq+TS0601 lives on motion_sensor_radar_mmwave (P2270/P2271),
-  // not presence_sensor_radar — registry forbidMode couple. DP map stays in mmwave device.js.
+  // not presence_sensor_radar - registry forbidMode couple. DP map stays in mmwave device.js.
 
-  // DEFAULT fallback — safe generic radar config (multi-zone only on dedicated profiles)
+  // DEFAULT fallback - safe generic radar config (multi-zone only on dedicated profiles)
   'DEFAULT': {
     sensors: [],
     configName: 'DEFAULT',
@@ -777,7 +777,7 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 }
 
 function getSensorConfig(manufacturerName, modelId = null) {
-  // WHY(P2421/P2422): route by modelId first, then verified TZE mfr — never invent pid.
+  // WHY(P2421/P2422): route by modelId first, then verified TZE mfr - never invent pid.
   const model = modelId && modelId !== 'null' ? String(modelId).toUpperCase() : '';
   if (model.includes('ZG-204ZH') || model.includes('AY208Z')) {
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZH, configName: 'HOBEIAN_ZG204ZH' };
@@ -808,7 +808,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
   }
 
   if (containsCI(manufacturerName, 'HOBEIAN')) {
-    // Brand-only: soft ZG204ZM (no climate phantoms) — never HOBEIAN_10G_MULTI
+    // Brand-only: soft ZG204ZM (no climate phantoms) - never HOBEIAN_10G_MULTI
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM_FALLBACK' };
   }
 
@@ -859,11 +859,11 @@ function transformPresence(value, type, invertPresence, configName) {
     return invertPresence ? !value : !!value;
   }
   if (type === 'presence_enum') {
-    // WHY (P2398): many radars use 0/1/2 (absent/move/present) — 2 must be present
+    // WHY (P2398): many radars use 0/1/2 (absent/move/present) - 2 must be present
     const bool = value === 1 || value === 2 || value === true;
     return invertPresence ? !bool : bool;
   }
-  // v9.7.6 / P2398: gkfbdvyx-style enums — value 2 = present (not only 1).
+  // v9.7.6 / P2398: gkfbdvyx-style enums - value 2 = present (not only 1).
   // Primary path in device.js uses mapping.enumMap; this is the fallback.
   if (type && type.startsWith('presence_enum_')) {
     const bool = value === 1 || value === 2 || value === true;

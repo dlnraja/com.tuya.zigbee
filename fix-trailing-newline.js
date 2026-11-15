@@ -1,4 +1,4 @@
-// fix-trailing-newline.js — P53
+// fix-trailing-newline.js - P53
 // Fix the bug in some driver.compose.json files where they have a literal
 // "\n" (backslash-n, 2 chars) at the end instead of just "\n" (newline, 1 char).
 // This was caused by PowerShell's Out-File -Encoding utf8 (which adds BOM + escapes).

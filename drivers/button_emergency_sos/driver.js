@@ -18,7 +18,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
       'button_emergency_sos_double_pressed',
       'button_emergency_sos_long_pressed',
       'button_emergency_sos_battery_low',
-      // WHY(P2364): triggerSOS fires physical_on — must be registered or fallback races manifest
+      // WHY(P2364): triggerSOS fires physical_on - must be registered or fallback races manifest
       'button_emergency_sos_physical_on',
       'button_emergency_sos_physical_off',
     ];
@@ -83,7 +83,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
    * v5.5.833: Trigger battery low flow
    */
   async triggerBatteryLow(device, tokens = {}, state = {}) {
-    // WHY: Peter #2190 / 0cea6870 — SOS battery jumped 11%→20% in <100ms and
+    // WHY: Peter #2190 / 0cea6870 - SOS battery jumped 11%->20% in <100ms and
     // fired battery_low twice. Debounce identical flow spam for 60s.
     const now = Date.now();
     const last = device.getStoreValue?.('sos_battery_low_flow_at') || 0;
