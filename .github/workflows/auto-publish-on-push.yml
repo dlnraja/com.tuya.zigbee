@@ -174,7 +174,7 @@ jobs:
     # WHY(P2384): workflow_dispatch must run even when tip commit is [skip ci]
     if: ${{ needs.breaker.outputs.skip != 'true' && needs.breaker.outputs.bisect_hold_upload != 'true' && needs.breaker.outputs.p3036_go != 'false' && (github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')) }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 65  # P3311: + up to 16 min backoff before the 2nd transport retry dispatch
     # v9.0.287 (P74): Bumped publish-size limits to 50 MB. With .homeyignore
     # pruning (mfs_db.json, dev artifacts, branding assets) the source
     # directory is ~40 MB. The gzipped tarball is ~18 MB.
@@ -943,12 +943,12 @@ jobs:
         # 39224444574 -> #3622 v9.0.1541 AggregateError got no retry). The retry decision only acts when Athom
         # has a build for HOMEY_EXPECTED_VERSION ("no Athom build" -> skip), so pre-upload errors never retry.
         if: always() && (steps.pub.outcome == 'success' || steps.pub.outcome == 'failure')
-        timeout-minutes: 15
+        timeout-minutes: 35  # P3311: backoff 5 / 15 min (+ jitter) before the next transport retry
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # P-KB4: master retries only a socket hang up, once (no AggregateError / processing_failed auto retry).
+          # P-KB4 / P3311: only transport failures retry (2 bumped retries = 3 attempts; no AggregateError / processing_failed auto retry).
           ATHOM_RETRY_HANGUP_ONLY: '1'
           # P3293: the draft wait confirmed an orphan waiting_for_files -> one bumped retry per chain.
           ATHOM_ORPHAN_CONFIRMED: ${{ steps.waitdraft.outputs.orphan_waiting_for_files }}
@@ -967,7 +967,7 @@ jobs:
             [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && [ -z "${PUBLISH_DIAG_SWAP_OUT:-}" ] && mkdir -p p3095-outcome && printf '{"outcome":"test","released":"%s","version":"%s","run":"%s"}\n' "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
             exit 0
           fi
-          # Final state known and not Test: retry decision (P3036: one transient retry, backoff >= 300 s + jitter).
+          # Final state known and not Test: retry decision (P3311: transport -> up to 2 bumped retries, backoff 5/15 min + jitter).
           out=$(node .github/scripts/transient-publish-retry.js) || true
           # P2901: assert-athom-final only prints "processing_failed"; the Athom error text (AggregateError, socket
           # hang up...) is read by the retry decision, so classify both outputs before recording the CSV row.

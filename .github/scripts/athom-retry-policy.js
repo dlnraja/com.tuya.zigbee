@@ -13,12 +13,14 @@
 const P3036 = require('./athom-publish-policy');
 const POLICY = Object.freeze({
   version: 3,
-  maxHangupRetries: P3036.RETRY.maxRetries,
-  maxTransientRetries: P3036.RETRY.maxRetries, // socket hang up, ECONNRESET, timeouts, 5xx (P2911 + P3036)
+  // P3311: transport failures get 2 bumped retries (3 attempts), backoff 5/15/30 min.
+  maxHangupRetries: P3036.RETRY.maxTransportRetries,
+  maxTransientRetries: P3036.RETRY.maxTransportRetries, // socket hang up, ECONNRESET, timeouts, 5xx (P2911 + P3036)
   maxAggregateRetries: 0, // P3036: AggregateError is a real failure -> breaker + diagnostic, no retry
   maxInvalidStateRetries: P3036.RETRY.maxRetries,
   backoffBaseS: P3036.RETRY.backoffMinS,
-  backoffCapS: P3036.RETRY.backoffMinS,
+  backoffCapS: P3036.RETRY.backoffScheduleS[P3036.RETRY.backoffScheduleS.length - 1],
+  backoffScheduleS: P3036.RETRY.backoffScheduleS,
   jitterS: P3036.RETRY.jitterS,
   uploadTimeoutMs: 180000, // direct Apps API request timeout (keep-alive agent)
   buildPollTimeoutMs: 360000,
@@ -42,9 +44,10 @@ function budget(kind) {
   return 0;
 }
 
-// P3036: always >= 300 s (+0..60 s jitter), whatever the attempt number.
+// P3311: attempt 1 (first retry) 300 s, attempt 2: 900 s, attempt 3+: 1800 s, each + 0..60 s jitter.
 function backoffSeconds(attempt, rnd = Math.random) {
-  return P3036.backoffSeconds(typeof rnd === 'function' ? rnd() : rnd);
+  const a = Math.max(Number(attempt) || 1, 1);
+  return P3036.backoffSeconds(typeof rnd === 'function' ? rnd() : rnd, a - 1);
 }
 
 function shouldRetry(kind, retriesDone, { idleWaited = true } = {}) {

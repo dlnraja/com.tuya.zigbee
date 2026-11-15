@@ -16,10 +16,11 @@ describe('P-KB4 master Athom publish breaker', () => {
   it('P3036: a real latest failure (AggregateError) trips the breaker on push', () => {
     assert.strictEqual(B.decide({ builds: [pf(3), { id: 2, state: 'test' }, pf(1)], event: 'push' }).skip, true);
   });
-  it('P3036: the single automatic retry of a hang-up is never blocked (run 40194918949)', () => {
+  it('P3311: the 2 automatic retries of a hang-up are never blocked, a 3rd is (run 40194918949)', () => {
     const h = (id) => ({ id, version: `9.0.${id}`, state: 'processing_failed', stateMeta: 'socket hang up' });
     assert.strictEqual(B.decide({ builds: [h(3), h(2), h(1)], event: 'workflow_dispatch', transientRetry: '1', snapshotOk: true }).skip, false);
-    assert.strictEqual(B.decide({ builds: [h(3), h(2), h(1)], event: 'workflow_dispatch', transientRetry: '2', snapshotOk: true }).skip, true);
+    assert.strictEqual(B.decide({ builds: [h(3), h(2), h(1)], event: 'workflow_dispatch', transientRetry: '2', snapshotOk: true }).skip, false);
+    assert.strictEqual(B.decide({ builds: [h(3), h(2), h(1)], event: 'workflow_dispatch', transientRetry: '3', snapshotOk: true }).skip, true);
   });
   it('manual dispatch may try once; automatic retry dispatch may not', () => {
     assert.strictEqual(B.decide({ builds: [pf(3), pf(2), pf(1)], event: 'workflow_dispatch', transientRetry: 'false' }).skip, false);
@@ -40,12 +41,13 @@ describe('P-KB4 master Athom publish breaker', () => {
     assert.match(r.stdout, /\[breaker\] SKIP: Athom build state unreadable/);
     assert.match(fs.readFileSync(out, 'utf8'), /skip=true/);
   });
-  it('hang-up-only policy: no retry for AggregateError, one for socket hang up', () => {
+  it('hang-up-only policy: no retry for AggregateError, two for socket hang up (P3311)', () => {
     assert.strictEqual(R.decide({ version: '9.0.5', builds: [pf(5)], retryCount: 0, hangupOnly: true }).retry, false);
     assert.strictEqual(R.decide({ version: '9.0.5', builds: [{ id: 5, version: '9.0.5', state: 'processing_failed' }], retryCount: 0, hangupOnly: true }).retry, false);
     const h = { id: 5, version: '9.0.5', state: 'processing_failed', stateMeta: 'socket hang up' };
     assert.strictEqual(R.decide({ version: '9.0.5', builds: [h], retryCount: 0, hangupOnly: true }).retry, true);
-    assert.strictEqual(R.decide({ version: '9.0.5', builds: [h], retryCount: 1, hangupOnly: true }).retry, false);
+    assert.strictEqual(R.decide({ version: '9.0.5', builds: [h], retryCount: 1, hangupOnly: true }).retry, true);
+    assert.strictEqual(R.decide({ version: '9.0.5', builds: [h], retryCount: 2, hangupOnly: true }).retry, false);
   });
   it('P3036: same rule without the flag (stable/bastien): AggregateError never retried', () => {
     assert.strictEqual(R.decide({ version: '9.0.5', builds: [pf(5)], retryCount: 0, hangupOnly: false }).retry, false);
