@@ -15,6 +15,8 @@
 
 const fs = require('fs');
 const path = require('path');
+// P3293: orphan waiting_for_files (CLI "Submitting... Timeout", files never sent) is never ready.
+const ORPHAN = require('./athom-orphan-build');
 
 const ROOT = path.join(__dirname, '..', '..');
 const APP = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
@@ -216,6 +218,20 @@ function decideFinalDraftOutcome({
   };
 }
 
+/** P3293: the expected version's build that is an orphan waiting_for_files, or null. */
+function findOrphan(classified, { waitedMs = 0, confirmed = false, nowMs = Date.now() } = {}) {
+  if (classified.ready.length || classified.processing.length || classified.failed.length) return null;
+  return classified.mine.find((b) => ORPHAN.isOrphanWaitingForFiles(b, { waitedMs, confirmed, nowMs })) || null;
+}
+
+function reportOrphan(expected, b, waitedMs) {
+  console.log(`wait-draft: P3293 v${expected} #${b.id} is an orphan waiting_for_files (no files after ${Math.round(waitedMs / 1000)}s of waiting) — NOT ready, transient`);
+  if (process.env.GITHUB_OUTPUT) {
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `orphan_waiting_for_files=true\norphan_build_id=${b.id}\ndraft_state=waiting_for_files\n`, 'utf8');
+  }
+  process.exitCode = 3;
+}
+
 async function main() {
   const expected = versionOf();
   if (!process.env.HOMEY_PAT) {
@@ -329,6 +345,9 @@ async function main() {
       return;
     }
 
+    const orphan = findOrphan(classified, { waitedMs: elapsed });
+    if (orphan) { reportOrphan(expected, orphan, elapsed); return; }
+
     const latest = classified.latestMine || builds[0];
     const failedNote = classified.failed[0]
       ? `; saw ${classified.failed[0].state} #${classified.failed[0].id}${classified.failed[0].stateMeta ? ` (${classified.failed[0].stateMeta})` : ''} — keep polling`
@@ -374,6 +393,9 @@ async function main() {
     console.error(decision.message);
     process.exit(1);
   }
+  // P3293: a full window spent on a build that never got its files: orphan, whatever its timestamp says.
+  const orphan = findOrphan(classified, { waitedMs: Date.now() - started, confirmed: true });
+  if (orphan) { reportOrphan(expected, orphan, Date.now() - started); return; }
   console.log(`wait-draft: timed out after ${MAX_MS}ms — continue to promote/verify`);
 }
 
@@ -386,6 +408,7 @@ module.exports = {
   isFailed,
   isTransientAthomFailure,
   isTokenInvalidError,
+  findOrphan,
   parseSemver,
   patchDistance,
   healthyTestFallback,
