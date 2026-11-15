@@ -3,10 +3,10 @@
     "athom:manifest-size-limit": {
       "fix": "shrink manifest (parasites/continuations) before releasing held drivers",
       "successes": 0,
-      "failures": 4,
+      "failures": 5,
       "auto": false,
-      "last": 1794123081491,
-      "lastFailure": 1794123081491
+      "last": 1794737832696,
+      "lastFailure": 1794737832696
     },
     "athom:hold-release": {
       "fix": "release held group",
@@ -18,16 +18,6 @@
   },
   "events": [
     {
-      "t": 1794096495351,
-      "sig": "athom:manifest-size-limit",
-      "ok": false
-    },
-    {
-      "t": 1794123081491,
-      "sig": "athom:manifest-size-limit",
-      "ok": false
-    },
-    {
       "t": 1794614743506,
       "sig": "athom:hold-release",
       "ok": true
@@ -36,6 +26,11 @@
       "t": 1794679683571,
       "sig": "athom:hold-release",
       "ok": true
+    },
+    {
+      "t": 1794737832696,
+      "sig": "athom:manifest-size-limit",
+      "ok": false
     }
   ]
 }
