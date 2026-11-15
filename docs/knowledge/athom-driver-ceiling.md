@@ -97,3 +97,42 @@ curtain_motor_2, contact_sensor_2) already ship inside their roots (P3229).
 - Re-home the 7bztmfm1 / PIRIV01 couples on their dedicated-profile classes through a sourced couple move.
 - Earlier proposal on branch `arch/fit-347` (P3264, 03/11, not merged): host held profiles in dormant
   published ids. Needs the user's decision because it reuses published ids.
+
+## Why "345" is the same limit as 347 shipped (16/11/2026)
+
+The owner asked to fix "apps above 345" and to fit everything in 345. Measured on the master payload
+(`prepare-publish` on 15f8ae52fe) and on Athom's public API (`apps-api.athom.com/api/v1/app/<id>`, no auth):
+
+| | shipped drivers | visible on the API | flow cards (T/C/A) | app.json |
+|---|---|---|---|---|
+| Test #3705 v9.0.1624 (accepted) | 347 | 345 | 2790 / 555 / 1254 | 3.36 MB |
+| master payload now | 347 | (same set) | 2790 / 555 / 1254 | 3.34 MB |
+
+- The 2 drivers the API does not list are `air_purifier_siren` and `sensor_lcdtemphumidsensor_temphumidsensor`
+  (`deprecated: true`, so Athom hides them). "345" is therefore the visible count of the 347 shipped drivers.
+- Every one of the 347 payload ids is in accepted Test #3705 (346 are also in the 9.0.1574 fixture;
+  `sauna_thermostat_ae5503` graduated later). Shipping 345 would mean dropping 2 published ids. Homey binds a
+  paired device to its driver id, so a dropped id leaves those devices without a driver; no thin alias exists.
+  The ceiling therefore stays at 347 and is NOT lowered: a 345 ceiling would block every master upload.
+- App.json dedup: locale copies identical to English are already stripped (3 left in 16045 strings). The 28 flow
+  cards whose bodies repeat another card have their own ids, which saved user flows reference, so removing them
+  is not behaviour-preserving. No safe dedup is left inside app.json; reducing size means removing content.
+
+### Held drivers vs the payload (exact caseless mfr x pid against the 347 payload)
+
+Hosting (P3264, `origin/arch/fit-347`) keeps the count at 347 and does not remove ids. Couples free on the payload:
+
+- Free, could be hosted (no couple already shipped elsewhere): heiman_siren, presence_radar_aoyan_ay204t,
+  water_leak_blitzwolf_bw_is9, water_leak_aoyan_ay222z, siren_moes_mg_bjq002, switch_wall_6gang_metering,
+  valve_novato_zpv01, switch_2gang_ts0002, energy_meter_3ch_bidirectional, gpo_double_light_mg_au03,
+  gpo_double_mg_gpo02z, keypad_alarm_wke502z, thermostat_vrf_bvrf_l001, ufh_controller_ch8z,
+  ufh_controller_pro_line_x10, curtain_sonoff_mini_zbrbs, air_conditioner_aetz01, smoke_sensor_ts0601_dp (3 of 8 makers).
+- Already shipped on another driver (one couple, one driver; moving needs removal evidence and a user decision):
+  heiman_keyfob (button_emergency_sos), wall_switch_rf_ews1154z (folded, P3330), co_sensor_dcr_co
+  (smart_air_detection_box, device_air_purifier_plug), fan_light_tuya_5_levels (humidifier),
+  motion_sensor_excellux_zg104plv and vibration_sensor_excellux_zg103v (motion_sensor_switch).
+- Continuations climate_sensor_2, curtain_motor_2, contact_sensor_2 are already folded at publish (P3229).
+
+P3264 limits that block "behaviour preserved": a hosted device pairs under the host's name and class
+(`device_generic_tuya` is class `other`), and flow cards only the held driver has are not shipped. Hosting is a
+user decision, and it does not change the count, so it does not answer a 347 refusal either.
