@@ -296,7 +296,7 @@ jobs:
     needs: [pre-validation, soak, p3036-gate]
     if: needs.soak.outputs.skip != 'true' && needs.p3036-gate.outputs.go == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 80  # + idle wait (≤25), like master 516c83444c; P3293 +15 for the single orphan re-upload
+    timeout-minutes: 100  # + idle wait (≤25), like master 516c83444c; P3293 +15 for the single orphan re-upload; P3311 +20 for the 2nd transport retry (15 min backoff)
     # WHY(P2355): Homey build may bump patch in-job; promote must wait that version.
     outputs:
       # reupload may have bumped to a fresh version (processing_failed retry) — promote/gate that one.
