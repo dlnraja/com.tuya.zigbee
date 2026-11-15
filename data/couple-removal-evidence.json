@@ -570,6 +570,42 @@
         "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
         "sibling_pids": "_TZE204_zxkwaztm|TS0601"
       }
+    },
+    {
+      "couple": "_TZE204_ltwbm23f|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3283 (#632)",
+      "verdict": "TRV602Z radiator valve (issue #632): moved with every case form to device_radiator_valve, still matched there; not a loss",
+      "sources": {
+        "z2m": "z2m:TRV602Z; zhc:TRV602Z",
+        "zha": "zha:zhaquirks/tuya/tuya_trv.py",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "b1eeea0715 fix(ci): satisfy case, lint, and syntax gates for TRV602Z | c2accabc81 fix(trv): pair TRV602Z _TZE204_ltwbm23f as a radiator valve | 3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
+        "sibling_pids": "_TZE204_ltwbm23f|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_ltwbm23f|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3283 (#632)",
+      "verdict": "TRV602Z radiator valve (issue #632): moved with every case form to device_radiator_valve, still matched there; not a loss",
+      "sources": {
+        "z2m": "z2m:TRV602Z; zhc:TRV602Z",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "b1eeea0715 fix(ci): satisfy case, lint, and syntax gates for TRV602Z | c2accabc81 fix(trv): pair TRV602Z _TZE204_ltwbm23f as a radiator valve | 3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
+        "sibling_pids": "_TZE284_ltwbm23f|TS0601"
+      }
     }
   ]
 }
