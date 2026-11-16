@@ -9,9 +9,11 @@ Core rules (summary in our words):
 - No --no-verify, no force-push, no history rewrite. Every fix ships with unit tests.
 
 Full texts (SSOT):
+- [App diagnostic routing (7 Nov 2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/APP_DIAGNOSTIC_ROUTING.md)
 - [Automation first (P3097, 2026-10-31)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/AUTOMATION_FIRST.md)
 - [Autonomy safety (P3097, t644u)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/AUTONOMY_SAFETY.md)
 - [Bastien House App — private Zigbee track (P2606)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/BASTIEN_HOUSE_APP.md)
+- [Bastien 1.0.229 — JSON OOM not identified, sleepy TX narrowed (2026-11-07)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/BASTIEN_OOM_SLEEPY_BUTTON_2026-11-07.md)
 - [🧬 BYPASS ELITE LAYERS & NATIVE SDK3 MIGRATION ARCHITECTURE](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/BYPASS_ELITE_LAYERS.md)
 - [Complementary variant enrich — ALWAYS (P2520)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/COMPLEMENTARY_VARIANT_ENRICH.md)
 - [Couple removal evidence (P3134, mandatory)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/COUPLE_REMOVAL_EVIDENCE.md)
@@ -36,6 +38,7 @@ Full texts (SSOT):
 - [Grok-off readiness (P3111, 01/11/2026 Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/GROK_OFF_READINESS.md)
 - [_TZE284_hodyryli: one couple, one driver (P3070)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/HODYRYLI_ZT08_ONE_DRIVER.md)
 - [Tile state, HomeKit and capability coverage rules (t699u, t719u-t722u)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/HOMEKIT_CAPABILITY_RULES.md)
+- [Held drivers hosted in dormant published drivers (P3331)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/HOSTED_HELD_DRIVERS.md)
 - [Ambiguous IAS identities: one mfr/model, several physical products (JohanBendz #1113 deep read)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/JOHAN_1113_AMBIGUOUS_IAS_IDENTITY.md)
 - [Contact + illuminance door sensors (JohanBendz #1298 deep read)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/JOHAN_1298_CONTACT_LUX.md)
 - [Standard-ZCL temperature/RH sensors — own rules from the JohanBendz #797 family (spec 009 deep read)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/JOHAN_797_STANDARD_ZCL_TEMP_RH.md)
@@ -52,7 +55,7 @@ Full texts (SSOT):
 - [R22 architecture sources (spec 010 / T0)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/R22_ARCHITECTURE_SOURCES.md)
 - [🔐 Security Rules v8.5.0](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SECURITY_RULES.md)
 - [Session Stability & Heuristic Rules Specification](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SESSION_STABILITY_SUMMARY.md)
-- [Shipped JavaScript Latin-1 and package images (P3320)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SHIPPED_JS_LATIN1.md)
+- [Shipped JavaScript Latin-1 and package images (P3320, 2026-11-15)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SHIPPED_JS_LATIN1.md)
 - [The "56 Years Ago" Bug and Tuya Sleepy Devices](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SLEEPY_TUYA_56_YEARS_BUG.md)
 - [Source digest rule (P3138 — t734u / t735u / t736u)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SOURCE_DIGEST.md)
 - [SSOT couple-sources ledger (P3136, t731u)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SSOT_COUPLE_SOURCES.md)
