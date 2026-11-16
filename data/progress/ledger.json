@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-16T14:28:36.093Z",
+ "updated": "2026-11-16T16:19:28.706Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -138,8 +138,8 @@
   },
   "autopilot-issue:559": {
    "status": "deferred",
-   "date": "2026-11-01",
-   "hash": "d268c7ec8adea2c2",
+   "date": "2026-11-16",
+   "hash": "1a59d3e86ac5a154",
    "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
    "by": "repo-autopilot",
    "kind": "already-supported",
@@ -157,7 +157,7 @@
    "counts": {
     "dps": 0,
     "diag": 2,
-    "fixCommits": 2
+    "fixCommits": 3
    }
   },
   "autopilot-issue:560": {
@@ -47048,19 +47048,19 @@
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
-   "date": "2026-11-14",
-   "hash": "c441f24913b7573f",
+   "date": "2026-11-16",
+   "hash": "5b1ebfa3f745cb05",
    "note": "run summary: 6 counter(s)",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
     "merged": 0,
-    "branchesDeleted": 0,
+    "branchesDeleted": 1,
     "issues": 6,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "43601237982"
+   "lastChangeRun": "43905773150"
   }
  }
 }
