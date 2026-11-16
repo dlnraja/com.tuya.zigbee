@@ -577,6 +577,7 @@ try {
       const maxDriver = (topupOn && Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_DRIVER)) || Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || 2000;
       const r = sp.sourcedPassFile(p3201Source, destAppJson, { repoRoot: path.join(__dirname, '..'), maxTotal, maxDriver, branch: process.env.P3201_BRANCH || process.env.GITHUB_REF_NAME });
       p3201Source = null;
+      if (r.sacredDeferred && r.sacredDeferred.length) { console.log(`[P3351] ${r.sacredDeferred.length} sacred pin(s) on held driver(s) deferred until release: ${r.sacredDeferred.slice(0, 5).join(', ')}`); }
       console.log(`[P3201] sourced pass: ${r.before} -> ${r.after} / ${maxTotal}; ${r.deduped} duplicate-form combos freed, ${r.restored} source-backed couples restored, strong sourced in payload ${r.strongIn}/${r.strongInSource}`);
       if (r.after > maxTotal || r.driversAfter !== r.driversBefore || r.sacredMissing.length || r.snapshotMissing.length) {
         console.error('FATAL(P3201): sourced pass broke an invariant (ceiling, driver set, sacred pin or snapshot ratchet).');

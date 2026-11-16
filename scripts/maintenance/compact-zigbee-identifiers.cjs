@@ -1038,7 +1038,14 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
 
   // Final exact-case sacred audit (pass1 sacredMissing can be stale after pass2)
   sacredMissing.length = 0;
-  for (const miss of assertSacredCouplesPresent(manifest, sacredAll)) {
+  // P3351: a pin on a HELD driver absent from this manifest (e.g. a held continuation that
+  // prepare-publish folded into its root, P3229) cannot ship by definition: defer it (logged)
+  // instead of failing prepare-publish with "driver missing in publish". Released or plain
+  // drivers are still audited strictly.
+  const presentIds = new Set((manifest.drivers || []).map((d) => d && d.id));
+  const sacredDeferred = sacredAll.filter((c) => !presentIds.has(c.driverId) && heldIds.has(c.driverId));
+  if (sacredDeferred.length) { logLines.push(`[compact-zigbee] P3351: ${sacredDeferred.length} sacred pin(s) on held driver(s) deferred until release: ${sacredDeferred.slice(0, 5).map((c) => `${c.mfr}+${c.pid}@${c.driverId}`).join(', ')}`); }
+  for (const miss of assertSacredCouplesPresent(manifest, sacredAll.filter((c) => !sacredDeferred.includes(c)))) {
     sacredMissing.push(miss);
   }
   afterTotal = rawTotal();
