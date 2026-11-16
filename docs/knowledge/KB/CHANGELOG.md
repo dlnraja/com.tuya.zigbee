@@ -19,3 +19,4 @@
 - 2026-11-02 kb-daily: matrix refreshed (master absent 528→521, complete 680), 10 couples lost to publish compaction parked in data/leads/kb-compaction-losses-2026-11-02.json, zigbee-clusters lessons (#258/#259/#262/#263), see UPSTREAM_DAILY_2026-11-02.md
 - 2026-11-02 content bd1568e79792: 84 files updated, 93 total
 - 2026-11-03 kb-daily: matrix refreshed (master absent 521→516, complete 680→954), P3252 moved 3 wrong-class couples (ojzhk75b, wzk0x7fq, qoi1aqxg) with pins, 10 compaction losses and 3 wrong-class leads parked, see UPSTREAM_DAILY_2026-11-03.md
+- 2026-11-16 kb-daily (P3343): 5 exact couples placed on master and pinned (3 new `_TZE28C1000000_` couples from zhc 26.132.0 + wowrpxxu, azjhlyvy from 2026-11-15), see UPSTREAM_DAILY_2026-11-16.md
