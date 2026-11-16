@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T06:53:21.761Z",
+  "updated": "2026-11-16T08:37:25.732Z",
   "threads": {
     "21313": {
       "lastPost": 2823,
@@ -25557,10 +25557,13 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-16",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/BASIC-ZB1GSP.html",
+          "https://www.zigbee2mqtt.io/devices/MINI-ZB1GSP.html"
+        ],
         "sources": 31
       }
     },
@@ -25695,10 +25698,13 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-16",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/BASIC-ZB1GSP.html",
+          "https://www.zigbee2mqtt.io/devices/MINI-ZB1GSP.html"
+        ],
         "sources": 32
       }
     },
@@ -58192,10 +58198,13 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-16",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/BASIC-ZB1GSP.html",
+          "https://www.zigbee2mqtt.io/devices/MINI-ZB1GSP.html"
+        ],
         "sources": 31
       }
     },
@@ -58280,10 +58289,13 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-16",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/BASIC-ZB1GSP.html",
+          "https://www.zigbee2mqtt.io/devices/MINI-ZB1GSP.html"
+        ],
         "sources": 32
       }
     },
@@ -60479,10 +60491,13 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-16",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/BASIC-ZB1GSP.html",
+          "https://www.zigbee2mqtt.io/devices/MINI-ZB1GSP.html"
+        ],
         "sources": 31
       }
     },
@@ -60567,10 +60582,13 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-16",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://www.zigbee2mqtt.io/devices/BASIC-ZB1GSP.html",
+          "https://www.zigbee2mqtt.io/devices/MINI-ZB1GSP.html"
+        ],
         "sources": 32
       }
     },
