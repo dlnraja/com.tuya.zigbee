@@ -6323,3 +6323,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _TZ3000_kfu8zapd + TS0505 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
 | _TZ3000_kfu8zapd + sq510a | JohanBendz/com.tuya.zigbee#PR1470 | pr |
 | _TZ3210_eejm8dcr + TS0203 | JohanBendz/com.tuya.zigbee#PR1470 | pr |
+
+
+## Auto-discovered from GitHub (2026-11-16)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE204_ltwbm23f + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ltwbm23f + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ltwbm23f + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ltwbm23f + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ltwbm23f + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ltwbm23f + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ltwbm23f + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ltwbm23f + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ltwbm23f + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ltwbm23f + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ltwbm23f + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ltwbm23f + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ltwbm23f + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ltwbm23f + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ltwbm23f + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_qyr2m29i + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_qyr2m29i + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_qyr2m29i + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_qyr2m29i + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_qyr2m29i + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE200_ + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE204_ + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _TZE284_ + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
+| blitzwolf + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| blitzwolf + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| blitzwolf + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| blitzwolf + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| blitzwolf + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
+| zigbee2mqtt + TS0601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| zigbee2mqtt + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| zigbee2mqtt + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| zigbee2mqtt + ts0601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| zigbee2mqtt + Ts0601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _tze204_ltwbm23f + TRV601 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _tze204_ltwbm23f + TRV602 | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _tze204_ltwbm23f + SENSOR | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _tze204_ltwbm23f + LIGHT | dlnraja/com.tuya.zigbee#PR634 | pr |
+| _tze204_ltwbm23f + TEST | dlnraja/com.tuya.zigbee#PR634 | pr |
