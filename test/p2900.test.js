@@ -11,7 +11,7 @@ const pol = require('../.github/scripts/athom-retry-policy');
 describe('P2900 GHA hardening', () => {
   it('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
     const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, '.github/scripts/athom-retry-policy.js'))).digest('hex');
-    assert.strictEqual(h, '1f344042d0e3671cb3bb82387d2396f26b73b3a2a6946ce6bedd3dc0da7bc237', 'edit athom-retry-policy.js on all three branches together and update this hash');
+    assert.strictEqual(h, '8a483ce55425fc1f9fdb1ad968da7c75e6c315af68a2a2a01475c6da4682f256', 'edit athom-retry-policy.js on all three branches together and update this hash');
   });
   it('backoff is progressive 5/15/30 min and jittered (P3311, was a flat 300 s)', () => {
     assert.strictEqual(pol.backoffSeconds(1, () => 0), 300);
