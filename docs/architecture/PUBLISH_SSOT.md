@@ -68,6 +68,7 @@ Implementation: `scripts/lib/soft-expect-decision.js` · Gate: `npm run check:p2
 | `dashboard-monitor` `Timeout after 10000ms` | Use `HOMEY_API_TIMEOUT_MS=120000` + soft-alert |
 | Verify expected version still `draft`/`processing_failed` but older Test healthy | `verify-test-version.js` soft-continues (P2325) |
 | Human one-shot retry | `workflow_dispatch` + `force_publish` → `direct-api-publish --force` (P2384) |
+| Bare `AggregateError` (stateMeta exactly that, P3341) | ONE identical bumped retry after the P3311 backoff, only if Athom holds a final failed build for that version; second failure → breaker + notice. With a message → no retry |
 
 Gate: `npm run check:p2325`
 

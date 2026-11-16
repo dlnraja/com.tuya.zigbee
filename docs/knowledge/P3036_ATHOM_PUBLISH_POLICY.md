@@ -37,7 +37,8 @@ This policy turns those findings into rules that every upload path follows.
 | Kind | Examples | Retry | Breaker | Diagnostic |
 |---|---|---|---|---|
 | transient | socket hang up, ECONNRESET, ETIMEDOUT, 5xx, timeouts, invalid_state | exactly 1, after >= 300 s + 0-60 s jitter, once the previous build is final | not tripped; the retry is exempt (fixes run 40194918949) | no |
-| real | AggregateError, processing_failed (without a transient cause), validation errors, unknown | none | tripped | yes |
+| bare AggregateError (P3341) | stateMeta exactly `AggregateError` (empty message) | exactly 1 identical retry, P3311 first backoff, only for an existing final failed build of that version | tripped for normal runs; only retry 1 of the chain is exempt; tripped for good after the retry fails | after the retry |
+| real | AggregateError with a message, processing_failed (without a transient cause), validation errors, unknown | none | tripped | yes |
 
 A bare `processing_failed` row with no reason at all keeps the P3025 rule in `athom-classify-failure.js`
 (wait log first, then empty error -> transient): Athom history shows those are mostly hang-ups.
@@ -90,3 +91,8 @@ build snapshot; unreadable = held), only `test/`, `.github/`, `tools/ci/`, `scri
 `*.md` and the `dataSafetyAllow` list are promoted. Drivers, sacred pins, `app.json` and other `lib/`
 files are restored (reason `publish_hold_active`) and stay on Bastien until the accept is recorded.
 Test: `test/critical/p3057-2-promote-hold-guard.test.js`.
+
+## P3341 (16/11/2026, owner go 03:03 Paris): one retry for a bare AggregateError
+
+A bare Athom AggregateError (stateMeta exactly "AggregateError", empty message: the Node net multi-address connect failure) gets exactly ONE identical retry: bumped version, P3311 first backoff (>= 300 s + jitter), only when Athom already holds a final processing_failed build for that version (no duplicate). It keeps class real: push runs stay blocked by the breaker, only retry 1 of the chain is exempt, and a second failure trips the breaker and notifies as before. AggregateError with a message and every other real error get no retry.
+Why: docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md (identical content flips Test <-> AggregateError; the bare text is Node's connect failure). Code: `athom-publish-policy.js` (`BARE_AGGREGATE_KIND`, `isBareAggregate`, `RETRY.maxBareAggregateRetries = 1`), `athom-retry-policy.js` (stable/bastien in-run loops), `transient-publish-retry.js` (master chain). Test: `test/critical/p3341-bare-aggregate-retry.test.js`.

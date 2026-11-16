@@ -339,5 +339,17 @@
     "allowlist": "tools/ci/p3320-latin1-allowlist.json",
     "humanDoc": "docs/rules/SHIPPED_JS_LATIN1.md",
     "publishSafetyNet": "scripts/maintenance/latin1-js.cjs (P3312, payload only)"
+  },
+  "bareAggregateRetry": {
+    "id": "P3341",
+    "updated": "2026-11-16",
+    "why": "Athom stateMeta 'AggregateError' with an empty message is Node's net multi-address connect failure; identical content flips Test <-> AggregateError (P3340).",
+    "rule": "A bare Athom AggregateError (stateMeta exactly \"AggregateError\", empty message: the Node net multi-address connect failure) gets exactly ONE identical retry: bumped version, P3311 first backoff (>= 300 s + jitter), only when Athom already holds a final processing_failed build for that version (no duplicate). It keeps class real: push runs stay blocked by the breaker, only retry 1 of the chain is exempt, and a second failure trips the breaker and notifies as before. AggregateError with a message and every other real error get no retry.",
+    "policy": ".github/scripts/athom-publish-policy.js (BARE_AGGREGATE_KIND, isBareAggregate, RETRY.maxBareAggregateRetries)",
+    "retryPolicy": ".github/scripts/athom-retry-policy.js",
+    "masterChain": ".github/scripts/transient-publish-retry.js",
+    "test": "test/critical/p3341-bare-aggregate-retry.test.js",
+    "humanDoc": "docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md",
+    "evidence": "docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md"
   }
 }

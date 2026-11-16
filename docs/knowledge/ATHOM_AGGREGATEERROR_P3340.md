@@ -59,9 +59,8 @@ icons, pair/repair views, device filters, custom capability types) plus `homey a
    Homey does not need for pairing out of the manifest), fewer flow cards (merge per-driver duplicates
    into app-level cards with device filters, without removing published ids), fewer payload files.
    Target: master app.json below stable's 2.85 MB, then add drivers back one by one.
-2. Treat a bare AggregateError as "transport-class until confirmed": one bounded identical retry
-   (same backoff as P3311), breaker only after the confirmation fails. This changes the P3036 policy, so
-   it needs the owner's go.
+2. Applied as P3341 (owner go 16/11/2026 03:03 Paris): a bare AggregateError gets one bounded identical retry
+   (P3311 first backoff), the breaker trips when the retry fails too. See P3036_ATHOM_PUBLISH_POLICY.md.
 3. Single diagnostic upload to confirm (one dispatch, Draft only): re-send the exact #3706 content
    (347, nothing released) with a new version. Test confirms the flake reading of #3706; a refusal on
    identical content with no change at all confirms that the refusals do not depend on content.

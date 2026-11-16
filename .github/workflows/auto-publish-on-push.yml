@@ -40,7 +40,7 @@ on:
         type: string
         default: ''
       transient_retry:
-        description: 'Internal: retries already done in this chain (true=1); P3036: transient max 1, AggregateError 0'
+        description: 'Internal: retries already done in this chain (true=1); P3036: transient max 1, AggregateError 0 (bare AggregateError 1, P3341)'
         type: string
         default: 'false'
       deferred_retry:
@@ -988,7 +988,8 @@ jobs:
           if [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && [ -z "${PUBLISH_DIAG_SWAP_OUT:-}" ]; then
             v=other
             if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then v=test
-            elif [ "$kind" = "AggregateError" ] && ! printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then v=AggregateError; fi
+            # P3341: a bare AggregateError reaches the bisect only after its single identical retry failed too.
+            else case "$kind" in AggregateError|AggregateError-bare) printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY' || v=AggregateError;; esac; fi
             mkdir -p p3095-outcome && printf '{"outcome":"%s","released":"%s","version":"%s","run":"%s"}\n' "$v" "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
           fi
           if printf '%s' "$out" | grep -q '^\[transient-retry\] BISECT'; then

@@ -33,7 +33,7 @@ test('P2830e retries hang even with healthy older Test, max 2 per chain (P3311: 
   assert.strictEqual(decide({ version: '9.0.1', builds, retryCount: 2, retryUsed: true }).retry, false);
 });
 test('P2830e AggregateError after the retry budget requests a bisect, never a retry', () => {
-  const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), retryCount: 2 });
+  const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError: x'), retryCount: 2 });
   assert.strictEqual(d.retry, false); assert.strictEqual(d.bisect, true);
   assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'socket hang up'), retryCount: 4 }).bisect || false, false);
 });
@@ -44,11 +44,17 @@ test('P3311 backoff is progressive 5 / 15 / 30 min with jitter', () => {
 });
 test('retries once on S3 key does not exist', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'The specified key does not exist.') }).retry, true));
 // P3036 (25/10/2026): AggregateError is a real failure (bisect P3034 cleared the content) -> never retried.
-test('never retries AggregateError (P3036, was 2 flake retries)', () => {
-  const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError') });
+// P3341 (16/11/2026): except the bare form (empty message), which gets exactly one retry (test p3341).
+test('never retries AggregateError with a message (P3036, was 2 flake retries)', () => {
+  const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError: x') });
   assert.strictEqual(d.retry, false); assert.strictEqual(d.tripBreaker, true); assert.strictEqual(d.bisect, true);
 });
 test('never retries AggregateError after two retries', () => assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), retryCount: 2 }).retry, false));
+test('P3341: bare AggregateError retried once, then bisect + breaker', () => {
+  assert.strictEqual(decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), retryCount: 0 }).retry, true);
+  const d = decide({ version: '9.0.1', builds: B('processing_failed', 'AggregateError'), retryCount: 1 });
+  assert.strictEqual(d.retry, false); assert.strictEqual(d.tripBreaker, true); assert.strictEqual(d.bisect, true);
+});
 test('retry count parsing (legacy true = 1)', () => {
   assert.strictEqual(parseRetryCount('true'), 1); assert.strictEqual(parseRetryCount('false'), 0);
   assert.strictEqual(parseRetryCount('2'), 2); assert.strictEqual(parseRetryCount(undefined), 0);

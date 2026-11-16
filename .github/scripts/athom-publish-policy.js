@@ -22,7 +22,8 @@
  *                     invalid_state) -> bumped retries (transport: 2 = 3 attempts, 5/15/30 min backoff;
  *                     invalid_state: 1), breaker untouched;
  *                     real (AggregateError, processing_failed, validation) -> no retry, breaker
- *                     trips, diagnostic.
+ *                     trips, diagnostic. P3341: a BARE AggregateError (stateMeta exactly
+ *                     "AggregateError", empty message) gets exactly ONE retry first.
  *   4. breaker      : the single automatic retry of a transient failure is never blocked.
  *
  * This file is byte-identical on master, stable-v5 and bastien-home (test p3036 checks the
@@ -62,9 +63,17 @@ const APPS = {
 // 5 / 15 / 30 min (+ jitter). invalid_state keeps ONE retry, real rejections (AggregateError, processing_failed
 // without a transient cause, validation) keep NONE. Every retry is a strictly higher version, uploads only after
 // the idle wait, and the same-version guard + orphan logic (P3293) stop any duplicate build.
-const RETRY = { maxRetries: 1, maxTransportRetries: 2, backoffMinS: 300, backoffScheduleS: [300, 900, 1800], jitterS: 60, hangupRetryMinGapMin: 5 };
+// P3341 (16/11/2026, owner go 03:03 Paris): a BARE AggregateError (Athom stateMeta exactly "AggregateError",
+// empty message = Node net multi-address connect failure, see docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md)
+// gets exactly ONE retry with the first P3311 backoff. It keeps cls 'real': the breaker blocks every normal run,
+// only retry 1 of the chain is exempt, and a second failure trips the breaker. With a message it gets none.
+const RETRY = { maxBareAggregateRetries: 1, maxRetries: 1, maxTransportRetries: 2, backoffMinS: 300, backoffScheduleS: [300, 900, 1800], jitterS: 60, hangupRetryMinGapMin: 5 };
 const TRANSPORT_KINDS = new Set(['socket hang up', 'transient']);
-function retryBudget(kind) { return TRANSPORT_KINDS.has(kind) ? RETRY.maxTransportRetries : RETRY.maxRetries; }
+const BARE_AGGREGATE_KIND = 'AggregateError-bare';
+function retryBudget(kind) {
+  if (kind === BARE_AGGREGATE_KIND) return RETRY.maxBareAggregateRetries;
+  return TRANSPORT_KINDS.has(kind) ? RETRY.maxTransportRetries : RETRY.maxRetries;
+}
 
 const TRANSIENT_RE = /socket hang up|ECONNRESET|ECONNABORTED|ETIMEDOUT|EPIPE|EAI_AGAIN|fetch failed|Timeout after \d+ms|timed? ?out|specified key|NoSuchKey|too many requests|\b429\b|\b5\d\d\b|Bad Gateway|Service Unavailable|Gateway Time-?out|Internal Server Error/i;
 const INVALID_STATE_RE = /invalid[_ ]state|another build .*processing|already (being )?processing/i;
@@ -103,6 +112,22 @@ function buildText(b) {
   return parts.join(' ');
 }
 
+// P3341: bare = no message at all. Build object: every non-empty error field is exactly "AggregateError".
+// Text (logs, status rows): a stateMeta-shaped bare token and no AggregateError carrying a message anywhere.
+const ERR_FIELD_KEY_RE = /err|reason|message|log|fail|meta|detail/i;
+const AGG_WITH_MSG_RE = /AggregateError\s*[:[]/i;
+const AGG_BARE_TOKEN_RE = /(?:stateMeta\s*[=:]\s*AggregateError(?=\s*(?:$|[|,;)\]}]))|"[a-zA-Z]*(?:err|reason|message|meta|detail)[a-zA-Z]*"\s*:\s*"\s*AggregateError\s*"|\(AggregateError\))/im;
+function isBareAggregate(input) {
+  if (input && typeof input === 'object') {
+    const vals = Object.entries(input).filter(([k, v]) => k !== 'state' && ERR_FIELD_KEY_RE.test(k) && v != null && String(typeof v === 'string' ? v : JSON.stringify(v)).trim())
+      .map(([, v]) => (typeof v === 'string' ? v : JSON.stringify(v)).trim());
+    return vals.length > 0 && vals.every((v) => v === 'AggregateError');
+  }
+  const t = String(input || '').trim();
+  if (t === 'AggregateError') return true;
+  return !AGG_WITH_MSG_RE.test(t) && AGG_BARE_TOKEN_RE.test(t);
+}
+
 /** classify(textOrBuild) -> { kind, cls: 'transient' | 'real' | 'none' } */
 function classify(input) {
   const text = typeof input === 'string' ? input : buildText(input);
@@ -110,7 +135,7 @@ function classify(input) {
   if (!text.trim()) return { kind: 'unknown', cls: 'real' };
   if (state && FINAL_RE.test(state) && !/processing_failed|failed|rejected|revoked/i.test(state)) return { kind: 'ok', cls: 'none' };
   // AggregateError wins even when the same output also mentions a hang-up (Athom-side packaging failure).
-  if (AGGREGATE_RE.test(text)) return { kind: 'AggregateError', cls: 'real' };
+  if (AGGREGATE_RE.test(text)) return { kind: isBareAggregate(input) ? BARE_AGGREGATE_KIND : 'AggregateError', cls: 'real' };
   if (VALIDATION_RE.test(text)) return { kind: 'validation', cls: 'real' };
   if (INVALID_STATE_RE.test(text)) return { kind: 'invalid_state', cls: 'transient' };
   if (/socket hang up/i.test(text)) return { kind: 'socket hang up', cls: 'transient' };
@@ -138,6 +163,14 @@ function retryDecision({ kind, cls, text, retriesDone = 0, idleWaited = true, rn
   const c = kind ? { kind, cls: cls || classify(kind).cls } : classify(text || '');
   const done = Number(retriesDone) || 0;
   if (c.cls === 'none') return { retry: false, ...c, backoffS: 0, tripBreaker: false, diagnose: false, reason: 'no failure' };
+  if (c.kind === BARE_AGGREGATE_KIND) {
+    if (done >= RETRY.maxBareAggregateRetries) {
+      return { retry: false, ...c, backoffS: 0, tripBreaker: true, diagnose: true,
+        reason: `${c.kind}: the single identical retry is already used (${done + 1} attempts): breaker trips, diagnostic needed` };
+    }
+    return { retry: true, ...c, backoffS: backoffSeconds(rnd, done), tripBreaker: false, diagnose: false,
+      reason: `${c.kind} (empty message, Node connect failure): single identical retry ${done + 1}/${RETRY.maxBareAggregateRetries} after >= ${RETRY.backoffScheduleS[0]}s (P3341)` };
+  }
   if (c.cls === 'real') {
     return { retry: false, ...c, backoffS: 0, tripBreaker: true, diagnose: true,
       reason: `${c.kind} is a real failure: no automatic retry, breaker trips, diagnostic needed` };
@@ -178,6 +211,10 @@ function singleRetryExempt({ builds, transientRetry } = {}) {
   if (n > RETRY.maxTransportRetries) return { exempt: false, reason: `retry ${n} exceeds the ${RETRY.maxTransportRetries} automatic retries` };
   if (!latest || !isFailed(latest)) return { exempt: false, reason: 'latest build is not a failure' };
   const c = classify(latest);
+  if (c.kind === BARE_AGGREGATE_KIND) {
+    if (n > RETRY.maxBareAggregateRetries) return { exempt: false, reason: `retry ${n} exceeds the single retry of ${c.kind}` };
+    return { exempt: true, reason: `single identical retry ${n}/${RETRY.maxBareAggregateRetries} after ${c.kind} on #${latest.id} (P3341)` };
+  }
   if (c.cls !== 'transient') return { exempt: false, reason: `latest failure is ${c.kind} (real)` };
   if (n > retryBudget(c.kind)) return { exempt: false, reason: `retry ${n} exceeds the ${retryBudget(c.kind)} retry budget of ${c.kind}` };
   return { exempt: true, reason: `automatic retry ${n}/${retryBudget(c.kind)} after ${c.kind} on #${latest.id}` };
@@ -379,6 +416,7 @@ function publishDisposition({ breakerSkip, gateGo, payloadChanged, athomFinal } 
 }
 
 module.exports = {
+  BARE_AGGREGATE_KIND, isBareAggregate,
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
   appPolicy, appIdForKey, classify, backoffSeconds, retryDecision, retryBudget, TRANSPORT_KINDS,
   singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,

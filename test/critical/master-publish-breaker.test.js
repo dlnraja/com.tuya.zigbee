@@ -4,7 +4,9 @@ const assert = require('assert'); const fs = require('fs'); const path = require
 const B = require('../../.github/scripts/master-publish-breaker');
 const R = require('../../.github/scripts/transient-publish-retry');
 const W = (f) => fs.readFileSync(path.join(__dirname, '../../.github/workflows', f), 'utf8');
-const pf = (id) => ({ id, version: `9.0.${id}`, state: 'processing_failed', stateMeta: 'AggregateError' });
+// P3341: real AggregateError = with a message; the bare form gets one retry (pfBare below, test p3341).
+const pf = (id) => ({ id, version: `9.0.${id}`, state: 'processing_failed', stateMeta: 'AggregateError: x' });
+const pfBare = (id) => ({ id, version: `9.0.${id}`, state: 'processing_failed', stateMeta: 'AggregateError' });
 describe('P-KB4 master Athom publish breaker', () => {
   it('opens after N processing_failed builds on push', () => {
     assert.strictEqual(B.decide({ builds: [pf(3), pf(2), pf(1)], event: 'push' }).skip, true);
@@ -25,6 +27,11 @@ describe('P-KB4 master Athom publish breaker', () => {
   it('manual dispatch may try once; automatic retry dispatch may not', () => {
     assert.strictEqual(B.decide({ builds: [pf(3), pf(2), pf(1)], event: 'workflow_dispatch', transientRetry: 'false' }).skip, false);
     assert.strictEqual(B.decide({ builds: [pf(3), pf(2), pf(1)], event: 'workflow_dispatch', transientRetry: '1' }).skip, true);
+  });
+  it('P3341: a bare AggregateError blocks push runs, lets only retry 1 of the chain through', () => {
+    assert.strictEqual(B.decide({ builds: [pfBare(3), { id: 2, state: 'test' }], event: 'push', snapshotOk: true }).skip, true);
+    assert.strictEqual(B.decide({ builds: [pfBare(3), { id: 2, state: 'test' }], event: 'workflow_dispatch', transientRetry: '1', snapshotOk: true }).skip, false);
+    assert.strictEqual(B.decide({ builds: [pfBare(4), pfBare(3), { id: 2, state: 'test' }], event: 'workflow_dispatch', transientRetry: '2', snapshotOk: true }).skip, true);
   });
   it('no snapshot -> closed (never blocks on missing data)', () => { assert.strictEqual(B.decide({ builds: [], event: 'push' }).skip, false); });
   it('P2966: unreadable Athom state -> fail-closed on push / auto retry, one manual try allowed', () => {

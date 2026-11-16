@@ -109,6 +109,10 @@ Use ASCII tags (`[OK]`, `[WARN]`, `[ERR]`, `->`, `-`) or `\uXXXX` escapes. Accen
 Do not ship unreferenced or heavy logos/images; keep Athom `small`/`large`/`xlarge`.
 Gate: `tools/ci/p3320-shipped-latin1-assets-gate.js` (rules-gates `p3320-latin1`). Docs: `docs/rules/SHIPPED_JS_LATIN1.md`.
 
+### R8b: Bare Athom AggregateError gets ONE identical retry (P3341)
+A bare Athom AggregateError (stateMeta exactly "AggregateError", empty message: the Node net multi-address connect failure) gets exactly ONE identical retry: bumped version, P3311 first backoff (>= 300 s + jitter), only when Athom already holds a final processing_failed build for that version (no duplicate). It keeps class real: push runs stay blocked by the breaker, only retry 1 of the chain is exempt, and a second failure trips the breaker and notifies as before. AggregateError with a message and every other real error get no retry.
+Code: `.github/scripts/athom-publish-policy.js`. SSOT: `config/architecture/publish-ssot.json` `bareAggregateRetry`.
+
 ## 🟠 HIGH PRIORITY RULES
 
 ### R9: Flow Cards in Driver.onInit()
