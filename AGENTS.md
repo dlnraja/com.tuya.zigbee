@@ -215,6 +215,7 @@ This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 ## Don't Do
 
 - Do not add emoji or any raw character above U+00FF to shipped JS, and do not pack unreferenced logos or images (P3320, `docs/rules/SHIPPED_JS_LATIN1.md`).
+- Do not retry an Athom AggregateError more than once, and only when it is bare (stateMeta exactly `AggregateError`); with a message it is never retried (P3341, `.agents/rules/athom-bare-aggregate-retry.md`).
 
 - **Don't** push to `stable-v5` directly. Wait for master to be verified.
 - **Don't** skip the pre-push gate. If `--no-verify` is needed, document why.

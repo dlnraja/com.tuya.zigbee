@@ -181,7 +181,8 @@ test('retry: transport failures get 2 retries (5 then 15 min), invalid_state 1, 
   assert.strictEqual(P.retryDecision({ text: 'invalid_state', idleWaited: false }).retry, false);
 });
 test('retry: real failure never retries, trips the breaker, asks for a diagnostic', () => {
-  for (const t of ['AggregateError', 'processing_failed', 'validation failed']) {
+  // P3341: a bare AggregateError gets one retry (test p3341); with a message it stays real.
+  for (const t of ['AggregateError: x', 'processing_failed', 'validation failed']) {
     const r = P.retryDecision({ text: t });
     assert.deepStrictEqual([r.retry, r.tripBreaker, r.diagnose], [false, true, true], t);
   }
@@ -194,7 +195,10 @@ test('breaker: the automatic retries (1 and 2) after a hang-up are exempt, a 3rd
   assert.strictEqual(P.singleRetryExempt({ builds, transientRetry: '2' }).exempt, true);
   assert.strictEqual(P.singleRetryExempt({ builds, transientRetry: '3' }).exempt, false);
   assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'invalid_state' })], transientRetry: '2' }).exempt, false);
-  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'AggregateError' })], transientRetry: '1' }).exempt, false);
+  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'AggregateError: x' })], transientRetry: '1' }).exempt, false);
+  // P3341: bare AggregateError -> only retry 1 is exempt.
+  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'AggregateError' })], transientRetry: '1' }).exempt, true);
+  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'AggregateError' })], transientRetry: '2' }).exempt, false);
   if (!fs.existsSync(path.join(ROOT, '.github/scripts/master-publish-breaker.js'))) return; // master only
   const brk = require(path.join(ROOT, '.github/scripts/master-publish-breaker.js'));
   assert.strictEqual(brk.decide({ builds, event: 'workflow_dispatch', transientRetry: '1', snapshotOk: true }).skip, false);
@@ -208,7 +212,10 @@ test('fallback CLI: in-run re-upload only for a transient failure, after >= 300 
   const run = (text, env = {}) => spawnSync(process.execPath, [path.join(ROOT, '.github/scripts/athom-publish-policy.js'), 'fallback'],
     { input: text, encoding: 'utf8', env: { ...process.env, ATHOM_RETRY_USED: '', ...env } }).stdout.trim();
   assert.match(run('Error: socket hang up'), /^RETRY (3\d\d)$/);
-  assert.match(run('AggregateError'), /^STOP AggregateError/);
+  assert.match(run('AggregateError: x'), /^STOP AggregateError/);
+  // P3341: bare AggregateError -> the single in-run re-upload, never a second one.
+  assert.match(run('AggregateError'), /^RETRY (3\d\d)$/);
+  assert.match(run('AggregateError', { ATHOM_RETRY_USED: '1' }), /^STOP AggregateError-bare/);
   assert.match(run('socket hang up', { ATHOM_RETRY_USED: '1' }), /^STOP/);
 });
 
@@ -237,7 +244,7 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
   const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, '.github/scripts/athom-publish-policy.js'))).digest('hex');
-  assert.strictEqual(h, '93bd0fa452f0e2236507fdbd188a00fa28638e1e6a9c4b57c014a72534ff2f41', 'edit athom-publish-policy.js on all three branches together and update this hash');
+  assert.strictEqual(h, '04d0c68608b3148ce3e04dded4d06fed8c529c10746d46d86080595bf2891f90', 'edit athom-publish-policy.js on all three branches together and update this hash');
 });
 test('ci gate: a version-only package.json bump is not a code change', () => {
   assert.strictEqual(P.versionOnlyDiff('--- a/package.json\n+++ b/package.json\n@@ -3 +3 @@\n-  "version": "9.0.1599",\n+  "version": "9.0.1600",'), true);
