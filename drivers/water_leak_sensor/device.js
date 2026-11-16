@@ -235,6 +235,18 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         104: { capability: null, internal: 'alarm_volume' },
       };
     }
+    // Weekly upstream 2026-11-16: Nous E13 / Sygonix W08-Z10T (Z2M nous.ts, _TZE284_pfbtmgo1 and _TZE284_1di7ujzp).
+    // DP1 water (1 = water present), DP4 battery, DP102 water_leak (1 = alarm condition met, buzzer on).
+    // DP101 (alarm mode enum 0 presence / 1 absence) and DP103 (ringtone) are left out on purpose: the default
+    // map reads DP101 as alarm_water, which would raise a false leak from a mode setting.
+    const e13Mfr = String(getManufacturer(this) || this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    if (e13Mfr === '_tze284_pfbtmgo1' || e13Mfr === '_tze284_1di7ujzp') {
+      return {
+        1: { capability: 'alarm_water', transform: transformAlarm },
+        4: { capability: 'measure_battery', divisor: 1 },
+        102: { capability: 'alarm_water', transform: boolean() },
+      };
+    }
     return {
       1: { capability: 'alarm_water', transform: transformAlarm },
       101: { capability: 'alarm_water', transform: boolean() },
