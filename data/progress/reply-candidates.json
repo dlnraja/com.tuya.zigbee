@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-15T12:41:54.969Z",
+  "generated": "2026-11-16T13:34:44.445Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,10 +26,49 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 2
+    "issues": 10
   },
   "candidates": [],
   "skipped": [
+    {
+      "issue": 3705,
+      "reason": "not found"
+    },
+    {
+      "issue": 3706,
+      "reason": "not found"
+    },
+    {
+      "issue": 3707,
+      "reason": "not found"
+    },
+    {
+      "issue": 3704,
+      "reason": "not found"
+    },
+    {
+      "issue": 2862,
+      "reason": "not found"
+    },
+    {
+      "issue": 559,
+      "about": "non classé",
+      "author": "Lalla80111",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
+      "commit": "55f934fbdf",
+      "commitAt": "2026-11-15T16:24:29Z",
+      "ci": "pending",
+      "lastAuthor": "Lalla80111",
+      "reason": "CI pending"
+    },
+    {
+      "issue": 425,
+      "reason": "pull request"
+    },
+    {
+      "issue": 404,
+      "reason": "closed"
+    },
     {
       "issue": 3698,
       "reason": "not found"

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-11-15T12:40:45.316Z",
+ "updatedAt": "2026-11-16T13:33:18.735Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -327,7 +327,25 @@
   "ci-fail:43617384492:1",
   "ci-fail:43617094564:1",
   "ci-fail:43617094631:1",
-  "ci-fail:43617094629:1"
+  "ci-fail:43617094629:1",
+  "ci-fail:43858375750:1",
+  "ci-fail:43788263918:1",
+  "ci-fail:43785849097:1",
+  "ci-fail:43765938048:1",
+  "ci-fail:43763043675:1",
+  "ci-fail:43762160761:1",
+  "ci-fail:43746875960:1",
+  "ci-fail:43745714649:1",
+  "ci-fail:43745661405:1",
+  "ci-fail:43739534751:1",
+  "ci-fail:43739477077:1",
+  "ci-fail:43737741686:1",
+  "ci-fail:43736549854:1",
+  "ci-fail:43736129968:1",
+  "ci-fail:43736130149:1",
+  "ci-fail:43735981586:1",
+  "ci-fail:43735939597:1",
+  "ci-fail:43722902897:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -1018,17 +1036,34 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-26T11:01:05.103Z",
-   "lastSeen": "2026-10-26T11:01:05.103Z",
-   "fails": 1,
-   "transient": 0,
+   "lastSeen": "2026-11-16T13:33:13.935Z",
+   "fails": 4,
+   "transient": 1,
    "recovered": 0,
    "branches": [
-    "stable-v5"
+    "stable-v5",
+    "bastien-home"
    ],
    "sample": "Process completed with exit code <n>.",
    "events": [
     [
      "2026-10-26T11:01:05.103Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:04.570Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:05.878Z",
+     "t"
+    ],
+    [
+     "2026-11-16T13:33:11.357Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:13.935Z",
      "f"
     ]
    ]
@@ -1138,8 +1173,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:16.422Z",
-   "lastSeen": "2026-11-08T11:52:57.210Z",
-   "fails": 10,
+   "lastSeen": "2026-11-16T13:33:12.750Z",
+   "fails": 15,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1185,6 +1220,26 @@
     ],
     [
      "2026-11-08T11:52:57.210Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:32:56.286Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:32:57.546Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:03.376Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:10.095Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:12.750Z",
      "f"
     ]
    ]
@@ -1470,8 +1525,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:39.571Z",
-   "lastSeen": "2026-11-15T12:40:43.010Z",
-   "fails": 16,
+   "lastSeen": "2026-11-16T13:33:18.682Z",
+   "fails": 17,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1542,6 +1597,10 @@
     ],
     [
      "2026-11-15T12:40:43.010Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:18.682Z",
      "f"
     ]
    ]
@@ -2596,8 +2655,8 @@
    "unit": "critical tests / Full critical suite",
    "test": "",
    "firstSeen": "2026-11-14T12:05:05.587Z",
-   "lastSeen": "2026-11-15T12:40:25.359Z",
-   "fails": 5,
+   "lastSeen": "2026-11-16T13:33:15.693Z",
+   "fails": 6,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -2625,6 +2684,10 @@
     [
      "2026-11-15T12:40:25.359Z",
      "f"
+    ],
+    [
+     "2026-11-16T13:33:15.693Z",
+     "f"
     ]
    ]
   },
@@ -2634,17 +2697,27 @@
    "unit": "semantic review / Exact couples, weakened tests, identity",
    "test": "",
    "firstSeen": "2026-11-14T12:05:20.451Z",
-   "lastSeen": "2026-11-14T12:05:20.451Z",
-   "fails": 1,
+   "lastSeen": "2026-11-16T13:33:02.075Z",
+   "fails": 3,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "master"
+    "master",
+    "stable-v5",
+    "bastien-home"
    ],
    "sample": "Process completed with exit code <n>.",
    "events": [
     [
      "2026-11-14T12:05:20.451Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:00.618Z",
+     "f"
+    ],
+    [
+     "2026-11-16T13:33:02.075Z",
      "f"
     ]
    ]
@@ -2956,6 +3029,111 @@
    "events": [
     [
      "2026-11-15T12:40:42.316Z",
+     "f"
+    ]
+   ]
+  },
+  "b31b11ffe1a5": {
+   "category": "other",
+   "workflow": "Platform Budget (P3026)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-16T13:32:55.003Z",
+   "lastSeen": "2026-11-16T13:32:55.003Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-16T13:32:55.003Z",
+     "f"
+    ]
+   ]
+  },
+  "4b5f7c90d7fe": {
+   "category": "test",
+   "workflow": "Auto-Publish on Push",
+   "unit": "Validate & Auto-Publish to Homey App Store / Record diagnostic draft",
+   "test": "",
+   "firstSeen": "2026-11-16T13:32:59.126Z",
+   "lastSeen": "2026-11-16T13:32:59.126Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "\u001b[<n>;<n>mnode .github<p> record \"$([ \"$final_rc\" -eq <n> ] && echo soft-expect || echo failed)\" \"$kind\"\u001b[<n>m",
+   "events": [
+    [
+     "2026-11-16T13:32:59.126Z",
+     "f"
+    ]
+   ]
+  },
+  "85fffcc7396e": {
+   "category": "other",
+   "workflow": "🚀 Publish Stable to Test",
+   "unit": "Publish to Draft / Publish to Draft",
+   "test": "",
+   "firstSeen": "2026-11-16T13:33:07.831Z",
+   "lastSeen": "2026-11-16T13:33:07.831Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-16T13:33:07.831Z",
+     "f"
+    ]
+   ]
+  },
+  "42a474ef1ece": {
+   "category": "other",
+   "workflow": "🚀 Publish Stable to Test",
+   "unit": "Publish to Draft / Publish to Draft",
+   "test": "",
+   "firstSeen": "2026-11-16T13:33:17.158Z",
+   "lastSeen": "2026-11-16T13:33:17.158Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "stable-v5"
+   ],
+   "sample": "Publish to Draft",
+   "events": [
+    [
+     "2026-11-16T13:33:17.158Z",
+     "f"
+    ]
+   ]
+  },
+  "69a84bccf25c": {
+   "category": "other",
+   "workflow": "Auto-Publish on Push",
+   "unit": "Validate & Auto-Publish to Homey App Store / Record diagnostic draft",
+   "test": "",
+   "firstSeen": "2026-11-16T13:33:17.964Z",
+   "lastSeen": "2026-11-16T13:33:17.964Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Record diagnostic draft",
+   "events": [
+    [
+     "2026-11-16T13:33:17.964Z",
      "f"
     ]
    ]

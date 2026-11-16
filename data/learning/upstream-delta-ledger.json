@@ -657,6 +657,86 @@
    "ref": "cb165e2963",
    "title": "deps(tinytuya): upgrade tinytuya to 1.21.1",
    "url": "https://github.com/make-all/tuya-local/commit/cb165e29635f87cd874e20cb30b19dac56a394cc"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "5ef4f9864a",
+   "title": "fix: Moes BHT-002: allow `min_temperature_limit` up to 10 °C https://github.com/Koenkk/zigbee2mqtt/i",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/5ef4f9864a9b4ef412dffa628a15411acac3c228"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9049f8f9ff",
+   "title": "fix: Tuya ME202WZ: allow liquid depth readings above the reported installation height (#13832)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9049f8f9ffc5bd9a3d333bbea93ae7437f0e7200"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "a8de0c9782",
+   "title": "fix: Legrand 067776A, 067776: skip tilt reporting when unsupported https://github.com/Koenkk/zigbee-",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/a8de0c9782ac86a3f1ab79a7a8f60c814dcd0ab8"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "4ef6642c91",
+   "title": "feat(add): TS0601_GIRIER (#13824)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/4ef6642c9167edd3ff32075fab78a6988b173c0e"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "8984240686",
+   "title": "fix: Nobø SWT-IZ and SPC-IZ: fix stale thermostat state after restart (#13807)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/8984240686ac715313cd83fcf215e0cb99dbda8c"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "f39ccaae76",
+   "title": "chore: update vesternet owner https://github.com/Koenkk/zigbee-herdsman-converters/pull/13818",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/f39ccaae76f80aedf5f9165b52dae38d6f94c5f6"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.132.0",
+   "title": "v26.132.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.132.0"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "jbothe/com.tuya.zigbee",
+   "title": "jbothe/com.tuya.zigbee",
+   "url": "https://github.com/jbothe/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "PRo25/com.tuya.zigbee",
+   "title": "To add support to additional device manufacturers of switch modules and presence sensors",
+   "url": "https://github.com/PRo25/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "hubitat-kkossev",
+   "kind": "commit",
+   "ref": "44edbe560d",
+   "title": "Tuya Zigbee Valve 1.8.2: fix SWV-ZFU reporting",
+   "url": "https://github.com/kkossev/Hubitat/commit/44edbe560d1e40a9a25889edbffe0c66e3bf03ef"
   }
  ]
 }
