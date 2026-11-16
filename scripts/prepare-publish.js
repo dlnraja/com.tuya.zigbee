@@ -389,6 +389,7 @@ try {
   // Empty or create destination directory
   fs.rmSync(destDir, { recursive: true, force: true });
   fs.mkdirSync(destDir, { recursive: true });
+  require('./ci/upload-manifest-ceiling.cjs').clearReadyMarker(destDir);
   console.log(`Cleared destination directory: ${destDir}`);
 
   // Copy everything except reserved-name entries
@@ -1058,6 +1059,7 @@ try {
     }
     console.log(`[diagnostic-catalogue] ${driverCount} real drivers in ${destDir} (floor ${floor}). Provenance ${destDir}.provenance.json. Draft only; Test and Live are not promoted.`);
   }
+  require('./ci/upload-manifest-ceiling.cjs').writeReadyMarker(destAppJson);
   console.log(`Publish directory ready: ${destDir}`);
 
 } catch (err) {
