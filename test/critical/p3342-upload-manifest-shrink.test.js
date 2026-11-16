@@ -108,9 +108,9 @@ test('pipeline wiring: prepare-publish, size-gate and p2842 projections strip; c
   assert.ok(!/upload-manifest-ceiling[^\n]*\|\|/.test(wf), 'ceiling step must block');
 });
 
-test('ceiling policy: at most 3.3 MB, goal 2.85 MB; over the ceiling fails, under passes', () => {
+test('ceiling policy: at most 3.25 MB, goal 2.85 MB; over the ceiling fails, under passes', () => {
   const pol = ceiling.policy();
-  assert.ok(pol.ceilingBytes <= 3300000, `ceiling raised to ${pol.ceilingBytes}`);
+  assert.ok(pol.ceilingBytes <= 3250000, `ceiling raised to ${pol.ceilingBytes}`);
   assert.strictEqual(pol.goalBytes, 2850000);
   const tmp = path.join(os.tmpdir(), `p3342-${process.pid}.json`);
   try {
