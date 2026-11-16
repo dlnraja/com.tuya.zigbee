@@ -679,6 +679,13 @@ try {
     } catch (stErr) {
       console.warn('[P3068] shared-text compaction skipped:', stErr.message);
     }
+    // P3342: lossless: drop driver keys Homey ignores (maintenanceActions, capabilityOptions) + locales beyond en/fr/nl/de
+    try {
+      const si = require('./maintenance/strip-inert-manifest.cjs').stripFile(destAppJson);
+      console.log(`[P3342] inert-key/locale strip -${(si.bytes / 1024).toFixed(1)} KB (inert keys ${si.inertDropped}, locales ${si.localeDropped})`);
+    } catch (siErr) {
+      console.warn('[P3342] inert-key/locale strip skipped:', siErr.message);
+    }
     const sizeMB = fs.statSync(destAppJson).size / (1024 * 1024);
     console.log(`Target app.json size (post Zigbee matrix compact): ${sizeMB.toFixed(2)} MB`);
     if (sizeMB > 4) {
@@ -975,6 +982,16 @@ try {
   } catch (asciiErr) {
     console.error('FATAL(P3047): ASCII JSON step failed:', asciiErr.message);
     process.exit(1);
+  }
+  // P3342: block growth of the upload manifest above config/upload-manifest-ceiling.json (Athom work per build).
+  {
+    const uc = require('./ci/upload-manifest-ceiling.cjs');
+    const r = uc.checkUploadManifest(destAppJson);
+    if (!r.ok) {
+      console.error(`FATAL(P3342): ${uc.describe(r)}. Shrink the manifest before adding (docs/knowledge/athom-driver-ceiling.md).`);
+      process.exit(1);
+    }
+    console.log(`[P3342] ${uc.describe(r)}`);
   }
 
   // 5e) P3312: payload JavaScript written with every char above U+00FF as \uXXXX. V8 keeps the

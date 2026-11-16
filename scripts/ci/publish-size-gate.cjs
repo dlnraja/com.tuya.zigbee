@@ -213,6 +213,7 @@ function projectUploadManifestBytes(file) {
       }
       require('../maintenance/strip-redundant-title-formatted.cjs').stripFile(tmp);
       require('../maintenance/compact-shared-text.cjs').compactFile(tmp); // P3068: as prepare-publish
+      require('../maintenance/strip-inert-manifest.cjs').stripFile(tmp); // P3342: as prepare-publish
     } finally {
       console.log = quiet;
     }
