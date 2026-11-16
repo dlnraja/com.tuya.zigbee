@@ -1,0 +1,5 @@
+{
+  "_why": "P3342 (16/11/2026 Paris): hard ceiling for the UPLOAD app.json bytes (the file prepare-publish writes, after the P3047 ASCII pass). P3340 ties Athom's processing failures (bare AggregateError) to the work per build, which grows with the manifest: stable at 2.85 MB has never been refused, master 3.39 MB was. P3342 brought master to ~3.21 MB losslessly. Growth above this ceiling blocks prepare-publish and the Platform Budget check. Lower it as the manifest shrinks; raising it needs the owner's go and a new Athom data point (docs/knowledge/athom-driver-ceiling.md).",
+  "ceilingBytes": 3300000,
+  "goalBytes": 2850000
+}
