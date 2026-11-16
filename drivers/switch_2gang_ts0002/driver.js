@@ -18,9 +18,9 @@ class Switch2GangTs0002Driver extends BaseZigBeeDriver {
     this._registerFlowCards();
   }
 
-  _action(id, run) {
+  static _action(driver, id, run) {
     try {
-      const card = this.homey.flow.getActionCard(id);
+      const card = driver.homey.flow.getActionCard(id);
       if (!card) { return; }
       card.registerRunListener(async (args) => {
         if (!args || !args.device) { return false; }
@@ -28,24 +28,28 @@ class Switch2GangTs0002Driver extends BaseZigBeeDriver {
         return true;
       });
     } catch (err) {
-      this.error(`[${P}] action ${id}: ${err.message}`);
+      driver.error(`[${P}] action ${id}: ${err.message}`);
     }
   }
 
-  _registerFlowCards() {
+  /** P3331: also run by the dormant host (switch_plug_1) while this driver is held out of the payload. */
+  static registerFlowCards(driver) {
     // is_on / turn_on / turn_off / toggle on gang 1
-    registerOnoffFlowCards(this, P, { gang: 1, capability: 'onoff' });
+    registerOnoffFlowCards(driver, P, { gang: 1, capability: 'onoff' });
+    const action = (id, run) => Switch2GangTs0002Driver._action(driver, id, run);
     for (const gang of [1, 2]) {
-      this._action(`${P}_turn_on_gang${gang}`, (d) => setGangOnOff(d, gang, true));
-      this._action(`${P}_turn_off_gang${gang}`, (d) => setGangOnOff(d, gang, false));
-      this._action(`${P}_toggle_gang${gang}`, (d) => setGangOnOff(d, gang, 'toggle'));
+      action(`${P}_turn_on_gang${gang}`, (d) => setGangOnOff(d, gang, true));
+      action(`${P}_turn_off_gang${gang}`, (d) => setGangOnOff(d, gang, false));
+      action(`${P}_toggle_gang${gang}`, (d) => setGangOnOff(d, gang, 'toggle'));
     }
-    this._action(`${P}_turn_on_all`, (d) => setAllGangsOnOff(d, 2, true));
-    this._action(`${P}_turn_off_all`, (d) => setAllGangsOnOff(d, 2, false));
-    this._action(`${P}_set_power_on_behavior`, async (d, args) => {
+    action(`${P}_turn_on_all`, (d) => setAllGangsOnOff(d, 2, true));
+    action(`${P}_turn_off_all`, (d) => setAllGangsOnOff(d, 2, false));
+    action(`${P}_set_power_on_behavior`, async (d, args) => {
       await d.setSettings({ power_on_behavior: args.mode });
     });
   }
+
+  _registerFlowCards() { Switch2GangTs0002Driver.registerFlowCards(this); }
 }
 
 module.exports = Switch2GangTs0002Driver;

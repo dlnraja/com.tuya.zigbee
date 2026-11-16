@@ -3,6 +3,11 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SmartRcboDriver extends ZigBeeDriver {
+  // P3331: dormant host (lib/drivers/held-driver-folds.json): an exact hosted couple runs its held device class.
+  onMapDeviceClass(device) {
+    return require('../../lib/drivers/HeldDriverFolds').foldedDeviceClass('smart_rcbo', device) || require('./device');
+  }
+
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
@@ -20,6 +25,7 @@ async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
+    require('../../lib/drivers/HeldDriverFolds').registerHostedFlows(this, 'smart_rcbo'); // P3331
 
     this.log('SmartRcboDriver initialized');
     // v5.13.3: Register flow card action handlers

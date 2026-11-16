@@ -136,3 +136,30 @@ Hosting (P3264, `origin/arch/fit-347`) keeps the count at 347 and does not remov
 P3264 limits that block "behaviour preserved": a hosted device pairs under the host's name and class
 (`device_generic_tuya` is class `other`), and flow cards only the held driver has are not shipped. Hosting is a
 user decision, and it does not change the count, so it does not answer a 347 refusal either.
+
+## Held drivers hosted in dormant published drivers (P3331, 16/11/2026)
+
+Owner decision (00:47 Paris): host the 18 free held drivers inside published drivers that have no real device,
+staying at 347 uploaded drivers. Rule: docs/rules/HOSTED_HELD_DRIVERS.md. Measured on the prepared payload
+(`prepare-publish` on the P3331 commit vs the same base without it):
+
+| | drivers | app.json (file / compact) | flow cards T/C/A (total) |
+|---|---|---|---|
+| before | 347 | 3,344,191 B / 3,245,051 B | 2790 / 555 / 1254 (4599) |
+| after | 347 (same ids) | 3,386,503 B / 3,285,558 B (+41 KB) | 2814 / 557 / 1268 (4639, +40 held cards re-targeted) |
+
+| host (dormant) | hosted held drivers | exact couples |
+|---|---|---|
+| device_generic_tuya | siren_moes_mg_bjq002, switch_wall_6gang_metering, valve_novato_zpv01, energy_meter_3ch_bidirectional, gpo_double_light_mg_au03, gpo_double_mg_gpo02z, keypad_alarm_wke502z, thermostat_vrf_bvrf_l001, ufh_controller_ch8z, ufh_controller_pro_line_x10, air_conditioner_aetz01, smoke_sensor_ts0601_dp (3 free makers) | 59 (TS0601 only, 0 cartesian combos) |
+| sensor_contact_presence | presence_radar_aoyan_ay204t, water_leak_aoyan_ay222z, curtain_sonoff_mini_zbrbs | 4 |
+| smart_rcbo | heiman_siren | 6 |
+| switch_plug_1 | water_leak_blitzwolf_bw_is9, switch_2gang_ts0002 | 7 |
+
+- 76 exact couples, 32 cartesian combos owned by no driver (they keep the host class), 0 couples owned twice,
+  all 7028 couples of Test 9.0.1574 still present (P3024b), pre-upload guard and publish-dir guard green.
+- Loaded from the prepared payload with a Homey mock: every one of the 76 couples maps to its hosted class
+  (from `lib/hosted/<id>/`); heiman_siren (3 cards) and switch_2gang_ts0002 (13 cards) listeners register on
+  their host.
+- Not hosted (their couple already ships on another driver): heiman_keyfob, co_sensor_dcr_co,
+  fan_light_tuya_5_levels, motion_sensor_excellux_zg104plv, vibration_sensor_excellux_zg103v;
+  wall_switch_rf_ews1154z stays folded (P3330). 5 makers of smoke_sensor_ts0601_dp stay on their current drivers.

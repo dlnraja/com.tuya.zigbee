@@ -13,6 +13,281 @@
       "productId": [
         "TS0601"
       ]
+    },
+    "heiman_siren": {
+      "kind": "host",
+      "into": "smart_rcbo",
+      "deviceClass": "drivers/heiman_siren/device.js",
+      "flowRegistrar": "drivers/heiman_siren/driver.js",
+      "manufacturerName": [
+        "HEIMAN",
+        "Heiman",
+        "heiman"
+      ],
+      "productId": [
+        "WarningDevice",
+        "WarningDevice-EF-3.0"
+      ]
+    },
+    "presence_radar_aoyan_ay204t": {
+      "kind": "host",
+      "into": "sensor_contact_presence",
+      "deviceClass": "drivers/presence_radar_aoyan_ay204t/device.js",
+      "manufacturerName": [
+        "AOYAN  "
+      ],
+      "productId": [
+        "AY204T"
+      ]
+    },
+    "water_leak_blitzwolf_bw_is9": {
+      "kind": "host",
+      "into": "switch_plug_1",
+      "deviceClass": "drivers/water_leak_blitzwolf_bw_is9/device.js",
+      "manufacturerName": [
+        "_TZ3000_eit7p838 ",
+        "_TZ3000_eit7p838",
+        "_tz3000_eit7p838"
+      ],
+      "productId": [
+        "TS0207"
+      ]
+    },
+    "water_leak_aoyan_ay222z": {
+      "kind": "host",
+      "into": "sensor_contact_presence",
+      "deviceClass": "drivers/water_leak_aoyan_ay222z/device.js",
+      "manufacturerName": [
+        "AOYAN",
+        "AOYAN  "
+      ],
+      "productId": [
+        "AY222Z"
+      ]
+    },
+    "siren_moes_mg_bjq002": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/siren_moes_mg_bjq002/device.js",
+      "manufacturerName": [
+        "_TZE20C_tjz9ad5g",
+        "_tze20c_tjz9ad5g"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "switch_wall_6gang_metering": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/switch_wall_6gang_metering/device.js",
+      "manufacturerName": [
+        "_TZE284_hbxadcl0",
+        "_tze284_hbxadcl0"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "valve_novato_zpv01": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/valve_novato_zpv01/device.js",
+      "manufacturerName": [
+        "_TZE284_zm8zpwas",
+        "_tze284_zm8zpwas",
+        "_TZE204_dsagrkvg",
+        "_tze204_dsagrkvg",
+        "_TZE204_DSAGRKVG",
+        "_TZE284_sdvbnmj5",
+        "_tze284_sdvbnmj5",
+        "_TZE284_SDVBNMJ5",
+        "_TZE284_ZM8ZPWAS"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "switch_2gang_ts0002": {
+      "kind": "host",
+      "into": "switch_plug_1",
+      "deviceClass": "drivers/switch_2gang_ts0002/device.js",
+      "flowRegistrar": "drivers/switch_2gang_ts0002/driver.js",
+      "manufacturerName": [
+        "_TZ3000_amal63is",
+        "_tz3000_amal63is",
+        "_TZ3000_AMAL63IS",
+        "_tz3000_AMAL63IS"
+      ],
+      "productId": [
+        "TS0002"
+      ]
+    },
+    "energy_meter_3ch_bidirectional": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/energy_meter_3ch_bidirectional/device.js",
+      "manufacturerName": [
+        "_TZE20C1000000_p3g8xiug",
+        "_tze20c1000000_p3g8xiug",
+        "_TZE20C1000000_P3G8XIUG",
+        "_tze20c1000000_P3G8XIUG"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "gpo_double_light_mg_au03": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/gpo_double_light_mg_au03/device.js",
+      "manufacturerName": [
+        "_TZE200_4jvmbiph",
+        "_tze200_4jvmbiph",
+        "_TZE200_4JVMBIPH",
+        "_tze200_4JVMBIPH"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "gpo_double_mg_gpo02z": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/gpo_double_mg_gpo02z/device.js",
+      "manufacturerName": [
+        "_TZE200_lq0ffndf",
+        "_tze200_lq0ffndf",
+        "_TZE200_LQ0FFNDF",
+        "_tze200_LQ0FFNDF"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "keypad_alarm_wke502z": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/keypad_alarm_wke502z/device.js",
+      "manufacturerName": [
+        "_TZE200_rt5dklro",
+        "_tze200_rt5dklro",
+        "_TZE200_RT5DKLRO",
+        "_tze200_RT5DKLRO"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "thermostat_vrf_bvrf_l001": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/thermostat_vrf_bvrf_l001/device.js",
+      "manufacturerName": [
+        "_TZE204_6ewjlefg",
+        "_tze204_6ewjlefg",
+        "_TZE204_6EWJLEFG",
+        "_tze204_6EWJLEFG"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "ufh_controller_ch8z": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/ufh_controller_ch8z/device.js",
+      "manufacturerName": [
+        "_TZE284_1oft6qso",
+        "_tze284_1oft6qso",
+        "_TZE284_1OFT6QSO",
+        "_tze284_1OFT6QSO"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "ufh_controller_pro_line_x10": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/ufh_controller_pro_line_x10/device.js",
+      "manufacturerName": [
+        "_TZE204_rfpyqax9",
+        "_tze204_rfpyqax9",
+        "_TZE204_RFPYQAX9",
+        "_tze204_RFPYQAX9",
+        "_TZE284_rfpyqax9",
+        "_tze284_rfpyqax9",
+        "_TZE284_RFPYQAX9",
+        "_tze284_RFPYQAX9"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "curtain_sonoff_mini_zbrbs": {
+      "kind": "host",
+      "into": "sensor_contact_presence",
+      "deviceClass": "drivers/curtain_sonoff_mini_zbrbs/device.js",
+      "manufacturerName": [
+        "SONOFF"
+      ],
+      "productId": [
+        "MINI-ZBRBS"
+      ]
+    },
+    "air_conditioner_aetz01": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/air_conditioner_aetz01/device.js",
+      "manufacturerName": [
+        "_TZE200_snfdqllf",
+        "_tze200_snfdqllf"
+      ],
+      "productId": [
+        "TS0601"
+      ]
+    },
+    "smoke_sensor_ts0601_dp": {
+      "kind": "host",
+      "into": "device_generic_tuya",
+      "deviceClass": "drivers/smoke_sensor_ts0601_dp/device.js",
+      "manufacturerName": [
+        "_TZE200_yh7aoahi",
+        "_tze200_yh7aoahi",
+        "_TZE200_YH7AOAHI",
+        "_tze200_YH7AOAHI",
+        "_tze200_0zaf1cr8",
+        "_TZE200_0zaf1cr8",
+        "_TZE200_0ZAF1CR8",
+        "_tze200_0ZAF1CR8",
+        "_tze284_0zaf1cr8",
+        "_TZE284_0zaf1cr8",
+        "_TZE284_0ZAF1CR8",
+        "_tze284_0ZAF1CR8"
+      ],
+      "productId": [
+        "TS0601"
+      ]
     }
+  },
+  "_why_host": "P3331 (16/11/2026 Paris, owner decision): kind \"host\" carries a held driver whose couples are free on the payload inside a published DORMANT host (hosts below: its own couples are fake or unpairable, so no real device is paired on it). The class may differ: the hosted device runs the held driver device class, migrates its class once and keeps exactly the held capability set. The held driver settings are appended to the host entry and its flow cards are re-targeted to the host (same card ids). Exact couples resolve by manufacturerName + productId (trimmed, case-insensitive).",
+  "hosts": {
+    "device_generic_tuya": "9.0.1574 couples are 6 fake _tz*_generic makers x TS0601",
+    "sensor_contact_presence": "9.0.1574 couple hobeian x DISABLED_SENSOR_CONTACT_PRESENCE (fake productId)",
+    "smart_rcbo": "9.0.1574 couple _TZE284_6ocnqlhn x TS0601_rcbo (fake productId)",
+    "switch_plug_1": "9.0.1574 couple _tz3000_typdpbpg x TS0601_sp1 (fake productId)"
+  },
+  "notHosted": {
+    "heiman_keyfob": "HEIMAN|RC-EF-3.0 ships on button_emergency_sos",
+    "wall_switch_rf_ews1154z": "folded (P3330) into wall_switch_1gang_1way",
+    "co_sensor_dcr_co": "7bztmfm1|TS0601 ships on smart_air_detection_box / device_air_purifier_plug (P3024b pins)",
+    "fan_light_tuya_5_levels": "its couple ships on humidifier",
+    "motion_sensor_excellux_zg104plv": "PIRIV01 couple ships on motion_sensor_switch",
+    "vibration_sensor_excellux_zg103v": "its couple ships on motion_sensor_switch",
+    "smoke_sensor_ts0601_dp": "5 of its 8 makers ship on switch_wireless / socket_power_strip_four_three; only the 3 free makers are hosted",
+    "climate_sensor_2": "continuation folded into climate_sensor (P3229)",
+    "curtain_motor_2": "continuation folded into curtain_motor (P3229)",
+    "contact_sensor_2": "continuation folded into contact_sensor (P3229)"
   }
 }

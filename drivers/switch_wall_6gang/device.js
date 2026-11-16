@@ -41,7 +41,7 @@ class Switch6GangDevice extends UnifiedSwitchBase {
    * then the historical switch_wall_6gang_* id. Never throws; null when neither exists.
    */
   _p3034OwnTriggerCard(baseId) {
-    const did = this.driver && this.driver.id;
+    const did = this._hostedAs || (this.driver && this.driver.id); // P3331: hosted on a dormant driver
     const ids = [];
     if (did && did !== 'switch_wall_6gang' && baseId.startsWith('switch_wall_6gang_')) {
       ids.push(`${did}_${baseId.slice('switch_wall_6gang_'.length)}`);
