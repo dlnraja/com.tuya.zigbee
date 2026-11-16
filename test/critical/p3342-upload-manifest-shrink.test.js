@@ -16,16 +16,16 @@ const flowIds = (m) => ['triggers', 'conditions', 'actions'].flatMap((k) => ((m.
 const SYS = require('homey-lib').getCapabilities();
 // Effective value of every capability option once Homey applies the capability defaults for absent flags.
 // Locales beyond en/fr/nl/de are dropped on purpose (tested separately); compare the rest.
-const coreLocales = (v) => JSON.parse(JSON.stringify(v), (k, x) => (strip.isLocaleObj(x) ? Object.fromEntries(Object.entries(x).filter(([l]) => strip.CORE_LOCALES.includes(l))) : x));
+const coreLocales = (v) => JSON.parse(JSON.stringify(v), (k, x) => strip.isLocaleObj(x) ? Object.fromEntries(Object.entries(x).filter(([l]) => strip.CORE_LOCALES.includes(l))) : x);
 // capsOf: the capability list to resolve (capabilities + option keys of the ORIGINAL manifest), so an option
 // object removed because it only held defaults is compared as "defaults", not as missing.
-const capList = (m) => Object.fromEntries(m.drivers.map((d) => [d.id, [...new Set([...(Array.isArray(d.capabilities) ? d.capabilities : []), ...Object.keys(d.capabilitiesOptions || {})])]]));
+const capList = (m) => Object.fromEntries(m.drivers.map((d) => [d.id, [...new Set([...Array.isArray(d.capabilities) ? d.capabilities : [], ...Object.keys(d.capabilitiesOptions || {})])]]));
 const effectiveCapOptions = (m, capsOf = capList(m)) => m.drivers.flatMap((d) => {
   const opts = d.capabilitiesOptions || {};
   const caps = capsOf[d.id] || [];
   return caps.map((cap) => {
     const def = (m.capabilities || {})[cap.split('.')[0]] || SYS[cap.split('.')[0]];
-    const eff = { ...(opts[cap] || {}) };
+    const eff = { ...opts[cap] || {} };
     if (def) { for (const [f, dflt] of Object.entries(strip.FLAG_DEFAULTS)) { if (!(f in eff)) { eff[f] = dflt(def); } } }
     return `${d.id}|${cap}|${JSON.stringify(Object.keys(eff).sort().map((k) => [k, coreLocales(eff[k])]))}`;
   });
