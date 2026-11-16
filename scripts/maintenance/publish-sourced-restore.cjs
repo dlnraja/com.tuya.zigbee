@@ -95,6 +95,18 @@ function attestedExact(repoRoot) {
   return new Set(((att && att.attested) || []).filter(Array.isArray).map((c) => `${c[0]}\u0000${c[1]}`));
 }
 
+/** P3351: effective held driver ids (publish-hold-drivers.json minus releases); failsafe empty. */
+function loadHeldIds(repoRoot) {
+  try {
+    const hold = readJson(path.join(repoRoot, 'config', 'publish-hold-drivers.json'));
+    if (!hold) { return new Set(); }
+    const { effectiveHoldIds, resolveReleaseValue } = require('../publish-hold-release');
+    return effectiveHoldIds(hold, resolveReleaseValue(hold)).ids;
+  } catch (_) {
+    return new Set();
+  }
+}
+
 function sacredExact(repoRoot) {
   const raw = readJson(path.join(repoRoot, 'config', 'architecture', 'publish-sacred-keep-couples.json'));
   const s = new Set();
@@ -416,14 +428,24 @@ function sourcedPassFile(source, destAppJson, opts = {}) {
   const sacredMissing = [];
   const exact = new Set();
   for (const d of man.drivers || []) if (zig(d)) for (const m of d.zigbee.manufacturerName) for (const p of d.zigbee.productId) exact.add(`${d.id}#${m}#${uc(p)}`);
-  for (const s of sacred) if (!exact.has(s)) sacredMissing.push(`sacred ${s}`);
+  // P3351: a pin on a HELD driver that is absent from this payload cannot ship by definition (the hold
+  // keeps the whole driver out): defer it until release instead of failing. Any other missing pin still fails.
+  let heldIds = opts.holdIds instanceof Set ? opts.holdIds : null;
+  if (!heldIds) { heldIds = opts.holdIds ? new Set(opts.holdIds) : loadHeldIds(repoRoot); }
+  const payloadIds = new Set((man.drivers || []).map((d) => d && d.id));
+  const sacredDeferred = [];
+  for (const s of sacred) {
+    if (exact.has(s)) { continue; }
+    const driverId = s.split('#')[0];
+    if (!payloadIds.has(driverId) && heldIds.has(driverId)) { sacredDeferred.push(s); } else { sacredMissing.push(`sacred ${s}`); }
+  }
   const st = strongStats(source, man, sourced);
   const snap = checkSnapshot(source, man, sourced, snapshotFile(repoRoot, opts.branch));
   fs.writeFileSync(destAppJson, JSON.stringify(man));
-  return { ...r, driversBefore, driversAfter: (man.drivers || []).length, sacredMissing, strongIn: st.inPayload.length, strongInSource: st.strongInSource, strongKeys: st.inPayload, snapshotMissing: snap.missing, snapshotChecked: snap.checked };
+  return { ...r, sacredDeferred, driversBefore, driversAfter: (man.drivers || []).length, sacredMissing, strongIn: st.inPayload.length, strongInSource: st.strongInSource, strongKeys: st.inPayload, snapshotMissing: snap.missing, snapshotChecked: snap.checked };
 }
 
-module.exports = { attestedExact, normalizeForms, strongStats, snapshotFile, checkSnapshot, sourcedPassFile, canonicalMfr, canonicalPid, keyOf, loadSourcedCouples, sacredExact, dedupeForms, restoreSourced, sourcedPass, presentKeys, wireKeys, total };
+module.exports = { loadHeldIds, attestedExact, normalizeForms, strongStats, snapshotFile, checkSnapshot, sourcedPassFile, canonicalMfr, canonicalPid, keyOf, loadSourcedCouples, sacredExact, dedupeForms, restoreSourced, sourcedPass, presentKeys, wireKeys, total };
 
 // CLI: node scripts/maintenance/publish-sourced-restore.cjs --snapshot <payload app.json> <branch>
 //      node scripts/maintenance/publish-sourced-restore.cjs --check <payload app.json> <branch>
