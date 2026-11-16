@@ -177,9 +177,10 @@ Going above 347 drivers therefore starts with a smaller upload manifest. Measure
 | Drop driver key `maintenanceActions` (256 drivers) | -151 201 | Not a Homey manifest field (homey-lib schema, SDK docs). Homey maintenance actions are `button.*` capabilities with `capabilitiesOptions[x].maintenanceAction`, kept. No code reads the key. |
 | Drop driver key `capabilityOptions` (typo, 3 drivers) | -498 | Homey ignores it, no code reads it. |
 | Drop locales other than en/fr/nl/de in drivers, flow, custom capabilities | -23 055 | Homey requires `en` only and falls back to it; store name/description untouched. |
-| **After P3342** | **3 211 749** | same 347 driver ids, 4639 flow card ids, capabilities, setting ids and couples (test p3342) |
+| Drop capabilitiesOptions `getable`/`setable`/`preventInsights` equal to the capability default (homey-lib system capability or app capability), then empty option objects (1428 flags) | -37 941 | Homey applies the capability default when the flag is absent; differing values kept; no code reads manifest capabilitiesOptions. |
+| **After P3342** | **3 173 808** | same 347 driver ids, 4639 flow card ids, capabilities, setting ids and couples (test p3342) |
 
-Guard: `config/upload-manifest-ceiling.json` (`ceilingBytes` 3 300 000, `goalBytes` 2 850 000) checked by
+Guard: `config/upload-manifest-ceiling.json` (`ceilingBytes` 3 250 000, `goalBytes` 2 850 000; the CI Platform Budget payload measures ~14 KB above the local pipeline) checked by
 `scripts/ci/upload-manifest-ceiling.cjs`: FATAL in `prepare-publish` after the ASCII pass, blocking step in the
 Platform Budget workflow. Lower it as the manifest shrinks; raising it needs the owner's go.
 
@@ -190,7 +191,7 @@ pairs (31 KB) are kept because Homey matches manufacturer names case-sensitively
 Settings are per driver by Homey's format (no references), so shared settings cannot be deduplicated in the
 manifest without changing it; per-driver flow cards (4430, 1.41 MB) are saved-flow ids and stay.
 
-Reaching 2.85 MB needs ~362 KB more, which only content trade-offs can give (owner decision, numbers on the
+Reaching 2.85 MB needs ~324 KB more, which only content trade-offs can give (owner decision, numbers on the
 P3342 payload, ASCII bytes):
 - nl + de translations everywhere in drivers/flow: 585 613 B (Dutch/German users fall back to English).
 - settings hints (all locales): 291 515 B (only nl+de of them: 22 765 B).
