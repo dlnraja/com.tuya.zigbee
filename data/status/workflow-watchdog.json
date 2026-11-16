@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-15T12:41:52.003Z",
+  "at": "2026-11-16T13:34:35.787Z",
   "checked": 62,
   "findings": [
     {
       "kind": "repeated-failure",
       "sig": "ci-2a1553568063",
       "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "5 failures in 72 h: Autonomous review failed on stable-v5 (critical tests / Full critical suite: code-or-test)"
+      "detail": "6 failures in 72 h: Autonomous review failed on bastien-home (critical tests / Full critical suite: code-or-test)"
     },
     {
       "kind": "repeated-failure",
@@ -19,6 +19,12 @@
       "sig": "ci-6d2c80d14bb1",
       "wf": ".github/workflows/ci-self-check.yml",
       "detail": "5 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse): code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-943a14060e21",
+      "wf": ".github/workflows/autonomous-review.yml",
+      "detail": "3 failures in 72 h: Autonomous review failed on bastien-home (semantic review / Exact couples, weakened tests, identity: unknown)"
     },
     {
       "kind": "repeated-failure",
@@ -36,7 +42,7 @@
       "kind": "repeated-failure",
       "sig": "ci-57f650364735",
       "wf": ".github/workflows/node22-tests.yml",
-      "detail": "6 failures in 72 h: Node 22 runtime tests failed on cursor/gh632-trv602z-ltwbm23f-3270 (strict / node:test strict (P3057-3): no-log)"
+      "detail": "7 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)"
     },
     {
       "kind": "repeated-failure",
@@ -61,6 +67,18 @@
       "sig": "ci-7cb53e213373",
       "wf": ".github/workflows/ci-self-check.yml",
       "detail": "3 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Driver signature duplicate gate (P3238 — new driver identical to an existing one is refused): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-5be26e541885",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "5 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-b8b4d0a704a7",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "3 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): code-or-test)"
     }
   ]
 }
