@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-16",
+  "run": "P3350",
+  "leads": [
+    {
+      "id": "L-P3350-01",
+      "file": "lib/resilience/FirmwareQuirkCompensator.js",
+      "finding": "healFirmwareQuirks() calls removeCapability() for tuya_dp_raw/value/string/bitmap/tuya_cluster_event on non-universal drivers and for measure_battery/alarm_battery on mains-powered devices; wired via lib/resilience/HomeyGapCompensator.js.",
+      "rule": "additive-only, never remove a capability (same class as L-P3290-01 fixed in 8166fde21c)",
+      "action": "make removals advisory (log only) with a regression test, master first after the P3095 publish hold, then port to stable-v5 and bastien-home where the file exists",
+      "status": "open"
+    },
+    {
+      "id": "L-P3350-02",
+      "file": "lib/registry/DeviceProfileRegistry.js",
+      "finding": "getProfile() falls back from exact mfr|pid to manufacturer-only, then pid-only, then device-type default.",
+      "rule": "everything per exact mfr+pid couple, never per manufacturer alone",
+      "action": "research callers (lib/registry/index.js consumers) and restrict to exact couple + device-type default, or mark the looser hits as low-confidence advisory",
+      "status": "open"
+    }
+  ]
+}
