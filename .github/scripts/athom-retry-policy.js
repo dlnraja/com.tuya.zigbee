@@ -16,7 +16,8 @@ const POLICY = Object.freeze({
   // P3311: transport failures get 2 bumped retries (3 attempts), backoff 5/15/30 min.
   maxHangupRetries: P3036.RETRY.maxTransportRetries,
   maxTransientRetries: P3036.RETRY.maxTransportRetries, // socket hang up, ECONNRESET, timeouts, 5xx (P2911 + P3036)
-  maxAggregateRetries: 0, // P3036: AggregateError is a real failure -> breaker + diagnostic, no retry
+  maxAggregateRetries: 0, // P3036: AggregateError with a message is a real failure -> breaker + diagnostic, no retry
+  maxBareAggregateRetries: P3036.RETRY.maxBareAggregateRetries, // P3341: bare AggregateError -> ONE identical retry
   maxInvalidStateRetries: P3036.RETRY.maxRetries,
   backoffBaseS: P3036.RETRY.backoffMinS,
   backoffCapS: P3036.RETRY.backoffScheduleS[P3036.RETRY.backoffScheduleS.length - 1],
@@ -28,7 +29,7 @@ const POLICY = Object.freeze({
 
 const TRANSIENT_RE = P3036.TRANSIENT_RE;
 
-// Kinds: invalid_state | AggregateError | validation | socket hang up | transient | processing_failed | unknown
+// Kinds: invalid_state | AggregateError | AggregateError-bare (P3341) | validation | socket hang up | transient | processing_failed | unknown
 // A bare processing_failed (no stateMeta) stays 'unknown' here (budget 0, same no-retry outcome) so the
 // P3025 per-version fallback (athom-classify-failure.js: wait log, then empty-error -> transient) still runs.
 function classify(text) {
@@ -37,6 +38,7 @@ function classify(text) {
 }
 
 function budget(kind) {
+  if (kind === P3036.BARE_AGGREGATE_KIND) return POLICY.maxBareAggregateRetries;
   if (kind === 'AggregateError') return POLICY.maxAggregateRetries;
   if (kind === 'invalid_state') return POLICY.maxInvalidStateRetries;
   if (kind === 'socket hang up') return POLICY.maxHangupRetries;
@@ -57,7 +59,7 @@ function shouldRetry(kind, retriesDone, { idleWaited = true } = {}) {
 
 // Loop bound for in-run re-upload loops (stable, Bastien): the largest budget; each pass still asks retry-kind.
 function maxBudget() {
-  return Math.max(POLICY.maxHangupRetries, POLICY.maxTransientRetries, POLICY.maxAggregateRetries, POLICY.maxInvalidStateRetries);
+  return Math.max(POLICY.maxHangupRetries, POLICY.maxTransientRetries, POLICY.maxAggregateRetries, POLICY.maxBareAggregateRetries, POLICY.maxInvalidStateRetries);
 }
 
 module.exports = { POLICY, TRANSIENT_RE, classify, budget, backoffSeconds, shouldRetry, maxBudget };
