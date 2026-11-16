@@ -59,7 +59,8 @@ function decide({ version, builds, alreadyRetried, retryCount, idleWaited = fals
   const out = { retry: d.retry, kind: c.kind, cls: c.cls, tripBreaker: d.tripBreaker, diagnose: d.diagnose, reason: `${d.reason} (v${version})` };
   if (d.retry) out.next = done + 1;
   // AggregateError keeps the BISECT hint: it is the signal a content bisect may be needed (P3034 mechanism).
-  if (c.kind === 'AggregateError') out.bisect = true;
+  // P3341: a bare AggregateError asks for it only once its single identical retry is used.
+  if (c.kind === 'AggregateError' || (c.kind === P3036.BARE_AGGREGATE_KIND && !d.retry)) out.bisect = true;
   return out;
 }
 
@@ -94,7 +95,7 @@ if (require.main === module) {
     console.log(`[transient-retry] NEXT=${d.next || 1}`);
     console.log(`[transient-retry] BACKOFF_S=${backoffSeconds(d.next || 1)}`); // P3036: >= 300 s
   }
-  if (d.bisect) console.log('[transient-retry] BISECT: AggregateError is a real failure (P3036, no auto retry) - if rejections repeat, rerun the P3034 bisect; do not auto-retry');
+  if (d.bisect) console.log(`[transient-retry] BISECT: ${d.kind === 'AggregateError-bare' ? 'bare AggregateError after its single retry (P3341)' : 'AggregateError is a real failure (P3036, no auto retry)'} - if rejections repeat, rerun the P3034 bisect; do not auto-retry`);
   if (d.diagnose) console.log(`[transient-retry] DIAGNOSE: ${d.kind || 'unknown'} - see docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md`);
   // Flake-rate log: one JSON line per published version outcome (committed by the bot commit step).
   try {
