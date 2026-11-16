@@ -2335,6 +2335,36 @@
       "pid": "TS0601",
       "driverId": "water_valve_smart",
       "note": "NEO NAS-WV03B2 sibling of _TZE284_z7a2jmyy. Z2M neo.ts."
+    },
+    {
+      "mfr": "_TZE28C1000000_gxbdnfrh",
+      "pid": "TS0601",
+      "driverId": "switch_wall_6gang",
+      "note": "P3343 KB daily 2026-11-16: Z2M zhc f368dcd tuya.ts: Nova Digital SA-6 whitelabel of _TZE204_gxbdnfrh (fix(detect) #13815)"
+    },
+    {
+      "mfr": "_TZE28C1000000_uqfph8ah",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P3343 KB daily 2026-11-16: Z2M zhc bseed.ts BSEED_TS0601_cover (fix(detect) #13822), sibling of _TZE200_yenbr4om/_TZE204_bdblidq3"
+    },
+    {
+      "mfr": "_TZE28C1000000_ntqql63p",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "P3343 KB daily 2026-11-16: Z2M zhc girier.ts TS0601_GIRIER ceiling presence sensor (feat(add) #13824)"
+    },
+    {
+      "mfr": "_TZ3002_wowrpxxu",
+      "pid": "TS0726",
+      "driverId": "switch_1gang",
+      "note": "P3343 KB daily 2026-11-16: Z2M zhc tuya.ts TS0726_1_gang, sibling of _TZ3000_ovbvmhiq"
+    },
+    {
+      "mfr": "_TZB210_azjhlyvy",
+      "pid": "TS0505B",
+      "driverId": "light_bulb_rgb_rgbw",
+      "note": "P3343 KB daily 2026-11-16: Z2M zhc tuya.ts TS0505B_2 / MiBoxer FUTC04ZR whitelabel, sibling of _TZ3210_it1u8ahz"
     }
   ]
 }
