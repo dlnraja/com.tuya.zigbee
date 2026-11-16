@@ -11,7 +11,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
-const { folds } = require(path.join(ROOT, 'lib', 'drivers', 'held-driver-folds.json'));
+// P3331 hosted folds (kind "host") have their own checks in p3331-hosted-held-drivers.test.js.
+const folds = Object.fromEntries(Object.entries(require(path.join(ROOT, 'lib', 'drivers', 'held-driver-folds.json')).folds).filter(([, f]) => f.kind !== 'host'));
 const { applyHeldFolds, couplesOf } = require(path.join(ROOT, 'scripts', 'maintenance', 'apply-held-folds.cjs'));
 const { spawnSync } = require('child_process');
 const hold = require(path.join(ROOT, 'config', 'publish-hold-drivers.json'));
@@ -103,7 +104,7 @@ Module._load = function (r, ...a) {
   if (r === 'homey') { class B {} return { Device: B, Driver: B, App: B, SimpleClass: B, __: (k) => k }; }
   return orig.call(this, r, ...a);
 };
-const { folds } = require('./lib/drivers/held-driver-folds.json');
+const folds = Object.fromEntries(Object.entries(require('./lib/drivers/held-driver-folds.json').folds).filter(([, f]) => f.kind !== 'host'));
 const rt = require('./lib/drivers/HeldDriverFolds');
 const out = [];
 for (const [held, f] of Object.entries(folds)) {

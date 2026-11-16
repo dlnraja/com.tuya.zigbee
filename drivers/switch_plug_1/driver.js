@@ -3,6 +3,11 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SwitchPlug1Driver extends ZigBeeDriver {
+  // P3331: dormant host (lib/drivers/held-driver-folds.json): an exact hosted couple runs its held device class.
+  onMapDeviceClass(device) {
+    return require('../../lib/drivers/HeldDriverFolds').foldedDeviceClass('switch_plug_1', device) || require('./device');
+  }
+
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
@@ -20,6 +25,7 @@ async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
+    require('../../lib/drivers/HeldDriverFolds').registerHostedFlows(this, 'switch_plug_1'); // P3331
 
     this.log('SwitchPlug1Driver initialized');
     // v5.13.3: Flow card handlers

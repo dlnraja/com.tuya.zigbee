@@ -714,6 +714,8 @@ try {
       console.log(`   P3229: split ${n} released continuation(s) back out of their root`);
     } catch (e) { console.error(`FATAL: P3229 continuation split failed: ${e.message}`); process.exit(1); }
   }
+  // P3331: held driver folders hosted by a dormant published driver keep their JS in the payload.
+  let p3331KeepDirs = new Set();
   // 5a2) Publish hold (config/publish-hold-drivers.json).
   // WHY(Athom AggregateError since 9.0.1331, bisect J3 #3478 / J4 #3479): a driver that
   // breaks Athom processing is kept in source but left out of the upload payload.
@@ -733,12 +735,18 @@ try {
         const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
         const before = (manifest.drivers || []).length;
         const heldClasses = Object.fromEntries((manifest.drivers || []).filter((d) => d && ids.has(d.id)).map((d) => [d.id, d.class]));
+        const heldEntries = Object.fromEntries((manifest.drivers || []).filter((d) => d && ids.has(d.id)).map((d) => [d.id, d]));
         manifest.drivers = (manifest.drivers || []).filter((d) => !ids.has(d.id));
         // P3330: carry the exact couples of folded held drivers on their published target (payload only).
-        const { loadFolds, applyHeldFolds } = require('./maintenance/apply-held-folds.cjs');
-        const fr = applyHeldFolds(manifest, ids, loadFolds(path.join(__dirname, '..')), heldClasses);
+        const { loadFolds, loadHosts, applyHeldFolds, retargetHostedCards } = require('./maintenance/apply-held-folds.cjs');
+        const repo = path.join(__dirname, '..');
+        const fr = applyHeldFolds(manifest, ids, loadFolds(repo), heldClasses, { heldEntries, hosts: loadHosts(repo) });
         if (fr.errors.length) { throw new Error(`P3330 held-driver fold: ${fr.errors.join(' | ')}`); }
-        fr.applied.forEach((a) => console.log(`[P3330] folded ${a.held} -> ${a.into}: ${a.couples} exact couple(s) (+${a.addedMakers} maker(s), +${a.addedPids} pid(s), ${a.parasites} cartesian combo(s) owned by no other driver)`));
+        fr.applied.forEach((a) => console.log(`[${a.kind === 'host' ? 'P3331' : 'P3330'}] ${a.kind === 'host' ? 'hosted' : 'folded'} ${a.held} -> ${a.into}: ${a.couples} exact couple(s) (+${a.addedMakers} maker(s), +${a.addedPids} pid(s), ${a.parasites} cartesian combo(s) owned by no other driver${a.kind === 'host' ? `, +${a.settings} setting(s)` : ''})`));
+        // P3331: hosted held cards keep their ids and now name the host, so they ship instead of being dropped.
+        const retargeted = retargetHostedCards(manifest, fr.hostOf);
+        if (fr.keepDirs.length) { console.log(`[P3331] ${fr.keepDirs.length} held driver(s) hosted, ${retargeted} flow card(s) re-targeted to their host`); }
+        p3331KeepDirs = new Set(fr.keepDirs);
         // A card is dropped only when every driver its device filter names is held.
         const cardUsesHeld = (card) => {
           const args = Array.isArray(card && card.args) ? card.args : [];
@@ -760,7 +768,29 @@ try {
           }
         }
         fs.writeFileSync(destAppJson, JSON.stringify(manifest));
-        for (const id of ids) fs.rmSync(path.join(destDir, 'drivers', id), { recursive: true, force: true });
+        for (const id of ids) {
+          const dir = path.join(destDir, 'drivers', id);
+          // P3331: a hosted held driver ships only its JS, under lib/hosted/<id>/; every relative require is
+          // re-resolved from there and must land inside the payload (fail closed).
+          if (p3331KeepDirs.has(id) && fs.existsSync(dir)) {
+            const to = path.join(destDir, 'lib', 'hosted', id);
+            fs.mkdirSync(to, { recursive: true });
+            for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (!(e.isFile() && e.name.endsWith('.js'))) { continue; }
+              const js = fs.readFileSync(path.join(dir, e.name), 'utf8').replace(/require\((['"])(\.\.?\/[^'"]*)\1\)/g, (all, q, rel) => {
+                const target = path.posix.join('drivers', id, rel);
+                if (target.startsWith('drivers/') && target.split('/')[1] !== id && !manifest.drivers.some((d) => d.id === target.split('/')[1])) {
+                  throw new Error(`P3331 ${id}/${e.name} requires ${rel} but that driver is not in the payload`);
+                }
+                let next = path.posix.relative(path.posix.join('lib', 'hosted', id), target.split('/')[1] === id && target.startsWith('drivers/') ? path.posix.join('lib', 'hosted', id, target.split('/').slice(2).join('/')) : target);
+                if (!next.startsWith('.')) { next = `./${next}`; }
+                return `require(${q}${next}${q})`;
+              });
+              fs.writeFileSync(path.join(to, e.name), js);
+            }
+          }
+          fs.rmSync(dir, { recursive: true, force: true });
+        }
         const buildAppJson = path.join(__dirname, '..', '.homeybuild', 'app.json');
         if (fs.existsSync(path.dirname(buildAppJson))) fs.copyFileSync(destAppJson, buildAppJson);
         console.log(`[publish-hold] held back ${before - manifest.drivers.length} driver(s) [${[...ids].join(', ')}], ${cards} flow card(s)`);
