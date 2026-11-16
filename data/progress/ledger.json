@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-16T16:19:28.706Z",
+ "updated": "2026-11-16T22:23:24.911Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6662,6 +6662,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T09:13:36.000Z"
   },
+  "diag:0a557563dc3d2e42": {
+   "status": "done",
+   "date": "2026-11-16",
+   "hash": "7aea14250589caae",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-11-16T16:15:26.000Z"
+  },
   "diag:0a93349ddc85c743": {
    "status": "done",
    "date": "2026-11-08",
@@ -6854,6 +6863,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T23:06:29.000Z"
+  },
+  "diag:0e6fca3b6569c117": {
+   "status": "done",
+   "date": "2026-11-16",
+   "hash": "8066ddfd2fa73966",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-11-16T16:51:49.000Z"
   },
   "diag:0e84faf802993ee7": {
    "status": "done",
@@ -8064,6 +8082,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T07:33:34.000Z"
   },
+  "diag:30195fd99714ab0f": {
+   "status": "done",
+   "date": "2026-11-16",
+   "hash": "6982eebe54530e7f",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-11-16T16:57:24.000Z"
+  },
   "diag:3030f74f33379195": {
    "status": "done",
    "date": "2026-10-24",
@@ -9137,6 +9164,15 @@
    "kind": "github",
    "mailDate": "2026-11-01T05:45:41.000Z"
   },
+  "diag:53493ac1db3c3a55": {
+   "status": "done",
+   "date": "2026-11-16",
+   "hash": "8c839d92f86b2231",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-11-16T16:40:51.000Z"
+  },
   "diag:5394c2ec01d3c6bf": {
    "status": "done",
    "date": "2026-10-25",
@@ -10158,6 +10194,15 @@
    "kind": "general",
    "mailDate": "2026-11-01T00:11:11.000Z"
   },
+  "diag:7153ef8532bbc26b": {
+   "status": "done",
+   "date": "2026-11-16",
+   "hash": "6276f908a2f995a9",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-11-16T15:14:03.000Z"
+  },
   "diag:72621fc478b3bd1d": {
    "status": "pending",
    "date": "2026-10-25",
@@ -10367,6 +10412,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T08:37:15.000Z"
+  },
+  "diag:7c91c412a6837150": {
+   "status": "done",
+   "date": "2026-11-16",
+   "hash": "774a709858be707a",
+   "note": "github mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "github",
+   "mailDate": "2026-11-16T17:04:57.000Z"
   },
   "diag:7c9bdcf62e54830b": {
    "status": "done",
