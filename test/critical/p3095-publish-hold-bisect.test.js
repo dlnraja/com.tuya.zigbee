@@ -23,12 +23,28 @@ describe('P3095 publish-hold bisect', () => {
     assert.deepStrictEqual(d.state.queue, [['a', 'b', 'c'], ['d', 'e']]);
     assert.deepStrictEqual(d.next, ['a', 'b', 'c']);
   });
-  it('a single id with AggregateError is isolated, kept held, loop goes on', () => {
+  it('a single id with AggregateError is isolated only after a confirming second refusal (P3340)', () => {
+    // P3340: identical content flips Test <-> AggregateError (1385/1386, 1424/1425, #3705/#3706), so one refusal
+    // of a single id is not a verdict: it is re-queued once, at the end, and isolated on the second refusal.
     const s = { queue: [['c'], ['d', 'e']], attempts: {}, isolated: [] };
-    const d = B.decide({ released: 'c', outcome: 'AggregateError', state: s, heldIds: HELD });
-    assert.strictEqual(d.isolate, 'c');
-    assert.deepStrictEqual(d.state.isolated, ['c']);
-    assert.deepStrictEqual(d.next, ['d', 'e']);
+    const d1 = B.decide({ released: 'c', outcome: 'AggregateError', state: s, heldIds: HELD });
+    assert.strictEqual(d1.isolate, null);
+    assert.deepStrictEqual(d1.state.isolated, []);
+    assert.deepStrictEqual(d1.state.queue, [['d', 'e'], ['c']]);
+    assert.deepStrictEqual(d1.next, ['d', 'e']);
+    assert.match(d1.note, /unconfirmed/);
+    const s2 = { queue: [['c']], attempts: { c: 1 }, isolated: [] };
+    const d2 = B.decide({ released: 'c', outcome: 'AggregateError', state: s2, heldIds: HELD });
+    assert.strictEqual(d2.isolate, 'c');
+    assert.deepStrictEqual(d2.state.isolated, ['c']);
+    assert.deepStrictEqual(d2.state.queue, []);
+    assert.strictEqual(B.ISOLATE_CONFIRMATIONS, 2);
+  });
+  it('a single id refused once then accepted leaves the hold (flake, not isolated) (P3340)', () => {
+    const s = { queue: [['c']], attempts: { c: 1 }, isolated: [] };
+    const d = B.decide({ released: 'c', outcome: 'test', state: s, heldIds: HELD });
+    assert.deepStrictEqual(d.accept, ['c']);
+    assert.deepStrictEqual(d.state.isolated, []);
   });
   it('max 3 attempts per signature', () => {
     let s = { queue: [['a', 'b']], attempts: { 'a,b': 3 }, isolated: [] };

@@ -6,7 +6,8 @@
  *   - a released group reaches Test        -> every id leaves config/publish-hold-drivers.json
  *   - a released group gets AggregateError -> the group stays held, is cut in half, the first half
  *                                             is released at the next allowed slot, the second is queued
- *   - a single id gets AggregateError      -> it stays held, ledger row + diagnostic note, loop moves on
+ *   - a single id gets AggregateError      -> P3340: first refusal = unconfirmed, the id is re-queued once at the
+ *                                             end; the second refusal isolates it (ledger row + note), loop moves on
  *   - other failures (hang up, unknown)    -> nothing changes here (P3036 transient retry owns them)
  * Max 3 attempts per signature (sorted id list); after that the group stays held and the loop skips it.
  * The P3036 gate/breaker is untouched: this only decides WHAT is released, never WHEN.
@@ -21,6 +22,10 @@ const fs = require('fs');
 const path = require('path');
 
 const MAX_ATTEMPTS = 3;
+// P3340 (16/11/2026): Athom's bare "AggregateError" (empty message) is the Node net multi-address connect
+// failure, and identical content flips Test <-> AggregateError (1385/1386, 1424/1425, #3705/#3706). One
+// refusal of a single id is therefore not a verdict: isolate only after this many refusals of that id.
+const ISOLATE_CONFIRMATIONS = 2;
 const ROOT = path.resolve(__dirname, '..', '..');
 const F = {
   hold: 'config/publish-hold-drivers.json',
@@ -80,7 +85,10 @@ function decide({ released, outcome, state, heldIds }) {
     res.accept = group;
     res.note = `group of ${group.length} accepted (Test): removed from hold`;
   } else if (/AggregateError/i.test(outcome)) {
-    if (group.length === 1) {
+    if (group.length === 1 && st.attempts[s] < ISOLATE_CONFIRMATIONS) {
+      st.queue = [...st.queue, group];
+      res.note = `unconfirmed AggregateError on ${group[0]} (${st.attempts[s]}/${ISOLATE_CONFIRMATIONS}): re-queued once for a confirming upload`;
+    } else if (group.length === 1) {
       res.isolate = group[0];
       if (!st.isolated.includes(group[0])) st.isolated.push(group[0]);
       res.note = `isolated ${group[0]}: kept on hold`;
@@ -224,5 +232,5 @@ function main(argv) {
   return 0;
 }
 
-module.exports = { hypothesis, alreadyDone, markDone, DONE_RUNS_MAX, MAX_ATTEMPTS, PENDING_TTL_MS, parse, sig, resolveRelease, resolveForRun, decide, dispatchDecision, seed, F };
+module.exports = { ISOLATE_CONFIRMATIONS, hypothesis, alreadyDone, markDone, DONE_RUNS_MAX, MAX_ATTEMPTS, PENDING_TTL_MS, parse, sig, resolveRelease, resolveForRun, decide, dispatchDecision, seed, F };
 if (require.main === module) process.exit(main(process.argv.slice(2)));

@@ -38,6 +38,42 @@ function walk(root) {
   return out;
 }
 
+// P3340 (16/11/2026): strings in app.json that a strict consumer (Athom processing, store DB, CDN) may reject.
+// Accents and other printable text are fine; padded real manufacturer names ("AOYAN  ") are device strings.
+function manifestStringProblems(app) {
+  const out = [];
+  const MAX = 200;
+  const visit = (v, at) => {
+    if (out.length >= MAX) return;
+    if (typeof v === 'string') {
+      for (let i = 0; i < v.length; i++) {
+        const c = v.charCodeAt(i);
+        if (c < 0x20 && c !== 9 && c !== 10 && c !== 13) { out.push(`control character U+${c.toString(16).padStart(4, '0')} in ${at}`); return; }
+        if (c === 0xfeff) { out.push(`BOM (U+FEFF) inside ${at}`); return; }
+        if (c === 0xfffd) { out.push(`U+FFFD replacement character (mojibake) in ${at}`); return; }
+        if (c >= 0xd800 && c <= 0xdbff) { const n = v.charCodeAt(i + 1); if (n >= 0xdc00 && n <= 0xdfff) { i++; continue; } out.push(`lone surrogate in ${at}`); return; }
+        if (c >= 0xdc00 && c <= 0xdfff) { out.push(`lone surrogate in ${at}`); return; }
+      }
+      return;
+    }
+    if (Array.isArray(v)) { v.forEach((x, i) => visit(x, `${at}[${i}]`)); return; }
+    if (v && typeof v === 'object') for (const k of Object.keys(v)) { visit(k, `${at} key`); visit(v[k], `${at}.${k}`); }
+  };
+  visit(app, 'app.json');
+  for (const d of app.drivers || []) {
+    const z = d && d.zigbee;
+    if (!z) continue;
+    for (const f of ['manufacturerName', 'productId']) {
+      if (z[f] == null) continue;
+      for (const x of [].concat(z[f])) {
+        if (typeof x !== 'string') out.push(`driver ${d.id} zigbee.${f} has a non-string entry ${JSON.stringify(x)}`);
+        else if (!x.trim()) out.push(`driver ${d.id} zigbee.${f} has an empty or whitespace-only entry`);
+      }
+    }
+  }
+  return out;
+}
+
 function preflight(root) {
   const errors = [];
   const warns = [];
@@ -93,6 +129,7 @@ function preflight(root) {
   const appBytes = fs.statSync(appPath).size;
   if (appBytes > MAX_JSON_MB * 1024 * 1024) errors.push(`app.json ${(appBytes / 1048576).toFixed(2)} MB > ${MAX_JSON_MB} MB`);
   const app = JSON.parse(fs.readFileSync(appPath, 'utf8'));
+  for (const p of manifestStringProblems(app)) errors.push(p);
   const ids = new Map();
   for (const d of app.drivers || []) {
     if (ids.has(d.id)) errors.push(`duplicate driver id: ${d.id}`);
@@ -155,4 +192,4 @@ if (require.main === module) {
   }
   process.exit(r.errors.length ? 1 : 0);
 }
-module.exports = { preflight };
+module.exports = { preflight, manifestStringProblems };
