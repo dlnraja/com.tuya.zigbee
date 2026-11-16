@@ -14,6 +14,9 @@
  *     - `capabilityOptions`: a typo of `capabilitiesOptions`; Homey ignores it and no code reads it.
  *  2. Locales outside en/fr/nl/de inside drivers, flow cards and custom capabilities. Homey only requires
  *     `en` and falls back to it for a missing language; app name/description (store listing) untouched.
+ *  3. capabilitiesOptions `getable` / `setable` / `preventInsights` equal to the capability's own default (system
+ *     capability from homey-lib, or the app's custom capability): Homey applies that default when the option is
+ *     absent, so the device gets the same options. Values that differ from the default are kept.
  * Nothing here touches a driver id, flow card id, capability, setting id or zigbee couple.
  */
 
@@ -48,8 +51,46 @@ function stripExtraLocales(node, stats) {
   for (const v of Object.values(node)) { stripExtraLocales(v, stats); }
 }
 
-function stripInertManifest(manifest) {
-  const stats = { inertDropped: 0, inertBytes: 0, localeDropped: 0, localeBytes: 0, bytes: 0 };
+let SYSTEM_CAPS;
+function systemCaps() {
+  if (SYSTEM_CAPS === undefined) {
+    try { SYSTEM_CAPS = require('homey-lib').getCapabilities(); } catch (_) { SYSTEM_CAPS = null; }
+  }
+  return SYSTEM_CAPS;
+}
+
+// Effective default of each flag when the option is absent.
+const FLAG_DEFAULTS = Object.freeze({
+  getable: (def) => def.getable !== false,
+  setable: (def) => def.setable === true,
+  preventInsights: (def) => def.preventInsights === true,
+});
+
+function stripDefaultCapOptions(d, appCaps, sys, stats) {
+  const opts = d.capabilitiesOptions;
+  if (!sys || !opts || typeof opts !== 'object') { return; }
+  for (const [cap, o] of Object.entries(opts)) {
+    if (!o || typeof o !== 'object') { continue; }
+    const base = cap.split('.')[0];
+    const def = (appCaps && appCaps[base]) || sys[base];
+    if (!def || typeof def !== 'object') { continue; }
+    for (const [flag, dflt] of Object.entries(FLAG_DEFAULTS)) {
+      if (typeof o[flag] !== 'boolean' || o[flag] !== dflt(def)) { continue; }
+      stats.capOptBytes += bytesOf(flag, o[flag]);
+      stats.capOptDropped += 1;
+      delete o[flag];
+    }
+    if (Object.keys(o).length === 0) {
+      stats.capOptBytes += bytesOf(cap, o) + 1;
+      delete opts[cap];
+    }
+  }
+  if (Object.keys(opts).length === 0) { stats.capOptBytes += bytesOf('capabilitiesOptions', opts) + 1; delete d.capabilitiesOptions; }
+}
+
+function stripInertManifest(manifest, opts = {}) {
+  const stats = { inertDropped: 0, inertBytes: 0, localeDropped: 0, localeBytes: 0, capOptDropped: 0, capOptBytes: 0, bytes: 0 };
+  const sys = opts.systemCaps === undefined ? systemCaps() : opts.systemCaps;
   if (!manifest || typeof manifest !== 'object') { return stats; }
   for (const d of Array.isArray(manifest.drivers) ? manifest.drivers : []) {
     if (!d || typeof d !== 'object') { continue; }
@@ -59,11 +100,12 @@ function stripInertManifest(manifest) {
       stats.inertDropped += 1;
       delete d[k];
     }
+    stripDefaultCapOptions(d, manifest.capabilities, sys, stats);
     stripExtraLocales(d, stats);
   }
   if (manifest.flow) { stripExtraLocales(manifest.flow, stats); }
   if (manifest.capabilities) { stripExtraLocales(manifest.capabilities, stats); }
-  stats.bytes = stats.inertBytes + stats.localeBytes;
+  stats.bytes = stats.inertBytes + stats.localeBytes + stats.capOptBytes;
   return stats;
 }
 
@@ -77,8 +119,8 @@ function stripFile(file) {
 if (require.main === module) {
   for (const file of process.argv.slice(2)) {
     const r = stripFile(path.resolve(file));
-    console.log(`[P3342 strip-inert] ${file}: -${(r.bytes / 1024).toFixed(1)} KB (inert keys ${r.inertDropped}, locales ${r.localeDropped})`);
+    console.log(`[P3342 strip-inert] ${file}: -${(r.bytes / 1024).toFixed(1)} KB (inert keys ${r.inertDropped}, locales ${r.localeDropped}, default cap options ${r.capOptDropped})`);
   }
 }
 
-module.exports = { stripInertManifest, stripFile, INERT_DRIVER_KEYS, CORE_LOCALES, EXTRA_LOCALES, isLocaleObj };
+module.exports = { stripInertManifest, stripDefaultCapOptions, FLAG_DEFAULTS, stripFile, INERT_DRIVER_KEYS, CORE_LOCALES, EXTRA_LOCALES, isLocaleObj };

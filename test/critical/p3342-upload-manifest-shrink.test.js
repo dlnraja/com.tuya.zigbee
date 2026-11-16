@@ -13,9 +13,27 @@ const ceiling = require('../../scripts/ci/upload-manifest-ceiling.cjs');
 
 const couples = (m) => m.drivers.flatMap((d) => ((d.zigbee && d.zigbee.manufacturerName) || []).flatMap((mf) => ((d.zigbee && d.zigbee.productId) || ['']).map((p) => `${d.id}|${mf}|${p}`))).sort();
 const flowIds = (m) => ['triggers', 'conditions', 'actions'].flatMap((k) => ((m.flow || {})[k] || []).map((c) => `${k}:${c.id}`)).sort();
-const shape = (m) => ({
+const SYS = require('homey-lib').getCapabilities();
+// Effective value of every capability option once Homey applies the capability defaults for absent flags.
+// Locales beyond en/fr/nl/de are dropped on purpose (tested separately); compare the rest.
+const coreLocales = (v) => JSON.parse(JSON.stringify(v), (k, x) => (strip.isLocaleObj(x) ? Object.fromEntries(Object.entries(x).filter(([l]) => strip.CORE_LOCALES.includes(l))) : x));
+// capsOf: the capability list to resolve (capabilities + option keys of the ORIGINAL manifest), so an option
+// object removed because it only held defaults is compared as "defaults", not as missing.
+const capList = (m) => Object.fromEntries(m.drivers.map((d) => [d.id, [...new Set([...(Array.isArray(d.capabilities) ? d.capabilities : []), ...Object.keys(d.capabilitiesOptions || {})])]]));
+const effectiveCapOptions = (m, capsOf = capList(m)) => m.drivers.flatMap((d) => {
+  const opts = d.capabilitiesOptions || {};
+  const caps = capsOf[d.id] || [];
+  return caps.map((cap) => {
+    const def = (m.capabilities || {})[cap.split('.')[0]] || SYS[cap.split('.')[0]];
+    const eff = { ...(opts[cap] || {}) };
+    if (def) { for (const [f, dflt] of Object.entries(strip.FLAG_DEFAULTS)) { if (!(f in eff)) { eff[f] = dflt(def); } } }
+    return `${d.id}|${cap}|${JSON.stringify(Object.keys(eff).sort().map((k) => [k, coreLocales(eff[k])]))}`;
+  });
+}).sort();
+const shape = (m, capsOf) => ({
   drivers: m.drivers.map((d) => d.id),
-  caps: m.drivers.map((d) => [d.id, d.capabilities, Object.keys(d.capabilitiesOptions || {})]),
+  caps: m.drivers.map((d) => [d.id, d.capabilities]),
+  capOpts: effectiveCapOptions(m, capsOf),
   maint: m.drivers.map((d) => Object.entries(d.capabilitiesOptions || {}).filter(([, o]) => o && o.maintenanceAction).map(([k]) => k)),
   settings: m.drivers.map((d) => JSON.stringify(d.settings || []).match(/"id":"[^"]+"/g)),
   flows: flowIds(m),
@@ -41,6 +59,7 @@ test('fixture: drops only maintenanceActions/capabilityOptions and extra locales
   const r = strip.stripInertManifest(m);
   assert.deepStrictEqual(shape(m), before);
   assert.strictEqual(r.inertDropped, 2);
+  assert.strictEqual(r.capOptDropped, 0, 'fixture options carry no default flag');
   assert.strictEqual(r.localeDropped, 4); // it (capOpt title), es, sv, da
   assert.ok(!('maintenanceActions' in m.drivers[0]) && !('capabilityOptions' in m.drivers[0]));
   assert.deepStrictEqual(m.drivers[0].settings[0].label, { en: 'L', fr: 'Lf', nl: 'Ln', de: 'Ld' });
@@ -68,9 +87,10 @@ test('inert keys are not Homey manifest fields and nothing reads them from the m
 
 test('source manifest: strip keeps every driver id, flow card id, capability, setting id and couple', () => {
   const m = JSON.parse(read('app.json'));
-  const before = shape(m);
+  const caps0 = capList(m);
+  const before = JSON.stringify(shape(m, caps0));
   const r = strip.stripInertManifest(m);
-  assert.deepStrictEqual(shape(m), before);
+  assert.ok(JSON.stringify(shape(m, caps0)) === before, 'shape changed (ids, capabilities, effective options, settings, flows, couples)');
   assert.ok(r.inertDropped > 100, `inert keys dropped ${r.inertDropped}`);
   assert.ok(!m.drivers.some((d) => d.maintenanceActions || d.capabilityOptions));
 });
@@ -98,4 +118,26 @@ test('ceiling policy: at most 3.3 MB, goal 2.85 MB; over the ceiling fails, unde
     assert.strictEqual(ceiling.checkUploadManifest(tmp, { ceilingBytes: 100, goalBytes: 50 }).ok, true);
     assert.strictEqual(ceiling.checkUploadManifest(tmp, { ceilingBytes: 99, goalBytes: 50 }).ok, false);
   } finally { fs.rmSync(tmp, { force: true }); }
+});
+
+test('default capability flags: dropped only when equal to the capability default; differing values and other options kept', () => {
+  const m = { capabilities: { my_cap: { type: 'boolean', getable: false } }, drivers: [{ id: 'd', capabilities: ['measure_battery', 'volume_up', 'my_cap', 'onoff'], capabilitiesOptions: {
+    measure_battery: { getable: true, preventInsights: false, title: { en: 'Bat' } },
+    volume_up: { getable: false, setable: true },
+    my_cap: { getable: false },
+    onoff: { getable: false, setable: false, preventInsights: true },
+  } }] };
+  const caps0 = capList(m);
+  const before = effectiveCapOptions(m, caps0);
+  const r = strip.stripInertManifest(m, { systemCaps: SYS });
+  assert.deepStrictEqual(m.drivers[0].capabilitiesOptions.measure_battery, { title: { en: 'Bat' } });
+  assert.ok(!('volume_up' in m.drivers[0].capabilitiesOptions), 'volume_up flags equal its defaults');
+  assert.ok(!('my_cap' in m.drivers[0].capabilitiesOptions), 'app capability default respected');
+  assert.deepStrictEqual(m.drivers[0].capabilitiesOptions.onoff, { getable: false, setable: false, preventInsights: true }, 'non-default kept');
+  assert.strictEqual(r.capOptDropped, 5);
+  const after = effectiveCapOptions(m, caps0);
+  assert.deepStrictEqual(after, before, 'removed entries resolve to the very same defaults');
+  const noLib = { drivers: [{ id: 'x', capabilitiesOptions: { measure_battery: { getable: true } } }] };
+  strip.stripInertManifest(noLib, { systemCaps: null });
+  assert.deepStrictEqual(noLib.drivers[0].capabilitiesOptions, { measure_battery: { getable: true } }, 'no homey-lib: untouched');
 });
