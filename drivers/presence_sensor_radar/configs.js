@@ -359,6 +359,8 @@ const SENSOR_CONFIGS = {
       '_TZE200_uli8wasj', '_TZE204_uli8wasj',
       '_TZE200_rhgsbacq', '_TZE204_rhgsbacq',
       '_TZE200_y8jijhba', '_TZE204_y8jijhba',
+      // Weekly upstream 2026-11-16: HYSYIOT HS204ZV (TS0202 modelId, so the ZG-204ZV model route misses it)
+      '_TZD200_vfh3tuo1',
       'HOBEIAN',
       // WHY(P2415): do NOT list _TZ3000_8bxrzyxz here - din_rail couple, not ZG-204ZV
     ],
@@ -737,7 +739,8 @@ const SENSOR_CONFIGS = {
   // TYPE G8: HOBEIAN ZG-204ZX mmWave + T&H (P2422 Z2M)
   'HOBEIAN_ZG204ZX': {
     configName: 'HOBEIAN_ZG204ZX',
-    sensors: ['_TZE200_w0ap83qu'],
+    // Weekly upstream 2026-11-16: _TZD200_5ziwcyoe = HYSYIOT HS204ZX, same Z2M ZG-204ZX definition
+    sensors: ['_TZE200_w0ap83qu', '_TZD200_5ziwcyoe'],
     modelId: 'ZG-204ZX',
     battery: true,
     useTuyaDP: true,

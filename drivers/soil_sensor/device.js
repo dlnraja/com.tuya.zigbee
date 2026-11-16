@@ -92,6 +92,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       '_tze284_myd45weu', '_tze284_oitavov2', '_tze284_2nhqasjh',
       '_tze284_aao3yzhs', '_tze284_tgrzpqf4', '_tze284_0ints6wl',
       '_tze200_npj9bug3', '_tze200_myd45weu', '_tze204_myd45weu',
+      // Weekly upstream 2026-11-16: HYSYIOT HS303Z, same Z2M ZG-303Z definition as _TZE200_wqashyqo
+      '_tzd200_7khnomgh',
     ];
     return _includesCI(zg303Mfrs, manufacturer);
   }

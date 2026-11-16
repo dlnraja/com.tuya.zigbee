@@ -23,7 +23,7 @@ describe('P3233 curtain_motor_2 continuation', () => {
   });
 
   it('carries exactly the 2 sourced TS0601-only makers, TS0601 only, none left on the root', () => {
-    assert.deepStrictEqual([...new Set(cont.zigbee.manufacturerName.map(lc))].sort(), ['_tze200_cpbo62rn', '_tze200_eegnwoyw']);
+    assert.deepStrictEqual([...new Set(cont.zigbee.manufacturerName.map(lc))].sort(), ['_tze200_cpbo62rn', '_tze200_eegnwoyw', '_tze284_lqhqj73n']); // + P3345 new TS0601 couple (root full, rule 4)
     assert.deepStrictEqual([...new Set(cont.zigbee.productId.map(lc))], ['ts0601']);
     const rm = new Set(root.zigbee.manufacturerName.map(lc));
     assert.ok(!rm.has('_tze200_cpbo62rn') && !rm.has('_tze200_eegnwoyw'));

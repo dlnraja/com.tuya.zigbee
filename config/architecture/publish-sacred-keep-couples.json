@@ -2233,6 +2233,150 @@
       "pid": "TS0505B",
       "driverId": "light_bulb_rgb_rgbw",
       "note": "P3343 KB daily 2026-11-16: Z2M zhc tuya.ts TS0505B_2 / MiBoxer FUTC04ZR whitelabel, sibling of _TZ3210_it1u8ahz"
+    },
+    {
+      "mfr": "_TZ3000_g5pzotdr",
+      "pid": "TS0001",
+      "driverId": "switch_1gang",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts TS0001_power (MoveSmart MS-M2Z whitelabel, #13621), sibling ids already on switch_1gang. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZ3210_aracgljk",
+      "pid": "TS0003",
+      "driverId": "switch_3gang",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts Nova Digital SA-3 / NFZB-03 3-gang switch, siblings _TZ3000_fawk5xjv/_TZ3000_bvij6kod on switch_3gang. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZ3210_xfbmf71h",
+      "pid": "TS0003",
+      "driverId": "switch_3gang",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts TS0003_switch_3_gang_with_backlight (Nova Digital SA-WK-2C whitelabel), siblings on switch_3gang. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZD200_7khnomgh",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc hobeian.ts ZG-303Z (HYSYIOT HS303Z whitelabel), sibling _TZE200_wqashyqo, ZG-303Z DP map. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZD200_gt1gge3x",
+      "pid": "TS0601",
+      "driverId": "rain_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc hobeian.ts ZG-223Z rain sensor, sibling _TZE200_gt1gge3x on rain_sensor. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE2841000000_nlrfgpny",
+      "pid": "TS0601",
+      "driverId": "siren",
+      "note": "Weekly upstream 2026-11-16: zhc neo.ts NEO NAS-AB06B2 (#13646), siblings _TZE200/_TZE204/_TZE284_nlrfgpny on siren. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE284_1iii6x0y",
+      "pid": "TS0601",
+      "driverId": "switch_wall_6gang",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts TS0601_switch_6_gang (JWCOM SA-ZB417F-BR whitelabel, #13630), DP1-6 like _TZE204_gxbdnfrh. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE204_bb5xlia1",
+      "pid": "TS0601",
+      "driverId": "switch_wall_6gang",
+      "note": "Weekly upstream 2026-11-16: zhc nova_digital.ts SA-WK 4X4 6-channel switch (#13758), DP1-6 state, DP101 all-channels. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE204_tayx2ud6",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "Weekly upstream 2026-11-16: zhc nova_digital.ts TS0601_ND_4Gang 4-gang touch switch (#13722), DP1-4 state. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE28C1000000_lbhh5o6z",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts TS0601_switch_4_gang_1 (AVATTO ZWSMD-4 whitelabel), DP1-4 state. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE204_0corc0ph",
+      "pid": "TS0601",
+      "driverId": "gas_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts Xenon Smart X7633 / Zorro Alert JT-ZL2010Z natural gas detector, DP1 gas. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE204_mqij5jas",
+      "pid": "TS0601",
+      "driverId": "gas_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts Jikaida JKD-839Z gas sensor, DP1 gas / DP2 gas value. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE284_lqhqj73n",
+      "pid": "TS0601",
+      "driverId": "curtain_motor_2",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts outdoor roller blind motor (#13793), DP1 control, DP2/3 position, DP13 battery (curtain_motor is full, continuation curtain_motor_2). Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE284_pfbtmgo1",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc nous.ts Nous E13 / Sygonix W08-Z10T water leak or shortage sensor (#13763), DP1 water, DP102 water_leak. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE200_7sa1ogeny",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts HYSYIOT HS300TF solar soil sensor, DP3 moisture / DP5 temperature / DP15 battery / DP101 humidity / DP102 lux. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZD200_7sa1ogeny",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts HYSYIOT HS300TF solar soil sensor (same definition). Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE200_sa1ogeny",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts HYSYIOT HS300TF solar soil sensor (fertility variant). Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZD200_sa1ogeny",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts HYSYIOT HS300TF solar soil sensor (fertility variant). Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZ3210_3632cjza",
+      "pid": "TS0502B",
+      "driverId": "light_cct_ts0502b",
+      "note": "Weekly upstream 2026-11-16: zhc tuya.ts TS0502B whitelabel ECODO DR-MW-2436 tunable white LED driver (#13725). Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZ3002_l8bfzlcd",
+      "pid": "TS0726",
+      "driverId": "switch_1gang",
+      "note": "Weekly upstream 2026-11-16: wrong driver: zhc tuya.ts TS0726_1_gang lists it with _TZ3000_ovbvmhiq and _TZ3002_wowrpxxu (1-gang switch with neutral), not a 4-gang; moved to switch_1gang. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE284_1di7ujzp",
+      "pid": "TS0601",
+      "driverId": "water_leak_sensor",
+      "note": "Weekly upstream 2026-11-16: wrong driver: zhc nous.ts Nous E13 water leak or shortage sensor (same definition as _TZE284_pfbtmgo1), not a climate sensor; moved to water_leak_sensor. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE204_lbhh5o6z",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "Weekly upstream 2026-11-16: wrong driver: zhc tuya.ts TS0601_switch_4_gang_1 (AVATTO ZWSMD-4 4-gang switch) and JohanBendz wall_switch_4_gang_tuya; not a cover; moved to wall_switch_4_gang_tuya. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE284_lbhh5o6z",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "Weekly upstream 2026-11-16: wrong driver: zhc tuya.ts TS0601_switch_4_gang_1 (AVATTO ZWSMD-4 4-gang switch); not a cover; moved to wall_switch_4_gang_tuya. Pin so publish compaction cannot drop the couple."
+    },
+    {
+      "mfr": "_TZE204_iik0pquw",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "Weekly upstream 2026-11-16: wrong driver: zhc tuya.ts TS0601_switch_4_gang_1 (ZYXH TY-04Z 4-gang switch) and JohanBendz wall_switch_4_gang_tuya; not a cover; moved to wall_switch_4_gang_tuya. Pin so publish compaction cannot drop the couple."
     }
   ]
 }
