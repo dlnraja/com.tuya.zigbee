@@ -16,6 +16,10 @@
  *     After pruning, a Homey-less load check requires app.js and every driver/device module in a
  *     child process; any NEW "Cannot find module" restores every pruned file.
  *
+ *  3. P3356: config/ and data/ files (json/md/txt/csv) whose name (or extension-less stem) no remaining
+ *     payload file mentions (fixed point; dirs that code enumerates kept whole), and the image
+ *     provenance notes drivers/<id>/assets/image-source.json (no reader).
+ *
  * Firmware (.bin), driver images/svg and pair views are kept: Homey requires firmware in
  * drivers/<id>/assets/firmware and per-driver assets; there is no runtime loading for them.
  *
@@ -35,7 +39,15 @@ const REVIEWED_DYNAMIC = new Set([
   'lib/util/index.js|../../locales/${language}.json', // locales are never pruned
   'lib/zigbee/ZigbeeLibBackports.js|${name}/package.json', // node_modules, never pruned
   'lib/Util.js|fullPath', // requirePermissive(dir, name): no callers; names would be literals
+  // P3356 reviewed (all literal paths):
+  'lib/memory/CatalogStore.js|CATALOG_FILE', // const CATALOG_FILE = path.join(__dirname, ..., literal json)
+  "lib/energy/PowerSourceResolver.js|path.join(__dirname, '..', '..', 'data', 'energy', 'default-power.json'", // literal data file
+  'lib/zigbee/MethodCoverage.js|mod', // './X' names from a literal table in the same file
 ]);
+// P3356: unreferenced data files. Only these dirs/extensions; code, assets, locales, skills and legal
+// files are never candidates. Directories some code lists with readdirSync are kept whole.
+const DATA_DIRS = ['config', 'data'];
+const DATA_EXT = /\.(json|md|txt|csv)$/i;
 const JSON_DIRS = ['data', 'config', 'lib', 'locales', 'capabilities'];
 const MB = 1048576;
 
@@ -138,6 +150,65 @@ function scanUnreferenced(root) {
   return { drop, unreviewed, reached: seen.size, unreached: unreached.length, rel };
 }
 
+// P3356: drop config/ and data/ files (json/md/txt/csv) whose basename or extension-less stem
+// (case-insensitive, token-bounded) appears in no remaining payload text file outside node_modules;
+// fixed point, so a reference that only comes from another dropped file does not count. A directory
+// that payload code enumerates (readdirSync/readdir/glob on a path naming that dir) is kept whole.
+function scanUnreferencedData(root) {
+  const all = walk(root);
+  const rel = (f) => path.relative(root, f).split(path.sep).join('/');
+  const cands = all.filter((f) => DATA_DIRS.includes(rel(f).split('/')[0]) && DATA_EXT.test(f));
+  const texts = all.filter((f) => /\.((c|m)?js|json|html?|txt|md|csv|svg)$/i.test(f) && fs.statSync(f).size < 8 * MB);
+  const corpus = new Map(texts.map((f) => [f, fs.readFileSync(f, 'utf8').toLowerCase()]));
+  const esc = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const tok = (x) => new RegExp(`(^|[^a-z0-9_-])${esc(x)}([^a-z0-9_-]|$)`);
+  // Dirs enumerated by code: a js file that calls readdir/opendir and names the dir's basename as a
+  // quoted string or path segment keeps that dir's direct files (readdir is not recursive; the only
+  // recursive walkers in lib have no callers). Fail-safe: any naming counts.
+  const listed = new Set();
+  const dirs = new Set(cands.map((f) => path.dirname(f)));
+  for (const [f, s] of corpus) {
+    if (!/\.(c|m)?js$/.test(f) || !/\b(readdir|readdirsync|opendir|opendirsync)\s*\(/.test(s)) continue;
+    for (const d of dirs) {
+      const b = esc(path.basename(d).toLowerCase());
+      if (new RegExp(`['"\`/]${b}['"\`/]`).test(s)) listed.add(d);
+    }
+  }
+  const pool = cands.filter((f) => !listed.has(path.dirname(f)));
+  const res = (f) => { const b = path.basename(f).toLowerCase(); return [tok(b), tok(b.replace(DATA_EXT, ''))]; };
+  const inPool = new Set(pool);
+  let kept = new Set(pool);
+  for (;;) {
+    const next = new Set();
+    for (const f of kept) {
+      const [a, b] = res(f);
+      for (const t of texts) {
+        if (t === f || (inPool.has(t) && !kept.has(t))) continue;
+        const c = corpus.get(t);
+        if (a.test(c) || b.test(c)) { next.add(f); break; }
+      }
+    }
+    if (next.size === kept.size) break;
+    kept = next;
+  }
+  const drop = pool.filter((f) => !kept.has(f));
+  // Image provenance notes (drivers/<id>/assets/image-source.json: download url + date) have no
+  // reader in Homey or in payload code; they go unless some payload js names them.
+  const jsNames = [...corpus].some(([f, c]) => /\.(c|m)?js$/.test(f) && c.includes('image-source'));
+  if (!jsNames) drop.push(...all.filter((f) => /^drivers\/[^/]+\/assets\/image-source\.json$/.test(rel(f))));
+  return { drop, rel, listedDirs: [...listed].map(rel).sort() };
+}
+
+function pruneData(root, dry) {
+  const s = scanUnreferencedData(root);
+  let bytes = 0;
+  for (const f of s.drop) {
+    bytes += fs.statSync(f).size;
+    if (!dry) fs.rmSync(f);
+  }
+  return { candidates: s.drop.length, dropped: dry ? 0 : s.drop.length, savedMB: +(bytes / MB).toFixed(3), files: s.drop.map(s.rel), listedDirs: s.listedDirs };
+}
+
 const LOAD_CHECK = `
 const Module=require('module');const path=require('path');const fs=require('fs');const R=process.argv[1];
 class B{constructor(){this.homey=H;}log(){}error(){}}
@@ -193,9 +264,11 @@ function main() {
   try {
     const json = minifyJson(target, dry);
     const js = pruneJs(target, dry);
-    const report = { target, dry, json, js };
+    const data = pruneData(target, dry);
+    const report = { target, dry, json, js, data };
     console.log(`[lossless-shrink] JSON minify: ${json.files} files, -${json.savedMB} MB${dry ? ' (dry run)' : ''}`);
     console.log(`[lossless-shrink] unreferenced lib JS: ${js.candidates} candidates, dropped ${js.dropped}, -${js.savedMB} MB${js.skipped ? ` (${js.skipped})` : ''}`);
+    console.log(`[lossless-shrink] unreferenced config/data files: ${data.candidates} candidates, dropped ${data.dropped}, -${data.savedMB} MB`);
     if (js.unreviewedDynamic.length) console.log(`::warning::[lossless-shrink] unreviewed dynamic require sites: ${js.unreviewedDynamic.join(', ')}`);
     if (ri >= 0 && args[ri + 1]) fs.writeFileSync(args[ri + 1], JSON.stringify(report, null, 1));
   } catch (e) {
@@ -204,4 +277,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { minifyJson, scanUnreferenced, pruneJs, REVIEWED_DYNAMIC };
+module.exports = { minifyJson, scanUnreferenced, pruneJs, scanUnreferencedData, pruneData, REVIEWED_DYNAMIC };
