@@ -60,11 +60,17 @@ function systemCaps() {
 }
 
 // Effective default of each flag when the option is absent.
+// P3354: only getable:true and preventInsights:false are stripped, and only when they equal the
+// capability default; the runtime heals read a missing flag as that default. setable and
+// getable:false stay explicit: DynamicFlowCardManager, InteractionHistory and FeatureFlowCards
+// read them as given values.
 const FLAG_DEFAULTS = Object.freeze({
   getable: (def) => def.getable !== false,
   setable: (def) => def.setable === true,
   preventInsights: (def) => def.preventInsights === true,
 });
+// The only flag values the strip may drop (when they also equal the capability default).
+const STRIPPABLE_FLAGS = Object.freeze({ getable: true, preventInsights: false });
 
 function stripDefaultCapOptions(d, appCaps, sys, stats) {
   const opts = d.capabilitiesOptions;
@@ -75,7 +81,7 @@ function stripDefaultCapOptions(d, appCaps, sys, stats) {
     const def = (appCaps && appCaps[base]) || sys[base];
     if (!def || typeof def !== 'object') { continue; }
     for (const [flag, dflt] of Object.entries(FLAG_DEFAULTS)) {
-      if (typeof o[flag] !== 'boolean' || o[flag] !== dflt(def)) { continue; }
+      if (typeof o[flag] !== 'boolean' || o[flag] !== dflt(def) || STRIPPABLE_FLAGS[flag] !== o[flag]) { continue; }
       stats.capOptBytes += bytesOf(flag, o[flag]);
       stats.capOptDropped += 1;
       delete o[flag];
@@ -123,4 +129,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { stripInertManifest, stripDefaultCapOptions, FLAG_DEFAULTS, stripFile, INERT_DRIVER_KEYS, CORE_LOCALES, EXTRA_LOCALES, isLocaleObj };
+module.exports = { stripInertManifest, stripDefaultCapOptions, FLAG_DEFAULTS, STRIPPABLE_FLAGS, stripFile, INERT_DRIVER_KEYS, CORE_LOCALES, EXTRA_LOCALES, isLocaleObj };

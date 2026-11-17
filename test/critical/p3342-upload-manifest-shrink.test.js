@@ -131,10 +131,11 @@ test('default capability flags: dropped only when equal to the capability defaul
   const before = effectiveCapOptions(m, caps0);
   const r = strip.stripInertManifest(m, { systemCaps: SYS });
   assert.deepStrictEqual(m.drivers[0].capabilitiesOptions.measure_battery, { title: { en: 'Bat' } });
-  assert.ok(!('volume_up' in m.drivers[0].capabilitiesOptions), 'volume_up flags equal its defaults');
-  assert.ok(!('my_cap' in m.drivers[0].capabilitiesOptions), 'app capability default respected');
+  // P3354: setable and getable:false stay explicit even when equal to the default (runtime readers use them).
+  assert.deepStrictEqual(m.drivers[0].capabilitiesOptions.volume_up, { getable: false, setable: true }, 'setable / getable:false kept');
+  assert.deepStrictEqual(m.drivers[0].capabilitiesOptions.my_cap, { getable: false }, 'getable:false kept');
   assert.deepStrictEqual(m.drivers[0].capabilitiesOptions.onoff, { getable: false, setable: false, preventInsights: true }, 'non-default kept');
-  assert.strictEqual(r.capOptDropped, 5);
+  assert.strictEqual(r.capOptDropped, 2);
   const after = effectiveCapOptions(m, caps0);
   assert.deepStrictEqual(after, before, 'removed entries resolve to the very same defaults');
   const noLib = { drivers: [{ id: 'x', capabilitiesOptions: { measure_battery: { getable: true } } }] };
