@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1628": {
+    "en": "Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : éclairages et variateurs. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1627": {
-    "en": "New: lights and dimmers and energy meters. Fixed: pairing and device recognition and safety sensors & climate sensors. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : éclairages et variateurs et compteurs d'énergie. Corrigé : appairage et reconnaissance des appareils et détecteurs de sécurité & capteurs d'ambiance. Et 8 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "New: lights and dimmers and energy meters. Fixed: pairing and device recognition and safety sensors & climate sensors. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1626": {
     "en": "Fixed: pairing and device recognition, general reliability (TS0601) and device settings. Faster: lights and dimmers. Behind the scenes: tests and publishing checks."
@@ -964,8 +967,5 @@
   },
   "9.0.1606": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1605": {
-    "en": "New: Flow cards & device settings. Fixed: memory and timers and smart plugs & energy meters (TS011F). Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks."
   }
 }
