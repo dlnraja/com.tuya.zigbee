@@ -49,13 +49,13 @@ describe('P3355 retry chain counted per error class', () => {
     assert.strictEqual(c.retry, false);
   });
 
-  it('a transport failure after the bare retry still has its own budget, capped at 3 retries per chain', () => {
-    const a = T.decide({ version: 'v3', builds: [hang(3, 'v3')], retryChain: '2:t1a1', idleWaited: true });
-    assert.strictEqual(a.next, '3:t2a1');
-    const b = T.decide({ version: 'v4', builds: [hang(4, 'v4')], retryChain: '3:t2a1', idleWaited: true });
-    assert.strictEqual(b.retry, false);
+  it('a transport failure after the bare retry still has its own budget inside the 3-upload chain (P3357)', () => {
+    const a = T.decide({ version: 'v2', builds: [hang(2, 'v2')], retryChain: '1:t0a1', idleWaited: true });
+    assert.strictEqual(a.next, '2:t1a1');
+    const b = T.decide({ version: 'v3', builds: [hang(3, 'v3')], retryChain: '2:t1a1', idleWaited: true });
+    assert.strictEqual(b.retry, false, 'P3357: 3 uploads made, no 4th');
     const c = P.retryDecision({ kind: 'socket hang up', chain: '3:t1a2' });
-    assert.strictEqual(c.retry, false, 'never more than 3 retries per chain');
+    assert.strictEqual(c.retry, false, 'never more than 2 retries per chain');
   });
 
   it('legacy numeric chain keeps the old strict reading', () => {
@@ -66,7 +66,8 @@ describe('P3355 retry chain counted per error class', () => {
   it('breaker exemption follows the class counts', () => {
     assert.strictEqual(P.singleRetryExempt({ builds: [bare(3710, 'x')], transientRetry: '2:t1a1' }).exempt, true);
     assert.strictEqual(P.singleRetryExempt({ builds: [bare(3711, 'x')], transientRetry: '3:t1a2' }).exempt, false);
-    assert.strictEqual(P.singleRetryExempt({ builds: [hang(3709, 'x')], transientRetry: '3:t2a1' }).exempt, true);
+    assert.strictEqual(P.singleRetryExempt({ builds: [hang(3709, 'x')], transientRetry: '2:t2a0' }).exempt, true);
+    assert.strictEqual(P.singleRetryExempt({ builds: [hang(3709, 'x')], transientRetry: '3:t2a1' }).exempt, false, 'P3357: no 4th upload');
     assert.strictEqual(P.singleRetryExempt({ builds: [hang(3709, 'x')], transientRetry: '4:t3a1' }).exempt, false);
     assert.strictEqual(P.singleRetryExempt({ builds: [bare(3710, 'x')], transientRetry: '2' }).exempt, false, 'legacy number: strict');
   });
