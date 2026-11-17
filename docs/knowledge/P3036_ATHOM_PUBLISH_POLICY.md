@@ -105,3 +105,7 @@ now carries `<total>:t<transport>a<bare>` (for example `2:t1a1`; `parseInt` stil
 Transport kinds keep up to 2 retries (3 attempts), a bare AggregateError exactly 1 identical retry, and a
 chain never exceeds 3 retries. A legacy plain number is read the old, stricter way. The breaker exemption
 uses the same per-class counts. Backoff, idle wait and the same-version / orphan guards are unchanged.
+
+## P3357: at most 3 uploads per chain
+
+User rule (2026-11-15): a publish chain makes at most 3 uploads (1 initial + 2 retries), whatever the error mix, then stops and notifies. `RETRY.maxChainUploads = 3`, `RETRY.maxChainRetries = 2`. A bare AggregateError still gets at most its one identical retry inside those 3; transport retries fill the rest. The breaker exemption refuses any chain value above 2 retries. (P3355 allowed 3 retries = 4 uploads.)
