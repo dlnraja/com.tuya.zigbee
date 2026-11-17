@@ -73,7 +73,10 @@ const BARE_AGGREGATE_KIND = 'AggregateError-bare';
 // P3355: a chain counts its retries per class. "<total>:t<transport>a<bare>" (parseInt keeps the total for
 // old readers). Transport kinds (and invalid_state) share the t bucket, a bare AggregateError has the a bucket,
 // and a chain never exceeds maxChainRetries. A legacy plain number counts every prior retry for the current class.
-RETRY.maxChainRetries = RETRY.maxTransportRetries + RETRY.maxBareAggregateRetries;
+// P3357 (user rule 2026-11-15): at most 3 uploads per chain (1 initial + 2 retries) whatever the error mix, then
+// stop and notify; the single bare-AggregateError retry counts inside those 3.
+RETRY.maxChainUploads = 3;
+RETRY.maxChainRetries = RETRY.maxChainUploads - 1;
 const CHAIN_RE = /^(\d+):t(\d+)a(\d+)$/;
 function parseRetryChain(v) {
   const s = String(v === undefined || v === null ? '' : v).trim().toLowerCase();
@@ -187,7 +190,7 @@ function retryDecision({ kind, cls, text, retriesDone = 0, idleWaited = true, rn
     const d = retryDecision({ kind: c.kind, cls: c.cls, retriesDone: chainClassCount(ch, c.kind), idleWaited, rnd });
     if (d.retry && ch.total >= RETRY.maxChainRetries) {
       return { ...d, retry: false, backoffS: 0, tripBreaker: c.cls === 'real', diagnose: true,
-        reason: `${c.kind}: the chain already used all ${RETRY.maxChainRetries} retries (${ch.total + 1} attempts), stop and report` };
+        reason: `${c.kind}: the chain already made ${ch.total + 1} of its ${RETRY.maxChainUploads} uploads (${RETRY.maxChainRetries} retries used), stop and report` };
     }
     if (d.retry) {
       const t = ch.typed ? ch.transport : 0; const a = ch.typed ? ch.bare : 0;
@@ -245,7 +248,7 @@ function singleRetryExempt({ builds, transientRetry } = {}) {
   if (!total) return { exempt: false, reason: 'not a retry run' };
   // P3355: typed chains are bounded by the chain cap; legacy numbers keep the old transport cap.
   const cap = ch.typed ? RETRY.maxChainRetries : RETRY.maxTransportRetries;
-  if (total > cap) return { exempt: false, reason: `retry ${total} exceeds the ${cap} automatic retries of a chain` };
+  if (total > cap) return { exempt: false, reason: `retry ${total} exceeds the ${cap} automatic retries of a chain (max ${RETRY.maxChainUploads} uploads)` };
   if (!latest || !isFailed(latest)) return { exempt: false, reason: 'latest build is not a failure' };
   const c = classify(latest);
   const n = chainClassCount(ch, c.kind);
