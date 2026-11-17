@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1630": {
+    "en": "Changed: lossless upload-archive trim and a ratchet on archive size and file count; count the publish retry chain per error class.",
+    "fr": "Modifié : lossless upload-archive trim and a ratchet on archive size and file count; count the publish retry chain per error class."
+  },
   "9.0.1629": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
-    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
   },
   "9.0.1628": {
     "en": "Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks."
@@ -964,8 +967,5 @@
   },
   "9.0.1608": {
     "en": "Maintenance build: same devices and behaviour; the publish ."
-  },
-  "9.0.1607": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
   }
 }
