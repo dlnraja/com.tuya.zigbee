@@ -163,6 +163,9 @@ function main() {
 
   // Prune dev artifacts
   removePath(path.join(target, 'pnpm-lock.yaml'), 'dev lockfile', removed);
+  // P3356: prepare-publish drops package-lock.json, but the publish action's `npm install` re-creates it
+  // (392 KB in build #3710). The dependencies are installed by now and the app never reads it.
+  removePath(path.join(target, 'package-lock.json'), 'dev lockfile (dependencies already installed)', removed);
   removePath(path.join(target, 'tools', 'ci', 'delete-johan-comments.sh'), 'dev tool', removed);
   removePath(path.join(target, 'tools', 'ci', 'delete-own-upstream-comments.js'), 'dev tool', removed);
   removePath(path.join(target, 'tools', 'ci', 'delete-johan-comments.js'), 'dev tool', removed);

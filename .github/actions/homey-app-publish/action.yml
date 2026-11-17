@@ -77,6 +77,8 @@ runs:
           npm install --omit=dev --ignore-scripts --no-audit --no-fund
         fi
         node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR"
+        # P3356: ratchet on the exact tar the CLI uploads (file count + tar bytes); blocks growth past config/upload-archive-ceiling.json.
+        node "$GITHUB_WORKSPACE/scripts/ci/upload-archive-ceiling.cjs" "$PUBLISH_DIR" || { echo "::error::P3356 upload archive ceiling exceeded, not uploading (see lines above)"; exit 1; }
         # v9.0.287 (P74): Bumped limits to 50/50 MB. With .homeyignore pruning
         # (mfs_db.json, dev artifacts, branding assets) the source directory
         # is ~40 MB. The gzipped tarball is ~18 MB (well under Homey's tar limit).

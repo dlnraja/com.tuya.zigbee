@@ -27,6 +27,9 @@ on:
       - "scripts/prepare-publish.js"
       - "scripts/ci/platform-budget-gate.js"
       - "config/platform-limits.json"
+      - "config/upload-archive-ceiling.json"
+      - "scripts/ci/upload-archive-ceiling.cjs"
+      - "scripts/maintenance/**"
       - ".github/workflows/**"
   schedule:
     - cron: "17 3 * * 1"
@@ -82,6 +85,15 @@ jobs:
         env:
           TMPDIR: ${{ runner.temp }}
         run: node scripts/ci/upload-manifest-ceiling.cjs "${HOMEY_PUBLISH_DIR:-$RUNNER_TEMP/homey-publish-temp}/app.json"
+      - name: Upload archive ceiling (P3356, blocking)
+        env:
+          TMPDIR: ${{ runner.temp }}
+        run: |
+          # Same prune as the publish action, on a copy; the app part (without node_modules) is measured.
+          CHK="$RUNNER_TEMP/archive-ceiling-check"
+          rm -rf "$CHK" && cp -a "${HOMEY_PUBLISH_DIR:-$RUNNER_TEMP/homey-publish-temp}" "$CHK"
+          node scripts/maintenance/prune-publish-payload.cjs "$CHK"
+          node scripts/ci/upload-archive-ceiling.cjs "$CHK" --app-only
       - name: Platform budget gate
         env:
           GH_TOKEN: ${{ github.token }}
