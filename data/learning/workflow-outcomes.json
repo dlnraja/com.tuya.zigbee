@@ -1,6 +1,6 @@
 {
  "version": 1,
- "watermark": "2026-11-16T13:33:18.682Z",
+ "watermark": "2026-11-17T14:17:21.832Z",
  "seen": [
   "self-maintain:2026-10-25",
   "ci-fail:40227923450:1",
@@ -435,15 +435,20 @@
   "ci-fail:43736130149:1",
   "ci-fail:43735981586:1",
   "ci-fail:43735939597:1",
-  "ci-fail:43722902897:1"
+  "ci-fail:43722902897:1",
+  "watch:ci-943a14060e21",
+  "watch:ci-b8b4d0a704a7",
+  "watchdog-run:2026-11-16",
+  "automation-loop:2026-11-16",
+  "self-maintain:2026-11-17"
  ],
  "workflows": {
   "self-maintain": {
-   "ok": 22,
+   "ok": 23,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 22,
+   "okStreak": 23,
    "failStreak": 0,
    "last": [
     "ok",
@@ -457,7 +462,7 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-16T13:32:50.845Z",
+   "lastAt": "2026-11-17T14:17:21.832Z",
    "hint": "relax"
   },
   "ci-self-check.yml": {
@@ -508,11 +513,10 @@
    "ok": 0,
    "fail": 135,
    "transient": 5,
-   "warn": 6,
+   "warn": 7,
    "okStreak": 0,
    "failStreak": 135,
    "last": [
-    "fail",
     "fail",
     "fail",
     "fail",
@@ -521,9 +525,10 @@
     "fail",
     "fail",
     "fail",
-    "fail"
+    "fail",
+    "warn"
    ],
-   "lastAt": "2026-11-16T13:33:18.682Z",
+   "lastAt": "2026-11-16T13:34:35.784Z",
    "hint": "backoff"
   },
   "syntax-check.yml": {
@@ -653,7 +658,7 @@
    "ok": 5,
    "fail": 0,
    "transient": 0,
-   "warn": 16,
+   "warn": 17,
    "okStreak": 5,
    "failStreak": 0,
    "last": [
@@ -661,22 +666,22 @@
     "warn",
     "warn",
     "warn",
+    "ok",
+    "ok",
+    "ok",
     "warn",
-    "ok",
-    "ok",
-    "ok",
     "warn",
     "warn"
    ],
-   "lastAt": "2026-11-15T12:41:52.002Z",
+   "lastAt": "2026-11-16T13:34:35.785Z",
    "hint": "normal"
   },
   "automation-loop": {
-   "ok": 21,
+   "ok": 22,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 21,
+   "okStreak": 22,
    "failStreak": 0,
    "last": [
     "ok",
@@ -690,7 +695,7 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-15T12:41:55.940Z",
+   "lastAt": "2026-11-16T13:34:45.337Z",
    "hint": "relax"
   },
   "publish-stable.yml": {
@@ -885,7 +890,7 @@
    "ok": 0,
    "fail": 17,
    "transient": 0,
-   "warn": 2,
+   "warn": 3,
    "okStreak": 0,
    "failStreak": 17,
    "last": [
@@ -894,13 +899,13 @@
     "fail",
     "fail",
     "fail",
-    "fail",
     "warn",
     "fail",
     "fail",
-    "fail"
+    "fail",
+    "warn"
    ],
-   "lastAt": "2026-11-16T13:33:15.693Z",
+   "lastAt": "2026-11-16T13:34:35.755Z",
    "hint": "backoff"
   },
   "capability-coherence.yml": {

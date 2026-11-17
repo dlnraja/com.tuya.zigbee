@@ -737,6 +737,38 @@
    "ref": "44edbe560d",
    "title": "Tuya Zigbee Valve 1.8.2: fix SWV-ZFU reporting",
    "url": "https://github.com/kkossev/Hubitat/commit/44edbe560d1e40a9a25889edbffe0c66e3bf03ef"
+  },
+  {
+   "at": "2026-11-17T14:17:24.543Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "bdbd553087",
+   "title": "fix(detect): Detect `_TZE2841000000_kyyu8rbj` and `_TZE2841000000_7uqwvoua` as Tuya ME201WZ",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/bdbd553087fa6203edf84257b192b51a174334a3"
+  },
+  {
+   "at": "2026-11-17T14:17:24.543Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "ab9491b21b",
+   "title": "fix: Tuya ME201WZ: clarify that `liquid_depth_max` sets the full tank depth (#13808)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/ab9491b21b347b23187c38a267b6ac2a7ea6f7f4"
+  },
+  {
+   "at": "2026-11-17T14:17:24.543Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "240b645caf",
+   "title": "feat: Tuya ZP01: expose `sensitivity` and `keep_time` (#13840)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/240b645caf5f17daaaab821f729ccd5935480c01"
+  },
+  {
+   "at": "2026-11-17T14:17:24.543Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.133.0",
+   "title": "v26.133.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.133.0"
   }
  ]
 }

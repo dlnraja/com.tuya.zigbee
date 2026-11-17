@@ -1,54 +1,24 @@
 {
-  "at": "2026-11-16T13:34:35.787Z",
+  "at": "2026-11-17T14:18:40.250Z",
   "checked": 62,
   "findings": [
     {
-      "kind": "repeated-failure",
-      "sig": "ci-2a1553568063",
-      "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "6 failures in 72 h: Autonomous review failed on bastien-home (critical tests / Full critical suite: code-or-test)"
+      "kind": "stale",
+      "sig": "7d65ac8624e8",
+      "wf": "publish-hold-bisect.yml",
+      "detail": "no scheduled run for 10 h (expected <= 8 h)"
     },
     {
       "kind": "repeated-failure",
       "sig": "ci-b446e2740f9d",
       "wf": ".github/workflows/node22-tests.yml",
-      "detail": "6 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / Full suite on Node 22: code-or-test)"
+      "detail": "3 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / Full suite on Node 22: code-or-test)"
     },
     {
       "kind": "repeated-failure",
-      "sig": "ci-6d2c80d14bb1",
-      "wf": ".github/workflows/ci-self-check.yml",
-      "detail": "5 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse): code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-943a14060e21",
+      "sig": "ci-2a1553568063",
       "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "3 failures in 72 h: Autonomous review failed on bastien-home (semantic review / Exact couples, weakened tests, identity: unknown)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-72bdff597f12",
-      "wf": ".github/workflows/ci-self-check.yml",
-      "detail": "8 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Report ratchet (about headers, no pasted third-party text, report shape — may only shrink): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-351d901e2c87",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "8 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-57f650364735",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "7 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-6b7f6cfbf7a6",
-      "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "6 failures in 72 h: Autonomous review failed on master (critical tests / Full critical suite: no-log)"
+      "detail": "3 failures in 72 h: Autonomous review failed on bastien-home (critical tests / Full critical suite: code-or-test)"
     },
     {
       "kind": "repeated-failure",
@@ -64,9 +34,27 @@
     },
     {
       "kind": "repeated-failure",
+      "sig": "ci-6b7f6cfbf7a6",
+      "wf": ".github/workflows/autonomous-review.yml",
+      "detail": "4 failures in 72 h: Autonomous review failed on master (critical tests / Full critical suite: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-351d901e2c87",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
       "sig": "ci-7cb53e213373",
       "wf": ".github/workflows/ci-self-check.yml",
       "detail": "3 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Driver signature duplicate gate (P3238 — new driver identical to an existing one is refused): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-57f650364735",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)"
     },
     {
       "kind": "repeated-failure",
