@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1629] - 2026-11-17
+## [9.0.1630] - 2026-11-17
+
+Changed: lossless upload-archive trim and a ratchet on archive size and file count; count the publish retry chain per error class.
+---
+
+ [9.0.1629] - 2026-11-17
 
 Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).
 ---
