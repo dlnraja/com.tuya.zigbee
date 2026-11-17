@@ -249,7 +249,7 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
   const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, '.github/scripts/athom-publish-policy.js'))).digest('hex');
-  assert.strictEqual(h, '04d0c68608b3148ce3e04dded4d06fed8c529c10746d46d86080595bf2891f90', 'edit athom-publish-policy.js on all three branches together and update this hash');
+  assert.strictEqual(h, 'eaa175a4755e5fd15f42c7833e13034871909f3e1beaf410c48517ad2f9191e2', 'edit athom-publish-policy.js on all three branches together and update this hash');
 });
 test('ci gate: a version-only package.json bump is not a code change', () => {
   assert.strictEqual(P.versionOnlyDiff('--- a/package.json\n+++ b/package.json\n@@ -3 +3 @@\n-  "version": "9.0.1599",\n+  "version": "9.0.1600",'), true);
