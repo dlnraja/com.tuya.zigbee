@@ -148,3 +148,10 @@ assets/templates
 
 # P3320: Cloudflare/github workers are not part of the Homey package
 workers
+# WHY(P3358): CI browser-promote steps write gitignored screenshots/ into the
+# workspace; they must never ship (may show login pages) and they made the P3320
+# unreferenced-image gate block the master version write-back after Test #3713.
+screenshots
+screenshots-debug
+promote-screenshots
+push-promote-screenshots
