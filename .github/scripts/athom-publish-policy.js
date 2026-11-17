@@ -70,6 +70,26 @@ const APPS = {
 const RETRY = { maxBareAggregateRetries: 1, maxRetries: 1, maxTransportRetries: 2, backoffMinS: 300, backoffScheduleS: [300, 900, 1800], jitterS: 60, hangupRetryMinGapMin: 5 };
 const TRANSPORT_KINDS = new Set(['socket hang up', 'transient']);
 const BARE_AGGREGATE_KIND = 'AggregateError-bare';
+// P3355: a chain counts its retries per class. "<total>:t<transport>a<bare>" (parseInt keeps the total for
+// old readers). Transport kinds (and invalid_state) share the t bucket, a bare AggregateError has the a bucket,
+// and a chain never exceeds maxChainRetries. A legacy plain number counts every prior retry for the current class.
+RETRY.maxChainRetries = RETRY.maxTransportRetries + RETRY.maxBareAggregateRetries;
+const CHAIN_RE = /^(\d+):t(\d+)a(\d+)$/;
+function parseRetryChain(v) {
+  const s = String(v === undefined || v === null ? '' : v).trim().toLowerCase();
+  const m = CHAIN_RE.exec(s);
+  if (m) return { total: Number(m[1]), transport: Number(m[2]), bare: Number(m[3]), typed: true };
+  const n = retryCountOf(s);
+  return n ? { total: n, transport: null, bare: null, typed: false } : { total: 0, transport: 0, bare: 0, typed: true };
+}
+function formatRetryChain({ transport = 0, bare = 0 } = {}) {
+  const t = Number(transport) || 0; const a = Number(bare) || 0;
+  return `${t + a}:t${t}a${a}`;
+}
+function chainClassCount(chain, kind) {
+  if (!chain.typed) return chain.total;
+  return kind === BARE_AGGREGATE_KIND ? chain.bare : chain.transport;
+}
 function retryBudget(kind) {
   if (kind === BARE_AGGREGATE_KIND) return RETRY.maxBareAggregateRetries;
   return TRANSPORT_KINDS.has(kind) ? RETRY.maxTransportRetries : RETRY.maxRetries;
@@ -159,10 +179,24 @@ function backoffSeconds(rnd = Math.random(), retryIndex = 0) {
  * invalid_state retries only after the idle wait proved the previous build is final.
  * Real: no retry, trips the breaker, asks for a diagnostic.
  */
-function retryDecision({ kind, cls, text, retriesDone = 0, idleWaited = true, rnd } = {}) {
+function retryDecision({ kind, cls, text, retriesDone = 0, idleWaited = true, rnd, chain } = {}) {
   const c = kind ? { kind, cls: cls || classify(kind).cls } : classify(text || '');
-  const done = Number(retriesDone) || 0;
   if (c.cls === 'none') return { retry: false, ...c, backoffS: 0, tripBreaker: false, diagnose: false, reason: 'no failure' };
+  if (chain !== undefined && chain !== null) {
+    const ch = typeof chain === 'object' ? chain : parseRetryChain(chain);
+    const d = retryDecision({ kind: c.kind, cls: c.cls, retriesDone: chainClassCount(ch, c.kind), idleWaited, rnd });
+    if (d.retry && ch.total >= RETRY.maxChainRetries) {
+      return { ...d, retry: false, backoffS: 0, tripBreaker: c.cls === 'real', diagnose: true,
+        reason: `${c.kind}: the chain already used all ${RETRY.maxChainRetries} retries (${ch.total + 1} attempts), stop and report` };
+    }
+    if (d.retry) {
+      const t = ch.typed ? ch.transport : 0; const a = ch.typed ? ch.bare : 0;
+      d.next = formatRetryChain(c.kind === BARE_AGGREGATE_KIND ? { transport: t, bare: a + 1 } : { transport: t + 1, bare: a });
+      if (!ch.typed) d.next = String(ch.total + 1);
+    }
+    return d;
+  }
+  const done = Number(retriesDone) || 0;
   if (c.kind === BARE_AGGREGATE_KIND) {
     if (done >= RETRY.maxBareAggregateRetries) {
       return { retry: false, ...c, backoffS: 0, tripBreaker: true, diagnose: true,
@@ -205,12 +239,16 @@ function isFailed(b) { return !!b && /processing_failed|failed|rejected/i.test(S
 
 /** The one exemption: transient_retry=1 dispatched for a latest build that failed transiently. */
 function singleRetryExempt({ builds, transientRetry } = {}) {
-  const n = retryCountOf(transientRetry);
+  const ch = parseRetryChain(transientRetry);
+  const total = ch.total;
   const latest = sortBuilds(builds)[0];
-  if (!n) return { exempt: false, reason: 'not a retry run' };
-  if (n > RETRY.maxTransportRetries) return { exempt: false, reason: `retry ${n} exceeds the ${RETRY.maxTransportRetries} automatic retries` };
+  if (!total) return { exempt: false, reason: 'not a retry run' };
+  // P3355: typed chains are bounded by the chain cap; legacy numbers keep the old transport cap.
+  const cap = ch.typed ? RETRY.maxChainRetries : RETRY.maxTransportRetries;
+  if (total > cap) return { exempt: false, reason: `retry ${total} exceeds the ${cap} automatic retries of a chain` };
   if (!latest || !isFailed(latest)) return { exempt: false, reason: 'latest build is not a failure' };
   const c = classify(latest);
+  const n = chainClassCount(ch, c.kind);
   if (c.kind === BARE_AGGREGATE_KIND) {
     if (n > RETRY.maxBareAggregateRetries) return { exempt: false, reason: `retry ${n} exceeds the single retry of ${c.kind}` };
     return { exempt: true, reason: `single identical retry ${n}/${RETRY.maxBareAggregateRetries} after ${c.kind} on #${latest.id} (P3341)` };
@@ -419,7 +457,7 @@ module.exports = {
   BARE_AGGREGATE_KIND, isBareAggregate,
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
   appPolicy, appIdForKey, classify, backoffSeconds, retryDecision, retryBudget, TRANSPORT_KINDS,
-  singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
+  singleRetryExempt, breakerAssess, retryCountOf, parseRetryChain, formatRetryChain, slotDecision, busyBuild, uploadEvents, crossAppEvents,
   evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, affectsCiIdentity, packedPayloadChanged, publishDisposition, isTrue, versionOnlyDiff,
   jsonVersionOnlyChange, localCodeChanged,
 };
