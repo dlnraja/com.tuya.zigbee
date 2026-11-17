@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1627] - 2026-11-17
+## [9.0.1628] - 2026-11-17
+
+Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1627] - 2026-11-17
 
 New: lights and dimmers and energy meters. Fixed: pairing and device recognition and safety sensors & climate sensors. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks.
 ---
