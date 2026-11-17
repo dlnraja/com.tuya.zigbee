@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T13:34:44.445Z",
+  "generated": "2026-11-17T14:18:48.587Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,10 +26,22 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 10
+    "issues": 11
   },
   "candidates": [],
   "skipped": [
+    {
+      "issue": 3708,
+      "reason": "not found"
+    },
+    {
+      "issue": 3709,
+      "reason": "not found"
+    },
+    {
+      "issue": 3710,
+      "reason": "not found"
+    },
     {
       "issue": 3705,
       "reason": "not found"
@@ -58,7 +70,7 @@
       "commit": "55f934fbdf",
       "commitAt": "2026-11-15T16:24:29Z",
       "ci": "pending",
-      "lastAuthor": "Lalla80111",
+      "lastAuthor": "dlnraja",
       "reason": "CI pending"
     },
     {
@@ -68,14 +80,6 @@
     {
       "issue": 404,
       "reason": "closed"
-    },
-    {
-      "issue": 3698,
-      "reason": "not found"
-    },
-    {
-      "issue": 631,
-      "reason": "pull request"
     }
   ]
 }

@@ -3,36 +3,36 @@
  "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
  "sources": {
   "zhc": {
-   "last": "f368dcd1336b59d88702c98905ba30b7103d9db2",
-   "checkedAt": "2026-11-16T13:33:18.792Z",
+   "last": "74553288c1479da1e66f7808289186a68adab3d9",
+   "checkedAt": "2026-11-17T14:17:24.543Z",
    "kind": "commits",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-16T13:33:18.792Z"
+   "changedAt": "2026-11-17T14:17:24.543Z"
   },
   "zhc-rel": {
-   "last": "v26.132.0",
-   "checkedAt": "2026-11-16T13:33:18.792Z",
+   "last": "v26.133.0",
+   "checkedAt": "2026-11-17T14:17:24.543Z",
    "kind": "releases",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-16T13:33:18.792Z"
+   "changedAt": "2026-11-17T14:17:24.543Z"
   },
   "zha-quirks": {
    "last": "b07fa76876e081d48744968f9fb806e7f1fee0ee",
-   "checkedAt": "2026-11-16T13:33:18.792Z",
+   "checkedAt": "2026-11-17T14:17:24.543Z",
    "kind": "commits",
    "what": "zigpy/zha-device-handlers",
    "changedAt": "2026-11-11T12:39:08.968Z"
   },
   "deconz": {
    "last": "c24e81cf01c121583887acea24e647c3496ebd9a",
-   "checkedAt": "2026-11-15T12:40:45.359Z",
+   "checkedAt": "2026-11-17T14:17:24.543Z",
    "kind": "commits",
    "what": "dresden-elektronik/deconz-rest-plugin",
    "changedAt": "2026-11-09T13:48:33.858Z"
   },
   "johan": {
    "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
-   "checkedAt": "2026-11-16T13:33:18.792Z",
+   "checkedAt": "2026-11-17T14:17:24.543Z",
    "kind": "commits",
    "what": "JohanBendz/com.tuya.zigbee"
   },
@@ -62,11 +62,11 @@
    "what": "athombv/homey-apps-sdk-issues"
   },
   "tuya-local": {
-   "last": "4eaa964a176a0baa46863771874884aeaf0d9705",
-   "checkedAt": "2026-11-15T12:40:45.359Z",
+   "last": "8d6f4ca3d5447e9b93ac6c7d82ff10fb35e3666a",
+   "checkedAt": "2026-11-17T14:17:24.543Z",
    "kind": "commits",
    "what": "make-all/tuya-local",
-   "changedAt": "2026-11-15T12:40:45.359Z"
+   "changedAt": "2026-11-17T14:17:24.543Z"
   },
   "localtuya": {
    "last": "59c95cd06c2696afc98f6bc52d5fa060f3c517da",
@@ -215,5 +215,5 @@
    }
   }
  },
- "updatedAt": "2026-11-16T13:33:18.792Z"
+ "updatedAt": "2026-11-17T14:17:24.543Z"
 }
