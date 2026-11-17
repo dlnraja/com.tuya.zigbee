@@ -421,6 +421,7 @@ module.exports = {
   appPolicy, appIdForKey, classify, backoffSeconds, retryDecision, retryBudget, TRANSPORT_KINDS,
   singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
   evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, affectsCiIdentity, packedPayloadChanged, publishDisposition, isTrue, versionOnlyDiff,
+  jsonVersionOnlyChange, localCodeChanged,
 };
 
 // ── CLI ──────────────────────────────────────────────────────────────────────────────────────
@@ -461,9 +462,9 @@ async function gh(apiPath, { method = 'GET', body } = {}) {
   return res.status === 204 ? null : res.json();
 }
 
-function git(args) {
+function git(args, cwd = ROOT) {
   const { execFileSync } = require('child_process');
-  return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  return execFileSync('git', args, { cwd, maxBuffer: 256 * 1024 * 1024, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
 }
 
 function localAncestry(sha, depth) {
@@ -478,13 +479,34 @@ function versionOnlyDiff(patch) {
   const lines = String(patch || '').split('\n').filter((l) => /^[+-]/.test(l) && !/^(\+\+\+|---) /.test(l));
   return lines.length > 0 && lines.every((l) => /^[+-]\s*"version"\s*:/.test(l));
 }
-function localCodeChanged(from, to, pick = isCodeFile) {
+// P3353: the root app.json is a compact one-line file, so its -U0 diff is the whole manifest and the
+// line check above never matched a bot bump (572e48a4f3 held on "CI missing"). Compare the parsed JSON
+// with only the version fields removed (top-level "version", package-lock packages[""].version).
+function jsonVersionOnlyChange(beforeText, afterText) {
+  let a; let b;
+  try { a = JSON.parse(beforeText); b = JSON.parse(afterText); } catch { return false; }
+  if (!a || !b || typeof a !== 'object' || typeof b !== 'object' || Array.isArray(a) || Array.isArray(b)) return false;
+  if (JSON.stringify(a) === JSON.stringify(b)) return false;
+  const strip = (o) => {
+    const c = { ...o };
+    delete c.version;
+    if (c.packages && typeof c.packages === 'object' && c.packages[''] && typeof c.packages[''] === 'object') {
+      c.packages = { ...c.packages, '': { ...c.packages[''] } };
+      delete c.packages[''].version;
+    }
+    return JSON.stringify(c);
+  };
+  return strip(a) === strip(b);
+}
+const VERSIONED_JSON_RE = /(^|\/)(?:package(?:-lock)?\.json|app\.json|\.homeycompose\/app\.json)$/i;
+function localCodeChanged(from, to, pick = isCodeFile, cwd = ROOT) {
   try {
-    const files = git(['diff', '--no-renames', '--name-only', from, to]).split('\n').filter(Boolean);
+    const files = git(['diff', '--no-renames', '--name-only', from, to], cwd).split('\n').filter(Boolean);
     return files.filter(pick).some((f) => {
       const norm = String(f).replace(/\\/g, '/');
-      if (!/(^|\/)(?:package(?:-lock)?\.json|app\.json|\.homeycompose\/app\.json)$/i.test(norm)) return true;
-      try { return !versionOnlyDiff(git(['diff', '--no-renames', '-U0', from, to, '--', f])); } catch { return true; }
+      if (!VERSIONED_JSON_RE.test(norm)) return true;
+      try { if (versionOnlyDiff(git(['diff', '--no-renames', '-U0', from, to, '--', f], cwd))) return false; } catch { return true; }
+      try { return !jsonVersionOnlyChange(git(['show', `${from}:${f}`], cwd), git(['show', `${to}:${f}`], cwd)); } catch { return true; }
     });
   } catch { return null; }
 }
