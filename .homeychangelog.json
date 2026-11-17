@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1629": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
   "9.0.1628": {
-    "en": "Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : éclairages et variateurs. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1627": {
     "en": "New: lights and dimmers and energy meters. Fixed: pairing and device recognition and safety sensors & climate sensors. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks."
@@ -964,8 +967,5 @@
   },
   "9.0.1607": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
-  },
-  "9.0.1606": {
-    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
   }
 }
