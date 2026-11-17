@@ -96,3 +96,12 @@ Test: `test/critical/p3057-2-promote-hold-guard.test.js`.
 
 A bare Athom AggregateError (stateMeta exactly "AggregateError", empty message: the Node net multi-address connect failure) gets exactly ONE identical retry: bumped version, P3311 first backoff (>= 300 s + jitter), only when Athom already holds a final processing_failed build for that version (no duplicate). It keeps class real: push runs stay blocked by the breaker, only retry 1 of the chain is exempt, and a second failure trips the breaker and notifies as before. AggregateError with a message and every other real error get no retry.
 Why: docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md (identical content flips Test <-> AggregateError; the bare text is Node's connect failure). Code: `athom-publish-policy.js` (`BARE_AGGREGATE_KIND`, `isBareAggregate`, `RETRY.maxBareAggregateRetries = 1`), `athom-retry-policy.js` (stable/bastien in-run loops), `transient-publish-retry.js` (master chain). Test: `test/critical/p3341-bare-aggregate-retry.test.js`.
+
+## P3355 (17/11/2026): retry chain counted per error class
+
+Run 44004265730 was transport retry 1/2 after a socket hang up (#3709); its build #3710 failed with a bare
+AggregateError and was refused as "single identical retry already used". The chain input `transient_retry`
+now carries `<total>:t<transport>a<bare>` (for example `2:t1a1`; `parseInt` still reads the total).
+Transport kinds keep up to 2 retries (3 attempts), a bare AggregateError exactly 1 identical retry, and a
+chain never exceeds 3 retries. A legacy plain number is read the old, stricter way. The breaker exemption
+uses the same per-class counts. Backoff, idle wait and the same-version / orphan guards are unchanged.
