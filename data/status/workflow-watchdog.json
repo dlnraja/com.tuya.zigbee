@@ -1,60 +1,12 @@
 {
-  "at": "2026-11-17T14:18:40.250Z",
+  "at": "2026-11-18T13:52:34.757Z",
   "checked": 62,
   "findings": [
     {
       "kind": "stale",
       "sig": "7d65ac8624e8",
       "wf": "publish-hold-bisect.yml",
-      "detail": "no scheduled run for 10 h (expected <= 8 h)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-b446e2740f9d",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "3 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / Full suite on Node 22: code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-2a1553568063",
-      "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "3 failures in 72 h: Autonomous review failed on bastien-home (critical tests / Full critical suite: code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-b4093e189b03",
-      "wf": ".github/workflows/ci-self-check.yml",
-      "detail": "3 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Compose parity (rebuild from compose == committed app.json, P3079): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-4343ee8f200b",
-      "wf": ".github/workflows/syntax-check.yml",
-      "detail": "3 failures in 72 h: 🔍 Syntax Check & SDK3 Validation failed on stable-v5 (syntax-check / P2138 BSEED dimmer + Poll Control tests: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-6b7f6cfbf7a6",
-      "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "4 failures in 72 h: Autonomous review failed on master (critical tests / Full critical suite: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-351d901e2c87",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (test / Full suite on Node 22: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-7cb53e213373",
-      "wf": ".github/workflows/ci-self-check.yml",
-      "detail": "3 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on master (self-check / Driver signature duplicate gate (P3238 — new driver identical to an existing one is refused): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-57f650364735",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)"
+      "detail": "no scheduled run for 9 h (expected <= 8 h)"
     },
     {
       "kind": "repeated-failure",
