@@ -769,6 +769,62 @@
    "ref": "v26.133.0",
    "title": "v26.133.0",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.133.0"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "0d5153eb41",
+   "title": "fix(detect): Detect `_TZE28C1000000_ac0fhfiq` as Tuya TS0601_bidirectional_energy meter (#13849)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/0d5153eb41e03c79b0046db02902eb983ee9b7f0"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "e8bab441de",
+   "title": "fix(detect): Detect `_TZ3000_sjb7pafq` as AVATTO ZWSM16-2 and `_TZ3000_9il3ag1z` as AVATTO ZWSM16-DC",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/e8bab441def982a2b7f3d98807f16068b7c51898"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "499256d998",
+   "title": "fix(detect): Detect `_TZE28C1000000_cvub6xbb` as Tuya TGM50-ZB https://github.com/Koenkk/zigbee2mqtt",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/499256d998205a39cb9c0752637cc24ed91c41ae"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "197f8a795c",
+   "title": "fix(detect): Detect `_TZE2841000000_sonkaxrd` as Nous E12 https://github.com/Koenkk/zigbee2mqtt/issu",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/197f8a795cea6ea75508b7ee2c1dced1410f22d2"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.134.0",
+   "title": "v26.134.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.134.0"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "35165d117c",
+   "title": "fix(mty2_breaker): use correct state class for energy sensors",
+   "url": "https://github.com/make-all/tuya-local/commit/35165d117c1400b43eedd0551c0395b994205846"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.2",
+   "title": "2026.11.2",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.2"
   }
  ]
 }
