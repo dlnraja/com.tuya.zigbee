@@ -1,24 +1,5 @@
 {
-  "at": "2026-11-18T13:52:34.757Z",
+  "at": "2026-11-19T14:22:04.060Z",
   "checked": 62,
-  "findings": [
-    {
-      "kind": "stale",
-      "sig": "7d65ac8624e8",
-      "wf": "publish-hold-bisect.yml",
-      "detail": "no scheduled run for 9 h (expected <= 8 h)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-5be26e541885",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "5 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-b8b4d0a704a7",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "3 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): code-or-test)"
-    }
-  ]
+  "findings": []
 }
