@@ -109,11 +109,11 @@
    "backoffUntil": "2026-11-26T14:20:36.285Z"
   },
   "r-homeassistant": {
-   "checkedAt": "2026-11-13T13:00:19.941Z",
+   "checkedAt": "2026-11-20T13:57:37.641Z",
    "kind": "reddit",
    "what": "r/homeassistant",
    "lastError": "403",
-   "backoffUntil": "2026-11-20T13:00:19.941Z"
+   "backoffUntil": "2026-11-27T13:57:37.641Z"
   },
   "r-zigbee": {
    "checkedAt": "2026-11-14T12:05:49.473Z",
@@ -215,5 +215,5 @@
    }
   }
  },
- "updatedAt": "2026-11-19T14:20:36.285Z"
+ "updatedAt": "2026-11-20T13:57:37.641Z"
 }

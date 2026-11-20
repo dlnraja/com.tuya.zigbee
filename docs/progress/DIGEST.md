@@ -1,6 +1,6 @@
 # Digest automatique (P3048)
 
-_Généré le 19/11/2026 15:22:16 (heure de Paris) par `scripts/automation/digest.cjs`, sans IA, sans envoi : ni mail, ni post, ni commentaire._
+_Généré le 20/11/2026 14:58:56 (heure de Paris) par `scripts/automation/digest.cjs`, sans IA, sans envoi : ni mail, ni post, ni commentaire._
 
 ## Versions
 
@@ -29,5 +29,5 @@ Aucun.
 
 ## Journal
 
-14 ligne(s) sur 72 h dans `data/progress/automation-journal.jsonl`.
+17 ligne(s) sur 72 h dans `data/progress/automation-journal.jsonl`.
 
