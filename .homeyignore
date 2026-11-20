@@ -143,3 +143,17 @@ screenshots
 screenshots-debug
 promote-screenshots
 push-promote-screenshots
+
+# Anti-AggregateError (Athom #488) — exclude non-runtime IDE/AI/agent/doc files from Homey upload
+.agents/
+.ai/
+.windsurf/
+.cursor/
+.specify/
+.memory/
+skills/
+drivers/**/*.md
+lib/**/*.md
+**/*.bak
+**/*.orig
+**/*.log
