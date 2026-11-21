@@ -24,10 +24,8 @@ function couples(mfr) {
 
 describe('P2792 additive identity coverage', () => {
   it('existing placements are untouched', () => {
-    // P3360: vzekyi4c+TS0601 cannot live in source on smoke_sensor_ts0601_dp — P3206
-    // case/canonical expansion would move the exact 1574 switch_wireless couple. Payload
-    // pins keep the Test-package spelling on switch_wireless (P3024b).
-    assert.equal(couples('_tze200_vzekyi4c').TS0601, undefined);
+    // P3039d lot B (owner yes 17:29 Paris, Z2M TS0601_smoke_4): the couple moved switch_wireless -> smoke_sensor_ts0601_dp.
+    assert.deepEqual([...couples('_tze200_vzekyi4c').TS0601], ['smoke_sensor_ts0601_dp']);
     assert.deepEqual([...couples('_tz3000_pmz6mjyu').TS011F], ['button_wireless_2']);
     assert.deepEqual([...couples('_tz3000_mklgayek').TS0002], ['button_wireless_2']);
   });
