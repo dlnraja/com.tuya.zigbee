@@ -8,6 +8,7 @@ const {
   forcePureTuyaDp,
   sendEf00DpMaxFallback,
 } = require('../../lib/zigbee/Ef00OnlyInterview');
+const { tuyaPercentToValvePosition, valvePositionToTuyaPercent } = require('../../lib/tuya/valvePosition');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1btabb', '_tze204_fphxkxue'];
 // WHY(P2464/P2468/P2473): FrankEver FK family - Z2M splits FK_V02 vs FK-BV05 DP maps
@@ -154,12 +155,10 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         ...parentMappings,
         1: { capability: 'onoff', transform: isTuyaTrue },
         9: { capability: null, internal: 'countdown_seconds' },
+        27: { capability: null, internal: 'power_off_state' },
         101: { capability: null, internal: 'threshold_pct' },
-        102: { capability: 'valve_position', transform: (v) => {
-          const n = Number(v);
-          if (!Number.isFinite(n)) {return null;}
-          return Math.max(0, Math.min(100, Math.round(n)));
-        } },
+        // Forum #2270: DP102 is the actual position. Homey valve_position is 0-1.
+        102: { capability: 'valve_position', transform: tuyaPercentToValvePosition },
       };
     }
     // WHY(P2464 / Z2M FK-BV05): DP1 switch, DP2 threshold%, DP3 position, DP5/6 litres, DP22 temp
@@ -218,12 +217,15 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
           await mgr.initialize(zclNode);
           this.log('[WATER-VALVE] P2473 TuyaEF00Manager.initialize armed');
         }
-        if (this.isFrankeverFkV02 && mgr && typeof mgr.requestAllDPs === 'function') {
+        if (this.isFrankeverFkV02) {
           if (!this.hasCapability('valve_position')) {
             await this.addCapability('valve_position').catch(() => {});
           }
-          await mgr.requestAllDPs({ readOnly: true });
-          this.log('[WATER-VALVE] FK_V02 status dataQuery (read-only, no open/close)');
+          this._registerValvePositionListener();
+          if (mgr && typeof mgr.requestAllDPs === 'function') {
+            await mgr.requestAllDPs({ readOnly: true });
+            this.log('[WATER-VALVE] FK_V02 status dataQuery (read-only, no open/close)');
+          }
         }
       } catch (e) {
         this.log('[WATER-VALVE] P2473 EF00 initialize soft:', e.message);
@@ -269,6 +271,44 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     await this.safeSetCapabilityValue('onoff', target).catch(() => {});
     return true;
   }
+
+  async refreshValveStatus() {
+    const mgr = this.tuyaEF00Manager || this._tuyaEF00Manager;
+    if (mgr && typeof mgr.requestAllDPs === 'function') {
+      await mgr.requestAllDPs({ readOnly: true });
+      this.log('[WATER-VALVE] refreshValveStatus dataQuery (read-only, no DP1 command)');
+      return true;
+    }
+    this.log('[WATER-VALVE] refreshValveStatus skipped: no Tuya EF00 manager');
+    return false;
+  }
+
+  _registerValvePositionListener() {
+    if (this._valvePositionListener) {return;}
+    if (typeof this.registerCapabilityListener !== 'function') {return;}
+    this._valvePositionListener = true;
+    this.registerCapabilityListener('valve_position', async (value) => {
+      const pct = valvePositionToTuyaPercent(value);
+      if (pct == null) {return;}
+      this.log(`[WATER-VALVE] valve_position set ${value} -> DP101=${pct}`);
+      await sendEf00DpMaxFallback(this, 101, pct, 'value');
+    });
+  }
+
+  _triggerAppLevelButtonFlows() {
+    return Promise.resolve();
+  }
+
+  async onMaintenanceAction(action) {
+    const id = (action && action.id) || action;
+    if (id === 'refresh_status') {
+      return this.refreshValveStatus();
+    }
+    if (typeof super.onMaintenanceAction === 'function') {
+      return super.onMaintenanceAction(action);
+    }
+  }
+
 
   /**
    * v9.8.0: DEFENSIVE - Safe flow card trigger with null checks

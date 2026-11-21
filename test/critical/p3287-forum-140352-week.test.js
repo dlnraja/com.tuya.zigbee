@@ -53,6 +53,28 @@ describe('P3287 forum 140352 week couples', () => {
     assert.deepStrictEqual(cat.caps['_tze200_1n2zev06|TS0601'], { onoff: 1, valve_position: 102 });
   });
 
+  it('FrankEver DP102 is scaled to Homey valve_position 0-1 and status can be refreshed read-only', () => {
+    const { tuyaPercentToValvePosition, valvePositionToTuyaPercent } = require('../../lib/tuya/valvePosition');
+    assert.strictEqual(tuyaPercentToValvePosition(100), 1);
+    assert.strictEqual(tuyaPercentToValvePosition(0), 0);
+    assert.strictEqual(tuyaPercentToValvePosition(50), 0.5);
+    assert.strictEqual(tuyaPercentToValvePosition(1), 1);
+    assert.strictEqual(tuyaPercentToValvePosition('later'), null);
+    assert.strictEqual(valvePositionToTuyaPercent(1), 100);
+    assert.strictEqual(valvePositionToTuyaPercent(0), 0);
+    assert.strictEqual(valvePositionToTuyaPercent(0.5), 50);
+    const src = fs.readFileSync(path.join(ROOT, 'drivers/water_valve_smart/device.js'), 'utf8');
+    assert.match(src, /transform:\s*tuyaPercentToValvePosition/);
+    assert.match(src, /27:\s*\{[^}]*internal:\s*'power_off_state'/);
+    assert.match(src, /refreshValveStatus\(/);
+    assert.match(src, /requestAllDPs\(\{\s*readOnly:\s*true\s*\}\)/);
+    assert.match(src, /_triggerAppLevelButtonFlows\(\)\s*\{/);
+    assert.match(src, /sendEf00DpMaxFallback\(this, 101,/);
+    const fk = src.split('if (this.isFrankeverFkV02)')[1].split('if (this.isFrankeverFkBv05)')[0];
+    assert.match(fk, /transform:\s*tuyaPercentToValvePosition/);
+    assert.doesNotMatch(fk, /Math\.min\(100,\s*Math\.round\(n\)\)/);
+  });
+
   it('LCD _TZE284_9ern5sfh stays on the LCD driver and the typo is absent', () => {
     assert.deepStrictEqual(owners('_tze284_9ern5sfh'), ['lcdtemphumidsensor_3']);
     assert.deepStrictEqual(owners('_tze284_9em5sfh'), []);
