@@ -31,6 +31,7 @@ never block a job.
 | Gmail diags (≈ 12:00) | existing `fetch-diags.yml`, `gmail-diagnostics.yml` (CI secrets; AI providers optional) | |
 | Homey réponses (anti-flood) | `scripts/automation/reply-candidates.cjs` in `automation-loop.yml` → `data/progress/reply-candidates.json` | **candidates only, never posted by CI** |
 | Store text and changelogs (t996u / t998u) | `store-text-coherence.yml` (Tue 05:10 UTC + `workflow_dispatch`) | Kill switch `STORE_TEXT_COHERENCE_DISABLED=true`. `GITHUB_TOKEN` only. Safe auto-commit, `[skip ci]`, never removes ids. Leftovers are a report artifact (no new issue). |
+| Forum request digest (P3362) | `forum-poll.yml` step `request_digest` (`scripts/scanners/forum-request-digest.js`), cron of the existing poller | public Discourse JSON, GITHUB_TOKEN only, kill switch `FORUM_REQUEST_DIGEST_DISABLED`; writes `data/ssot/forum-request-digest.json`, `data/progress/candidate-tasks.json`, `data/progress/forum-reply-candidates.json`; **never posts, never opens PRs** |
 | Athom publish watch | `.github/scripts/athom-publish-policy.js` (P3036 + P3048) in every upload path | CI never triggers an upload |
 | Self-maintenance (t539u) | `automation-loop.yml` (self-maintain, watchdog), existing `storage-cleanup.yml` (caches / artifacts), Dependabot | see below |
 

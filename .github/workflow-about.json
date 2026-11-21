@@ -195,7 +195,7 @@
     },
     "forum-poll.yml": {
       "group": "forum",
-      "what": "Every four hours: scans the forum thread, PMs and screenshots for device data. Never posts."
+      "what": "Every four hours: scans topic 140352 and other Homey app threads via public Discourse JSON. Writes a structured request digest, candidate tasks and reply candidates into the SSOT. Never posts."
     },
     "free-scrape-crossref.yml": {
       "group": "enrich",

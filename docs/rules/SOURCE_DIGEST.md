@@ -31,6 +31,8 @@ before commit; any hit fails the job. Test: `test/p3138-source-digest.test.js` (
 ## Outputs
 - `docs/knowledge/upstream/<owner>__<repo>.md` — bounded (200 newest digests per repo), diff-mode.
 - `data/ssot/thread-digests.json` — couple → digest refs (SSOT link; joins `couple-sources.json` by key).
+- `data/ssot/forum-request-digest.json` — incremental requests and peer-app ideas from public Discourse JSON (P3362, `forum-poll.yml`). Linked from `thread-digests.json` via `_meta.forumRequestDigest` and per-couple refs.
+- `data/progress/candidate-tasks.json` and `data/progress/forum-reply-candidates.json` — consumed by Grok Bot routines; CI never posts and never opens PRs or issues. Kill switch: `FORUM_REQUEST_DIGEST_DISABLED`.
 
 ## Rollout status
 Shared module + guard: miner (P3138) and SSOT enrich. Other readers adopt it incrementally: each must call
@@ -46,6 +48,7 @@ One reader per push, all three branches.
 | Reader | Workflow | Status |
 |:--|:--|:--|
 | forum | forum-poll.yml | P3152 |
+| forum request digest (140352 + peer apps, read-only) | forum-poll.yml (step `request_digest`, reuses xr-forum-poll workflow) | P3362 |
 | Gmail/diag | gmail-diagnostics.yml | pending |
 | issue/PR triage | auto-bot-issue-triage.yml | pending |
 | upstream-watch | upstream-watch.yml | pending |
