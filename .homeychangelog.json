@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1635": {
+    "en": "Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : éclairages et variateurs et réglages des appareils. Et 7 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1634": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
-    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
   },
   "9.0.1633": {
     "en": "Changed: homeyignore CI screenshots so the gate stops blocking the version write-back; cap a publish chain at 3 uploads."
@@ -964,8 +967,5 @@
   },
   "9.0.1612": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1611": {
-    "en": "New: pairing and device recognition. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks."
   }
 }
