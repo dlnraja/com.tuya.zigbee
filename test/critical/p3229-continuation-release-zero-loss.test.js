@@ -20,10 +20,14 @@ describe('P3229 continuation release zero-loss', function () {
   if (this && this.timeout) this.timeout(600000);
   DC.clearCache();
   const reg = DC.load(ROOT);
-  const { ids } = effectiveHoldIds(JSON.parse(fs.readFileSync(path.join(ROOT, 'config/publish-hold-drivers.json'), 'utf8')), '');
-  const heldConts = [...ids].filter((id) => reg.isContinuation(id));
+  const hold = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/publish-hold-drivers.json'), 'utf8'));
+  const { ids } = effectiveHoldIds(hold, '');
+  const allConts = Object.keys((reg.drivers || {})).filter((id) => reg.isContinuation(id));
+  // Exercise zero-loss against a simulated hold of every continuation (works after P3360 graduation too).
+  const heldConts = allConts.length ? allConts : [...ids].filter((id) => reg.isContinuation(id));
+  const simulatedHold = new Set(heldConts);
 
-  it('there is at least one held continuation to check', () => assert.ok(heldConts.length >= 1));
+  it('there is at least one registered continuation to check', () => assert.ok(heldConts.length >= 1));
 
   it('split restores a released continuation exactly (unit)', () => {
     const m = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1', 'P2'] } }, { id: 'c', zigbee: { manufacturerName: ['B'], productId: ['P1'] } }] };
@@ -53,8 +57,8 @@ describe('P3229 continuation release zero-loss', function () {
 
   for (const id of heldConts) {
     it(`releasing ${id} loses 0 couples vs the held view`, () => {
-      const held = payloadCouples(sourceToPayload(app(), ROOT, { holdIds: ids }));
-      const rel = new Set(ids); rel.delete(id);
+      const held = payloadCouples(sourceToPayload(app(), ROOT, { holdIds: simulatedHold }));
+      const rel = new Set(simulatedHold); rel.delete(id);
       const after = payloadCouples(sourceToPayload(app(), ROOT, { holdIds: rel }));
       const lost = [...held].filter((k) => !after.has(k));
       assert.deepStrictEqual(lost.slice(0, 20), [], `${id}: ${lost.length} couple(s) lost at release`);

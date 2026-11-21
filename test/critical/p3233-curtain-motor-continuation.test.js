@@ -16,10 +16,13 @@ describe('P3233 curtain_motor_2 continuation', () => {
   const root = j('drivers/curtain_motor/driver.compose.json');
   const cont = j('drivers/curtain_motor_2/driver.compose.json');
 
-  it('registry links curtain_motor -> curtain_motor_2 and it is held', () => {
+  it('registry links curtain_motor -> curtain_motor_2 and it is held or P3360-graduated', () => {
     DC.clearCache(); const reg = DC.load(ROOT);
     assert.strictEqual(reg.rootOf('curtain_motor_2'), 'curtain_motor');
-    assert.ok(j('config/publish-hold-drivers.json').drivers.some((d) => d.id === 'curtain_motor_2'));
+    { const hold = j('config/publish-hold-drivers.json');
+      const held = (hold.drivers || []).some((d) => d.id === 'curtain_motor_2');
+      const graduated = /P3360|Athom #488/.test(String((hold._graduated || {}).curtain_motor_2 || ''));
+      assert.ok(held || graduated); }
   });
 
   it('carries exactly the 2 sourced TS0601-only makers, TS0601 only, none left on the root', () => {

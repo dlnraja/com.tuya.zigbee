@@ -190,6 +190,21 @@ function main() {
   } catch (e) {
     console.log(`::warning::[prune-publish-payload] lossless shrink skipped: ${e.message}`);
   }
+
+  // P3360: share identical driver PNGs in the publish dir (sources untouched).
+  try {
+    const dedupe = path.join(__dirname, 'dedupe-packaged-driver-images.cjs');
+    if (fs.existsSync(dedupe)) {
+      const r = require('child_process').spawnSync(process.execPath, [dedupe, target], { stdio: 'inherit', timeout: 120000 });
+      if (r.status) {
+        console.error('[prune-publish-payload] P3360 driver-image dedupe failed');
+        process.exit(r.status);
+      }
+    }
+  } catch (e) {
+    console.error(`[prune-publish-payload] P3360 driver-image dedupe failed: ${e.message}`);
+    process.exit(1);
+  }
 }
 
 if (require.main === module) main();

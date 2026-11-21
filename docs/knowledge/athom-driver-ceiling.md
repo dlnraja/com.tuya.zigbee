@@ -3,6 +3,25 @@
 User request (15/11/2026 22:46 Paris): fix the AggregateErrors and the problem of apps above ~345 drivers.
 Athom shows 345 for master because 2 of the 347 uploaded drivers are `deprecated: true`.
 
+
+## Update 2026-11-21 (P3360, Athom #488)
+
+Athom (wouter-athom) closed [homey-apps-sdk-issues#488](https://github.com/athombv/homey-apps-sdk-issues/issues/488)
+on 2026-11-17 around 12:01 Paris: the AggregateError came from the **number of files** in the app (the
+backend opened too many concurrent upload connections), not from a hard 347-driver cap, and a
+server-side fix was deployed. Master #3713 / #3715 / **#3716 (v9.0.1635, 347 drivers, 3739 files,
+Test, 14:52 Paris)** are consistent with a file-count problem that sometimes also failed at 347
+(#3714). The blocking control is therefore the packaged file-count ratchet
+(`scripts/ci/upload-archive-ceiling.cjs`, maxFiles 3830 / maxTarBytes 32700000, plus P3360 lossless
+driver-image dedupe in the publish directory).
+
+21 never-published ids in `config/publish-hold-drivers.json` were graduated (P3360) so the next
+master upload can ship them as their own driver ids (347 + 21 = 368). The 6 P3085 ids stay held:
+they still carry Test-package couples that must remain on their published driver (P3024b). Exact
+mfr+pid couples stay 1:1; P3331 hosting no longer applies to a graduated id (no parasite couples).
+The master driver-count ceiling is raised to **380** (reviewed: #488 + #3716 + file-count ratchet).
+Stable stays at 347.
+
 ## Verdict
 
 1. **348 or more uploaded drivers: refused every time.** 12 of 12 master uploads with 348-361 drivers since
@@ -44,10 +63,11 @@ Not contacted: Athom (support ticket 157057 about a driver limit is still open, 
 
 ## What is enforced now
 
-- **Ceiling guard** (`.github/scripts/pre-upload-completeness-guard.js`, byte-identical on the three
-  branches, run on the exact upload directory by every publish path): ceiling 347 drivers for
-  `com.dlnraja.tuya.zigbee` and `com.dlnraja.tuya.zigbee.stable`; no ceiling for bastien (27 drivers).
-  Above it the upload is blocked, never retried. `ATHOM_MAX_UPLOAD_DRIVERS` can only lower a ceiling.
+- **Ceiling guard** (`.github/scripts/pre-upload-completeness-guard.js`, run on the exact upload
+  directory by every publish path): ceiling **380** drivers for `com.dlnraja.tuya.zigbee` (P3360,
+  2026-11-21, after Athom #488), **347** for `com.dlnraja.tuya.zigbee.stable` (never uploaded above 342);
+  no ceiling for bastien (27 drivers). Above it the upload is blocked, never retried.
+  `ATHOM_MAX_UPLOAD_DRIVERS` can only lower a ceiling.
   Raising it needs a reviewed commit that cites a new accepted build with more drivers.
   Note: this also blocks the `diagnostic_catalogue` dispatch (351+ drivers) on purpose.
 - **Held-driver folds** (`lib/drivers/held-driver-folds.json`, SSOT): a never-published driver stays held

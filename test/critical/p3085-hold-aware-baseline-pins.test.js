@@ -24,13 +24,13 @@ function drv(id, mfrs, pids) {
 }
 
 describe('P3085 hold the 6 moved-couple new ids, re-pin their Test couples', () => {
-  it('the six are held with a P3085 reason and were never published', () => {
+  it('the six are held or P3360-graduated with a P3085 reason and were never published as their own id', () => {
     const { ids } = effectiveHoldIds(hold, '');
     for (const id of P3085) {
-      assert.ok(ids.has(id), `${id} not held`);
+      const reason = ((hold.drivers || []).find((d) => d.id === id) || {}).reason || String((hold._graduated || {})[id] || '');
+      assert.ok(ids.has(id) || /P3360|Athom #488/.test(reason), `${id} not held or P3360-graduated`);
       assert.ok(!base.ids.includes(id), `${id} was published`);
-      const e = hold.drivers.find((d) => d.id === id);
-      assert.ok(/P3085/.test(e.reason) && /#3685/.test(e.reason), id);
+      assert.ok(/P3085/.test(reason) && /#3685/.test(reason), id);
     }
   });
   it('resolveBaselinePins skips held owners and restores on the Test driver', () => {

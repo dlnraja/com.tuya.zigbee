@@ -19,10 +19,11 @@ describe('P3263 AOYAN probe swap', () => {
     assert.ok(z.manufacturerName.includes('_tze200_9xfjixap'));
     assert.ok(z.productId.includes('TS0601'));
   });
-  it('water_leak_aoyan_ay222z is held again after build #3698 and keeps its own AOYAN couples', () => {
-    const entry = hold.drivers.find((e) => e.id === 'water_leak_aoyan_ay222z');
-    assert.ok(entry, 'held after the #3698 AggregateError probe');
-    assert.match(entry.reason, /3698/);
+  it('water_leak_aoyan_ay222z is held or P3360-graduated after build #3698 and keeps its own AOYAN couples', () => {
+    const entry = (hold.drivers || []).find((e) => e.id === 'water_leak_aoyan_ay222z');
+    const graduated = String((hold._graduated || {}).water_leak_aoyan_ay222z || '');
+    assert.ok(entry || /P3360|Athom #488/.test(graduated), 'held after the #3698 AggregateError probe, or P3360-graduated');
+    assert.match((entry && entry.reason) || graduated, /3698/);
     const z = compose('water_leak_aoyan_ay222z').zigbee;
     assert.ok(z.manufacturerName.includes('AOYAN'));
     assert.ok(z.manufacturerName.includes('AOYAN  '));

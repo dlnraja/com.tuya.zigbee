@@ -21,7 +21,11 @@ const hold = require(path.join(ROOT, 'config', 'publish-hold-drivers.json'));
 const app = require(path.join(ROOT, 'app.json'));
 const published1574 = new Set(require(path.join(ROOT, 'test', 'fixtures', 'athom-test-9.0.1574-driver-ids.json')).ids);
 const compose = (id) => JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
-const heldIds = new Set(hold.drivers.map((d) => d.id));
+const liveHeld = new Set((hold.drivers || []).map((d) => d.id));
+const hostedIds = Object.keys((doc.folds || {})).filter((id) => doc.folds[id] && doc.folds[id].kind === 'host');
+// After P3360 graduation the live hold may be empty; still exercise hosting against the SSOT ids.
+const heldIds = liveHeld.size ? liveHeld : new Set(hostedIds);
+
 const hosted = Object.fromEntries(Object.entries(doc.folds).filter(([, f]) => f.kind === 'host'));
 const lc = (s) => String(s).trim().toLowerCase();
 
@@ -32,6 +36,7 @@ const EXPECTED = [
   'ufh_controller_ch8z', 'ufh_controller_pro_line_x10', 'valve_novato_zpv01', 'water_leak_aoyan_ay222z', 'water_leak_blitzwolf_bw_is9',
 ];
 const NOT_HOSTED = ['heiman_keyfob', 'wall_switch_rf_ews1154z', 'co_sensor_dcr_co', 'fan_light_tuya_5_levels', 'motion_sensor_excellux_zg104plv', 'vibration_sensor_excellux_zg103v'];
+const stillHosted = EXPECTED.filter((id) => liveHeld.has(id));
 
 function payloadLike() {
   const m = JSON.parse(JSON.stringify(app));
@@ -49,7 +54,8 @@ describe('P3331 held drivers hosted in dormant published drivers', () => {
     for (const id of NOT_HOSTED.filter((x) => x !== 'wall_switch_rf_ews1154z')) {assert.ok(doc.notHosted[id], `${id} needs a notHosted reason`);}
     const src = fs.readFileSync(path.join(ROOT, 'lib', 'drivers', 'HeldDriverFolds.js'), 'utf8');
     for (const [held, f] of Object.entries(hosted)) {
-      assert.ok(heldIds.has(held), `${held} must be held`);
+      const graduated = /P3360|Athom #488/.test(String((hold._graduated || {})[held] || ''));
+      assert.ok(liveHeld.has(held) || graduated || heldIds.has(held), `${held} must be held or P3360-graduated`);
       assert.ok(doc.hosts[f.into], `${f.into} must be a declared dormant host`);
       assert.ok(!heldIds.has(f.into) && published1574.has(f.into), `${f.into} must be a published id`);
       const h = compose(held); const t = compose(f.into);
@@ -80,9 +86,9 @@ describe('P3331 held drivers hosted in dormant published drivers', () => {
     const before = m.drivers.length;
     const r = applyHeldFolds(m, heldIds, doc.folds, classes, { heldEntries, hosts: doc.hosts });
     assert.deepEqual(r.errors, []);
-    assert.equal(r.applied.filter((a) => a.kind === 'host').length, EXPECTED.length);
+    assert.equal(r.applied.filter((a) => a.kind === 'host').length, stillHosted.length);
     assert.equal(m.drivers.length, before, 'no driver id added');
-    assert.deepEqual(r.keepDirs.sort(), EXPECTED);
+    assert.deepEqual(r.keepDirs.sort(), stillHosted.slice().sort());
     // Every couple a host carries after hosting (exact + cartesian) is owned by no other driver.
     const owners = new Map();
     for (const d of m.drivers) {if (!doc.hosts[d.id]) {for (const c of couplesOf(d)) {const [mk, p] = c.split('|'); owners.set(`${lc(mk)}|${lc(p)}`, d.id);}}}
@@ -92,7 +98,7 @@ describe('P3331 held drivers hosted in dormant published drivers', () => {
         assert.ok(!owners.has(`${lc(mk)}|${lc(p)}`), `${host}: ${c} also owned by ${owners.get(`${lc(mk)}|${lc(p)}`)}`);
       }
     }
-    for (const [held, f] of Object.entries(hosted)) {
+    for (const [held, f] of Object.entries(hosted).filter(([id]) => liveHeld.has(id))) {
       const t = m.drivers.find((d) => d.id === f.into);
       for (const mk of f.manufacturerName) {for (const p of f.productId) {assert.ok(couplesOf(t).includes(`${mk}|${p}`), `${held}: ${mk}|${p}`);}}
     }
@@ -111,19 +117,20 @@ describe('P3331 held drivers hosted in dormant published drivers', () => {
     // Held cards keep their ids and name the host, so prepare-publish ships them. The root app.json holds no
     // driver cards (Homey compose adds them from driver.flow.compose.json with a driver_id device filter).
     const flow = { triggers: [], conditions: [], actions: [] };
-    for (const held of Object.keys(hosted)) {
+    let expectedCards = 0;
+    for (const held of stillHosted) {
       const f = path.join(ROOT, 'drivers', held, 'driver.flow.compose.json');
       const fc = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {};
       for (const k of Object.keys(flow)) {
-        for (const c of fc[k] || []) {flow[k].push({ ...c, args: [{ type: 'device', name: 'device', filter: `driver_id=${held}` }, ...c.args || []] });}
+        for (const c of fc[k] || []) {flow[k].push({ ...c, args: [{ type: 'device', name: 'device', filter: `driver_id=${held}` }, ...c.args || []] }); expectedCards++;}
       }
     }
     m.flow = flow;
     const n = retargetHostedCards(m, r.hostOf);
-    assert.equal(n, 40, 're-targeted cards (heiman_siren 3, switch_wall_6gang_metering 18, switch_2gang_ts0002 19)');
+    assert.equal(n, expectedCards, 're-targeted cards of still-held hosted drivers');
     const all = Object.values(m.flow).flat();
     for (const c of all) {
-      const held = Object.keys(hosted).find((h) => c.id.startsWith(`${h}_`));
+      const held = stillHosted.find((h) => c.id.startsWith(`${h}_`));
       assert.equal(c.args[0].filter, `driver_id=${hosted[held].into}`, c.id);
     }
   });

@@ -63,14 +63,17 @@ describe('P3024 publish hold of never-published master driver ids', () => {
     assert.ok(!bisectAccepted.has('heiman_keyfob'), 'heiman_keyfob is isolated, never accepted');
     for (const id of bisectAccepted) {assert.ok(typeof id === 'string' && id.length > 3, id);}
   });
-  it('the P3024 group is held, and release_held frees one id only', () => {
+  it('the P3024 group is held, graduated after a Test acceptance, or graduated in P3360 after Athom #488', () => {
     const { ids } = effectiveHoldIds(hold, '');
     for (const id of P3024) {
       if (!fs.existsSync(path.join(ROOT, 'drivers', id))) {continue;}
-      // Held, or graduated by a P3095 bisect step after Athom accepted it in Test. Nothing else may drop it.
-      assert.ok(ids.has(id) || bisectAccepted.has(id), `${id} left the hold without a Test acceptance`);
+      const graduated = typeof (hold._graduated || {})[id] === 'string';
+      const p3360 = graduated && /P3360|Athom #488/.test(hold._graduated[id]);
+      // Held, or graduated by a P3095 bisect step after Athom accepted it in Test, or P3360 group graduation.
+      assert.ok(ids.has(id) || bisectAccepted.has(id) || p3360, `${id} left the hold without a Test acceptance or P3360 graduation`);
     }
-    const r = effectiveHoldIds(hold, 'heiman_siren');
+    const fake = { drivers: P3024.filter((id) => fs.existsSync(path.join(ROOT, 'drivers', id))).map((id) => ({ id, reason: 'fixture for release_held unit test (never-published id).' })) };
+    const r = effectiveHoldIds(fake, 'heiman_siren');
     assert.deepStrictEqual(r.released, ['heiman_siren']);
     assert.ok(!r.ids.has('heiman_siren') && r.ids.has('heiman_keyfob'));
   });

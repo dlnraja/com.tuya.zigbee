@@ -30,15 +30,18 @@ const crypto = require('crypto');
 const MIN_PAYLOAD_BYTES = 1024 * 1024;        // a real Homey app of this repo is >= 19 MB
 const MIN_ARCHIVE_GZ_BYTES = 256 * 1024;      // smallest accepted archive is ~5 MB gz
 const MAX_DROP = 0.35;                        // > 35 % fewer files/bytes/drivers than the last accepted build
-// P3330 Athom driver-count ceiling (per app id). Evidence (docs/knowledge/athom-driver-ceiling.md):
-// every master upload with 348-361 drivers since the 21/10/2026 incident ended processing_failed /
-// AggregateError (12 of 12), while 347-driver uploads reached Test 6 times (#3682 #3686 #3697 #3701
-// #3702 #3705). An upload above the ceiling is BLOCKED here, before Athom, never retried. The env
+// P3330 / P3360 Athom driver-count ceiling (per app id). Evidence: docs/knowledge/athom-driver-ceiling.md
+// and Athom issue athombv/homey-apps-sdk-issues#488 (2026-11-17): AggregateError was a packaged file-count
+// issue (too many concurrent upload connections), with a server-side fix. Master #3716 v9.0.1635 reached
+// Test at 347 drivers / 3739 files. The old 347 cap is no longer treated as Athom's hard limit.
+// Master is ratcheted at 380 (347 + 27 graduated held ids = 374, plus a small margin). Stable stays at
+// 347 (never uploaded above 342). An upload above the ceiling is BLOCKED here, before Athom, never retried.
 // ATHOM_MAX_UPLOAD_DRIVERS may only LOWER a ceiling (stricter), never raise it: raising needs a reviewed
-// commit that cites a new accepted build. Apps not listed have no ceiling (bastien ships ~27 drivers).
+// commit. Apps not listed have no ceiling (bastien ships ~27 drivers). The blocking file-count ratchet
+// (scripts/ci/upload-archive-ceiling.cjs) remains the #488 control.
 const DRIVER_CEILING = Object.freeze({
-  'com.dlnraja.tuya.zigbee': 347,
-  // stable never uploaded above 342 (Test #427); master's measured bound is applied as a safety cap.
+  'com.dlnraja.tuya.zigbee': 380,
+  // stable never uploaded above 342 (Test #427); keep the previous cap as a safety ratchet.
   'com.dlnraja.tuya.zigbee.stable': 347,
 });
 function driverCeiling(appId, env = process.env) {
@@ -230,7 +233,7 @@ function check(dir, { appId, expectedVersion, baseline, sourceDir, baselineManif
     const ceiling = driverCeiling(app.id || appId, env);
     info.driverCeiling = ceiling;
     if (ceiling != null && drivers.length > ceiling) {
-      errors.push(`${drivers.length} drivers > Athom ceiling ${ceiling} for ${app.id} (P3330: 348+ driver uploads are refused with AggregateError; hold or fold drivers, see docs/knowledge/athom-driver-ceiling.md)`);
+      errors.push(`${drivers.length} drivers > Athom ceiling ${ceiling} for ${app.id} (P3330/P3360: raise only with a reviewed commit; Athom #488 is file-count, see docs/knowledge/athom-driver-ceiling.md)`);
     }
     const dirs = set.size ? fs.existsSync(path.join(root, 'drivers'))
       ? fs.readdirSync(path.join(root, 'drivers'), { withFileTypes: true }).filter((e) => e.isDirectory() && !e.name.startsWith('.')).map((e) => e.name) : [] : [];

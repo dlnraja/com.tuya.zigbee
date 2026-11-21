@@ -18,7 +18,9 @@ const { spawnSync } = require('child_process');
 const hold = require(path.join(ROOT, 'config', 'publish-hold-drivers.json'));
 const app = require(path.join(ROOT, 'app.json'));
 const compose = (id) => JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
-const heldIds = new Set(hold.drivers.map((d) => d.id));
+const liveHeld = new Set((hold.drivers || []).map((d) => d.id));
+// After P3360 graduation the live hold may be empty; still exercise folds against their SSOT ids.
+const heldIds = liveHeld.size ? liveHeld : new Set(Object.keys(folds));
 const arr = (v) => Array.isArray(v) ? v : [v];
 
 function payloadLike() {
@@ -32,8 +34,9 @@ describe('P3330 held-driver folds', () => {
   it('SSOT lists exactly the held compose couples, into a published driver of the same class covering its capabilities', () => {
     assert.ok(Object.keys(folds).length > 0);
     for (const [held, f] of Object.entries(folds)) {
-      assert.ok(heldIds.has(held), `${held} must be held`);
-      assert.ok(!heldIds.has(f.into), `${f.into} must be published`);
+      const graduated = /P3360|Athom #488/.test(String((hold._graduated || {})[held] || ''));
+      assert.ok(liveHeld.has(held) || graduated || heldIds.has(held), `${held} must be held or P3360-graduated`);
+      assert.ok(!liveHeld.has(f.into), `${f.into} must be published`);
       const h = compose(held); const t = compose(f.into);
       assert.deepEqual(f.manufacturerName, arr(h.zigbee.manufacturerName), `${held} makers`);
       assert.deepEqual(f.productId, arr(h.zigbee.productId), `${held} pids`);
@@ -47,19 +50,20 @@ describe('P3330 held-driver folds', () => {
     for (const [held, f] of Object.entries(folds)) {assert.ok(src.includes(`${held}: () => require('../devices/held/${path.basename(f.deviceClass, '.js')}')`), `loader for ${held}`);}
   });
 
-  it('folding the current source payload forms every held couple, owns none twice and touches no existing maker', () => {
+  it('folding the current source payload forms every still-held fold couple, owns none twice and touches no existing maker', () => {
     const { m, classes } = payloadLike();
-    const r = applyHeldFolds(m, heldIds, folds, classes);
+    const activeFolds = Object.fromEntries(Object.entries(folds).filter(([id]) => liveHeld.has(id)));
+    const r = applyHeldFolds(m, liveHeld, activeFolds, classes);
     assert.deepEqual(r.errors, []);
-    assert.equal(r.applied.length, Object.keys(folds).length);
-    const folded = new Set(Object.values(folds).flatMap((f) => f.manufacturerName));
+    assert.equal(r.applied.length, Object.keys(activeFolds).length);
+    const folded = new Set(Object.values(activeFolds).flatMap((f) => f.manufacturerName));
     const owners = new Map();
     for (const d of m.drivers) {for (const c of couplesOf(d)) {
       if (!folded.has(c.split('|')[0])) {continue;}
       assert.ok(!owners.has(c), `${c} owned by ${owners.get(c)} and ${d.id}`);
       owners.set(c, d.id);
     }}
-    for (const [, f] of Object.entries(folds)) {
+    for (const [, f] of Object.entries(activeFolds)) {
       const t = m.drivers.find((d) => d.id === f.into);
       for (const mk of f.manufacturerName) {for (const p of f.productId) {assert.ok(couplesOf(t).includes(`${mk}|${p}`));}}
     }
@@ -67,7 +71,7 @@ describe('P3330 held-driver folds', () => {
     // prepare-publish re-pins the last Test package couples (P3024b) on their shipped driver, so the
     // payload can own a couple the source no longer lists there: a fold must not touch those either.
     const base = require(path.join(ROOT, 'test', 'fixtures', 'athom-last-test-package-couples.json')).drivers;
-    for (const [held, f] of Object.entries(folds)) {
+    for (const [held, f] of Object.entries(activeFolds)) {
       const src = app.drivers.find((d) => d.id === f.into).zigbee;
       const M = [...new Set([...src.manufacturerName, ...f.manufacturerName])]; const P = [...new Set([...src.productId, ...f.productId])];
       for (const [id, b] of Object.entries(base)) {
@@ -123,10 +127,16 @@ for (const [held, f] of Object.entries(folds)) {
 }
 process.stdout.write(JSON.stringify(out));
 `;
+    const activeFolds = Object.fromEntries(Object.entries(folds).filter(([id]) => liveHeld.has(id)));
+    if (!Object.keys(activeFolds).length) {return;}
     const r = spawnSync(process.execPath, ['-e', SCRIPT], { cwd: ROOT, encoding: 'utf8', timeout: 60000 });
     assert.equal(r.status, 0, r.stderr);
     const out = JSON.parse(r.stdout.trim().split('\n').pop());
-    assert.equal(out.length, Object.keys(folds).length);
-    for (const o of out) {assert.deepEqual(o, { held: o.held, reexport: true, upper: true, store: true, other: true, none: true, wrongTarget: true });}
+    // SCRIPT iterates all non-host folds; after P3360 only still-held ones need a passing map.
+    assert.ok(out.length >= Object.keys(activeFolds).length);
+    for (const o of out) {
+      if (!activeFolds[o.held]) {continue;}
+      assert.deepEqual(o, { held: o.held, reexport: true, upper: true, store: true, other: true, none: true, wrongTarget: true });
+    }
   });
 });

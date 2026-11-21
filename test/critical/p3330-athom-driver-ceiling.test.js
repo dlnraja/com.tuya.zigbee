@@ -1,9 +1,9 @@
 'use strict';
 /**
  * P3330 - Athom driver-count ceiling (user 15/11/2026: fix the AggregateErrors of apps above ~345 drivers).
- * Every master upload with 348+ drivers since 21/10/2026 was refused (AggregateError); 347 reached Test.
- * The pre-upload guard (shared by every publish path of the three apps) must block an upload above the
- * per-app ceiling BEFORE Athom, and the env may only lower the ceiling, never raise it.
+ * Athom #488 (2026-11-17) identified AggregateError as a file-count issue, with a server-side fix.
+ * Master is ratcheted at 380 drivers (P3360); stable stays at 347. The pre-upload guard must block an
+ * upload above the per-app ceiling BEFORE Athom, and the env may only lower the ceiling, never raise it.
  */
 const { describe, it, after } = require('node:test');
 const assert = require('node:assert/strict');
@@ -38,21 +38,22 @@ const ceilingErrors = (root, appId, env = {}) => guard.check(root, { appId, env 
 describe('P3330 Athom driver-count ceiling', () => {
   after(() => { for (const d of tmp) {fs.rmSync(d, { recursive: true, force: true });} });
 
-  it('master and stable are capped at the proven 347; bastien and unknown apps have no ceiling', () => {
-    assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee', {}), 347);
+  it('master is capped at 380 (P3360 / Athom #488); stable stays at 347; bastien has no ceiling', () => {
+    assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee', {}), 380);
     assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee.stable', {}), 347);
     assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee.bastien', {}), null);
   });
 
   it('the env can only lower a ceiling, never raise it', () => {
-    assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee', { ATHOM_MAX_UPLOAD_DRIVERS: '400' }), 347);
+    assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee', { ATHOM_MAX_UPLOAD_DRIVERS: '400' }), 380);
     assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee', { ATHOM_MAX_UPLOAD_DRIVERS: '300' }), 300);
-    assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee', { ATHOM_MAX_UPLOAD_DRIVERS: 'x' }), 347);
+    assert.equal(guard.driverCeiling('com.dlnraja.tuya.zigbee', { ATHOM_MAX_UPLOAD_DRIVERS: 'x' }), 380);
   });
 
-  it('a 348-driver master package is blocked before upload; 347 passes the ceiling', () => {
-    assert.match(ceilingErrors(makePkg('com.dlnraja.tuya.zigbee', 348), 'com.dlnraja.tuya.zigbee').join('\n'), /348 drivers > Athom ceiling 347/);
-    assert.deepEqual(ceilingErrors(makePkg('com.dlnraja.tuya.zigbee', 347), 'com.dlnraja.tuya.zigbee'), []);
+  it('a 381-driver master package is blocked before upload; 380 passes the ceiling', () => {
+    assert.match(ceilingErrors(makePkg('com.dlnraja.tuya.zigbee', 381), 'com.dlnraja.tuya.zigbee').join('\n'), /381 drivers > Athom ceiling 380/);
+    assert.deepEqual(ceilingErrors(makePkg('com.dlnraja.tuya.zigbee', 380), 'com.dlnraja.tuya.zigbee'), []);
+    assert.deepEqual(ceilingErrors(makePkg('com.dlnraja.tuya.zigbee', 374), 'com.dlnraja.tuya.zigbee'), []);
   });
 
   it('the ceiling is enforced on the id inside app.json even when the caller passes no app id', () => {
@@ -64,5 +65,8 @@ describe('P3330 Athom driver-count ceiling', () => {
     const doc = fs.readFileSync(path.join(ROOT, 'docs', 'knowledge', 'athom-driver-ceiling.md'), 'utf8');
     assert.match(doc, /ceiling[^\n]*347/i);
     assert.match(doc, /#3706/);
+    assert.match(doc, /P3360/);
+    assert.match(doc, /380/);
+    assert.match(doc, /#488/);
   });
 });
