@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1633] - 2026-11-17
+## [9.0.1634] - 2026-11-21
+
+Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).
+---
+
+ [9.0.1633] - 2026-11-17
 
 Changed: homeyignore CI screenshots so the gate stops blocking the version write-back; cap a publish chain at 3 uploads.
 ---
