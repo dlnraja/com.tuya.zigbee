@@ -1,5 +1,42 @@
 {
-  "at": "2026-11-20T13:58:46.318Z",
+  "at": "2026-11-21T13:26:00.926Z",
   "checked": 62,
-  "findings": []
+  "findings": [
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-2a1553568063",
+      "wf": ".github/workflows/autonomous-review.yml",
+      "detail": "3 failures in 72 h: Autonomous review failed on fix/p3330-sacred-keep-collision (critical tests / Full critical suite: code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-a614dec56b7b",
+      "wf": ".github/workflows/pr-gate.yml",
+      "detail": "4 failures in 72 h: 🚦 PR Gate failed on fix/rakazo-stable-v5-cleanup-emojis-ci (🚦 Version + Sacred Couple + routing / 🧪 Critical routing tests (mocha): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-351d901e2c87",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "3 failures in 72 h: Node 22 runtime tests failed on fix/rakazo-cleanup-emojis-ci (test / Full suite on Node 22: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-6b7f6cfbf7a6",
+      "wf": ".github/workflows/autonomous-review.yml",
+      "detail": "8 failures in 72 h: Autonomous review failed on fix/oom-flow-consolidation-rakazo (critical tests / Full critical suite: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-b81376c1da58",
+      "wf": ".github/workflows/ci-self-check.yml",
+      "detail": "7 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on fix/rakazo-cleanup-emojis-ci (self-check / app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-a3ea004b0cdf",
+      "wf": ".github/workflows/homey-app-validate.yml",
+      "detail": "4 failures in 72 h: Homey App Validate (all levels) failed on fix/rakazo-cleanup-emojis-ci (validate / Publish payload build + size/structure report: no-log)"
+    }
+  ]
 }

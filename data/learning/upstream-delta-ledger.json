@@ -825,6 +825,70 @@
    "ref": "2026.11.2",
    "title": "2026.11.2",
    "url": "https://github.com/home-assistant/core/releases/tag/2026.11.2"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9d19151d86",
+   "title": "feat: Tuya TS0601_6gang_switch_2: support separate ON/OFF indicator colours (#13609)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9d19151d867e96bac907e5aa249517cb2d7acb9a"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "f9f83c5194",
+   "title": "feat(add): TS0601_floor_thermostat_jrtvxwvy https://github.com/Koenkk/zigbee2mqtt/issues/33766",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/f9f83c5194e53acdd6f415bdfe20f42a2bb80222"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "c4b7a7f222",
+   "title": "fix: Tuya TO-Q-SYS-JZT, PRO-900Z and MTD085-ZB, and Avatto TRV26: accept all exposed setting values ",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/c4b7a7f222884ce14677df064fa627879a86f5ce"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "a2d7043e2a",
+   "title": "fix: Tuya PJ-MGW1203: fix `energy` resetting instead of accumulating https://github.com/Koenkk/zigbe",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/a2d7043e2a8fa3dd1605ca12357ecf840c18dc5e"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "3bc5cf0ec2",
+   "title": "fix: Aqara LLKZMK12LM: report energy correctly on firmware 33 and newer (#13872)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/3bc5cf0ec2da740252ca61229f0c71a056e0cf2c"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "fd22e1d0fb",
+   "title": "feat: Namron 4512788: expose energy metering and dimming settings (#13867)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/fd22e1d0fb3829f7f91ae0986129ba3ae8abfbb9"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9cacc3b796",
+   "title": "fix: Shelly BLU TRV: apply settings reliably across sleep periods (#13842)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9cacc3b796e0456e49b58e15845ff4240b5f918f"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.135.0",
+   "title": "v26.135.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.135.0"
   }
  ]
 }
