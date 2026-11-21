@@ -13,6 +13,9 @@ const TARGETS = {
   bastien: { workflow: 'bastien-publish.yml', ref: 'bastien-home' },
 };
 const MAX_MARKER_AGE_H = 48;
+// P3366: the Bastien house app is uploaded only at night (23:00-06:00 Europe/Paris); a held Bastien
+// marker is re-dispatched only inside that window (the dispatched run re-checks the window itself).
+const { isNightWindow } = require('./bastien-night-window');
 
 // artifacts: [{name, created_at, expired}], runs: [{created_at, status}] newest first for that workflow+branch.
 function deferredDecision({ key, artifacts, runs, now = Date.now() }) {
@@ -20,6 +23,7 @@ function deferredDecision({ key, artifacts, runs, now = Date.now() }) {
   const markers = (artifacts || []).filter((a) => a && !a.expired && String(a.name || '').startsWith(prefix))
     .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at));
   if (!markers.length) return { dispatch: false, reason: 'no deferred marker' };
+  if (key === 'bastien' && !isNightWindow(new Date(now))) return { dispatch: false, reason: 'outside the Bastien night window (23h-06h Paris)' };
   const m = markers[0];
   // P3087: athom-deferred-<key>-m-b<id>.c<n>-<run> = held MANUAL run; only a newer dispatch re-checked it
   // (a push run is stopped by the open breaker and must not swallow the manual intent).

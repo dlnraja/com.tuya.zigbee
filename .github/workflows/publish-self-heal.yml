@@ -6,7 +6,7 @@
 #   posting stays off or ledger-gated.
 # <<< about
 # 🩹 Publish Self-Heal
-# Triggers: cron: 0 4,8,12,16,20 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN, HOMEY_PAT
+# Triggers: cron: 0 4,8,12,16,20,22 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN, HOMEY_PAT
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
 # 2026-07-29: added athom-heal job — detects Athom-side processing_failed
 # builds (>6h old, no newer active build) and re-triggers the publish
@@ -22,7 +22,8 @@ name: 🩹 Publish Self-Heal
 on:
   schedule:
     # Every 4 hours, offset from mega-crawl and publish schedules
-    - cron: '0 4,8,12,16,20 * * *'
+    # P3366: 22:00 UTC is 23h (winter) / 00h (summer) Paris, the slot for held Bastien uploads.
+    - cron: '0 4,8,12,16,20,22 * * *'
   workflow_dispatch:
 
 permissions:
@@ -194,6 +195,7 @@ jobs:
           fetch-depth: 1
           sparse-checkout: |
             .github/scripts/athom-deferred-dispatch.js
+            .github/scripts/bastien-night-window.js
           sparse-checkout-cone-mode: false
       - name: Dispatch held uploads (master, stable-v5, bastien-home)
         env:
