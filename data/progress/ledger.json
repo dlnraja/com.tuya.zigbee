@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-21T13:59:42.895Z",
+ "updated": "2026-11-21T19:34:49.279Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -9542,6 +9542,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T21:38:26.000Z"
   },
+  "diag:59eb8c57dbe103d6": {
+   "status": "done",
+   "date": "2026-11-21",
+   "hash": "02fd567a178533ff",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-21T19:03:55.000Z"
+  },
   "diag:5a0b53ac6f8dc30f": {
    "status": "done",
    "date": "2026-11-16",
@@ -11451,6 +11460,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:20:08.000Z"
+  },
+  "diag:937f090aa5c8e286": {
+   "status": "done",
+   "date": "2026-11-21",
+   "hash": "12f6c48facb59d51",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-21T19:20:33.000Z"
   },
   "diag:9383825d0e16e70f": {
    "status": "done",
@@ -14224,6 +14242,15 @@
    "kind": "github",
    "mailDate": "2026-10-20T07:19:10.000Z",
    "errors": 1
+  },
+  "diag:e56159e17403b329": {
+   "status": "done",
+   "date": "2026-11-21",
+   "hash": "7df60e8d5e858803",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-21T19:03:40.000Z"
   },
   "diag:e613c268260b01cd": {
    "status": "done",
