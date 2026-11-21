@@ -1,8 +1,9 @@
 {
   "id": "temphumidsensor5",
   "name": {
-    "en": "Temperature & Humidity Sensor",
-    "sv": "Temperatur- och fuktighetssensor"
+    "en": "Temperature & Humidity Sensor (temphumidsensor5)",
+    "sv": "Temperatur- och fuktighetssensor",
+    "fr": "Capteur de température et d'humidité (temphumidsensor5)"
   },
   "class": "sensor",
   "capabilities": [

@@ -96,37 +96,37 @@
     {
       "id": "scene_switch_1_button_1gang_button_1_pressed",
       "title": {
-        "en": "Button pressed",
+        "en": "Button pressed (button button 1 pressed)",
         "fr": "Bouton appuye"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
+        "en": "Button pressed (button button 1 pressed)",
         "fr": "Bouton appuye"
       }
     },
     {
       "id": "scene_switch_1_button_1gang_button_1_double",
       "title": {
-        "en": "Button double-pressed",
+        "en": "Button double-pressed (button button 1 double)",
         "fr": "Bouton double-appui"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button double-pressed",
+        "en": "Button double-pressed (button button 1 double)",
         "fr": "Bouton double-appui"
       }
     },
     {
       "id": "scene_switch_1_button_1gang_button_1_long",
       "title": {
-        "en": "Button long-pressed",
-        "fr": "Bouton appui long"
+        "en": "Button long-pressed (button button 1 long)",
+        "fr": "Bouton appui long (button button 1 long)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button long-pressed",
-        "fr": "Bouton appui long"
+        "en": "Button long-pressed (button button 1 long)",
+        "fr": "Bouton appui long (button button 1 long)"
       }
     },
     {
@@ -145,12 +145,12 @@
       "id": "scene_switch_1_button_1gang_button_1_release",
       "title": {
         "en": "Button released",
-        "fr": "Bouton relache"
+        "fr": "Bouton relâché"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button released",
-        "fr": "Bouton relache"
+        "fr": "Bouton relâché"
       }
     }
   ],

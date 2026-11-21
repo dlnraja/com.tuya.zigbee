@@ -3,8 +3,8 @@
     {
       "id": "device_air_purifier_quality_air_quality_comp_1d859",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed (comp)",
+        "fr": "Température changée (comp)"
       },
       "tokens": [
         {
@@ -26,8 +26,8 @@
     {
       "id": "device_air_purifier_quality_air_quality_comp_3d872",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed (comp)",
+        "fr": "Humidité changée (comp)"
       },
       "tokens": [
         {
@@ -49,15 +49,15 @@
     {
       "id": "device_air_purifier_quality_air_quality_comp_188ca",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (comp 2)",
+        "fr": "Température changée (comp 2)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (comp 2)",
+        "fr": "Température changée (comp 2)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -65,15 +65,15 @@
     {
       "id": "device_air_purifier_quality_air_quality_comp_c4210",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (comp 2)",
+        "fr": "Humidité changée (comp 2)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (comp 2)",
+        "fr": "Humidité changée (comp 2)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }

@@ -1,8 +1,9 @@
 {
   "id": "temphumidsensor4",
   "name": {
-    "en": "Temperature & Humidity Sensor",
-    "sv": "Temperatur- och fuktighetssensor"
+    "en": "Temperature & Humidity Sensor (TS0601)",
+    "sv": "Temperatur- och fuktighetssensor",
+    "fr": "Capteur de température et d'humidité (TS0601)"
   },
   "class": "sensor",
   "capabilities": [

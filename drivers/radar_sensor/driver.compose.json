@@ -1,8 +1,9 @@
 {
   "id": "radar_sensor",
   "name": {
-    "en": "Radar Sensor",
-    "nl": "Radar Sensor"
+    "en": "Radar Sensor (radar sensor)",
+    "nl": "Radar Sensor",
+    "fr": "Capteur radar (radar sensor)"
   },
   "class": "sensor",
   "platforms": [

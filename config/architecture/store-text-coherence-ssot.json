@@ -1,0 +1,58 @@
+{
+  "id": "store-text-coherence-ssot",
+  "ticket": "P3363",
+  "requests": ["t996u", "t998u"],
+  "doc": "Changelogs and store text stay coherent on all three apps, on a free weekly GitHub Actions run, without paid AI and without removing published ids.",
+  "apps": {
+    "com.dlnraja.tuya.zigbee": { "branch": "master", "series": "9." },
+    "com.dlnraja.tuya.zigbee.stable": { "branch": "stable-v5", "series": "5." },
+    "com.dlnraja.tuya.zigbee.bastien": { "branch": "bastien-home", "series": "1." }
+  },
+  "workflow": ".github/workflows/store-text-coherence.yml",
+  "schedule": "10 5 * * 2",
+  "schedule_note": "Tuesdays 05:10 UTC (06:10 Europe/Paris in winter). Also workflow_dispatch.",
+  "kill_switch": "STORE_TEXT_COHERENCE_DISABLED",
+  "kill_switch_value": "true",
+  "token": "GITHUB_TOKEN only",
+  "concurrency_group": "store-text-coherence",
+  "timeout_minutes": 25,
+  "auto_commit": {
+    "helper": "scripts/ci/safe-auto-commit.js",
+    "id": "store-text-coherence",
+    "skip_ci_on_master": true,
+    "skip_ci_all_branches": true,
+    "issue_comments": false,
+    "never_force": true,
+    "never_remove_ids": true,
+    "safe_paths": [
+      ".homeychangelog.json",
+      ".homeycompose/app.json",
+      "README.txt",
+      "README.fr.txt",
+      "README.de.txt",
+      "README.nl.txt",
+      "drivers/*/driver.compose.json",
+      "drivers/*/driver.flow.compose.json",
+      "app.json"
+    ]
+  },
+  "rules": [
+    "A changelog version key must belong to this app's series. Foreign 9.x keys on stable or 5.x/9.x keys on Bastien are removed.",
+    "Notes come from commits since the previous version really published for this app (ledger), else since the previous bump. Always en+fr. No personal names, no internal P/GH ids.",
+    "Published driver ids, flow-card ids, capability ids and mfr+pid couples are never removed or renamed.",
+    "Driver names are unique per locale. Each locale is in its own language. Accents from the known word list are applied (Latin-1 only, no char above U+00FF in the fixer).",
+    "Two flow cards in one driver must not render the same title in a locale; the custom card is retitled or the wording is distinguished. Cards are not deleted.",
+    "Bastien app.json is the official HomeyCompose output (P3079), never normalise().",
+    "Leftover issues that the fixer will not touch go to the report artifact only: no new GitHub issue, no forum post, no email."
+  ],
+  "scripts": {
+    "run": "scripts/automation/p3363-coherence-run.js",
+    "changelog": "scripts/automation/changelog-coherence.js",
+    "store": "scripts/automation/store-text-coherence.js"
+  },
+  "tests": [
+    "test/critical/p3363-changelog-coherence.test.js",
+    "test/critical/p3363-store-text-coherence.test.js",
+    "test/ci/p3363-coherence-workflow.test.js"
+  ]
+}

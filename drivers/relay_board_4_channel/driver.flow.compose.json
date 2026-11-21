@@ -28,79 +28,79 @@
       "id": "relay_board_4_channel_gang2_turned_on",
       "title": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allume"
+        "fr": "Voie 2 allume"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allume"
+        "fr": "Voie 2 allume"
       }
     },
     {
       "id": "relay_board_4_channel_gang2_turned_off",
       "title": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 eteint"
+        "fr": "Voie 2 eteint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 eteint"
+        "fr": "Voie 2 eteint"
       }
     },
     {
       "id": "relay_board_4_channel_gang3_turned_on",
       "title": {
         "en": "Gang 3 turned on",
-        "fr": "Gang 3 allume"
+        "fr": "Voie 3 allume"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 turned on",
-        "fr": "Gang 3 allume"
+        "fr": "Voie 3 allume"
       }
     },
     {
       "id": "relay_board_4_channel_gang3_turned_off",
       "title": {
         "en": "Gang 3 turned off",
-        "fr": "Gang 3 eteint"
+        "fr": "Voie 3 eteint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 turned off",
-        "fr": "Gang 3 eteint"
+        "fr": "Voie 3 eteint"
       }
     },
     {
       "id": "relay_board_4_channel_gang4_turned_on",
       "title": {
         "en": "Gang 4 turned on",
-        "fr": "Gang 4 allume"
+        "fr": "Voie 4 allume"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 turned on",
-        "fr": "Gang 4 allume"
+        "fr": "Voie 4 allume"
       }
     },
     {
       "id": "relay_board_4_channel_gang4_turned_off",
       "title": {
         "en": "Gang 4 turned off",
-        "fr": "Gang 4 eteint"
+        "fr": "Voie 4 eteint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 turned off",
-        "fr": "Gang 4 eteint"
+        "fr": "Voie 4 eteint"
       }
     },
     {
       "id": "relay_board_4_channel_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 on",
-        "fr": "Physical gang 1 on"
+        "fr": "Voie 1 allumée physiquement"
       },
       "args": []
     },
@@ -108,7 +108,7 @@
       "id": "relay_board_4_channel_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 off",
-        "fr": "Physical gang 1 off"
+        "fr": "Voie 1 éteinte physiquement"
       },
       "args": []
     },
@@ -116,7 +116,7 @@
       "id": "relay_board_4_channel_physical_gang2_on",
       "title": {
         "en": "Physical gang 2 on",
-        "fr": "Physical gang 2 on"
+        "fr": "Voie 2 allumée physiquement"
       },
       "args": []
     },
@@ -124,7 +124,7 @@
       "id": "relay_board_4_channel_physical_gang2_off",
       "title": {
         "en": "Physical gang 2 off",
-        "fr": "Physical gang 2 off"
+        "fr": "Voie 2 éteinte physiquement"
       },
       "args": []
     },
@@ -132,7 +132,7 @@
       "id": "relay_board_4_channel_physical_gang3_on",
       "title": {
         "en": "Physical gang 3 on",
-        "fr": "Physical gang 3 on"
+        "fr": "Voie 3 allumée physiquement"
       },
       "args": []
     },
@@ -140,7 +140,7 @@
       "id": "relay_board_4_channel_physical_gang3_off",
       "title": {
         "en": "Physical gang 3 off",
-        "fr": "Physical gang 3 off"
+        "fr": "Voie 3 éteinte physiquement"
       },
       "args": []
     },
@@ -148,7 +148,7 @@
       "id": "relay_board_4_channel_physical_gang4_on",
       "title": {
         "en": "Physical gang 4 on",
-        "fr": "Physical gang 4 on"
+        "fr": "Voie 4 allumée physiquement"
       },
       "args": []
     },
@@ -156,7 +156,7 @@
       "id": "relay_board_4_channel_physical_gang4_off",
       "title": {
         "en": "Physical gang 4 off",
-        "fr": "Physical gang 4 off"
+        "fr": "Voie 4 éteinte physiquement"
       },
       "args": []
     }
@@ -178,48 +178,48 @@
       "id": "relay_board_4_channel_gang1_is_on",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allume|eteint}}"
+        "fr": "Voie 1 est !{{allume|eteint}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allume|eteint}}"
+        "fr": "Voie 1 est !{{allume|eteint}}"
       }
     },
     {
       "id": "relay_board_4_channel_gang2_is_on",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allume|eteint}}"
+        "fr": "Voie 2 est !{{allume|eteint}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allume|eteint}}"
+        "fr": "Voie 2 est !{{allume|eteint}}"
       }
     },
     {
       "id": "relay_board_4_channel_gang3_is_on",
       "title": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allume|eteint}}"
+        "fr": "Voie 3 est !{{allume|eteint}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allume|eteint}}"
+        "fr": "Voie 3 est !{{allume|eteint}}"
       }
     },
     {
       "id": "relay_board_4_channel_gang4_is_on",
       "title": {
         "en": "Gang 4 is !{{on|off}}",
-        "fr": "Gang 4 est !{{allume|eteint}}"
+        "fr": "Voie 4 est !{{allume|eteint}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 is !{{on|off}}",
-        "fr": "Gang 4 est !{{allume|eteint}}"
+        "fr": "Voie 4 est !{{allume|eteint}}"
       }
     }
   ],

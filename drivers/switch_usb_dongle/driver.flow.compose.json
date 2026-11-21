@@ -57,7 +57,7 @@
       "id": "switch_usb_dongle_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -65,7 +65,7 @@
       "id": "switch_usb_dongle_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     },
@@ -121,24 +121,24 @@
       "id": "switch_usb_dongle_port1_is_on",
       "title": {
         "en": "USB Port 1 is on",
-        "fr": "Le port USB 1 est allumé"
+        "fr": "Le port USB 1 est allumé (état)"
       },
       "args": [],
       "titleFormatted": {
         "en": "USB Port 1 is on",
-        "fr": "Le port USB 1 est allumé"
+        "fr": "Le port USB 1 est allumé (état)"
       }
     },
     {
       "id": "switch_usb_dongle_port2_is_on",
       "title": {
         "en": "USB Port 2 is on",
-        "fr": "Le port USB 2 est allumé"
+        "fr": "Le port USB 2 est allumé (état)"
       },
       "args": [],
       "titleFormatted": {
         "en": "USB Port 2 is on",
-        "fr": "Le port USB 2 est allumé"
+        "fr": "Le port USB 2 est allumé (état)"
       }
     }
   ],

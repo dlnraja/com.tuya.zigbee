@@ -3,7 +3,7 @@
     {
       "id": "device_air_purifier_device_air_purifier_ther_42884",
       "title": {
-        "en": "Target temperature changed",
+        "en": "Target temperature changed (purifier device air purifier)",
         "fr": "Température cible changée"
       },
       "tokens": [
@@ -128,15 +128,15 @@
     {
       "id": "device_air_purifier_device_air_purifier_ther_2c6c1",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (ther)",
+        "fr": "Température changée (ther)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (ther)",
+        "fr": "Température changée (ther)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -160,15 +160,15 @@
     {
       "id": "device_air_purifier_device_air_purifier_ther_0c0d7",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (purifier device air purifier)",
+        "fr": "Humidité changée (purifier device air purifier)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (purifier device air purifier)",
+        "fr": "Humidité changée (purifier device air purifier)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }

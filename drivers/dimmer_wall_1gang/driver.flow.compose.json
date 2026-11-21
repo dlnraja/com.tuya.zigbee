@@ -73,25 +73,25 @@
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (dimmer 1gang turned on)",
+        "fr": "Allumé (dimmer 1gang turned on)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (dimmer 1gang turned on)",
+        "fr": "Allumé (dimmer 1gang turned on)"
       }
     },
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (dimmer 1gang turned off)",
+        "fr": "Éteint (dimmer 1gang turned off)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (dimmer 1gang turned off)",
+        "fr": "Éteint (dimmer 1gang turned off)"
       }
     },
     {
@@ -218,12 +218,12 @@
       "id": "dimmer_wall_1gang_dimmer_1gang_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (dimmer 1gang is on)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (dimmer 1gang is on)"
       }
     },
     {
@@ -247,37 +247,37 @@
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_turn_on",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (dimmer 1gang turn on)",
+        "fr": "Allumer (dimmer 1gang turn on)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (dimmer 1gang turn on)",
+        "fr": "Allumer (dimmer 1gang turn on)"
       }
     },
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_turn_off",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (dimmer 1gang turn off)",
+        "fr": "Éteindre (dimmer 1gang turn off)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (dimmer 1gang turn off)",
+        "fr": "Éteindre (dimmer 1gang turn off)"
       }
     },
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (1gang dimmer 1gang toggle)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (1gang dimmer 1gang toggle)"
       }
     },
     {

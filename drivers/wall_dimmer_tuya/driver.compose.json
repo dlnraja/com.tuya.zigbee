@@ -1,7 +1,10 @@
 {
   "id": "wall_dimmer_tuya",
   "name": {
-    "en": "Wall Dimmer"
+    "en": "Wall dimmer",
+    "fr": "Variateur mural",
+    "nl": "Muurdimmer",
+    "de": "Wanddimmer"
   },
   "class": "light",
   "platforms": [

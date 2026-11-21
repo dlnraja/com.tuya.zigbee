@@ -1,12 +1,17 @@
 {
   "name": {
-    "en": "Smart Bulb Rgb",
-    "fr": "Smart Bulb Rgb",
+    "en": "RGB smart bulb",
+    "fr": "Ampoule connectée RVB",
     "nl": "RGB Lamp",
     "de": "RGB Glühbirne"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 7, "usageOff": 0.4 } },
+  "energy": {
+    "approximation": {
+      "usageOn": 7,
+      "usageOff": 0.4
+    }
+  },
   "capabilities": [
     "dim",
     "light_hue",

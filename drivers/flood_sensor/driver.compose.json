@@ -1,7 +1,8 @@
 {
   "id": "floodsensor",
   "name": {
-    "en": "Flood sensor"
+    "en": "Flood sensor",
+    "fr": "Détecteur d'inondation"
   },
   "class": "sensor",
   "platforms": [

@@ -51,7 +51,7 @@
     {
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_b3cd9",
       "title": {
-        "en": "Illuminance changed",
+        "en": "Illuminance changed (radar motion sensor radar)",
         "fr": "Luminosité changée"
       },
       "tokens": [
@@ -74,8 +74,8 @@
     {
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_f8e99",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed (mmwa)",
+        "fr": "Température changée (mmwa)"
       },
       "tokens": [
         {
@@ -97,8 +97,8 @@
     {
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_88701",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed (radar motion sensor radar)",
+        "fr": "Humidité changée (radar motion sensor radar)"
       },
       "tokens": [
         {
@@ -194,15 +194,15 @@
     {
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_73ab1",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (mmwa 2)",
+        "fr": "Température changée (mmwa 2)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (mmwa 2)",
+        "fr": "Température changée (mmwa 2)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }

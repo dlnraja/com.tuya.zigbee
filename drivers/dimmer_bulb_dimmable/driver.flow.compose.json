@@ -50,15 +50,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_e7ee7",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (bu)",
+        "fr": "Allumé (bu)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (bu)",
+        "fr": "Allumé (bu)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -66,15 +66,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_030bd",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (bu)",
+        "fr": "Éteint (bu)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (bu)",
+        "fr": "Éteint (bu)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -99,7 +99,7 @@
       "id": "dimmer_bulb_dimmable_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -107,7 +107,7 @@
       "id": "dimmer_bulb_dimmable_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     },
@@ -152,14 +152,14 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_66c9b",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (bu)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (bu)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -231,15 +231,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_89495",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (bu)",
+        "fr": "Allumer (bu)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (bu)",
+        "fr": "Allumer (bu)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       }
@@ -247,15 +247,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_578bb",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (bu)",
+        "fr": "Éteindre (bu)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (bu)",
+        "fr": "Éteindre (bu)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -264,14 +264,14 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_f3f9a",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer",
+        "fr": "Basculer (bu)",
         "nl": "Wisselen",
         "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer",
+        "fr": "Basculer (bu)",
         "nl": "Wisselen",
         "de": "Umschalten"
       }

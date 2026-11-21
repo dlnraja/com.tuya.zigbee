@@ -1,7 +1,8 @@
 {
   "id": "rgb_spot_GU10",
   "name": {
-    "en": "RGB Spot GU10"
+    "en": "RGB Spot GU10",
+    "fr": "Spot RGB GU10"
   },
   "$extends": [
     "light_color_ambiance"

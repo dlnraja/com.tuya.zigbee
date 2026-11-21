@@ -39,8 +39,8 @@
     {
       "id": "usb_outlet_advanced_measure_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed (outlet advanced power changed)",
+        "fr": "Puissance changée (outlet advanced power changed)"
       },
       "tokens": [
         {
@@ -148,7 +148,7 @@
       "id": "usb_outlet_advanced_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -156,7 +156,7 @@
       "id": "usb_outlet_advanced_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     }

@@ -83,12 +83,11 @@ function summarize(subjects) {
 // also close a version, so one entry never lists the whole recent history.
 const BUMP_SUBJECT = /^(?:chore|release|build)(?:\([^)]*\))?:\s*v?\d+\.\d+\.\d+\b|source manifests [\d.]+ -> \d+\.\d+\.\d+/i;
 
-/** Precise en/fr note from our commits (families, model ids), in our own words; summarize() if the backfill module is missing.
- *  When describe() would only say "small fixes" or "tooling only", name the runtime subjects (fix/feat/perf, chore diag/drivers/lib/app). */
+/** Precise en/fr note from our commits (families, model ids), in our own words; summarize() if the backfill module is missing. */
 function runtimeHeads(subjects) {
   const items = [];
   for (const s of subjects || []) {
-    if (/\[auto:|^Merge |\[skip ci\]/i.test(s) || BUMP_SUBJECT.test(s)) continue;
+    if (/\[auto:|^Merge /i.test(s) || BUMP_SUBJECT.test(s)) continue;
     const p = parseSubject(s);
     const runtime = p.type === 'fix' || p.type === 'feat' || p.type === 'perf'
       || (p.type === 'chore' && /^(diag|drivers|lib|app)\b/i.test(p.scope));
@@ -119,7 +118,7 @@ function precise(subjects) {
 function specific(subjects, base) {
   const refs = []; const items = [];
   for (const s of subjects || []) {
-    if (/\[auto:|^Merge |\[skip ci\]/i.test(s) || BUMP_SUBJECT.test(s)) continue;
+    if (/\[auto:|^Merge /i.test(s) || BUMP_SUBJECT.test(s)) continue;
     const p = parseSubject(s);
     if (p.type && !USER_TYPES.has(p.type)) continue;
     for (const r of `${p.scope} ${p.rest}`.match(/\bP\d{3,5}[a-z]?\b|GH#\d+|#\d{2,5}\b/g) || []) if (!refs.includes(r)) refs.push(r);

@@ -4,14 +4,14 @@
       "id": "switch_3gang_gang1_turned_on",
       "title": {
         "en": "Gang 1 turned on",
-        "fr": "Gang 1 allumé",
+        "fr": "Voie 1 allumée",
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 turned on",
-        "fr": "Gang 1 allumé",
+        "fr": "Voie 1 allumée",
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       }
@@ -20,14 +20,14 @@
       "id": "switch_3gang_gang1_turned_off",
       "title": {
         "en": "Gang 1 turned off",
-        "fr": "Gang 1 éteint",
+        "fr": "Voie 1 éteinte",
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 turned off",
-        "fr": "Gang 1 éteint",
+        "fr": "Voie 1 éteinte",
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       }
@@ -36,14 +36,14 @@
       "id": "switch_3gang_gang2_turned_on",
       "title": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allumé",
+        "fr": "Voie 2 allumée",
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allumé",
+        "fr": "Voie 2 allumée",
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       }
@@ -52,14 +52,14 @@
       "id": "switch_3gang_gang2_turned_off",
       "title": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 éteint",
+        "fr": "Voie 2 éteinte",
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 éteint",
+        "fr": "Voie 2 éteinte",
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       }
@@ -68,14 +68,14 @@
       "id": "switch_3gang_gang3_turned_on",
       "title": {
         "en": "Gang 3 turned on",
-        "fr": "Gang 3 allumé",
+        "fr": "Voie 3 allumée",
         "nl": "Gang 3 aangezet",
         "de": "Gang 3 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 turned on",
-        "fr": "Gang 3 allumé",
+        "fr": "Voie 3 allumée",
         "nl": "Gang 3 aangezet",
         "de": "Gang 3 eingeschaltet"
       }
@@ -84,14 +84,14 @@
       "id": "switch_3gang_gang3_turned_off",
       "title": {
         "en": "Gang 3 turned off",
-        "fr": "Gang 3 éteint",
+        "fr": "Voie 3 éteinte",
         "nl": "Gang 3 uitgezet",
         "de": "Gang 3 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 turned off",
-        "fr": "Gang 3 éteint",
+        "fr": "Voie 3 éteinte",
         "nl": "Gang 3 uitgezet",
         "de": "Gang 3 ausgeschaltet"
       }
@@ -100,7 +100,7 @@
       "id": "switch_3gang_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
+        "fr": "Voie 1 allumée physiquement",
         "nl": "Fysiek gang 1 AAN",
         "de": "Physisch gang 1 EIN"
       },
@@ -113,7 +113,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
+        "fr": "Voie 1 allumée physiquement",
         "nl": "Fysiek gang 1 AAN",
         "de": "Physisch gang 1 EIN"
       }
@@ -122,14 +122,14 @@
       "id": "switch_3gang_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement",
         "nl": "Fysiek gang 1 UIT",
         "de": "Physisch gang 1 AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement",
         "nl": "Fysiek gang 1 UIT",
         "de": "Physisch gang 1 AUS"
       }
@@ -138,14 +138,14 @@
       "id": "switch_3gang_physical_gang2_on",
       "title": {
         "en": "Physical gang 2 ON",
-        "fr": "Physique gang 2 ON",
+        "fr": "Voie 2 allumée physiquement",
         "nl": "Fysiek gang 2 AAN",
         "de": "Physisch gang 2 EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 2 ON",
-        "fr": "Physique gang 2 ON",
+        "fr": "Voie 2 allumée physiquement",
         "nl": "Fysiek gang 2 AAN",
         "de": "Physisch gang 2 EIN"
       }
@@ -154,14 +154,14 @@
       "id": "switch_3gang_physical_gang2_off",
       "title": {
         "en": "Physical gang 2 OFF",
-        "fr": "Physique gang 2 OFF",
+        "fr": "Voie 2 éteinte physiquement",
         "nl": "Fysiek gang 2 UIT",
         "de": "Physisch gang 2 AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 2 OFF",
-        "fr": "Physique gang 2 OFF",
+        "fr": "Voie 2 éteinte physiquement",
         "nl": "Fysiek gang 2 UIT",
         "de": "Physisch gang 2 AUS"
       }
@@ -170,14 +170,14 @@
       "id": "switch_3gang_physical_gang3_on",
       "title": {
         "en": "Physical gang 3 ON",
-        "fr": "Physique gang 3 ON",
+        "fr": "Voie 3 allumée physiquement",
         "nl": "Fysiek gang 3 AAN",
         "de": "Physisch gang 3 EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 3 ON",
-        "fr": "Physique gang 3 ON",
+        "fr": "Voie 3 allumée physiquement",
         "nl": "Fysiek gang 3 AAN",
         "de": "Physisch gang 3 EIN"
       }
@@ -186,14 +186,14 @@
       "id": "switch_3gang_physical_gang3_off",
       "title": {
         "en": "Physical gang 3 OFF",
-        "fr": "Physique gang 3 OFF",
+        "fr": "Voie 3 éteinte physiquement",
         "nl": "Fysiek gang 3 UIT",
         "de": "Physisch gang 3 AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 3 OFF",
-        "fr": "Physique gang 3 OFF",
+        "fr": "Voie 3 éteinte physiquement",
         "nl": "Fysiek gang 3 UIT",
         "de": "Physisch gang 3 AUS"
       }
@@ -319,14 +319,14 @@
       "id": "switch_3gang_gang1_is_on",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "fr": "Voie 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "fr": "Voie 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       }
@@ -335,14 +335,14 @@
       "id": "switch_3gang_gang2_is_on",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "fr": "Voie 2 est !{{allumé|éteint}}",
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "fr": "Voie 2 est !{{allumé|éteint}}",
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       }
@@ -351,14 +351,14 @@
       "id": "switch_3gang_gang3_is_on",
       "title": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allumé|éteint}}",
+        "fr": "Voie 3 est !{{allumé|éteint}}",
         "nl": "Gang 3 is !{{aan|uit}}",
         "de": "Gang 3 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allumé|éteint}}",
+        "fr": "Voie 3 est !{{allumé|éteint}}",
         "nl": "Gang 3 is !{{aan|uit}}",
         "de": "Gang 3 ist !{{ein|aus}}"
       }

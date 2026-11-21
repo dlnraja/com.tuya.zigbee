@@ -73,8 +73,8 @@
     {
       "id": "device_din_rail_meter_hvac_dehumidifier_meas_0eef3",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed (hvac dehumidifier)",
+        "fr": "Puissance changée (hvac dehumidifier)"
       },
       "tokens": [
         {
@@ -120,15 +120,15 @@
     {
       "id": "device_din_rail_meter_hvac_dehumidifier_humi_c9558",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (rail meter hvac dehumidifier)",
+        "fr": "Humidité changée (rail meter hvac dehumidifier)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (rail meter hvac dehumidifier)",
+        "fr": "Humidité changée (rail meter hvac dehumidifier)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }
@@ -136,15 +136,15 @@
     {
       "id": "device_din_rail_meter_hvac_dehumidifier_temp_4bc03",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (rail meter hvac dehumidifier)",
+        "fr": "Température changée (rail meter hvac dehumidifier)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (rail meter hvac dehumidifier)",
+        "fr": "Température changée (rail meter hvac dehumidifier)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -152,15 +152,15 @@
     {
       "id": "device_din_rail_meter_hvac_dehumidifier_powe_f9a4b",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (hvac dehumidifier 2)",
+        "fr": "Puissance changée (hvac dehumidifier 2)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (hvac dehumidifier 2)",
+        "fr": "Puissance changée (hvac dehumidifier 2)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }

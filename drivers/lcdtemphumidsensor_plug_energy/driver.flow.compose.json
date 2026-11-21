@@ -27,8 +27,8 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_power_af4dd",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed (lcdtemphumidsensor plug energy power)",
+        "fr": "Puissance changée (lcdtemphumidsensor plug energy power)"
       },
       "tokens": [
         {
@@ -50,8 +50,8 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_volta_fb6e7",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
+        "en": "Voltage changed (lcdtemphumidsensor plug energy)",
+        "fr": "Tension changée (lcdtemphumidsensor plug energy)"
       },
       "tokens": [
         {
@@ -73,8 +73,8 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_curre_bf97f",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé"
+        "en": "Current changed (lcdtemphumidsensor plug energy)",
+        "fr": "Courant changé (lcdtemphumidsensor plug energy)"
       },
       "tokens": [
         {
@@ -152,7 +152,7 @@
       "id": "lcdtemphumidsensor_plug_energy_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -160,7 +160,7 @@
       "id": "lcdtemphumidsensor_plug_energy_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     },

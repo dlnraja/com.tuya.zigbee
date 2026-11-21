@@ -183,7 +183,7 @@
       "id": "curtain_motor_wall_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -191,7 +191,7 @@
       "id": "curtain_motor_wall_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     }
@@ -226,25 +226,25 @@
     {
       "id": "curtain_motor_wall_curtain_motor_windowcover_3464e",
       "title": {
-        "en": "Open",
-        "fr": "Ouvrir"
+        "en": "Open (wall)",
+        "fr": "Ouvrir (wall)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Open",
-        "fr": "Ouvrir"
+        "en": "Open (wall)",
+        "fr": "Ouvrir (wall)"
       }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_windowcover_4a3ed",
       "title": {
-        "en": "Close",
-        "fr": "Fermer"
+        "en": "Close (wall)",
+        "fr": "Fermer (wall)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Close",
-        "fr": "Fermer"
+        "en": "Close (wall)",
+        "fr": "Fermer (wall)"
       }
     },
     {

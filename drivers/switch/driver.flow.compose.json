@@ -4,14 +4,14 @@
       "id": "switch_2gang_gang1_turned_on_switch",
       "title": {
         "en": "Gang 1 turned on",
-        "fr": "Gang 1 allumé",
+        "fr": "Voie 1 allumée",
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 turned on",
-        "fr": "Gang 1 allumé",
+        "fr": "Voie 1 allumée",
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       }
@@ -20,14 +20,14 @@
       "id": "switch_2gang_gang1_turned_off_switch",
       "title": {
         "en": "Gang 1 turned off",
-        "fr": "Gang 1 éteint",
+        "fr": "Voie 1 éteinte",
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 turned off",
-        "fr": "Gang 1 éteint",
+        "fr": "Voie 1 éteinte",
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       }
@@ -36,14 +36,14 @@
       "id": "switch_2gang_gang2_turned_on_switch",
       "title": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allumé",
+        "fr": "Voie 2 allumée",
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allumé",
+        "fr": "Voie 2 allumée",
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       }
@@ -52,14 +52,14 @@
       "id": "switch_2gang_gang2_turned_off_switch",
       "title": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 éteint",
+        "fr": "Voie 2 éteinte",
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 éteint",
+        "fr": "Voie 2 éteinte",
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       }
@@ -246,7 +246,7 @@
       "id": "switch_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 on",
-        "fr": "Physical gang 1 on"
+        "fr": "Voie 1 allumée physiquement"
       },
       "args": []
     },
@@ -254,7 +254,7 @@
       "id": "switch_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 off",
-        "fr": "Physical gang 1 off"
+        "fr": "Voie 1 éteinte physiquement"
       },
       "args": []
     },
@@ -262,7 +262,7 @@
       "id": "switch_physical_gang2_on",
       "title": {
         "en": "Physical gang 2 on",
-        "fr": "Physical gang 2 on"
+        "fr": "Voie 2 allumée physiquement"
       },
       "args": []
     },
@@ -270,7 +270,7 @@
       "id": "switch_physical_gang2_off",
       "title": {
         "en": "Physical gang 2 off",
-        "fr": "Physical gang 2 off"
+        "fr": "Voie 2 éteinte physiquement"
       },
       "args": []
     },
@@ -349,14 +349,14 @@
       "id": "switch_2gang_gang1_is_on_switch",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "fr": "Voie 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "fr": "Voie 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       }
@@ -365,14 +365,14 @@
       "id": "switch_2gang_gang2_is_on_switch",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "fr": "Voie 2 est !{{allumé|éteint}}",
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "fr": "Voie 2 est !{{allumé|éteint}}",
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       }

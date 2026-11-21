@@ -28,7 +28,7 @@
       "id": "switch_1_gang_metering_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -36,7 +36,7 @@
       "id": "switch_1_gang_metering_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     },
@@ -113,14 +113,14 @@
       "id": "switch_1_gang_metering_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
+        "fr": "Voie 1 allumée physiquement",
         "nl": "Fysiek gang 1 AAN",
         "de": "Physisch gang 1 EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
+        "fr": "Voie 1 allumée physiquement",
         "nl": "Fysiek gang 1 AAN",
         "de": "Physisch gang 1 EIN"
       }
@@ -129,14 +129,14 @@
       "id": "switch_1_gang_metering_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement",
         "nl": "Fysiek gang 1 UIT",
         "de": "Physisch gang 1 AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement",
         "nl": "Fysiek gang 1 UIT",
         "de": "Physisch gang 1 AUS"
       }
@@ -159,14 +159,14 @@
       "id": "switch_1_gang_metering_gang1_is_on",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "fr": "Voie 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "fr": "Voie 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       }

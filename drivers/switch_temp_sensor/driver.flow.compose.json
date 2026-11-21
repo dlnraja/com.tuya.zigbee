@@ -131,24 +131,24 @@
       "id": "switch_temp_sensor_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON"
+        "fr": "Voie 1 allumée physiquement"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON"
+        "fr": "Voie 1 allumée physiquement"
       }
     },
     {
       "id": "switch_temp_sensor_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF"
+        "fr": "Voie 1 éteinte physiquement"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF"
+        "fr": "Voie 1 éteinte physiquement"
       }
     }
   ],

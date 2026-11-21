@@ -50,15 +50,15 @@
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_tu_f68af",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (light tunable)",
+        "fr": "Allumé (light tunable)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (light tunable)",
+        "fr": "Allumé (light tunable)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -66,15 +66,15 @@
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_tu_aac6d",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (light tunable)",
+        "fr": "Éteint (light tunable)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (light tunable)",
+        "fr": "Éteint (light tunable)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -99,7 +99,7 @@
       "id": "light_bulb_dimmable_tunable_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -107,7 +107,7 @@
       "id": "light_bulb_dimmable_tunable_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     }
@@ -117,12 +117,12 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_f31fc",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (light tunable)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (light tunable)"
       }
     },
     {
@@ -146,13 +146,13 @@
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_a4e5f",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (light tunable)",
+        "fr": "Allumer (light tunable)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (light tunable)",
+        "fr": "Allumer (light tunable)"
       }
     },
     {
@@ -171,12 +171,12 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_4dbe8",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (light tunable)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (light tunable)"
       }
     },
     {
@@ -224,15 +224,15 @@
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_turn_off",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (light tunable)",
+        "fr": "Éteindre (light tunable)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (light tunable)",
+        "fr": "Éteindre (light tunable)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }

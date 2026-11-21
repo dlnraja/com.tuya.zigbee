@@ -49,15 +49,15 @@
     {
       "id": "device_radiator_valve_radiator_valve_temp_ch_6f21b",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (device)",
+        "fr": "Température changée (device)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (device)",
+        "fr": "Température changée (device)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -82,7 +82,7 @@
       "id": "device_radiator_valve_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -90,7 +90,7 @@
       "id": "device_radiator_valve_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     },

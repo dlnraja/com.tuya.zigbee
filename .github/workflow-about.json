@@ -405,6 +405,10 @@
     "bot-data-fold.yml": {
       "group": "autopilot",
       "what": "Once a day, folds the bot data commits parked on the bot/data branch into one quiet master commit, keeping human edits."
+    },
+    "store-text-coherence.yml": {
+      "group": "autopilot",
+      "what": "Weekly and on demand: rebuild changelogs from the published history and check names, titles, locales and accents on all three app branches. Safe auto-commit only; leftovers are a report artifact."
     }
   }
 }

@@ -27,8 +27,8 @@
     {
       "id": "device_air_purifier_plug_energy_monitor_meas_f4410",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed (energy monitor)",
+        "fr": "Puissance changée (energy monitor)"
       },
       "tokens": [
         {
@@ -50,8 +50,8 @@
     {
       "id": "device_air_purifier_plug_energy_monitor_meas_ad923",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
+        "en": "Voltage changed (device air purifier plug)",
+        "fr": "Tension changée (device air purifier plug)"
       },
       "tokens": [
         {
@@ -73,8 +73,8 @@
     {
       "id": "device_air_purifier_plug_energy_monitor_meas_450a0",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé"
+        "en": "Current changed (device air purifier plug)",
+        "fr": "Courant changé (device air purifier plug)"
       },
       "tokens": [
         {
@@ -119,15 +119,15 @@
     {
       "id": "device_air_purifier_plug_energy_monitor_powe_0da55",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (energy monitor 2)",
+        "fr": "Puissance changée (energy monitor 2)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (energy monitor 2)",
+        "fr": "Puissance changée (energy monitor 2)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
@@ -152,7 +152,7 @@
       "id": "device_air_purifier_plug_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -160,7 +160,7 @@
       "id": "device_air_purifier_plug_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     },

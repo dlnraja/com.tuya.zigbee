@@ -27,8 +27,8 @@
     {
       "id": "button_wireless_plug_measure_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed (wireless plug power changed)",
+        "fr": "Puissance changée (wireless plug power changed)"
       },
       "tokens": [
         {
@@ -152,7 +152,7 @@
       "id": "button_wireless_plug_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -160,7 +160,7 @@
       "id": "button_wireless_plug_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     }

@@ -1,7 +1,8 @@
 {
   "id": "tunable_bulb_E14",
   "name": {
-    "en": "Tunable Bulb E14"
+    "en": "Tunable Bulb E14",
+    "fr": "Ampoule blanc réglable E14"
   },
   "$extends": [
     "light_white_ambiance"

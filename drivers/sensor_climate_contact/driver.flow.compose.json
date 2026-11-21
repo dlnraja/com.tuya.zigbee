@@ -110,15 +110,15 @@
     {
       "id": "sensor_climate_contact_climate_sensor_temp_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (contact)",
+        "fr": "Température changée (contact)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (contact)",
+        "fr": "Température changée (contact)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }

@@ -27,8 +27,8 @@
     {
       "id": "dimmer_wall_plug_energy_monitor_measure_powe_3c902",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed (wall plug energy monitor)",
+        "fr": "Puissance changée (wall plug energy monitor)"
       },
       "tokens": [
         {
@@ -50,8 +50,8 @@
     {
       "id": "dimmer_wall_plug_energy_monitor_measure_volt_65f8b",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
+        "en": "Voltage changed (dimmer wall plug)",
+        "fr": "Tension changée (dimmer wall plug)"
       },
       "tokens": [
         {
@@ -73,8 +73,8 @@
     {
       "id": "dimmer_wall_plug_energy_monitor_measure_curr_31d28",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé"
+        "en": "Current changed (dimmer wall plug)",
+        "fr": "Courant changé (dimmer wall plug)"
       },
       "tokens": [
         {
@@ -152,7 +152,7 @@
       "id": "dimmer_wall_plug_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -160,7 +160,7 @@
       "id": "dimmer_wall_plug_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     },

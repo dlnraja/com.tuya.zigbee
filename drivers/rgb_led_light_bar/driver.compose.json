@@ -1,7 +1,8 @@
 {
   "id": "rgb_led_light_bar",
   "name": {
-    "en": "RGB Led Light Bar"
+    "en": "RGB Led Light Bar",
+    "fr": "Barre lumineuse LED RGB"
   },
   "$extends": [
     "light_color_ambiance"

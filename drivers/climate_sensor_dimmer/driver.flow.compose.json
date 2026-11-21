@@ -73,25 +73,25 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_85e1d",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (dimmer wall 1gang dimmer)",
+        "fr": "Allumé (dimmer wall 1gang dimmer)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (dimmer wall 1gang dimmer)",
+        "fr": "Allumé (dimmer wall 1gang dimmer)"
       }
     },
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_f81b9",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (dimmer wall 1gang dimmer)",
+        "fr": "Éteint (dimmer wall 1gang dimmer)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (dimmer wall 1gang dimmer)",
+        "fr": "Éteint (dimmer wall 1gang dimmer)"
       }
     },
     {
@@ -217,12 +217,12 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_ab9c7",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (dimmer wall 1gang dimmer)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (dimmer wall 1gang dimmer)"
       }
     },
     {
@@ -246,37 +246,37 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_d1151",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (dimmer wall 1gang dimmer)",
+        "fr": "Allumer (dimmer wall 1gang dimmer)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (dimmer wall 1gang dimmer)",
+        "fr": "Allumer (dimmer wall 1gang dimmer)"
       }
     },
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_02d79",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (dimmer wall 1gang dimmer)",
+        "fr": "Éteindre (dimmer wall 1gang dimmer)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (dimmer wall 1gang dimmer)",
+        "fr": "Éteindre (dimmer wall 1gang dimmer)"
       }
     },
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_6ec6b",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (dimmer wall 1gang dimmer)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (dimmer wall 1gang dimmer)"
       }
     },
     {

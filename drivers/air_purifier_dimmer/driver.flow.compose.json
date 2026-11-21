@@ -73,25 +73,25 @@
     {
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang__66522",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (wall 1gang dimmer 1gang)",
+        "fr": "Allumé (wall 1gang dimmer 1gang)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (wall 1gang dimmer 1gang)",
+        "fr": "Allumé (wall 1gang dimmer 1gang)"
       }
     },
     {
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang__05bb4",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (wall 1gang dimmer 1gang)",
+        "fr": "Éteint (wall 1gang dimmer 1gang)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (wall 1gang dimmer 1gang)",
+        "fr": "Éteint (wall 1gang dimmer 1gang)"
       }
     },
     {
@@ -169,7 +169,7 @@
       "id": "air_purifier_dimmer_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -177,7 +177,7 @@
       "id": "air_purifier_dimmer_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     }
@@ -187,12 +187,12 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (dimmer 1gang is on)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (dimmer 1gang is on)"
       }
     },
     {
@@ -216,37 +216,37 @@
     {
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang__70e47",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (wall 1gang dimmer 1gang)",
+        "fr": "Allumer (wall 1gang dimmer 1gang)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (wall 1gang dimmer 1gang)",
+        "fr": "Allumer (wall 1gang dimmer 1gang)"
       }
     },
     {
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang__4a6fa",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (wall 1gang dimmer 1gang)",
+        "fr": "Éteindre (wall 1gang dimmer 1gang)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (wall 1gang dimmer 1gang)",
+        "fr": "Éteindre (wall 1gang dimmer 1gang)"
       }
     },
     {
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (1gang dimmer 1gang toggle)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (1gang dimmer 1gang toggle)"
       }
     },
     {

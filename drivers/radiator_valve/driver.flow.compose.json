@@ -26,8 +26,8 @@
     {
       "id": "radiator_valve_measure_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed (radiator valve changed)",
+        "fr": "Température changée (radiator valve changed)"
       },
       "tokens": [
         {
@@ -82,7 +82,7 @@
       "id": "radiator_valve_physical_on",
       "title": {
         "en": "Physical button on",
-        "fr": "Physical button on"
+        "fr": "Bouton physique allumé"
       },
       "args": []
     },
@@ -90,7 +90,7 @@
       "id": "radiator_valve_physical_off",
       "title": {
         "en": "Physical button off",
-        "fr": "Physical button off"
+        "fr": "Bouton physique éteint"
       },
       "args": []
     }

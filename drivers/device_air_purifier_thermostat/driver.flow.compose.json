@@ -128,15 +128,15 @@
     {
       "id": "device_air_purifier_thermostat_thermostat_tu_93c8b",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (device air purifier tu)",
+        "fr": "Température changée (device air purifier tu)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (device air purifier tu)",
+        "fr": "Température changée (device air purifier tu)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -160,15 +160,15 @@
     {
       "id": "device_air_purifier_thermostat_thermostat_tu_0136c",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (air purifier thermostat thermostat)",
+        "fr": "Humidité changée (air purifier thermostat thermostat)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (air purifier thermostat thermostat)",
+        "fr": "Humidité changée (air purifier thermostat thermostat)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }
@@ -176,7 +176,7 @@
     {
       "id": "device_air_purifier_thermostat_target_temperature_changed",
       "title": {
-        "en": "Target temperature changed",
+        "en": "Target temperature changed (device air purifier)",
         "fr": "Consigne changée"
       },
       "tokens": [
