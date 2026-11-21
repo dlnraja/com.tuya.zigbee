@@ -37,31 +37,14 @@ function getDrivers(manifest) {
 }
 
 function stripGeneratedButtonOptions(manifest) {
-  let stripped = 0;
-  for (const driver of getDrivers(manifest)) {
-    const options = driver && driver.capabilitiesOptions;
-    if (!options || typeof options !== 'object' || Array.isArray(options)) continue;
-
-    for (const [capabilityId, capabilityOptions] of Object.entries(options)) {
-      if (!capabilityId.startsWith('button.')) continue;
-      if (!capabilityOptions || typeof capabilityOptions !== 'object' || Array.isArray(capabilityOptions)) continue;
-
-      for (const key of ['setable', 'getable', 'maintenanceAction']) {
-        if (Object.prototype.hasOwnProperty.call(capabilityOptions, key)) {
-          delete capabilityOptions[key];
-          stripped++;
-        }
-      }
-      if (Object.keys(capabilityOptions).length === 0) {
-        delete options[capabilityId];
-      }
-    }
-
-    if (Object.keys(options).length === 0) {
-      delete driver.capabilitiesOptions;
-    }
-  }
-  return stripped;
+  // WHY(P2626): official compose form and the published package must keep
+  // button.* getable/setable/maintenanceAction from compose. Those flags
+  // make device-view buttons (button_wireless_3 TS0043: maintenanceAction
+  // false) and P2492 maintenance tiles. Stripping them made the p2626
+  // lock fail after the official regen. The older processing_failed
+  // correlation was sdk=undefined (missing icon), not these flags.
+  if (!manifest) {return 0;}
+  return 0;
 }
 
 function dedupeFlowArgs(manifest) {
