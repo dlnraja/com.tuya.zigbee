@@ -9,6 +9,11 @@
   "capabilities": [
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    }
+  },
   "platforms": [
     "local"
   ],

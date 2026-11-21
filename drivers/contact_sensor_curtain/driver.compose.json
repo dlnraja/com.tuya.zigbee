@@ -42,7 +42,8 @@
         "fr": "Batterie"
       },
       "preventInsights": false,
-      "getable": true
+      "getable": true,
+      "units": "%"
     },
     "button.1": {
       "title": {
