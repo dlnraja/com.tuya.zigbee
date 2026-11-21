@@ -1,6 +1,14 @@
 {
   "_why": "Empty since 2026-11-21: Athom fixed #488 (concurrent upload file-count AggregateError) server-side on 2026-11-17 and .homeyignore now strips 172 non-runtime files (.agents/.ai/.windsurf/skills/md).",
-  "drivers": [],
+  "drivers": [
+    {
+      "id": "curtain_motor_2",
+      "since": "2026-11-16",
+      "addedBy": "P3229 continuation",
+      "reason": "P3229 folds continuation driver curtain_motor_2 into curtain_motor during publish compaction; keep held so P3351 defers sacred pin check on curtain_motor_2 while all 26 other drivers publish.",
+      "sacredCouplesOwnedElsewhere": true
+    }
+  ],
   "_graduated": {
     "switch_module_whd02": "2026-10-19 one-shot release (dispatch release_held, run 39177562443): master #3604 v9.0.1523 reached Test with the driver in the payload; earlier AggregateError builds were not content-related (same-content flip rule). Removed from hold; never hold a published driver again.",
     "valve_controller_5zone": "2026-10-19 one-shot release (dispatch release_held, run 39293541334): master #3635 v9.0.1554 reached Test first try with the driver in the payload (31 flow cards). The 2026-10-11 AggregateErrors were not content-related. Removed from hold; never hold a published driver again. Couple _TZ3000_j0ktmul1/TS011F stays on switch_4gang (moving it back is a separate decision)."
