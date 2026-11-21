@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "id": "P3362-standard-capability-units",
+    "updated": "2026-11-21",
+    "classify": "BOTH",
+    "why": "Every measure_*/meter_*/target_temperature capability must declare standard units so Homey Insights History and the Apple Home / Matter bridge stay coherent. Missing units hide History (P3361 TS0043 battery, then climate and energy). Additive only: never overwrite a unit already declared."
+  },
+  "standardUnits": {
+    "measure_temperature": "°C",
+    "target_temperature": "°C",
+    "measure_humidity": "%",
+    "measure_power": "W",
+    "measure_voltage": "V",
+    "measure_current": "A",
+    "meter_power": "kWh",
+    "measure_luminance": "lx",
+    "measure_battery": "%",
+    "measure_pressure": "hPa",
+    "measure_co2": "ppm",
+    "measure_pm25": "µg/m³",
+    "measure_pm10": "µg/m³",
+    "measure_voc": "ppb",
+    "measure_formaldehyde": "mg/m³",
+    "measure_co": "ppm",
+    "measure_frequency": "Hz",
+    "measure_water": "l/min",
+    "meter_water": "m³",
+    "measure_noise": "dB",
+    "measure_water_percentage": "%",
+    "measure_conductivity": "µS/cm",
+    "measure_ec": "µS/cm"
+  },
+  "overrides": [
+    {
+      "match": "prefix",
+      "id": "measure_luminance.distance",
+      "units": "m",
+      "note": "mmWave distance is not lux; Insights stay silenced (P2553)"
+    }
+  ],
+  "rules": {
+    "applyWhenMissingOnly": true,
+    "acceptDeclaredAs": [
+      "nonEmptyString",
+      "localizedObjectWithEnOrDefault"
+    ],
+    "doNotWriteDefaultFlags": true,
+    "healer": "lib/utils/HomeyCapabilityUx.js",
+    "ratchet": "scripts/ci/apple-home-coherence.cjs --check",
+    "degreeSign": "U+00B0 is Latin-1 and allowed in JSON and shipped JS"
+  }
+}

@@ -47,6 +47,18 @@
         "nl": "Kanaal 2",
         "de": "Kanal 2"
       }
+    },
+    "meter_power": {
+      "units": "kWh"
+    },
+    "measure_current": {
+      "units": "A"
+    },
+    "measure_power": {
+      "units": "W"
+    },
+    "measure_voltage": {
+      "units": "V"
     }
   },
   "images": {

@@ -36,7 +36,8 @@
         "fr": "Tension"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     },
     "measure_current": {
       "title": {
@@ -44,7 +45,8 @@
         "fr": "Courant"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "A"
     },
     "measure_power": {
       "title": {
@@ -52,7 +54,8 @@
         "fr": "Puissance"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "meter_power": {
       "title": {
@@ -60,7 +63,8 @@
         "fr": "Énergie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     },
     "button.1": {
       "title": {

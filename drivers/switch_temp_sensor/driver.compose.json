@@ -20,7 +20,8 @@
         "fr": "Température"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "title": {

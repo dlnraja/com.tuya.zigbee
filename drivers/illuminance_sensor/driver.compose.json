@@ -142,7 +142,8 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_battery": {
       "getable": true,

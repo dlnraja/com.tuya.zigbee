@@ -26,6 +26,21 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_power": {
+      "units": "W"
+    },
+    "meter_power": {
+      "units": "kWh"
+    },
+    "measure_current": {
+      "units": "A"
+    },
+    "measure_voltage": {
+      "units": "V"
+    },
+    "measure_temperature": {
+      "units": "°C"
     }
   },
   "pair": [

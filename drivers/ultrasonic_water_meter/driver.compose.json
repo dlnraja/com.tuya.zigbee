@@ -19,13 +19,15 @@
         "fr": "Débit Actuel"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "l/min"
     },
     "meter_water": {
       "title": {
         "en": "Total Flow",
         "fr": "Débit Total"
-      }
+      },
+      "units": "m³"
     },
     "button.1": {
       "title": {

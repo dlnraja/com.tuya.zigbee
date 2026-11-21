@@ -18,7 +18,8 @@
         "fr": "Luminosité"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "button.1": {
       "title": {

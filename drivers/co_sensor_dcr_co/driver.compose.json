@@ -69,5 +69,10 @@
   },
   "metadata": {
     "source": "zigbee-herdsman-converters tuya.ts DCR-CO (_TZE200_7bztmfm1/_TZE204_7bztmfm1, legacy tuya_CO): DP1 carbon monoxide alarm (raw 0 = CO detected), DP2 CO level /100. Reimplemented and credited (P3039), no upstream code copied."
+  },
+  "capabilitiesOptions": {
+    "measure_co": {
+      "units": "ppm"
+    }
   }
 }

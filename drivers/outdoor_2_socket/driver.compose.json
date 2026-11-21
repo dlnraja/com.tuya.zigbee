@@ -89,19 +89,23 @@
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     },
     "measure_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "measure_current": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "A"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     }
   },
   "ui": {

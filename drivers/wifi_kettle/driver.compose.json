@@ -18,7 +18,8 @@
     "target_temperature": {
       "min": 40,
       "max": 100,
-      "step": 1
+      "step": 1,
+      "units": "°C"
     },
     "button.1": {
       "title": {
@@ -28,6 +29,9 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "units": "°C"
     }
   },
   "pair": [

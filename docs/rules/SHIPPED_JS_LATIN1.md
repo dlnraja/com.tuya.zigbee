@@ -43,3 +43,5 @@ Fail-closed, same path as other standing rules:
 - Optional allowlist (path + reason only, keep it empty unless a character cannot be escaped): `tools/ci/p3320-latin1-allowlist.json`
 
 A new raw character above U+00FF in shipped JS, or a new unreferenced packaged image, blocks the push. Do not weaken or skip the test. Do not use `--no-verify`.
+
+The degree sign (`°`, U+00B0), micro (`µ`, U+00B5) and cubed (`³`, U+00B3) are Latin-1 and are allowed in unit strings and JSON.

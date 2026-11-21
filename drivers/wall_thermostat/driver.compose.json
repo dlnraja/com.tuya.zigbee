@@ -297,11 +297,13 @@
     "target_temperature": {
       "min": 5,
       "max": 35,
-      "step": 0.5
+      "step": 0.5,
+      "units": "°C"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     }
   },
   "ui": {

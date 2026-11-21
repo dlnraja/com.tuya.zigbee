@@ -24,10 +24,12 @@
       "units": "%"
     },
     "measure_humidity": {
-      "getable": true
+      "getable": true,
+      "units": "%"
     },
     "measure_temperature": {
-      "getable": true
+      "getable": true,
+      "units": "°C"
     }
   },
   "energy": {

@@ -33,3 +33,14 @@ without measuring the slope and citing the cause.
 - A real DP Homey/HomeKit cannot show natively is compensated: custom capability, sub-capability (`cap.x`), flow card, or setting. Never `capability: null` with no setting/flow.
 - HomeKit only bridges system caps on mappable classes: prefer them; custom caps stay Homey-only and must be documented.
 - CI: `npm run audit:capabilities` + `test/p3135-capability-coherence-audit.test.js` (ratchet A/B/C, counts only go down).
+
+## Standard units for Insights and Apple Home (P3362) — permanent
+- Every `measure_*` / `meter_*` / `target_temperature` capability must declare its standard
+  unit. Missing units hide Homey Insights History and make same-type tiles disagree in
+  Homey and Apple Home.
+- Table: `config/architecture/standard-capability-units.json`. Healer:
+  `lib/utils/HomeyCapabilityUx.js`. Ratchet: `npm run check:p3362`.
+- Weekday free GitHub Actions workflow `.github/workflows/apple-home-coherence.yml`
+  auto-adds missing units from that table and reports same-type gaps. It does not invent
+  capabilities or couples. Kill switch: `vars.APPLE_HOME_COHERENCE_DISABLED`.
+- `°` (U+00B0) is Latin-1 and is allowed in unit strings.

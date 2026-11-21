@@ -30,10 +30,31 @@ function dev(caps, optsByCap = {}) {
 describe('P3354 missing getable/preventInsights == Homey default', () => {
   it('heal: sensors with no flag are left alone (no setCapabilityOptions)', async () => {
     const d = dev(['measure_temperature', 'measure_humidity', 'measure_battery', 'alarm_contact', 'meter_power'],
-      { measure_temperature: { units: 'C' } });
+      {
+        measure_temperature: { units: 'C' },
+        measure_humidity: { units: '%' },
+        measure_battery: { units: '%' },
+        meter_power: { units: 'kWh' },
+      });
     const r = await healSensorCapabilityGetable(d);
     assert.deepStrictEqual(d.calls, []);
     assert.deepStrictEqual(r.healed, []);
+  });
+
+  it('heal: missing standard units are restored without writing default flags (P3362)', async () => {
+    const { standardUnitFor } = require('../../lib/utils/HomeyCapabilityUx');
+    const d = dev(['measure_temperature', 'measure_humidity', 'alarm_contact', 'meter_power'], {});
+    const r = await healSensorCapabilityGetable(d);
+    assert.deepStrictEqual(r.healed, []);
+    const byCap = Object.fromEntries(d.calls.map((c) => [c.cap, c.opts]));
+    assert.equal(byCap.measure_temperature.units, standardUnitFor('measure_temperature'));
+    assert.equal(byCap.measure_humidity.units, '%');
+    assert.equal(byCap.meter_power.units, 'kWh');
+    assert.ok(!byCap.alarm_contact, 'alarms have no standard unit');
+    for (const c of d.calls) {
+      assert.strictEqual('getable' in c.opts, false);
+      assert.strictEqual('preventInsights' in c.opts, false);
+    }
   });
 
   it('heal: explicit getable:false or preventInsights:true is still healed', async () => {

@@ -603,11 +603,19 @@
     },
     "measure_luminance.distance": {
       "getable": true,
-      "preventInsights": true
+      "preventInsights": true,
+      "units": "m"
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
+    },
+    "measure_temperature": {
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "units": "%"
     }
   },
   "energy": {

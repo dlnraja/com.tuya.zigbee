@@ -386,15 +386,18 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "maintenanceActions": [

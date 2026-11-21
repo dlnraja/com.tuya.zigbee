@@ -173,7 +173,8 @@
         "fr": "Consommation électrique"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "meter_power": {
       "title": {
@@ -181,7 +182,8 @@
         "fr": "Énergie cumulée"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     },
     "button.1": {
       "title": {

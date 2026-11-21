@@ -27,7 +27,8 @@
         "de": "Bodenfeuchtigkeit"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_humidity": {
       "title": {
@@ -37,7 +38,8 @@
         "de": "Luftfeuchtigkeit"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_water": {
       "title": {
@@ -55,7 +57,8 @@
         "fr": "Engrais (EC)",
         "nl": "Bemesting (EC)",
         "de": "Dünger (EC)"
-      }
+      },
+      "units": "µS/cm"
     },
     "measure_conductivity": {
       "title": {
@@ -63,7 +66,8 @@
         "fr": "Fertilité du Sol (EC)",
         "nl": "Bodemvruchtbaarheid (EC)",
         "de": "Bodenfruchtbarkeit (EC)"
-      }
+      },
+      "units": "µS/cm"
     },
     "button.1": {
       "title": {
@@ -76,11 +80,13 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_battery": {
       "getable": true,

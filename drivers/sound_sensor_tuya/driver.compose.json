@@ -24,6 +24,9 @@
         "fr": "Bruit détecté",
         "nl": "Geluid gedetecteerd"
       }
+    },
+    "measure_noise": {
+      "units": "dB"
     }
   },
   "energy": {

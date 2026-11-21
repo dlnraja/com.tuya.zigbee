@@ -18,7 +18,8 @@
         "fr": "Débit d'Eau"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "l/min"
     },
     "countdown_remaining": {
       "title": {

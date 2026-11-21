@@ -82,11 +82,13 @@
     },
     "measure_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     }
   },
   "settings": [

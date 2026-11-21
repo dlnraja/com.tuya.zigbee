@@ -21,7 +21,8 @@
         "fr": "Température extérieure"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "button.1": {
       "title": {
@@ -34,15 +35,18 @@
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_pressure": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "hPa"
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_battery": {
       "getable": true,

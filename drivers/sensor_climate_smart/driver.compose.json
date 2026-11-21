@@ -61,11 +61,13 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "settings": [

@@ -26,7 +26,8 @@
     "target_temperature": {
       "min": 16,
       "max": 30,
-      "step": 1
+      "step": 1,
+      "units": "°C"
     },
     "hvac_system_mode": {
       "values": [
@@ -52,6 +53,15 @@
           }
         }
       ]
+    },
+    "measure_temperature": {
+      "units": "°C"
+    },
+    "measure_power": {
+      "units": "W"
+    },
+    "meter_power": {
+      "units": "kWh"
     }
   },
   "images": {

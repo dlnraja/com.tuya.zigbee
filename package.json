@@ -393,6 +393,7 @@
     "check:p2498": "node tools/ci/p2498-pairing-discovery-gate.js && node --test test/critical/p2498-pairing-discovery-ux.test.js",
     "check:p2499": "node --test test/critical/p2499-peter-77394256-smartbutton-battery-ui.test.js",
     "check:p2500": "node tools/ci/p2500-capability-ux-gate.js && node --test test/critical/p2500-homey-capability-ux.test.js",
+    "check:p3362": "node scripts/ci/apple-home-coherence.cjs --check",
     "check:p249x": "npm run check:p2490 && npm run check:p2491 && npm run check:p2492 && npm run check:p2493 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2498 && npm run check:p2499 && npm run check:p2500 && npm run check:p2502",
     "check:publish": "npm run check:p2286 && npm run check:p2287 && npm run check:p2288 && npm run check:p2490 && npm run check:p2502 && npm run check:p2494 && npm run check:p2495 && npm run check:p2496 && npm run check:p2728 && npm run check:p2729 && npm run check:p2732 && npm run check:p2762 && npm run check:p2763 && npm run check:p2764 && npm run check:p2766 && npm run check:p2768 && npm run check:p2769 && npm run check:p2770 && npm run check:p2774 && npm run check:p2775 && npm run check:p2777 && npm run check:p2778 && npm run check:p2798 && npm run check:malformed-mfr && npm run check:identifiers",
     "ai:compress": "node tools/ci/ai-context-compress.js --self-test",

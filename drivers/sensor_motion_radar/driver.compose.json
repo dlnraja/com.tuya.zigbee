@@ -507,19 +507,23 @@
     },
     "measure_luminance.distance": {
       "getable": true,
-      "preventInsights": true
+      "preventInsights": true,
+      "units": "m"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_battery": {
       "getable": true,

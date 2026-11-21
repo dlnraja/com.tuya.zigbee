@@ -294,23 +294,28 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     },
     "measure_current": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "A"
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     }
   },
   "maintenanceActions": [

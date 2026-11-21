@@ -54,6 +54,18 @@
         "en": "Gang 6",
         "fr": "Gang 6"
       }
+    },
+    "measure_power": {
+      "units": "W"
+    },
+    "measure_voltage": {
+      "units": "V"
+    },
+    "measure_current": {
+      "units": "A"
+    },
+    "meter_power": {
+      "units": "kWh"
     }
   },
   "zigbee": {

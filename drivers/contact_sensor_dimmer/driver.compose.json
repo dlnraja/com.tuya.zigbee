@@ -461,7 +461,8 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "alarm_contact": {
       "getable": true,
@@ -473,7 +474,8 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     }
   },
   "ui": {

@@ -668,11 +668,13 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     }
   }
 }

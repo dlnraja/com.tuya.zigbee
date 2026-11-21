@@ -28,7 +28,8 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "button.1": {
       "title": {
@@ -68,15 +69,18 @@
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     },
     "measure_current": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "A"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     }
   },
   "images": {

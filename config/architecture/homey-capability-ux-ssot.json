@@ -1,7 +1,7 @@
 {
   "_meta": {
     "id": "P2500-homey-capability-ux-ssot",
-    "updated": "2026-09-23",
+    "updated": "2026-11-21",
     "classify": "BOTH",
     "why": "Lock Athom capabilityOptions + Device Capabilities (T43287) UX lessons so Homey UI/Insights/Flows stay coherent — Contre quoi Peter getable:false battery hide; P2687 interaction list cards MASTER_ONLY"
   },
@@ -35,13 +35,17 @@
         "id": 146735,
         "title": "Johan Bendz Tuya Zigbee",
         "replyAllowed": false,
-        "takeaways": ["Cross-ref FP/capabilities; silent enrich only"]
+        "takeaways": [
+          "Cross-ref FP/capabilities; silent enrich only"
+        ]
       },
       {
         "id": 157859,
         "title": "RF coexistence education",
         "replyAllowed": false,
-        "takeaways": ["Channel numbering ≠ Wi-Fi — not capability UX but pairing reliability"]
+        "takeaways": [
+          "Channel numbering ≠ Wi-Fi — not capability UX but pairing reliability"
+        ]
       }
     ],
     "relatedInternal": [
@@ -53,11 +57,29 @@
     ]
   },
   "athomRules": {
-    "getableFalseAllowedFor": ["onoff_stateless_mute_pattern", "button_maintenance_tiles"],
-    "getableFalseForbiddenPrefixes": ["measure_", "meter_", "alarm_"],
-    "getableFalseForbiddenExact": ["measure_battery", "measure_temperature", "measure_humidity", "meter_power"],
+    "getableFalseAllowedFor": [
+      "onoff_stateless_mute_pattern",
+      "button_maintenance_tiles"
+    ],
+    "getableFalseForbiddenPrefixes": [
+      "measure_",
+      "meter_",
+      "alarm_"
+    ],
+    "getableFalseForbiddenExact": [
+      "measure_battery",
+      "measure_temperature",
+      "measure_humidity",
+      "meter_power"
+    ],
     "preventInsights": {
-      "forbiddenOn": ["measure_battery", "measure_temperature", "measure_humidity", "meter_power", "measure_power"],
+      "forbiddenOn": [
+        "measure_battery",
+        "measure_temperature",
+        "measure_humidity",
+        "meter_power",
+        "measure_power"
+      ],
       "note": "preventInsights hides History; only use for high-churn debug caps",
       "intelligentSilence": {
         "patch": "P2553",
@@ -72,7 +94,16 @@
         "runtime": "healSensorCapabilityGetable"
       }
     },
-    "docsNote": "getable:false is for making onoff/volume_mute stateless — it changes UI + Flow cards. Never apply to sensor readables."
+    "docsNote": "getable:false is for making onoff/volume_mute stateless — it changes UI + Flow cards. Never apply to sensor readables.",
+    "standardUnits": {
+      "patch": "P3362",
+      "table": "config/architecture/standard-capability-units.json",
+      "healer": "standardUnitFor + healSensorCapabilityGetable",
+      "ratchet": "npm run check:p3362",
+      "workflow": ".github/workflows/apple-home-coherence.yml",
+      "note": "Every measure_*/meter_*/target_temperature must declare standard units. Additive only. Already-paired devices are healed and may get one Insights recycle.",
+      "degreeSign": "U+00B0 is Latin-1 and allowed"
+    }
   },
   "deviceCapabilitiesLessons": {
     "genericCapabilityChanged": {
@@ -84,7 +115,9 @@
       "ourCard": "capability_historical_value",
       "deviceFilter": "none — all app devices (not capabilities=onoff)",
       "note": "DC-style N minutes ago via Insights + in-memory ring; P2687 removed onoff-only filter + value token",
-      "tokens": ["value"]
+      "tokens": [
+        "value"
+      ]
     },
     "interactionHistory": {
       "patch": "P2687",
@@ -131,6 +164,28 @@
   "gates": {
     "check": "npm run check:p2500",
     "family": "check:p249x",
-    "related": ["check:p2492", "check:p2499"]
+    "related": [
+      "check:p2492",
+      "check:p2499",
+      "check:p3362"
+    ]
+  },
+  "officialAppJson": {
+    "patch": "P3079",
+    "form": "scripts/maintenance/regen-appjson-from-compose.cjs (compose + flow dedupe + sanitize-manifest). Never a normalise() rewrite.",
+    "gate": "scripts/ci/compose-parity-gate.cjs / test/critical/p3079-compose-parity.test.js"
+  },
+  "appLevelFlowIds": {
+    "mustKeep": [
+      "home_mode_changed",
+      "capability_value_changed_generic",
+      "device_interaction"
+    ],
+    "note": "Consolidation must never drop published app-level flow card ids. Driver cards live in drivers/*/driver.flow.compose.json and merge at homey app build."
+  },
+  "startupJson": {
+    "patch": "P3272/P3362",
+    "rule": "Do not eagerly parse large JSON at startup (product-reference, mfs_db, dp_registry, driver-mapping). Lazy, shard, or BoundedJsonCache only.",
+    "gate": "scripts/ci/apple-home-coherence.cjs --check / test/critical/p3362-standard-capability-units.test.js"
   }
 }

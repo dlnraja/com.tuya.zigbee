@@ -75,7 +75,8 @@
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     }
   },
   "settings": [

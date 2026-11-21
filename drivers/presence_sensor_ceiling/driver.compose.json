@@ -105,11 +105,13 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_luminance.distance": {
       "getable": true,
-      "preventInsights": true
+      "preventInsights": true,
+      "units": "m"
     }
   },
   "subDevices": [],

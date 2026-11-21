@@ -147,6 +147,9 @@
     "alarm_tamper": {
       "getable": true,
       "preventInsights": false
+    },
+    "measure_co": {
+      "units": "ppm"
     }
   },
   "settings": [

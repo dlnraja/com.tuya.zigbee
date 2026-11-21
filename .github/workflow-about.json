@@ -475,6 +475,10 @@
     "promote-live.yml": {
       "group": "publish",
       "what": "Promotes a healthy Athom Test build to Live only after objective gates pass, for master and stable regularly. Never promotes the Bastien house app."
+    },
+    "apple-home-coherence.yml": {
+      "group": "ci",
+      "what": "Weekday Apple Home / Insights coherence: add missing standard units, check official app.json and flow ids, no eager big JSON; commit [skip ci] only when tests pass, otherwise fail with a job summary and open no PR."
     }
   }
 }

@@ -56,6 +56,18 @@
         "nl": "Kanaal 3",
         "de": "Kanal 3"
       }
+    },
+    "meter_power": {
+      "units": "kWh"
+    },
+    "measure_current": {
+      "units": "A"
+    },
+    "measure_power": {
+      "units": "W"
+    },
+    "measure_voltage": {
+      "units": "V"
     }
   },
   "images": {

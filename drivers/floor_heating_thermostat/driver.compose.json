@@ -19,7 +19,8 @@
     "target_temperature": {
       "min": 5,
       "max": 45,
-      "step": 0.5
+      "step": 0.5,
+      "units": "°C"
     },
     "measure_temperature.floor": {
       "title": {
@@ -27,7 +28,8 @@
         "fr": "Température Sol"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "thermostat_mode": {
       "values": [
@@ -62,7 +64,8 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     }
   },
   "zigbee": {

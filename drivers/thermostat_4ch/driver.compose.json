@@ -97,19 +97,35 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_temperature.ch2": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_temperature.ch3": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_temperature.ch4": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
+    },
+    "target_temperature": {
+      "units": "°C"
+    },
+    "target_temperature.ch2": {
+      "units": "°C"
+    },
+    "target_temperature.ch3": {
+      "units": "°C"
+    },
+    "target_temperature.ch4": {
+      "units": "°C"
     }
   },
   "maintenanceActions": [

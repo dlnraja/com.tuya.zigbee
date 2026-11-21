@@ -97,11 +97,16 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
+    },
+    "target_temperature": {
+      "units": "°C"
     }
   },
   "ui": {

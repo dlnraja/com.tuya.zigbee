@@ -48,7 +48,8 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "alarm_motion": {
       "getable": true,
