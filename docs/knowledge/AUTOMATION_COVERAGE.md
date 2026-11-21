@@ -122,3 +122,14 @@ every branch through the API. The port branches get the byte-identical `athom-pu
 `test/critical/p3036-athom-publish-policy.test.js`), the gate action, the scripts in `scripts/automation/`,
 `data/automation/failure-patterns.json`, the platform-budget report artifact, the journal `merge=union` rule and
 the `p3048-*` tests, so a manual `workflow_dispatch` on a branch uses the same code.
+
+## Intake triage and referentials (P3362)
+
+- `intake-triage.yml` (cron 45 2,8,14,20 UTC, plus issue/PR/discussion events): deterministic
+  protocol, consult referentials first, escalate malfunctions, optional safe add/move, write
+  back learnings. Kill switch `INTAKE_TRIAGE_DISABLED`. Never posts.
+- `referentials.yml` (cron 20 3,11,19 UTC): incremental enrich and regenerate of
+  `docs/ssot/referentials/`. Kill switch `REFERENTIALS_DISABLED`.
+- Writer workflows (forum-poll, fetch-diags, upstream-thread-miner, fleet-intelligent-enrich)
+  also call `build-referentials.js --enrich --from=...` and may commit the catalogue.
+- Forum request digest remains inside `forum-poll.yml` (no second poller).

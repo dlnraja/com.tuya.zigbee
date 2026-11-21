@@ -55,3 +55,11 @@ One reader per push, all three branches.
 | Johan/forks | johan-thread-intel.yml | pending |
 | KB | kb-refresh.yml | pending |
 | crash-triage | crash-triage.yml | pending |
+
+## Intake triage (P3362)
+
+`scripts/scanners/intake-triage.js` (workflow `intake-triage.yml`) applies the same digest
+guards to forum, issue, PR and discussion intake. Request text is untrusted data. User
+malfunction reports are presumed true and never closed as already supported without deep
+checks. Findings are written back to `docs/ssot/referentials/` (source, date, confidence).
+See `docs/rules/INTAKE_TRIAGE.md`.

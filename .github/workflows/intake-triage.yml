@@ -1,0 +1,101 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Schedule plus issue/PR/discussion events: runs the deterministic intake triage protocol
+#   (consult referentials first, full SSOT + upstream dumps, classify, escalate malfunctions, optional safe
+#   add/move, write back learnings). Never posts, never opens PRs.
+# Ideas from (thank you): the Homey Community forum members who share fingerprints and diagnostics (read-only,
+#   never quoted); Discourse for its public JSON/RSS endpoints.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# P3362 intake triage (t1001u-t1005u) — GITHUB_TOKEN only, no AI, never posts.
+
+name: Intake triage
+
+on:
+  schedule:
+    # After forum-poll (15 2,8,14,20 UTC)
+    - cron: '45 2,8,14,20 * * *'
+  issues:
+    types: [opened, edited, reopened]
+  pull_request:
+    types: [opened, edited, reopened, ready_for_review]
+  discussion:
+    types: [created, edited]
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Apply deterministic safe add/move (still gated in script)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: intake-triage
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  intake-triage:
+    name: Intake triage
+    if: ${{ vars.INTAKE_TRIAGE_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+
+      - name: Run intake triage (deterministic, no AI)
+        id: triage
+        timeout-minutes: 8
+        env:
+          INTAKE_TRIAGE_APPLY: ${{ inputs.apply == true && '1' || vars.INTAKE_TRIAGE_APPLY || '' }}
+          INTAKE_TRIAGE_APPLY_MOVES: ${{ vars.INTAKE_TRIAGE_APPLY_MOVES || '' }}
+        run: |
+          APPLY=""
+          MOVES=""
+          if [ "${INTAKE_TRIAGE_APPLY}" = "1" ] || [ "${INTAKE_TRIAGE_APPLY}" = "true" ]; then APPLY="--apply"; fi
+          if [ "${INTAKE_TRIAGE_APPLY_MOVES}" = "1" ] || [ "${INTAKE_TRIAGE_APPLY_MOVES}" = "true" ]; then MOVES="--apply-moves"; fi
+          node scripts/scanners/intake-triage.js --max=${{ vars.INTAKE_TRIAGE_MAX || '15' }} $APPLY $MOVES
+          node scripts/scanners/build-referentials.js --enrich --from=intake-triage
+          node scripts/scanners/build-referentials.js --validate
+
+      - name: Upload evidence artifacts
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: intake-triage-${{ github.run_id }}
+          path: |
+            data/ssot/intake-triage.json
+            data/progress/candidate-tasks.json
+            data/progress/forum-reply-candidates.json
+            reports/intake-triage/**
+            docs/ssot/referentials/**
+          if-no-files-found: warn
+
+      - name: Commit digest and referential write-back (gated)
+        if: vars.SCRAPE_COMMIT == '1' && steps.triage.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=intake-triage --max-per-day=8 \
+            --message="chore(ssot): intake triage digest and referential learnings" \
+            --paths="data/ssot/intake-triage.json data/progress/candidate-tasks.json data/progress/forum-reply-candidates.json data/leads/intake-applied.json docs/ssot/referentials"

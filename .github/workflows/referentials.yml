@@ -1,0 +1,74 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Regular incremental rebuild and enrichment of the SSOT referentials (malfunction catalogue,
+#   device cards, DP conversion, intake history, lessons, cross-app ideas). Deterministic, no AI, GITHUB_TOKEN
+#   only. Never posts.
+# Ideas from (thank you): Koen Kanters and the zigbee-herdsman-converters / Zigbee2MQTT contributors; the
+#   zigpy / ZHA device handler authors; Blakadder's Zigbee device database; JohanBendz's original Tuya Zigbee
+#   app (read-only reference).
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# P3362 referentials (t1004u/t1005u) — enrich regularly, do not only regenerate.
+
+name: Referentials
+
+on:
+  schedule:
+    - cron: '20 3,11,19 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: referentials
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  referentials:
+    name: Rebuild and enrich referentials
+    if: ${{ vars.REFERENTIALS_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+
+      - name: Incremental enrich and regenerate what changed
+        id: build
+        timeout-minutes: 8
+        run: |
+          node scripts/scanners/build-referentials.js --enrich --from=referentials-rebuild
+          node scripts/scanners/build-referentials.js --validate
+
+      - name: Upload referentials
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: referentials-${{ github.run_id }}
+          path: docs/ssot/referentials/**
+          if-no-files-found: warn
+
+      - name: Commit referentials (gated)
+        if: vars.SCRAPE_COMMIT == '1' && steps.build.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=referentials --max-per-day=6 \
+            --message="chore(ssot): enrich referentials" \
+            --paths="docs/ssot/referentials"

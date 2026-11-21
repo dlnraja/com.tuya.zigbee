@@ -193,6 +193,26 @@ jobs:
           node scripts/ci/safe-auto-commit.js --id=forum-request-digest --max-per-day=8 \
             --message="chore(ledger): forum request digest and reply candidates" \
             --paths="data/ssot/forum-request-digest.json data/ssot/thread-digests.json data/progress/candidate-tasks.json data/progress/forum-reply-candidates.json data/leads/digest-candidates.json data/leads/forum-request-digest-cursor.json"
+      # P3362 (t1005u): append forum findings to the referentials (consult/write-back loop).
+      - name: Enrich referentials from the forum digest
+        id: refs_enrich
+        if: vars.REFERENTIALS_DISABLED != 'true'
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node scripts/scanners/build-referentials.js --enrich --from=forum-poll
+
+      - name: Commit referential enrichments (gated)
+        if: vars.SCRAPE_COMMIT == '1' && vars.REFERENTIALS_DISABLED != 'true' && steps.refs_enrich.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=referentials-enrich --max-per-day=12 \
+            --message="chore(ssot): enrich referentials from forum-poll" \
+            --paths="docs/ssot/referentials"
 
       - name: 🌍 Poll Forum
         id: poll

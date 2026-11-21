@@ -483,6 +483,14 @@
     "store-text-coherence.yml": {
       "group": "autopilot",
       "what": "Weekly and on demand: rebuild changelogs from the published history and check names, titles, locales and accents on all three app branches. Safe auto-commit only; leftovers are a report artifact."
+    },
+    "intake-triage.yml": {
+      "group": "forum",
+      "what": "Schedule plus issue/PR/discussion events: runs the deterministic intake triage protocol (consult referentials first, full SSOT + upstream dumps, classify, escalate malfunctions, optional safe add/move, write back learnings). Never posts, never opens PRs."
+    },
+    "referentials.yml": {
+      "group": "enrich",
+      "what": "Regular incremental rebuild and enrichment of the SSOT referentials (malfunction catalogue, device cards, DP conversion, intake history, lessons, cross-app ideas). Deterministic, no AI, GITHUB_TOKEN only. Never posts."
     }
   }
 }

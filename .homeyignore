@@ -172,3 +172,6 @@ lib/**/*.md
 
 # P3360: image provenance notes have no runtime reader (also dropped by P3356 in the publish dir)
 drivers/**/assets/image-source.json
+
+# P3362: SSOT referentials are research catalogues, not runtime
+docs/ssot/

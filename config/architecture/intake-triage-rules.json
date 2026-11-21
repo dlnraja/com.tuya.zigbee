@@ -1,0 +1,20 @@
+{
+  "id": "intake-triage-rules",
+  "v": 1,
+  "protocol": "P3362",
+  "trustUserReports": true,
+  "requestTextUntrusted": true,
+  "alreadySupportedNeverClosesMalfunction": true,
+  "consultReferentialsFirst": true,
+  "writeBackLearnings": true,
+  "mayMoveCouples": true,
+  "keepPublishedDriverAndFlowIds": true,
+  "avoidParasiteCombos": true,
+  "applyOnAllRelevantBranches": true,
+  "useWholeSsot": true,
+  "referentialsDir": "docs/ssot/referentials",
+  "killSwitches": [
+    "INTAKE_TRIAGE_DISABLED",
+    "REFERENTIALS_DISABLED"
+  ]
+}

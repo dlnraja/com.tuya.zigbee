@@ -1,11 +1,33 @@
 {
-  "generated": "2026-11-22T02:00:00.000Z",
-  "files": [
-    "learnings.json",
-    "recovery-paths.json"
-  ],
-  "counts": {
-    "learnings": 6,
-    "recoveryPaths": 1
-  }
+ "v": 1,
+ "generated": "2026-11-21T22:46:20.430Z",
+ "freshness": "2026-11-21T22:46:20.433Z",
+ "counts": {
+  "causes": 8,
+  "cards": 0,
+  "dp": 0,
+  "history": 0,
+  "lessons": 0,
+  "ideas": 0,
+  "learnings": 0
+ },
+ "hashes": {
+  "causes": "5218e2735d10cdac",
+  "cards": "d06de12806d1fcf3",
+  "dp": "64cd6a43e576e320",
+  "history": "0d411754ec61a32d",
+  "lessons": "0d411754ec61a32d",
+  "ideas": "0d411754ec61a32d",
+  "learnings": "0d411754ec61a32d"
+ },
+ "changed": [
+  "malfunction-causes.json",
+  "device-cards.json",
+  "dp-conversion.json",
+  "intake-history.json",
+  "lessons-index.json",
+  "cross-app-ideas.json",
+  "learnings.json"
+ ],
+ "note": "Incremental referentials. Enrich, do not wipe learnings. Outside the app package."
 }
