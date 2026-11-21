@@ -61,18 +61,39 @@ describe('P3085 hold the 6 moved-couple new ids, re-pin their Test couples', () 
     assert.strictEqual(pin.driverId, 'box');
     assert.deepStrictEqual(r.unresolved, []);
   });
-  it('the P3024b source gate keeps every Test couple with the six held', () => {
+  const STILL_HELD = ['co_sensor_dcr_co', 'fan_light_tuya_5_levels',
+    'motion_sensor_excellux_zg104plv', 'vibration_sensor_excellux_zg103v'];
+  const GRADUATED = ['air_conditioner_aetz01', 'smoke_sensor_ts0601_dp'];
+
+  it('the P3024b source gate keeps every Test couple after the two unshipped-couple ids graduate', () => {
     const { sourceToPayload, checkBaseline } = require('../../scripts/maintenance/publish-baseline-gate.cjs');
     const appJson = path.join(ROOT, 'app.json');
     if (!fs.existsSync(appJson)) return;
     const view = sourceToPayload(JSON.parse(fs.readFileSync(appJson, 'utf8')), ROOT);
-    for (const id of P3085) assert.ok(!view.drivers.some((d) => d.id === id), `${id} in payload`);
+    for (const id of STILL_HELD) assert.ok(!view.drivers.some((d) => d.id === id), `${id} unexpectedly in payload`);
+    for (const id of GRADUATED) assert.ok(view.drivers.some((d) => d.id === id), `${id} missing from payload`);
     const r = checkBaseline(view, czi.loadPublishBaseline(ROOT));
     assert.deepStrictEqual(r.missing, []);
     // _TZE200_7bztmfm1 (Z2M TS0601_smart_CO_air_box) lands on smart_air_detection_box, not on the plug.
-    const own = (m) => view.drivers.filter((d) => d.zigbee && (d.zigbee.manufacturerName || []).includes(m)
-      && (d.zigbee.productId || []).includes('TS0601')).map((d) => d.id);
-    assert.deepStrictEqual(own('_TZE200_7bztmfm1'), ['smart_air_detection_box']);
-    assert.ok(!own('_TZE200_7bztmfm1').includes('device_air_purifier_plug'));
+    const own = (m, pid) => view.drivers.filter((d) => d.zigbee && (d.zigbee.manufacturerName || []).includes(m)
+      && (d.zigbee.productId || []).includes(pid)).map((d) => d.id);
+    assert.deepStrictEqual(own('_TZE200_7bztmfm1', 'TS0601'), ['smart_air_detection_box']);
+    assert.ok(!own('_TZE200_7bztmfm1', 'TS0601').includes('device_air_purifier_plug'));
+    // Graduated air conditioner carries its unshipped AETZ01_AC couple.
+    assert.deepStrictEqual(own('_TZE200_snfdqllf', 'TS0601'), ['air_conditioner_aetz01']);
+    // Exact 1574 couples must not move onto the graduated smoke id (P3206 would steal
+    // them if any overlapping maker spelling were listed there).
+    assert.ok(!own('_tze200_t5p1vj8r', 'TS0601').includes('smoke_sensor_ts0601_dp'));
+    assert.ok(!own('_TZE200_t5p1vj8r', 'TS0601').includes('smoke_sensor_ts0601_dp'));
+    assert.ok(!own('_TZE204_ntcy3xu1', 'TS0601').includes('smoke_sensor_ts0601_dp'));
+    assert.ok(own('_tze200_t5p1vj8r', 'TS0601').includes('switch_wireless')
+      || own('_TZE200_t5p1vj8r', 'TS0601').includes('switch_wireless'));
+    assert.ok(own('_TZE204_ntcy3xu1', 'TS0601').includes('socket_power_strip_four_three'));
+    assert.deepStrictEqual(own('_TZE200_yh7aoahi', 'TS0601'), ['smoke_sensor_ts0601_dp']);
+    const ownLc = (m, pid) => view.drivers.filter((d) => d.zigbee
+      && (d.zigbee.manufacturerName || []).some((x) => String(x).toLowerCase() === m.toLowerCase())
+      && (d.zigbee.productId || []).includes(pid)).map((d) => d.id);
+    assert.deepStrictEqual(ownLc('_TZE200_0zaf1cr8', 'TS0601'), ['smoke_sensor_ts0601_dp']);
+    assert.deepStrictEqual(ownLc('_TZE284_0zaf1cr8', 'TS0601'), ['smoke_sensor_ts0601_dp']);
   });
 });

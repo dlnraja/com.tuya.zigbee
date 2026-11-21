@@ -44,11 +44,15 @@ describe('P3039d class moves', () => {
 
   // --- P3039d lot B (owner yes t522s3008, 25/10 17:29 Paris) + t524u (truth key = exact mfr+pid) ---
   const SMOKE4 = ['_TZE200_t5p1vj8r', '_TZE200_uebojraa', '_TZE200_vzekyi4c', '_TZE200_dq1mfjug'];
-  it('TS0601_smoke_4 x4 (_TZE200_ forms only) + TS0601_smoke_1 _TZE204_ntcy3xu1 live on smoke_sensor_ts0601_dp', () => {
+  it('TS0601_smoke_4 / smoke_1: smoke_sensor_ts0601_dp ships only makers absent from Test 1574', () => {
     const s = compose('smoke_sensor_ts0601_dp');
     assert.deepStrictEqual(s.zigbee.productId, ['TS0601']);
     assert.ok(s.capabilities.includes('alarm_tamper'));
-    for (const m of [...SMOKE4, '_TZE204_ntcy3xu1']) {assert.ok(has(s, m), m);}
+    // Free makers (no exact 1574 couple on another driver). P3206 case/canonical expansion
+    // would otherwise move Test-package couples of t5p1vj8r/uebojraa/vzekyi4c/dq1mfjug/ntcy3xu1
+    // onto this new id, so those stay pinned on the 1574 drivers (P3024b).
+    for (const m of ['_TZE200_yh7aoahi', '_TZE200_0zaf1cr8', '_TZE284_0zaf1cr8']) {assert.ok(has(s, m), m);}
+    for (const m of [...SMOKE4, '_TZE204_ntcy3xu1']) {assert.ok(!has(s, m), m);}
     const sw = compose('switch_wireless');
     for (const m of SMOKE4) {assert.ok(!has(sw, m), `switch_wireless still has ${m}`);}
     // couple, not mfr: the _TZE204/_TZE284_t5p1vj8r forms are not in Z2M smoke_4 and stay put
