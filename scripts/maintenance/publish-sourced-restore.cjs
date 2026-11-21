@@ -432,12 +432,13 @@ function sourcedPassFile(source, destAppJson, opts = {}) {
   // keeps the whole driver out): defer it until release instead of failing. Any other missing pin still fails.
   let heldIds = opts.holdIds instanceof Set ? opts.holdIds : null;
   if (!heldIds) { heldIds = opts.holdIds ? new Set(opts.holdIds) : loadHeldIds(repoRoot); }
+  const pendingSplitIds = opts.pendingSplitIds instanceof Set ? opts.pendingSplitIds : new Set(opts.pendingSplitIds || []);
   const payloadIds = new Set((man.drivers || []).map((d) => d && d.id));
   const sacredDeferred = [];
   for (const s of sacred) {
     if (exact.has(s)) { continue; }
     const driverId = s.split('#')[0];
-    if (!payloadIds.has(driverId) && heldIds.has(driverId)) { sacredDeferred.push(s); } else { sacredMissing.push(`sacred ${s}`); }
+    if (!payloadIds.has(driverId) && (heldIds.has(driverId) || pendingSplitIds.has(driverId))) { sacredDeferred.push(s); } else { sacredMissing.push(`sacred ${s}`); }
   }
   const st = strongStats(source, man, sourced);
   const snap = checkSnapshot(source, man, sourced, snapshotFile(repoRoot, opts.branch));

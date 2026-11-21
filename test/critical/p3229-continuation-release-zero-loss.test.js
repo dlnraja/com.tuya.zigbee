@@ -38,6 +38,23 @@ describe('P3229 continuation release zero-loss', function () {
     assert.deepStrictEqual(m.drivers.map((d) => [d.id, d.zigbee.manufacturerName, d.zigbee.productId]), [['r', ['A'], ['P1', 'P2']], ['c', ['B'], ['P1']]]);
   });
 
+  it('split restores a released continuation even if compaction dropped its makers from the root', () => {
+    const m = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1', 'P2'] } }] };
+    const splits = [{ id: 'c', rootId: 'r', def: { id: 'c', zigbee: { manufacturerName: ['B'], productId: ['P1'] } }, mfrs: ['B'], pids: ['P1'] }];
+    const n = splitContinuations(m, splits);
+    assert.strictEqual(n, 1);
+    assert.deepStrictEqual(m.drivers.map((d) => [d.id, d.zigbee.manufacturerName, d.zigbee.productId]), [['r', ['A'], ['P1', 'P2']], ['c', ['B'], ['P1']]]);
+  });
+
+  it('split restores a pid dropped from the root is still restored from the snapshot', () => {
+    const m = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1'] } }] };
+    const splits = [{ id: 'c', rootId: 'r', def: { id: 'c', zigbee: { manufacturerName: ['B'], productId: ['P1', 'P3'] } }, mfrs: ['B'], pids: ['P1', 'P3'] }];
+    const n = splitContinuations(m, splits);
+    assert.strictEqual(n, 1);
+    assert.deepStrictEqual(m.drivers.find((d) => d.id === 'c').zigbee.productId, ['P1', 'P3']);
+  });
+
+
   it('continuation makers have no sourced couple (within the root pids) outside the continuation pids', () => {
     const src = [...loadSourcedCouples(ROOT).keys()].map(lc);
     it('size-gate projection folds/splits continuations like prepare-publish', () => {

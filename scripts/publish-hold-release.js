@@ -114,10 +114,12 @@ function splitContinuations(manifest, splits) {
     if (i < 0) continue;
     const root = manifest.drivers[i];
     const own = new Set(s.mfrs);
-    const m = (root.zigbee.manufacturerName || []).filter((x) => own.has(x));
-    const pset = new Set(root.zigbee.productId || []);
-    const p = s.pids.filter((x) => pset.has(x));
     root.zigbee.manufacturerName = (root.zigbee.manufacturerName || []).filter((x) => !own.has(x));
+    // P3360: always restore the pre-compact snapshot (not only the identifiers that
+    // survived on the root). Compaction can drop some of the continuation's pids
+    // or makers from the root; using the leftover subset would lose those couples.
+    const m = [...(s.mfrs || [])];
+    const p = [...(s.pids || [])];
     if (!m.length || !p.length) continue;
     manifest.drivers.splice(i + 1, 0, { ...s.def, zigbee: { ...s.def.zigbee, manufacturerName: m, productId: p } });
     n++;

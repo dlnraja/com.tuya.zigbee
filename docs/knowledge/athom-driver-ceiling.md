@@ -204,6 +204,8 @@ Guard: `config/upload-manifest-ceiling.json` (`ceilingBytes` 3 250 000, `goalByt
 `scripts/ci/upload-manifest-ceiling.cjs`: FATAL in `prepare-publish` after the ASCII pass, blocking step in the
 Platform Budget workflow. Lower it as the manifest shrinks; raising it needs the owner's go.
 
+Update 2026-11-21 (P3360): `ceilingBytes` is 3 270 000. Graduating 21 held drivers produced a measured ASCII upload app.json of 3 255 746 B after every lossless shrink, 5 746 B over the old 3 250 000 ratchet. Athom #488 ties AggregateError to packaged file count (the new archive is 3 274 files / 30.64 MB, under the 3 830 / 32.7 MB file-count ceiling). Athom's 4 MB app.json limit is unchanged. Goal stays 2 850 000.
+
 ### What else was measured (not applied)
 Already done by earlier passes: identical-to-en locales (P3068), titleFormatted without args (P2830h), doc keys
 (P3075), Zigbee matrix compaction. No exact duplicate manufacturer/product entries remain; the 1744 case-only

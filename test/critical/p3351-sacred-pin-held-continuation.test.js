@@ -51,3 +51,36 @@ describe('P3351 sourced pass (P3201) defers sacred pins on held drivers', () => 
     assert.strictEqual(r.sacredMissing.length, 1);
   });
 });
+
+describe('P3360 sacred pins on pending-split released continuations are deferred, not fatal', () => {
+  it('released continuation folded only for compaction is not reported missing', () => {
+    const r = compactZigbeeIdentifiers(manifest(), { sacredKeep: [pin], baseline: null, holdIds: new Set(), pendingSplitIds: new Set(['curtain_motor_2']) });
+    assert.deepStrictEqual(r.sacredMissing, []);
+  });
+  it('the same pin still fails without hold or pending split', () => {
+    const r = compactZigbeeIdentifiers(manifest(), { sacredKeep: [pin], baseline: null, holdIds: new Set(), pendingSplitIds: new Set() });
+    assert.strictEqual(r.sacredMissing.length, 1);
+    assert.ok(/driver missing in publish/.test(r.sacredMissing[0]));
+  });
+});
+
+describe('P3360 sourced pass defers sacred pins on pending-split continuations', () => {
+  const fs = require('fs');
+  const os = require('os');
+  const path = require('path');
+  const sp = require('../../scripts/maintenance/publish-sourced-restore.cjs');
+  const setup = () => {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'p3360-split-'));
+    fs.mkdirSync(path.join(root, 'config', 'architecture'), { recursive: true });
+    fs.writeFileSync(path.join(root, 'config', 'architecture', 'publish-sacred-keep-couples.json'), JSON.stringify({ couples: [pin] }));
+    const file = path.join(root, 'app.json');
+    fs.writeFileSync(file, JSON.stringify(manifest()));
+    return { root, file };
+  };
+  it('pending-split driver absent from the payload: deferred, not missing', () => {
+    const { root, file } = setup();
+    const r = sp.sourcedPassFile(manifest(), file, { repoRoot: root, maxTotal: 100, maxDriver: 100, holdIds: new Set(), pendingSplitIds: new Set(['curtain_motor_2']), ratchet: new Set() });
+    assert.deepStrictEqual(r.sacredMissing, []);
+    assert.deepStrictEqual(r.sacredDeferred, ['curtain_motor_2#_TZE284_lqhqj73n#TS0601']);
+  });
+});

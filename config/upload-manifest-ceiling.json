@@ -1,5 +1,15 @@
 {
-  "_why": "P3342 (16/11/2026 Paris): hard ceiling for the UPLOAD app.json bytes (the file prepare-publish writes, after the P3047 ASCII pass). P3340 ties Athom's processing failures (bare AggregateError) to the work per build, which grows with the manifest: stable at 2.85 MB has never been refused, master 3.39 MB was. P3342 brought master to ~3.17 MB losslessly (CI payload ~14 KB larger). Growth above this ceiling blocks prepare-publish and the Platform Budget check. Lower it as the manifest shrinks; raising it needs the owner's go and a new Athom data point (docs/knowledge/athom-driver-ceiling.md).",
-  "ceilingBytes": 3250000,
-  "goalBytes": 2850000
+  "_why": "P3342 (16/11/2026 Paris): hard ceiling for the UPLOAD app.json bytes (the file prepare-publish writes, after the P3047 ASCII pass). P3340 ties Athom's processing failures (bare AggregateError) to the work per build, which grows with the manifest: stable at 2.85 MB has never been refused, master 3.39 MB was. P3342 brought master to ~3.17 MB losslessly (CI payload ~14 KB larger). Growth above this ceiling blocks prepare-publish and the Platform Budget check. Lower it as the manifest shrinks; raising it needs the owner's go and a new Athom data point (docs/knowledge/athom-driver-ceiling.md). P3360 (21/11/2026): ceilingBytes 3270000 after a measured 3255746 B ASCII manifest for the 368-driver package; see history. Goal unchanged. Athom 4 MB hard limit unchanged.",
+  "ceilingBytes": 3270000,
+  "goalBytes": 2850000,
+  "history": [
+    {
+      "patch": "P3360",
+      "date": "2026-11-21",
+      "ceilingBytes": 3270000,
+      "previousCeilingBytes": 3250000,
+      "measuredAsciiBytes": 3255746,
+      "baseline": "Graduating 21 held drivers (368 payload drivers, 3 continuations split back) grew the ASCII upload app.json to 3255746 B after every lossless shrink (P2830h, P3068, P3342, including a post-split rerun). Athom #488 (wouter-athom, 2026-11-17) identified AggregateError as a packaged file-count issue, not a manifest-byte cap; #3716 v9.0.1635 reached Test at 347 drivers / 3183286 B app.json / 3740 files. The new packed archive measured 3274 files / 30.64 MB (ceilings 3830 files / 32700000 B). Athom's hard app.json limit remains 4 MB. Raise is only this in-repo ratchet so the approved >347 upload can pass prepare-publish. Goal stays 2850000."
+    }
+  ]
 }

@@ -535,6 +535,7 @@ try {
     const compact = compactManifestFile(destAppJson, {
       maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
       maxDriverCombos: Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || undefined,
+      pendingSplitIds: p3229Splits.map((s) => s.id),
     });
     if (compact.overTotalLimit) {
       console.error(`FATAL: publish manifest still has ${compact.afterTotal} Zigbee identifier combinations after compaction.`);
@@ -576,7 +577,7 @@ try {
       const topupOn = Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL) > 0;
       const maxTotal = topupOn ? require('./maintenance/ts0601-topup.cjs').ceilingFromEnv() : compact.maxTotalCombos;
       const maxDriver = (topupOn && Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_DRIVER)) || Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || 2000;
-      const r = sp.sourcedPassFile(p3201Source, destAppJson, { repoRoot: path.join(__dirname, '..'), maxTotal, maxDriver, branch: process.env.P3201_BRANCH || process.env.GITHUB_REF_NAME });
+      const r = sp.sourcedPassFile(p3201Source, destAppJson, { repoRoot: path.join(__dirname, '..'), maxTotal, maxDriver, branch: process.env.P3201_BRANCH || process.env.GITHUB_REF_NAME, pendingSplitIds: p3229Splits.map((s) => s.id) });
       p3201Source = null;
       if (r.sacredDeferred && r.sacredDeferred.length) { console.log(`[P3351] ${r.sacredDeferred.length} sacred pin(s) on held driver(s) deferred until release: ${r.sacredDeferred.slice(0, 5).join(', ')}`); }
       console.log(`[P3201] sourced pass: ${r.before} -> ${r.after} / ${maxTotal}; ${r.deduped} duplicate-form combos freed, ${r.restored} source-backed couples restored, strong sourced in payload ${r.strongIn}/${r.strongInSource}`);
@@ -721,6 +722,17 @@ try {
       const n = require('./publish-hold-release').splitContinuations(m, p3229Splits);
       fs.writeFileSync(destAppJson, JSON.stringify(m));
       console.log(`   P3229: split ${n} released continuation(s) back out of their root`);
+      // P3360: compaction deferred sacred pins on released continuations; they must be
+      // present after the split-back. Held-driver pins stay deferred until the hold step.
+      const pending = new Set(p3229Splits.map((s) => s.id));
+      const { assertSacredCouplesPresent, loadSacredKeepCouples } = require('./maintenance/compact-zigbee-identifiers.cjs');
+      const pins = loadSacredKeepCouples(path.join(__dirname, '..')).filter((c) => pending.has(c.driverId));
+      const misses = pins.length ? assertSacredCouplesPresent(m, pins) : [];
+      if (misses.length) {
+        console.error('FATAL: sacred keep couples missing from publish manifest after P3229 split-back:');
+        for (const line of misses.slice(0, 20)) console.error(`  - ${line}`);
+        process.exit(1);
+      }
     } catch (e) { console.error(`FATAL: P3229 continuation split failed: ${e.message}`); process.exit(1); }
   }
   // P3331: held driver folders hosted by a dormant published driver keep their JS in the payload.
@@ -967,6 +979,27 @@ try {
   } catch (valErr) {
     console.error('FATAL: could not sanitize driver arrays:', valErr.message);
     process.exit(1);
+  }
+
+  // P3360: P3229 split-back re-inserts pre-strip continuation entries; rerun the lossless
+  // shrinks before the ASCII write and the P3342 byte ceiling.
+  try {
+    const tf = require('./maintenance/strip-redundant-title-formatted.cjs').stripFile(destAppJson);
+    console.log(`[P2830h] post-split removed ${tf.removed} redundant titleFormatted (${(tf.bytes / 1048576).toFixed(3)} MB, lossless)`);
+  } catch (tfErr) {
+    console.warn('[P2830h] post-split titleFormatted strip skipped:', tfErr.message);
+  }
+  try {
+    const st = require('./maintenance/compact-shared-text.cjs').compactFile(destAppJson);
+    console.log(`[P3068] post-split shared-text compaction -${(st.bytes / 1024).toFixed(1)} KB (locales ${st.localeDropped}, hints ${st.hintsCanon}, titles ${st.titlesCanon})`);
+  } catch (stErr) {
+    console.warn('[P3068] post-split shared-text compaction skipped:', stErr.message);
+  }
+  try {
+    const si = require('./maintenance/strip-inert-manifest.cjs').stripFile(destAppJson);
+    console.log(`[P3342] post-split inert-key/locale strip -${(si.bytes / 1024).toFixed(1)} KB (inert keys ${si.inertDropped}, locales ${si.localeDropped}, default cap options ${si.capOptDropped})`);
+  } catch (siErr) {
+    console.warn('[P3342] post-split inert-key/locale strip skipped:', siErr.message);
   }
 
   // 5d) P3047: last write of the payload JSON. Every non-ASCII char is written as \uXXXX
