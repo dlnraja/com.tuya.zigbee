@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1636": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
   "9.0.1635": {
-    "en": "Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : éclairages et variateurs et réglages des appareils. Et 7 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1634": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
@@ -964,8 +967,5 @@
   },
   "9.0.1613": {
     "en": "New: pairing and device recognition & Flow cards (TS0601) and thermostats & climate sensors. Fixed: Flow cards and pairing and device recognition. Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1612": {
-    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
   }
 }
