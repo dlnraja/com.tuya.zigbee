@@ -112,7 +112,8 @@ jobs:
       contents: read
       actions: write
     outputs:
-      go: ${{ steps.gate.outputs.go }}
+      # P3366: a run outside 23h-06h Paris never reaches the gate, so go stays '' (no upload).
+      go: ${{ steps.night.outputs.inside == 'true' && steps.gate.outputs.go || 'false' }}
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
@@ -126,8 +127,16 @@ jobs:
       - name: Commit to gate (the checked-out branch head)
         id: head
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      # P3366: owner rule - the Bastien house app is uploaded only at night (23:00-06:00 Europe/Paris).
+      # Outside the window the run is held as deferred; publish-self-heal re-dispatches it at night.
+      - name: P3366 Bastien night window (23h-06h Paris)
+        id: night
+        env:
+          NIGHT_WINDOW_STATUS_FILE: data/status/athom-publish-gate-com.dlnraja.tuya.zigbee.bastien.json
+        run: node .github/scripts/bastien-night-window.js
       - name: P3036 publish gate (green CI + spacing + busy)
         id: gate
+        if: steps.night.outputs.inside == 'true'
         uses: ./.github/actions/athom-publish-gate
         with:
           app_id: com.dlnraja.tuya.zigbee.bastien
@@ -138,7 +147,7 @@ jobs:
           sha: ${{ steps.head.outputs.sha }}
           wait_ms: '2400000'
       - name: P3036 deferred marker (retry at the next slot)
-        if: steps.gate.outputs.go == 'false' && steps.gate.outputs.deferred == 'true'
+        if: steps.night.outputs.inside == 'false' || (steps.gate.outputs.go == 'false' && steps.gate.outputs.deferred == 'true')
         continue-on-error: true
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
         with:
@@ -151,8 +160,8 @@ jobs:
         if: always()
         env:
           JOB_STATUS: ${{ job.status }}
-          GO: ${{ steps.gate.outputs.go }}
-          REASON: ${{ steps.gate.outputs.reason }}
+          GO: ${{ steps.night.outputs.inside == 'true' && steps.gate.outputs.go || 'false' }}
+          REASON: ${{ steps.night.outputs.inside == 'true' && steps.gate.outputs.reason || steps.night.outputs.reason }}
           SHA: ${{ steps.head.outputs.sha }}
         run: |
           [ -f scripts/lib/report-writer.js ] || exit 0
