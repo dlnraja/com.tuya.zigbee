@@ -102,7 +102,9 @@ const TRANSIENT_RE = /socket hang up|ECONNRESET|ECONNABORTED|ETIMEDOUT|EPIPE|EAI
 const INVALID_STATE_RE = /invalid[_ ]state|another build .*processing|already (being )?processing/i;
 const AGGREGATE_RE = /AggregateError/i;
 const VALIDATION_RE = /validation (error|failed)|failed to validate|invalid (app\.json|manifest|driver)|schema error|is not allowed|must (be|have)\b|homey app validate/i;
-const FINAL_RE = /^(test|live|draft|processing_failed|revoked|failed|rejected|approved)$/i;
+const FINAL_RE = /^(test|live|draft|processing_failed|revoked|failed|rejected|approved|superseded)$/i;
+// P3360: Athom may mark an older build as superseded once a newer one is Test; that is terminal, not busy.
+
 const CODE_FILE_RE = /(\.(c|m)?js|\.ts)$|(^|\/)package(-lock)?\.json$/i;
 
 function appPolicy(appId, env = process.env) {

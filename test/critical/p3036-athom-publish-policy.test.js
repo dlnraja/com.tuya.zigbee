@@ -123,6 +123,11 @@ test('busy: no upload while the previous build is still processing', () => {
   assert.strictEqual(d.go, false); assert.match(d.reason, /still processing/);
   // waiting_for_files older than 5 min is a stuck upload, not busy (same rule as wait-athom-idle.js)
   assert.strictEqual(P.busyBuild([b(14, 'waiting_for_files', 200)], NOW), null);
+  // P3360: a superseded older build (Athom replaced it; e.g. #3715 after Test #3716) is terminal, not busy.
+  assert.strictEqual(P.busyBuild([b(16, 'test', 200), b(15, 'superseded', 180)], NOW), null);
+  const released = P.slotDecision({ appId: MASTER, builds: [b(16, 'test', 200), b(15, 'superseded', 180)], eventName: 'workflow_dispatch', force: 'false', now: NOW, env: {} });
+  assert.strictEqual(released.go, true, released.reason);
+  assert.strictEqual(P.busyBuild([b(13, 'processing', 200)], NOW).id, 13);
 });
 test('slot: unreadable build list holds automatic runs (fail closed), manual dispatch may try', () => {
   assert.strictEqual(P.slotDecision({ appId: MASTER, snapshotOk: false, eventName: 'push', now: NOW }).go, false);
@@ -249,7 +254,7 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
   const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, '.github/scripts/athom-publish-policy.js'))).digest('hex');
-  assert.strictEqual(h, '659adcc36831cff2bb669c7b43e866dcd74383827b44915ff1d7ff6a7e9f5e5e', 'edit athom-publish-policy.js on all three branches together and update this hash');
+  assert.strictEqual(h, '37a09228049bf65ae07dd921d0d172bfb62c27a5df73c47c1ad8c30cfd480419', 'edit athom-publish-policy.js on all three branches together and update this hash');
 });
 test('ci gate: a version-only package.json bump is not a code change', () => {
   assert.strictEqual(P.versionOnlyDiff('--- a/package.json\n+++ b/package.json\n@@ -3 +3 @@\n-  "version": "9.0.1599",\n+  "version": "9.0.1600",'), true);
