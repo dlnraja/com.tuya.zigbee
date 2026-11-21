@@ -232,7 +232,7 @@ test('bisect exit: status=done never forces drafts or bisect_trial; status=runni
   const r = decide({ state: { status: 'running', app_id: MASTER_APP, current_trial: 1 }, appId: MASTER_APP, eventName: 'push', bisectTrial: '', now });
   assert.deepStrictEqual([r.hold_upload, r.hold_promote], [true, true]);
 });
-test('bisect exit: state file and docs describe the normal flow (draft -> Test, Live never automatic)', () => {
+test('bisect exit: state file and docs describe the normal flow (draft -> Test, Live automatic only after objective gates)', () => {
   const st = path.join(ROOT, 'docs/knowledge/athom-bisect-state.json');
   if (!fs.existsSync(st)) return;
   const j = JSON.parse(fs.readFileSync(st, 'utf8'));
@@ -240,7 +240,7 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
   const txt = JSON.stringify(j);
   assert.doesNotMatch(String(j.conclusion || ''), /drafts only until/i);
   assert.match(txt, /rerun the bisect/i);
-  assert.match(txt, /Live (is )?never automatic/i);
+  assert.match(txt, /Live is automatic only after objective gates/i);
 });
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {

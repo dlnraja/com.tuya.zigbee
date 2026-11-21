@@ -1,0 +1,72 @@
+# P3360: promote a healthy Test build to Live only after objective gates pass.
+# Live is automatic only after those gates. Bastien stays night-only (23:00-06:00 Paris).
+name: Promote to Live
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: 'App to promote (master, stable, bastien)'
+        required: true
+        default: 'master'
+        type: choice
+        options: [master, stable, bastien]
+      build:
+        description: 'Athom build number (optional; default tip Test)'
+        required: false
+        type: string
+      version:
+        description: 'Version, e.g. 9.0.1636 (optional)'
+        required: false
+        type: string
+      dry_run:
+        description: 'Evaluate gates only; do not call setChannel'
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    # Hourly. The script still enforces Bastien 23:00-06:00 Europe/Paris and all other gates.
+    - cron: '25 * * * *'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: promote-live-${{ github.event.inputs.app || 'master' }}
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    name: Objective gates then Live
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Promote if gates pass
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          LIVE_APP: ${{ github.event.inputs.app || 'master' }}
+          LIVE_BUILD: ${{ github.event.inputs.build || '' }}
+          LIVE_VERSION: ${{ github.event.inputs.version || '' }}
+        run: |
+          set -euo pipefail
+          ARGS=(--app "${LIVE_APP}")
+          [ -n "${LIVE_BUILD}" ] && ARGS+=(--build "${LIVE_BUILD}")
+          [ -n "${LIVE_VERSION}" ] && ARGS+=(--version "${LIVE_VERSION}")
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            ARGS+=(--dispatch)
+          fi
+          node .github/scripts/promote-live.js "${ARGS[@]}"
