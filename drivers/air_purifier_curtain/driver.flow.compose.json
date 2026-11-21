@@ -123,44 +123,36 @@
     {
       "id": "air_purifier_curtain_curtain_calibrate",
       "title": {
-        "en": "Calibrate",
-        "fr": "Calibrate"
+        "en": "Calibrate curtain motor",
+        "nl": "Kalibreer gordijnmotor",
+        "fr": "Calibrer le moteur du rideau"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Calibrate",
-        "fr": "Calibrate"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_curtain_curtain_reset_position",
       "title": {
-        "en": "Reset position",
-        "fr": "Reset position"
+        "en": "Reset position to 0%",
+        "nl": "Reset positie naar 0%",
+        "fr": "Réinitialiser la position à 0 %"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Reset position",
-        "fr": "Reset position"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_curtain_curtain_hold",
       "title": {
-        "en": "Hold and stop",
-        "fr": "Hold and stop"
+        "en": "Hold curtain position",
+        "nl": "Gordijn positie vasthouden",
+        "fr": "Maintenir position rideau"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Hold and stop",
-        "fr": "Hold and stop"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_curtain_curtain_open_partial",
       "title": {
-        "en": "Open partially",
-        "fr": "Open partially"
+        "en": "Open curtain partially",
+        "nl": "Gordijn gedeeltelijk openen",
+        "fr": "Ouvrir rideau partiellement"
       },
       "args": [
         {
@@ -175,8 +167,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Open partially to [[position]]",
-        "fr": "Open partially to [[position]]"
+        "en": "Open curtain partially [[position]]",
+        "fr": "Ouvrir rideau partiellement [[position]]"
       }
     }
   ]

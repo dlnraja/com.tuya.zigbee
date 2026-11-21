@@ -296,8 +296,8 @@
     {
       "id": "sensor_gas_presence_run_self_test",
       "title": {
-        "en": "Run self test",
-        "fr": "Lancer l'auto-test"
+        "en": "Run self-test",
+        "fr": "Lancer auto-test"
       },
       "args": [
         {
@@ -341,8 +341,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Run self test [[test_type]]",
-        "fr": "Lancer l'auto-test [[test_type]]"
+        "en": "Run self-test [[test_type]]",
+        "fr": "Lancer auto-test [[test_type]]"
       }
     }
   ]

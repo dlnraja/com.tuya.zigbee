@@ -213,6 +213,53 @@ function loadFlow(root, id) {
   return { path: p, json: readJson(p) };
 }
 
+// Homey merges driver.compose.json "flow" with driver.flow.compose.json; compose.json wins on a shared id (P3079).
+function overlayEmbeddedFlow(fileFlow, embedded) {
+  if (!fileFlow) fileFlow = {};
+  if (!embedded) return { flow: fileFlow, changed: false };
+  const out = fileFlow;
+  let changed = false;
+  for (const kind of ['triggers', 'conditions', 'actions']) {
+    const byId = new Map((out[kind] || []).map((c) => [c.id, c]));
+    for (const card of embedded[kind] || []) {
+      if (!card || !card.id) continue;
+      const cur = byId.get(card.id);
+      if (!cur) continue;
+      if (card.title && JSON.stringify(card.title) !== JSON.stringify(cur.title)) {
+        cur.title = card.title;
+        changed = true;
+      }
+      if (card.titleFormatted) {
+        if (JSON.stringify(card.titleFormatted) !== JSON.stringify(cur.titleFormatted)) {
+          cur.titleFormatted = card.titleFormatted;
+          changed = true;
+        }
+      } else if (cur.titleFormatted) {
+        delete cur.titleFormatted;
+        changed = true;
+      }
+    }
+  }
+  return { flow: out, changed };
+}
+
+function sourceFlow(root, id) {
+  const fileFlow = loadFlow(root, id).json;
+  const embedded = (loadCompose(root, id).json || {}).flow;
+  if (!fileFlow && !embedded) return null;
+  const base = fileFlow ? JSON.parse(JSON.stringify(fileFlow)) : {};
+  return overlayEmbeddedFlow(base, embedded).flow;
+}
+
+function reconcileEmbeddedFlow(root, id) {
+  const loaded = loadFlow(root, id);
+  const embedded = (loadCompose(root, id).json || {}).flow;
+  if (!loaded.json || !embedded) return { changed: false };
+  const r = overlayEmbeddedFlow(loaded.json, embedded);
+  if (r.changed) writeJson(loaded.path, loaded.json);
+  return { changed: r.changed };
+}
+
 function productHint(compose) {
   const z = (compose && compose.zigbee) || {};
   const pids = [].concat(z.productId || []).filter(Boolean);
@@ -617,6 +664,11 @@ function apply(root) {
     }
   }
 
+  for (const id of walkDrivers(root)) {
+    const rec = reconcileEmbeddedFlow(root, id);
+    if (rec.changed) changes.push({ file: `drivers/${id}/driver.flow.compose.json`, kind: 'reconcile-embedded-flow' });
+  }
+
   const appSync = syncAppJson(root);
   if (appSync.changed) changes.push({ file: 'app.json', kind: 'sync-names-titles' });
   return { changes, uniqueNameFixes: uniq, titleRenames, appSync };
@@ -677,8 +729,13 @@ function patchFlowTitles(targetFlow, srcFlow) {
         card.title = src.title;
         changed = true;
       }
-      if (src.titleFormatted && JSON.stringify(src.titleFormatted) !== JSON.stringify(card.titleFormatted)) {
-        card.titleFormatted = src.titleFormatted;
+      if (src.titleFormatted) {
+        if (JSON.stringify(src.titleFormatted) !== JSON.stringify(card.titleFormatted)) {
+          card.titleFormatted = src.titleFormatted;
+          changed = true;
+        }
+      } else if (card.titleFormatted) {
+        delete card.titleFormatted;
         changed = true;
       }
     }
@@ -709,7 +766,7 @@ function syncAppJson(root) {
       d.name = compose.name;
       changed = true;
     }
-    const flow = loadFlow(root, id).json;
+    const flow = sourceFlow(root, id);
     if (!flow) continue;
     if (d.flow && patchFlowTitles(d.flow, flow)) changed = true;
     if (appFlow && patchFlowTitles(appFlow, flow)) changed = true;
@@ -731,7 +788,7 @@ function check(root) {
 module.exports = {
   ACCENT_WORDS, DRIVER_NAME_REMAP, APP_JSON_BUILT_MAX, accentText, audit, apply, check,
   titlePatcher, disambiguateFlowDuplicates, uniqueify,
-  looksBuiltAppJson, readSourceAppJson, writeSourceAppJson, syncAppJson,
+  looksBuiltAppJson, readSourceAppJson, writeSourceAppJson, syncAppJson, overlayEmbeddedFlow, sourceFlow, reconcileEmbeddedFlow,
 };
 
 if (require.main === module) {
