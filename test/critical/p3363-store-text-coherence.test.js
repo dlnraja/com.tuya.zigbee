@@ -130,4 +130,23 @@ describe('P3363 store-text coherence', () => {
     assert.equal(out.description.fr, 'Controle local');
     fs.rmSync(dir, { recursive: true, force: true });
   });
+
+  it('embedded driver.compose.json flow titles win over driver.flow.compose.json on a shared id', () => {
+    const fileFlow = {
+      actions: [
+        { id: 'curtain_calibrate', title: { en: 'Calibrate', fr: 'Calibrate' }, titleFormatted: { en: 'Calibrate', fr: 'Calibrate' } },
+      ],
+    };
+    const embedded = {
+      actions: [
+        { id: 'curtain_calibrate', title: { en: 'Calibrate curtain motor', fr: 'Calibrer le moteur du rideau', nl: 'Kalibreer gordijnmotor' } },
+      ],
+    };
+    const r = ST.overlayEmbeddedFlow(JSON.parse(JSON.stringify(fileFlow)), embedded);
+    assert.equal(r.changed, true);
+    const card = r.flow.actions[0];
+    assert.equal(card.title.en, 'Calibrate curtain motor');
+    assert.equal(card.title.fr, 'Calibrer le moteur du rideau');
+    assert.equal(card.titleFormatted, undefined);
+  });
 });
