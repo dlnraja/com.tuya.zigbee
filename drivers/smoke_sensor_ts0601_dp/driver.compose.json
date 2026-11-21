@@ -18,6 +18,11 @@
     "alarm_tamper",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    }
+  },
   "energy": {
     "batteries": [
       "OTHER"

@@ -20,6 +20,9 @@
     "alarm_generic"
   ],
   "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    },
     "alarm_generic": {
       "title": {
         "en": "SOS",

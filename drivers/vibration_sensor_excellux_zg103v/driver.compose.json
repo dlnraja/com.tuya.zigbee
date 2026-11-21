@@ -17,6 +17,11 @@
     "alarm_vibration",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    }
+  },
   "energy": {
     "batteries": [
       "OTHER"

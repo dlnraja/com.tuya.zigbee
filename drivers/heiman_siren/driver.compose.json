@@ -11,6 +11,9 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    },
     "onoff": {
       "title": {
         "en": "Siren",

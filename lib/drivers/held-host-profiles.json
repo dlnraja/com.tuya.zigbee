@@ -314,6 +314,9 @@
     "measure_battery"
    ],
    "capabilitiesOptions": {
+    "measure_battery": {
+     "units": "%"
+    },
     "onoff": {
      "title": {
       "en": "Siren",
@@ -335,6 +338,9 @@
     "alarm_generic"
    ],
    "capabilitiesOptions": {
+    "measure_battery": {
+     "units": "%"
+    },
     "alarm_generic": {
      "title": {
       "en": "SOS",
@@ -438,7 +444,11 @@
     "alarm_tamper",
     "measure_battery"
    ],
-   "capabilitiesOptions": {}
+   "capabilitiesOptions": {
+    "measure_battery": {
+     "units": "%"
+    }
+   }
   },
   "switch_2gang_ts0002": {
    "into": "switch_plug_1",
@@ -757,7 +767,8 @@
     },
     "measure_battery": {
      "getable": true,
-     "preventInsights": false
+     "preventInsights": false,
+     "units": "%"
     }
    }
   },
@@ -791,7 +802,8 @@
     },
     "measure_battery": {
      "getable": true,
-     "preventInsights": false
+     "preventInsights": false,
+     "units": "%"
     },
     "alarm_tamper": {
      "getable": true,
@@ -829,7 +841,8 @@
     },
     "measure_battery": {
      "getable": true,
-     "preventInsights": false
+     "preventInsights": false,
+     "units": "%"
     },
     "alarm_tamper": {
      "getable": true,

@@ -585,6 +585,9 @@
   "id": "motion_sensor_radar_mmwave",
   "version": "1.0.0",
   "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    },
     "button.1": {
       "title": {
         "en": "Button 1",

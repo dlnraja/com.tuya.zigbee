@@ -20,7 +20,8 @@
   ],
   "capabilitiesOptions": {
     "measure_battery": {
-      "getable": true
+      "getable": true,
+      "units": "%"
     },
     "measure_humidity": {
       "getable": true

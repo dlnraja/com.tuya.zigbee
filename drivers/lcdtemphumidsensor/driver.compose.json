@@ -302,7 +302,8 @@
     "measure_battery": {
       "getable": true,
       "preventInsights": false,
-      "decimals": 0
+      "decimals": 0,
+      "units": "%"
     }
   }
 }
