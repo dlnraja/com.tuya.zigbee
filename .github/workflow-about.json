@@ -486,7 +486,7 @@
     },
     "intake-triage.yml": {
       "group": "forum",
-      "what": "Schedule plus issue/PR/discussion events: runs the deterministic intake triage protocol (consult referentials first, full SSOT + upstream dumps, classify, escalate malfunctions, optional safe add/move, write back learnings). Never posts, never opens PRs."
+      "what": "Schedule plus issue, PR and discussion events: deterministic intake triage that consults referentials first, escalates malfunction reports, may add or move a couple, and writes learnings back. Never posts."
     },
     "referentials.yml": {
       "group": "enrich",
