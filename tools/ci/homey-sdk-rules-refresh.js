@@ -127,7 +127,7 @@ function diff(oldD, newD) {
 
 if (require.main === module) {
   const libDir = arg('lib');
-  if (!libDir && arg('watch-docs')) { watchDocs().then(({ changes }) => console.log(changes.join('\n'))); return; }
+  if (!libDir && arg('watch-docs')) { watchDocs().then(({ changes }) => console.log(changes.join('\n'))); process.exit(0); }
   if (!libDir) { console.error('usage: --lib=/path/to/node-homey-lib [--write] [--report=file]'); process.exit(2); }
   const next = extract(libDir);
   const prev = fs.existsSync(DATA_PATH) ? JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')) : {};
