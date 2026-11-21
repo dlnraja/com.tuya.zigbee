@@ -87,8 +87,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🎯 Radar Detection (FP300-like)",
-        "fr": "🎯 Détection Radar (FP300-like)"
+        "en": "Radar Detection (FP300-like)",
+        "fr": "Détection Radar (FP300-like)"
       },
       "children": [
         {
@@ -103,8 +103,8 @@
           "max": 5,
           "step": 1,
           "hint": {
-            "en": "Linptech/Moes ES1ZZ: motion sensitivity 0–5 (Z2M). Other radars: use Radar Sensitivity below.",
-            "fr": "Linptech/Moes ES1ZZ : sensibilité mouvement 0–5. Autres radars : Sensibilité Radar ci-dessous."
+            "en": "Linptech/Moes ES1ZZ: motion sensitivity 0-5 (Z2M). Other radars: use Radar Sensitivity below.",
+            "fr": "Linptech/Moes ES1ZZ : sensibilité mouvement 0-5. Autres radars : Sensibilité Radar ci-dessous."
           }
         },
         {
@@ -119,8 +119,8 @@
           "max": 5,
           "step": 1,
           "hint": {
-            "en": "Linptech/Moes ES1ZZ: static/breathing sensitivity 0–5.",
-            "fr": "Linptech/Moes ES1ZZ : sensibilité statique 0–5."
+            "en": "Linptech/Moes ES1ZZ: static/breathing sensitivity 0-5.",
+            "fr": "Linptech/Moes ES1ZZ : sensibilité statique 0-5."
           }
         },
         {
@@ -135,8 +135,8 @@
           "max": 600,
           "step": 75,
           "hint": {
-            "en": "Linptech/Moes ES1ZZ: max motion range in cm (75–600, step 75).",
-            "fr": "Linptech/Moes ES1ZZ : portée mouvement en cm (75–600, pas 75)."
+            "en": "Linptech/Moes ES1ZZ: max motion range in cm (75-600, step 75).",
+            "fr": "Linptech/Moes ES1ZZ : portée mouvement en cm (75-600, pas 75)."
           }
         },
         {
@@ -148,8 +148,8 @@
           },
           "value": true,
           "hint": {
-            "en": "Linptech/Moes ES1ZZ: onboard LED. Some Moes firmwares reject this write — other settings still save.",
-            "fr": "Linptech/Moes ES1ZZ : LED. Certains firmwares Moes refusent cette écriture — les autres réglages restent sauvegardés."
+            "en": "Linptech/Moes ES1ZZ: onboard LED. Some Moes firmwares reject this write - other settings still save.",
+            "fr": "Linptech/Moes ES1ZZ : LED. Certains firmwares Moes refusent cette écriture - les autres réglages restent sauvegardés."
           }
         },
         {
@@ -228,8 +228,8 @@
           "max": 1500,
           "step": 5,
           "hint": {
-            "en": "Absence delay. gnpflcoq 4in1 = DP12 (10–180s); do NOT write DP102 (that is temp offset). Other radars may use DP102.",
-            "fr": "Délai d'absence. gnpflcoq 4in1 = DP12 (10–180s) ; ne pas écrire DP102 (offset température)."
+            "en": "Absence delay. gnpflcoq 4in1 = DP12 (10-180s); do NOT write DP102 (that is temp offset). Other radars may use DP102.",
+            "fr": "Délai d'absence. gnpflcoq 4in1 = DP12 (10-180s) ; ne pas écrire DP102 (offset température)."
           }
         }
       ]
@@ -237,8 +237,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🌡️ Calibration (v5.5.28)",
-        "fr": "🌡️ Calibration (v5.5.28)"
+        "en": "Calibration (v5.5.28)",
+        "fr": "Calibration (v5.5.28)"
       },
       "children": [
         {

@@ -77,7 +77,7 @@
   },
   "version": "1.0.0",
   "_notes": [
-    "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
+    "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 - placeholder added to prevent server-side build crash"
   ],
   "ui": {
     "quickAction": "onoff"

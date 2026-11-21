@@ -208,8 +208,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🔧 Maintenance",
-        "fr": "🔧 Maintenance"
+        "en": "Maintenance",
+        "fr": "Maintenance"
       },
       "children": [
         {
@@ -536,14 +536,14 @@
               "id": "inverted",
               "label": {
                 "en": "Inverted (flip press signal)",
-                "fr": "Inversé (inverser l’appui)",
+                "fr": "Inversé (inverser l'appui)",
                 "nl": "Omgekeerd (druksignaal omdraaien)"
               }
             }
           ],
           "hint": {
             "en": "Auto: curated normal/inverted SOS lists + smart timing (sticky idle vs short press). Choose Inverted to force reverse; Normal to force no flip.",
-            "fr": "Auto: listes SOS normal/inversé + timing intelligent (idle collé vs appui court). Inversé force l’inversion; Normal force aucun flip."
+            "fr": "Auto: listes SOS normal/inversé + timing intelligent (idle collé vs appui court). Inversé force l'inversion; Normal force aucun flip."
           }
         },
         {

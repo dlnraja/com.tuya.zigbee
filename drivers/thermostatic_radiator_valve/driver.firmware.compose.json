@@ -7,8 +7,8 @@
   "updates": [
     {
       "changelog": {
-        "en": "OEM Tuya firmware v87 for the si32 UART TRV module (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
-        "fr": "Firmware OEM v87 module TRV UART (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates — Homey ≥13.2 / Mobile ≥9.10."
+        "en": "OEM Tuya firmware v87 for the si32 UART TRV module (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings Device Updates) on Homey 13.2 / Mobile 9.10.",
+        "fr": "Firmware OEM v87 module TRV UART (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates - Homey 13.2 / Mobile 9.10."
       },
       "device": {
         "manufacturerName": [

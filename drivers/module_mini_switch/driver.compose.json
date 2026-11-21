@@ -295,7 +295,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"1\": \"switch_1\",\n  \"2\": \"switch_2\",\n  \"9\": \"countdown_timer\",\n  \"17\": \"indicator_light\"\n}"
+      "value": "{\n \"1\": \"switch_1\",\n \"2\": \"switch_2\",\n \"9\": \"countdown_timer\",\n \"17\": \"indicator_light\"\n}"
     },
     {
       "id": "dp_debug_mode",

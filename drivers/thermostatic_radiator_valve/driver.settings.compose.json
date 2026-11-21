@@ -146,7 +146,7 @@
         "label": {
           "en": "Schedule Pattern"
         },
-        "value": " List of time and temerature ranges 'hh:mm/temp' separated by a space. E.g.: '06:00/16 22:30/20 24:00/16' means: set temperature to 16°C between 00:00am and 06:00am, set temperature to 20°C between 06:00am and 10:30pm, 10:30pm to 12:00am set temperature to 16°C. Last time token must always be 24:00 with temperature."
+        "value": "List of time and temerature ranges 'hh:mm/temp' separated by a space. E.g.: '06:00/16 22:30/20 24:00/16' means: set temperature to 16°C between 00:00am and 06:00am, set temperature to 20°C between 06:00am and 10:30pm, 10:30pm to 12:00am set temperature to 16°C. Last time token must always be 24:00 with temperature."
       },
       {
         "id": "scheduleMonday",

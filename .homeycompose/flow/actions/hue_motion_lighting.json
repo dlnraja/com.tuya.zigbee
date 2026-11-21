@@ -59,8 +59,8 @@
       "type": "number",
       "name": "lux_threshold",
       "title": {
-        "en": "Skip if lux ≥",
-        "fr": "Ignorer si lux ≥"
+        "en": "Skip if lux",
+        "fr": "Ignorer si lux"
       },
       "min": 0,
       "max": 10000,
@@ -92,7 +92,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Path Light: [[motion_sensor]] → [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]], quiet [[quiet_start]]-[[quiet_end]])",
-    "fr": "Passage : [[motion_sensor]] → [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]], calme [[quiet_start]]-[[quiet_end]])"
+    "en": "Path Light: [[motion_sensor]] [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]], quiet [[quiet_start]]-[[quiet_end]])",
+    "fr": "Passage : [[motion_sensor]] [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]], calme [[quiet_start]]-[[quiet_end]])"
   }
 }

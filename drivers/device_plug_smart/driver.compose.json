@@ -272,8 +272,8 @@
         {
           "id": "0.001",
           "label": {
-            "en": "÷1000 (mW → W)",
-            "fr": "÷1000 (mW → W)"
+            "en": "÷1000 (mW W)",
+            "fr": "÷1000 (mW W)"
           }
         },
         {
@@ -314,8 +314,8 @@
         {
           "id": "1000",
           "label": {
-            "en": "×1000 (kW  W)",
-            "fr": "×1000 (kW  W)"
+            "en": "×1000 (kW W)",
+            "fr": "×1000 (kW W)"
           }
         }
       ],
@@ -336,8 +336,8 @@
         {
           "id": "0.001",
           "label": {
-            "en": "÷1000 (Wh  kWh)",
-            "fr": "÷1000 (Wh  kWh)"
+            "en": "÷1000 (Wh kWh)",
+            "fr": "÷1000 (Wh kWh)"
           }
         },
         {
@@ -670,7 +670,7 @@
   },
   "metadata": {
     "driver": {
-      "_comment": "WHY: skip pid strip 2026-08-21 — empty manufacturerName; stripping productIds would leave zero fingerprints. Do not invent mfrs.",
+      "_comment": "WHY: skip pid strip 2026-08-21 - empty manufacturerName; stripping productIds would leave zero fingerprints. Do not invent mfrs.",
       "wildcardPolicy": "2026-10-20: plug-type pid wildcard only (last-resort fallback); sensor pids re-homed to class-correct pid-only fallbacks, see docs/knowledge/DEVICE_PLUG_SMART_WILDCARD_DECISION_2026-10-20.md"
     }
   }

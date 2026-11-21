@@ -14,8 +14,8 @@
           "fr": "Compte à rebours (secondes)"
         },
         "hint": {
-          "en": "Auto-off timer DP2 (0–43200). Z2M TS0601_fan_switch / Lerlink T2-Z67.",
-          "fr": "Minuterie arrêt auto DP2 (0–43200)."
+          "en": "Auto-off timer DP2 (0-43200). Z2M TS0601_fan_switch / Lerlink T2-Z67.",
+          "fr": "Minuterie arrêt auto DP2 (0-43200)."
         },
         "value": 0,
         "min": 0,
@@ -38,8 +38,20 @@
         },
         "value": "off",
         "values": [
-          { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
-          { "id": "on", "label": { "en": "On", "fr": "Allumé" } }
+          {
+            "id": "off",
+            "label": {
+              "en": "Off",
+              "fr": "Éteint"
+            }
+          },
+          {
+            "id": "on",
+            "label": {
+              "en": "On",
+              "fr": "Allumé"
+            }
+          }
         ]
       }
     ]

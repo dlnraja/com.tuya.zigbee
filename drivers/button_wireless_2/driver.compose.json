@@ -578,10 +578,10 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Zigbee Bastien → Wireless Button 2 (TS0042). NOT Homey Zigbee. Wake-tap every 2s while pairing. Homey Flow: Button pressed → lamp — NOT Developer Tools Zigbee channels. Update tip then re-pair if presses were dead/slow.",
-        "fr": "Zigbee Bastien → Bouton sans fil 2 (TS0042). PAS Homey Zigbee. Tap toutes les 2 s a l'appairage. Flow: Bouton appuye → lampe — PAS les canaux Zigbee des outils developpeur. Maj tip puis re-appairer si lent/mort.",
-        "nl": "Houd enige knop 5s tot LED knippert. Wireless Button 2 — niet Homey Zigbee / Appareil Zigbee.",
-        "de": "Beliebige Taste 5s halten bis LED blinkt. Wireless Button 2 — nicht Homey Zigbee."
+        "en": "Zigbee Bastien Wireless Button 2 (TS0042). NOT Homey Zigbee. Wake-tap every 2s while pairing. Homey Flow: Button pressed lamp - NOT Developer Tools Zigbee channels. Update tip then re-pair if presses were dead/slow.",
+        "fr": "Zigbee Bastien Bouton sans fil 2 (TS0042). PAS Homey Zigbee. Tap toutes les 2 s a l'appairage. Flow: Bouton appuye lampe - PAS les canaux Zigbee des outils developpeur. Maj tip puis re-appairer si lent/mort.",
+        "nl": "Houd enige knop 5s tot LED knippert. Wireless Button 2 - niet Homey Zigbee / Appareil Zigbee.",
+        "de": "Beliebige Taste 5s halten bis LED blinkt. Wireless Button 2 - nicht Homey Zigbee."
       }
     }
   },
@@ -833,10 +833,10 @@
         {
           "id": "scene",
           "label": {
-            "en": "Scene Mode (default — Multi-press)",
-            "fr": "Mode Scène (par défaut — Multi-clics)",
-            "nl": "Scène-modus (standaard — Multi-klik)",
-            "de": "Szenenmodus (Standard — Mehrfachdruck)"
+            "en": "Scene Mode (default - Multi-press)",
+            "fr": "Mode Scène (par défaut - Multi-clics)",
+            "nl": "Scène-modus (standaard - Multi-klik)",
+            "de": "Szenenmodus (Standard - Mehrfachdruck)"
           }
         },
         {
@@ -855,14 +855,14 @@
       "type": "checkbox",
       "label": {
         "en": "Reverse button order",
-        "fr": "Inverser l’ordre des boutons",
+        "fr": "Inverser l'ordre des boutons",
         "nl": "Knopvolgorde omkeren",
         "de": "Tastenreihenfolge umkehren"
       },
       "value": false,
       "hint": {
         "en": "Enable if your remote numbers buttons in reverse physical order (e.g. 3,4,2,1)",
-        "fr": "Activer si votre télécommande numérote les boutons dans l’ordre physique inverse (ex. 3,4,2,1)"
+        "fr": "Activer si votre télécommande numérote les boutons dans l'ordre physique inverse (ex. 3,4,2,1)"
       }
     },
     {

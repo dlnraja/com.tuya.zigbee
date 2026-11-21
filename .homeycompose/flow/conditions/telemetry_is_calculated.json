@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_calculated",
   "title": {
-    "en": "Smart · !{{value is|value is not}} a complete calculation ƒ",
-    "fr": "Smart · la valeur !{{est|n'est pas}} un calcul complet ƒ",
-    "nl": "Smart · de waarde !{{is|is geen}} volledige berekening ƒ",
-    "de": "Smart · der Wert !{{ist|ist keine}} vollständige Berechnung ƒ"
+    "en": "Smart · !{{value is|value is not}} a complete calculation",
+    "fr": "Smart · la valeur !{{est|n'est pas}} un calcul complet",
+    "nl": "Smart · de waarde !{{is|is geen}} volledige berekening",
+    "de": "Smart · der Wert !{{ist|ist keine}} vollständige Berechnung"
   },
   "hint": {
-    "en": "Derived from other values (I = P÷V, kWh integral of power × time). Title: · ƒ calculated",
-    "fr": "Dérivée d'autres valeurs (I = P÷V, intégrale kWh = P × temps). Titre : · ƒ calculé",
-    "nl": "Afgeleid van andere waarden (I = P÷V, kWh-integraal). Titel: · ƒ berekend",
-    "de": "Abgeleitet (I = P÷V, kWh-Integral). Titel: · ƒ berechnet"
+    "en": "Derived from other values (I = P÷V, kWh integral of power × time). Title: · calculated",
+    "fr": "Dérivée d'autres valeurs (I = P÷V, intégrale kWh = P × temps). Titre : · calculé",
+    "nl": "Afgeleid van andere waarden (I = P÷V, kWh-integraal). Titel: · berekend",
+    "de": "Abgeleitet (I = P÷V, kWh-Integral). Titel: · berechnet"
   },
   "args": [
     {
@@ -137,7 +137,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Smart · !{{value is|value is not}} a complete calculation ƒ [[capability]] ([[device]])",
-    "fr": "Smart · la valeur !{{est|n'est pas}} un calcul complet ƒ [[capability]] ([[device]])"
+    "en": "Smart · !{{value is|value is not}} a complete calculation [[capability]] ([[device]])",
+    "fr": "Smart · la valeur !{{est|n'est pas}} un calcul complet [[capability]] ([[device]])"
   }
 }

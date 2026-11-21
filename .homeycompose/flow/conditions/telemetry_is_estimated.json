@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_estimated",
   "title": {
-    "en": "Smart · !{{value is|value is not}} an intelligent estimate ≈",
-    "fr": "Smart · la valeur !{{est|n'est pas}} une estimation intelligente ≈",
-    "nl": "Smart · de waarde !{{is|is geen}} intelligente schatting ≈",
-    "de": "Smart · der Wert !{{ist|ist keine}} intelligente Schätzung ≈"
+    "en": "Smart · !{{value is|value is not}} an intelligent estimate",
+    "fr": "Smart · la valeur !{{est|n'est pas}} une estimation intelligente",
+    "nl": "Smart · de waarde !{{is|is geen}} intelligente schatting",
+    "de": "Smart · der Wert !{{ist|ist keine}} intelligente Schätzung"
   },
   "hint": {
-    "en": "Local habit + manufacturer/driver profile (dim/color/on-time). Not a live meter. Title: · ≈ estimated",
-    "fr": "Habitudes locales + profil fabricant/driver (dim/couleur/temps ON). Pas un compteur live. Titre : · ≈ estimé",
-    "nl": "Lokale gewoonten + fabrikantprofiel (dim/kleur/aan-tijd). Geen live meter. Titel: · ≈ geschat",
-    "de": "Lokale Gewohnheiten + Herstellerprofil (Dim/Farbe/Einschaltzeit). Kein Live-Zähler. Titel: · ≈ geschätzt"
+    "en": "Local habit + manufacturer/driver profile (dim/color/on-time). Not a live meter. Title: · estimated",
+    "fr": "Habitudes locales + profil fabricant/driver (dim/couleur/temps ON). Pas un compteur live. Titre : · estimé",
+    "nl": "Lokale gewoonten + fabrikantprofiel (dim/kleur/aan-tijd). Geen live meter. Titel: · geschat",
+    "de": "Lokale Gewohnheiten + Herstellerprofil (Dim/Farbe/Einschaltzeit). Kein Live-Zähler. Titel: · geschätzt"
   },
   "args": [
     {
@@ -137,7 +137,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Smart · !{{value is|value is not}} an intelligent estimate ≈ [[capability]] ([[device]])",
-    "fr": "Smart · la valeur !{{est|n'est pas}} une estimation intelligente ≈ [[capability]] ([[device]])"
+    "en": "Smart · !{{value is|value is not}} an intelligent estimate [[capability]] ([[device]])",
+    "fr": "Smart · la valeur !{{est|n'est pas}} une estimation intelligente [[capability]] ([[device]])"
   }
 }

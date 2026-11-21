@@ -6,7 +6,12 @@
     "nl": "SPI pixel-LED-controller (Gledopto GL-SPI-206P)"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
+  "energy": {
+    "approximation": {
+      "usageOn": 15,
+      "usageOff": 0.5
+    }
+  },
   "platforms": [
     "local"
   ],
@@ -47,7 +52,7 @@
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Put the controller in pairing mode as described in its manual (usually a long press on its button until the strip blinks).",
-        "fr": "Mettez le contrôleur en mode appairage comme indiqué dans sa notice (généralement un appui long sur son bouton jusqu’à ce que le ruban clignote).",
+        "fr": "Mettez le contrôleur en mode appairage comme indiqué dans sa notice (généralement un appui long sur son bouton jusqu'à ce que le ruban clignote).",
         "nl": "Zet de controller in koppelmodus volgens de handleiding (meestal lang op de knop drukken tot de strip knippert)."
       }
     }

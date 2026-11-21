@@ -92,8 +92,8 @@
     {
       "type": "group",
       "label": {
-        "en": "💡 LED Indicator",
-        "nl": "💡 LED-indicator"
+        "en": "LED Indicator",
+        "nl": "LED-indicator"
       },
       "children": [
         {
@@ -231,8 +231,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🎭 Scene Mode",
-        "nl": "🎭 Scènemodus"
+        "en": "Scene Mode",
+        "nl": "Scènemodus"
       },
       "children": [
         {
@@ -295,7 +295,7 @@
             "sv": "Denna väggenhet",
             "pt": "Esta unidade de parede"
           },
-          "value": "—"
+          "value": "-"
         },
         {
           "id": "traffic_stats",
@@ -310,7 +310,7 @@
             "sv": "Nätverksaktivitet",
             "pt": "Atividade de rede"
           },
-          "value": "—"
+          "value": "-"
         }
       ]
     },

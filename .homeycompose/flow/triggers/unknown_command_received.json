@@ -69,8 +69,8 @@
       "name": "confidence",
       "type": "number",
       "title": {
-        "en": "Confidence (0–1)",
-        "fr": "Confiance (0–1)"
+        "en": "Confidence (0-1)",
+        "fr": "Confiance (0-1)"
       },
       "example": 0.95
     }

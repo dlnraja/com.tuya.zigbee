@@ -4,7 +4,7 @@
       "id": "sr_zs_switch_state_changed",
       "title": {
         "en": "Switch state changed",
-        "pl": "Stan przełącznika zmienił się",
+        "pl": "Stan przecznika zmieni si",
         "fr": "État de l'interrupteur modifié"
       },
       "args": [
@@ -16,11 +16,11 @@
               "id": "1",
               "title": {
                 "en": "Switch 1",
-                "pl": "Przełącznik 1"
+                "pl": "Przecznik 1"
               },
               "label": {
                 "en": "Switch 1",
-                "pl": "Przełącznik 1",
+                "pl": "Przecznik 1",
                 "fr": "Interrupteur 1"
               }
             },
@@ -28,11 +28,11 @@
               "id": "2",
               "title": {
                 "en": "Switch 2",
-                "pl": "Przełącznik 2"
+                "pl": "Przecznik 2"
               },
               "label": {
                 "en": "Switch 2",
-                "pl": "Przełącznik 2",
+                "pl": "Przecznik 2",
                 "fr": "Interrupteur 2"
               }
             },
@@ -40,11 +40,11 @@
               "id": "3",
               "title": {
                 "en": "Switch 3",
-                "pl": "Przełącznik 3"
+                "pl": "Przecznik 3"
               },
               "label": {
                 "en": "Switch 3",
-                "pl": "Przełącznik 3",
+                "pl": "Przecznik 3",
                 "fr": "Interrupteur 3"
               }
             }
@@ -62,11 +62,11 @@
               "id": "true",
               "title": {
                 "en": "Turned on",
-                "pl": "Włączony"
+                "pl": "Wczony"
               },
               "label": {
                 "en": "Turned on",
-                "pl": "Włączony",
+                "pl": "Wczony",
                 "fr": "Allumé"
               }
             },
@@ -74,11 +74,11 @@
               "id": "false",
               "title": {
                 "en": "Turned off",
-                "pl": "Wyłączony"
+                "pl": "Wyczony"
               },
               "label": {
                 "en": "Turned off",
-                "pl": "Wyłączony",
+                "pl": "Wyczony",
                 "fr": "Éteint"
               }
             }
@@ -91,7 +91,7 @@
       ],
       "titleFormatted": {
         "en": "Switch state changed [[switch]] [[state]]",
-        "pl": "Stan przełącznika zmienił się [[switch]] [[state]]",
+        "pl": "Stan przecznika zmieni si [[switch]] [[state]]",
         "fr": "État de l'interrupteur modifié [[switch]] [[state]]"
       }
     },
@@ -99,7 +99,7 @@
       "id": "sr_zs_switch_scene_triggered_configurable",
       "title": {
         "en": "Scene triggered",
-        "pl": "Uruchomiono scenę",
+        "pl": "Uruchomiono scen",
         "fr": "Scène déclenchée"
       },
       "args": [
@@ -188,7 +188,7 @@
       ],
       "titleFormatted": {
         "en": "Scene triggered [[scene]]",
-        "pl": "Uruchomiono scenę [[scene]]",
+        "pl": "Uruchomiono scen [[scene]]",
         "fr": "Scène déclenchée [[scene]]"
       }
     }
@@ -198,7 +198,7 @@
       "id": "sr_zs_switch_set_switch_state",
       "title": {
         "en": "Set switch state",
-        "pl": "Ustaw stan przełącznika",
+        "pl": "Ustaw stan przecznika",
         "fr": "Régler l'état de l'interrupteur"
       },
       "args": [
@@ -210,11 +210,11 @@
               "id": "1",
               "title": {
                 "en": "Switch 1",
-                "pl": "Przełącznik 1"
+                "pl": "Przecznik 1"
               },
               "label": {
                 "en": "Switch 1",
-                "pl": "Przełącznik 1",
+                "pl": "Przecznik 1",
                 "fr": "Interrupteur 1"
               }
             },
@@ -222,11 +222,11 @@
               "id": "2",
               "title": {
                 "en": "Switch 2",
-                "pl": "Przełącznik 2"
+                "pl": "Przecznik 2"
               },
               "label": {
                 "en": "Switch 2",
-                "pl": "Przełącznik 2",
+                "pl": "Przecznik 2",
                 "fr": "Interrupteur 2"
               }
             },
@@ -234,11 +234,11 @@
               "id": "3",
               "title": {
                 "en": "Switch 3",
-                "pl": "Przełącznik 3"
+                "pl": "Przecznik 3"
               },
               "label": {
                 "en": "Switch 3",
-                "pl": "Przełącznik 3",
+                "pl": "Przecznik 3",
                 "fr": "Interrupteur 3"
               }
             }
@@ -256,11 +256,11 @@
               "id": "true",
               "title": {
                 "en": "Turned on",
-                "pl": "Włączony"
+                "pl": "Wczony"
               },
               "label": {
                 "en": "Turned on",
-                "pl": "Włączony",
+                "pl": "Wczony",
                 "fr": "Allumé"
               }
             },
@@ -268,11 +268,11 @@
               "id": "false",
               "title": {
                 "en": "Turned off",
-                "pl": "Wyłączony"
+                "pl": "Wyczony"
               },
               "label": {
                 "en": "Turned off",
-                "pl": "Wyłączony",
+                "pl": "Wyczony",
                 "fr": "Éteint"
               }
             }
@@ -285,7 +285,7 @@
       ],
       "titleFormatted": {
         "en": "Set switch state [[switch]] [[state]]",
-        "pl": "Ustaw stan przełącznika [[switch]] [[state]]",
+        "pl": "Ustaw stan przecznika [[switch]] [[state]]",
         "fr": "Régler l'état de l'interrupteur [[switch]] [[state]]"
       }
     }
@@ -295,7 +295,7 @@
       "id": "sr_zs_switch_is",
       "title": {
         "en": "Switch # is !{{on|off}}",
-        "pl": "Przełącznik # jest !{{włączony|wyłączony}}",
+        "pl": "Przecznik # jest !{{wczony|wyczony}}",
         "fr": "L'interrupteur # est !{{allumé|éteint}}"
       },
       "args": [
@@ -307,11 +307,11 @@
               "id": "1",
               "title": {
                 "en": "Switch 1",
-                "pl": "Przełącznik 1"
+                "pl": "Przecznik 1"
               },
               "label": {
                 "en": "Switch 1",
-                "pl": "Przełącznik 1",
+                "pl": "Przecznik 1",
                 "fr": "Interrupteur 1"
               }
             },
@@ -319,11 +319,11 @@
               "id": "2",
               "title": {
                 "en": "Switch 2",
-                "pl": "Przełącznik 2"
+                "pl": "Przecznik 2"
               },
               "label": {
                 "en": "Switch 2",
-                "pl": "Przełącznik 2",
+                "pl": "Przecznik 2",
                 "fr": "Interrupteur 2"
               }
             },
@@ -331,11 +331,11 @@
               "id": "3",
               "title": {
                 "en": "Switch 3",
-                "pl": "Przełącznik 3"
+                "pl": "Przecznik 3"
               },
               "label": {
                 "en": "Switch 3",
-                "pl": "Przełącznik 3",
+                "pl": "Przecznik 3",
                 "fr": "Interrupteur 3"
               }
             }
@@ -348,7 +348,7 @@
       ],
       "titleFormatted": {
         "en": "Switch # is !{{on|off}} [[switch]]",
-        "pl": "Przełącznik # jest !{{włączony|wyłączony}} [[switch]]",
+        "pl": "Przecznik # jest !{{wczony|wyczony}} [[switch]]",
         "fr": "L'interrupteur # est !{{allumé|éteint}} [[switch]]"
       }
     }

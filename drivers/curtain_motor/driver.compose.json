@@ -1361,7 +1361,7 @@
       "value": false,
       "hint": {
         "en": "If the motor ignores Up/Down or moves the wrong way on tip 9.0.807+, try this (GitHub #533 / diag 4a918200). Sends both DP1 motion and DP2 target.",
-        "fr": "Si le moteur ignore Haut/Bas ou part dans le mauvais sens — activer (GitHub #533)."
+        "fr": "Si le moteur ignore Haut/Bas ou part dans le mauvais sens - activer (GitHub #533)."
       }
     },
     {
@@ -1373,8 +1373,8 @@
       },
       "value": true,
       "hint": {
-        "en": "DP7 — LED backlight on the wall switch (GitHub #533)",
-        "fr": "DP7 — rétroéclairage LED"
+        "en": "DP7 - LED backlight on the wall switch (GitHub #533)",
+        "fr": "DP7 - rétroéclairage LED"
       }
     },
     {
@@ -1402,8 +1402,8 @@
         }
       ],
       "hint": {
-        "en": "DP8 — motor steering forward/back",
-        "fr": "DP8 — sens moteur"
+        "en": "DP8 - motor steering forward/back",
+        "fr": "DP8 - sens moteur"
       }
     },
     {
@@ -1418,8 +1418,8 @@
       "max": 180,
       "step": 1,
       "hint": {
-        "en": "DP10 — travel time used during quick calibration (Moes ZTS-EUR-C)",
-        "fr": "DP10 — durée calibration rapide"
+        "en": "DP10 - travel time used during quick calibration (Moes ZTS-EUR-C)",
+        "fr": "DP10 - durée calibration rapide"
       }
     },
     {
@@ -1454,8 +1454,8 @@
         }
       ],
       "hint": {
-        "en": "DP3 — sends start/end when changed (accurate calibration)",
-        "fr": "DP3 — envoie start/end à la modification"
+        "en": "DP3 - sends start/end when changed (accurate calibration)",
+        "fr": "DP3 - envoie start/end à la modification"
       }
     },
     {

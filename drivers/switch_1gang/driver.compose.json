@@ -120,10 +120,10 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Zigbee Bastien → 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3×. Update ≥1.0.49 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.",
-        "fr": "Zigbee Bastien → Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3× on/off. Update ≥1.0.49 puis Réparer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.",
-        "nl": "Zigbee Bastien → 1-gang. HOBEIAN: 3× schakelen. Na update ≥1.0.44: Repair.",
-        "de": "Zigbee Bastien → 1-fach. HOBEIAN: 3× schalten. Nach Update ≥1.0.44: Repair."
+        "en": "Zigbee Bastien 1-gang Switch. HOBEIAN ZG-301Z / WHD02: toggle 3×. Update 1.0.49 then Repair (countdown+switch_type+light class+mesh calm). NOT Homey Zigbee.",
+        "fr": "Zigbee Bastien Interrupteur 1 voie. HOBEIAN ZG-301Z / WHD02: 3× on/off. Update 1.0.49 puis Réparer (countdown+switch_type+class light+mesh). PAS Homey Zigbee.",
+        "nl": "Zigbee Bastien 1-gang. HOBEIAN: 3× schakelen. Na update 1.0.44: Repair.",
+        "de": "Zigbee Bastien 1-fach. HOBEIAN: 3× schalten. Nach Update 1.0.44: Repair."
       }
     },
     "manufacturerName": [
@@ -1558,169 +1558,169 @@
             {
               "id": "light",
               "label": {
-                "en": "💡 Éclairage",
-                "fr": "💡 Éclairage"
+                "en": "Éclairage",
+                "fr": "Éclairage"
               }
             },
             {
               "id": "outdoor_light",
               "label": {
-                "en": "🏡 Éclairage extérieur",
-                "fr": "🏡 Éclairage extérieur"
+                "en": "Éclairage extérieur",
+                "fr": "Éclairage extérieur"
               }
             },
             {
               "id": "radiator",
               "label": {
-                "en": "🔥 Radiateur (fil pilote)",
-                "fr": "🔥 Radiateur (fil pilote)"
+                "en": "Radiateur (fil pilote)",
+                "fr": "Radiateur (fil pilote)"
               }
             },
             {
               "id": "water_heater",
               "label": {
-                "en": "🚿 Chauffe-eau / Cumulus",
-                "fr": "🚿 Chauffe-eau / Cumulus"
+                "en": "Chauffe-eau / Cumulus",
+                "fr": "Chauffe-eau / Cumulus"
               }
             },
             {
               "id": "boiler",
               "label": {
-                "en": "🏠 Chaudière",
-                "fr": "🏠 Chaudière"
+                "en": "Chaudière",
+                "fr": "Chaudière"
               }
             },
             {
               "id": "underfloor_heating",
               "label": {
-                "en": "🦶 Plancher chauffant",
-                "fr": "🦶 Plancher chauffant"
+                "en": "Plancher chauffant",
+                "fr": "Plancher chauffant"
               }
             },
             {
               "id": "fan",
               "label": {
-                "en": "🌀 Ventilateur / VMC",
-                "fr": "🌀 Ventilateur / VMC"
+                "en": "Ventilateur / VMC",
+                "fr": "Ventilateur / VMC"
               }
             },
             {
               "id": "ac",
               "label": {
-                "en": "❄️ Climatisation",
-                "fr": "❄️ Climatisation"
+                "en": "Climatisation",
+                "fr": "Climatisation"
               }
             },
             {
               "id": "extractor",
               "label": {
-                "en": "💨 Extracteur / Hotte",
-                "fr": "💨 Extracteur / Hotte"
+                "en": "Extracteur / Hotte",
+                "fr": "Extracteur / Hotte"
               }
             },
             {
               "id": "shutter",
               "label": {
-                "en": "🪟 Volet roulant / Store",
-                "fr": "🪟 Volet roulant / Store"
+                "en": "Volet roulant / Store",
+                "fr": "Volet roulant / Store"
               }
             },
             {
               "id": "gate",
               "label": {
-                "en": "🚗 Portail / Garage",
-                "fr": "🚗 Portail / Garage"
+                "en": "Portail / Garage",
+                "fr": "Portail / Garage"
               }
             },
             {
               "id": "door_lock",
               "label": {
-                "en": "🔐 Gâche / Serrure",
-                "fr": "🔐 Gâche / Serrure"
+                "en": "Gâche / Serrure",
+                "fr": "Gâche / Serrure"
               }
             },
             {
               "id": "pump",
               "label": {
-                "en": "💧 Pompe",
-                "fr": "💧 Pompe"
+                "en": "Pompe",
+                "fr": "Pompe"
               }
             },
             {
               "id": "irrigation",
               "label": {
-                "en": "🌱 Arrosage",
-                "fr": "🌱 Arrosage"
+                "en": "Arrosage",
+                "fr": "Arrosage"
               }
             },
             {
               "id": "pool",
               "label": {
-                "en": "🏊 Équipement piscine",
-                "fr": "🏊 Équipement piscine"
+                "en": "Équipement piscine",
+                "fr": "Équipement piscine"
               }
             },
             {
               "id": "socket",
               "label": {
-                "en": "🔌 Prise commandée",
-                "fr": "🔌 Prise commandée"
+                "en": "Prise commandée",
+                "fr": "Prise commandée"
               }
             },
             {
               "id": "appliance",
               "label": {
-                "en": "🧺 Électroménager",
-                "fr": "🧺 Électroménager"
+                "en": "Électroménager",
+                "fr": "Électroménager"
               }
             },
             {
               "id": "coffee_machine",
               "label": {
-                "en": "☕ Machine à café",
-                "fr": "☕ Machine à café"
+                "en": "Machine à café",
+                "fr": "Machine à café"
               }
             },
             {
               "id": "alarm",
               "label": {
-                "en": "🚨 Alarme / Sirène",
-                "fr": "🚨 Alarme / Sirène"
+                "en": "Alarme / Sirène",
+                "fr": "Alarme / Sirène"
               }
             },
             {
               "id": "camera",
               "label": {
-                "en": "📹 Caméra",
-                "fr": "📹 Caméra"
+                "en": "Caméra",
+                "fr": "Caméra"
               }
             },
             {
               "id": "tv",
               "label": {
-                "en": "📺 TV / Écran",
-                "fr": "📺 TV / Écran"
+                "en": "TV / Écran",
+                "fr": "TV / Écran"
               }
             },
             {
               "id": "audio",
               "label": {
-                "en": "🔊 Audio / Hifi",
-                "fr": "🔊 Audio / Hifi"
+                "en": "Audio / Hifi",
+                "fr": "Audio / Hifi"
               }
             },
             {
               "id": "fountain",
               "label": {
-                "en": "⛲ Fontaine",
-                "fr": "⛲ Fontaine"
+                "en": "Fontaine",
+                "fr": "Fontaine"
               }
             },
             {
               "id": "other",
               "label": {
-                "en": "⚙️ Autre appareil",
-                "fr": "⚙️ Autre appareil"
+                "en": "Autre appareil",
+                "fr": "Autre appareil"
               }
             }
           ]
@@ -2264,8 +2264,8 @@
         "fr": "Minuteur (secondes)"
       },
       "hint": {
-        "en": "Z2M ZG-301Z countdown 0–43200s. 0 = off. Lighting: prefer 0 + switch_type=state.",
-        "fr": "Countdown Z2M ZG-301Z 0–43200 s. 0 = off. Éclairage: 0 + switch_type=state."
+        "en": "Z2M ZG-301Z countdown 0-43200s. 0 = off. Lighting: prefer 0 + switch_type=state.",
+        "fr": "Countdown Z2M ZG-301Z 0-43200 s. 0 = off. Éclairage: 0 + switch_type=state."
       },
       "value": 0,
       "min": 0,
@@ -2426,8 +2426,8 @@
     "updates": [
       {
         "changelog": {
-          "en": "OEM Zigbee firmware v74 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
-          "fr": "Firmware Zigbee OEM v74 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10."
+          "en": "OEM Zigbee firmware v74 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings Device Updates) on Homey 13.2 / Mobile 9.10.",
+          "fr": "Firmware Zigbee OEM v74 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages Device Updates) - Homey 13.2 / Mobile 9.10."
         },
         "device": {
           "manufacturerName": [

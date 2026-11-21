@@ -533,7 +533,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
+      "value": "{\n \"1\": \"button_1_action\",\n \"2\": \"button_2_action\",\n \"3\": \"button_3_action\",\n \"4\": \"button_4_action\",\n \"101\": \"battery_percentage\"\n}"
     },
     {
       "id": "dp_debug_mode",
@@ -571,8 +571,8 @@
         "de": "Betriebsart"
       },
       "hint": {
-        "en": "Scene Mode (default) = multi-press. Homey writes genOnOff 0x8004 ONLY on true TS004F. TS0041–44 / Nobø-like firmwares skip that write (presses would die). Blue LED = pairing/network only. Dimmer Mode = TS004F command mode.",
-        "fr": "Mode Scène (défaut) = multi-clics. Homey écrit genOnOff 0x8004 UNIQUEMENT sur vrai TS004F. TS0041–44 / firmwares type Nobø skip (sinon appuis morts). LED bleue = appairage/réseau seulement. Mode Variateur = TS004F command mode."
+        "en": "Scene Mode (default) = multi-press. Homey writes genOnOff 0x8004 ONLY on true TS004F. TS0041-44 / Nobø-like firmwares skip that write (presses would die). Blue LED = pairing/network only. Dimmer Mode = TS004F command mode.",
+        "fr": "Mode Scène (défaut) = multi-clics. Homey écrit genOnOff 0x8004 UNIQUEMENT sur vrai TS004F. TS0041-44 / firmwares type Nobø skip (sinon appuis morts). LED bleue = appairage/réseau seulement. Mode Variateur = TS004F command mode."
       },
       "value": "scene",
       "values": [
@@ -588,10 +588,10 @@
         {
           "id": "scene",
           "label": {
-            "en": "Scene Mode (default — Multi-press)",
-            "fr": "Mode Scène (par défaut — Multi-clics)",
-            "nl": "Scène-modus (standaard — Multi-klik)",
-            "de": "Szenenmodus (Standard — Mehrfachdruck)"
+            "en": "Scene Mode (default - Multi-press)",
+            "fr": "Mode Scène (par défaut - Multi-clics)",
+            "nl": "Scène-modus (standaard - Multi-klik)",
+            "de": "Szenenmodus (Standard - Mehrfachdruck)"
           }
         },
         {
@@ -610,14 +610,14 @@
       "type": "checkbox",
       "label": {
         "en": "Reverse button order",
-        "fr": "Inverser l’ordre des boutons",
+        "fr": "Inverser l'ordre des boutons",
         "nl": "Knopvolgorde omkeren",
         "de": "Tastenreihenfolge umkehren"
       },
       "value": false,
       "hint": {
         "en": "Enable if your remote numbers buttons in reverse physical order (e.g. 3,4,2,1)",
-        "fr": "Activer si votre télécommande numérote les boutons dans l’ordre physique inverse (ex. 3,4,2,1)"
+        "fr": "Activer si votre télécommande numérote les boutons dans l'ordre physique inverse (ex. 3,4,2,1)"
       }
     },
     {

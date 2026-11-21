@@ -193,8 +193,8 @@
         "de": "Gedrückt und nach links gedreht"
       },
       "hint": {
-        "en": "When the knob is pressed while being rotated counter-clockwise (P29 — matches pobao TZ-X1 Smart Scene Button spec)",
-        "fr": "Lorsque le bouton est appuyé tout en étant tourné dans le sens antihoraire (P29 — pobao TZ-X1 Smart Scene Button spec)"
+        "en": "When the knob is pressed while being rotated counter-clockwise (P29 - matches pobao TZ-X1 Smart Scene Button spec)",
+        "fr": "Lorsque le bouton est appuyé tout en étant tourné dans le sens antihoraire (P29 - pobao TZ-X1 Smart Scene Button spec)"
       },
       "tokens": [
         {
@@ -236,8 +236,8 @@
         "de": "Gedrückt und nach rechts gedreht"
       },
       "hint": {
-        "en": "When the knob is pressed while being rotated clockwise (P29 — matches pobao TZ-X1 Smart Scene Button spec)",
-        "fr": "Lorsque le bouton est appuyé tout en étant tourné dans le sens horaire (P29 — pobao TZ-X1 Smart Scene Button spec)"
+        "en": "When the knob is pressed while being rotated clockwise (P29 - matches pobao TZ-X1 Smart Scene Button spec)",
+        "fr": "Lorsque le bouton est appuyé tout en étant tourné dans le sens horaire (P29 - pobao TZ-X1 Smart Scene Button spec)"
       },
       "tokens": [
         {
@@ -279,10 +279,10 @@
         "de": "Szene aufgerufen"
       },
       "hint": {
-        "en": "When the device recalls a Zigbee scene (cluster 0x05 — scene mode, P29)",
-        "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 — mode scène, P29)",
-        "nl": "When the device recalls a Zigbee scène (cluster 0x05 — scène mode, P29)",
-        "de": "When the device recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P29)"
+        "en": "When the device recalls a Zigbee scene (cluster 0x05 - scene mode, P29)",
+        "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 - mode scène, P29)",
+        "nl": "When the device recalls a Zigbee scène (cluster 0x05 - scène mode, P29)",
+        "de": "When the device recalls a Zigbee Szene (Cluster 0x05 - Szene mode, P29)"
       },
       "tokens": [
         {
@@ -348,8 +348,8 @@
             "fr": "Niveau"
           },
           "placeholder": {
-            "en": "0–100",
-            "fr": "0–100"
+            "en": "0-100",
+            "fr": "0-100"
           }
         }
       ],

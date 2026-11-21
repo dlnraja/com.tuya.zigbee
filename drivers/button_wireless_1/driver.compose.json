@@ -268,10 +268,10 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "IMPORTANT: Zigbee Bastien / Universal → Wireless Button 1 (TS0041) — NOT Homey Zigbee. Remove any Unknown Node first. Hold 5–10s until LED blinks; tap every 2s while pairing. After pair: Homey Flow → When this device → « Button 1 pressed » / « Bouton 1 appuyé » (or « Button pressed »). Zigbee Developer Tools channels do nothing on scene remotes.",
-        "fr": "IMPORTANT: Zigbee Bastien / Universal → Bouton sans fil 1 (TS0041) — PAS Homey Zigbee. Supprimez tout nœud Inconnu d'abord. Maintenez 5–10 s puis appuyez toutes les 2 s. Après: Flow Homey → Quand cet appareil → « Bouton 1 appuyé » (ou « Bouton appuyé »). Les canaux Zigbee des outils développeur ne marchent PAS (télécommande scène).",
-        "nl": "Wireless Button 1 (TS0041) — niet Homey Zigbee. Unknown Node eerst verwijderen. Flow: Knop 1 ingedrukt.",
-        "de": "Wireless Button 1 (TS0041) — nicht Homey Zigbee. Unknown Node zuerst entfernen. Flow: Taste 1 gedrückt."
+        "en": "IMPORTANT: Zigbee Bastien / Universal Wireless Button 1 (TS0041) - NOT Homey Zigbee. Remove any Unknown Node first. Hold 5-10s until LED blinks; tap every 2s while pairing. After pair: Homey Flow When this device « Button 1 pressed » / « Bouton 1 appuyé » (or « Button pressed »). Zigbee Developer Tools channels do nothing on scene remotes.",
+        "fr": "IMPORTANT: Zigbee Bastien / Universal Bouton sans fil 1 (TS0041) - PAS Homey Zigbee. Supprimez tout nud Inconnu d'abord. Maintenez 5-10 s puis appuyez toutes les 2 s. Après: Flow Homey Quand cet appareil « Bouton 1 appuyé » (ou « Bouton appuyé »). Les canaux Zigbee des outils développeur ne marchent PAS (télécommande scène).",
+        "nl": "Wireless Button 1 (TS0041) - niet Homey Zigbee. Unknown Node eerst verwijderen. Flow: Knop 1 ingedrukt.",
+        "de": "Wireless Button 1 (TS0041) - nicht Homey Zigbee. Unknown Node zuerst entfernen. Flow: Taste 1 gedrückt."
       }
     }
   },
@@ -523,10 +523,10 @@
         {
           "id": "scene",
           "label": {
-            "en": "Scene Mode (default — Multi-press)",
-            "fr": "Mode Scène (par défaut — Multi-clics)",
-            "nl": "Scène-modus (standaard — Multi-klik)",
-            "de": "Szenenmodus (Standard — Mehrfachdruck)"
+            "en": "Scene Mode (default - Multi-press)",
+            "fr": "Mode Scène (par défaut - Multi-clics)",
+            "nl": "Scène-modus (standaard - Multi-klik)",
+            "de": "Szenenmodus (Standard - Mehrfachdruck)"
           }
         },
         {

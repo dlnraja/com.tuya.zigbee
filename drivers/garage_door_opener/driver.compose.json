@@ -4,7 +4,7 @@
     "fr": "Ouvre-porte de Garage",
     "nl": "Garagedeur Opener",
     "de": "Garagentorantrieb",
-    "pl": "Sterownik bramy garażowej"
+    "pl": "Sterownik bramy garaowej"
   },
   "class": "garagedoor",
   "capabilities": [
@@ -19,7 +19,7 @@
         "fr": "Porte de Garage",
         "nl": "Garagedeur",
         "de": "Garagentor",
-        "pl": "Brama garażowa zamknięta"
+        "pl": "Brama garaowa zamknita"
       }
     },
     "alarm_contact": {
@@ -124,7 +124,7 @@
         "en": "Check Zigbee OTA Update",
         "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates",
-        "pl": "Sprawdź aktualizację OTA Zigbee"
+        "pl": "Sprawd aktualizacj OTA Zigbee"
       }
     },
     {

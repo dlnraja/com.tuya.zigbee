@@ -11,8 +11,8 @@
           "name": "formaldehyde",
           "type": "number",
           "title": {
-            "en": "Formaldehyde (μg/m³)",
-            "fr": "Formaldéhyde (μg/m³)"
+            "en": "Formaldehyde (g/m³)",
+            "fr": "Formaldéhyde (g/m³)"
           },
           "example": 25
         }
@@ -105,24 +105,24 @@
     {
       "id": "formaldehyde_sensor_co2_changed",
       "title": {
-        "en": "CO₂ changed",
-        "fr": "CO₂ changé"
+        "en": "CO changed",
+        "fr": "CO changé"
       },
       "tokens": [
         {
           "name": "co2",
           "type": "number",
           "title": {
-            "en": "CO₂ (ppm)",
-            "fr": "CO₂ (ppm)"
+            "en": "CO (ppm)",
+            "fr": "CO (ppm)"
           },
           "example": 800
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "CO₂ changed to {co2} ppm",
-        "fr": "CO₂ {co2} ppm"
+        "en": "CO changed to {co2} ppm",
+        "fr": "CO {co2} ppm"
       }
     },
     {
@@ -168,8 +168,8 @@
             "fr": "Niveau"
           },
           "placeholder": {
-            "en": "0–1000",
-            "fr": "0–1000"
+            "en": "0-1000",
+            "fr": "0-1000"
           }
         }
       ],

@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_not_measured",
   "title": {
-    "en": "Smart · !{{value is|value is not}} soft (≈ estimated / ƒ calculated / → predicted)",
-    "fr": "Smart · la valeur !{{est soft|est une mesure réelle}} (≈ estimé / ƒ calculé / → prévu)",
-    "nl": "Smart · de waarde !{{is soft|is een echte meting}} (≈ / ƒ / →)",
-    "de": "Smart · der Wert !{{ist soft|ist eine echte Messung}} (≈ / ƒ / →)"
+    "en": "Smart · !{{value is|value is not}} soft ( estimated / calculated / predicted)",
+    "fr": "Smart · la valeur !{{est soft|est une mesure réelle}} ( estimé / calculé / prévu)",
+    "nl": "Smart · de waarde !{{is soft|is een echte meting}} ( / / )",
+    "de": "Smart · der Wert !{{ist soft|ist eine echte Messung}} ( / / )"
   },
   "hint": {
-    "en": "True when the value is NOT a precise live measurement — use before acting on soft energy/battery data",
-    "fr": "Vrai si ce n'est PAS une mesure live — utile avant d'agir sur énergie/batterie soft",
-    "nl": "Waar als het géén live meting is — vóór actie op soft energie/batterij",
-    "de": "Wahr, wenn keine Live-Messung — vor Aktionen auf Soft-Energie/Batterie"
+    "en": "True when the value is NOT a precise live measurement - use before acting on soft energy/battery data",
+    "fr": "Vrai si ce n'est PAS une mesure live - utile avant d'agir sur énergie/batterie soft",
+    "nl": "Waar als het géén live meting is - vóór actie op soft energie/batterij",
+    "de": "Wahr, wenn keine Live-Messung - vor Aktionen auf Soft-Energie/Batterie"
   },
   "args": [
     {
@@ -137,7 +137,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Smart · !{{value is|value is not}} soft (≈ estimated / ƒ calculated / → predicted) [[capability]] ([[device]])",
-    "fr": "Smart · la valeur !{{est soft|est une mesure réelle}} (≈ estimé / ƒ calculé / → prévu) [[capability]] ([[device]])"
+    "en": "Smart · !{{value is|value is not}} soft ( estimated / calculated / predicted) [[capability]] ([[device]])",
+    "fr": "Smart · la valeur !{{est soft|est une mesure réelle}} ( estimé / calculé / prévu) [[capability]] ([[device]])"
   }
 }

@@ -97,24 +97,24 @@
     {
       "id": "device_air_purifier_quality_co2_changed",
       "title": {
-        "en": "CO₂ changed",
-        "fr": "CO₂ changé"
+        "en": "CO changed",
+        "fr": "CO changé"
       },
       "tokens": [
         {
           "name": "co2",
           "type": "number",
           "title": {
-            "en": "CO₂ (ppm)",
-            "fr": "CO₂ (ppm)"
+            "en": "CO (ppm)",
+            "fr": "CO (ppm)"
           },
           "example": 800
         }
       ],
       "args": [],
       "titleFormatted": {
-        "en": "CO₂ changed to {co2} ppm",
-        "fr": "CO₂ {co2} ppm"
+        "en": "CO changed to {co2} ppm",
+        "fr": "CO {co2} ppm"
       }
     },
     {
@@ -183,8 +183,8 @@
             "fr": "Co2"
           },
           "placeholder": {
-            "en": "0–5000",
-            "fr": "0–5000"
+            "en": "0-5000",
+            "fr": "0-5000"
           }
         }
       ],
@@ -211,8 +211,8 @@
             "fr": "Température"
           },
           "placeholder": {
-            "en": "-40–80",
-            "fr": "-40–80"
+            "en": "-40-80",
+            "fr": "-40-80"
           }
         }
       ],
@@ -239,8 +239,8 @@
             "fr": "Humidité"
           },
           "placeholder": {
-            "en": "0–100",
-            "fr": "0–100"
+            "en": "0-100",
+            "fr": "0-100"
           }
         }
       ],

@@ -127,7 +127,7 @@
   },
   "metadata": {
     "driver": {
-      "_comment": "WHY: skip pid strip 2026-08-21 — empty manufacturerName; stripping productIds would leave zero fingerprints. Do not invent mfrs."
+      "_comment": "WHY: skip pid strip 2026-08-21 - empty manufacturerName; stripping productIds would leave zero fingerprints. Do not invent mfrs."
     }
   },
   "settings": [

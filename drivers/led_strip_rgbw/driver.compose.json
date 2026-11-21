@@ -319,7 +319,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"20\": \"led_mode\",\n  \"21\": \"color_data\",\n  \"24\": \"scene_mode\",\n  \"25\": \"countdown_timer\"\n}"
+      "value": "{\n \"20\": \"led_mode\",\n \"21\": \"color_data\",\n \"24\": \"scene_mode\",\n \"25\": \"countdown_timer\"\n}"
     },
     {
       "id": "dp_debug_mode",

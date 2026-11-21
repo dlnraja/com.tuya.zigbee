@@ -7,8 +7,8 @@
     "de": "Countdown bis AUS"
   },
   "hint": {
-    "en": "Turns the device off after the given delay — native Tuya countdown DP when supported, software timer otherwise",
-    "fr": "Éteint l'appareil après le délai choisi — DP countdown Tuya natif si supporté, sinon minuteur logiciel"
+    "en": "Turns the device off after the given delay - native Tuya countdown DP when supported, software timer otherwise",
+    "fr": "Éteint l'appareil après le délai choisi - DP countdown Tuya natif si supporté, sinon minuteur logiciel"
   },
   "args": [
     {
@@ -28,8 +28,8 @@
       "step": 1,
       "value": 60,
       "placeholder": {
-        "en": "1–86400",
-        "fr": "1–86400"
+        "en": "1-86400",
+        "fr": "1-86400"
       }
     },
     {
@@ -44,8 +44,8 @@
       "step": 1,
       "value": 1,
       "placeholder": {
-        "en": "1–4",
-        "fr": "1–4"
+        "en": "1-4",
+        "fr": "1-4"
       }
     }
   ],

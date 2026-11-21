@@ -1,10 +1,10 @@
 {
   "id": "telemetry_source_changed",
   "title": {
-    "en": "Smart · value quality changed (live / ≈ / ƒ / →)",
-    "fr": "Smart · qualité de la valeur changée (live / ≈ / ƒ / →)",
-    "nl": "Smart · waardekwaliteit gewijzigd (live / ≈ / ƒ / →)",
-    "de": "Smart · Wertqualität geändert (live / ≈ / ƒ / →)"
+    "en": "Smart · value quality changed (live / / / )",
+    "fr": "Smart · qualité de la valeur changée (live / / / )",
+    "nl": "Smart · waardekwaliteit gewijzigd (live / / / )",
+    "de": "Smart · Wertqualität geändert (live / / / )"
   },
   "hint": {
     "en": "Fires when a capability switches between live measurement, intelligent estimate, calculation or local prediction",
@@ -66,9 +66,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Smart · value quality changed (live / ≈ / ƒ / →) [[device]]",
-    "fr": "Smart · qualité de la valeur changée (live / ≈ / ƒ / →) [[device]]",
-    "nl": "Smart · waardekwaliteit gewijzigd (live / ≈ / ƒ / →) [[device]]",
-    "de": "Smart · Wertqualität geändert (live / ≈ / ƒ / →) [[device]]"
+    "en": "Smart · value quality changed (live / / / ) [[device]]",
+    "fr": "Smart · qualité de la valeur changée (live / / / ) [[device]]",
+    "nl": "Smart · waardekwaliteit gewijzigd (live / / / ) [[device]]",
+    "de": "Smart · Wertqualität geändert (live / / / ) [[device]]"
   }
 }

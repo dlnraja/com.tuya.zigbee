@@ -185,10 +185,10 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Hold all buttons together (or the reset pinhole) for 5–10 seconds until the LED flashes.",
-        "fr": "Maintenez tous les boutons (ou le trou reset) 5–10 s jusqu'à clignotement.",
-        "nl": "Houd alle knoppen (of reset) 5–10 s vast tot de LED knippert.",
-        "de": "Alle Tasten (oder Reset) 5–10 s halten bis die LED blinkt."
+        "en": "Hold all buttons together (or the reset pinhole) for 5-10 seconds until the LED flashes.",
+        "fr": "Maintenez tous les boutons (ou le trou reset) 5-10 s jusqu'à clignotement.",
+        "nl": "Houd alle knoppen (of reset) 5-10 s vast tot de LED knippert.",
+        "de": "Alle Tasten (oder Reset) 5-10 s halten bis die LED blinkt."
       }
     }
   },
@@ -217,8 +217,8 @@
         "fr": "Mode de fonctionnement"
       },
       "hint": {
-        "en": "TS0044 Scene Switch: keep Scene Mode (multi-press). Homey does NOT write genOnOff 0x8004 on TS0044 (unlike some TS004F). Blue LED = pairing flash or network leave blink only — not controllable from Homey.",
-        "fr": "Scene Switch TS0044: rester en Mode Scène (multi-clics). Homey n’écrit PAS genOnOff 0x8004 sur TS0044 (contrairement à certains TS004F). LED bleue = flash appairage ou clignotement sortie réseau uniquement — non contrôlable depuis Homey."
+        "en": "TS0044 Scene Switch: keep Scene Mode (multi-press). Homey does NOT write genOnOff 0x8004 on TS0044 (unlike some TS004F). Blue LED = pairing flash or network leave blink only - not controllable from Homey.",
+        "fr": "Scene Switch TS0044: rester en Mode Scène (multi-clics). Homey n'écrit PAS genOnOff 0x8004 sur TS0044 (contrairement à certains TS004F). LED bleue = flash appairage ou clignotement sortie réseau uniquement - non contrôlable depuis Homey."
       },
       "value": "scene",
       "values": [
@@ -232,8 +232,8 @@
         {
           "id": "scene",
           "label": {
-            "en": "Scene Mode (default — Multi-press)",
-            "fr": "Mode Scène (par défaut — Multi-clics)"
+            "en": "Scene Mode (default - Multi-press)",
+            "fr": "Mode Scène (par défaut - Multi-clics)"
           }
         },
         {
@@ -250,12 +250,12 @@
       "type": "checkbox",
       "label": {
         "en": "Reverse button order",
-        "fr": "Inverser l’ordre des boutons"
+        "fr": "Inverser l'ordre des boutons"
       },
       "value": false,
       "hint": {
         "en": "Enable if physical buttons fire in reverse order (e.g. 4,3,2,1)",
-        "fr": "Activer si les boutons physiques déclenchent dans l’ordre inverse (ex. 4,3,2,1)"
+        "fr": "Activer si les boutons physiques déclenchent dans l'ordre inverse (ex. 4,3,2,1)"
       }
     },
     {

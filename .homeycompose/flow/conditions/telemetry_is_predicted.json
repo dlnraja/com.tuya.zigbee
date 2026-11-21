@@ -1,16 +1,16 @@
 {
   "id": "telemetry_is_predicted",
   "title": {
-    "en": "Smart · !{{value is|value is not}} a local prediction →",
-    "fr": "Smart · la valeur !{{est|n'est pas}} une prédiction locale →",
-    "nl": "Smart · de waarde !{{is|is geen}} lokale voorspelling →",
-    "de": "Smart · der Wert !{{ist|ist keine}} lokale Prognose →"
+    "en": "Smart · !{{value is|value is not}} a local prediction",
+    "fr": "Smart · la valeur !{{est|n'est pas}} une prédiction locale",
+    "nl": "Smart · de waarde !{{is|is geen}} lokale voorspelling",
+    "de": "Smart · der Wert !{{ist|ist keine}} lokale Prognose"
   },
   "hint": {
-    "en": "On-device forecast from habits (on/off duty, learned W) — no cloud AI. Title: · → predicted",
-    "fr": "Prévision on-device depuis habitudes (duty ON/OFF, W appris) — pas d'IA cloud. Titre : · → prévu",
-    "nl": "On-device voorspelling uit gewoonten — geen cloud-AI. Titel: · → voorspeld",
-    "de": "On-Device-Prognose aus Gewohnheiten — keine Cloud-KI. Titel: · → prognostiziert"
+    "en": "On-device forecast from habits (on/off duty, learned W) - no cloud AI. Title: · predicted",
+    "fr": "Prévision on-device depuis habitudes (duty ON/OFF, W appris) - pas d'IA cloud. Titre : · prévu",
+    "nl": "On-device voorspelling uit gewoonten - geen cloud-AI. Titel: · voorspeld",
+    "de": "On-Device-Prognose aus Gewohnheiten - keine Cloud-KI. Titel: · prognostiziert"
   },
   "args": [
     {
@@ -137,7 +137,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Smart · !{{value is|value is not}} a local prediction → [[capability]] ([[device]])",
-    "fr": "Smart · la valeur !{{est|n'est pas}} une prédiction locale → [[capability]] ([[device]])"
+    "en": "Smart · !{{value is|value is not}} a local prediction [[capability]] ([[device]])",
+    "fr": "Smart · la valeur !{{est|n'est pas}} une prédiction locale [[capability]] ([[device]])"
   }
 }

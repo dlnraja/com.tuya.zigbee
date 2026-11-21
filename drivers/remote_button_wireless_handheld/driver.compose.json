@@ -360,7 +360,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
+      "value": "{\n \"1\": \"button_1_action\",\n \"2\": \"button_2_action\",\n \"3\": \"button_3_action\",\n \"4\": \"button_4_action\",\n \"101\": \"battery_percentage\"\n}"
     },
     {
       "id": "dp_debug_mode",
