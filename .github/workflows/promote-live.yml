@@ -76,18 +76,32 @@ jobs:
       fail-fast: false
       matrix:
         app: [master, stable]
-    # Dispatch runs only the requested app. Schedule regularly evaluates both. Bastien is never in the matrix.
-    if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.app == matrix.app }}
+    # Do not use matrix in a job-level if: GitHub rejects that at dispatch parse time (HTTP 422).
+    # Dispatch of one app still expands the matrix; the first step skips the other app.
+    # Bastien is never in the matrix and must never be added.
     steps:
+      - name: Select app
+        id: want
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.app }}" ] && [ "${{ github.event.inputs.app }}" != "${{ matrix.app }}" ]; then
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping ${{ matrix.app }} (dispatch asked for ${{ github.event.inputs.app }})"
+          else
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Checkout
+        if: steps.want.outputs.go == 'true'
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
       - name: Setup Node
+        if: steps.want.outputs.go == 'true'
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
       - name: Promote if gates pass
+        if: steps.want.outputs.go == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           GH_TOKEN: ${{ github.token }}
