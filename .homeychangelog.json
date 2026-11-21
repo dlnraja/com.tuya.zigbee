@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.248": {
+    "en": "Fixed: lights and dimmers & Flow cards. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : éclairages et variateurs & cartes Flow. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "1.0.247": {
     "en": "New: energy meters. Fixed: general reliability (TS0601, TS0726, TS0505B) and pairing and device recognition. Faster: lights and dimmers. Behind the scenes: tests and publishing checks.",
     "fr": "Nouveau : compteurs d'énergie. Corrigé : fiabilité générale (TS0601, TS0726, TS0505B) et appairage et reconnaissance des appareils. Plus rapide : éclairages et variateurs. En coulisses : tests et contrôles de publication."
