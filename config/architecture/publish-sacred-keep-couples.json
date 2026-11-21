@@ -2483,7 +2483,7 @@
     {
       "mfr": "_TZE20C_tjz9ad5g",
       "pid": "TS0601",
-      "driverId": "siren",
+      "driverId": "siren_moes_mg_bjq002",
       "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc MG-BJQ002: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L23165"
     },
     {
@@ -2675,7 +2675,7 @@
     {
       "mfr": "_TZE284_hbxadcl0",
       "pid": "TS0601",
-      "driverId": "wall_switch_6_gang_tuya",
+      "driverId": "switch_wall_6gang_metering",
       "note": "P3038c 2026-10-25 TS0601 coverage compensation after P3038 wildcard removal; zhc TS0601_6gang_switch_2: https://github.com/Koenkk/zigbee-herdsman-converters/blob/cff1de4731a14a84094a8568d8bbf92aa5feb0db/src/devices/tuya.ts#L29173"
     },
     {
