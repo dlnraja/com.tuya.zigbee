@@ -28,14 +28,14 @@
       "id": "wall_switch_4_gang_tuya_physical_on",
       "title": {
         "en": "Physical ON",
-        "fr": "Physique ON",
+        "fr": "Allumé physiquement",
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical ON",
-        "fr": "Physique ON",
+        "fr": "Allumé physiquement",
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       }
@@ -44,65 +44,113 @@
       "id": "wall_switch_4_gang_tuya_physical_off",
       "title": {
         "en": "Physical OFF",
-        "fr": "Physique OFF",
+        "fr": "Éteint physiquement",
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical OFF",
-        "fr": "Physique OFF",
+        "fr": "Éteint physiquement",
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       }
     },
     {
       "id": "wall_switch_4_gang_tuya_physical_gang1_on",
-      "title": { "en": "Physical gang 1 ON", "fr": "Physique gang 1 ON" },
+      "title": {
+        "en": "Physical gang 1 ON",
+        "fr": "Voie 1 allumée physiquement"
+      },
       "args": [],
-      "titleFormatted": { "en": "Physical gang 1 ON", "fr": "Physique gang 1 ON" }
+      "titleFormatted": {
+        "en": "Physical gang 1 ON",
+        "fr": "Voie 1 allumée physiquement"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya_physical_gang1_off",
-      "title": { "en": "Physical gang 1 OFF", "fr": "Physique gang 1 OFF" },
+      "title": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement"
+      },
       "args": [],
-      "titleFormatted": { "en": "Physical gang 1 OFF", "fr": "Physique gang 1 OFF" }
+      "titleFormatted": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya_physical_gang2_on",
-      "title": { "en": "Physical gang 2 ON", "fr": "Physique gang 2 ON" },
+      "title": {
+        "en": "Physical gang 2 ON",
+        "fr": "Voie 2 allumée physiquement"
+      },
       "args": [],
-      "titleFormatted": { "en": "Physical gang 2 ON", "fr": "Physique gang 2 ON" }
+      "titleFormatted": {
+        "en": "Physical gang 2 ON",
+        "fr": "Voie 2 allumée physiquement"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya_physical_gang2_off",
-      "title": { "en": "Physical gang 2 OFF", "fr": "Physique gang 2 OFF" },
+      "title": {
+        "en": "Physical gang 2 OFF",
+        "fr": "Voie 2 éteinte physiquement"
+      },
       "args": [],
-      "titleFormatted": { "en": "Physical gang 2 OFF", "fr": "Physique gang 2 OFF" }
+      "titleFormatted": {
+        "en": "Physical gang 2 OFF",
+        "fr": "Voie 2 éteinte physiquement"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya_physical_gang3_on",
-      "title": { "en": "Physical gang 3 ON", "fr": "Physique gang 3 ON" },
+      "title": {
+        "en": "Physical gang 3 ON",
+        "fr": "Voie 3 allumée physiquement"
+      },
       "args": [],
-      "titleFormatted": { "en": "Physical gang 3 ON", "fr": "Physique gang 3 ON" }
+      "titleFormatted": {
+        "en": "Physical gang 3 ON",
+        "fr": "Voie 3 allumée physiquement"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya_physical_gang3_off",
-      "title": { "en": "Physical gang 3 OFF", "fr": "Physique gang 3 OFF" },
+      "title": {
+        "en": "Physical gang 3 OFF",
+        "fr": "Voie 3 éteinte physiquement"
+      },
       "args": [],
-      "titleFormatted": { "en": "Physical gang 3 OFF", "fr": "Physique gang 3 OFF" }
+      "titleFormatted": {
+        "en": "Physical gang 3 OFF",
+        "fr": "Voie 3 éteinte physiquement"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya_physical_gang4_on",
-      "title": { "en": "Physical gang 4 ON", "fr": "Physique gang 4 ON" },
+      "title": {
+        "en": "Physical gang 4 ON",
+        "fr": "Voie 4 allumée physiquement"
+      },
       "args": [],
-      "titleFormatted": { "en": "Physical gang 4 ON", "fr": "Physique gang 4 ON" }
+      "titleFormatted": {
+        "en": "Physical gang 4 ON",
+        "fr": "Voie 4 allumée physiquement"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya_physical_gang4_off",
-      "title": { "en": "Physical gang 4 OFF", "fr": "Physique gang 4 OFF" },
+      "title": {
+        "en": "Physical gang 4 OFF",
+        "fr": "Voie 4 éteinte physiquement"
+      },
       "args": [],
-      "titleFormatted": { "en": "Physical gang 4 OFF", "fr": "Physique gang 4 OFF" }
+      "titleFormatted": {
+        "en": "Physical gang 4 OFF",
+        "fr": "Voie 4 éteinte physiquement"
+      }
     }
   ],
   "conditions": [

@@ -27,8 +27,8 @@
     {
       "id": "device_din_rail_meter_hvac_dehumidifier_measure_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed (hvac dehumidifier humidity changed)",
+        "fr": "Humidité changée (hvac dehumidifier humidity changed)"
       },
       "tokens": [
         {
@@ -50,8 +50,8 @@
     {
       "id": "device_din_rail_meter_hvac_dehumidifier_measure_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed (meter hvac dehumidifier changed)",
+        "fr": "Température changée (meter hvac dehumidifier changed)"
       },
       "tokens": [
         {
@@ -73,8 +73,8 @@
     {
       "id": "device_din_rail_meter_hvac_dehumidifier_measure_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed (hvac dehumidifier power changed)",
+        "fr": "Puissance changée (hvac dehumidifier power changed)"
       },
       "tokens": [
         {

@@ -1,7 +1,8 @@
 {
   "id": "pir_mmwave_sensor",
   "name": {
-    "en": "PIR MMWave Sensor"
+    "en": "PIR MMWave Sensor",
+    "fr": "Capteur PIR mmWave"
   },
   "class": "sensor",
   "platforms": [

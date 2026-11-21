@@ -26,8 +26,8 @@
     {
       "id": "device_radiator_valve_smart_measure_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed (radiator valve smart changed)",
+        "fr": "Température changée (radiator valve smart changed)"
       },
       "tokens": [
         {
@@ -81,7 +81,7 @@
     {
       "id": "device_radiator_valve_smart_target_temperature_changed",
       "title": {
-        "en": "Target temperature changed",
+        "en": "Target temperature changed (device radiator valve smart)",
         "fr": "Consigne changée"
       },
       "tokens": [

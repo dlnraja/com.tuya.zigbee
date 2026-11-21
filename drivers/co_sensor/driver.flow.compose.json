@@ -165,16 +165,16 @@
     {
       "id": "co_sensor_co_detected",
       "title": {
-        "en": "CO !{{is|is not}} detected",
+        "en": "CO !{{is|is not}} detected (sensor)",
         "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} détecté (sensor)",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "CO !{{is|is not}} detected",
+        "en": "CO !{{is|is not}} detected (sensor)",
         "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} détecté (sensor)",
         "de": "CO !{{ist|ist nicht}} erkannt"
       }
     },

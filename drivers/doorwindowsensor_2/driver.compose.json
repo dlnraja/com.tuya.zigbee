@@ -1,7 +1,8 @@
 {
   "id": "doorwindowsensor2",
   "name": {
-    "en": "Door & Window Sensor"
+    "en": "Door & Window Sensor (TS0601)",
+    "fr": "Capteur de porte et fenêtre (TS0601)"
   },
   "class": "sensor",
   "platforms": [

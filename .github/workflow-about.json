@@ -390,6 +390,10 @@
     "upstream-thread-miner.yml": {
       "group": "enrich",
       "what": "Adaptive miner of upstream issues/PRs (zigpy, Z2M, deCONZ, others): per-repo cursors, privacy-redacted digests in docs/knowledge/upstream, couple links and candidate tasks. No AI, fail-closed guard."
+    },
+    "store-text-coherence.yml": {
+      "group": "autopilot",
+      "what": "Weekly and on demand: rebuild changelogs from the published history and check names, titles, locales and accents on all three app branches. Safe auto-commit only; leftovers are a report artifact."
     }
   }
 }

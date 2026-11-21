@@ -1,0 +1,131 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekly and on demand: rebuild changelogs from the published history and check names, titles,
+#   locales and accents on all three app branches. Safe auto-commit only; leftovers are a report artifact.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# P3363 / t998u: weekly changelog + store-text coherence on all three apps.
+# Kill switch: repo variable STORE_TEXT_COHERENCE_DISABLED=true
+# Token: GITHUB_TOKEN only. Auto-commit is deterministic safe text only; leftover issues are artifacts.
+name: Store-text and changelog coherence
+
+on:
+  schedule:
+    # Tuesdays 05:10 UTC (06:10 Europe/Paris in winter)
+    - cron: '10 5 * * 2'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Apply deterministic safe fixes and auto-commit'
+        type: boolean
+        default: true
+
+concurrency:
+  group: store-text-coherence
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+  checks: read
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+
+jobs:
+  coherence:
+    name: Coherence (${{ matrix.branch }})
+    if: ${{ vars.STORE_TEXT_COHERENCE_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [master, stable-v5, bastien-home]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ matrix.branch }}
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: .github/npm-cache-key.sha256
+
+      - name: Install deps (Homey compose, tests)
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Run coherence checks and safe fixes
+        id: run
+        run: |
+          mkdir -p reports
+          APPLY=0
+          if [ "${{ github.event_name }}" = "schedule" ]; then APPLY=1; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.apply }}" != "false" ]; then APPLY=1; fi
+          if [ ! -f scripts/automation/p3363-coherence-run.js ]; then
+            echo "p3363 runner missing on ${{ matrix.branch }} - report only"
+            echo "missing_runner=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$APPLY" = "1" ]; then
+            node scripts/automation/p3363-coherence-run.js --fix --report reports/p3363-coherence-report.json
+          else
+            node scripts/automation/p3363-coherence-run.js --report reports/p3363-coherence-report.json
+          fi
+          echo "apply=$APPLY" >> "$GITHUB_OUTPUT"
+
+      - name: Unit tests for the fixer
+        if: ${{ hashFiles('test/critical/p3363-changelog-coherence.test.js') != '' }}
+        run: |
+          node --test test/critical/p3363-changelog-coherence.test.js test/critical/p3363-store-text-coherence.test.js
+          if [ -f test/ci/p3363-coherence-workflow.test.js ]; then node --test test/ci/p3363-coherence-workflow.test.js; fi
+
+      - name: Auto-commit deterministic safe fixes
+        if: ${{ steps.run.outputs.apply == '1' && steps.run.outputs.missing_runner != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -f scripts/ci/safe-auto-commit.js ]; then
+            echo "safe-auto-commit.js missing"; exit 0
+          fi
+          node scripts/ci/safe-auto-commit.js \
+            --id=store-text-coherence \
+            --branch="${{ matrix.branch }}" \
+            --max-per-day=2 \
+            --message="chore(P3363): changelog and store-text coherence" \
+            --paths=".homeychangelog.json .homeycompose/app.json README.txt README.fr.txt README.de.txt README.nl.txt drivers app.json"
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0 (node24, P3025b)
+        with:
+          name: p3363-coherence-${{ matrix.branch }}
+          path: reports/p3363-coherence-report.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Short summary
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          BRANCH: ${{ matrix.branch }}
+        run: |
+          [ -f scripts/lib/report-writer.js ] || exit 0
+          if [ "$JOB_STATUS" = "success" ]; then s="Finished cleanly. Changelog and store-text coherence on ${BRANCH} (safe fixes only, no id removal)."; else s="Stopped early ($JOB_STATUS) on ${BRANCH}; the red step or the report artifact says why."; fi
+          node scripts/lib/report-writer.js --title "store-text-coherence" --summary "$s" --headers "item|value" --row "branch|$BRANCH" --row "result|$JOB_STATUS" >> "$GITHUB_STEP_SUMMARY" || true

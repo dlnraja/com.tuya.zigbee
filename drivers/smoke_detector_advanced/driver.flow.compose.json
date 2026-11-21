@@ -4,9 +4,9 @@
       "id": "smoke_detector_advanced_alarm_smoke_true",
       "highlight": true,
       "title": {
-        "en": "Smoke detected",
+        "en": "Smoke detected (detector advanced alarm)",
         "nl": "Rook gedetecteerd",
-        "fr": "Fumée détectée",
+        "fr": "Fumée détectée (detector advanced alarm)",
         "de": "Rauch erkannt"
       },
       "hint": {
@@ -17,9 +17,9 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Smoke detected",
+        "en": "Smoke detected (detector advanced alarm)",
         "nl": "Rook gedetecteerd",
-        "fr": "Fumée détectée",
+        "fr": "Fumée détectée (detector advanced alarm)",
         "de": "Rauch erkannt"
       }
     },
@@ -180,16 +180,16 @@
     {
       "id": "smoke_detector_advanced_smoke_detected",
       "title": {
-        "en": "Smoke !{{is|is not}} detected",
+        "en": "Smoke !{{is|is not}} detected (detector advanced)",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "fr": "Fumée !{{est|n'est pas}} détectée (detector advanced)",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Smoke !{{is|is not}} detected",
+        "en": "Smoke !{{is|is not}} detected (detector advanced)",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "fr": "Fumée !{{est|n'est pas}} détectée (detector advanced)",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       }
     },

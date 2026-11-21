@@ -1,7 +1,8 @@
 {
   "id": "smoke_sensor3",
   "name": {
-    "en": "Smoke Sensor"
+    "en": "Smoke Sensor (smoke sensor3)",
+    "fr": "Détecteur de fumée (smoke sensor3)"
   },
   "class": "sensor",
   "platforms": [

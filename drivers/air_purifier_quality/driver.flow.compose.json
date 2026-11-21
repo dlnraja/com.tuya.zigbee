@@ -50,8 +50,8 @@
     {
       "id": "air_purifier_quality_air_quality_co2_air_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed (purifier co2 changed)",
+        "fr": "Température changée (purifier co2 changed)"
       },
       "tokens": [
         {
@@ -73,8 +73,8 @@
     {
       "id": "air_purifier_quality_air_quality_co2_air_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed (purifier co2 humidity changed)",
+        "fr": "Humidité changée (purifier co2 humidity changed)"
       },
       "tokens": [
         {

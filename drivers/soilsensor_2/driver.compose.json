@@ -1,8 +1,9 @@
 {
   "id": "soilsensor2",
   "name": {
-    "en": "Soil Sensor",
-    "nl": "Vochtigheids Sensor"
+    "en": "Soil Sensor (TS0001)",
+    "nl": "Vochtigheids Sensor",
+    "fr": "Capteur de sol (TS0001)"
   },
   "class": "sensor",
   "platforms": [

@@ -1,7 +1,10 @@
 {
   "id": "WaterLeakSensor",
   "name": {
-    "en": "Water Leak Sensor"
+    "en": "Water leak sensor (Tuya)",
+    "fr": "Capteur de fuite d'eau (Tuya)",
+    "nl": "Waterlek-sensor (Tuya)",
+    "de": "Wasserlecksensor (Tuya)"
   },
   "class": "sensor",
   "platforms": [

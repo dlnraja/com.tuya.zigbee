@@ -3,25 +3,25 @@
     {
       "id": "hvac_air_conditioner_air_conditioner_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (air conditioner turned on)",
+        "fr": "Allumé (air conditioner turned on)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (air conditioner turned on)",
+        "fr": "Allumé (air conditioner turned on)"
       }
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (air conditioner turned off)",
+        "fr": "Éteint (air conditioner turned off)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (air conditioner turned off)",
+        "fr": "Éteint (air conditioner turned off)"
       }
     },
     {
@@ -50,8 +50,8 @@
     {
       "id": "hvac_air_conditioner_air_conditioner_measure_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed (conditioner air conditioner changed)",
+        "fr": "Température changée (conditioner air conditioner changed)"
       },
       "tokens": [
         {
@@ -140,12 +140,12 @@
       "id": "hvac_air_conditioner_air_conditioner_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (air conditioner is on)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (air conditioner is on)"
       }
     },
     {
@@ -169,37 +169,37 @@
     {
       "id": "hvac_air_conditioner_air_conditioner_turn_on",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (air conditioner turn on)",
+        "fr": "Allumer (air conditioner turn on)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (air conditioner turn on)",
+        "fr": "Allumer (air conditioner turn on)"
       }
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_turn_off",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (air conditioner turn off)",
+        "fr": "Éteindre (air conditioner turn off)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (air conditioner turn off)",
+        "fr": "Éteindre (air conditioner turn off)"
       }
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (conditioner air conditioner toggle)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (conditioner air conditioner toggle)"
       }
     },
     {

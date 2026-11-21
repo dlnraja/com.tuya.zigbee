@@ -3,25 +3,25 @@
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (light tunable turned on)",
+        "fr": "Allumé (light tunable turned on)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (light tunable turned on)",
+        "fr": "Allumé (light tunable turned on)"
       }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (light tunable turned off)",
+        "fr": "Éteint (light tunable turned off)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (light tunable turned off)",
+        "fr": "Éteint (light tunable turned off)"
       }
     },
     {
@@ -101,12 +101,12 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (light tunable is on)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (light tunable is on)"
       }
     },
     {
@@ -130,37 +130,37 @@
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turn_on",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (light tunable turn on)",
+        "fr": "Allumer (light tunable turn on)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (light tunable turn on)",
+        "fr": "Allumer (light tunable turn on)"
       }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turn_off",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (light tunable turn off)",
+        "fr": "Éteindre (light tunable turn off)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (light tunable turn off)",
+        "fr": "Éteindre (light tunable turn off)"
       }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (light tunable toggle)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (light tunable toggle)"
       }
     },
     {

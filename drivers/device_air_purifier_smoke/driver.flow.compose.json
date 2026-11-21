@@ -4,9 +4,9 @@
       "id": "device_air_purifier_smoke_detector_advanced_alarm_smoke_true",
       "highlight": true,
       "title": {
-        "en": "Smoke detected",
+        "en": "Smoke detected (purifier detector advanced alarm)",
         "nl": "Rook gedetecteerd",
-        "fr": "Fumée détectée",
+        "fr": "Fumée détectée (purifier detector advanced alarm)",
         "de": "Rauch erkannt"
       },
       "hint": {
@@ -17,9 +17,9 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Smoke detected",
+        "en": "Smoke detected (purifier detector advanced alarm)",
         "nl": "Rook gedetecteerd",
-        "fr": "Fumée détectée",
+        "fr": "Fumée détectée (purifier detector advanced alarm)",
         "de": "Rauch erkannt"
       }
     },
@@ -226,16 +226,16 @@
     {
       "id": "device_air_purifier_smoke_detector_advanced_smoke_detected",
       "title": {
-        "en": "Smoke !{{is|is not}} detected",
+        "en": "Smoke !{{is|is not}} detected (air purifier detector advanced)",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "fr": "Fumée !{{est|n'est pas}} détectée (air purifier detector advanced)",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Smoke !{{is|is not}} detected",
+        "en": "Smoke !{{is|is not}} detected (air purifier detector advanced)",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "fr": "Fumée !{{est|n'est pas}} détectée (air purifier detector advanced)",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       }
     },

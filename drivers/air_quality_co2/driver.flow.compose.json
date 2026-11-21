@@ -50,8 +50,8 @@
     {
       "id": "air_quality_co2_air_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed (quality co2 air changed)",
+        "fr": "Température changée (quality co2 air changed)"
       },
       "tokens": [
         {
@@ -73,8 +73,8 @@
     {
       "id": "air_quality_co2_air_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed (co2 air humidity changed)",
+        "fr": "Humidité changée (co2 air humidity changed)"
       },
       "tokens": [
         {

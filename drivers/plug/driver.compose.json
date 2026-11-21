@@ -1,7 +1,10 @@
 {
   "id": "plug",
   "name": {
-    "en": "Smart Plug without metering"
+    "en": "Smart plug (no metering)",
+    "fr": "Prise connectée sans mesure",
+    "nl": "Slimme stekker (zonder meting)",
+    "de": "Intelligente Steckdose (ohne Messung)"
   },
   "class": "socket",
   "platforms": [

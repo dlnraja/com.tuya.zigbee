@@ -3,25 +3,25 @@
     {
       "id": "device_air_purifier_led_strip_led_strip_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (led strip turned on)",
+        "fr": "Allumé (led strip turned on)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Turned on (led strip turned on)",
+        "fr": "Allumé (led strip turned on)"
       }
     },
     {
       "id": "device_air_purifier_led_strip_led_strip_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (led strip turned off)",
+        "fr": "Éteint (led strip turned off)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Turned off (led strip turned off)",
+        "fr": "Éteint (led strip turned off)"
       }
     },
     {
@@ -124,12 +124,12 @@
       "id": "device_air_purifier_led_strip_led_strip_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (led strip is on)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (led strip is on)"
       }
     },
     {
@@ -153,37 +153,37 @@
     {
       "id": "device_air_purifier_led_strip_led_strip_turn_on",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (led strip turn on)",
+        "fr": "Allumer (led strip turn on)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on (led strip turn on)",
+        "fr": "Allumer (led strip turn on)"
       }
     },
     {
       "id": "device_air_purifier_led_strip_led_strip_turn_off",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (led strip turn off)",
+        "fr": "Éteindre (led strip turn off)"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off (led strip turn off)",
+        "fr": "Éteindre (led strip turn off)"
       }
     },
     {
       "id": "device_air_purifier_led_strip_led_strip_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (strip led strip toggle)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer"
+        "fr": "Basculer (strip led strip toggle)"
       }
     },
     {
