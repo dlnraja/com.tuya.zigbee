@@ -39,7 +39,8 @@
         "de": "Batterie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "settings": [

@@ -672,7 +672,8 @@
         "fr": "Batterie"
       },
       "preventInsights": false,
-      "getable": true
+      "getable": true,
+      "units": "%"
     },
     "button.toggle": {
       "title": {

@@ -60,7 +60,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_pm25": {
       "getable": true,

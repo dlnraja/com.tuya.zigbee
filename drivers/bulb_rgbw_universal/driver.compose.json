@@ -90,7 +90,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_power": {
       "getable": true,

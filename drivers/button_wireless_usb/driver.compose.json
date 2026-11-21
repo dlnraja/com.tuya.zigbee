@@ -53,7 +53,8 @@
         "fr": "Batterie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_power": {
       "title": {

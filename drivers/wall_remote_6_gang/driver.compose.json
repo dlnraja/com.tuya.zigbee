@@ -240,7 +240,8 @@
         "de": "Batterie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "version": "1.0.0",

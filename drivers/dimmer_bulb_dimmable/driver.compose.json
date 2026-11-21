@@ -325,7 +325,8 @@
         "de": "Batterie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_power": {
       "approximated": true,

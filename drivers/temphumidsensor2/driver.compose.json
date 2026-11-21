@@ -92,7 +92,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "_pidConflictNotes": [

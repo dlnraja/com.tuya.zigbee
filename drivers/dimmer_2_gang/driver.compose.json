@@ -40,7 +40,8 @@
         "de": "Batterie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "button.2": {
       "title": {

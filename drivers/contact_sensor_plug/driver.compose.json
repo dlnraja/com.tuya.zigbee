@@ -656,7 +656,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_contact": {
       "getable": true,
