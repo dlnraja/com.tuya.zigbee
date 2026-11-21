@@ -112,6 +112,21 @@ describe('P3320 shipped JS Latin-1 and unreferenced images', () => {
     assert.deepEqual(unref, [], unref.slice(0, 8).map((u) => u.file).join(', '));
   });
 
+  it('does not treat gitignored screenshots as unreferenced packaged images', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'p3320-gitignore-'));
+    try {
+      fs.writeFileSync(path.join(dir, '.gitignore'), 'screenshots/\n');
+      fs.writeFileSync(path.join(dir, '.homeyignore'), 'test\n');
+      fs.mkdirSync(path.join(dir, 'screenshots'), { recursive: true });
+      fs.writeFileSync(path.join(dir, 'screenshots', 'promo.png'), 'fake-png');
+      fs.writeFileSync(path.join(dir, 'app.js'), "module.exports = 'ok - deja';\n");
+      const unref = findUnreferencedImages(dir);
+      assert.deepEqual(unref.filter((u) => /screenshots/.test(u.file)), [], unref.map((u) => u.file).join(', '));
+    } finally {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
   it('gate script exits 0 on a clean fixture and 1 on a dirty one', () => {
     const gate = path.join(ROOT, 'tools/ci/p3320-shipped-latin1-assets-gate.js');
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'p3320-cli-'));

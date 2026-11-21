@@ -727,7 +727,16 @@ try {
       const pending = new Set(p3229Splits.map((s) => s.id));
       const { assertSacredCouplesPresent, loadSacredKeepCouples } = require('./maintenance/compact-zigbee-identifiers.cjs');
       const pins = loadSacredKeepCouples(path.join(__dirname, '..')).filter((c) => pending.has(c.driverId));
-      const misses = pins.length ? assertSacredCouplesPresent(m, pins) : [];
+      let misses = pins.length ? assertSacredCouplesPresent(m, pins) : [];
+      if (misses.length) {
+        const { reincludeMissingSacredDrivers } = require('./publish-hold-release');
+        const readded = reincludeMissingSacredDrivers(m, misses, p3229Splits);
+        if (readded.length) {
+          fs.writeFileSync(destAppJson, JSON.stringify(m));
+          console.log(`   P3360: re-included sacred continuation(s) after split-back: ${readded.join(', ')}`);
+          misses = pins.length ? assertSacredCouplesPresent(m, pins) : [];
+        }
+      }
       if (misses.length) {
         console.error('FATAL: sacred keep couples missing from publish manifest after P3229 split-back:');
         for (const line of misses.slice(0, 20)) console.error(`  - ${line}`);

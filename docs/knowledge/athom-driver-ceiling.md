@@ -9,7 +9,7 @@ Athom shows 345 for master because 2 of the 347 uploaded drivers are `deprecated
 Athom (wouter-athom) closed [homey-apps-sdk-issues#488](https://github.com/athombv/homey-apps-sdk-issues/issues/488)
 on 2026-11-17 around 12:01 Paris: the AggregateError came from the **number of files** in the app (the
 backend opened too many concurrent upload connections), not from a hard 347-driver cap, and a
-server-side fix was deployed. Master #3713 / #3715 / **#3716 (v9.0.1635, 347 drivers, 3739 files,
+server-side fix was deployed. Master #3713 / #3715 / **#3717 (v9.0.1636, 368 drivers, 3253 files, Test)** superseded #3716. Previous **#3716 (v9.0.1635, 347 drivers, 3739 files,
 Test, 14:52 Paris)** are consistent with a file-count problem that sometimes also failed at 347
 (#3714). The blocking control is therefore the packaged file-count ratchet
 (`scripts/ci/upload-archive-ceiling.cjs`, maxFiles 3830 / maxTarBytes 32700000, plus P3360 lossless

@@ -127,6 +127,35 @@ function splitContinuations(manifest, splits) {
   return n;
 }
 
+
+/** P3360: if a sacred keep couple points at a released driver that is absent from the
+ * publish manifest, put the folded snapshot back instead of failing immediately.
+ * Held drivers stay out. Still the caller's job to FATAL if the couple is missing after this. */
+function reincludeMissingSacredDrivers(manifest, misses, splits = [], heldIds = new Set()) {
+  const readded = [];
+  if (!manifest || !Array.isArray(manifest.drivers) || !misses || !misses.length) return readded;
+  const missingIds = new Set();
+  for (const line of misses) {
+    const m = String(line).match(/→\s+(\S+)\s+\(driver missing in publish\)/)
+      || String(line).match(/->\s+(\S+)\s+\(driver missing in publish\)/);
+    if (m && m[1] && !heldIds.has(m[1])) missingIds.add(m[1]);
+  }
+  const byId = new Map((splits || []).filter((s) => s && s.id && s.def).map((s) => [s.id, s]));
+  const have = new Set(manifest.drivers.map((d) => d && d.id));
+  for (const id of missingIds) {
+    if (have.has(id)) continue;
+    const s = byId.get(id);
+    if (!s) continue;
+    const mfrs = [...(s.mfrs || (s.def.zigbee && s.def.zigbee.manufacturerName) || [])];
+    const pids = [...(s.pids || (s.def.zigbee && s.def.zigbee.productId) || [])];
+    if (!mfrs.length || !pids.length) continue;
+    manifest.drivers.push({ ...s.def, zigbee: { ...(s.def.zigbee || {}), manufacturerName: mfrs, productId: pids } });
+    have.add(id);
+    readded.push(id);
+  }
+  return readded;
+}
+
 /** P3228 compat: fold held continuations only (non-held ones untouched). */
 function foldHeldContinuations(manifest, heldIds, registry) {
   if (!heldIds || !heldIds.size || !registry) return 0;
@@ -164,4 +193,5 @@ function dropHeld(manifest, ids) {
 module.exports = {
   parseRelease, effectiveHoldIds, resolveSwap, diagnosticReleaseValue, resolveReleaseValue, assertDiagnosticCatalogue,
   foldHeldContinuations, foldContinuations, splitContinuations, dropHeld,
+  reincludeMissingSacredDrivers,
 };

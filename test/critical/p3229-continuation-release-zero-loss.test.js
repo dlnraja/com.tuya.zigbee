@@ -9,7 +9,7 @@ const path = require('path');
 const fs = require('fs');
 const ROOT = path.join(__dirname, '..', '..');
 const DC = require('../../lib/drivers/DriverContinuations');
-const { effectiveHoldIds, foldContinuations, splitContinuations } = require('../../scripts/publish-hold-release');
+const { effectiveHoldIds, foldContinuations, splitContinuations, reincludeMissingSacredDrivers } = require('../../scripts/publish-hold-release');
 const { sourceToPayload, payloadCouples } = require('../../scripts/maintenance/publish-baseline-gate.cjs');
 const { loadSourcedCouples } = require('../../scripts/maintenance/publish-sourced-restore.cjs');
 
@@ -52,6 +52,19 @@ describe('P3229 continuation release zero-loss', function () {
     const n = splitContinuations(m, splits);
     assert.strictEqual(n, 1);
     assert.deepStrictEqual(m.drivers.find((d) => d.id === 'c').zigbee.productId, ['P1', 'P3']);
+  });
+
+  it('reincludes a missing released sacred continuation from the fold snapshot instead of only FATAL', () => {
+    const m = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1'] } }] };
+    const splits = [{ id: 'c', rootId: 'r', def: { id: 'c', zigbee: { manufacturerName: ['B'], productId: ['P1'] } }, mfrs: ['B'], pids: ['P1'] }];
+    const misses = ['B+P1 → c (driver missing in publish)'];
+    const readded = reincludeMissingSacredDrivers(m, misses, splits, new Set());
+    assert.deepStrictEqual(readded, ['c']);
+    assert.strictEqual(m.drivers.some((d) => d.id === 'c'), true);
+    assert.deepStrictEqual(m.drivers.find((d) => d.id === 'c').zigbee, { manufacturerName: ['B'], productId: ['P1'] });
+    const held = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1'] } }] };
+    assert.deepStrictEqual(reincludeMissingSacredDrivers(held, misses, splits, new Set(['c'])), [], 'held drivers stay out');
+    assert.strictEqual(held.drivers.some((d) => d.id === 'c'), false);
   });
 
 

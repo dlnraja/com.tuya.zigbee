@@ -23,7 +23,8 @@ function isStuck(b, now = Date.now()) {
   return Number.isFinite(t) && now - t > STUCK_MS;
 }
 
-const FINAL = /^(test|live|draft|processing_failed|revoked|failed|rejected|approved)$/i;
+const FINAL = /^(test|live|draft|processing_failed|revoked|failed|rejected|approved|superseded)$/i;
+// P3360: superseded is terminal (Athom replaced the build). Treating it as busy stalled #3717 for 12 min on #3715.
 
 function busyBuilds() {
   try {

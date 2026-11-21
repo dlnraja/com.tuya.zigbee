@@ -76,6 +76,7 @@ test('athom idle gate treats processing as busy', () => {
   const { decide: idle, FINAL } = require('../../.github/scripts/wait-athom-idle.js');
   assert.strictEqual(FINAL.test('processing'), false);
   assert.strictEqual(FINAL.test('test'), true);
+  assert.strictEqual(FINAL.test('superseded'), true);
   assert.strictEqual(idle([]), true);
   assert.strictEqual(idle(null), false);
 });

@@ -117,6 +117,14 @@ function loadIgnorer(root) {
     const lines = raw.split(/\r?\n/).filter((l) => l && !l.trim().startsWith('#'));
     ig.add(lines);
   }
+  // P3360: gitignored artifacts (screenshots/, report PNGs) are not packaged; do not fail the
+  // unreferenced-image gate on files that git already excludes.
+  const gi = path.join(root, '.gitignore');
+  if (fs.existsSync(gi)) {
+    const raw = fs.readFileSync(gi, 'utf8');
+    const lines = raw.split(/\r?\n/).filter((l) => l && !l.trim().startsWith('#'));
+    ig.add(lines);
+  }
   return ig;
 }
 
