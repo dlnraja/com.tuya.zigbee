@@ -2,6 +2,9 @@
 
 Permanent rule, all three apps (master 9.x, stable-v5 5.x, bastien-home 1.x).
 
+The P3320 gate honours `.gitignore` and `.homeyignore`. Gitignored files (for example screenshots)
+are not treated as unreferenced packaged images.
+
 ## Shipped JavaScript
 
 JavaScript that ships in the Homey package (everything not excluded by `.homeyignore`: `app.js`, `lib/`, `drivers/**/*.js`, `api`, `settings`, widgets, and any other packaged `.js` / `.cjs`) must be Latin-1 source text: **no raw character above U+00FF**.

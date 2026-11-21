@@ -1,13 +1,14 @@
 # >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
-# What it does: Promotes a healthy Athom Test build to Live only after objective gates pass (CI, validate
-#   publish, no lost IDs or couples, evidence-driven soak). Bastien stays night-only.
+# What it does: Promotes a healthy Athom Test build to Live only after objective gates pass, for master and
+#   stable regularly. Never promotes the Bastien house app.
 # Ideas from (thank you): Athom's official Homey app GitHub Actions (athombv); the Homey developer docs on
 #   build channels.
 # Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
 #   posting stays off or ledger-gated.
 # <<< about
 # P3360: promote a healthy Test build to Live only after objective gates pass.
-# Live is automatic only after those gates. Bastien stays night-only (23:00-06:00 Paris).
+# Live is automatic only after those gates, for master and stable only.
+# Bastien (com.dlnraja.tuya.zigbee.bastien) must NEVER be added to this matrix or promoted to Live.
 
 defaults:
   run:
@@ -23,11 +24,11 @@ on:
   workflow_dispatch:
     inputs:
       app:
-        description: 'App to promote (master, stable, bastien)'
+        description: 'App to promote (master or stable; never Bastien)'
         required: true
         default: 'master'
         type: choice
-        options: [master, stable, bastien]
+        options: [master, stable]
       build:
         description: 'Athom build number (optional; default tip Test)'
         required: false
@@ -42,16 +43,13 @@ on:
         type: boolean
         default: false
   schedule:
-    # Hourly. The script still enforces Bastien 23:00-06:00 Europe/Paris and all other gates.
+    # Hourly. Evaluates master and stable. Bastien is never considered for Live.
     - cron: '25 * * * *'
 
 permissions:
   contents: read
   actions: read
 
-concurrency:
-  group: promote-live-${{ github.event.inputs.app || 'master' }}
-  cancel-in-progress: false
 
 # P2562 forfait + local-smart-learn (all workflows)
 env:
@@ -68,9 +66,18 @@ env:
 
 jobs:
   promote:
-    name: Objective gates then Live
+    name: Objective gates then Live (${{ matrix.app }})
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    concurrency:
+      group: promote-live-${{ matrix.app }}
+      cancel-in-progress: false
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [master, stable]
+    # Dispatch runs only the requested app. Schedule regularly evaluates both. Bastien is never in the matrix.
+    if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.app == matrix.app }}
     steps:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -85,7 +92,7 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          LIVE_APP: ${{ github.event.inputs.app || 'master' }}
+          LIVE_APP: ${{ matrix.app }}
           LIVE_BUILD: ${{ github.event.inputs.build || '' }}
           LIVE_VERSION: ${{ github.event.inputs.version || '' }}
         run: |

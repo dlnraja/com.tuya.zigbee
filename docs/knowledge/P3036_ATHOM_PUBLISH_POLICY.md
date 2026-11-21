@@ -61,7 +61,7 @@ publish-stable and bastien-publish loops) call `athom-publish-policy.js fallback
 
 ## Bisect exit
 `docs/knowledge/athom-bisect-state.json` status=done → `bisect-hold.js` allows everything: no forced drafts,
-no `bisect_trial`. Normal flow: draft → Test automatically when processing is OK. **Live is automatic only after objective gates** (see `docs/rules/LIVE_PROMOTION.md`, P3360). A schedule or dispatch may call `updateBuildChannel(..., 'live')` only when CI is green, validate-publish is green, no driver IDs or couples are lost versus the previous Live (or the 9.0.1574 published baseline), the Test version is healthy with no new crash signals in the notebook or diags, and an evidence-driven minimum Test soak has passed (quiet floor, not a fixed 7 days). Bastien remains night-only (23:00–06:00 Europe/Paris). Stable uses the same gates.
+no `bisect_trial`. Normal flow: draft → Test automatically when processing is OK. **Live is automatic only after objective gates** (see `docs/rules/LIVE_PROMOTION.md`, P3360). A schedule or dispatch may call `updateBuildChannel(..., 'live')` only when CI is green, validate-publish is green, no driver IDs or couples are lost versus the previous Live (or the 9.0.1574 published baseline), the Test version is healthy with no new crash signals in the notebook or diags, and an evidence-driven minimum Test soak has passed (quiet floor, not a fixed 7 days). This Live path applies to master and stable only. Bastien (com.dlnraja.tuya.zigbee.bastien) must never go to Live; it is only for Bastien's house. Learnings from bastien-home are ported regularly to master and stable-v5 (bastien-promote-upstream.yml).
 If rejections come back, rerun the bisect: set status=running (drafts only + `bisect_trial` are re-armed).
 
 ## Env flags

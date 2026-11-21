@@ -1,8 +1,9 @@
 'use strict';
 /**
  * P3360 Live promotion gates. Live is automatic only after these objective checks
- * pass. Bastien stays night-only (23:00-06:00 Europe/Paris). Soak is evidence-driven
- * (quiet Test + no new crash signals), not a fixed 7-day wait.
+ * pass, for master and stable only. Bastien (com.dlnraja.tuya.zigbee.bastien) must never
+ * go to Live: it is only for Bastien's house. Soak is evidence-driven (quiet Test + no
+ * new crash signals), not a fixed 7-day wait.
  */
 const APPS = {
   master: {
@@ -29,7 +30,8 @@ const APPS = {
   bastien: {
     appId: 'com.dlnraja.tuya.zigbee.bastien',
     branch: 'bastien-home',
-    nightOnly: true,
+    neverLive: true,
+    nightOnly: false,
     ci: [
       'Node 22 runtime tests',
       'Homey App Validate (all levels)',
@@ -88,8 +90,19 @@ function evaluateLiveGates(input) {
   const nowMs = Number(input.nowMs || Date.now());
   const minQuiet = Number(input.minQuietMs != null ? input.minQuietMs : (process.env.LIVE_MIN_QUIET_MS || DEFAULT_MIN_QUIET_MS));
 
-  if (profile && profile.nightOnly && !isBastienNight(nowMs)) {
-    reasons.push('Bastien Live is night-only (23:00-06:00 Europe/Paris)');
+  const appId = input.appId || (profile && profile.appId) || '';
+  const isBastien = appKey === 'bastien' || !!(profile && profile.neverLive) || /tuya\.zigbee\.bastien$/.test(String(appId));
+  if (isBastien) {
+    return {
+      ok: false,
+      promote: false,
+      alreadyLive: false,
+      neverLive: true,
+      reasons: ['Bastien (com.dlnraja.tuya.zigbee.bastien) must never go to Live; it is only for Bastien\'s house'],
+      soak: { satisfied: false },
+      appId: appId || 'com.dlnraja.tuya.zigbee.bastien',
+      nightOnly: false,
+    };
   }
 
   const target = input.target || null;

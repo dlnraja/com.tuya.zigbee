@@ -474,7 +474,7 @@
     },
     "promote-live.yml": {
       "group": "publish",
-      "what": "Promotes a healthy Athom Test build to Live only after objective gates pass (CI, validate publish, no lost IDs or couples, evidence-driven soak). Bastien stays night-only."
+      "what": "Promotes a healthy Athom Test build to Live only after objective gates pass, for master and stable regularly. Never promotes the Bastien house app."
     }
   }
 }

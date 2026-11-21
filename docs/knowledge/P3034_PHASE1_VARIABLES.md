@@ -30,5 +30,5 @@ Read-only evidence, 25/10/2026 (no upload made).
 - The bisect is closed (status=done). The P3034 guard no longer forces drafts only or requires `bisect_trial`.
   Normal flow under docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md: green CI gate, >= 2 h between master uploads,
   at most 1 successful master upload per 24 h, one transient retry after >= 5 min, draft → Test automatic.
-  Live is automatic only after objective gates (docs/rules/LIVE_PROMOTION.md, P3360).
+  Live is automatic only after objective gates for master and stable (docs/rules/LIVE_PROMOTION.md, P3360). Bastien must never go to Live.
 - If rejections come back: rerun the bisect (status=running re-arms drafts only + `bisect_trial`).

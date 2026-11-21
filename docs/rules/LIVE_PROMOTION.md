@@ -1,7 +1,7 @@
 # Live promotion
 
-P3360 (21/11/2026, Europe/Paris). Applies to master (`com.dlnraja.tuya.zigbee`),
-stable-v5 (`.stable`) and bastien-home (`.bastien`).
+P3360 (21/11/2026, Europe/Paris). Live applies to master (`com.dlnraja.tuya.zigbee`)
+and stable-v5 (`.stable`) only. Bastien (`.bastien`) must never go to Live.
 
 ## Policy
 
@@ -20,8 +20,8 @@ Implemented in `scripts/ci/live-promote-gates.cjs` and enforced by
 `.github/scripts/promote-live.js`:
 
 1. **CI green** on the Test build's source SHA: the required workflows for that app
-   (master: Syntax Check, Unified CI/CD, Node 22 tests, Homey App Validate; stable and
-   Bastien as in P3036).
+   (master: Syntax Check, Unified CI/CD, Node 22 tests, Homey App Validate; stable as
+   in P3036). Bastien is not a Live candidate.
 2. **Validate publish** is green (Homey App Validate at publish level, or the equivalent
    successful validate workflow on that SHA).
 3. **No lost driver IDs or couples** versus the previous Live. When a Live manifest is
@@ -36,8 +36,12 @@ Implemented in `scripts/ci/live-promote-gates.cjs` and enforced by
 
 ## Branch rules
 
-- **master** and **stable** may promote when the gates pass, any hour.
-- **Bastien is night-only** (23:00–06:00 Europe/Paris), same window as Bastien publish.
+- **master** and **stable** promote regularly and automatically when the gates pass, any hour
+  (hourly schedule plus workflow_dispatch).
+- **Bastien must never go to Live.** `com.dlnraja.tuya.zigbee.bastien` is only for Bastien's
+  house. The gate module and `promote-live.js` refuse that app; it is not in the workflow matrix.
+  Bastien publish stays night-only on its own Test path. Learnings flow Bastien -> master and
+  stable via `bastien-promote-upstream.yml`.
 - A build that is already Live is left untouched.
 - Fail closed: missing CI, a missing Test timestamp, or a missing target holds the promote.
 - Errors are not masked: a gate hold is printed as `HELD` with reasons; API failures fail the job.

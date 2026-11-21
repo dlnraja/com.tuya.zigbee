@@ -121,6 +121,10 @@ async function main() {
   const appKey = arg('app', process.env.LIVE_APP || 'master');
   const profile = G.APPS[appKey];
   if (!profile) throw new Error(`unknown app ${appKey}`);
+  if (appKey === 'bastien' || (profile && profile.neverLive) || profile.appId === 'com.dlnraja.tuya.zigbee.bastien') {
+    log('REFUSED: Bastien (com.dlnraja.tuya.zigbee.bastien) must never go to Live; it is only for Bastien\'s house');
+    return 2;
+  }
   const wantBuild = arg('build', process.env.LIVE_BUILD || '');
   const wantVersion = arg('version', process.env.LIVE_VERSION || '');
 

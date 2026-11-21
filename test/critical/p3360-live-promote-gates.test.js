@@ -95,17 +95,35 @@ describe('P3360 Live promotion objective gates', () => {
     assert.strictEqual(bad.ok, false);
   });
 
-  it('Bastien is held outside 23:00-06:00 Europe/Paris and allowed at 23:30 Paris', () => {
-    // 22:30 Paris = 21:30Z in November (UTC+1)
+  it('Bastien must never go to Live, day or night, even when other gates would pass', () => {
     const day = G.evaluateLiveGates(base({ app: 'bastien', nowMs: Date.parse('2026-11-21T21:30:00Z') }));
     assert.strictEqual(day.ok, false);
-    assert.ok(day.reasons.some((x) => /night-only/.test(x)));
+    assert.strictEqual(day.promote, false);
+    assert.strictEqual(day.neverLive, true);
+    assert.ok(day.reasons.some((x) => /must never go to Live/.test(x)));
     const night = G.evaluateLiveGates(base({
       app: 'bastien',
-      nowMs: Date.parse('2026-11-21T22:30:00Z'), // 23:30 Paris
+      nowMs: Date.parse('2026-11-21T22:30:00Z'),
       ci: { 'Node 22 runtime tests': 'success', 'Homey App Validate (all levels)': 'success' },
     }));
-    assert.strictEqual(night.ok, true);
+    assert.strictEqual(night.ok, false);
+    assert.strictEqual(night.promote, false);
+    const byId = G.evaluateLiveGates(base({ app: 'master', appId: 'com.dlnraja.tuya.zigbee.bastien' }));
+    assert.strictEqual(byId.ok, false);
+    assert.strictEqual(byId.neverLive, true);
+  });
+
+  it('stable can promote when the same objective gates pass', () => {
+    const r = G.evaluateLiveGates(base({
+      app: 'stable',
+      ci: {
+        '🔍 Syntax Check & SDK3 Validation': 'success',
+        'Node 22 runtime tests': 'success',
+        'Homey App Validate (all levels)': 'success',
+      },
+    }));
+    assert.strictEqual(r.ok, true);
+    assert.strictEqual(r.promote, true);
   });
 
   it('skips promote when the target is already Live, and refuses a non-Test state', () => {
