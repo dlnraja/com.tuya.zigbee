@@ -22,6 +22,97 @@ const DISPATCH = argv.includes('--dispatch') || process.env.GITHUB_EVENT_NAME ==
 
 function log(...a) { console.log(...a); }
 
+const CLOUD_BASE = 'https://api.athom.com';
+const APPS_BASES = [
+  'https://apps-api.athom.com/api/v1',
+  'https://apps-api.athom.com/api/v2',
+];
+
+function summarize(file, text) {
+  const sum = process.env.GITHUB_STEP_SUMMARY;
+  if (!sum) return;
+  try { fs.appendFileSync(sum, String(text).endsWith('\n') ? text : text + '\n'); } catch (_e) { /* ignore */ }
+}
+
+async function apiFetch(url, method, headers, body) {
+  const opts = { method, headers: { ...headers } };
+  if (body !== undefined) opts.body = typeof body === 'string' ? body : JSON.stringify(body);
+  const r = await fetch(url, opts);
+  const raw = await r.text();
+  let data;
+  try { data = JSON.parse(raw); } catch { data = raw; }
+  return { ok: r.ok, status: r.status, data };
+}
+
+/** Actions has HOMEY_PAT, not the Homey CLI SDK (homey/services/AthomApi). */
+async function getDelegationToken(pat, logFn) {
+  const h = { Authorization: 'Bearer ' + pat, 'Content-Type': 'application/json' };
+  let r = await apiFetch(CLOUD_BASE + '/delegation/token', 'POST', h, { audience: 'apps' });
+  let token = r.ok && r.data && (r.data.token || r.data.access_token) ? (r.data.token || r.data.access_token) : null;
+  if (!token && r.ok && typeof r.data === 'string' && r.data.length > 20) {
+    token = String(r.data).trim().replace(/^"|"$/g, '');
+  }
+  if (!token) {
+    r = await apiFetch(CLOUD_BASE + '/delegation/token?audience=apps', 'POST', h, {});
+    token = r.ok && r.data && (r.data.token || r.data.access_token) ? (r.data.token || r.data.access_token) : null;
+    if (!token && r.ok && typeof r.data === 'string' && r.data.length > 20) {
+      token = String(r.data).trim().replace(/^"|"$/g, '');
+    }
+  }
+  if (token) logFn('Delegation token obtained');
+  else logFn('Delegation failed (' + r.status + '); falling back to raw PAT');
+  return token || pat;
+}
+
+function normalizeBuilds(d) {
+  if (Array.isArray(d)) return d;
+  if (Array.isArray(d && d.builds)) return d.builds;
+  if (Array.isArray(d && d.data)) return d.data;
+  if (Array.isArray(d && d.items)) return d.items;
+  return [];
+}
+
+async function listBuilds(token, appId, logFn) {
+  const h = { Authorization: 'Bearer ' + token, Accept: 'application/json' };
+  for (const base of APPS_BASES) {
+    for (const pth of ['/app/' + appId + '/build?limit=50', '/app/' + appId + '/builds?limit=50', '/app/' + appId + '/build']) {
+      const url = base + pth;
+      logFn('GET ' + url);
+      const r = await apiFetch(url, 'GET', h);
+      if (r.ok) {
+        const builds = normalizeBuilds(r.data);
+        if (builds.length) {
+          logFn('Found ' + builds.length + ' builds at ' + url);
+          return { builds, base, token };
+        }
+      } else {
+        logFn('  ' + r.status + ' ' + JSON.stringify(r.data).slice(0, 160));
+      }
+    }
+  }
+  return { builds: [], base: APPS_BASES[0], token };
+}
+
+async function setChannel(token, appId, buildId, channel, apiBase, logFn) {
+  const h = { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' };
+  const id = String(buildId);
+  const endpoints = [
+    { url: apiBase + '/app/' + appId + '/build/' + id + '/channel', method: 'POST', body: { channel } },
+    { url: 'https://apps-api.athom.com/api/v1/app/' + appId + '/build/' + id + '/channel', method: 'POST', body: { channel } },
+  ];
+  for (const ep of endpoints) {
+    logFn((ep.method || 'POST') + ' ' + ep.url);
+    const r = await apiFetch(ep.url, ep.method || 'POST', h, ep.body);
+    if (r.ok) return r.data || { ok: true };
+    logFn('  ' + r.status + ' ' + JSON.stringify(r.data).slice(0, 300));
+    if (r.status === 403 || r.status === 401 || /certif/i.test(JSON.stringify(r.data))) {
+      throw new Error('Athom refused Live channel update: ' + r.status + ' ' + JSON.stringify(r.data).slice(0, 300));
+    }
+  }
+  throw new Error('updateBuildChannel(live) failed on every endpoint');
+}
+
+
 function loadJsonl(file) {
   if (!fs.existsSync(file)) return [];
   return fs.readFileSync(file, 'utf8').split(/\n/).map((l) => {
@@ -129,11 +220,14 @@ async function main() {
   const wantVersion = arg('version', process.env.LIVE_VERSION || '');
 
   let builds = [];
-  let client = null;
+  let apiBase = 'https://apps-api.athom.com/api/v1';
+  let appsToken = null;
   if (process.env.HOMEY_PAT) {
-    const { createClient, getBuilds } = require('./homey-apps-api-client');
-    client = await createClient({ pat: process.env.HOMEY_PAT, log });
-    builds = await getBuilds(client, profile.appId, { limit: 50 });
+    appsToken = await getDelegationToken(process.env.HOMEY_PAT, log);
+    const listed = await listBuilds(appsToken, profile.appId, log);
+    builds = listed.builds;
+    apiBase = listed.base;
+    appsToken = listed.token || appsToken;
   } else {
     log('WARN: HOMEY_PAT missing; gates will run without a live Athom listing');
   }
@@ -200,16 +294,18 @@ async function main() {
   if (!verdict.ok) {
     log('HELD: Live promotion blocked by objective gates:');
     for (const r of verdict.reasons) log(' -', r);
+    summarize('live', 'HELD:\n' + verdict.reasons.map((r) => '- ' + r).join('\n') + '\n');
     return DISPATCH ? 2 : 0;
   }
-  if (DRY || !client) {
+  if (DRY || !appsToken) {
     log(DRY ? 'DRY-RUN: would call updateBuildChannel(live)' : 'No HOMEY_PAT: skip setChannel');
+    summarize('live', 'DRY-RUN or no PAT; no channel update.\n');
     return 0;
   }
-  const { updateBuildChannel } = require('./homey-apps-api-client');
-  log(`Promoting #${target.id} v${target.version} to Live via updateBuildChannel`);
-  const res = await updateBuildChannel(client, profile.appId, target.id, 'live');
+  log(`Promoting #${target.id} v${target.version} to Live via updateBuildChannel (PAT / apps-api)`);
+  const res = await setChannel(appsToken, profile.appId, target.id, 'live', apiBase, log);
   log('Channel update result:', JSON.stringify(res));
+  summarize('live', `Promoted #${target.id} v${target.version} to Live.\n`);
   return 0;
 }
 
