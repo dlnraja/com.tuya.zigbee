@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-11-20T13:57:37.605Z",
+ "updatedAt": "2026-11-21T13:24:58.950Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -345,7 +345,59 @@
   "ci-fail:43736130149:1",
   "ci-fail:43735981586:1",
   "ci-fail:43735939597:1",
-  "ci-fail:43722902897:1"
+  "ci-fail:43722902897:1",
+  "ci-fail:44906273360:1",
+  "ci-fail:44906273434:1",
+  "ci-fail:44906270652:1",
+  "ci-fail:44906270436:1",
+  "ci-fail:44906270463:1",
+  "ci-fail:44906270584:1",
+  "ci-fail:44906264536:1",
+  "ci-fail:44904576052:1",
+  "ci-fail:44904575999:1",
+  "ci-fail:44904573422:1",
+  "ci-fail:44904573344:1",
+  "ci-fail:44904568953:1",
+  "ci-fail:44903689079:1",
+  "ci-fail:44903685632:1",
+  "ci-fail:44903685670:1",
+  "ci-fail:44903685441:1",
+  "ci-fail:44900989432:1",
+  "ci-fail:44900039605:1",
+  "ci-fail:44900035529:1",
+  "ci-fail:44900035526:1",
+  "ci-fail:44899751973:1",
+  "ci-fail:44899702437:1",
+  "ci-fail:44899702317:1",
+  "ci-fail:44899697074:1",
+  "ci-fail:44899696992:1",
+  "ci-fail:44899696980:1",
+  "ci-fail:44899696967:1",
+  "ci-fail:44899609924:1",
+  "ci-fail:44899609874:1",
+  "ci-fail:44899554548:1",
+  "ci-fail:44899554585:1",
+  "ci-fail:44899552466:1",
+  "ci-fail:44899552392:1",
+  "ci-fail:44899552628:1",
+  "ci-fail:44899552337:1",
+  "ci-fail:44899467954:1",
+  "ci-fail:44899468037:1",
+  "ci-fail:44899467974:1",
+  "ci-fail:44899458700:1",
+  "ci-fail:44899428158:1",
+  "ci-fail:44899371164:1",
+  "ci-fail:44899371174:1",
+  "ci-fail:44899371189:1",
+  "ci-fail:44899371261:1",
+  "ci-fail:44899299987:1",
+  "ci-fail:44899299862:1",
+  "ci-fail:44899297260:1",
+  "ci-fail:44899294046:1",
+  "ci-fail:44899293952:1",
+  "ci-fail:44899293948:1",
+  "ci-fail:44899294111:1",
+  "ci-fail:44899293990:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -782,30 +834,18 @@
    "unit": "test / Full suite on Node 22",
    "test": "",
    "firstSeen": "2026-10-25T19:52:02.854Z",
-   "lastSeen": "2026-11-15T12:40:45.275Z",
-   "fails": 49,
+   "lastSeen": "2026-11-21T13:24:50.487Z",
+   "fails": 52,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "master",
     "bastien-home",
     "stable-v5",
-    "cursor/gh632-trv602z-ltwbm23f-3270"
+    "cursor/gh632-trv602z-ltwbm23f-3270",
+    "fix/rakazo-cleanup-emojis-ci"
    ],
    "sample": "Full suite on Node <n>",
    "events": [
-    [
-     "2026-11-08T11:53:00.748Z",
-     "f"
-    ],
-    [
-     "2026-11-08T11:53:02.473Z",
-     "f"
-    ],
-    [
-     "2026-11-08T11:53:03.095Z",
-     "f"
-    ],
     [
      "2026-11-08T11:53:05.556Z",
      "f"
@@ -872,6 +912,18 @@
     ],
     [
      "2026-11-15T12:40:45.275Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:34.992Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:37.935Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:50.487Z",
      "f"
     ]
    ]
@@ -1173,8 +1225,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:16.422Z",
-   "lastSeen": "2026-11-16T13:33:12.750Z",
-   "fails": 15,
+   "lastSeen": "2026-11-21T13:24:22.813Z",
+   "fails": 16,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1240,6 +1292,10 @@
     ],
     [
      "2026-11-16T13:33:12.750Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:22.813Z",
      "f"
     ]
    ]
@@ -1479,13 +1535,14 @@
    "unit": "syntax-check / P2138 BSEED dimmer + Poll Control tests",
    "test": "",
    "firstSeen": "2026-10-27T10:30:38.025Z",
-   "lastSeen": "2026-11-15T12:40:37.096Z",
-   "fails": 7,
+   "lastSeen": "2026-11-21T13:24:57.735Z",
+   "fails": 9,
    "transient": 0,
    "recovered": 0,
    "branches": [
     "stable-v5",
-    "master"
+    "master",
+    "fix/rakazo-cleanup-emojis-ci"
    ],
    "sample": "P<n> BSEED dimmer + Poll Control tests",
    "events": [
@@ -1516,6 +1573,14 @@
     [
      "2026-11-15T12:40:37.096Z",
      "f"
+    ],
+    [
+     "2026-11-21T13:24:52.951Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:57.735Z",
+     "f"
     ]
    ]
   },
@@ -1525,8 +1590,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:39.571Z",
-   "lastSeen": "2026-11-16T13:33:18.682Z",
-   "fails": 17,
+   "lastSeen": "2026-11-21T13:24:41.965Z",
+   "fails": 18,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1601,6 +1666,10 @@
     ],
     [
      "2026-11-16T13:33:18.682Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:41.965Z",
      "f"
     ]
    ]
@@ -2111,15 +2180,15 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-01T11:48:40.545Z",
-   "lastSeen": "2026-11-14T12:05:46.536Z",
-   "fails": 4,
+   "lastSeen": "2026-11-21T13:24:58.903Z",
+   "fails": 5,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "bot/homey-knowledge-20261029",
     "kb/refresh-20261026",
     "cursor/dual-layer-gate-a632",
-    "cursor/gh632-trv602z-ltwbm23f-3270"
+    "cursor/gh632-trv602z-ltwbm23f-3270",
+    "fix/rakazo-cleanup-emojis-ci"
    ],
    "sample": "🔍 JS syntax audit (all repo files)",
    "events": [
@@ -2137,6 +2206,10 @@
     ],
     [
      "2026-11-14T12:05:46.536Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:58.903Z",
      "f"
     ]
    ]
@@ -2189,17 +2262,26 @@
    "unit": "validate / Publish payload build + size/structure report",
    "test": "",
    "firstSeen": "2026-11-02T13:27:06.758Z",
-   "lastSeen": "2026-11-02T13:27:06.758Z",
-   "fails": 1,
+   "lastSeen": "2026-11-21T13:24:32.085Z",
+   "fails": 3,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "master"
+    "master",
+    "fix/master-critical-tests-green"
    ],
    "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"debug and publish validation passed; the verified level is shown for information only.\"; else s=\"debug or pu",
    "events": [
     [
      "2026-11-02T13:27:06.758Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:30.148Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:32.085Z",
      "f"
     ]
    ]
@@ -2344,12 +2426,14 @@
    "unit": "test / Full suite on Node 22",
    "test": "",
    "firstSeen": "2026-11-08T11:52:42.835Z",
-   "lastSeen": "2026-11-15T12:40:06.798Z",
-   "fails": 2,
-   "transient": 1,
+   "lastSeen": "2026-11-21T13:24:28.230Z",
+   "fails": 4,
+   "transient": 3,
    "recovered": 0,
    "branches": [
-    "master"
+    "master",
+    "fix/master-all-ci-green-p3079-p3226",
+    "fix/p3330-sacred-keep-collision"
    ],
    "sample": "\u001b[<n>;<n>m { echo '### Failing mocha tests'; echo '```'; awk '/^ +[<n>-<n>]+ failing$/{f=<n>} f' \"$RUNNER_TEMP<p>\" | grep -E '^ +[<n>-<n>]+\\) |Error' | head -<n",
    "events": [
@@ -2363,6 +2447,22 @@
     ],
     [
      "2026-11-15T12:40:06.798Z",
+     "t"
+    ],
+    [
+     "2026-11-21T13:24:11.291Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:14.197Z",
+     "t"
+    ],
+    [
+     "2026-11-21T13:24:19.432Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:28.230Z",
      "t"
     ]
    ]
@@ -2440,14 +2540,15 @@
    "unit": "validate / Publish payload build + size/structure report",
    "test": "",
    "firstSeen": "2026-11-08T11:52:59.563Z",
-   "lastSeen": "2026-11-14T12:05:49.349Z",
-   "fails": 5,
+   "lastSeen": "2026-11-21T13:24:57.109Z",
+   "fails": 9,
    "transient": 0,
    "recovered": 0,
    "branches": [
     "bastien-home",
     "stable-v5",
-    "master"
+    "master",
+    "fix/rakazo-cleanup-emojis-ci"
    ],
    "sample": "Publish payload build + size<p> report",
    "events": [
@@ -2469,6 +2570,22 @@
     ],
     [
      "2026-11-14T12:05:49.349Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:40.718Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:45.684Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:53.516Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:57.109Z",
      "f"
     ]
    ]
@@ -2655,13 +2772,15 @@
    "unit": "critical tests / Full critical suite",
    "test": "",
    "firstSeen": "2026-11-14T12:05:05.587Z",
-   "lastSeen": "2026-11-16T13:33:15.693Z",
-   "fails": 6,
+   "lastSeen": "2026-11-21T13:24:26.655Z",
+   "fails": 9,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "bastien-home",
-    "stable-v5"
+    "stable-v5",
+    "fix/master-all-ci-green-p3079-p3226",
+    "master",
+    "fix/p3330-sacred-keep-collision"
    ],
    "sample": "Process completed with exit code <n>.",
    "events": [
@@ -2687,6 +2806,18 @@
     ],
     [
      "2026-11-16T13:33:15.693Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:16.061Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:21.450Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:26.655Z",
      "f"
     ]
    ]
@@ -2821,14 +2952,15 @@
    "unit": "critical tests / Full critical suite",
    "test": "",
    "firstSeen": "2026-11-14T12:05:34.364Z",
-   "lastSeen": "2026-11-15T12:40:43.947Z",
-   "fails": 6,
+   "lastSeen": "2026-11-21T13:24:54.985Z",
+   "fails": 14,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "bastien-home",
-    "master",
-    "cursor/gh632-trv602z-ltwbm23f-3270"
+    "stable-v5",
+    "fix/oom-flow-consolidation-rakazo",
+    "fix/rakazo-cleanup-emojis-ci",
+    "fix/rakazo-stable-v5-cleanup-emojis-ci"
    ],
    "sample": "Full critical suite",
    "events": [
@@ -2854,6 +2986,38 @@
     ],
     [
      "2026-11-15T12:40:43.947Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:35.835Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:36.714Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:39.394Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:43.531Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:45.049Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:47.698Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:49.780Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:54.985Z",
      "f"
     ]
    ]
@@ -2957,14 +3121,15 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-15T12:40:27.338Z",
-   "lastSeen": "2026-11-15T12:40:32.825Z",
-   "fails": 3,
+   "lastSeen": "2026-11-21T13:24:48.932Z",
+   "fails": 5,
    "transient": 0,
    "recovered": 0,
    "branches": [
     "stable-v5",
     "bastien-home",
-    "master"
+    "master",
+    "fix/rakazo-stable-v5-cleanup-emojis-ci"
    ],
    "sample": "Compose parity (rebuild from compose == committed app.json, P<n>)",
    "events": [
@@ -2979,6 +3144,14 @@
     [
      "2026-11-15T12:40:32.825Z",
      "f"
+    ],
+    [
+     "2026-11-21T13:24:42.559Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:48.932Z",
+     "f"
     ]
    ]
   },
@@ -2988,13 +3161,14 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-15T12:40:37.689Z",
-   "lastSeen": "2026-11-15T12:40:44.576Z",
-   "fails": 3,
+   "lastSeen": "2026-11-21T13:24:46.880Z",
+   "fails": 5,
    "transient": 0,
    "recovered": 0,
    "branches": [
     "master",
-    "cursor/gh632-trv602z-ltwbm23f-3270"
+    "cursor/gh632-trv602z-ltwbm23f-3270",
+    "fix/rakazo-cleanup-emojis-ci"
    ],
    "sample": "Driver signature duplicate gate (P<n> — new driver identical to an existing one is refused)",
    "events": [
@@ -3009,6 +3183,14 @@
     [
      "2026-11-15T12:40:44.576Z",
      "f"
+    ],
+    [
+     "2026-11-21T13:24:41.324Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:46.880Z",
+     "f"
     ]
    ]
   },
@@ -3018,17 +3200,36 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-15T12:40:42.316Z",
-   "lastSeen": "2026-11-15T12:40:42.316Z",
-   "fails": 1,
+   "lastSeen": "2026-11-21T13:24:48.331Z",
+   "fails": 5,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "cursor/gh632-trv602z-ltwbm23f-3270"
+    "fix/master-critical-tests-green",
+    "fix/curtain-motor-2-continuation-hold",
+    "fix/rakazo-cleanup-emojis-ci",
+    "fix/rakazo-stable-v5-cleanup-emojis-ci"
    ],
    "sample": "🧪 Critical routing tests (mocha)",
    "events": [
     [
      "2026-11-15T12:40:42.316Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:34.402Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:37.293Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:46.253Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:48.331Z",
      "f"
     ]
    ]
@@ -3134,6 +3335,173 @@
    "events": [
     [
      "2026-11-16T13:33:17.964Z",
+     "f"
+    ]
+   ]
+  },
+  "d21382127725": {
+   "category": "gate",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-21T13:24:09.739Z",
+   "lastSeen": "2026-11-21T13:24:12.682Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master",
+    "fix/master-all-ci-green-p3079-p3226"
+   ],
+   "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"Every CI file gate passed on this commit. Nothing to fix.\"; else s=\"At least one CI file gate failed; the fa",
+   "events": [
+    [
+     "2026-11-21T13:24:09.739Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:12.682Z",
+     "f"
+    ]
+   ]
+  },
+  "3e56b4b8d95d": {
+   "category": "other",
+   "workflow": "🚦 PR Gate",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-21T13:24:17.986Z",
+   "lastSeen": "2026-11-21T13:24:24.741Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "fix/master-all-ci-green-p3079-p3226",
+    "fix/p3330-sacred-keep-collision"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-21T13:24:17.986Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:24.741Z",
+     "f"
+    ]
+   ]
+  },
+  "5f7fe9c41b03": {
+   "category": "other",
+   "workflow": "Autonomous review",
+   "unit": "staged publish validate / Compose, stage, validate, guard",
+   "test": "",
+   "firstSeen": "2026-11-21T13:24:33.898Z",
+   "lastSeen": "2026-11-21T13:24:33.898Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "fix/master-critical-tests-green"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-21T13:24:33.898Z",
+     "f"
+    ]
+   ]
+  },
+  "b81376c1da58": {
+   "category": "other",
+   "workflow": "CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-21T13:24:38.579Z",
+   "lastSeen": "2026-11-21T13:24:58.317Z",
+   "fails": 7,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "fix/oom-flow-consolidation-rakazo",
+    "master",
+    "fix/rakazo-stable-v5-cleanup-emojis-ci",
+    "fix/rakazo-cleanup-emojis-ci"
+   ],
+   "sample": "app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless)",
+   "events": [
+    [
+     "2026-11-21T13:24:38.579Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:44.156Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:51.106Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:52.312Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:54.092Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:55.565Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:58.317Z",
+     "f"
+    ]
+   ]
+  },
+  "eab905b90fc9": {
+   "category": "size",
+   "workflow": "Platform Budget (P3026)",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-21T13:24:40.034Z",
+   "lastSeen": "2026-11-21T13:24:51.680Z",
+   "fails": 2,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Build + prepare payload (local only, no upload)",
+   "events": [
+    [
+     "2026-11-21T13:24:40.034Z",
+     "f"
+    ],
+    [
+     "2026-11-21T13:24:51.680Z",
+     "f"
+    ]
+   ]
+  },
+  "cd4b9df19f5c": {
+   "category": "other",
+   "workflow": "Autonomous review",
+   "unit": "staged publish validate / Compose, stage, validate, guard",
+   "test": "",
+   "firstSeen": "2026-11-21T13:24:56.459Z",
+   "lastSeen": "2026-11-21T13:24:56.459Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "fix/rakazo-cleanup-emojis-ci"
+   ],
+   "sample": "Compose, stage, validate, guard",
+   "events": [
+    [
+     "2026-11-21T13:24:56.459Z",
      "f"
     ]
    ]

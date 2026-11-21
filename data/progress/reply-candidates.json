@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-20T13:58:55.944Z",
+  "generated": "2026-11-21T13:26:13.773Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,10 +26,46 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 13
+    "issues": 22
   },
   "candidates": [],
   "skipped": [
+    {
+      "issue": 656,
+      "reason": "pull request"
+    },
+    {
+      "issue": 655,
+      "reason": "pull request"
+    },
+    {
+      "issue": 654,
+      "reason": "pull request"
+    },
+    {
+      "issue": 653,
+      "reason": "pull request"
+    },
+    {
+      "issue": 652,
+      "reason": "pull request"
+    },
+    {
+      "issue": 651,
+      "reason": "pull request"
+    },
+    {
+      "issue": 649,
+      "reason": "pull request"
+    },
+    {
+      "issue": 646,
+      "reason": "pull request"
+    },
+    {
+      "issue": 488,
+      "reason": "pull request"
+    },
     {
       "issue": 3714,
       "reason": "not found"

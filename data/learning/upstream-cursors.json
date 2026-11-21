@@ -3,22 +3,22 @@
  "note": "P3073 upstream cursors: last thing seen per source (read-only watch).",
  "sources": {
   "zhc": {
-   "last": "6cc34894cfcc289f67c0ac7c3ccf42e14be7f8dc",
-   "checkedAt": "2026-11-19T14:20:36.285Z",
+   "last": "9d19151d867e96bac907e5aa249517cb2d7acb9a",
+   "checkedAt": "2026-11-21T13:24:58.997Z",
    "kind": "commits",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-19T14:20:36.285Z"
+   "changedAt": "2026-11-21T13:24:58.997Z"
   },
   "zhc-rel": {
-   "last": "v26.134.0",
-   "checkedAt": "2026-11-19T14:20:36.285Z",
+   "last": "v26.135.0",
+   "checkedAt": "2026-11-21T13:24:58.997Z",
    "kind": "releases",
    "what": "Koenkk/zigbee-herdsman-converters",
-   "changedAt": "2026-11-19T14:20:36.285Z"
+   "changedAt": "2026-11-21T13:24:58.997Z"
   },
   "zha-quirks": {
    "last": "b07fa76876e081d48744968f9fb806e7f1fee0ee",
-   "checkedAt": "2026-11-19T14:20:36.285Z",
+   "checkedAt": "2026-11-21T13:24:58.997Z",
    "kind": "commits",
    "what": "zigpy/zha-device-handlers",
    "changedAt": "2026-11-11T12:39:08.968Z"
@@ -32,7 +32,7 @@
   },
   "johan": {
    "last": "61577d8ec2572bf8c7c4c2ff210284575acd295b",
-   "checkedAt": "2026-11-19T14:20:36.285Z",
+   "checkedAt": "2026-11-21T13:24:58.997Z",
    "kind": "commits",
    "what": "JohanBendz/com.tuya.zigbee"
   },
@@ -116,11 +116,11 @@
    "backoffUntil": "2026-11-27T13:57:37.641Z"
   },
   "r-zigbee": {
-   "checkedAt": "2026-11-14T12:05:49.473Z",
+   "checkedAt": "2026-11-21T13:24:58.997Z",
    "kind": "reddit",
    "what": "r/zigbee",
    "lastError": "403",
-   "backoffUntil": "2026-11-21T12:05:49.473Z"
+   "backoffUntil": "2026-11-28T13:24:58.997Z"
   },
   "r-tuya": {
    "checkedAt": "2026-11-15T12:40:45.359Z",
@@ -215,5 +215,5 @@
    }
   }
  },
- "updatedAt": "2026-11-20T13:57:37.641Z"
+ "updatedAt": "2026-11-21T13:24:58.997Z"
 }
