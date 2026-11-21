@@ -3,6 +3,7 @@
 const assert = require('assert');
 const {
   stripDeviceTitleFormatted,
+  stripGeneratedButtonOptions,
 } = require('../scripts/maintenance/sanitize-manifest.cjs');
 
 describe('Manifest sanitizer', function() {
@@ -41,5 +42,23 @@ describe('Manifest sanitizer', function() {
     assert.deepStrictEqual(manifest.flow.triggers[1].titleFormatted, { en: 'DP [[dp]] changed' });
     assert.strictEqual(manifest.flow.conditions[0].titleFormatted, undefined);
     assert.strictEqual(manifest.flow.actions[0].titleFormatted, undefined);
+  });
+
+  it('keeps device-view button flags (P2626)', function() {
+    const manifest = {
+      drivers: [{
+        id: 'button_wireless_3',
+        capabilitiesOptions: {
+          'button.1': { getable: false, setable: false, maintenanceAction: false, title: { en: 'Button 1' } },
+        },
+      }],
+    };
+    assert.strictEqual(stripGeneratedButtonOptions(manifest), 0);
+    assert.deepStrictEqual(manifest.drivers[0].capabilitiesOptions['button.1'], {
+      getable: false,
+      setable: false,
+      maintenanceAction: false,
+      title: { en: 'Button 1' },
+    });
   });
 });
