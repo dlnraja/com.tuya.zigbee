@@ -32,6 +32,7 @@ test('P2803 committed map is consistent with a fresh build (no stale/mismatched 
 test('P2803 title normaliser keeps the positive branch', () => {
   assert.strictEqual(normTitle('Soil moisture !{{is|is not}} below'), 'soil moisture is below');
   assert.strictEqual(normTitle('Is !{{on|off}}'), 'is on');
+  assert.strictEqual(normTitle('Humidity changed (report) (purifier co2)'), 'humidity changed');
 });
 
 test('P2803 triggers: only matching driver/capability/value', () => {
