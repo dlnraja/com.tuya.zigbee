@@ -84,7 +84,25 @@ function normalizeBuilds(response) {
   return [];
 }
 
+function sdkModulesAvailable() {
+  try {
+    loadAthomApi();
+    loadAthomAppsApi();
+    return true;
+  } catch (_e) {
+    return false;
+  }
+}
+
 async function createClient({ log = () => {}, timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
+  // GitHub Actions runners do not ship homey/services/AthomApi or homey/lib/AthomApi
+  // (run 44958418798). Callers in CI should use HOMEY_PAT + apps-api.athom.com
+  // (promote-live.js, auto-publish-draft.js). This helper stays for local Homey CLI.
+  if (!sdkModulesAvailable()) {
+    const err = new Error('Homey CLI AthomApi modules are not installed here; use HOMEY_PAT and apps-api.athom.com');
+    err.code = 'ATHOM_API_MODULE_MISSING';
+    throw err;
+  }
   const AthomApi = loadAthomApi();
   const AthomAppsAPI = loadAthomAppsApi();
   log('  [HomeySDK] Requesting apps delegation token...');
@@ -153,4 +171,5 @@ module.exports = {
   getBuilds,
   updateBuildChannel,
   normalizeBuilds,
+  sdkModulesAvailable,
 };
