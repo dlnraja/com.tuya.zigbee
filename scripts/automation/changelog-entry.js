@@ -87,7 +87,7 @@ const BUMP_SUBJECT = /^(?:chore|release|build)(?:\([^)]*\))?:\s*v?\d+\.\d+\.\d+\
 function runtimeHeads(subjects) {
   const items = [];
   for (const s of subjects || []) {
-    if (/\[auto:|^Merge |\[skip ci\]/i.test(s) || BUMP_SUBJECT.test(s)) continue;
+    if (/\[auto:|^Merge /i.test(s) || BUMP_SUBJECT.test(s)) continue;
     const p = parseSubject(s);
     const runtime = p.type === 'fix' || p.type === 'feat' || p.type === 'perf'
       || (p.type === 'chore' && /^(diag|drivers|lib|app)\b/i.test(p.scope));
@@ -118,7 +118,7 @@ function precise(subjects) {
 function specific(subjects, base) {
   const refs = []; const items = [];
   for (const s of subjects || []) {
-    if (/\[auto:|^Merge |\[skip ci\]/i.test(s) || BUMP_SUBJECT.test(s)) continue;
+    if (/\[auto:|^Merge /i.test(s) || BUMP_SUBJECT.test(s)) continue;
     const p = parseSubject(s);
     if (p.type && !USER_TYPES.has(p.type)) continue;
     for (const r of `${p.scope} ${p.rest}`.match(/\bP\d{3,5}[a-z]?\b|GH#\d+|#\d{2,5}\b/g) || []) if (!refs.includes(r)) refs.push(r);

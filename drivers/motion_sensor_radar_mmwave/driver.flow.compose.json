@@ -86,8 +86,8 @@
     {
       "id": "motion_sensor_radar_mmwave_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report)",
+        "fr": "Température changée (rapport)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -218,15 +218,15 @@
     {
       "id": "motion_sensor_radar_mmwave_temp_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }

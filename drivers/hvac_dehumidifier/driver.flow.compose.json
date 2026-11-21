@@ -35,8 +35,8 @@
     {
       "id": "hvac_dehumidifier_measure_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (measurement)",
+        "fr": "Humidité changée (mesure)",
         "nl": "Luchtvochtigheid gewijzigd",
         "de": "Luftfeuchtigkeit geändert"
       },
@@ -60,8 +60,8 @@
     {
       "id": "hvac_dehumidifier_measure_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (measurement)",
+        "fr": "Température changée (mesure)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -85,8 +85,8 @@
     {
       "id": "hvac_dehumidifier_measure_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (measurement)",
+        "fr": "Puissance changée (mesure)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
@@ -138,15 +138,15 @@
     {
       "id": "hvac_dehumidifier_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report)",
+        "fr": "Humidité changée (rapport)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report)",
+        "fr": "Humidité changée (rapport)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }
@@ -154,15 +154,15 @@
     {
       "id": "hvac_dehumidifier_temp_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -170,15 +170,15 @@
     {
       "id": "hvac_dehumidifier_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }

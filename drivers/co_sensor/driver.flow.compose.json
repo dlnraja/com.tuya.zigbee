@@ -165,16 +165,16 @@
     {
       "id": "co_sensor_co_detected",
       "title": {
-        "en": "CO !{{is|is not}} detected",
+        "en": "CO !{{is|is not}} detected (report) (sensor)",
         "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} détecté (rapport) (sensor)",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "CO !{{is|is not}} detected",
+        "en": "CO !{{is|is not}} detected (report) (sensor)",
         "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} détecté (rapport) (sensor)",
         "de": "CO !{{ist|ist nicht}} erkannt"
       }
     },
@@ -243,15 +243,15 @@
     {
       "id": "co_sensor_co_active",
       "title": {
-        "en": "CO !{{is|is not}} detected",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "en": "CO !{{is|is not}} detected (report)",
+        "fr": "CO !{{est|n'est pas}} détecté (rapport)",
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "CO !{{is|is not}} detected",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "en": "CO !{{is|is not}} detected (report)",
+        "fr": "CO !{{est|n'est pas}} détecté (rapport)",
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       }

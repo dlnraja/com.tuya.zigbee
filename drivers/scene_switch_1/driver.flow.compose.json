@@ -3,14 +3,14 @@
     {
       "id": "scene_switch_1_button_pressed",
       "title": {
-        "en": "Button pressed",
+        "en": "Button pressed (report)",
         "fr": "Bouton appuyé",
         "nl": "Knop ingedrukt",
         "de": "Taste gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
+        "en": "Button pressed (report)",
         "fr": "Bouton appuyé",
         "nl": "Knop ingedrukt",
         "de": "Taste gedrückt"
@@ -19,14 +19,14 @@
     {
       "id": "scene_switch_1_button_double_press",
       "title": {
-        "en": "Button double-pressed",
+        "en": "Button double-pressed (report)",
         "fr": "Bouton double-cliqué",
         "nl": "Knop dubbel ingedrukt",
         "de": "Taste doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button double-pressed",
+        "en": "Button double-pressed (report)",
         "fr": "Bouton double-cliqué",
         "nl": "Knop dubbel ingedrukt",
         "de": "Taste doppelt gedrückt"
@@ -35,15 +35,15 @@
     {
       "id": "scene_switch_1_button_long_press",
       "title": {
-        "en": "Button long-pressed",
-        "fr": "Bouton appui long",
+        "en": "Button long-pressed (report)",
+        "fr": "Bouton appui long (rapport)",
         "nl": "Knop lang ingedrukt",
         "de": "Taste lang gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button long-pressed",
-        "fr": "Bouton appui long",
+        "en": "Button long-pressed (report)",
+        "fr": "Bouton appui long (rapport)",
         "nl": "Knop lang ingedrukt",
         "de": "Taste lang gedrückt"
       }
@@ -96,14 +96,14 @@
     {
       "id": "scene_switch_1_button_1gang_button_1_pressed",
       "title": {
-        "en": "Button pressed",
+        "en": "Button pressed (report) (button button 1 pressed)",
         "fr": "Bouton appuye",
         "nl": "Knop ingedrukt",
         "de": "Taste gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
+        "en": "Button pressed (report) (button button 1 pressed)",
         "fr": "Bouton appuye",
         "de": "Taste gedrückt",
         "nl": "Knop ingedrukt"
@@ -112,14 +112,14 @@
     {
       "id": "scene_switch_1_button_1gang_button_1_double",
       "title": {
-        "en": "Button double-pressed",
+        "en": "Button double-pressed (report) (button button 1 double)",
         "fr": "Bouton double-appui",
         "nl": "Knop dubbel ingedrukt",
         "de": "Taste doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button double-pressed",
+        "en": "Button double-pressed (report) (button button 1 double)",
         "fr": "Bouton double-appui",
         "de": "Taste doppelt gedrückt",
         "nl": "Knop dubbel ingedrukt"
@@ -128,15 +128,15 @@
     {
       "id": "scene_switch_1_button_1gang_button_1_long",
       "title": {
-        "en": "Button long-pressed",
-        "fr": "Bouton appui long",
+        "en": "Button long-pressed (report) (button button 1 long)",
+        "fr": "Bouton appui long (rapport) (button button 1 long)",
         "nl": "Knop lang ingedrukt",
         "de": "Taste lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button long-pressed",
-        "fr": "Bouton appui long",
+        "en": "Button long-pressed (report) (button button 1 long)",
+        "fr": "Bouton appui long (rapport) (button button 1 long)",
         "de": "Taste lange gedrückt",
         "nl": "Knop lang ingedrukt"
       }
@@ -161,14 +161,14 @@
       "id": "scene_switch_1_button_1gang_button_1_release",
       "title": {
         "en": "Button released",
-        "fr": "Bouton relache",
+        "fr": "Bouton relâché",
         "nl": "Knop losgelaten",
         "de": "Taste losgelassen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button released",
-        "fr": "Bouton relache",
+        "fr": "Bouton relâché",
         "de": "Taste losgelassen",
         "nl": "Knop losgelaten"
       }

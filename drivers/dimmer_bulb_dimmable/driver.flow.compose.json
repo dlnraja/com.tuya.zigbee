@@ -3,15 +3,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_9e8af",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report)",
+        "fr": "Allumé (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report)",
+        "fr": "Allumé (rapport)",
         "de": "Eingeschaltet",
         "nl": "Aangezet"
       }
@@ -19,15 +19,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_0828e",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report)",
+        "fr": "Éteint (rapport)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report)",
+        "fr": "Éteint (rapport)",
         "de": "Ausgeschaltet",
         "nl": "Uitgezet"
       }
@@ -60,15 +60,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_e7ee7",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report) (bu)",
+        "fr": "Allumé (rapport) (bu)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report) (bu)",
+        "fr": "Allumé (rapport) (bu)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -76,15 +76,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_030bd",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report) (bu)",
+        "fr": "Éteint (rapport) (bu)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report) (bu)",
+        "fr": "Éteint (rapport) (bu)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -156,28 +156,28 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_6c729",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (rapport)"
       }
     },
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_66c9b",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport) (bu)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport) (bu)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -187,15 +187,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_84d0c",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report)",
+        "fr": "Allumer (rapport)",
         "nl": "Zet aan",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report)",
+        "fr": "Allumer (rapport)",
         "de": "Einschalten",
         "nl": "Aanzetten"
       }
@@ -203,15 +203,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_72177",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report)",
+        "fr": "Éteindre (rapport)",
         "nl": "Zet uit",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report)",
+        "fr": "Éteindre (rapport)",
         "de": "Ausschalten",
         "nl": "Uitzetten"
       }
@@ -220,14 +220,14 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_3dc54",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport)",
         "nl": "Aan of uit wisselen",
         "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport)",
         "de": "Ein/Aus umschalten",
         "nl": "Aan of uit wisselen"
       }
@@ -263,15 +263,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_89495",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report) (bu)",
+        "fr": "Allumer (rapport) (bu)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report) (bu)",
+        "fr": "Allumer (rapport) (bu)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       }
@@ -279,15 +279,15 @@
     {
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_578bb",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report) (bu)",
+        "fr": "Éteindre (rapport) (bu)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report) (bu)",
+        "fr": "Éteindre (rapport) (bu)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -296,14 +296,14 @@
       "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_f3f9a",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport) (bu)",
         "nl": "Wisselen",
         "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport) (bu)",
         "nl": "Wisselen",
         "de": "Umschalten"
       }

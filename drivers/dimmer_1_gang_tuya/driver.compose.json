@@ -1,8 +1,8 @@
 {
   "id": "dimmer_1_gang_tuya",
   "name": {
-    "en": "1 Gang Dimmer Module",
-    "fr": "Module variateur 1 voie",
+    "en": "1 Gang Dimmer Module (dimmer 1 gang tuya)",
+    "fr": "Module variateur 1 voie (dimmer 1 gang tuya)",
     "de": "Dimmermodul 1-fach",
     "nl": "Dimmermodule 1-voudig"
   },
@@ -78,7 +78,10 @@
           5,
           61184
         ],
-        "bindings": [25, 10]
+        "bindings": [
+          25,
+          10
+        ]
       }
     },
     "learnmode": {

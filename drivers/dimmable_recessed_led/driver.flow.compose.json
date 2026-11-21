@@ -3,15 +3,15 @@
     {
       "id": "dimmable_recessed_led_dimmable_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allume",
+        "en": "Turned on (report) (led dimmable turned on)",
+        "fr": "Allume (rapport) (led dimmable turned on)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allume",
+        "en": "Turned on (report) (led dimmable turned on)",
+        "fr": "Allume (rapport) (led dimmable turned on)",
         "de": "Eingeschaltet",
         "nl": "Aangezet"
       }
@@ -19,15 +19,15 @@
     {
       "id": "dimmable_recessed_led_dimmable_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Eteint",
+        "en": "Turned off (report) (led dimmable turned off)",
+        "fr": "Eteint (rapport) (led dimmable turned off)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Eteint",
+        "en": "Turned off (report) (led dimmable turned off)",
+        "fr": "Eteint (rapport) (led dimmable turned off)",
         "de": "Ausgeschaltet",
         "nl": "Uitgezet"
       }
@@ -60,15 +60,15 @@
     {
       "id": "dimmable_recessed_led_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allume",
+        "en": "Turned on (report)",
+        "fr": "Allume (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allume",
+        "en": "Turned on (report)",
+        "fr": "Allume (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -76,15 +76,15 @@
     {
       "id": "dimmable_recessed_led_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Eteint",
+        "en": "Turned off (report)",
+        "fr": "Eteint (rapport)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Eteint",
+        "en": "Turned off (report)",
+        "fr": "Eteint (rapport)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }

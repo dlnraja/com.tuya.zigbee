@@ -428,7 +428,7 @@
       "id": "generic_diy_motion_active",
       "title": {
         "en": "Motion is detected",
-        "fr": "Mouvement détecté",
+        "fr": "Mouvement détecté (état)",
         "de": "Bewegung erkannt",
         "nl": "Beweging gedetecteerd"
       },
@@ -439,7 +439,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Motion is detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement détecté (état)"
       }
     },
     {

@@ -149,14 +149,14 @@
       "id": "switch_temp_sensor_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
+        "fr": "Voie 1 allumée physiquement",
         "nl": "Kanaal 1 fysiek AAN",
         "de": "Kanal 1 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
+        "fr": "Voie 1 allumée physiquement",
         "de": "Kanal 1 physisch EIN",
         "nl": "Kanaal 1 fysiek AAN"
       }
@@ -165,14 +165,14 @@
       "id": "switch_temp_sensor_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement",
         "nl": "Kanaal 1 fysiek UIT",
         "de": "Kanal 1 physisch AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement",
         "de": "Kanal 1 physisch AUS",
         "nl": "Kanaal 1 fysiek UIT"
       }

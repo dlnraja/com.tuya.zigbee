@@ -85,15 +85,15 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_85e1d",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report) (dimmer wall 1gang dimmer)",
+        "fr": "Allumé (rapport) (dimmer wall 1gang dimmer)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report) (dimmer wall 1gang dimmer)",
+        "fr": "Allumé (rapport) (dimmer wall 1gang dimmer)",
         "de": "Eingeschaltet",
         "nl": "Aangezet"
       }
@@ -101,15 +101,15 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_f81b9",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report) (dimmer wall 1gang dimmer)",
+        "fr": "Éteint (rapport) (dimmer wall 1gang dimmer)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report) (dimmer wall 1gang dimmer)",
+        "fr": "Éteint (rapport) (dimmer wall 1gang dimmer)",
         "de": "Ausgeschaltet",
         "nl": "Uitgezet"
       }
@@ -142,15 +142,15 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report)",
+        "fr": "Allumé (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report)",
+        "fr": "Allumé (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -158,15 +158,15 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report)",
+        "fr": "Éteint (rapport)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report)",
+        "fr": "Éteint (rapport)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -243,28 +243,28 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_ab9c7",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport) (dimmer wall 1gang dimmer)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (rapport) (dimmer wall 1gang dimmer)"
       }
     },
     {
       "id": "climate_sensor_dimmer_wall_1gang_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -274,15 +274,15 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_d1151",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report) (dimmer wall 1gang dimmer)",
+        "fr": "Allumer (rapport) (dimmer wall 1gang dimmer)",
         "nl": "Zet aan",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report) (dimmer wall 1gang dimmer)",
+        "fr": "Allumer (rapport) (dimmer wall 1gang dimmer)",
         "de": "Einschalten",
         "nl": "Aanzetten"
       }
@@ -290,15 +290,15 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_02d79",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report) (dimmer wall 1gang dimmer)",
+        "fr": "Éteindre (rapport) (dimmer wall 1gang dimmer)",
         "nl": "Zet uit",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report) (dimmer wall 1gang dimmer)",
+        "fr": "Éteindre (rapport) (dimmer wall 1gang dimmer)",
         "de": "Ausschalten",
         "nl": "Uitzetten"
       }
@@ -307,14 +307,14 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_6ec6b",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport) (dimmer wall 1gang dimmer)",
         "nl": "Aan of uit wisselen",
         "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport) (dimmer wall 1gang dimmer)",
         "de": "Ein/Aus umschalten",
         "nl": "Aan of uit wisselen"
       }
@@ -350,15 +350,15 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_turn_on",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report)",
+        "fr": "Allumer (rapport)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report)",
+        "fr": "Allumer (rapport)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       }
@@ -366,15 +366,15 @@
     {
       "id": "climate_sensor_dimmer_wall_1gang_turn_off",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report)",
+        "fr": "Éteindre (rapport)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report)",
+        "fr": "Éteindre (rapport)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -383,14 +383,14 @@
       "id": "climate_sensor_dimmer_wall_1gang_toggle",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport)",
         "nl": "Wisselen",
         "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport)",
         "nl": "Wisselen",
         "de": "Umschalten"
       }

@@ -56,8 +56,8 @@
     {
       "id": "air_quality_co2_air_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report)",
+        "fr": "Température changée (rapport)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -81,8 +81,8 @@
     {
       "id": "air_quality_co2_air_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report) (co2 air humidity changed)",
+        "fr": "Humidité changée (rapport) (co2 air humidity changed)",
         "nl": "Luchtvochtigheid gewijzigd",
         "de": "Luftfeuchtigkeit geändert"
       },
@@ -131,15 +131,15 @@
     {
       "id": "air_quality_co2_temp_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -147,15 +147,15 @@
     {
       "id": "air_quality_co2_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report)",
+        "fr": "Humidité changée (rapport)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report)",
+        "fr": "Humidité changée (rapport)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }

@@ -4,9 +4,9 @@
       "id": "device_air_purifier_smoke_detector_advanced__672bd",
       "highlight": true,
       "title": {
-        "en": "Smoke detected",
+        "en": "Smoke detected (report)",
         "nl": "Rook gedetecteerd",
-        "fr": "Fumée détectée",
+        "fr": "Fumée détectée (rapport)",
         "de": "Rauch erkannt"
       },
       "hint": {
@@ -17,9 +17,9 @@
       },
       "args": [],
       "titleFormatted": {
-        "en": "Smoke detected",
+        "en": "Smoke detected (report)",
         "nl": "Rook gedetecteerd",
-        "fr": "Fumée détectée",
+        "fr": "Fumée détectée (rapport)",
         "de": "Rauch erkannt"
       }
     },
@@ -114,15 +114,15 @@
     {
       "id": "device_air_purifier_smoke_detector_advanced__14f55",
       "title": {
-        "en": "Smoke detected",
-        "fr": "Fumée détectée",
+        "en": "Smoke detected (report) (purifier smoke detector advanced)",
+        "fr": "Fumée détectée (rapport) (purifier smoke detector advanced)",
         "nl": "Rook gedetecteerd",
         "de": "Rauch erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Smoke detected",
-        "fr": "Fumée détectée",
+        "en": "Smoke detected (report) (purifier smoke detector advanced)",
+        "fr": "Fumée détectée (rapport) (purifier smoke detector advanced)",
         "nl": "Rook gedetecteerd",
         "de": "Rauch erkannt"
       }
@@ -130,15 +130,15 @@
     {
       "id": "device_air_purifier_smoke_detector_advanced__5515f",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report) (device air purifier smoke)",
+        "fr": "Température changée (rapport) (device air purifier smoke)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report) (device air purifier smoke)",
+        "fr": "Température changée (rapport) (device air purifier smoke)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -146,15 +146,15 @@
     {
       "id": "device_air_purifier_smoke_detector_advanced__2c94f",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report) (device air purifier smoke)",
+        "fr": "Humidité changée (rapport) (device air purifier smoke)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report) (device air purifier smoke)",
+        "fr": "Humidité changée (rapport) (device air purifier smoke)",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }
@@ -178,8 +178,8 @@
     {
       "id": "device_air_purifier_smoke_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report)",
+        "fr": "Température changée (rapport)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -203,8 +203,8 @@
     {
       "id": "device_air_purifier_smoke_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report)",
+        "fr": "Humidité changée (rapport)",
         "nl": "Luchtvochtigheid gewijzigd",
         "de": "Luftfeuchtigkeit geändert"
       },
@@ -280,16 +280,16 @@
     {
       "id": "device_air_purifier_smoke_detector_advanced__f6895",
       "title": {
-        "en": "Smoke !{{is|is not}} detected",
+        "en": "Smoke !{{is|is not}} detected (report)",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "fr": "Fumée !{{est|n'est pas}} détectée (rapport)",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Smoke !{{is|is not}} detected",
+        "en": "Smoke !{{is|is not}} detected (report)",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "fr": "Fumée !{{est|n'est pas}} détectée (rapport)",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       }
     },
@@ -327,15 +327,15 @@
     {
       "id": "device_air_purifier_smoke_detector_advanced__ba9b4",
       "title": {
-        "en": "Smoke !{{is|is not}} detected",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "en": "Smoke !{{is|is not}} detected (report) (purifier smoke detector advanced)",
+        "fr": "Fumée !{{est|n'est pas}} détectée (rapport) (purifier smoke detector advanced)",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Smoke !{{is|is not}} detected",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "en": "Smoke !{{is|is not}} detected (report) (purifier smoke detector advanced)",
+        "fr": "Fumée !{{est|n'est pas}} détectée (rapport) (purifier smoke detector advanced)",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       }

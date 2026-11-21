@@ -78,15 +78,15 @@
     {
       "id": "weather_station_outdoor_weather_battery_low",
       "title": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
+        "en": "Battery low (report) (outdoor weather battery low)",
+        "fr": "Batterie faible (rapport) (outdoor weather battery low)",
         "nl": "Batterij bijna leeg",
         "de": "Batterie schwach"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
+        "en": "Battery low (report) (outdoor weather battery low)",
+        "fr": "Batterie faible (rapport) (outdoor weather battery low)",
         "de": "Batterie schwach",
         "nl": "Batterij laag"
       }
@@ -126,15 +126,15 @@
     {
       "id": "weather_station_outdoor_battery_low",
       "title": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
+        "en": "Battery low (report)",
+        "fr": "Batterie faible (rapport)",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
+        "en": "Battery low (report)",
+        "fr": "Batterie faible (rapport)",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }

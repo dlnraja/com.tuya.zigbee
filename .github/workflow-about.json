@@ -438,7 +438,7 @@
     },
     "crash-triage.yml": {
       "group": "autopilot",
-      "what": "After Fetch Diagnostics and daily: groups crashes by signature, ranks impact \u00d7 installs, keeps one tracking issue per signature in this repo with a safe-pattern fix proposal. No external post."
+      "what": "After Fetch Diagnostics and daily: groups crashes by signature, ranks impact × installs, keeps one tracking issue per signature in this repo with a safe-pattern fix proposal. No external post."
     },
     "secret-scan.yml": {
       "group": "autopilot",
@@ -479,6 +479,10 @@
     "apple-home-coherence.yml": {
       "group": "ci",
       "what": "Weekday Apple Home / Insights coherence: add missing standard units, check official app.json and flow ids, no eager big JSON; commit [skip ci] only when tests pass, otherwise fail with a job summary and open no PR."
+    },
+    "store-text-coherence.yml": {
+      "group": "autopilot",
+      "what": "Weekly and on demand: rebuild changelogs from the published history and check names, titles, locales and accents on all three app branches. Safe auto-commit only; leftovers are a report artifact."
     }
   }
 }

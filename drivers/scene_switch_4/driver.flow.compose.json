@@ -90,7 +90,7 @@
     {
       "id": "scene_switch_4_button_4gang_button_long_press",
       "title": {
-        "en": "Button long-pressed",
+        "en": "Button long-pressed (4-gang)",
         "fr": "Bouton pressé longtemps",
         "nl": "Button long-pressed",
         "de": "Button long-pressed"
@@ -168,8 +168,8 @@
     {
       "id": "scene_switch_4_button_4gang_button_double_press",
       "title": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
+        "en": "Button double-pressed (4-gang)",
+        "fr": "Bouton double-cliqué (4 voies)",
         "nl": "Button double-pressed",
         "de": "Button double-pressed"
       },
@@ -246,8 +246,8 @@
     {
       "id": "scene_switch_4_button_4gang_button_pressed",
       "title": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "en": "Button pressed (4-gang)",
+        "fr": "Bouton appuyé (4 voies)",
         "nl": "Button pressed",
         "de": "Button pressed"
       },
@@ -325,8 +325,8 @@
     {
       "id": "scene_switch_4_button_pressed",
       "title": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "en": "Button pressed (report)",
+        "fr": "Bouton appuyé (rapport)",
         "nl": "Knop ingedrukt",
         "de": "Taste gedrückt"
       },
@@ -395,8 +395,8 @@
     {
       "id": "scene_switch_4_button_double_press",
       "title": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
+        "en": "Button double-pressed (report)",
+        "fr": "Bouton double-cliqué (rapport)",
         "nl": "Knop dubbel ingedrukt",
         "de": "Taste doppelt gedrückt"
       },
@@ -465,7 +465,7 @@
     {
       "id": "scene_switch_4_button_long_press",
       "title": {
-        "en": "Button long-pressed",
+        "en": "Button long-pressed (report)",
         "fr": "Bouton appui long",
         "nl": "Knop lang ingedrukt",
         "de": "Taste lange gedrückt"
@@ -535,14 +535,14 @@
     {
       "id": "scene_switch_4_button_1_pressed",
       "title": {
-        "en": "Button 1 pressed",
+        "en": "Button 1 pressed (report)",
         "fr": "Bouton 1 appuyé",
         "nl": "Knop 1 ingedrukt",
         "de": "Taste 1 gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 pressed",
+        "en": "Button 1 pressed (report)",
         "fr": "Bouton 1 appuyé",
         "nl": "Knop 1 ingedrukt",
         "de": "Taste 1 gedrückt"
@@ -551,14 +551,14 @@
     {
       "id": "scene_switch_4_button_1_double",
       "title": {
-        "en": "Button 1 double-pressed",
+        "en": "Button 1 double-pressed (report)",
         "fr": "Bouton 1 double-cliqué",
         "nl": "Knop 1 dubbel",
         "de": "Taste 1 doppelt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 double-pressed",
+        "en": "Button 1 double-pressed (report)",
         "fr": "Bouton 1 double-cliqué",
         "nl": "Knop 1 dubbel",
         "de": "Taste 1 doppelt"
@@ -567,15 +567,15 @@
     {
       "id": "scene_switch_4_button_1_long",
       "title": {
-        "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 appui long",
+        "en": "Button 1 long-pressed (report)",
+        "fr": "Bouton 1 appui long (rapport)",
         "nl": "Knop 1 lang",
         "de": "Taste 1 lange"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 appui long",
+        "en": "Button 1 long-pressed (report)",
+        "fr": "Bouton 1 appui long (rapport)",
         "nl": "Knop 1 lang",
         "de": "Taste 1 lange"
       }
@@ -583,14 +583,14 @@
     {
       "id": "scene_switch_4_button_2_pressed",
       "title": {
-        "en": "Button 2 pressed",
+        "en": "Button 2 pressed (report)",
         "fr": "Bouton 2 appuyé",
         "nl": "Knop 2 ingedrukt",
         "de": "Taste 2 gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 pressed",
+        "en": "Button 2 pressed (report)",
         "fr": "Bouton 2 appuyé",
         "nl": "Knop 2 ingedrukt",
         "de": "Taste 2 gedrückt"
@@ -599,14 +599,14 @@
     {
       "id": "scene_switch_4_button_2_double",
       "title": {
-        "en": "Button 2 double-pressed",
+        "en": "Button 2 double-pressed (report)",
         "fr": "Bouton 2 double-cliqué",
         "nl": "Knop 2 dubbel",
         "de": "Taste 2 doppelt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 double-pressed",
+        "en": "Button 2 double-pressed (report)",
         "fr": "Bouton 2 double-cliqué",
         "nl": "Knop 2 dubbel",
         "de": "Taste 2 doppelt"
@@ -615,15 +615,15 @@
     {
       "id": "scene_switch_4_button_2_long",
       "title": {
-        "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 appui long",
+        "en": "Button 2 long-pressed (report)",
+        "fr": "Bouton 2 appui long (rapport)",
         "nl": "Knop 2 lang",
         "de": "Taste 2 lange"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 appui long",
+        "en": "Button 2 long-pressed (report)",
+        "fr": "Bouton 2 appui long (rapport)",
         "nl": "Knop 2 lang",
         "de": "Taste 2 lange"
       }
@@ -631,14 +631,14 @@
     {
       "id": "scene_switch_4_button_3_pressed",
       "title": {
-        "en": "Button 3 pressed",
+        "en": "Button 3 pressed (report)",
         "fr": "Bouton 3 appuyé",
         "nl": "Knop 3 ingedrukt",
         "de": "Taste 3 gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 pressed",
+        "en": "Button 3 pressed (report)",
         "fr": "Bouton 3 appuyé",
         "nl": "Knop 3 ingedrukt",
         "de": "Taste 3 gedrückt"
@@ -647,14 +647,14 @@
     {
       "id": "scene_switch_4_button_3_double",
       "title": {
-        "en": "Button 3 double-pressed",
+        "en": "Button 3 double-pressed (report)",
         "fr": "Bouton 3 double-cliqué",
         "nl": "Knop 3 dubbel",
         "de": "Taste 3 doppelt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 double-pressed",
+        "en": "Button 3 double-pressed (report)",
         "fr": "Bouton 3 double-cliqué",
         "nl": "Knop 3 dubbel",
         "de": "Taste 3 doppelt"
@@ -663,15 +663,15 @@
     {
       "id": "scene_switch_4_button_3_long",
       "title": {
-        "en": "Button 3 long-pressed",
-        "fr": "Bouton 3 appui long",
+        "en": "Button 3 long-pressed (report)",
+        "fr": "Bouton 3 appui long (rapport)",
         "nl": "Knop 3 lang",
         "de": "Taste 3 lange"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 long-pressed",
-        "fr": "Bouton 3 appui long",
+        "en": "Button 3 long-pressed (report)",
+        "fr": "Bouton 3 appui long (rapport)",
         "nl": "Knop 3 lang",
         "de": "Taste 3 lange"
       }
@@ -679,14 +679,14 @@
     {
       "id": "scene_switch_4_button_4_pressed",
       "title": {
-        "en": "Button 4 pressed",
+        "en": "Button 4 pressed (report)",
         "fr": "Bouton 4 appuyé",
         "nl": "Knop 4 ingedrukt",
         "de": "Taste 4 gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 pressed",
+        "en": "Button 4 pressed (report)",
         "fr": "Bouton 4 appuyé",
         "nl": "Knop 4 ingedrukt",
         "de": "Taste 4 gedrückt"
@@ -695,14 +695,14 @@
     {
       "id": "scene_switch_4_button_4_double",
       "title": {
-        "en": "Button 4 double-pressed",
+        "en": "Button 4 double-pressed (report)",
         "fr": "Bouton 4 double-cliqué",
         "nl": "Knop 4 dubbel",
         "de": "Taste 4 doppelt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 double-pressed",
+        "en": "Button 4 double-pressed (report)",
         "fr": "Bouton 4 double-cliqué",
         "nl": "Knop 4 dubbel",
         "de": "Taste 4 doppelt"
@@ -711,15 +711,15 @@
     {
       "id": "scene_switch_4_button_4_long",
       "title": {
-        "en": "Button 4 long-pressed",
-        "fr": "Bouton 4 appui long",
+        "en": "Button 4 long-pressed (report)",
+        "fr": "Bouton 4 appui long (rapport)",
         "nl": "Knop 4 lang",
         "de": "Taste 4 lange"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 long-pressed",
-        "fr": "Bouton 4 appui long",
+        "en": "Button 4 long-pressed (report)",
+        "fr": "Bouton 4 appui long (rapport)",
         "nl": "Knop 4 lang",
         "de": "Taste 4 lange"
       }
@@ -772,15 +772,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_1_triple",
       "title": {
-        "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-appui",
+        "en": "Button 1 triple-pressed (4-gang)",
+        "fr": "Bouton 1 triple-appui (4 voies)",
         "nl": "Knop 1 driemaal ingedrukt",
         "de": "Taste 1 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-appui",
+        "en": "Button 1 triple-pressed (4-gang)",
+        "fr": "Bouton 1 triple-appui (4 voies)",
         "de": "Taste 1 dreimal gedrückt",
         "nl": "Knop 1 driemaal ingedrukt"
       }
@@ -788,15 +788,15 @@
     {
       "id": "scene_switch_4_button_1_triple",
       "title": {
-        "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-appui",
+        "en": "Button 1 triple-pressed (report)",
+        "fr": "Bouton 1 triple-appui (rapport)",
         "nl": "Knop 1 driemaal ingedrukt",
         "de": "Taste 1 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-appui",
+        "en": "Button 1 triple-pressed (report)",
+        "fr": "Bouton 1 triple-appui (rapport)",
         "de": "Taste 1 dreimal gedrückt",
         "nl": "Knop 1 driemaal ingedrukt"
       }
@@ -804,15 +804,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_1_release",
       "title": {
-        "en": "Button 1 released",
-        "fr": "Bouton 1 relache",
+        "en": "Button 1 released (4-gang)",
+        "fr": "Bouton 1 relâché (4 voies)",
         "nl": "Knop 1 losgelaten",
         "de": "Taste 1 losgelassen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 released",
-        "fr": "Bouton 1 relache",
+        "en": "Button 1 released (4-gang)",
+        "fr": "Bouton 1 relâché (4 voies)",
         "de": "Taste 1 losgelassen",
         "nl": "Knop 1 losgelaten"
       }
@@ -820,15 +820,15 @@
     {
       "id": "scene_switch_4_button_1_release",
       "title": {
-        "en": "Button 1 released",
-        "fr": "Bouton 1 relache",
+        "en": "Button 1 released (report)",
+        "fr": "Bouton 1 relâché (rapport)",
         "nl": "Knop 1 losgelaten",
         "de": "Taste 1 losgelassen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 released",
-        "fr": "Bouton 1 relache",
+        "en": "Button 1 released (report)",
+        "fr": "Bouton 1 relâché (rapport)",
         "de": "Taste 1 losgelassen",
         "nl": "Knop 1 losgelaten"
       }
@@ -836,14 +836,14 @@
     {
       "id": "scene_switch_4_button_4gang_button_1_pressed",
       "title": {
-        "en": "Button 1 pressed",
+        "en": "Button 1 pressed (4-gang)",
         "fr": "Bouton 1 appuye",
         "nl": "Knop 1 ingedrukt",
         "de": "Taste 1 gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 pressed",
+        "en": "Button 1 pressed (4-gang)",
         "fr": "Bouton 1 appuye",
         "de": "Taste 1 gedrückt",
         "nl": "Knop 1 ingedrukt"
@@ -852,14 +852,14 @@
     {
       "id": "scene_switch_4_button_4gang_button_1_double",
       "title": {
-        "en": "Button 1 double-pressed",
+        "en": "Button 1 double-pressed (4-gang)",
         "fr": "Bouton 1 double-appui",
         "nl": "Knop 1 dubbel ingedrukt",
         "de": "Taste 1 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 double-pressed",
+        "en": "Button 1 double-pressed (4-gang)",
         "fr": "Bouton 1 double-appui",
         "de": "Taste 1 doppelt gedrückt",
         "nl": "Knop 1 dubbel ingedrukt"
@@ -868,15 +868,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_1_long",
       "title": {
-        "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 appui long",
+        "en": "Button 1 long-pressed (4-gang)",
+        "fr": "Bouton 1 appui long (4 voies)",
         "nl": "Knop 1 lang ingedrukt",
         "de": "Taste 1 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 appui long",
+        "en": "Button 1 long-pressed (4-gang)",
+        "fr": "Bouton 1 appui long (4 voies)",
         "de": "Taste 1 lange gedrückt",
         "nl": "Knop 1 lang ingedrukt"
       }
@@ -884,15 +884,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_2_triple",
       "title": {
-        "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-appui",
+        "en": "Button 2 triple-pressed (4-gang)",
+        "fr": "Bouton 2 triple-appui (4 voies)",
         "nl": "Knop 2 driemaal ingedrukt",
         "de": "Taste 2 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-appui",
+        "en": "Button 2 triple-pressed (4-gang)",
+        "fr": "Bouton 2 triple-appui (4 voies)",
         "de": "Taste 2 dreimal gedrückt",
         "nl": "Knop 2 driemaal ingedrukt"
       }
@@ -900,15 +900,15 @@
     {
       "id": "scene_switch_4_button_2_triple",
       "title": {
-        "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-appui",
+        "en": "Button 2 triple-pressed (report)",
+        "fr": "Bouton 2 triple-appui (rapport)",
         "nl": "Knop 2 driemaal ingedrukt",
         "de": "Taste 2 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-appui",
+        "en": "Button 2 triple-pressed (report)",
+        "fr": "Bouton 2 triple-appui (rapport)",
         "de": "Taste 2 dreimal gedrückt",
         "nl": "Knop 2 driemaal ingedrukt"
       }
@@ -916,15 +916,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_2_release",
       "title": {
-        "en": "Button 2 released",
-        "fr": "Bouton 2 relache",
+        "en": "Button 2 released (4-gang)",
+        "fr": "Bouton 2 relâché (4 voies)",
         "nl": "Knop 2 losgelaten",
         "de": "Taste 2 losgelassen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 released",
-        "fr": "Bouton 2 relache",
+        "en": "Button 2 released (4-gang)",
+        "fr": "Bouton 2 relâché (4 voies)",
         "de": "Taste 2 losgelassen",
         "nl": "Knop 2 losgelaten"
       }
@@ -932,15 +932,15 @@
     {
       "id": "scene_switch_4_button_2_release",
       "title": {
-        "en": "Button 2 released",
-        "fr": "Bouton 2 relache",
+        "en": "Button 2 released (report)",
+        "fr": "Bouton 2 relâché (rapport)",
         "nl": "Knop 2 losgelaten",
         "de": "Taste 2 losgelassen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 released",
-        "fr": "Bouton 2 relache",
+        "en": "Button 2 released (report)",
+        "fr": "Bouton 2 relâché (rapport)",
         "de": "Taste 2 losgelassen",
         "nl": "Knop 2 losgelaten"
       }
@@ -948,14 +948,14 @@
     {
       "id": "scene_switch_4_button_4gang_button_2_pressed",
       "title": {
-        "en": "Button 2 pressed",
+        "en": "Button 2 pressed (4-gang)",
         "fr": "Bouton 2 appuye",
         "nl": "Knop 2 ingedrukt",
         "de": "Taste 2 gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 pressed",
+        "en": "Button 2 pressed (4-gang)",
         "fr": "Bouton 2 appuye",
         "de": "Taste 2 gedrückt",
         "nl": "Knop 2 ingedrukt"
@@ -964,14 +964,14 @@
     {
       "id": "scene_switch_4_button_4gang_button_2_double",
       "title": {
-        "en": "Button 2 double-pressed",
+        "en": "Button 2 double-pressed (4-gang)",
         "fr": "Bouton 2 double-appui",
         "nl": "Knop 2 dubbel ingedrukt",
         "de": "Taste 2 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 double-pressed",
+        "en": "Button 2 double-pressed (4-gang)",
         "fr": "Bouton 2 double-appui",
         "de": "Taste 2 doppelt gedrückt",
         "nl": "Knop 2 dubbel ingedrukt"
@@ -980,15 +980,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_2_long",
       "title": {
-        "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 appui long",
+        "en": "Button 2 long-pressed (4-gang)",
+        "fr": "Bouton 2 appui long (4 voies)",
         "nl": "Knop 2 lang ingedrukt",
         "de": "Taste 2 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 appui long",
+        "en": "Button 2 long-pressed (4-gang)",
+        "fr": "Bouton 2 appui long (4 voies)",
         "de": "Taste 2 lange gedrückt",
         "nl": "Knop 2 lang ingedrukt"
       }
@@ -996,15 +996,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_3_triple",
       "title": {
-        "en": "Button 3 triple-pressed",
-        "fr": "Bouton 3 triple-appui",
+        "en": "Button 3 triple-pressed (4-gang)",
+        "fr": "Bouton 3 triple-appui (4 voies)",
         "nl": "Knop 3 driemaal ingedrukt",
         "de": "Taste 3 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 triple-pressed",
-        "fr": "Bouton 3 triple-appui",
+        "en": "Button 3 triple-pressed (4-gang)",
+        "fr": "Bouton 3 triple-appui (4 voies)",
         "de": "Taste 3 dreimal gedrückt",
         "nl": "Knop 3 driemaal ingedrukt"
       }
@@ -1012,15 +1012,15 @@
     {
       "id": "scene_switch_4_button_3_triple",
       "title": {
-        "en": "Button 3 triple-pressed",
-        "fr": "Bouton 3 triple-appui",
+        "en": "Button 3 triple-pressed (report)",
+        "fr": "Bouton 3 triple-appui (rapport)",
         "nl": "Knop 3 driemaal ingedrukt",
         "de": "Taste 3 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 triple-pressed",
-        "fr": "Bouton 3 triple-appui",
+        "en": "Button 3 triple-pressed (report)",
+        "fr": "Bouton 3 triple-appui (rapport)",
         "de": "Taste 3 dreimal gedrückt",
         "nl": "Knop 3 driemaal ingedrukt"
       }
@@ -1028,15 +1028,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_3_release",
       "title": {
-        "en": "Button 3 released",
-        "fr": "Bouton 3 relache",
+        "en": "Button 3 released (4-gang)",
+        "fr": "Bouton 3 relâché (4 voies)",
         "nl": "Knop 3 losgelaten",
         "de": "Taste 3 losgelassen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 released",
-        "fr": "Bouton 3 relache",
+        "en": "Button 3 released (4-gang)",
+        "fr": "Bouton 3 relâché (4 voies)",
         "de": "Taste 3 losgelassen",
         "nl": "Knop 3 losgelaten"
       }
@@ -1044,15 +1044,15 @@
     {
       "id": "scene_switch_4_button_3_release",
       "title": {
-        "en": "Button 3 released",
-        "fr": "Bouton 3 relache",
+        "en": "Button 3 released (report)",
+        "fr": "Bouton 3 relâché (rapport)",
         "nl": "Knop 3 losgelaten",
         "de": "Taste 3 losgelassen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 released",
-        "fr": "Bouton 3 relache",
+        "en": "Button 3 released (report)",
+        "fr": "Bouton 3 relâché (rapport)",
         "de": "Taste 3 losgelassen",
         "nl": "Knop 3 losgelaten"
       }
@@ -1060,14 +1060,14 @@
     {
       "id": "scene_switch_4_button_4gang_button_3_pressed",
       "title": {
-        "en": "Button 3 pressed",
+        "en": "Button 3 pressed (4-gang)",
         "fr": "Bouton 3 appuye",
         "nl": "Knop 3 ingedrukt",
         "de": "Taste 3 gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 pressed",
+        "en": "Button 3 pressed (4-gang)",
         "fr": "Bouton 3 appuye",
         "de": "Taste 3 gedrückt",
         "nl": "Knop 3 ingedrukt"
@@ -1076,14 +1076,14 @@
     {
       "id": "scene_switch_4_button_4gang_button_3_double",
       "title": {
-        "en": "Button 3 double-pressed",
+        "en": "Button 3 double-pressed (4-gang)",
         "fr": "Bouton 3 double-appui",
         "nl": "Knop 3 dubbel ingedrukt",
         "de": "Taste 3 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 double-pressed",
+        "en": "Button 3 double-pressed (4-gang)",
         "fr": "Bouton 3 double-appui",
         "de": "Taste 3 doppelt gedrückt",
         "nl": "Knop 3 dubbel ingedrukt"
@@ -1092,15 +1092,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_3_long",
       "title": {
-        "en": "Button 3 long-pressed",
-        "fr": "Bouton 3 appui long",
+        "en": "Button 3 long-pressed (4-gang)",
+        "fr": "Bouton 3 appui long (4 voies)",
         "nl": "Knop 3 lang ingedrukt",
         "de": "Taste 3 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 3 long-pressed",
-        "fr": "Bouton 3 appui long",
+        "en": "Button 3 long-pressed (4-gang)",
+        "fr": "Bouton 3 appui long (4 voies)",
         "de": "Taste 3 lange gedrückt",
         "nl": "Knop 3 lang ingedrukt"
       }
@@ -1108,15 +1108,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_4_triple",
       "title": {
-        "en": "Button 4 triple-pressed",
-        "fr": "Bouton 4 triple-appui",
+        "en": "Button 4 triple-pressed (4-gang)",
+        "fr": "Bouton 4 triple-appui (4 voies)",
         "nl": "Knop 4 driemaal ingedrukt",
         "de": "Taste 4 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 triple-pressed",
-        "fr": "Bouton 4 triple-appui",
+        "en": "Button 4 triple-pressed (4-gang)",
+        "fr": "Bouton 4 triple-appui (4 voies)",
         "de": "Taste 4 dreimal gedrückt",
         "nl": "Knop 4 driemaal ingedrukt"
       }
@@ -1124,15 +1124,15 @@
     {
       "id": "scene_switch_4_button_4_triple",
       "title": {
-        "en": "Button 4 triple-pressed",
-        "fr": "Bouton 4 triple-appui",
+        "en": "Button 4 triple-pressed (report)",
+        "fr": "Bouton 4 triple-appui (rapport)",
         "nl": "Knop 4 driemaal ingedrukt",
         "de": "Taste 4 dreimal gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 triple-pressed",
-        "fr": "Bouton 4 triple-appui",
+        "en": "Button 4 triple-pressed (report)",
+        "fr": "Bouton 4 triple-appui (rapport)",
         "de": "Taste 4 dreimal gedrückt",
         "nl": "Knop 4 driemaal ingedrukt"
       }
@@ -1140,15 +1140,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_4_release",
       "title": {
-        "en": "Button 4 released",
-        "fr": "Bouton 4 relache",
+        "en": "Button 4 released (4-gang)",
+        "fr": "Bouton 4 relâché (4 voies)",
         "nl": "Knop 4 losgelaten",
         "de": "Taste 4 losgelassen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 released",
-        "fr": "Bouton 4 relache",
+        "en": "Button 4 released (4-gang)",
+        "fr": "Bouton 4 relâché (4 voies)",
         "de": "Taste 4 losgelassen",
         "nl": "Knop 4 losgelaten"
       }
@@ -1156,15 +1156,15 @@
     {
       "id": "scene_switch_4_button_4_release",
       "title": {
-        "en": "Button 4 released",
-        "fr": "Bouton 4 relache",
+        "en": "Button 4 released (report)",
+        "fr": "Bouton 4 relâché (rapport)",
         "nl": "Knop 4 losgelaten",
         "de": "Taste 4 losgelassen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 released",
-        "fr": "Bouton 4 relache",
+        "en": "Button 4 released (report)",
+        "fr": "Bouton 4 relâché (rapport)",
         "de": "Taste 4 losgelassen",
         "nl": "Knop 4 losgelaten"
       }
@@ -1172,14 +1172,14 @@
     {
       "id": "scene_switch_4_button_4gang_button_4_pressed",
       "title": {
-        "en": "Button 4 pressed",
+        "en": "Button 4 pressed (4-gang)",
         "fr": "Bouton 4 appuye",
         "nl": "Knop 4 ingedrukt",
         "de": "Taste 4 gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 pressed",
+        "en": "Button 4 pressed (4-gang)",
         "fr": "Bouton 4 appuye",
         "de": "Taste 4 gedrückt",
         "nl": "Knop 4 ingedrukt"
@@ -1188,14 +1188,14 @@
     {
       "id": "scene_switch_4_button_4gang_button_4_double",
       "title": {
-        "en": "Button 4 double-pressed",
+        "en": "Button 4 double-pressed (4-gang)",
         "fr": "Bouton 4 double-appui",
         "nl": "Knop 4 dubbel ingedrukt",
         "de": "Taste 4 doppelt gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 double-pressed",
+        "en": "Button 4 double-pressed (4-gang)",
         "fr": "Bouton 4 double-appui",
         "de": "Taste 4 doppelt gedrückt",
         "nl": "Knop 4 dubbel ingedrukt"
@@ -1204,15 +1204,15 @@
     {
       "id": "scene_switch_4_button_4gang_button_4_long",
       "title": {
-        "en": "Button 4 long-pressed",
-        "fr": "Bouton 4 appui long",
+        "en": "Button 4 long-pressed (4-gang)",
+        "fr": "Bouton 4 appui long (4 voies)",
         "nl": "Knop 4 lang ingedrukt",
         "de": "Taste 4 lange gedrückt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Button 4 long-pressed",
-        "fr": "Bouton 4 appui long",
+        "en": "Button 4 long-pressed (4-gang)",
+        "fr": "Bouton 4 appui long (4 voies)",
         "de": "Taste 4 lange gedrückt",
         "nl": "Knop 4 lang ingedrukt"
       }

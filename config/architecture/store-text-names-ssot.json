@@ -1,0 +1,2861 @@
+{
+  "doc": "P3363 optional name fallbacks copied from master compose (ids never change).",
+  "names": {
+    "air_conditioner_aetz01": {
+      "en": "Air conditioner (Tuya AETZ01_AC)",
+      "fr": "Climatiseur (Tuya AETZ01_AC)",
+      "nl": "Airconditioner (Tuya AETZ01_AC)",
+      "de": "Klimaanlage (Tuya AETZ01_AC)"
+    },
+    "air_purifier": {
+      "en": "Air Purifier",
+      "fr": "Purificateur d'Air",
+      "nl": "Luchtreiniger",
+      "de": "Luftreiniger"
+    },
+    "air_purifier_climate": {
+      "en": "Air Purifier Climate",
+      "nl": "Luchtzuiveraar Klimaat",
+      "fr": "Purificateur d'air climatique",
+      "de": "Luftreiniger Klima"
+    },
+    "air_purifier_contact": {
+      "en": "Air Purifier Contact",
+      "nl": "Air Purifier Contact",
+      "fr": "Air Purifier Contact",
+      "de": "Luftreiniger Kontakt"
+    },
+    "air_purifier_curtain": {
+      "en": "Air Purifier Curtain",
+      "nl": "Luchtzuiverende Gordijn",
+      "fr": "Rideau Purificateur d'Air",
+      "de": "Luftreiniger Vorhang"
+    },
+    "air_purifier_dimmer": {
+      "en": "Air Purifier Dimmer",
+      "nl": "Lichtsensor Luchtreiniger",
+      "fr": "Dimmer Purificateur d'Air",
+      "de": "Dimmer Luftreiniger"
+    },
+    "air_purifier_din": {
+      "en": "Air Purifier Din",
+      "nl": "Luchtreiniger Din",
+      "fr": "Purificateur d'air Din",
+      "de": "Luftreiniger Din"
+    },
+    "air_purifier_lcdtemphumidsensor": {
+      "en": "Air Purifier Lcdtemphumidsensor",
+      "nl": "Luchtzuiveraar Lcdtemphumidsensor",
+      "fr": "Purificateur d'air Lcdtemphumidsensor",
+      "de": "Luftreiniger Lcdtemphumidsensor"
+    },
+    "air_purifier_motion": {
+      "en": "Air Purifier Motion",
+      "nl": "luchtreiniger en bewegingssensor",
+      "fr": "Purificateur d'air et détecteur de mouvement",
+      "de": "Hybrider Luftreiniger mit Bewegungsmelder"
+    },
+    "air_purifier_presence": {
+      "en": "Air Purifier Presence",
+      "nl": "Luchtreiniger Aanwezigheid",
+      "fr": "Purificateur d'air Présence",
+      "de": "Luftreiniger Präsenz"
+    },
+    "air_purifier_quality": {
+      "en": "Air Purifier Quality",
+      "nl": "Luchtreiniger kwaliteit",
+      "fr": "Purificateur d'air qualité",
+      "de": "Luftreiniger Qualitäts-"
+    },
+    "air_purifier_siren": {
+      "en": "Air Purifier Siren",
+      "nl": "Luchtzuiveraar Sirene",
+      "fr": "Système de sirène purificateur d'air",
+      "de": "Luftreiniger Sirene"
+    },
+    "air_purifier_soil": {
+      "en": "Air Purifier Soil",
+      "nl": "Luchtreiniger voor de bodem",
+      "fr": "Purificateur d'air de sol",
+      "de": "Luftreiniger Boden"
+    },
+    "air_purifier_switch": {
+      "en": "Air Purifier Switch",
+      "nl": "Luchtzuiveraar Schakelaar",
+      "fr": "Interrupteur de Purificateur d'Air",
+      "de": "Luftreiniger Schalter"
+    },
+    "air_quality_co2": {
+      "en": "Zigbee Air Quality / CO2 Sensor",
+      "fr": "Capteur qualité air / CO2 Zigbee",
+      "nl": "CO2 Luchtkwaliteit Sensor",
+      "de": "CO2 Luftqualitätssensor"
+    },
+    "air_quality_comprehensive": {
+      "en": "Comprehensive Air Monitor",
+      "fr": "Comprehensive Air Monitor",
+      "nl": "Uitgebreide Luchtkwaliteit",
+      "de": "Umfassende Luftqualität"
+    },
+    "bed_sensor": {
+      "en": "Bed Sensor",
+      "fr": "Capteur de Lit",
+      "nl": "Bed Sensor",
+      "de": "Bettsensor"
+    },
+    "blaster_remote": {
+      "en": "Blaster Remote",
+      "nl": "Blaster Afstandsbediening",
+      "fr": "Télécommande Blaster",
+      "de": "Blaster Fernbedienung"
+    },
+    "boiler_switch_energy": {
+      "en": "Boiler Switch with Energy Monitoring",
+      "fr": "Interrupteur Chaudière avec Monitoring Énergie",
+      "de": "Boilerschalter mit Energiemessung",
+      "nl": "Boilerschakelaar met energiemeting"
+    },
+    "bulb_dimmable": {
+      "en": "Smart Bulb Dimmer",
+      "fr": "Smart Bulb Dimmer",
+      "nl": "Dimbare Lamp",
+      "de": "Dimmbare Glühbirne"
+    },
+    "bulb_dimmable_dimmer": {
+      "en": "Bulb Dimmable Dimmer",
+      "nl": "Dimbare Lamp Dimmer",
+      "fr": "Ampoule Dimmable Gradateur",
+      "de": "Dimmbare Glühbirne Dimmer"
+    },
+    "bulb_rgb": {
+      "en": "Smart Bulb Rgb",
+      "fr": "Smart Bulb Rgb",
+      "nl": "RGB Lamp",
+      "de": "RGB Glühbirne"
+    },
+    "bulb_rgb_led": {
+      "en": "Bulb Rgb Led",
+      "nl": "Rgb Led-lamp",
+      "fr": "Ampoule Rgb Led",
+      "de": "Rgb Led-Lampe"
+    },
+    "bulb_rgb_rgbw": {
+      "en": "Bulb Rgb Rgbw",
+      "nl": "Bulb Rgb Rgbw",
+      "fr": "Ampoule Rgb Rgbw",
+      "de": "Glühbirne Rgb Rgbw"
+    },
+    "bulb_rgbw": {
+      "en": "Smart RGB/RGBW Bulb",
+      "fr": "Ampoule Connectée RGB/RGBW",
+      "nl": "RGBW Lamp",
+      "de": "RGBW Glühbirne"
+    },
+    "bulb_rgbw_universal": {
+      "en": "Bulb Rgbw Universal",
+      "nl": "Bulb Rgbw Universal",
+      "fr": "Bulb Rgbw Universal",
+      "de": "RGBW-Lampe universal"
+    },
+    "bulb_tunable_white": {
+      "en": "Bulb Tunable",
+      "fr": "Bulb Tunable",
+      "nl": "Instelbaar Wit Lamp",
+      "de": "Einstellbares Weißlicht"
+    },
+    "bulb_white": {
+      "en": "Smart Bulb White",
+      "fr": "Smart Bulb White",
+      "nl": "Witte Lamp",
+      "de": "Weiße Glühbirne"
+    },
+    "bulb_zbeacon_ts0505b": {
+      "en": "RGB+CCT Bulb (Zbeacon TS0505B)",
+      "fr": "Ampoule RGB+CCT (Zbeacon TS0505B)",
+      "nl": "RGB+CCT lamp (Zbeacon TS0505B)",
+      "de": "RGB+CCT-Lampe (Zbeacon TS0505B)"
+    },
+    "button_emergency_sos": {
+      "en": "Sos Emergency Button",
+      "fr": "Sos Emergency Button",
+      "nl": "SOS Noodknop",
+      "de": "SOS Notfalltaste"
+    },
+    "button_wireless": {
+      "en": "Wireless Button (Universal)",
+      "fr": "Bouton Sans Fil (Universel)",
+      "nl": "Draadloze Knop (Universeel)",
+      "de": "Kabelloser Schalter (Universell)"
+    },
+    "button_wireless_1": {
+      "en": "Wireless Button 1 (TS0041)",
+      "fr": "Bouton sans fil 1 (TS0041)",
+      "nl": "1-Knoppen Draadloze Controller",
+      "de": "1-Tasten Drahtlos-Controller"
+    },
+    "button_wireless_2": {
+      "en": "2-Buttons Wireless Controller",
+      "fr": "2-Boutons Contrôleur Sans Fil",
+      "nl": "2-Knoppen Draadloze Controller",
+      "de": "2-Tasten Drahtlos-Controller"
+    },
+    "button_wireless_3": {
+      "en": "Wireless Button 3 (TS0043)",
+      "fr": "Bouton sans fil 3 (TS0043)",
+      "nl": "3-Knops Draadloze Controller",
+      "de": "3-Tasten Drahtlos-Controller"
+    },
+    "button_wireless_4": {
+      "en": "4-Buttons Wireless Controller",
+      "fr": "4-Boutons Contrôleur Sans Fil",
+      "nl": "4-Knoppen Draadloze Controller",
+      "de": "4-Tasten Drahtlos-Controller"
+    },
+    "button_wireless_4_ts0041": {
+      "en": "4-Buttons TS0041 Wireless Controller",
+      "fr": "Controleur sans fil TS0041 4 boutons",
+      "nl": "TS0041 4-knoppen draadloze controller",
+      "de": "TS0041 4-Tasten Drahtlos-Controller"
+    },
+    "button_wireless_6": {
+      "en": "6-Buttons Wireless Controller",
+      "fr": "6-Boutons Contrôleur Sans Fil",
+      "nl": "6-Knoppen Draadloze Controller",
+      "de": "6-Tasten Drahtlos-Controller"
+    },
+    "button_wireless_8": {
+      "en": "8-Buttons Wireless Controller",
+      "fr": "8-Boutons Contrôleur Sans Fil",
+      "nl": "8-Knoppen Draadloze Controller",
+      "de": "8-Tasten Drahtlos-Controller"
+    },
+    "button_wireless_fingerbot": {
+      "en": "Button Wireless Fingerbot",
+      "nl": "Draadloze Fingerbot Knop",
+      "fr": "Bouton Sans Fil Fingerbot",
+      "de": "Drahtloser Fingerbot Knopf"
+    },
+    "button_wireless_plug": {
+      "en": "Button Wireless Plug",
+      "nl": "Knop Stopcontactloos",
+      "fr": "Bouton Prise Sans Fil",
+      "de": "Knopf Drahtlose Steckdose"
+    },
+    "button_wireless_scene": {
+      "en": "Button Wireless Scene",
+      "nl": "Draadloze scène knop",
+      "fr": "Bouton sans fil scène",
+      "de": "Drahtloser Szenenhybridschalter"
+    },
+    "button_wireless_smart": {
+      "en": "Button Wireless Smart",
+      "nl": "Draadloze slimme knop",
+      "fr": "Bouton sans fil intelligent",
+      "de": "Intelligenter Funk-Taster"
+    },
+    "button_wireless_switch": {
+      "en": "Button Wireless Switch",
+      "nl": "Draadloze Schakelaar",
+      "fr": "Interrupteur Sans Fil",
+      "de": "Drahtloser -Schalter"
+    },
+    "button_wireless_usb": {
+      "en": "Button Wireless Usb",
+      "nl": "Draadloze USB- knop",
+      "fr": "Bouton sans fil USB",
+      "de": "Drahtloser USB-Hybridknopf"
+    },
+    "button_wireless_valve": {
+      "en": "Button Wireless Valve",
+      "nl": "Draadloze Ventiel Knop",
+      "fr": "Vanne Sans Fil Bouton",
+      "de": "Drahtloses Hybridventil Taste"
+    },
+    "button_wireless_wall": {
+      "en": "Button Wireless Wall",
+      "nl": "Draadloze wandhybride knop",
+      "fr": "Bouton sans fil mural",
+      "de": "Drahtloser Wandhybridknopf"
+    },
+    "ceiling_fan": {
+      "en": "Ceiling Fan",
+      "fr": "Ceiling Fan",
+      "nl": "Plafondventilator",
+      "de": "Deckenventilator"
+    },
+    "christmas_lights": {
+      "en": "Christmas Lights",
+      "fr": "Guirlande de Noël",
+      "de": "Weihnachtsbeleuchtung",
+      "nl": "Kerstverlichting"
+    },
+    "climate_sensor": {
+      "en": "Climate Sensor",
+      "fr": "Capteur Climatique",
+      "nl": "Klimaatsensor",
+      "de": "Klimasensor"
+    },
+    "climate_sensor_2": {
+      "en": "Climate Sensor (2)",
+      "fr": "Capteur Climatique (2)",
+      "nl": "Klimaatsensor (2)",
+      "de": "Klimasensor (2)"
+    },
+    "climate_sensor_device": {
+      "en": "Device Radiator Valve Smart",
+      "nl": "Slimme radiatorkraan",
+      "fr": "Vanne de radiateur intelligente",
+      "de": "Intelligentes Heizkörperventil"
+    },
+    "climate_sensor_dimmer": {
+      "en": "Climate Sensor Dimmer",
+      "nl": "Klimaatsensor Dimmer",
+      "fr": "Dimmer de Capteur Climatique",
+      "de": "Dimmer für Klimasensor"
+    },
+    "climate_sensor_energy": {
+      "en": "Climate Sensor Energy",
+      "nl": "Klimaatsensor energie",
+      "fr": "Capteur climatique énergétique",
+      "de": "Klimasensor Energie"
+    },
+    "climate_sensor_gas": {
+      "en": "Climate Sensor Gas",
+      "nl": "Klimaatsensor gas",
+      "fr": "Capteur de climat à gaz",
+      "de": "Klimasensor Gas-"
+    },
+    "climate_sensor_plug": {
+      "en": "Climate Sensor Plug",
+      "nl": "Klimaatsensor Plug",
+      "fr": "Prise de Capteur Climatique",
+      "de": "-Klimasensor-Stecker"
+    },
+    "climate_sensor_presence": {
+      "en": "Climate Sensor Presence",
+      "nl": "Klimaatsensor Aanwezigheid",
+      "fr": "Capteur de Climat Présence",
+      "de": "Klimasensor Präsenz"
+    },
+    "climate_sensor_smart": {
+      "en": "Climate Sensor Smart",
+      "nl": "Slimme Klimaatsensor",
+      "fr": "Capteur Climatique Intelligent",
+      "de": "Intelligenter -Klimasensor"
+    },
+    "climate_sensor_switch": {
+      "en": "Climate Sensor Switch",
+      "nl": "Klimaatsensor Schakelaar",
+      "fr": "Interrupteur de Capteur Climatique",
+      "de": "Klimasensor Schalter"
+    },
+    "climate_sensor_zt08": {
+      "en": "ZT08 Climate Sensor (LCD)",
+      "fr": "Capteur climatique ZT08 (LCD)",
+      "nl": "ZT08 klimaatsensor (LCD)",
+      "de": "ZT08 Klimasensor (LCD)"
+    },
+    "co_sensor": {
+      "en": "CO Sensor",
+      "fr": "Capteur CO",
+      "nl": "CO Sensor",
+      "de": "CO Sensor"
+    },
+    "co_sensor_dcr_co": {
+      "en": "CO detector (Tuya DCR-CO)",
+      "fr": "Détecteur de CO (Tuya DCR-CO)",
+      "nl": "CO-melder (Tuya DCR-CO)",
+      "de": "CO-Melder (Tuya DCR-CO)"
+    },
+    "contact_sensor": {
+      "en": "Contact Sensor",
+      "fr": "Capteur de Contact",
+      "nl": "Contact Sensor",
+      "de": "Kontaktsensor"
+    },
+    "contact_sensor_2": {
+      "en": "Contact Sensor (2)",
+      "fr": "Capteur de Contact (2)",
+      "nl": "Contact Sensor (2)",
+      "de": "Kontaktsensor (2)"
+    },
+    "contact_sensor_curtain": {
+      "en": "Contact Sensor Curtain",
+      "nl": "Contactsensor gordijn",
+      "fr": "Capteur de contact rideau",
+      "de": "Kontakt-Sensor Vorhang"
+    },
+    "contact_sensor_dimmer": {
+      "en": "Contact Sensor Dimmer",
+      "nl": "Contactsensor dimmer",
+      "fr": "Capteur de contact dimmer",
+      "de": "Kontakt-Sensor Dimmer"
+    },
+    "contact_sensor_plug": {
+      "en": "Contact Sensor Plug",
+      "nl": "contactsensor",
+      "fr": "Capteur de contact",
+      "de": "-Kontaktsensor"
+    },
+    "contact_sensor_switch": {
+      "en": "Contact Sensor Switch",
+      "nl": "contactsensor schakelaar",
+      "fr": "Interrupteur de capteur de contact",
+      "de": "-Kontaktsensor-Schalter"
+    },
+    "contact_sensor_zigbee": {
+      "en": "Contact Sensor Zigbee",
+      "nl": "Contactsensor Zigbee",
+      "fr": "Capteur de contact Zigbee",
+      "de": "Kontakt Sensor Zigbee"
+    },
+    "curtain_module": {
+      "en": "Curtain Module",
+      "fr": "Module volet/rideau",
+      "de": "Rollladenmodul",
+      "nl": "Gordijnmodule"
+    },
+    "curtain_module_2_gang": {
+      "en": "2 Gang Curtain Module",
+      "fr": "Module volet/rideau 2 voies",
+      "de": "Rollladenmodul 2-fach",
+      "nl": "Gordijnmodule 2-voudig"
+    },
+    "curtain_motor": {
+      "en": "Cover Controller",
+      "fr": "Contrôleur de Volet",
+      "nl": "Gordijnmotor",
+      "de": "Vorhangmotor"
+    },
+    "curtain_motor_2": {
+      "en": "Cover Controller (2)",
+      "fr": "Contrôleur de Volet (2)",
+      "nl": "Gordijnmotor (2)",
+      "de": "Vorhangmotor (2)"
+    },
+    "curtain_motor_shutter": {
+      "en": "Curtain Motor Shutter",
+      "nl": "Gordijnmotor rolluik",
+      "fr": "Moteur de rideau volet",
+      "de": "Vorhängemotor Rollladen"
+    },
+    "curtain_motor_tilt": {
+      "en": "Curtain Motor with Tilt",
+      "fr": "Moteur Volet avec Inclinaison",
+      "nl": "Gordijn Kantelmotor",
+      "de": "Vorhang Kippmotor"
+    },
+    "curtain_motor_wall": {
+      "en": "Curtain Motor Wall",
+      "nl": "Gordijnmotor muur",
+      "fr": "Moteur de rideau mural",
+      "de": "Vorhängermotor Wand"
+    },
+    "curtain_sonoff_mini_zbrbs": {
+      "en": "Roller Shutter Switch (SONOFF MINI-ZBRBS)",
+      "fr": "Interrupteur volet roulant (SONOFF MINI-ZBRBS)",
+      "nl": "Rolluikschakelaar (SONOFF MINI-ZBRBS)",
+      "de": "Rollladenschalter (SONOFF MINI-ZBRBS)"
+    },
+    "device_air_purifier": {
+      "en": "Device Air Purifier",
+      "nl": "luchtreiniger",
+      "fr": "Purificateur d'air",
+      "de": "-Luftreiniger"
+    },
+    "device_air_purifier_din": {
+      "en": "Device Air Purifier Din",
+      "nl": "Luchtreiniger Din",
+      "fr": "Purificateur d'air Din",
+      "de": "Luftreiniger Din"
+    },
+    "device_air_purifier_floor": {
+      "en": "Device Air Purifier Floor",
+      "nl": "luchtzuiveraar voor op de vloer",
+      "fr": "Purificateur d'air sur pied",
+      "de": "Boden--Luftreiniger"
+    },
+    "device_air_purifier_humidifier": {
+      "en": "Device Air Purifier Humidifier",
+      "nl": "Luchtzuiveraar luchtbevochtiger",
+      "fr": "Purificateur d'air humidificateur",
+      "de": "Luftreiniger Luftbefeuchter"
+    },
+    "device_air_purifier_led": {
+      "en": "Device Air Purifier Led",
+      "nl": "Device Air Purifier Led",
+      "fr": "Device Air Purifier Led",
+      "de": "Luftreiniger LED"
+    },
+    "device_air_purifier_motion": {
+      "en": "Device Air Purifier Motion",
+      "nl": "Luchtzuiveraar met beweging",
+      "fr": "Purificateur d'air à mouvement",
+      "de": "Luftreiniger mit Bewegung"
+    },
+    "device_air_purifier_plug": {
+      "en": "Device Air Purifier Plug",
+      "nl": "Luchtzuiveraar Stekker",
+      "fr": "Prise Purificateur d'Air",
+      "de": "Luftreiniger Steckdose"
+    },
+    "device_air_purifier_presence": {
+      "en": "Device Air Purifier Presence",
+      "nl": "luchtzuiveraar met aanwezigheid",
+      "fr": "Purificateur d'air de présence",
+      "de": "-Luftreiniger mit Anwesenheit"
+    },
+    "device_air_purifier_quality": {
+      "en": "Device Air Purifier Quality",
+      "nl": "Kwaliteits luchtzuiveraar",
+      "fr": "Purificateur d'air de qualité",
+      "de": "-Luftreiniger von hoher Qualität"
+    },
+    "device_air_purifier_radiator": {
+      "en": "Device Air Purifier Radiator",
+      "nl": "luchtzuiveraar met radiator",
+      "fr": "Purificateur d'air avec radiateur",
+      "de": "-Luftreiniger mit Heizkörper"
+    },
+    "device_air_purifier_siren": {
+      "en": "Device Air Purifier Siren",
+      "nl": "luchtzuiveraar met sirene",
+      "fr": "Système de purification d'air avec sirène",
+      "de": "-Luftreiniger mit Sirene"
+    },
+    "device_air_purifier_smart": {
+      "en": "Device Air Purifier Smart",
+      "nl": "Slimme luchtzuiveraar",
+      "fr": "Purificateur d'air intelligent",
+      "de": "Intelligenter -Luftreiniger"
+    },
+    "device_air_purifier_smoke": {
+      "en": "Device Air Purifier Smoke",
+      "nl": "Luchtreiniger tegen rook",
+      "fr": "Purificateur d'air contre la fumée",
+      "de": "Luftreiniger gegen Rauch"
+    },
+    "device_air_purifier_soil": {
+      "en": "Device Air Purifier Soil",
+      "nl": "luchtzuiveraar voor de bodem",
+      "fr": "Purificateur d'air de sol",
+      "de": "-Luftreiniger für den Boden"
+    },
+    "device_air_purifier_thermostat": {
+      "en": "Device Air Purifier Thermostat",
+      "nl": "Luchtzuiveraar Thermostaat",
+      "fr": "Thermostat Purificateur d'Air",
+      "de": "-Luftreiniger-Thermostat"
+    },
+    "device_air_purifier_water": {
+      "en": "Device Air Purifier Water",
+      "nl": "luchtzuiveraar met water",
+      "fr": "Purificateur d'air à eau",
+      "de": "Luftreiniger Wasser"
+    },
+    "device_din_rail": {
+      "en": "Device Din Rail",
+      "nl": "Apparaat DIN-rail",
+      "fr": "Appareil sur rail DIN",
+      "de": "Gerät Hutschiene"
+    },
+    "device_din_rail_meter": {
+      "en": "Device Din Rail Meter",
+      "nl": "DIN-rail meter",
+      "fr": "Compteur Din Rail",
+      "de": "DIN-Schienen-Zähler"
+    },
+    "device_floor_heating": {
+      "en": "Device Floor Heating",
+      "nl": "Apparaat vloerverwarming",
+      "fr": "Chauffage au sol de l'appareil",
+      "de": "Gerät Fußbodenheizung"
+    },
+    "device_floor_heating_thermostat": {
+      "en": "Device Floor Heating Thermostat",
+      "nl": "Apparaat vloerverwarming thermostaat",
+      "fr": "Thermostat de chauffage au sol de l'appareil",
+      "de": "Gerät Fußbodenheizung Thermostat"
+    },
+    "device_generic_diy_universal": {
+      "en": "Device Generic Diy Universal",
+      "nl": "Device Generic Diy Universal",
+      "fr": "Device Generic Diy Universal",
+      "de": "Generisches DIY-Gerät"
+    },
+    "device_generic_tuya": {
+      "en": "Device Generic Tuya",
+      "nl": "Device Generic Tuya",
+      "fr": "Device Generic Tuya",
+      "de": "Generisches Tuya-Gerät"
+    },
+    "device_generic_tuya_universal": {
+      "en": "Device Generic Tuya Universal",
+      "nl": "Apparaat generiek Tuya universeel",
+      "fr": "Appareil générique Tuya universel",
+      "de": "Gerät generisch Tuya universell"
+    },
+    "device_plug_energy": {
+      "en": "Device Plug Energy",
+      "nl": "Energie Stekker",
+      "fr": "Prise Énergétique",
+      "de": "Energie Stecker"
+    },
+    "device_plug_energy_monitor": {
+      "en": "Device Plug Energy Monitor",
+      "nl": "energie-monitor voor stekker",
+      "fr": "Moniteur d'énergie pour prise",
+      "de": "Energieüberwachungsstecker"
+    },
+    "device_plug_smart": {
+      "en": "Device Plug Smart",
+      "nl": "Slimme Stekker",
+      "fr": "Prise Intelligente",
+      "de": "Intelligente Hybridsteckdose"
+    },
+    "device_plug_smart_water": {
+      "en": "Device Plug Smart Water",
+      "nl": "Slimme Water Stekker",
+      "fr": "Prise Intelligente Eau",
+      "de": "Intelligente Wasser Steckdose"
+    },
+    "device_radiator_valve": {
+      "en": "Radiator Valve TRV",
+      "nl": "Radiatorkraan",
+      "fr": "Vanne de radiateur TRV",
+      "de": "Heizkörperventil"
+    },
+    "device_radiator_valve_smart": {
+      "en": "Device Radiator Valve Smart",
+      "nl": "Slimme radiatorkraan",
+      "fr": "Vanne de radiateur intelligente",
+      "de": "Intelligentes Heizkörperventil"
+    },
+    "dimmable_led_strip": {
+      "en": "Dimmable LED Strip",
+      "fr": "Ruban LED dimmable",
+      "de": "Dimmbarer LED-Streifen",
+      "nl": "Dimbare ledstrip"
+    },
+    "dimmable_recessed_led": {
+      "en": "Dimmable Recessed LED",
+      "fr": "Spot LED encastré dimmable",
+      "de": "Dimmbarer LED-Einbaustrahler",
+      "nl": "Dimbare inbouwled"
+    },
+    "dimmer_0_10v": {
+      "en": "0-10V Dimmer",
+      "fr": "Variateur 0-10V",
+      "de": "0-10V-Dimmer",
+      "nl": "0-10V-dimmer"
+    },
+    "dimmer_1_gang": {
+      "en": "1 Gang Dimmer Module",
+      "fr": "Module variateur 1 voie",
+      "de": "Dimmermodul 1-fach",
+      "nl": "Dimmermodule 1-voudig"
+    },
+    "dimmer_1_gang_2": {
+      "en": "1 Gang Dimmer Module",
+      "fr": "Module variateur 1 voie",
+      "de": "Dimmermodul 1-fach",
+      "nl": "Dimmermodule 1-voudig"
+    },
+    "dimmer_1_gang_tuya": {
+      "en": "1 Gang Dimmer Module",
+      "fr": "Module variateur 1 voie",
+      "de": "Dimmermodul 1-fach",
+      "nl": "Dimmermodule 1-voudig"
+    },
+    "dimmer_2_gang": {
+      "en": "2 Gang Dimmer Module",
+      "fr": "Module variateur 2 voies",
+      "de": "Dimmermodul 2-fach",
+      "nl": "Dimmermodule 2-voudig"
+    },
+    "dimmer_2_gang_tuya": {
+      "en": "2 Gang Dimmer Module",
+      "fr": "Module variateur 2 voies",
+      "de": "Dimmermodul 2-fach",
+      "nl": "Dimmermodule 2-voudig"
+    },
+    "dimmer_3gang": {
+      "en": "3-Gang Dimmer Module",
+      "fr": "Module Variateur 3 Canaux",
+      "nl": "3-Voudige Dimmer",
+      "de": "3-Kanal Dimmer"
+    },
+    "dimmer_4ch": {
+      "en": "4-Channel Dimmer",
+      "fr": "Variateur 4 Canaux",
+      "de": "Dimmer 4 Kanäle",
+      "nl": "Dimmer 4 kanalen"
+    },
+    "dimmer_air_purifier": {
+      "en": "Dimmer Air Purifier",
+      "nl": "Dimmer Air Purifier",
+      "fr": "Dimmer Air Purifier",
+      "de": "Dimmer Luftreiniger"
+    },
+    "dimmer_bulb_dimmable": {
+      "en": "Dimmer Bulb Dimmable",
+      "nl": "Dimmer Bulb Dimmable",
+      "fr": "Dimmer Bulb Dimmable",
+      "de": "Dimmbare Lampe"
+    },
+    "dimmer_dual_channel": {
+      "en": "2-Channel Dimmer Module",
+      "nl": "Tweekanaals Dimmer",
+      "de": "Zweikanal Dimmer",
+      "fr": "Variateur 2 canaux"
+    },
+    "dimmer_ts110e": {
+      "en": "Tuya Dimmer Module TS110E",
+      "fr": "Module variateur Tuya TS110E",
+      "nl": "Tuya dimmermodule TS110E",
+      "de": "Tuya Dimmermodul TS110E"
+    },
+    "dimmer_wall_1gang": {
+      "en": "Dimmer 1gang",
+      "fr": "Dimmer 1gang",
+      "nl": "1-Voudige Wanddimmer",
+      "de": "1-Kanal Wanddimmer"
+    },
+    "dimmer_wall_plug": {
+      "en": "Dimmer Wall Plug",
+      "nl": "Dimmer Wandstopcontact",
+      "fr": "Prise Murale Dimmer",
+      "de": "Dimmer Wandstecker"
+    },
+    "dimmer_wall_switch": {
+      "en": "Dimmer Wall Switch",
+      "nl": "dimmer wandschakelaar",
+      "fr": "Interrupteur mural dimmable",
+      "de": "Hybrider Dimmer-Wandschalter"
+    },
+    "dimmer_wall_water": {
+      "en": "Dimmer Wall Water",
+      "nl": "Dimmer Wand Water",
+      "fr": "Variateur Mural Eau",
+      "de": "Dimmer Wand Wasser"
+    },
+    "din_rail_meter": {
+      "en": "DIN Rail Energy Meter",
+      "fr": "Compteur DIN Rail",
+      "nl": "DIN Rail Energiemeter",
+      "de": "DIN-Schienen Energiezähler"
+    },
+    "din_rail_switch": {
+      "en": "DIN Rail Switch",
+      "fr": "Interrupteur DIN Rail",
+      "nl": "DIN Rail Schakelaar",
+      "de": "DIN-Schienen Schalter"
+    },
+    "diy_custom_zigbee": {
+      "en": "DIY Custom Zigbee Device",
+      "fr": "Appareil Zigbee DIY Personnalisé",
+      "nl": "DIY Custom Zigbee Apparaat",
+      "de": "DIY Custom Zigbee Gerät"
+    },
+    "door_controller": {
+      "en": "Door Controller",
+      "fr": "Door Controller",
+      "nl": "Deur Controller",
+      "de": "Türsteuerung"
+    },
+    "door_controller_garage": {
+      "en": "Door Controller Garage",
+      "nl": "Deurcontroller Garage",
+      "fr": "Contrôleur de Porte Garage",
+      "de": "Türsteuerung Garage"
+    },
+    "door_sensor": {
+      "en": "Door / Window Sensor",
+      "fr": "Capteur Porte / Fenêtre",
+      "nl": "Deur / Raam Sensor",
+      "de": "Tür / Fenster Sensor"
+    },
+    "doorbell": {
+      "en": "Doorbell Doorbell",
+      "fr": "Doorbell Doorbell",
+      "nl": "Deurbel",
+      "de": "Türklingel"
+    },
+    "doorwindowsensor": {
+      "en": "Door & Window Sensor",
+      "fr": "Capteur de porte et fenêtre",
+      "de": "Tür- & Fenstersensor",
+      "nl": "Deur- & raamsensor"
+    },
+    "doorwindowsensor_2": {
+      "en": "Door & Window Sensor",
+      "fr": "Capteur de porte et fenêtre",
+      "de": "Tür- & Fenstersensor",
+      "nl": "Deur- & raamsensor"
+    },
+    "doorwindowsensor_3": {
+      "en": "Door & Window Sensor",
+      "fr": "Capteur de porte et fenêtre",
+      "de": "Tür- & Fenstersensor",
+      "nl": "Deur- & raamsensor"
+    },
+    "doorwindowsensor_4": {
+      "en": "Door & Window Sensor",
+      "fr": "Capteur de porte et fenêtre",
+      "de": "Tür- & Fenstersensor",
+      "nl": "Deur- & raamsensor"
+    },
+    "double_power_point": {
+      "en": "Double Power Point - With Metering",
+      "fr": "Double prise - avec mesure",
+      "de": "Doppelsteckdose mit Messung",
+      "nl": "Dubbel stopcontact met meting"
+    },
+    "double_power_point_2": {
+      "en": "Double Power Point",
+      "fr": "Double prise",
+      "de": "Doppelsteckdose",
+      "nl": "Dubbel stopcontact"
+    },
+    "energy_meter_3ch_bidirectional": {
+      "en": "3-channel bidirectional energy meter with relay",
+      "fr": "Compteur d'énergie bidirectionnel 3 canaux avec relais",
+      "nl": "Bidirectionele energiemeter 3 kanalen met relais",
+      "de": "Bidirektionaler 3-Kanal-Energiezähler mit Relais"
+    },
+    "energy_meter_3phase": {
+      "en": "Energy Meter 3-Phase",
+      "fr": "Compteur Triphasé",
+      "nl": "3-Fase Energiemeter",
+      "de": "3-Phasen Energiezähler"
+    },
+    "energy_meter_din": {
+      "en": "DIN Rail Energy Meter",
+      "fr": "Compteur Énergie Rail DIN",
+      "de": "Hutschienen-Energiezähler",
+      "nl": "DIN-rail energiemeter"
+    },
+    "fan_controller": {
+      "en": "Fan Speed Controller",
+      "fr": "Contrôleur Ventilateur",
+      "nl": "Ventilator Controller",
+      "de": "Lüfterregler"
+    },
+    "fan_light_tuya_5_levels": {
+      "en": "Fan + light, 5 levels (Tuya TS0601)",
+      "fr": "Ventilateur + lumière, 5 niveaux (Tuya TS0601)",
+      "nl": "Ventilator + licht, 5 standen (Tuya TS0601)",
+      "de": "Ventilator + Licht, 5 Stufen (Tuya TS0601)"
+    },
+    "fingerbot": {
+      "en": "Finger Bot",
+      "fr": "Robot à doigt",
+      "nl": "Vingerbot",
+      "de": "Fingerbot"
+    },
+    "fingerbot_switch": {
+      "en": "Fingerbot Switch",
+      "nl": "Fingerbot Schakelaar",
+      "fr": "Interrupteur Fingerbot",
+      "de": "Fingerbot Schalter"
+    },
+    "fingerprint_lock": {
+      "en": "Fingerprint Smart Lock",
+      "fr": "Serrure Empreinte Digitale",
+      "nl": "Vingerafdruk Slim Slot",
+      "de": "Fingerabdruck Smartlock"
+    },
+    "flood_sensor": {
+      "en": "Flood sensor",
+      "fr": "Détecteur d'inondation",
+      "de": "Wassersensor",
+      "nl": "Overstromingssensor"
+    },
+    "floor_heating_thermostat": {
+      "en": "Floor Heating Thermostat",
+      "fr": "Thermostat de Chauffage au Sol",
+      "nl": "Vloerverwarming Thermostaat",
+      "de": "Fussbodenheizung Thermostat"
+    },
+    "formaldehyde_sensor": {
+      "en": "Zigbee Formaldehyde/VOC Sensor",
+      "fr": "Capteur formaldéhyde/VOC Zigbee",
+      "nl": "Formaldehyde Sensor",
+      "de": "Formaldehyd Sensor"
+    },
+    "garage_door": {
+      "en": "Garage Door Controller",
+      "fr": "Contrôleur Porte Garage",
+      "nl": "Garagedeur Controller",
+      "de": "Garagentorsteuerung"
+    },
+    "garage_door_opener": {
+      "en": "Garage Door Opener",
+      "fr": "Ouvre-porte de Garage",
+      "nl": "Garagedeur Opener",
+      "de": "Garagentorantrieb"
+    },
+    "gas_detector": {
+      "en": "Gas Detector",
+      "fr": "Gas Detector",
+      "nl": "Gas Detector",
+      "de": "Gasdetektor"
+    },
+    "gas_sensor": {
+      "en": "Gas Sensor Ts0601",
+      "fr": "Gas Sensor Ts0601",
+      "nl": "Gas Sensor",
+      "de": "Gassensor"
+    },
+    "gas_sensor_switch": {
+      "en": "Gas Sensor Switch",
+      "nl": "Gas Sensor Switch",
+      "fr": "Gas Sensor Switch",
+      "de": "Gassensor-Schalter"
+    },
+    "gateway_zigbee_bridge": {
+      "en": "Zbbridge",
+      "fr": "Zbbridge",
+      "nl": "Zigbee Gateway",
+      "de": "Zigbee Gateway"
+    },
+    "generic_diy": {
+      "en": "Generic DIY Zigbee Device",
+      "fr": "Appareil Zigbee DIY Générique",
+      "nl": "Generiek DIY Zigbee Apparaat",
+      "de": "Generisches DIY Zigbee Gerät"
+    },
+    "generic_tuya": {
+      "en": "Generic Tuya Device (TS0601)",
+      "fr": "Appareil Tuya Générique (TS0601)",
+      "nl": "Generiek Tuya Apparaat",
+      "de": "Generisches Tuya Gerät"
+    },
+    "gpo_double_light_mg_au03": {
+      "en": "Double GPO + light switch (MakeGood MG-AU03)",
+      "fr": "Double prise + interrupteur (MakeGood MG-AU03)",
+      "nl": "Dubbel stopcontact + schakelaar (MakeGood MG-AU03)",
+      "de": "Doppelsteckdose + Schalter (MakeGood MG-AU03)"
+    },
+    "gpo_double_mg_gpo02z": {
+      "en": "Double GPO (MakeGood MG-GPO02Z)",
+      "fr": "Double prise (MakeGood MG-GPO02Z)",
+      "nl": "Dubbel stopcontact (MakeGood MG-GPO02Z)",
+      "de": "Doppelsteckdose (MakeGood MG-GPO02Z)"
+    },
+    "handheld_remote_4_buttons": {
+      "en": "4 Button Remote",
+      "fr": "Télécommande 4 boutons",
+      "nl": "4-knops afstandsbediening",
+      "de": "4-Tasten-Fernbedienung"
+    },
+    "heiman_keyfob": {
+      "en": "HEIMAN alarm keyfob",
+      "fr": "Télécommande alarme HEIMAN",
+      "nl": "HEIMAN alarm-afstandsbediening",
+      "de": "HEIMAN Alarm-Fernbedienung"
+    },
+    "heiman_siren": {
+      "en": "HEIMAN smart siren",
+      "fr": "Sirène HEIMAN",
+      "nl": "HEIMAN sirene",
+      "de": "HEIMAN Sirene"
+    },
+    "humidifier": {
+      "en": "Smart Humidifier",
+      "fr": "Humidificateur Connecté",
+      "nl": "Slimme Luchtbevochtiger",
+      "de": "Intelligenter Luftbefeuchter"
+    },
+    "hvac_air_conditioner": {
+      "en": "Air Conditioner (Smart)",
+      "fr": "Climatiseur (Smart)",
+      "nl": "Airconditioner (Smart)",
+      "de": "Klimaanlage (Smart)"
+    },
+    "hvac_controller": {
+      "en": "HVAC Controller",
+      "fr": "Contrôleur HVAC",
+      "nl": "HVAC Controller",
+      "de": "HVAC Steuerung"
+    },
+    "hvac_dehumidifier": {
+      "en": "Dehumidifier (Smart)",
+      "fr": "Déshumidificateur (Smart)",
+      "nl": "Luchtontvochtigger (Smart)",
+      "de": "Luftentfeuchter (Smart)"
+    },
+    "hybrid_fan_sensor": {
+      "en": "Hybrid Fan + Sensor",
+      "fr": "Hybride Ventilateur + Capteur",
+      "nl": "Hybride Ventilator + Sensor",
+      "de": "Hybrid Lüfter + Sensor"
+    },
+    "hybrid_garage_door_sensor": {
+      "en": "Hybrid Garage Door + Sensor",
+      "fr": "Hybride Porte Garage + Capteur",
+      "nl": "Hybride Garagedeur + Sensor",
+      "de": "Hybrid Garagentor + Sensor"
+    },
+    "hybrid_heater_thermostat": {
+      "en": "Hybrid Heater + Thermostat",
+      "fr": "Hybride Chauffage + Thermostat",
+      "nl": "Hybride Verwarming + Thermostaat",
+      "de": "Hybrid Heizung + Thermostat"
+    },
+    "hybrid_light_sensor": {
+      "en": "Hybrid Light + Button Sensor",
+      "fr": "Hybride Lumière + Capteur Bouton",
+      "nl": "Hybride Licht + Knop Sensor",
+      "de": "Hybrid Licht + Tastensensor"
+    },
+    "hybrid_light_windowcoverings": {
+      "en": "Hybrid Light + Window Covering",
+      "fr": "Hybride Lumière + Store",
+      "nl": "Hybride Licht + Raamdecoratie",
+      "de": "Hybrid Licht + Jalousie"
+    },
+    "hybrid_sensor_thermostat": {
+      "en": "Hybrid Sensor + Thermostat",
+      "fr": "Hybride Capteur + Thermostat",
+      "nl": "Hybride Sensor + Thermostaat",
+      "de": "Hybrid Sensor + Thermostat"
+    },
+    "hybrid_switch_sensor": {
+      "en": "Hybrid Switch + Sensor",
+      "fr": "Hybride Interrupteur + Capteur",
+      "nl": "Hybride Schakelaar + Sensor",
+      "de": "Hybrid Schalter + Sensor"
+    },
+    "illuminance_sensor": {
+      "en": "Illuminance Sensor",
+      "fr": "Capteur d'éclairement",
+      "nl": "Verlichtingssensor",
+      "de": "Beleuchtungssensor"
+    },
+    "ir_blaster": {
+      "en": "IR Blaster Remote",
+      "nl": "IR Afstandsbediening",
+      "de": "IR-Fernbedienung",
+      "fr": "Télécommande IR"
+    },
+    "ir_remote": {
+      "en": "Virtual IR Remote",
+      "fr": "Télécommande IR Virtuelle",
+      "de": "Virtuelle IR-Fernbedienung",
+      "nl": "Virtuele IR-afstandsbediening"
+    },
+    "keypad_alarm_wke502z": {
+      "en": "Alarm keypad (Daewoo WKE502Z)",
+      "fr": "Clavier d'alarme (Daewoo WKE502Z)",
+      "nl": "Alarmtoetsenbord (Daewoo WKE502Z)",
+      "de": "Alarmtastatur (Daewoo WKE502Z)"
+    },
+    "lcdtemphumidluxsensor": {
+      "en": "LCD Temperature, Humidity and Luminance Sensor",
+      "fr": "Capteur de température, d'humidité et de luminosité LCD",
+      "de": "Temperatur-, Feuchte- & Lichtsensor LCD",
+      "nl": "Temperatuur-, vocht- & lichtsensor LCD"
+    },
+    "lcdtemphumidsensor": {
+      "en": "LCD Temperature & Humidity Sensor",
+      "fr": "Capteur de Température et Humidité LCD",
+      "nl": "LCD Temp/Vocht Sensor",
+      "de": "LCD Temp/Feuchte Sensor"
+    },
+    "lcdtemphumidsensor_2": {
+      "en": "LCD Temperature & Humidity Sensor",
+      "fr": "Capteur de température et d'humidité LCD",
+      "de": "Temperatur- & Feuchtesensor LCD",
+      "nl": "Temperatuur- & vochtsensor LCD"
+    },
+    "lcdtemphumidsensor_3": {
+      "en": "LCD Temperature & Humidity Sensor",
+      "fr": "Capteur de température et d'humidité LCD",
+      "de": "Temperatur- & Feuchtesensor LCD",
+      "nl": "Temperatuur- & vochtsensor LCD"
+    },
+    "lcdtemphumidsensor_plug_energy": {
+      "en": "Lcdtemphumidsensor Plug Energy",
+      "nl": "LCD-temperatuur- en vochtigheidssensor stekker",
+      "fr": "Prise avec capteur de température et d'humidité LCD",
+      "de": "LCD-Temperatur- und Feuchtigkeitssensor Stecker"
+    },
+    "led_controller_cct": {
+      "en": "LED Controller CCT",
+      "fr": "Contrôleur LED CCT",
+      "nl": "LED CCT Controller",
+      "de": "LED CCT Steuerung"
+    },
+    "led_controller_dimmable": {
+      "en": "LED Controller Dimmable",
+      "fr": "Contrôleur LED Dimmable",
+      "de": "LED Controller Dimmbar",
+      "nl": "LED Controller Dimbaar"
+    },
+    "led_controller_rgb": {
+      "en": "LED Controller RGB",
+      "fr": "Contrôleur LED RGB",
+      "nl": "RGB LED Controller",
+      "de": "RGB LED Steuerung"
+    },
+    "led_strip": {
+      "en": "LED Strip Led Strip",
+      "fr": "LED Strip Led Strip",
+      "nl": "LED Strip",
+      "de": "LED Streifen"
+    },
+    "led_strip_advanced": {
+      "en": "Led Strip Advanced",
+      "fr": "Led Strip Advanced",
+      "nl": "Geavanceerde LED Strip",
+      "de": "Erweiterte LED Streifen"
+    },
+    "led_strip_rgbw": {
+      "en": "Led Strip Rgbw",
+      "fr": "Led Strip Rgbw",
+      "nl": "RGBW LED Strip",
+      "de": "RGBW LED Streifen"
+    },
+    "light_bulb_dimmable_tunable": {
+      "en": "Light Bulb Dimmable Tunable",
+      "nl": "Light Bulb Dimmable Tunable",
+      "fr": "Light Bulb Dimmable Tunable",
+      "de": "Lampe dimmbar, Farbtemperatur"
+    },
+    "light_bulb_rgb": {
+      "en": "Light Bulb Rgb",
+      "nl": "Rgb Lamp",
+      "fr": "Ampoule Rgb",
+      "de": "Rgb Glühbirne"
+    },
+    "light_bulb_rgb_led": {
+      "en": "Light Bulb Rgb Led",
+      "nl": "Lichtbulb Rgb Led",
+      "fr": "Ampoule Rgb Led",
+      "de": "Lampen Rgb Led"
+    },
+    "light_bulb_rgb_rgbw": {
+      "en": "Light Bulb Rgb Rgbw",
+      "nl": "Lamp RGB RGBW",
+      "fr": "Ampoule RVB RVB",
+      "de": "Glühbirne RGB RGBW"
+    },
+    "light_bulb_tunable_white": {
+      "en": "Light Bulb Tunable White",
+      "nl": "Light Bulb Tunable White",
+      "fr": "Light Bulb Tunable White",
+      "de": "Lampe Weißtöne einstellbar"
+    },
+    "light_cct_ts0502b": {
+      "en": "CCT Light (TS0502B)",
+      "nl": "CCT-lamp (TS0502B)",
+      "fr": "Lumière CCT (TS0502B)",
+      "de": "CCT-Leuchte (TS0502B)"
+    },
+    "light_dimmable_ts0501a": {
+      "en": "Dimmable Light (TS0501A)",
+      "nl": "Dimbare lamp (TS0501A)",
+      "fr": "Lumière variable (TS0501A)",
+      "de": "Dimmbare Leuchte (TS0501A)"
+    },
+    "light_rgbcct_ts0505b": {
+      "en": "RGB+CCT Light (TS0505B)",
+      "nl": "RGB+CCT-lamp (TS0505B)",
+      "fr": "Lumière RGB+CCT (TS0505B)",
+      "de": "RGB+CCT-Leuchte (TS0505B)"
+    },
+    "light_sensor_outdoor": {
+      "en": "Outdoor Light Sensor",
+      "fr": "Capteur de Luminosité Extérieur",
+      "nl": "Buitenlicht Sensor",
+      "de": "Außen Lichtsensor"
+    },
+    "lock_smart": {
+      "en": "Lock Smart",
+      "fr": "Lock Smart",
+      "nl": "Smart Slot",
+      "de": "Smart Schloss"
+    },
+    "mc101z_pwm_dimmer": {
+      "en": "MC101Z PWM Dimmer",
+      "fr": "Variateur PWM MC101Z",
+      "de": "MC101Z PWM-Dimmer",
+      "nl": "MC101Z PWM-dimmer"
+    },
+    "module_mini_switch": {
+      "en": "Mini Switch",
+      "fr": "Mini Switch",
+      "nl": "Mini Schakelmodule",
+      "de": "Mini Schaltmodul"
+    },
+    "motion_sensor": {
+      "en": "Motion Sensor",
+      "fr": "Capteur de Mouvement",
+      "nl": "Bewegingssensor",
+      "de": "Bewegungssensor"
+    },
+    "motion_sensor_2": {
+      "en": "Motion Sensor",
+      "fr": "Capteur de mouvement",
+      "nl": "Bewegingssensor",
+      "de": "Bewegungssensor"
+    },
+    "motion_sensor_excellux_zg104plv": {
+      "en": "PIR motion + light sensor (Excellux ZG-104PLV)",
+      "fr": "Détecteur de mouvement + luminosité (Excellux ZG-104PLV)",
+      "nl": "Bewegings- + lichtsensor (Excellux ZG-104PLV)",
+      "de": "Bewegungs- + Lichtsensor (Excellux ZG-104PLV)"
+    },
+    "motion_sensor_radar_mmwave": {
+      "en": "Presence Sensor (Radar)",
+      "fr": "Capteur de Présence (Radar)",
+      "nl": "mmWave Radar Sensor",
+      "de": "mmWave Radarsensor"
+    },
+    "motion_sensor_switch": {
+      "en": "Motion Sensor Switch",
+      "nl": "Bewegingssensor Schakelaar",
+      "fr": "Interrupteur de Détection de Mouvement",
+      "de": "Bewegungsmelder Schalter"
+    },
+    "outdoor_2_socket": {
+      "en": "Outdoor Smart Socket",
+      "fr": "Prise connectée extérieure",
+      "de": "Smarte Außensteckdose",
+      "nl": "Slim buitenstopcontact"
+    },
+    "outdoor_plug": {
+      "en": "Outdoor Plug without metering",
+      "fr": "Prise extérieure sans mesure",
+      "de": "Außensteckdose ohne Messung",
+      "nl": "Buitenstekker zonder meting"
+    },
+    "panel_switch_cover_tuya": {
+      "en": "Touch Panel 2 Switches + 2 Shutters (Tuya)",
+      "fr": "Panneau tactile 2 interrupteurs + 2 volets (Tuya)",
+      "nl": "Touchpaneel 2 schakelaars + 2 rolluiken (Tuya)",
+      "de": "Touchpanel 2 Schalter + 2 Rollläden (Tuya)"
+    },
+    "pet_feeder": {
+      "en": "Smart Pet Feeder",
+      "fr": "Distributeur Croquettes Connecté",
+      "nl": "Slimme Voerbak",
+      "de": "Intelligenter Futterautomat"
+    },
+    "pet_feeder_zigbee": {
+      "en": "Pet Feeder (Zigbee)",
+      "fr": "Distributeur de Nourriture (Zigbee)",
+      "nl": "Huisdier Voeder (Zigbee)",
+      "de": "Futterspender (Zigbee)"
+    },
+    "pir_mmwave_sensor": {
+      "en": "PIR MMWave Sensor",
+      "fr": "Capteur PIR mmWave",
+      "de": "PIR-mmWave-Sensor",
+      "nl": "PIR-mmWave-sensor"
+    },
+    "pir_sensor_2": {
+      "en": "Smart PIR Motion Sensor",
+      "fr": "Détecteur de mouvement PIR connecté",
+      "de": "Smarter PIR-Bewegungsmelder",
+      "nl": "Slimme PIR-bewegingssensor"
+    },
+    "pirsensor": {
+      "en": "PIR Sensor",
+      "fr": "Capteur PIR",
+      "de": "PIR-Sensor",
+      "nl": "PIR-sensor"
+    },
+    "plug": {
+      "en": "Smart Plug without metering",
+      "fr": "Prise connectée sans mesure",
+      "de": "Smarter Stecker ohne Messung",
+      "nl": "Slimme stekker zonder meting"
+    },
+    "plug_energy_monitor": {
+      "en": "Plug Energy Monitor",
+      "fr": "Plug Energy Monitor",
+      "nl": "Stekker met Energiemeting",
+      "de": "Steckdose mit Energiemessung"
+    },
+    "plug_smart": {
+      "en": "Smart Plug with Energy Monitoring",
+      "fr": "Prise Connectée avec Mesure Énergie",
+      "nl": "Slimme Stekker",
+      "de": "Smart Steckdose"
+    },
+    "plug_smart_switch": {
+      "en": "Plug Smart Switch",
+      "nl": "Slimme Schakelaar",
+      "fr": "Interrupteur Intelligent",
+      "de": "Intelligenter -Schalter"
+    },
+    "pool_pump": {
+      "en": "Pool/Spa Pump Controller",
+      "fr": "Contrôleur Pompe Piscine",
+      "nl": "Zwembadpomp Controller",
+      "de": "Pool-Pumpensteuerung"
+    },
+    "power_clamp_meter": {
+      "en": "CT Clamp Power Meter",
+      "fr": "Compteur Pince Ampèremétrique",
+      "nl": "Stroomtang Meter",
+      "de": "Stromzangen Messgerät"
+    },
+    "power_meter": {
+      "en": "Power Meter",
+      "fr": "Compteur Électrique",
+      "nl": "Energiemeter",
+      "de": "Stromzähler"
+    },
+    "presence_detector": {
+      "en": "Virtual Presence Detector",
+      "nl": "Virtuele Aanwezigheidsdetector",
+      "fr": "Détecteur de Présence Virtuel",
+      "de": "Virtueller Anwesenheitssensor"
+    },
+    "presence_radar_aoyan_ay204t": {
+      "en": "Presence Radar (AOYAN AY204T)",
+      "fr": "Radar de présence (AOYAN AY204T)",
+      "nl": "Presence Radar (AOYAN AY204T)",
+      "de": "Presence Radar (AOYAN AY204T)"
+    },
+    "presence_sensor_ceiling": {
+      "en": "Ceiling Presence Sensor (230V)",
+      "fr": "Capteur de Présence Plafond (230V)",
+      "nl": "Plafond Aanwezigheidssensor (230V)",
+      "de": "Decken-Präsenzsensor (230V)"
+    },
+    "presence_sensor_radar": {
+      "en": "Presence Sensor (Radar / mmWave)",
+      "fr": "Capteur de présence (Radar / mmWave)",
+      "nl": "Aanwezigheidssensor (Radar / mmWave)",
+      "de": "Anwesenheitssensor (Radar / mmWave)"
+    },
+    "radar_sensor": {
+      "en": "Radar Sensor",
+      "fr": "Capteur radar",
+      "nl": "Radar Sensor",
+      "de": "Radarsensor"
+    },
+    "radar_sensor_2": {
+      "en": "Radar Sensor",
+      "fr": "Capteur radar",
+      "nl": "Radar Sensor",
+      "de": "Radarsensor"
+    },
+    "radar_sensor_ceiling": {
+      "en": "Radar Sensor ceiling",
+      "fr": "Capteur radar de plafond",
+      "de": "Radarsensor Decke",
+      "nl": "Radarsensor plafond"
+    },
+    "radiator_controller": {
+      "en": "Electric Radiator Controller (Pilot Wire)",
+      "fr": "Contrôleur Radiateur Électrique (Fil Pilote)",
+      "nl": "Radiator Controller",
+      "de": "Heizkörpersteuerung"
+    },
+    "radiator_valve": {
+      "en": "Radiator Valve",
+      "fr": "Radiator Valve",
+      "nl": "Radiatorklep",
+      "de": "Heizkörperventil"
+    },
+    "radiator_valve_zigbee": {
+      "en": "Radiator Valve (TRV) Zigbee",
+      "fr": "Vanne de radiateur (TRV) Zigbee",
+      "nl": "Radiatorkraan (TRV) Zigbee",
+      "de": "Heizkörperventil (TRV) Zigbee"
+    },
+    "radiator_wifi_tuya": {
+      "en": "Radiator WiFi Tuya (Local)",
+      "fr": "Radiateur WiFi Tuya (Local)",
+      "nl": "Radiator WiFi Tuya (Lokaal)",
+      "de": "Heizkörper WiFi Tuya (Lokal)"
+    },
+    "rain_sensor": {
+      "en": "Zigbee Rain Sensor",
+      "fr": "Capteur de pluie Zigbee",
+      "nl": "Regensensor",
+      "de": "Regensensor"
+    },
+    "relay_board_1_channel": {
+      "en": "1 Channel Relay Board",
+      "fr": "Carte relais 1 canal",
+      "de": "Relaisplatine 1 Kanal",
+      "nl": "Relaisbord 1 kanaal"
+    },
+    "relay_board_2_channel": {
+      "en": "2 Channel Relay Board",
+      "fr": "Carte relais 2 canaux",
+      "de": "Relaisplatine 2 Kanäle",
+      "nl": "Relaisbord 2 kanalen"
+    },
+    "relay_board_4_channel": {
+      "en": "4 Channel Relay Board",
+      "fr": "Carte relais 4 canaux",
+      "de": "Relaisplatine 4 Kanäle",
+      "nl": "Relaisbord 4 kanalen"
+    },
+    "remote_button_emergency_sos": {
+      "en": "Remote Button Emergency Sos",
+      "nl": "Afstandsbediening noodknop SOS",
+      "fr": "Bouton d'urgence SOS à distance",
+      "de": "Fernbedienung Notruf SOS"
+    },
+    "remote_button_wireless": {
+      "en": "Remote Button Wireless",
+      "nl": "Afstandsbediening draadloos",
+      "fr": "Télécommande sans fil",
+      "de": "Funkfernbedienung"
+    },
+    "remote_button_wireless_fingerbot": {
+      "en": "Remote Button Wireless Fingerbot",
+      "nl": "Remote Button Wireless Fingerbot",
+      "fr": "Remote Button Wireless Fingerbot",
+      "de": "Fingerbot Funktaste"
+    },
+    "remote_button_wireless_handheld": {
+      "en": "Remote Button Wireless Handheld",
+      "nl": "Draadloze handbediende afstandsbedieningsknop",
+      "fr": "Bouton télécommande sans fil portable",
+      "de": "Funk-Fernbedienungstaste handgehalten"
+    },
+    "remote_button_wireless_plug": {
+      "en": "Remote Button Wireless Plug",
+      "nl": "Draadloze stekkerknop",
+      "fr": "Bouton de prise sans fil",
+      "de": "Kabelloser Steckdosenknopf"
+    },
+    "remote_button_wireless_scene": {
+      "en": "Remote Button Wireless Scene",
+      "nl": "Draadloze Afstandsbediening Scene",
+      "fr": "Bouton Télécommande Sans Fil Scène",
+      "de": "Drahtlose Fernbedienung Szenen"
+    },
+    "remote_button_wireless_smart": {
+      "en": "Remote Button Wireless Smart",
+      "nl": "Draadloze Slimme Afstandsbediening",
+      "fr": "Bouton Télécommande Sans Fil Intelligent",
+      "de": "Kabelloser Smart Fernbedienung"
+    },
+    "remote_button_wireless_usb": {
+      "en": "Remote Button Wireless Usb",
+      "nl": "Draadloze Usb Afstandsbediening",
+      "fr": "Bouton Télécommande Sans Fil Usb",
+      "de": "Drahtlose Usb Fernbedienung"
+    },
+    "remote_button_wireless_valve": {
+      "en": "Remote Button Wireless Valve",
+      "nl": "Draadloze klep met afstandsbediening",
+      "fr": "Vanne sans fil à bouton distant",
+      "de": "Drahtloser Hybridventil mit Fernbedienung"
+    },
+    "remote_button_wireless_wall": {
+      "en": "Remote Button Wireless Wall",
+      "nl": "Draadloze wandknop op afstand",
+      "fr": "Bouton mural sans fil à distance",
+      "de": "Funk-Wandtaster"
+    },
+    "remote_dimmer": {
+      "en": "Remote Control Dimmer (Lidl/Tuya)",
+      "fr": "Télécommande Variateur (Lidl/Tuya)",
+      "nl": "Afstandsbediening Dimmer (Lidl/Tuya)",
+      "de": "Fernbedienung Dimmer (Lidl/Tuya)"
+    },
+    "rgb_bulb_E14": {
+      "en": "RGB Bulb E14",
+      "fr": "Ampoule RGB E14",
+      "de": "RGB-Lampe E14",
+      "nl": "RGB-lamp E14"
+    },
+    "rgb_bulb_E27": {
+      "en": "RGB Bulb E27",
+      "fr": "Ampoule RGB E27",
+      "de": "RGB-Lampe E27",
+      "nl": "RGB-lamp E27"
+    },
+    "rgb_ceiling_led_light": {
+      "en": "RGB Ceiling Led Light",
+      "fr": "Plafonnier LED RGB",
+      "de": "RGB-LED-Deckenleuchte",
+      "nl": "RGB-led-plafondlamp"
+    },
+    "rgb_floor_led_light": {
+      "en": "Livarno Lux Atmosphere Floor LED Light",
+      "fr": "Lampadaire LED d'ambiance Livarno Lux",
+      "de": "Livarno Lux LED-Stehleuchte Atmosphere",
+      "nl": "Livarno Lux led-vloerlamp Atmosphere"
+    },
+    "rgb_led_light_bar": {
+      "en": "RGB Led Light Bar",
+      "fr": "Barre lumineuse LED RGB",
+      "de": "RGB-LED-Lichtleiste",
+      "nl": "RGB-ledlichtbalk"
+    },
+    "rgb_led_strip": {
+      "en": "RGB LED Strip",
+      "fr": "Ruban LED RGB",
+      "de": "RGB-LED-Streifen",
+      "nl": "RGB-ledstrip"
+    },
+    "rgb_led_strip_controller": {
+      "en": "RGB LED Strip Controller",
+      "fr": "Contrôleur de ruban LED RGB",
+      "de": "RGB-LED-Streifen-Controller",
+      "nl": "RGB-ledstrip-controller"
+    },
+    "rgb_mood_light": {
+      "en": "RGB Mood Light",
+      "fr": "Lampe d'ambiance RGB",
+      "de": "RGB-Stimmungslicht",
+      "nl": "RGB-sfeerlamp"
+    },
+    "rgb_spot_GU10": {
+      "en": "RGB Spot GU10",
+      "fr": "Spot RGB GU10",
+      "de": "RGB-Spot GU10",
+      "nl": "RGB-spot GU10"
+    },
+    "rgb_spot_GardenLight": {
+      "en": "RGB Spot Garden light",
+      "fr": "Spot de jardin RGB",
+      "de": "RGB-Gartenstrahler",
+      "nl": "RGB-tuinspot"
+    },
+    "rgb_wall_led_light": {
+      "en": "Livarno Lux Smart LED Wall Light",
+      "fr": "Applique murale LED connectée Livarno Lux",
+      "de": "Livarno Lux smarte LED-Wandleuchte",
+      "nl": "Livarno Lux slimme led-wandlamp"
+    },
+    "sauna_thermostat_ae5503": {
+      "en": "Sauna Thermostat AE-5503",
+      "fr": "Thermostat sauna AE-5503",
+      "nl": "Sauna-thermostaat AE-5503",
+      "de": "Sauna-Thermostat AE-5503"
+    },
+    "scene_switch_1": {
+      "en": "Scene Switch 1-Gang",
+      "fr": "Interrupteur de scène 1 bouton",
+      "nl": "Scèneschakelaar 1-gang",
+      "de": "Szenenschalter 1-fach"
+    },
+    "scene_switch_2": {
+      "en": "Scene Switch 2-Gang",
+      "fr": "Interrupteur de scène 2 gangs",
+      "nl": "Scèneschakelaar 2-groeps",
+      "de": "Szenenschalter 2-fach"
+    },
+    "scene_switch_3": {
+      "en": "Scene Switch 3-Gang",
+      "fr": "Interrupteur de scène 3 gangs",
+      "nl": "Scèneschakelaar 3-groeps",
+      "de": "Szenenschalter 3-fach"
+    },
+    "scene_switch_4": {
+      "en": "Scene Switch 4-Gang",
+      "fr": "Interrupteur de scène 4 boutons",
+      "nl": "Scèneschakelaar 4-voudig",
+      "de": "Szenenschalter 4-fach"
+    },
+    "scene_switch_6": {
+      "en": "Scene Switch 6-Gang",
+      "fr": "Interrupteur de scène 6 boutons",
+      "nl": "Scèneschakelaar 6-voudig",
+      "de": "Szenenschalter 6-fach"
+    },
+    "scene_switch_6ch": {
+      "en": "6-Channel Scene Switch",
+      "fr": "Interrupteur Scène 6 Canaux",
+      "de": "Szenenschalter 6 Kanäle",
+      "nl": "Scèneschakelaar 6 kanalen"
+    },
+    "scene_switch_wall": {
+      "en": "Scene Switch Wall",
+      "nl": "Scène schakelaar wand",
+      "fr": "Interrupteur de scène mural",
+      "de": "Szenenschalter Wand"
+    },
+    "sensor_climate_contact": {
+      "en": "Sensor Climate Contact",
+      "nl": "Sensor Klimaat Contact",
+      "fr": "Capteur Climat Contact",
+      "de": "Sensor Klima Kontakt"
+    },
+    "sensor_climate_lcdtemphumidsensor": {
+      "en": "Sensor Climate Lcdtemphumidsensor",
+      "nl": "Sensor Klimaat Lcdtemphumidsensor",
+      "fr": "Capteur Climat Lcdtemphumidsenseur",
+      "de": "Sensor Klimaat Lcdtemphumidsensor"
+    },
+    "sensor_climate_motion": {
+      "en": "Sensor Climate Motion",
+      "nl": "Klimaatbeweging Sensor",
+      "fr": "Capteur Climatique de Mouvement",
+      "de": "Hybridbewegungssensor für Klima"
+    },
+    "sensor_climate_presence": {
+      "en": "Sensor Climate Presence",
+      "nl": "Sensor Klimaat Aanwezigheid",
+      "fr": "Capteur de Climat de Présence",
+      "de": "Sensor Klimaanlage Präsenz"
+    },
+    "sensor_climate_smart": {
+      "en": "Sensor Climate Smart",
+      "nl": "Slimme Klimaatsensor",
+      "fr": "Capteur Climatique Intelligent",
+      "de": "Intelligenter -Klimasensor"
+    },
+    "sensor_climate_temphumidsensor": {
+      "en": "Sensor Climate Temphumidsensor",
+      "nl": "Sensor Klimaat TempHumiSensor",
+      "fr": "Capteur Climat TempHumidCapteur",
+      "de": "Sensor Klimaat TempHumiSensor"
+    },
+    "sensor_contact_climate": {
+      "en": "Sensor Contact Climate",
+      "nl": "Sensor Contact Climate",
+      "fr": "Sensor Contact Climate",
+      "de": "Kontakt- & Klimasensor"
+    },
+    "sensor_contact_motion": {
+      "en": "Sensor Contact Motion",
+      "nl": "Sensor Contact Beweging",
+      "fr": "Capteur Contact Mouvement",
+      "de": "Sensor Kontakt Bewegung"
+    },
+    "sensor_contact_plug": {
+      "en": "Sensor Contact Plug",
+      "nl": "Sensor Contact Plug",
+      "fr": "Capteur de Contact Plug",
+      "de": "Sensor Kontaktstecker"
+    },
+    "sensor_contact_presence": {
+      "en": "Sensor Contact Presence",
+      "nl": "Sensor contact aanwezigheid",
+      "fr": "Capteur de contact de présence",
+      "de": "Sensor Kontakt Präsenz"
+    },
+    "sensor_contact_rain": {
+      "en": "Sensor Contact Rain",
+      "nl": "Sensor Contact Regen",
+      "fr": "Capteur de Contact Pluie",
+      "de": "Sensor Kontakt Regen"
+    },
+    "sensor_contact_water": {
+      "en": "Sensor Contact Water",
+      "nl": "Watercontactsensor",
+      "fr": "Capteur de contact d'eau",
+      "de": "Wasserkontaktsensor"
+    },
+    "sensor_contact_zigbee": {
+      "en": "Sensor Contact Zigbee",
+      "nl": "Zigbee Contactsensor",
+      "fr": "Capteur de Contact Zigbee",
+      "de": "Zigbee Kontaktsensor"
+    },
+    "sensor_gas_presence": {
+      "en": "Sensor Gas Presence",
+      "nl": "Gasaanwezigheidssensor",
+      "fr": "Capteur de Présence de Gaz",
+      "de": "-Gaspräsenzsensor"
+    },
+    "sensor_ias_zonetype_ewelink": {
+      "en": "IAS Sensor (eWeLink SNZB-03, motion or water)",
+      "nl": "IAS-sensor (eWeLink SNZB-03, beweging of water)",
+      "fr": "Capteur IAS (eWeLink SNZB-03, mouvement ou eau)",
+      "de": "IAS-Sensor (eWeLink SNZB-03, Bewegung oder Wasser)"
+    },
+    "sensor_illuminance_presence": {
+      "en": "Sensor Illuminance Presence",
+      "nl": "Aanwezigheidssensor met verlichtingssterkte",
+      "fr": "Capteur de présence avec luminosité",
+      "de": "Anwesenheitssensor mit Beleuchtungsstärke"
+    },
+    "sensor_lcdtemphumidsensor_soil": {
+      "en": "Sensor Lcdtemphumidsensor Soil",
+      "nl": "Sensor Lcdtemphumidsensor Bodem",
+      "fr": "Capteur Lcdtemphumide Sol",
+      "de": "Sensor Lcdtempfeuchtesensor Boden"
+    },
+    "sensor_lcdtemphumidsensor_temphumidsensor": {
+      "en": "Sensor Lcdtemphumidsensor Temphumidsensor",
+      "nl": "Sensor Lcdtemphumidsensor Temphumidsensor",
+      "fr": "Sensor Lcdtemphumidsensor Temphumidsensor",
+      "de": "Temperatur- & Feuchtesensor LCD"
+    },
+    "sensor_motion_presence": {
+      "en": "Sensor Motion Presence",
+      "nl": "Sensor Bewegingsaanwezigheid",
+      "fr": "Capteur de présence de mouvement",
+      "de": "Bewegungspräsenzsensor"
+    },
+    "sensor_motion_radar": {
+      "en": "Sensor Motion Radar",
+      "nl": "Radar bewegingssensor",
+      "fr": "Capteur de mouvement radar",
+      "de": "Radar-Bewegungssensor"
+    },
+    "sensor_presence_radar": {
+      "en": "Sensor Presence Radar",
+      "nl": "Radar aanwezigheidssensor",
+      "fr": "Capteur de présence radar",
+      "de": "Radar-Präsenzsensor"
+    },
+    "shutter_roller_controller": {
+      "en": "Roller Shutter Controller",
+      "fr": "Roller Shutter Controller",
+      "nl": "Rolluik Controller",
+      "de": "Rollladensteuerung"
+    },
+    "siren": {
+      "en": "Siren / Alarm",
+      "fr": "Sirène / Alarme",
+      "nl": "Sirene / Alarm",
+      "de": "Sirene / Alarm"
+    },
+    "siren_moes_mg_bjq002": {
+      "en": "Moes Plug-in Siren MG-BJQ002",
+      "fr": "Sirène sur prise Moes MG-BJQ002",
+      "nl": "Moes stekker-sirene MG-BJQ002",
+      "de": "Moes Steckdosen-Sirene MG-BJQ002"
+    },
+    "siren_sirentemphumidsensor": {
+      "en": "Siren Sirentemphumidsensor",
+      "nl": "Sirene Sirenetemphumidsensor",
+      "fr": "Sirène Sirènetemphumidsensor",
+      "de": "Sirene Sirenetemphumidsensor"
+    },
+    "sirentemphumidsensor": {
+      "en": "Siren, Temperature & Humidity Sensor",
+      "fr": "Sirène, capteur de température et d'humidité",
+      "nl": "Sirene, temperatuur- en vochtigheidssensor",
+      "de": "Sirene, Temperatur- und Feuchtigkeitssensor"
+    },
+    "slim_motion_sensor": {
+      "en": "Slim motion sensor",
+      "fr": "Détecteur de mouvement fin",
+      "de": "Flacher Bewegungsmelder",
+      "nl": "Platte bewegingssensor"
+    },
+    "smartPlug_DinRail": {
+      "en": "Smart Plug DIN Rail",
+      "fr": "Prise connectée rail DIN",
+      "de": "Smarter Hutschienenschalter",
+      "nl": "Slimme DIN-rail schakelaar"
+    },
+    "smart_air_detection_box": {
+      "en": "Smart Air Detection Box",
+      "fr": "Boîtier connecté de détection de l'air",
+      "de": "Smarte Luftqualitätsbox",
+      "nl": "Slimme luchtkwaliteitsbox"
+    },
+    "smart_breaker": {
+      "en": "Smart Circuit Breaker",
+      "fr": "Disjoncteur Intelligent",
+      "nl": "Slimme Stroomonderbreker",
+      "de": "Intelligenter Leitungsschutzschalter"
+    },
+    "smart_button_switch": {
+      "en": "Smart Button Switch",
+      "fr": "Interrupteur à bouton intelligent",
+      "nl": "Slimme drukknopschakelaar",
+      "de": "Intelligenter Tastschalter"
+    },
+    "smart_door_window_sensor": {
+      "en": "Smart Door & Window Sensor (Lidl)",
+      "fr": "Capteur de porte et fenêtre connecté (Lidl)",
+      "de": "Smarter Tür- & Fenstersensor (Lidl)",
+      "nl": "Slimme deur- & raamsensor (Lidl)"
+    },
+    "smart_garden_irrigation_control": {
+      "en": "Smart Garden Irrigation Controller",
+      "fr": "Programmateur d'arrosage connecté",
+      "de": "Smarte Gartenbewässerungssteuerung",
+      "nl": "Slimme tuinbewateringscontroller"
+    },
+    "smart_heater": {
+      "en": "Smart Heater",
+      "fr": "Chauffage Connecté",
+      "nl": "Slimme Verwarming",
+      "de": "Smart Heizung"
+    },
+    "smart_heater_controller": {
+      "en": "Smart Heater Controller",
+      "fr": "Contrôleur Radiateur Intelligent",
+      "nl": "Slimme Verwarmingscontroller",
+      "de": "Intelligente Heizungssteuerung"
+    },
+    "smart_irrigation_valve": {
+      "en": "Smart Irrigation Valve",
+      "fr": "Vanbe d'Irrigation Intelligente",
+      "de": "Smartes Bewässerungsventil",
+      "nl": "Slimme irrigatieklep"
+    },
+    "smart_knob": {
+      "en": "Smart Knob",
+      "fr": "Bouton Rotatif Intelligent",
+      "nl": "Slimme Draaiknop",
+      "de": "Smart Drehknopf"
+    },
+    "smart_knob_rotary": {
+      "en": "Smart Knob / Scene Switch",
+      "fr": "Bouton Rotatif Intelligent",
+      "nl": "Slimme Draaiknop",
+      "de": "Intelligenter Drehknopf"
+    },
+    "smart_knob_switch": {
+      "en": "Smart Knob Switch",
+      "fr": "Interrupteur à bouton intelligent",
+      "nl": "Slimme knopschakelaar",
+      "de": "Intelligenter Knopfschalter"
+    },
+    "smart_knob_zg101zd": {
+      "en": "Smart knob ZG-101ZD (rotary)",
+      "fr": "Bouton rotatif ZG-101ZD",
+      "nl": "Draaiknop ZG-101ZD",
+      "de": "Drehknopf ZG-101ZD"
+    },
+    "smart_lcd_thermostat": {
+      "en": "Smart LCD Thermostat",
+      "fr": "Thermostat LCD Intelligent",
+      "nl": "Slim LCD Thermostaat",
+      "de": "Smart LCD Thermostat"
+    },
+    "smart_motion_sensor": {
+      "en": "Smart Motion Sensor (Lidl)",
+      "fr": "Détecteur de mouvement connecté (Lidl)",
+      "de": "Smarter Bewegungsmelder (Lidl)",
+      "nl": "Slimme bewegingssensor (Lidl)"
+    },
+    "smart_rcbo": {
+      "en": "Smart RCBO",
+      "fr": "Disjoncteur Différentiel Connecté",
+      "nl": "Slimme RCBO",
+      "de": "Smart FI-Schalter"
+    },
+    "smart_remote_1_button": {
+      "en": "1 button Smart Remote Controller",
+      "fr": "Télécommande intelligente à 1 bouton",
+      "nl": "1 knops slimme afstandsbediening",
+      "de": "Intelligenter Fernbedienung mit 1 Taste"
+    },
+    "smart_remote_1_button_2": {
+      "en": "1 button Smart Remote Controller",
+      "fr": "Télécommande intelligente à 1 bouton",
+      "nl": "1 knops slimme afstandsbediening",
+      "de": "1-Tasten-Fernbedienung"
+    },
+    "smart_remote_4_buttons": {
+      "en": "4 button Smart Remote Controller",
+      "fr": "Télécommande intelligente à 4 boutons",
+      "nl": "4-knops slimme afstandsbediening",
+      "de": "Intelligenter Fernbedienung mit 4 Tasten"
+    },
+    "smart_scene_panel": {
+      "en": "Smart Scene Panel",
+      "fr": "Panneau de scène intelligent",
+      "nl": "Slim scène paneel",
+      "de": "Intelligentes Szenenpanel"
+    },
+    "smart_screen_switch": {
+      "en": "Smart Screen Switch",
+      "fr": "Interrupteur Écran Intelligent",
+      "de": "Smarter Display-Schalter",
+      "nl": "Slimme schermschakelaar"
+    },
+    "smart_switch": {
+      "en": "Smart Switch",
+      "fr": "Interrupteur connecté",
+      "de": "Smarter Schalter",
+      "nl": "Slimme schakelaar"
+    },
+    "smartplug": {
+      "en": "Smart Plug with metering",
+      "fr": "Prise connectée avec mesure",
+      "de": "Smarter Stecker mit Messung",
+      "nl": "Slimme stekker met meting"
+    },
+    "smartplug_2_socket": {
+      "en": "Double Socket Smart Plug",
+      "fr": "Prise connectée double",
+      "de": "Smarter Doppelstecker",
+      "nl": "Slimme dubbele stekker"
+    },
+    "smoke_detector_advanced": {
+      "en": "Smart Smoke Detector Advanced",
+      "fr": "Smart Smoke Detector Advanced",
+      "nl": "Rookmelder",
+      "de": "Rauchmelder"
+    },
+    "smoke_sensor": {
+      "en": "Smoke Sensor",
+      "nl": "Rookmelder",
+      "de": "Rauchmelder",
+      "fr": "Détecteur de fumée"
+    },
+    "smoke_sensor2": {
+      "en": "Smoke Sensor",
+      "fr": "Détecteur de fumée",
+      "de": "Rauchmelder",
+      "nl": "Rookmelder"
+    },
+    "smoke_sensor3": {
+      "en": "Smoke Sensor",
+      "nl": "Rookmelder",
+      "de": "Rauchmelder",
+      "fr": "Détecteur de fumée"
+    },
+    "smoke_sensor_ts0601_dp": {
+      "en": "Smoke detector (Tuya TS0601 DP)",
+      "fr": "Détecteur de fumée (Tuya TS0601 DP)",
+      "nl": "Rookmelder (Tuya TS0601 DP)",
+      "de": "Rauchmelder (Tuya TS0601 DP)"
+    },
+    "socket_power_strip": {
+      "en": "3 Socket Power Strip",
+      "fr": "Multiprise 3 prises",
+      "de": "Steckdosenleiste 3-fach",
+      "nl": "Stekkerdoos 3 contacten"
+    },
+    "socket_power_strip_four": {
+      "en": "Power Strip Socket 1/4",
+      "fr": "Multiprise, prise 1/4",
+      "de": "Steckdosenleiste Dose 1/4",
+      "nl": "Stekkerdoos contact 1/4"
+    },
+    "socket_power_strip_four_three": {
+      "en": "Power Strip 4 Sockets",
+      "fr": "Multiprise 4 prises",
+      "de": "Steckdosenleiste 4-fach",
+      "nl": "Stekkerdoos 4 contacten"
+    },
+    "socket_power_strip_four_two": {
+      "en": "Power Strip 4 Sockets",
+      "fr": "Multiprise 4 prises",
+      "de": "Steckdosenleiste 4-fach",
+      "nl": "Stekkerdoos 4 contacten"
+    },
+    "soil_sensor": {
+      "en": "Soil Moisture Sensor",
+      "fr": "Capteur d'Humidité du Sol",
+      "nl": "Bodemsensor",
+      "de": "Bodensensor"
+    },
+    "soil_sensor_ec": {
+      "en": "Soil EC Sensor",
+      "fr": "Capteur de Sol EC",
+      "de": "Boden-EC-Sensor",
+      "nl": "Bodem-EC-sensor"
+    },
+    "soilsensor": {
+      "en": "Soil Sensor",
+      "fr": "Capteur de sol",
+      "nl": "Vochtigheids Sensor",
+      "de": "Bodensensor"
+    },
+    "soilsensor_2": {
+      "en": "Soil Sensor",
+      "fr": "Capteur de sol",
+      "nl": "Vochtigheids Sensor",
+      "de": "Bodensensor"
+    },
+    "sound_sensor_tuya": {
+      "en": "Sound Level Sensor (Tuya ZY-N1)",
+      "fr": "Capteur de niveau sonore (Tuya ZY-N1)",
+      "nl": "Geluidsniveausensor (Tuya ZY-N1)",
+      "de": "Lautstärkesensor (Tuya ZY-N1)"
+    },
+    "sr_zs_switch": {
+      "en": "SR-ZS Switch",
+      "fr": "Interrupteur SR-ZS",
+      "de": "SR-ZS-Schalter",
+      "nl": "SR-ZS-schakelaar"
+    },
+    "switch": {
+      "en": "Switch",
+      "nl": "Schakelaar",
+      "fr": "Interrupteur",
+      "de": "Schalter"
+    },
+    "switch_1_gang": {
+      "en": "1 Gang Switch Module",
+      "fr": "Module interrupteur 1 voie",
+      "de": "Schaltmodul 1-fach",
+      "nl": "Schakelmodule 1-voudig"
+    },
+    "switch_1_gang_metering": {
+      "en": "1 Gang Switch Module with metering",
+      "fr": "Module interrupteur 1 voie avec mesure",
+      "de": "Schaltmodul 1-fach mit Messung",
+      "nl": "Schakelmodule 1-voudig met meting"
+    },
+    "switch_1gang": {
+      "en": "1-Gang Smart Switch",
+      "nl": "1-Voudige Schakelaar",
+      "de": "1-Kanal Schalter",
+      "fr": "Interrupteur 1 bouton"
+    },
+    "switch_2_gang": {
+      "en": "2 Gang Switch Module",
+      "fr": "Module interrupteur 2 voies",
+      "de": "Schaltmodul 2-fach",
+      "nl": "Schakelmodule 2-voudig"
+    },
+    "switch_2_gang_metering": {
+      "en": "2 Gang Switch Module with metering",
+      "fr": "Module interrupteur 2 voies avec mesure",
+      "de": "Schaltmodul 2-fach mit Messung",
+      "nl": "Schakelmodule 2-voudig met meting"
+    },
+    "switch_2gang": {
+      "en": "2-Gang Smart Switch",
+      "nl": "2-Voudige Schakelaar",
+      "de": "2-Kanal Schalter",
+      "fr": "Interrupteur 2 boutons"
+    },
+    "switch_2gang_ts0002": {
+      "en": "Wall Switch 2-Gang (TS0002)",
+      "nl": "Wandschakelaar 2-voudig (TS0002)",
+      "fr": "Interrupteur mural 2 voies (TS0002)",
+      "de": "Wandschalter 2-fach (TS0002)"
+    },
+    "switch_3_gang": {
+      "en": "3 Gang Switch Module",
+      "fr": "Module interrupteur 3 voies",
+      "de": "Schaltmodul 3-fach",
+      "nl": "Schakelmodule 3-voudig"
+    },
+    "switch_3gang": {
+      "en": "3-Gang Smart Switch",
+      "nl": "3-Voudige Schakelaar",
+      "de": "3-Kanal Schalter",
+      "fr": "Interrupteur 3 boutons"
+    },
+    "switch_4_gang_metering": {
+      "en": "4 Gang Switch Module with metering",
+      "fr": "Module interrupteur 4 voies avec mesure",
+      "de": "Schaltmodul 4-fach mit Messung",
+      "nl": "Schakelmodule 4-voudig met meting"
+    },
+    "switch_4gang": {
+      "en": "4-Gang Smart Switch",
+      "nl": "4-Voudige Schakelaar",
+      "de": "4-Kanal Schalter",
+      "fr": "Interrupteur 4 boutons"
+    },
+    "switch_dimmer_1gang": {
+      "en": "Switch Touch Dimmer (1 Gang)",
+      "nl": "Switch Touch Dimmer (1 Gang)",
+      "fr": "Variateur tactile (1 bouton)",
+      "de": "Touch-Dimmer (1-Kanal)"
+    },
+    "switch_module_whd02": {
+      "en": "Switch Module (WHD02, TS000F)",
+      "fr": "Module interrupteur (WHD02, TS000F)",
+      "nl": "Schakelmodule (WHD02, TS000F)",
+      "de": "Schaltmodul (WHD02, TS000F)"
+    },
+    "switch_plug_1": {
+      "en": "Smart Plug 1-Gang",
+      "fr": "Prise Connectée 1 Gang",
+      "nl": "Schakelaardoos 1",
+      "de": "Schaltersteckdose 1"
+    },
+    "switch_plug_2": {
+      "en": "Smart Plug 2-Gang",
+      "fr": "Prise Connectée 2 Gangs",
+      "nl": "Schakelaardoos 2",
+      "de": "Schaltersteckdose 2"
+    },
+    "switch_presence_tuya": {
+      "en": "Presence Wall Switch (1-3 gang, Tuya)",
+      "fr": "Interrupteur mural à présence (1-3 voies, Tuya)",
+      "nl": "Aanwezigheidswandschakelaar (1-3 voudig, Tuya)",
+      "de": "Präsenz-Wandschalter (1-3-fach, Tuya)"
+    },
+    "switch_temp_sensor": {
+      "en": "Smart Switch with Temperature Sensor",
+      "nl": "Slimme Schakelaar met Temperatuursensor",
+      "de": "Smart Schalter mit Temperatursensor",
+      "fr": "Interrupteur Intelligent avec Capteur de Température"
+    },
+    "switch_usb_dongle": {
+      "en": "USB 2-Port Relay & Zigbee Repeater",
+      "nl": "USB 2-poorts relais & Zigbee-repeater",
+      "fr": "Relais USB 2 ports & répéteur Zigbee",
+      "de": "USB 2-Port Relais & Zigbee Repeater"
+    },
+    "switch_wall": {
+      "en": "Switch Wall",
+      "nl": "Switch Wall",
+      "fr": "Switch Wall",
+      "de": "Wandschalter"
+    },
+    "switch_wall_5gang": {
+      "en": "Wall Switch 5gang",
+      "fr": "Wall Switch 5gang",
+      "nl": "5-Voudige Wandschakelaar",
+      "de": "5-Kanal Wandschalter"
+    },
+    "switch_wall_6gang": {
+      "en": "6-Gang Wall Switch",
+      "fr": "Interrupteur Mural 6 Gang",
+      "nl": "6-Gang Muur Schakelaar",
+      "de": "6-Gang Wand Schalter"
+    },
+    "switch_wall_6gang_metering": {
+      "en": "6-Gang Wall Switch with Metering",
+      "fr": "Interrupteur mural 6 voies avec mesure",
+      "nl": "6-voudige wandschakelaar met meting",
+      "de": "6-fach Wandschalter mit Messung"
+    },
+    "switch_wall_7gang": {
+      "en": "Wall Switch 7-Gang",
+      "fr": "Interrupteur mural 7 gangs",
+      "nl": "7-Voudige Wandschakelaar",
+      "de": "7-Kanal Wandschalter"
+    },
+    "switch_wall_8gang": {
+      "en": "Wall Switch 8-Gang",
+      "fr": "Interrupteur mural 8 gangs",
+      "nl": "8-Voudige Wandschakelaar",
+      "de": "8-Kanal Wandschalter"
+    },
+    "switch_wireless": {
+      "en": "Wireless Switch",
+      "fr": "Wireless Switch",
+      "nl": "Draadloze Schakelaar",
+      "de": "Drahtloser Schalter"
+    },
+    "switch_zbeacon_ts0001": {
+      "en": "1-Gang Relay Switch (Zbeacon TS0001)",
+      "fr": "Interrupteur relais 1 voie (Zbeacon TS0001)",
+      "nl": "1-voudige relaisschakelaar (Zbeacon TS0001)",
+      "de": "Relaisschalter 1-fach (Zbeacon TS0001)"
+    },
+    "temphumidsensor": {
+      "en": "TUYATEC Temperature & Humidity Sensor",
+      "fr": "Capteur de Température et Humidité TUYATEC",
+      "nl": "Temp/Vocht Sensor",
+      "de": "Temp/Feuchte Sensor"
+    },
+    "temphumidsensor2": {
+      "en": "Temperature & Humidity Sensor",
+      "fr": "Capteur de température et d'humidité",
+      "de": "Temperatur- & Feuchtesensor",
+      "nl": "Temperatuur- & vochtsensor"
+    },
+    "temphumidsensor3": {
+      "en": "Temperature & Humidity Sensor",
+      "fr": "Capteur de température et d'humidité",
+      "de": "Temperatur- & Feuchtesensor",
+      "nl": "Temperatuur- & vochtsensor"
+    },
+    "temphumidsensor4": {
+      "en": "Temperature & Humidity Sensor",
+      "fr": "Capteur de température et d'humidité",
+      "de": "Temperatur- & Feuchtesensor",
+      "nl": "Temperatuur- & vochtsensor"
+    },
+    "temphumidsensor5": {
+      "en": "Temperature & Humidity Sensor",
+      "fr": "Capteur de température et d'humidité",
+      "de": "Temperatur- & Feuchtesensor",
+      "nl": "Temperatuur- & vochtsensor"
+    },
+    "temphumidsensor_zcl_th01": {
+      "en": "Temperature & Humidity Sensor (Zbeacon TH01)",
+      "nl": "Temperatuur- en vochtigheidssensor (Zbeacon TH01)",
+      "fr": "Capteur température & humidité (Zbeacon TH01)",
+      "de": "Temperatur- & Feuchtesensor (Zbeacon TH01)"
+    },
+    "temphumidsensor_zcl_ts0601": {
+      "en": "Temperature & Humidity Sensor (ZCL, TS0601)",
+      "nl": "Temperatuur- en vochtigheidssensor (ZCL, TS0601)",
+      "fr": "Capteur température & humidité (ZCL, TS0601)",
+      "de": "Temperatur- & Feuchtesensor (ZCL, TS0601)"
+    },
+    "thermostat_4ch": {
+      "en": "Thermostat 4-Channel",
+      "fr": "Thermostat 4 Canaux",
+      "nl": "4-Kanaals Thermostaat",
+      "de": "4-Kanal Thermostat"
+    },
+    "thermostat_tuya_dp": {
+      "en": "Thermostat / TRV",
+      "fr": "Thermostat / Vanne",
+      "nl": "Tuya DP Thermostaat",
+      "de": "Tuya DP Thermostat"
+    },
+    "thermostat_vrf_bvrf_l001": {
+      "en": "VRF air-conditioning controller (Beca BVRF-L001)",
+      "fr": "Contrôleur de climatisation VRF (Beca BVRF-L001)",
+      "nl": "VRF-airco-regelaar (Beca BVRF-L001)",
+      "de": "VRF-Klimaregler (Beca BVRF-L001)"
+    },
+    "thermostatic_radiator_valve": {
+      "en": "Thermostatic Radiator Valve",
+      "fr": "Tête thermostatique de radiateur",
+      "de": "Heizkörperthermostat",
+      "nl": "Thermostatische radiatorkraan"
+    },
+    "tunable_bulb_E14": {
+      "en": "Tunable Bulb E14",
+      "fr": "Ampoule blanc réglable E14",
+      "de": "Farbtemperatur-Lampe E14",
+      "nl": "Kleurtemperatuurlamp E14"
+    },
+    "tunable_bulb_E27": {
+      "en": "Tunable Bulb E27",
+      "fr": "Ampoule blanc réglable E27",
+      "de": "Farbtemperatur-Lampe E27",
+      "nl": "Kleurtemperatuurlamp E27"
+    },
+    "tunable_spot_GU10": {
+      "en": "Tunable Spot GU10",
+      "fr": "Spot blanc réglable GU10",
+      "de": "Farbtemperatur-Spot GU10",
+      "nl": "Kleurtemperatuurspot GU10"
+    },
+    "tuya_dummy_device": {
+      "en": "Tuya Diagnostic Driver",
+      "fr": "Pilote de diagnostic Tuya",
+      "de": "Tuya-Diagnosetreiber",
+      "nl": "Tuya-diagnosedriver"
+    },
+    "ufh_controller_ch8z": {
+      "en": "Underfloor heating controller, 8 zones (AutomatOn CH8Z)",
+      "fr": "Contrôleur de plancher chauffant, 8 zones (AutomatOn CH8Z)",
+      "nl": "Vloerverwarmingsregelaar, 8 zones (AutomatOn CH8Z)",
+      "de": "Fußbodenheizungsregler, 8 Zonen (AutomatOn CH8Z)"
+    },
+    "ufh_controller_pro_line_x10": {
+      "en": "Underfloor heating controller, 8 zones (Tervix Pro Line X10)",
+      "fr": "Contrôleur de plancher chauffant, 8 zones (Tervix Pro Line X10)",
+      "nl": "Vloerverwarmingsregelaar, 8 zones (Tervix Pro Line X10)",
+      "de": "Fußbodenheizungsregler, 8 Zonen (Tervix Pro Line X10)"
+    },
+    "ultrasonic_heat_meter": {
+      "en": "Ultrasonic Heat Meter",
+      "fr": "Compteur de Chaleur Ultrasonique",
+      "de": "Ultraschall-Wärmezähler",
+      "nl": "Ultrasone warmtemeter"
+    },
+    "ultrasonic_water_meter": {
+      "en": "Ultrasonic Water Meter",
+      "fr": "Compteur d'Eau Ultrasonique",
+      "de": "Ultraschall-Wasserzähler",
+      "nl": "Ultrasone watermeter"
+    },
+    "universal_fallback": {
+      "en": "Universal Zigbee/Tuya Device",
+      "fr": "Appareil Zigbee/Tuya Universel",
+      "nl": "Universeel Zigbee/Tuya Apparaat",
+      "de": "Universelles Zigbee/Tuya Gerät"
+    },
+    "universal_zigbee": {
+      "en": "Generic Zigbee Device",
+      "fr": "Appareil Zigbee Générique",
+      "nl": "Universeel Zigbee-apparaat",
+      "de": "Universelles Zigbee-Gerät"
+    },
+    "usb_dongle_dual_repeater": {
+      "en": "USB Dongle Dual Repeater",
+      "fr": "Dongle USB Double Répéteur",
+      "nl": "USB Dongle Repeater",
+      "de": "USB Dongle Repeater"
+    },
+    "usb_dongle_triple": {
+      "en": "USB Dongle Triple (3-Port)",
+      "fr": "Dongle USB Triple (3 ports)",
+      "nl": "USB-dongle Triple (3-poorts)",
+      "de": "USB-Dongle Triple (3-Port)"
+    },
+    "usb_outlet_advanced": {
+      "en": "Multi-Gang USB Socket",
+      "fr": "Prise Multi-Gang USB",
+      "nl": "USB Stopcontact",
+      "de": "USB Steckdose"
+    },
+    "valve_controller_5zone": {
+      "en": "Valve / underfloor heating controller (5 zones)",
+      "fr": "Contrôleur vannes / plancher chauffant (5 zones)",
+      "nl": "Klep- / vloerverwarmingsregelaar (5 zones)",
+      "de": "Ventil- / Fußbodenheizungsregler (5 Zonen)"
+    },
+    "valve_dual_irrigation": {
+      "en": "Smart 2-Way Irrigation Valve",
+      "fr": "Vanne d'irrigation 2 voies",
+      "nl": "Tweevoudige irrigatieklep",
+      "de": "Zwei-Wege-Bewässerungsventil"
+    },
+    "valve_irrigation": {
+      "en": "Smart Valve 4-Way",
+      "fr": "Vanne Connectée 4 Voies",
+      "nl": "Irrigatieklep",
+      "de": "Bewässerungsventil"
+    },
+    "valve_novato_zpv01": {
+      "en": "Novato Water Valve ZPV-01",
+      "fr": "Vanne d'eau Novato ZPV-01",
+      "nl": "Novato waterklep ZPV-01",
+      "de": "Novato Wasserventil ZPV-01"
+    },
+    "valve_single": {
+      "en": "Smart Valve 1-Way",
+      "fr": "Vanne Connectée 1 Voie",
+      "nl": "Enkelvoudige Klep",
+      "de": "Einzelventil"
+    },
+    "valvecontroller": {
+      "en": "Valve Controller",
+      "fr": "Contrôleur de vanne",
+      "de": "Ventilsteuerung",
+      "nl": "Klepregelaar"
+    },
+    "vibration_sensor": {
+      "en": "Vibration Sensor",
+      "fr": "Capteur de Vibration",
+      "nl": "Trillingssensor",
+      "de": "Vibrationssensor"
+    },
+    "vibration_sensor_excellux_zg103v": {
+      "en": "Vibration sensor (Excellux ZG-103V)",
+      "fr": "Capteur de vibration (Excellux ZG-103V)",
+      "nl": "Trillingssensor (Excellux ZG-103V)",
+      "de": "Vibrationssensor (Excellux ZG-103V)"
+    },
+    "wall_curtain_switch": {
+      "en": "Wall mounted Curtain Switch",
+      "fr": "Interrupteur mural pour rideaux",
+      "nl": "Wandgordijnschakelaar",
+      "de": "Wandmontierter Vorhangschalter"
+    },
+    "wall_dimmer_1gang_1way": {
+      "en": "Wall Dimmer 1-Gang 1-Way",
+      "nl": "Muurschakelaar Dimmer 1-Gang 1-Weg",
+      "fr": "Variateur mural 1 bouton",
+      "de": "Wanddimmer 1-Kanal 1-Weg"
+    },
+    "wall_dimmer_tuya": {
+      "en": "Wall Dimmer",
+      "fr": "Variateur mural",
+      "de": "Wanddimmer",
+      "nl": "Wanddimmer"
+    },
+    "wall_remote_1_gang": {
+      "en": "1 Gang Wall Remote",
+      "fr": "Télécommande murale 1 gang",
+      "nl": "1-gangs wandafstandsbediening",
+      "de": "1-fach Wandfernbedienung"
+    },
+    "wall_remote_2_gang": {
+      "en": "2 Gang Wall Remote",
+      "fr": "Télécommande murale 2 gangs",
+      "nl": "2-gangs wandafstandsbediening",
+      "de": "2-fach Wandfernbedienung"
+    },
+    "wall_remote_3_gang": {
+      "en": "3 Gang Wall Remote",
+      "fr": "Télécommande murale 3 gangs",
+      "nl": "3-voudige wandafstandsbediening",
+      "de": "3-fach Wandfernbedienung"
+    },
+    "wall_remote_4_gang": {
+      "en": "4 Gang Wall Remote",
+      "fr": "Télécommande murale 4 gangs",
+      "nl": "4-vaks wandafstandsbediening",
+      "de": "4-fach Wandfernbedienung"
+    },
+    "wall_remote_4_gang_2": {
+      "en": "4 Gang Wall Remote",
+      "fr": "Télécommande murale 4 gangs",
+      "nl": "4-vaks wandafstandsbediening",
+      "de": "4-fach Wandfernbedienung"
+    },
+    "wall_remote_4_gang_3": {
+      "en": "4 Gang Wall Remote",
+      "fr": "Télécommande murale 4 gangs",
+      "nl": "4-vaks wandafstandsbediening",
+      "de": "4-fach Wandfernbedienung"
+    },
+    "wall_remote_6_gang": {
+      "en": "6 Gang Wall Remote",
+      "fr": "Télécommande murale 6 boutons",
+      "nl": "6-vaks wandafstandsbediening",
+      "de": "6-fach Wandfernbedienung"
+    },
+    "wall_socket": {
+      "en": "Wall Socket with metering",
+      "fr": "Prise murale avec mesure",
+      "de": "Wandsteckdose mit Messung",
+      "nl": "Wandcontactdoos met meting"
+    },
+    "wall_switch_1_gang": {
+      "en": "1 Gang Wall Switch",
+      "fr": "Interrupteur mural 1 voie",
+      "de": "Wandschalter 1-fach",
+      "nl": "Wandschakelaar 1-voudig"
+    },
+    "wall_switch_1_gang_tuya": {
+      "en": "1 Gang Wall Switch",
+      "fr": "Interrupteur mural 1 voie",
+      "de": "Wandschalter 1-fach",
+      "nl": "Wandschakelaar 1-voudig"
+    },
+    "wall_switch_1gang_1way": {
+      "en": "Wall Switch 1-Gang 1-Way",
+      "nl": "Muurschakelaar 1-Gang 1-Weg",
+      "fr": "Interrupteur mural 1 bouton",
+      "de": "Wandschalter 1-Kanal 1-Weg"
+    },
+    "wall_switch_2_gang": {
+      "en": "2 Gang Wall Switch",
+      "fr": "Interrupteur mural 2 voies",
+      "de": "Wandschalter 2-fach",
+      "nl": "Wandschakelaar 2-voudig"
+    },
+    "wall_switch_2gang_1way": {
+      "en": "Wall Switch 2-Gang 1-Way (BSEED)",
+      "nl": "Wandschakelaar 2-groeps 1-weg (BSEED)",
+      "fr": "Interrupteur mural 2 gangs 1 voie (BSEED)",
+      "de": "Wandschalter 2-fach 1-weg (BSEED)"
+    },
+    "wall_switch_3_gang": {
+      "en": "3 Gang Wall Switch",
+      "fr": "Interrupteur mural 3 voies",
+      "de": "Wandschalter 3-fach",
+      "nl": "Wandschakelaar 3-voudig"
+    },
+    "wall_switch_3gang_1way": {
+      "en": "Wall Switch 3-Gang 1-Way (BSEED)",
+      "nl": "Wandschakelaar 3-groep 1-weg (BSEED)",
+      "fr": "Interrupteur mural 3-gang 1-voie (BSEED)",
+      "de": "Wandschalter 3-fach 1-weg (BSEED)"
+    },
+    "wall_switch_4_gang": {
+      "en": "Wall Switch (1/4 Gang)",
+      "fr": "Interrupteur mural (1 à 4 voies)",
+      "de": "Wandschalter (1/4-fach)",
+      "nl": "Wandschakelaar (1/4-voudig)"
+    },
+    "wall_switch_4_gang_tuya": {
+      "en": "4 Gang Wall Switch",
+      "fr": "Interrupteur mural 4 voies",
+      "de": "Wandschalter 4-fach",
+      "nl": "Wandschakelaar 4-voudig"
+    },
+    "wall_switch_4gang_1way": {
+      "en": "Wall Switch 4-Gang 1-Way (BSEED)",
+      "nl": "Wandschakelaar 4-groep 1-weg (BSEED)",
+      "fr": "Interrupteur mural 4-gang 1-voie (BSEED)",
+      "de": "Wandschalter 4-fach 1-Wege (BSEED)"
+    },
+    "wall_switch_5_gang_tuya": {
+      "en": "5 Gang Wall Switch",
+      "fr": "Interrupteur mural 5 voies",
+      "de": "Wandschalter 5-fach",
+      "nl": "Wandschakelaar 5-voudig"
+    },
+    "wall_switch_6_gang_tuya": {
+      "en": "6 Gang Wall Switch",
+      "fr": "Interrupteur mural 6 voies",
+      "de": "Wandschalter 6-fach",
+      "nl": "Wandschakelaar 6-voudig"
+    },
+    "wall_switch_rf_ews1154z": {
+      "en": "Wall switch with RF remote (Box EWS1154-Z)",
+      "fr": "Interrupteur mural avec télécommande RF (Box EWS1154-Z)",
+      "nl": "Wandschakelaar met RF-afstandsbediening (Box EWS1154-Z)",
+      "de": "Wandschalter mit RF-Fernbedienung (Box EWS1154-Z)"
+    },
+    "wall_thermostat": {
+      "en": "Wall Thermostat",
+      "fr": "Thermostat mural",
+      "de": "Wandthermostat",
+      "nl": "Wandthermostaat"
+    },
+    "water_detector": {
+      "en": "Water Detector",
+      "fr": "Détecteur d'eau",
+      "de": "Wassermelder",
+      "nl": "Waterdetector"
+    },
+    "water_leak_aoyan_ay222z": {
+      "en": "Water Leak Sensor (AOYAN AY222Z)",
+      "fr": "Détecteur de fuite d'eau (AOYAN AY222Z)",
+      "nl": "Water Leak Sensor (AOYAN AY222Z)",
+      "de": "Water Leak Sensor (AOYAN AY222Z)"
+    },
+    "water_leak_blitzwolf_bw_is9": {
+      "en": "Water Leak Sensor (BlitzWolf BW-IS9)",
+      "fr": "Détecteur de fuite d'eau (BlitzWolf BW-IS9)",
+      "nl": "Water Leak Sensor (BlitzWolf BW-IS9)",
+      "de": "Water Leak Sensor (BlitzWolf BW-IS9)"
+    },
+    "water_leak_sensor": {
+      "en": "Water Leak Sensor",
+      "fr": "Water Leak Sensor",
+      "nl": "Waterlek Sensor",
+      "de": "Wasserlecksensor"
+    },
+    "water_leak_sensor_tuya": {
+      "en": "Water Leak Sensor",
+      "fr": "Détecteur de fuite d'eau",
+      "de": "Wasserlecksensor",
+      "nl": "Waterlekdetector"
+    },
+    "water_tank_monitor": {
+      "en": "Liquid Level Sensor",
+      "fr": "Capteur Niveau Liquide",
+      "nl": "Vloeistofniveau Sensor",
+      "de": "Flussigkeitsstandsensor"
+    },
+    "water_valve_garden": {
+      "en": "Garden Water Valve",
+      "fr": "Vanne d'Arrosage",
+      "nl": "Tuinwaterklep",
+      "de": "Garten-Wasserventil"
+    },
+    "water_valve_smart": {
+      "en": "Water Valve Smart",
+      "fr": "Water Valve Smart",
+      "nl": "Slimme Waterkraan",
+      "de": "Smart Wasserventil"
+    },
+    "weather_station_outdoor": {
+      "en": "Zigbee Weather Station (Outdoor)",
+      "fr": "Station météo Zigbee (Extérieur)",
+      "nl": "Buitenweerstation",
+      "de": "Außenwetterstation"
+    },
+    "wifi_air_purifier": {
+      "en": "WiFi Air Purifier (Tuya Local)",
+      "fr": "Purificateur d'air WiFi (Tuya Local)",
+      "nl": "WiFi Luchtreiniger (Tuya Lokaal)",
+      "de": "WiFi Luftreiniger (Tuya Lokal)"
+    },
+    "wifi_air_quality": {
+      "en": "WiFi Air Quality Monitor (Tuya Local)",
+      "fr": "Moniteur de qualité d'air WiFi (Tuya Local)",
+      "nl": "WiFi Luchtkwaliteitsmonitor (Tuya Lokaal)",
+      "de": "WiFi Luftqualitätsmonitor (Tuya Lokal)"
+    },
+    "wifi_camera": {
+      "en": "WiFi Camera (Tuya Local)",
+      "fr": "Caméra WiFi (Tuya Local)",
+      "nl": "WiFi-camera (Tuya Lokaal)",
+      "de": "WiFi-Kamera (Tuya Lokal)"
+    },
+    "wifi_cover": {
+      "en": "WiFi Curtain Motor (Tuya Local)",
+      "fr": "Moteur de rideau WiFi (Tuya Local)",
+      "nl": "WiFi Gordijnmotor (Tuya Lokaal)",
+      "de": "WiFi-Vorhangmotor (Tuya Lokal)"
+    },
+    "wifi_dehumidifier": {
+      "en": "WiFi Dehumidifier (Tuya Local)",
+      "fr": "Déshumidificateur WiFi (Tuya Local)",
+      "nl": "WiFi Luchtontvochtiger (Tuya Lokaal)",
+      "de": "WiFi-Luftentfeuchter (Tuya Lokal)"
+    },
+    "wifi_dimmer": {
+      "en": "WiFi Dimmer (Tuya Local)",
+      "fr": "Variateur WiFi (Tuya Local)",
+      "nl": "WiFi Dimmer (Tuya Lokaal)",
+      "de": "WiFi-Dimmer (Tuya Lokal)"
+    },
+    "wifi_door_lock": {
+      "en": "WiFi Door Lock (Tuya Local)",
+      "fr": "Serrure de porte WiFi (Tuya Local)",
+      "nl": "WiFi deurslot (Tuya Local)",
+      "de": "WiFi-Türschloss (Tuya Local)"
+    },
+    "wifi_doorbell": {
+      "en": "WiFi Doorbell / Camera (Tuya Local)",
+      "fr": "Sonnette WiFi / Caméra (Tuya Local)",
+      "nl": "WiFi Deurbel / Camera (Tuya Lokaal)",
+      "de": "WiFi Türklingel / Kamera (Tuya Lokal)"
+    },
+    "wifi_ev_charger": {
+      "en": "WiFi EV Charger (Tuya Local)",
+      "fr": "Borne EV WiFi (Tuya Local)",
+      "nl": "WiFi EV-lader (Tuya Lokaal)",
+      "de": "WiFi EV-Ladegerät (Tuya Lokal)"
+    },
+    "wifi_ewelink_bulb": {
+      "en": "eWeLink Bulb (SONOFF B02/B05)",
+      "fr": "Ampoule eWeLink (SONOFF B02/B05)",
+      "nl": "eWeLink Lamp (SONOFF B02/B05)",
+      "de": "eWeLink Glühbirne (SONOFF B02/B05)"
+    },
+    "wifi_ewelink_dimmer": {
+      "en": "eWeLink Dimmer (SONOFF D1)",
+      "fr": "Variateur eWeLink (SONOFF D1)",
+      "nl": "eWeLink Dimmer (SONOFF D1)",
+      "de": "eWeLink Dimmer (SONOFF D1)"
+    },
+    "wifi_ewelink_fan": {
+      "en": "eWeLink Fan Controller (SONOFF iFan)",
+      "fr": "Contrôleur de ventilateur eWeLink (SONOFF iFan)",
+      "nl": "eWeLink Ventilatorcontroller (SONOFF iFan)",
+      "de": "eWeLink Lüftersteuerung (SONOFF iFan)"
+    },
+    "wifi_ewelink_led": {
+      "en": "eWeLink LED Strip (SONOFF L1/L2)",
+      "fr": "Ruban LED eWeLink (SONOFF L1/L2)",
+      "nl": "eWeLink LED-strip (SONOFF L1/L2)",
+      "de": "eWeLink LED-Streifen (SONOFF L1/L2)"
+    },
+    "wifi_ewelink_plug": {
+      "en": "eWeLink Plug (SONOFF)",
+      "fr": "Prise eWeLink (SONOFF)",
+      "nl": "eWeLink Stekker (SONOFF)",
+      "de": "eWeLink Steckdose (SONOFF)"
+    },
+    "wifi_ewelink_pow": {
+      "en": "eWeLink Power Monitor (SONOFF)",
+      "fr": "Moniteur de puissance eWeLink (SONOFF)",
+      "nl": "eWeLink Stroommonitor (SONOFF)",
+      "de": "eWeLink Leistungsmonitor (SONOFF)"
+    },
+    "wifi_ewelink_switch": {
+      "en": "eWeLink Switch (SONOFF)",
+      "fr": "Interrupteur eWeLink (SONOFF)",
+      "nl": "eWeLink Schakelaar (SONOFF)",
+      "de": "eWeLink Schalter (SONOFF)"
+    },
+    "wifi_ewelink_switch_2ch": {
+      "en": "eWeLink Switch 2-Channel (SONOFF)",
+      "fr": "Interrupteur eWeLink 2 canaux (SONOFF)",
+      "nl": "eWeLink Schakelaar 2-kanaals (SONOFF)",
+      "de": "eWeLink Schalter 2-Kanal (SONOFF)"
+    },
+    "wifi_ewelink_switch_4ch": {
+      "en": "eWeLink Switch 4-Channel (SONOFF)",
+      "fr": "Interrupteur eWeLink 4 canaux (SONOFF)",
+      "nl": "eWeLink Schakelaar 4-kanaals (SONOFF)",
+      "de": "eWeLink Schalter 4-Kanal (SONOFF)"
+    },
+    "wifi_ewelink_th": {
+      "en": "eWeLink TH Sensor Switch (SONOFF)",
+      "fr": "Interrupteur capteur TH eWeLink (SONOFF)",
+      "nl": "eWeLink TH-sensorswitch (SONOFF)",
+      "de": "eWeLink TH-Sensor-Schalter (SONOFF)"
+    },
+    "wifi_fan": {
+      "en": "WiFi Fan (Tuya Local)",
+      "fr": "Ventilateur WiFi (Tuya Local)",
+      "nl": "WiFi Ventilator (Tuya Lokaal)",
+      "de": "WiFi Ventilator (Tuya Lokal)"
+    },
+    "wifi_garage_door": {
+      "en": "WiFi Garage Door (Tuya Local)",
+      "fr": "Porte de garage WiFi (Tuya Local)",
+      "nl": "WiFi Garagedeur (Tuya Lokaal)",
+      "de": "WiFi Garagentor (Tuya Lokal)"
+    },
+    "wifi_generic": {
+      "en": "WiFi Device (Tuya Local)",
+      "fr": "Appareil WiFi (Tuya Local)",
+      "nl": "WiFi Apparaat (Tuya Lokaal)",
+      "de": "WiFi Gerät (Tuya Lokal)"
+    },
+    "wifi_heat_pump": {
+      "en": "WiFi Heat Pump (Tuya Local)",
+      "fr": "Pompe à chaleur WiFi (Tuya Local)",
+      "nl": "WiFi Warmtepomp (Tuya Lokaal)",
+      "de": "WiFi Wärmepumpe (Tuya Lokal)"
+    },
+    "wifi_heater": {
+      "en": "WiFi Heater (Tuya Local)",
+      "fr": "Radiateur WiFi (Tuya Local)",
+      "nl": "WiFi Verwarming (Tuya Lokaal)",
+      "de": "WiFi Heizung (Tuya Lokal)"
+    },
+    "wifi_humidifier": {
+      "en": "WiFi Humidifier (Tuya Local)",
+      "fr": "Humidificateur WiFi (Tuya Local)",
+      "nl": "WiFi Luchtbevochtiger (Tuya Lokaal)",
+      "de": "WiFi-Luftbefeuchter (Tuya Lokal)"
+    },
+    "wifi_ir_remote": {
+      "en": "WiFi IR Remote (Tuya Local)",
+      "fr": "Télécommande IR WiFi (Tuya Local)",
+      "nl": "WiFi IR-afstandsbediening (Tuya Lokaal)",
+      "de": "WiFi IR-Fernbedienung (Tuya Lokal)"
+    },
+    "wifi_kettle": {
+      "en": "WiFi Smart Kettle (Tuya Local)",
+      "fr": "Bouilloire WiFi (Tuya Local)",
+      "nl": "WiFi Waterkoker (Tuya Lokaal)",
+      "de": "WiFi Wasserkocher (Tuya Lokal)"
+    },
+    "wifi_led_strip": {
+      "en": "WiFi LED Strip RGBCW (Tuya Local)",
+      "fr": "Ruban LED WiFi RGBCW (Tuya Local)",
+      "nl": "WiFi LED Strip RGBCW (Tuya Lokaal)",
+      "de": "WiFi LED-Streifen RGBCW (Tuya Lokal)"
+    },
+    "wifi_light": {
+      "en": "WiFi Light RGBCW (Tuya Local)",
+      "fr": "Lumière WiFi RGBCW (Tuya Local)",
+      "nl": "WiFi-lamp RGBCW (Tuya Lokaal)",
+      "de": "WiFi-Licht RGBCW (Tuya Lokal)"
+    },
+    "wifi_pet_feeder": {
+      "en": "WiFi Pet Feeder (Tuya Local)",
+      "fr": "Distributeur de nourriture pour animaux WiFi (Tuya Local)",
+      "nl": "WiFi Dierenvoederautomaat (Tuya Lokaal)",
+      "de": "WiFi-Tierfutterautomat (Tuya Lokal)"
+    },
+    "wifi_plug": {
+      "en": "WiFi Smart Plug (Tuya Local)",
+      "fr": "Prise intelligente WiFi (Tuya Local)",
+      "nl": "WiFi Slimme Stekker (Tuya Lokaal)",
+      "de": "WiFi Smart Plug (Tuya Lokal)"
+    },
+    "wifi_power_strip": {
+      "en": "WiFi Power Strip (Tuya Local)",
+      "fr": "Multiprise WiFi (Tuya Local)",
+      "nl": "WiFi-stekkerdoos (Tuya Lokaal)",
+      "de": "WiFi-Steckdosenleiste (Tuya Lokal)"
+    },
+    "wifi_robot_vacuum": {
+      "en": "WiFi Robot Vacuum (Tuya Local)",
+      "fr": "Aspirateur robot WiFi (Tuya Local)",
+      "nl": "WiFi Robotstofzuiger (Tuya Lokaal)",
+      "de": "WiFi-Saugroboter (Tuya Lokal)"
+    },
+    "wifi_sensor": {
+      "en": "WiFi Sensor (Tuya Local)",
+      "fr": "Capteur WiFi (Tuya Local)",
+      "nl": "WiFi-sensor (Tuya Lokaal)",
+      "de": "WiFi-Sensor (Tuya Lokal)"
+    },
+    "wifi_siren": {
+      "en": "WiFi Siren (Tuya Local)",
+      "fr": "Sirène WiFi (Tuya Local)",
+      "nl": "WiFi Sirene (Tuya Lokaal)",
+      "de": "WiFi Sirene (Tuya Lokal)"
+    },
+    "wifi_sonoff_basicr4": {
+      "en": "SONOFF BASIC R4",
+      "fr": "SONOFF BASIC R4",
+      "nl": "SONOFF BASIC R4",
+      "de": "SONOFF BASIC R4"
+    },
+    "wifi_sonoff_dualr3": {
+      "en": "SONOFF DUAL R3",
+      "fr": "SONOFF DUAL R3",
+      "nl": "SONOFF DUAL R3",
+      "de": "SONOFF DUAL R3"
+    },
+    "wifi_sonoff_micro": {
+      "en": "SONOFF Micro USB",
+      "fr": "SONOFF Micro USB",
+      "nl": "SONOFF Micro USB",
+      "de": "SONOFF Micro USB"
+    },
+    "wifi_sonoff_minir3": {
+      "en": "SONOFF MINI R3",
+      "fr": "SONOFF MINI R3",
+      "nl": "SONOFF MINI R3",
+      "de": "SONOFF MINI R3"
+    },
+    "wifi_sonoff_minir4": {
+      "en": "SONOFF MINI R4 / R4M",
+      "fr": "SONOFF MINI R4 / R4M",
+      "nl": "SONOFF MINI R4 / R4M",
+      "de": "SONOFF MINI R4 / R4M"
+    },
+    "wifi_sonoff_pow_elite": {
+      "en": "SONOFF POW Elite / POWR320D",
+      "fr": "SONOFF POW Elite / POWR320D",
+      "nl": "SONOFF POW Elite / POWR320D",
+      "de": "SONOFF POW Elite / POWR320D"
+    },
+    "wifi_sonoff_smate2": {
+      "en": "SONOFF S-MATE2 Extreme",
+      "fr": "SONOFF S-MATE2 Extrême",
+      "nl": "SONOFF S-MATE2 Extreem",
+      "de": "SONOFF S-MATE2 Extrem"
+    },
+    "wifi_sonoff_thr316d": {
+      "en": "SONOFF THR316D / THR320D",
+      "fr": "SONOFF THR316D / THR320D",
+      "nl": "SONOFF THR316D / THR320D",
+      "de": "SONOFF THR316D / THR320D"
+    },
+    "wifi_sonoff_tx_1ch": {
+      "en": "SONOFF TX Touch 1-Gang",
+      "fr": "SONOFF TX Touch 1-Gang",
+      "nl": "SONOFF TX Touch 1-Gang",
+      "de": "SONOFF TX Touch 1-Gang"
+    },
+    "wifi_sonoff_tx_2ch": {
+      "en": "SONOFF TX Touch 2-Gang",
+      "fr": "SONOFF TX Touch 2-Gang",
+      "nl": "SONOFF TX Touch 2-Gang",
+      "de": "SONOFF TX Touch 2-Gang"
+    },
+    "wifi_sonoff_tx_3ch": {
+      "en": "SONOFF TX Touch 3-Gang",
+      "fr": "SONOFF TX Tactile 3-Gang",
+      "nl": "SONOFF TX Aanraking 3-Groep",
+      "de": "SONOFF TX Berührung 3-Gang"
+    },
+    "wifi_switch": {
+      "en": "WiFi Switch (Tuya Local)",
+      "fr": "Interrupteur WiFi (Tuya Local)",
+      "nl": "WiFi-schakelaar (Tuya Lokaal)",
+      "de": "WiFi-Schalter (Tuya Lokal)"
+    },
+    "wifi_switch_2gang": {
+      "en": "WiFi 2-Gang Switch",
+      "fr": "Interrupteur WiFi 2 gangs",
+      "nl": "WiFi 2-groepsschakelaar",
+      "de": "WiFi 2-fach Schalter"
+    },
+    "wifi_switch_3gang": {
+      "en": "WiFi 3-Gang Switch",
+      "fr": "Interrupteur WiFi 3 gangs",
+      "nl": "WiFi 3-groepsschakelaar",
+      "de": "WiFi 3-fach Schalter"
+    },
+    "wifi_switch_4gang": {
+      "en": "WiFi 4-Gang Switch",
+      "fr": "Interrupteur WiFi 4 gangs",
+      "nl": "WiFi 4-groepsschakelaar",
+      "de": "WiFi 4-fach Schalter"
+    },
+    "wifi_thermostat": {
+      "en": "WiFi Thermostat (Tuya Local)",
+      "fr": "Thermostat WiFi (Tuya Local)",
+      "nl": "WiFi Thermostaat (Tuya Lokaal)",
+      "de": "WiFi Thermostat (Tuya Lokal)"
+    },
+    "wifi_water_tank_monitor": {
+      "en": "WiFi Liquid Level Sensor",
+      "fr": "Capteur de niveau de liquide WiFi",
+      "nl": "WiFi-vloeistofniveausensor",
+      "de": "WiFi-Flüssigkeitsstandsensor"
+    },
+    "wifi_water_valve": {
+      "en": "WiFi Water Valve (Tuya Local)",
+      "fr": "Vanne d'eau WiFi (Tuya Local)",
+      "nl": "WiFi Waterklep (Tuya Lokaal)",
+      "de": "WiFi-Wasserventil (Tuya Lokal)"
+    },
+    "zigbee_repeater": {
+      "en": "Zigbee Signal Repeater",
+      "fr": "Répéteur de signal Zigbee",
+      "nl": "Zigbee signaalversterker",
+      "de": "Zigbee-Signalverstärker"
+    }
+  }
+}

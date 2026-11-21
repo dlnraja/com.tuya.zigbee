@@ -190,16 +190,16 @@
     {
       "id": "vibration_sensor_is_vibrating",
       "title": {
-        "en": "Vibration !{{is|is not}} detected",
+        "en": "Vibration !{{is|is not}} detected (report)",
         "nl": "Trillingen !{{worden|worden niet}} gedetecteerd",
-        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "fr": "Vibration !{{est|n'est pas}} détectée (rapport)",
         "de": "Vibration !{{wird|wird nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Vibration !{{is|is not}} detected",
+        "en": "Vibration !{{is|is not}} detected (report)",
         "nl": "Trillingen !{{worden|worden niet}} gedetecteerd",
-        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "fr": "Vibration !{{est|n'est pas}} détectée (rapport)",
         "de": "Vibration !{{wird|wird nicht}} erkannt"
       }
     },
@@ -237,15 +237,15 @@
     {
       "id": "vibration_sensor_vibration_active",
       "title": {
-        "en": "Vibration !{{is|is not}} detected",
-        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "en": "Vibration !{{is|is not}} detected (report) (vibration sensor vibration)",
+        "fr": "Vibration !{{est|n'est pas}} détectée (rapport) (vibration sensor vibration)",
         "nl": "Trilling !{{is|is niet}} gedetecteerd",
         "de": "Vibration !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Vibration !{{is|is not}} detected",
-        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "en": "Vibration !{{is|is not}} detected (report) (vibration sensor vibration)",
+        "fr": "Vibration !{{est|n'est pas}} détectée (rapport) (vibration sensor vibration)",
         "nl": "Trilling !{{is|is niet}} gedetecteerd",
         "de": "Vibration !{{ist|ist nicht}} erkannt"
       }

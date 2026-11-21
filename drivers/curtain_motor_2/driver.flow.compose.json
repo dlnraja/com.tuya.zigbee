@@ -224,15 +224,15 @@
     {
       "id": "curtain_motor_2_windowcoverings_open",
       "title": {
-        "en": "Open",
-        "fr": "Ouvrir",
+        "en": "Open (window covering)",
+        "fr": "Ouvrir (volet)",
         "nl": "Openen",
         "de": "Öffnen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Open",
-        "fr": "Ouvrir",
+        "en": "Open (window covering)",
+        "fr": "Ouvrir (volet)",
         "de": "Öffnen",
         "nl": "Openen"
       }
@@ -240,15 +240,15 @@
     {
       "id": "curtain_motor_2_windowcoverings_close",
       "title": {
-        "en": "Close",
-        "fr": "Fermer",
+        "en": "Close (window covering)",
+        "fr": "Fermer (volet)",
         "nl": "Sluiten",
         "de": "Schließen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Close",
-        "fr": "Fermer",
+        "en": "Close (window covering)",
+        "fr": "Fermer (volet)",
         "de": "Schließen",
         "nl": "Sluiten"
       }
@@ -364,15 +364,15 @@
     {
       "id": "curtain_motor_2_open",
       "title": {
-        "en": "Open",
-        "fr": "Ouvrir",
+        "en": "Open (report)",
+        "fr": "Ouvrir (rapport)",
         "nl": "Openen",
         "de": "Öffnen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Open",
-        "fr": "Ouvrir",
+        "en": "Open (report)",
+        "fr": "Ouvrir (rapport)",
         "nl": "Openen",
         "de": "Öffnen"
       }
@@ -380,15 +380,15 @@
     {
       "id": "curtain_motor_2_close",
       "title": {
-        "en": "Close",
-        "fr": "Fermer",
+        "en": "Close (report)",
+        "fr": "Fermer (rapport)",
         "nl": "Sluiten",
         "de": "Schließen"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Close",
-        "fr": "Fermer",
+        "en": "Close (report)",
+        "fr": "Fermer (rapport)",
         "nl": "Sluiten",
         "de": "Schließen"
       }

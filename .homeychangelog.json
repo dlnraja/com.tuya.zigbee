@@ -908,64 +908,83 @@
     }
   ],
   "9.0.1636": {
+    "en": "The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss.",
+    "fr": "La version Test inclut des appareils auparavant retenus dans le paquet. Les images ont été dédupliquées sans perte de qualité."
+  },
+  "9.0.1635": {
+    "en": "Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : éclairages et variateurs and réglages des appareils. Plus 7 other changes in the app core. En coulisses : tests et contrôles de publication."
+  },
+  "9.0.1634": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
     "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   },
-  "9.0.1635": {
-    "en": "Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1634": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
-  },
   "9.0.1633": {
-    "en": "Changed: homeyignore CI screenshots so the gate stops blocking the version write-back; cap a publish chain at 3 uploads."
+    "en": "Changed: homeyignore CI screenshots so the gate stops blocking the version write-back; cap a publish chain at 3 uploads.",
+    "fr": "Modifié : homeyignore CI screenshots so the gate stops blocking the version write-back; cap a publish chain at 3 uploads."
   },
   "9.0.1631": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   },
   "9.0.1630": {
-    "en": "Changed: lossless upload-archive trim and a ratchet on archive size and file count; count the publish retry chain per error class."
+    "en": "Changed: lossless upload-archive trim and a ratchet on archive size and file count; count the publish retry chain per error class.",
+    "fr": "Modifié : lossless upload-archive trim and a ratchet on archive size and file count; count the publish retry chain per error class."
   },
   "9.0.1629": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   },
   "9.0.1628": {
-    "en": "Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : éclairages et variateurs. Plus 2 other changes in the app core. En coulisses : tests et contrôles de publication."
   },
   "9.0.1627": {
-    "en": "New: lights and dimmers and energy meters. Fixed: pairing and device recognition and safety sensors & climate sensors. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "New: lights and dimmers and energy meters. Fixed: pairing and device recognition and safety sensors & climate sensors. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : éclairages et variateurs and compteurs d'énergie. Fixed: appairage et reconnaissance des appareils and capteurs de sécurité & capteurs climatiques. Plus 8 other changes in the app core. En coulisses : tests et contrôles de publication."
   },
   "9.0.1626": {
-    "en": "Fixed: pairing and device recognition, general reliability (TS0601) and device settings. Faster: lights and dimmers. Behind the scenes: tests and publishing checks."
+    "en": "Fixed: pairing and device recognition, general reliability (TS0601) and device settings. Faster: lights and dimmers. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : appairage et reconnaissance des appareils, general reliability (TS0601) and réglages des appareils. Faster: éclairages et variateurs. En coulisses : tests et contrôles de publication."
   },
   "9.0.1624": {
-    "en": "Changed: keep the contract - a changed DP value still logs once more before the per-DP log throt."
+    "en": "Changed: keep the contract - a changed DP value still logs once more before the per-DP log throt.",
+    "fr": "Modifié : keep the contract - a changed DP value still logs once more before the per-DP log throt."
   },
   "9.0.1623": {
-    "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "Fixed: memory and timers and energy meters (TS011F). Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : mémoire et minuteries et compteurs d'énergie (TS011F). Et 5 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.1622": {
-    "en": "Fixed: pairing and device recognition. Behind the scenes: tests and publishing checks."
+    "en": "Fixed: pairing and device recognition. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : appairage et reconnaissance des appareils. En coulisses : tests et contrôles de publication."
   },
   "9.0.1621": {
-    "en": "Fixed: safety sensors & memory and timers, wall switches & pairing and device recognition and device settings. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "Fixed: safety sensors & memory and timers, wall switches & pairing and device recognition and device settings. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : capteurs de sécurité & mémoire et minuteries, wall switches & appairage et reconnaissance des appareils and réglages des appareils. Plus 2 other changes in the app core. En coulisses : tests et contrôles de publication."
   },
   "9.0.1620": {
-    "en": "Changed: rename energy_source off the reserved energy_ prefix."
+    "en": "Changed: rename energy_source off the reserved energy_ prefix.",
+    "fr": "Modifié : rename energy_source off the reserved energy_ prefix."
   },
   "9.0.1619": {
-    "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run."
+    "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run.",
+    "fr": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run."
   },
   "9.0.1618": {
-    "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line."
+    "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line.",
+    "fr": "Modifié : do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line."
   },
   "9.0.1617": {
-    "en": "Fixed: buttons and remotes, pairing and device recognition and battery reporting. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "Fixed: buttons and remotes, pairing and device recognition and battery reporting. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : boutons et télécommandes, appairage et reconnaissance des appareils and niveau de batterie. Plus 5 other changes in the app core. En coulisses : tests et contrôles de publication."
   },
   "9.0.1616": {
-    "en": "Fixed: pairing and device recognition (TS0201), lights and dimmers, thermostats (TRV06) and climate sensors. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "Fixed: pairing and device recognition (TS0201), lights and dimmers, thermostats (TRV06) and climate sensors. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : appairage et reconnaissance des appareils (TS0201), éclairages et variateurs, thermostats (TRV06) and capteurs climatiques. Plus 4 other changes in the app core. En coulisses : tests et contrôles de publication."
   },
   "9.0.1613": {
-    "en": "New: pairing and device recognition & Flow cards (TS0601) and thermostats & climate sensors. Fixed: Flow cards and pairing and device recognition. Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "New: pairing and device recognition & Flow cards (TS0601) and thermostats & climate sensors. Fixed: Flow cards and pairing and device recognition. Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : appairage et reconnaissance des appareils & cartes Flow (TS0601) and thermostats & capteurs climatiques. Fixed: cartes Flow and appairage et reconnaissance des appareils. Plus 10 other changes in the app core. En coulisses : tests et contrôles de publication."
   }
 }
