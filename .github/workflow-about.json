@@ -438,7 +438,7 @@
     },
     "crash-triage.yml": {
       "group": "autopilot",
-      "what": "After Fetch Diagnostics and daily: groups crashes by signature, ranks impact × installs, keeps one tracking issue per signature in this repo with a safe-pattern fix proposal. No external post."
+      "what": "After Fetch Diagnostics and daily: groups crashes by signature, ranks impact \u00d7 installs, keeps one tracking issue per signature in this repo with a safe-pattern fix proposal. No external post."
     },
     "secret-scan.yml": {
       "group": "autopilot",
@@ -471,6 +471,10 @@
     "bot-data-fold.yml": {
       "group": "autopilot",
       "what": "Once a day, folds the bot data commits parked on the bot/data branch into one quiet master commit, keeping human edits."
+    },
+    "promote-live.yml": {
+      "group": "publish",
+      "what": "Promotes a healthy Athom Test build to Live only after objective gates pass (CI, validate publish, no lost IDs or couples, evidence-driven soak). Bastien stays night-only."
     }
   }
 }
