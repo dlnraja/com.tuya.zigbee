@@ -1,6 +1,14 @@
 {
  "runs": [
   {
+   "at": "2026-11-21T08:46:16.500Z",
+   "newMfrs": 2,
+   "sample": [
+    "_tze204_lnsk1ead",
+    "_tze204_jrtvxwvy"
+   ]
+  },
+  {
    "at": "2026-11-19T13:59:56.940Z",
    "newMfrs": 2,
    "sample": [
@@ -147,13 +155,6 @@
   },
   {
    "at": "2026-11-07T21:36:20.019Z",
-   "newMfrs": 1,
-   "sample": [
-    "_tze200_nhxzhga5"
-   ]
-  },
-  {
-   "at": "2026-11-07T18:54:11.751Z",
    "newMfrs": 1,
    "sample": [
     "_tze200_nhxzhga5"
