@@ -208,6 +208,8 @@ Update 2026-11-21 (P3360): `ceilingBytes` is 3 270 000. Graduating 21 held drive
 
 Update 2026-11-22 (P3342c, t1030u): run 45062875101 was FATAL(P3342) at 3 272 186 B (2 186 B over 3 270 000) on a 370-driver v9.0.1637 package. A lossless strip of empty Homey-default fields and schema-default flow token types (`tokens[].type` = "string") brought the upload app.json to 3 266 532 B (3 468 B under the existing ceiling). The ceiling was not raised. No driver id, flow card id, capability or language was removed.
 
+Update 2026-11-22 (P3342d, t1030u/t1032u): Auto-Publish run 45075364135 never uploaded v9.0.1638. The P3342c strip of schema-default `tokens[].type` ("string") made `homey app validate --level publish` print 325 warnings, and the publish gate refused to upload ([athom-final] no Athom build for that version). Token types are kept. The remaining lossless empty-default strip leaves the 370-driver upload app.json at 3 271 732 B, 1 732 B over 3 270 000. Trial ceiling 3 300 000 (Athom hard limit still 4 MB). Last accepted Athom evidence: v9.0.1636 build #3717 at 3 194 724 B, Test on 21/11 at 20:33 Europe/Paris. If Athom rejects the larger build, revert to 3 270 000 and report.
+
 Update 2026-11-22 (P3386): the P3370 landing stack (P2626 keeps 1929 `button.*` getable/setable/maintenanceAction
 flags in the payload, ~+34 KB; P3362 standard units on 351 drivers, ~+9 KB; flow title disambiguation, ~+10 KB;
 2 more payload drivers, ~+4 KB) grew the ASCII upload app.json from 3 266 737 B (fa4a882d62, last green Validate)

@@ -18,8 +18,8 @@
  *     capability from homey-lib, or the app's custom capability): Homey applies that default when the option is
  *     absent, so the device gets the same options. Values that differ from the default are kept.
  *  4. Empty or schema-default fields Homey treats as absent: empty driver `flow` / `settings` / `energy` / `ui`,
- *     empty zigbee endpoint `bindings`, empty flow-card `args`, `tokens[].type` when it is the schema default
- *     "string". Driver ids, flow card ids, capabilities, languages, platforms
+ *     empty zigbee endpoint `bindings`, empty flow-card `args`. Do not drop `tokens[].type` even when it is the
+ *     schema default "string": Homey validate warns and the publish gate then refuses to upload (run 45075364135, v9.0.1638 never reached Athom). Driver ids, flow card ids, capabilities, languages, platforms
  *     and connectivity stay untouched.
  * Nothing here touches a driver id, flow card id, capability, setting id or zigbee couple.
  */
@@ -119,9 +119,10 @@ function stripFlowCards(flow, stats) {
     for (const c of flow[kind] || []) {
       if (!c || typeof c !== 'object') { continue; }
       if (Array.isArray(c.args) && c.args.length === 0) { dropKey(c, 'args', stats); }
-      for (const t of c.tokens || []) {
-        if (t && typeof t === 'object' && t.type === 'string') { dropKey(t, 'type', stats); }
-      }
+      // Keep tokens[].type even when it is the schema default "string". Homey validate
+      // warns "type is missing, it defaults to string", and the publish gate treats that
+      // warning as a hard stop, so the 22/11 23:09 Paris upload of v9.0.1638 never left
+      // the runner (45075364135).
     }
   }
 }
