@@ -1,0 +1,14 @@
+{
+ "version": 1,
+ "updated": "2026-11-22T14:43:54.718Z",
+ "items": {
+  "oom-heap|com.dlnraja.tuya.zigbee.bastien|1.0.229": {
+   "status": "open",
+   "created": "2026-11-22T14:43:54.718Z",
+   "sig": "oom-heap",
+   "appId": "com.dlnraja.tuya.zigbee.bastien",
+   "version": "1.0.229",
+   "task": "Investigate oom-heap on com.dlnraja.tuya.zigbee.bastien 1.0.229: heap limit at runtime (boot live set, caches, payload size). Evidence: diag e3d59e07, ae9f84a9; drivers switch_4gang, switch_1gang."
+  }
+ }
+}

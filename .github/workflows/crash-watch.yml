@@ -1,0 +1,122 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Daily free crash watch: reads the sanitized diag reports and ledger of the Gmail diag
+#   workflows, flags OOM / SIGABRT / CPU-limit signatures per app version, writes a ledger, candidate tasks
+#   and a job summary; posts nothing, opens no PR.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# Crash watch (P3389)
+# Triggers: daily 05:40 UTC + workflow_dispatch
+# Secrets: GITHUB_TOKEN only | Free, no AI, no paid services, posts nothing, opens no PR
+# Kill switch: vars.CRASH_WATCH_DISABLED == 'true' or config/ci/crash-watch.json enabled=false
+# Reads the sanitized diagnostics reports of the last Gmail diag runs (artifacts + state cache) and
+# data/progress/ledger.json, flags OOM / SIGABRT / CPU-limit signatures per app version, writes
+# data/progress/crash-watch-ledger.json + data/leads/crash-watch-candidates.json and a job summary.
+name: Crash watch (P3389)
+
+on:
+  schedule:
+    - cron: '40 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: report only, no commit'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: crash-watch-${{ github.workflow }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  FORUM_AUTO_POST: '0'
+  GITHUB_RESOLVER_COMMENT: '0'
+  SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
+
+jobs:
+  watch:
+    if: ${{ vars.CRASH_WATCH_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: master
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Kill switch (config)
+        id: gate
+        run: |
+          run=true
+          enabled=$(node -e "try{const c=require('./config/ci/crash-watch.json');process.stdout.write(String(c.enabled!==false))}catch(e){process.stdout.write('true')}")
+          if [ "$enabled" != "true" ]; then echo "Kill switch: config/ci/crash-watch.json enabled=false"; run=false; fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
+      - name: Restore latest Gmail diagnostics state (cache, read only)
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .github/state/diagnostics-state.json
+            .github/state/diagnostics-report.json
+          key: gmail-diag-state-crash-watch-${{ github.run_id }}
+          restore-keys: gmail-diag-state-
+
+      - name: Download recent sanitized diagnostics reports
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir -p .crash-watch/reports
+          max=$(node -p "try{require('./config/ci/crash-watch.json').maxRuns||6}catch(e){6}")
+          for wf in $(node -p "try{(require('./config/ci/crash-watch.json').workflows||[]).join(' ')}catch(e){'gmail-diagnostics.yml fetch-diags.yml'}"); do
+            for id in $(gh run list -R "$REPO" -w "$wf" --status success -L "$max" --json databaseId -q '.[].databaseId' 2>/dev/null || true); do
+              gh run download "$id" -R "$REPO" -n sanitized-diagnostics-report -D ".crash-watch/reports/$id" >/dev/null 2>&1 || true
+            done
+          done
+          echo "Report files: $(find .crash-watch/reports .github/state -name diagnostics-report.json 2>/dev/null | wc -l)"
+
+      - name: Classify and write ledger
+        if: steps.gate.outputs.run == 'true'
+        run: node scripts/ci/crash-watch.cjs --reports=.crash-watch/reports,.github/state
+
+      - name: Commit ledger ([skip ci], capped)
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: |
+          if [ "$DRY" = "true" ]; then echo "Dry run: no commit" >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          if git diff --quiet -- data/progress/crash-watch-ledger.json data/leads/crash-watch-candidates.json \
+             && [ -z "$(git ls-files --others --exclude-standard -- data/progress/crash-watch-ledger.json data/leads/crash-watch-candidates.json)" ]; then
+            echo "No ledger change"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/digest-guard.js --delta data/progress/crash-watch-ledger.json data/leads/crash-watch-candidates.json || { echo "::error::privacy gate refused the ledger"; exit 1; }
+          node scripts/ci/safe-auto-commit.js --id=crash-watch --max-per-day=2 \
+            --message="chore(ledger): crash watch OOM/SIGABRT/CPU signatures" \
+            --paths="data/progress/crash-watch-ledger.json data/leads/crash-watch-candidates.json"

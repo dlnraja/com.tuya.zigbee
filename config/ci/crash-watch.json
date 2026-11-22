@@ -1,0 +1,7 @@
+{
+  "_why": "P3389 (t1023u): daily free crash watch over the diag reports and ledger the Gmail diag workflows already produce. No AI, no posting, no PR.",
+  "enabled": true,
+  "maxRuns": 6,
+  "workflows": ["gmail-diagnostics.yml", "fetch-diags.yml"],
+  "artifact": "sanitized-diagnostics-report"
+}
