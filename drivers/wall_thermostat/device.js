@@ -403,8 +403,8 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       this._fcuSyncing = true;
       try {
         // WHY(P2324): DP1 first (Z2M power switch). DP101 only if confirmed - never block OFF.
-        // P3384: ZHT-S01 also uses DP1 as heat/off (Z2M moes.ts).
-        await this._txBool(this._zhtS01 ? ZHT_S01_DATA_POINTS.onOff : BHT_DATA_POINTS.onOff, !!onOff);
+        // P3384: ZHT-S01 onOff is also DP1 (Z2M moes.ts).
+        await this._txBool(BHT_DATA_POINTS.onOff, !!onOff);
         await this._ensureFcuManualForTx().catch((e) => {
           this.log('[WALL-THERMO] DP101 after onoff skipped:', e?.message || e);
         });
