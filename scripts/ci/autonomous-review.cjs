@@ -202,10 +202,20 @@ function assertionProfile(src) {
   };
 }
 
-function assertionsWeakened(beforeSrc, afterSrc) {
+// Runner shims under test/_support/ forward it.skip/it.only to mocha or node:test;
+// a forwarder is not a skipped test, so only the strict-assertion count applies there.
+function isRunnerSupport(file) {
+  return /(^|\/)test\/_support\//.test(String(file || '').replace(/\\/g, '/'));
+}
+
+function assertionsWeakened(beforeSrc, afterSrc, opts = {}) {
   const before = assertionProfile(beforeSrc);
   const after = assertionProfile(afterSrc);
   const problems = [];
+  if (opts.forwarder) {
+    if (after.strict < before.strict) problems.push(`strict assertions decreased ${before.strict} -> ${after.strict}`);
+    return { ok: problems.length === 0, problems, before, after };
+  }
   if (after.skip > before.skip) problems.push(`.skip increased ${before.skip} -> ${after.skip}`);
   if (after.only > before.only) problems.push(`.only increased ${before.only} -> ${after.only}`);
   if (after.strict < before.strict) problems.push(`strict assertions decreased ${before.strict} -> ${after.strict}`);
@@ -389,7 +399,7 @@ function runAssertions(base) {
     let before = '';
     try { after = fs.readFileSync(path.join(ROOT, file), 'utf8'); } catch { continue; }
     try { before = git(['show', `${base}:${file}`]); } catch { before = ''; }
-    const verdict = assertionsWeakened(before, after);
+    const verdict = assertionsWeakened(before, after, { forwarder: isRunnerSupport(file) });
     for (const problem of verdict.problems) problems.push(`${file}: ${problem}`);
   }
   return { ok: problems.length === 0, problems };
@@ -473,7 +483,7 @@ function main(argv) {
 }
 
 module.exports = {
-  exactPairs, reviewCouples, reviewDiff, replayCompaction, assertionsWeakened, assertionProfile,
+  exactPairs, reviewCouples, reviewDiff, replayCompaction, assertionsWeakened, assertionProfile, isRunnerSupport,
   targetedTests, identityProblems, botApprovalVerdict, couplesPresent, IDENTITIES, GENERIC_CHANGELOG,
 };
 
