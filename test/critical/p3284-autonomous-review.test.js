@@ -82,6 +82,19 @@ describe('P3284 autonomous review', () => {
     assert.strictEqual(ar.assertionsWeakened(before, `out.${S} = 1;\n`, { forwarder: true }).ok, false);
   });
 
+  it('finds a couple-sources URL when the ledger key keeps a mixed-case pid', () => {
+    const valve = drv('device_radiator_valve', ['_TZE204_ltwbm23f'], ['TS0601']);
+    const mixed = {
+      '_TZE204_ltwbm23f|TS0601': {
+        sources: [{ source: 'z2m', url: 'https://github.com/Koenkk/zigbee-herdsman-converters/issues/1' }],
+        drivers: ['device_radiator_valve'],
+        deviceClass: 'thermostat',
+      },
+    };
+    assert.strictEqual(reviewCouples({ before: [], after: [valve], sources: {} }).ok, false);
+    assert.strictEqual(reviewCouples({ before: [], after: [valve], sources: mixed }).ok, true);
+  });
+
   it('does not fail a duplicate the diff left untouched', () => {
     const a = drv('switch_1gang', ['_TZ3000_skueekg3'], ['TS000F'], 'socket');
     const b = drv('switch_module_whd02', ['_TZ3000_skueekg3'], ['TS000F'], 'socket');

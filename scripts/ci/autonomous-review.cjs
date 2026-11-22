@@ -101,6 +101,19 @@ function listsContain(driver, mfr, pid) {
   return mfrs.includes(norm(mfr)) && pids.includes(String(pid).toUpperCase());
 }
 
+function normalizeSources(sources) {
+  const out = {};
+  for (const [rawKey, entry] of Object.entries(sources || {})) {
+    if (!entry) continue;
+    const parts = String(rawKey).split('|');
+    const mfr = entry.mfr || parts[0];
+    const pid = entry.pid || parts[1];
+    if (!mfr || !pid) continue;
+    out[coupleKey(mfr, pid)] = entry;
+  }
+  return out;
+}
+
 function reviewDiff(before, after, sources) {
   const historical = new Set(reviewCouples({ before, after: before, sources }).problems);
   const head = reviewCouples({ before, after, sources });
@@ -109,6 +122,7 @@ function reviewDiff(before, after, sources) {
 }
 
 function reviewCouples({ before, after, sources }) {
+  sources = normalizeSources(sources);
   const prev = indexExact(before, sources);
   const next = indexExact(after, sources);
   const problems = [];

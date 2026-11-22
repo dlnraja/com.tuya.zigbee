@@ -18,8 +18,16 @@ const SKIP = Symbol('p3020-skip');
 function mochaGlobals() {
   const g = globalThis;
   if (typeof g.describe === 'function' && typeof g.it === 'function') {
+    // Do not wrapFn mocha tests: wrapFn(..., t) has length 1 and mocha waits for done().
+    const it = function testLike(name, opts, fn) {
+      if (typeof opts === 'function') { return g.it(name, opts); }
+      if (opts && typeof opts === 'object' && opts.skip) { return g.it.skip(name, fn); }
+      return g.it(name, fn);
+    };
+    it.skip = (...a) => g.it.skip(...a);
+    it.only = (...a) => g.it.only(...a);
     return {
-      describe: g.describe, it: g.it, before: g.before, after: g.after,
+      describe: g.describe, it, before: g.before, after: g.after,
       beforeEach: g.beforeEach, afterEach: g.afterEach, runner: 'mocha',
     };
   }
@@ -70,7 +78,10 @@ function wrapFn(fn) {
 function wrapTestApi(api) {
   const out = function testLike(name, opts, fn) {
     if (typeof opts === 'function') { return api(name, wrapFn(opts)); }
-    return api(name, opts, wrapFn(fn));
+    // node:test it(name, { skip }, fn) must also work under mocha (P3016/P3017/P3023 full suite).
+    const run = wrapFn(fn);
+    if (opts && typeof opts === 'object' && opts.skip) { return api.skip(name, run); }
+    return api(name, run);
   };
   out.skip = (name, fn) => api.skip(name, wrapFn(fn));
   out.only = (name, fn) => api.only(name, wrapFn(fn));

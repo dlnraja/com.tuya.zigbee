@@ -5,7 +5,7 @@
  * Map/Set/Array entry hanging off the device and fails if the count keeps growing
  * after warm-up (unbounded cache / log / queue) or exceeds the documented caps.
  */
-const { describe, it, before, beforeEach } = require('node:test');
+const { describe, it, before, beforeEach } = require('../_support/dual-runner');
 // P3226: these assertions assume nominal memory; a MemoryBudget.shared() started by an
 // earlier suite samples the whole test-runner heap (>75 MB → critical, factor 4).
 before(() => { require('../../lib/memory/MemoryBudget')._resetShared(); });
