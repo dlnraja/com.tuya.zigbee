@@ -60,5 +60,5 @@
   "alwaysKeepPrefixes": [],
   "contreQuoi": "Full 400+ driver Bastien upload → Athom socket hang / invalid_state → tip stuck on 1.0.93 while remotes dead. Soft flow-keep left 1500+ orphan cards (#106).",
   "notes": "P2726: empty alwaysKeepPrefixes — only keepDriverIds (house mesh + small buffer). Flow cards kept only when id starts with kept driver id.",
-  "p3262Trial": "t1029u 2026-11-22: lastAccepted is 28 (build #262 v1.0.254, wall_thermostat in the fleet). trialAllow 29 so lcdtemphumidsensor (live ZTH05Z _TZE284_vvmbj46n+TS0601) ships too. If Athom rejects the 29-driver build, drop trialAllow and swap a zero-paired buffer for lcdtemphumidsensor so the needed driver stays at 28."
+  "p3262Trial": "t1032u 2026-11-22: lastAccepted is 29 citing build #263 v1.0.255 (run 45058287778, 29 drivers / 656 flow cards). wall_thermostat and lcdtemphumidsensor stay in the fleet. trialAllow dropped after Athom accepted the 29-driver build."
 }

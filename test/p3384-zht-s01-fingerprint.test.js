@@ -32,16 +32,17 @@ describe('P3384 ZHT-S01 fingerprint move (Z2M moes.ts)', () => {
     assert.ok(!hasMfr(radar, '_tze284_rlytpmij'));
   });
 
-  it('Bastien house fleet keeps wall_thermostat and live lcdtemphumidsensor (trial ceiling 29)', () => {
+  it('Bastien house fleet keeps wall_thermostat and live lcdtemphumidsensor (lastAccepted 29, build #263)', () => {
     const ssot = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'architecture', 'bastien-publish-fleet-ssot.json'), 'utf8'));
     const ceil = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'driver-count-ceiling.json'), 'utf8'));
     const entry = ceil.apps['com.dlnraja.tuya.zigbee.bastien'];
     assert.ok(ssot.keepDriverIds.includes('presence_sensor_radar'));
     assert.ok(ssot.keepDriverIds.includes('wall_thermostat'));
     assert.ok(ssot.keepDriverIds.includes('lcdtemphumidsensor'));
-    assert.strictEqual(entry.lastAccepted, 28);
-    assert.strictEqual(entry.trialAllow, 29);
-    assert.match(String(ssot.p3262Trial || ''), /trialAllow 29/);
+    assert.strictEqual(entry.lastAccepted, 29);
+    assert.ok(!entry.trialAllow);
+    assert.match(String(ssot.p3262Trial || ''), /lastAccepted is 29/);
+    assert.match(String(ssot.p3262Trial || ''), /#263/);
     assert.match(String(ssot.p3262Trial || ''), /lcdtemphumidsensor/);
   });
 

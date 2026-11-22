@@ -34,10 +34,10 @@ describe('P3262 driver-count ceiling', () => {
     assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee', 348), cfg, 'master', 345).level, 'warn');
     assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.stable', 343), cfg, 'stable-v5', 341).level, 'fail');
   });
-  it('Bastien trialAllow 29 lets one extra driver through even when Athom API still reports 28', () => {
+  it('Bastien lastAccepted is 29 citing build #263; 30 drivers fail', () => {
     const e = cfg.apps['com.dlnraja.tuya.zigbee.bastien'];
-    assert.strictEqual(e.lastAccepted, 28);
-    assert.strictEqual(e.trialAllow, 29);
+    assert.strictEqual(e.lastAccepted, 29);
+    assert.ok(!e.trialAllow);
     assert.strictEqual(g.effectiveMax(e), 29);
     assert.strictEqual(g.effectiveMax(e, 28), 29);
     assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 28), cfg, 'bastien-home').level, 'ok');

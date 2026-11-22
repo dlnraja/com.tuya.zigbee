@@ -4,7 +4,7 @@ Status: **observed, unconfirmed by Athom.** Question asked on Athom ticket **157
 
 ## Rule
 1. Do not ship a payload with more drivers than the last build Athom accepted for that app
-   (`config/driver-count-ceiling.json`: master 347, stable 342, Bastien 27 on 2026-11-03).
+   (`config/driver-count-ceiling.json`: master 347, stable 342, Bastien 29 citing build #263 v1.0.255).
 2. A new couple goes into an **existing driver** of the same type, or into a **continuation chain**
    (docs/rules/DRIVER_CONTINUATIONS.md). One couple, one driver still holds: if the fold would
    create a couple another driver owns (for example `AOYAN|TS0601`, which soil_sensor owns), do not fold.
@@ -13,12 +13,12 @@ Status: **observed, unconfirmed by Athom.** Question asked on Athom ticket **157
    the same. Never swap out a driver that paired devices depend on, so that zero couples are lost.
 4. Raise `lastAccepted` only after Athom accepts a build with more drivers, and cite that build.
 5. A `trialAllow` in `config/driver-count-ceiling.json` may temporarily raise the gate above
-   `lastAccepted` for one explicit trial. On 2026-11-22 Athom accepted Bastien at 28 drivers
-   (build #262 v1.0.254); `lastAccepted` is 28. A follow-up trialAllow of 29 lets
-   `lcdtemphumidsensor` (live ZTH05Z `_TZE284_vvmbj46n`+TS0601) join the P2724 fleet. If Athom
-   rejects that build, drop `trialAllow` and swap a zero-paired buffer for the needed driver
-   so the count stays 28. Never drop a driver a paired device uses. The Athom public API must
-   not lower the cap below `lastAccepted` or `trialAllow`.
+   `lastAccepted` for one explicit trial. Raise `lastAccepted` after Athom accepts that trial
+   and drop `trialAllow`. On 2026-11-22 Athom accepted Bastien at 29 drivers (build #263
+   v1.0.255, run 45058287778), after the 28-driver build #262 v1.0.254; `lastAccepted` is 29
+   and `lcdtemphumidsensor` (live ZTH05Z `_TZE284_vvmbj46n`+TS0601) stays in the P2724 fleet.
+   Never drop a driver a paired device uses. The Athom public API must not lower the cap
+   below `lastAccepted` or `trialAllow`.
 
 The CI gate `scripts/ci/driver-count-ceiling-gate.js` runs on the prepared publish directory, right
 after payload-preflight. It **warns** on master and **fails** on stable-v5 and bastien-home.
