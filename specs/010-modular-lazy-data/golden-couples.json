@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-22T02:33:42.319Z",
+ "generated": "2026-11-22T03:24:08.777Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -1245,9 +1245,9 @@
    "pidSha": "3041fd34f640ddcb"
   },
   "presence_sensor_radar": {
-   "mfr": 252,
+   "mfr": 251,
    "pid": 56,
-   "mfrSha": "dac21ab63167dec1",
+   "mfrSha": "aafa025816bd1f8e",
    "pidSha": "ac803567e8fc211a"
   },
   "radar_sensor": {
@@ -2301,9 +2301,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "wall_thermostat": {
-   "mfr": 49,
+   "mfr": 50,
    "pid": 1,
-   "mfrSha": "01cc85d770ec79e0",
+   "mfrSha": "e0de799a16051aeb",
    "pidSha": "455c46e8c8549693"
   },
   "water_detector": {

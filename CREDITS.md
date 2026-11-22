@@ -457,3 +457,10 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 - late4marshmellow [Flow Converter](https://community.homey.app/t/154906) (`app.l4m.flowconverter`, [source](https://github.com/late4marshmellow/app.l4m.flowconverter); also thanks Martijn Poppen as credited there). Optional third-party app, never a dependency.
 - Joyce_THart GreenBlue GB740 request in [162420](https://community.homey.app/t/162420) and ZHA issue 5709 (`_TZ3250_int1a7ht`+TS020C).
 - Athom [Permissions](https://apps.developer.homey.app/the-basics/app/permissions): device apps must not request `homey:manager:api` (Tools apps only; store review can refuse it).
+
+## P3384 — coded forum leads (2026-11-22)
+
+- Calvin, smarthomesven, RonnyW, Roelof_Nuberg and Regina_van_der_Laan on [Tuya Cloud](https://community.homey.app/t/21313) (temperature shown x10; thermostat ambient-only; missing onoff listener).
+- SunBeech and SergeP on [MOES](https://community.homey.app/t/156967) (scene-remote double single-press about 1 s after restart).
+- Andi and reporters on [Tuya Local](https://community.homey.app/t/154077): Martin/MrMagu packed heat-pump DP 118 field 5; Stephen_Petitt feeder must not dispense on app restart; Mikko_Vayrynen Nedis WIFIPO120FWT switch DP in cmd 18; Welshsmarthome diffuser timer bound as mode; Simon_Salvin Mantra fan courtesy light and direction-while-off.
+- Zigbee2MQTT / zigbee-herdsman-converters `src/devices/moes.ts` for Moes ZHT-S01 (`_TZE284_rlytpmij`+TS0601; DP 111/117 /10, DP 1 heat/off). Facts only, own implementation.

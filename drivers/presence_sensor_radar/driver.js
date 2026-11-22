@@ -7,6 +7,22 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  */
 class PresenceSensorRadarDriver extends ZigBeeDriver {
 
+  // WHY(P3384): official Z2M couple for Moes ZHT-S01 (wall thermostat) was listed
+  // on this radar driver by casing expansion. Keep the same device id (no re-pair)
+  // by instantiating the wall thermostat class for this exact couple only.
+  onMapDeviceClass(device) {
+    try {
+      const { isZhtS01Couple } = require('../../lib/thermostats/ZhtS01Map');
+      const data = device && typeof device.getData === 'function' ? device.getData() : (device && device.data) || {};
+      const mfr = (device && device.manufacturerName) || data.manufacturerName || data.manufacturer || '';
+      const pid = data.productId || data.modelId || 'TS0601';
+      if (isZhtS01Couple(mfr, pid)) {
+        return require('../wall_thermostat/device');
+      }
+    } catch (_e) { /* keep radar class */ }
+    return require('./device');
+  }
+
   async onInit() {
     this.log('PresenceSensorRadarDriver v5.5.580 initialized');
     this._registerFlowCards();
