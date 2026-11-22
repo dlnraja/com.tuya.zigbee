@@ -39,10 +39,28 @@ function caseVariants(mfr) {
   return out;
 }
 
+// P3370: curated entries must stay embedded in their target driver compose
+// (scripts/validation/verify_fingerprints_integrity.js). A sacred-keep couple whose
+// driver compose no longer lists the mfr is stale for the curated file: skip it.
+const _composeMfrs = {};
+function composeHasMfr(driverId, mfr) {
+  if (!(driverId in _composeMfrs)) {
+    let set = null;
+    try {
+      const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', driverId, 'driver.compose.json'), 'utf8'));
+      set = new Set(((c.zigbee && c.zigbee.manufacturerName) || []).map((m) => String(m).toLowerCase()));
+    } catch { set = null; }
+    _composeMfrs[driverId] = set;
+  }
+  const set = _composeMfrs[driverId];
+  return !!(set && set.has(String(mfr).toLowerCase()));
+}
+
 function buildFromKeep(keep) {
   const byMfr = {};
   for (const c of keep.couples || []) {
     if (!c || !c.mfr || !c.pid || !c.driverId) continue;
+    if (!composeHasMfr(c.driverId, c.mfr)) continue;
     const mfr = String(c.mfr);
     if (!byMfr[mfr]) {
       byMfr[mfr] = {
@@ -171,6 +189,7 @@ function main() {
   const missing = [];
   for (const c of keep.couples || []) {
     if (!c?.mfr) continue;
+    if (c.driverId && !composeHasMfr(c.driverId, c.mfr)) continue; // stale sacred entry (see buildFromKeep)
     const key = existingKey(out, c.mfr);
     const entry = key ? out[key] : null;
     const hit = !!(entry && (entry.driverId === c.driverId
