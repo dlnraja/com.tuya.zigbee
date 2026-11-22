@@ -212,7 +212,9 @@
       "type": "group",
       "label": {
         "en": "Dimming",
-        "fr": "Variation"
+        "fr": "Variation",
+        "de": "Dimmen",
+        "nl": "Dimmen"
       },
       "children": [
         {
@@ -221,7 +223,9 @@
           "value": "auto",
           "label": {
             "en": "Brightness scale",
-            "fr": "Échelle de luminosité"
+            "fr": "Échelle de luminosité",
+            "de": "Helligkeitsskala",
+            "nl": "Helderheidsschaal"
           },
           "hint": {
             "en": "Auto picks the scale from the device (default 10-1000). If 0-100 % in Smart Life is squeezed into a third of the Homey slider, choose 0-255.",
