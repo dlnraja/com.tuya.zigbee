@@ -19,14 +19,21 @@ function countDrivers(app) {
   return new Set((app.drivers || []).map((d) => d && d.id).filter(Boolean)).size;
 }
 
+function effectiveMax(entry, apiCount) {
+  const last = Number(entry && entry.lastAccepted) || 0;
+  const trial = Number.isInteger(entry && entry.trialAllow) ? entry.trialAllow : 0;
+  const apiMax = Number.isInteger(apiCount) ? apiCount + ((entry && entry.apiOffset) || 0) : 0;
+  return Math.max(last, trial, apiMax);
+}
+
 function evaluate(app, cfg, branch, apiCount) {
   const entry = (cfg.apps || {})[app.id];
   if (!entry) return { level: 'skip', msg: `no ceiling recorded for ${app.id}` };
   const b = branch || entry.branch;
   const mode = BRANCH_MODE[b] || entry.mode || 'warn';
   const count = countDrivers(app);
-  // Athom's own count of the last Test build (public API) + our counting offset, else the static value.
-  const max = Number.isInteger(apiCount) ? apiCount + (entry.apiOffset || 0) : entry.lastAccepted;
+  // lastAccepted, optional trialAllow (t1029u), and Athom API+offset: never let the API lower the cap.
+  const max = effectiveMax(entry, apiCount);
   if (count <= max) return { level: 'ok', count, max, mode, msg: `${count} drivers <= last accepted ${max} (${app.id})` };
   return {
     level: mode === 'fail' ? 'fail' : 'warn', count, max, mode,
@@ -67,5 +74,5 @@ async function main(argv) {
   return 0;
 }
 
-module.exports = { countDrivers, evaluate, loadConfig, fetchApiCount, BRANCH_MODE };
+module.exports = { countDrivers, evaluate, loadConfig, fetchApiCount, BRANCH_MODE, effectiveMax };
 if (require.main === module) main(process.argv).then((c) => { process.exitCode = c; });

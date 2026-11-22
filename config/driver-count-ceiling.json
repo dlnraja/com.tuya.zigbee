@@ -1,5 +1,5 @@
 {
-  "_why": "P3262: Athom refuses (processing_failed AggregateError) master uploads whose prepared payload has more drivers than the last accepted one. Observed, unconfirmed by Athom (ticket 157057). scripts/ci/driver-count-ceiling-gate.js compares the prepared payload with lastAccepted: warn on master, fail on stable-v5 and bastien-home. Raise a value only after Athom accepts a build with more drivers (cite the build). With --athom-api the gate reads Athom's public API (testBuild.drivers.length of the last build in Test) and allows apiCount + apiOffset; apiOffset = our payload count minus Athom's count for the same accepted build (Athom lists 2 fewer for master 9.0.1615, 1 fewer for stable #417). Falls back to lastAccepted when the API is unreachable.",
+  "_why": "P3262: Athom refuses (processing_failed AggregateError) master uploads whose prepared payload has more drivers than the last accepted one. Observed, unconfirmed by Athom (ticket 157057). scripts/ci/driver-count-ceiling-gate.js compares the prepared payload with lastAccepted: warn on master, fail on stable-v5 and bastien-home. Raise a value only after Athom accepts a build with more drivers (cite the build). With --athom-api the gate reads Athom's public API (testBuild.drivers.length of the last build in Test) and allows apiCount + apiOffset; apiOffset = our payload count minus Athom's count for the same accepted build (Athom lists 2 fewer for master 9.0.1615, 1 fewer for stable #417). Falls back to lastAccepted when the API is unreachable. A trialAllow may temporarily raise the gate above lastAccepted for one explicit trial; the Athom public API must not lower the cap below lastAccepted or trialAllow. If Athom rejects the trial build, drop trialAllow and revert the fleet to the last accepted count.",
   "status": "observed, unconfirmed by Athom",
   "athomTicket": "157057",
   "doc": "docs/rules/DRIVER_COUNT_CEILING.md",
@@ -24,9 +24,11 @@
       "branch": "bastien-home",
       "mode": "fail",
       "lastAccepted": 27,
-      "evidence": "build #236 Test 2026-11-03, run 41629128967 payload-preflight 27 drivers",
+      "evidence": "last accepted 27: build #236 Test 2026-11-03 (run 41629128967) and build #261 v1.0.253 Test 2026-11-22 (run 45052013833). trialAllow 28 is a t1029u trial, not yet accepted.",
       "athomApiCount": 27,
-      "apiOffset": 0
+      "apiOffset": 0,
+      "trialAllow": 28,
+      "trialNote": "t1029u 2026-11-22: trial 28 so wall_thermostat stays in the P2724 fleet (ZHT-S01 remap). Last Athom-accepted count remains 27 (build #236 and #261 v1.0.253, run 45052013833). If Athom rejects the larger build, drop trialAllow and remove wall_thermostat (option b)."
     }
   },
   "athomApi": "https://apps-api.athom.com/api/v1/app/<id> (public, no auth): testBuild.drivers"

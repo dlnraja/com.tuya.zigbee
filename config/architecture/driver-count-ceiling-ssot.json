@@ -18,7 +18,16 @@
     "stable #417": 341,
     "bastien #236": 27,
     "source": "https://apps-api.athom.com/api/v1/app/<id> testBuild.drivers (public)",
-    "note": "we count 347/342/27; gate allows apiCount + offset"
+    "note": "we count 347/342/27; gate allows max(lastAccepted, trialAllow, apiCount + offset)",
+    "bastien #261 v1.0.253": 27
   },
-  "publicSources": "No public limit: SDK docs, homey CLI 4.6.2 (upload + HTTP status only), homey-lib 2.53.0 schema (no maxItems on drivers). AggregateError comes from Athom server-side processing after upload."
+  "publicSources": "No public limit: SDK docs, homey CLI 4.6.2 (upload + HTTP status only), homey-lib 2.53.0 schema (no maxItems on drivers). AggregateError comes from Athom server-side processing after upload.",
+  "trial": {
+    "app": "com.dlnraja.tuya.zigbee.bastien",
+    "trialAllow": 28,
+    "lastAccepted": 27,
+    "since": "2026-11-22",
+    "why": "t1029u: keep wall_thermostat in the P2724 fleet (ZHT-S01 remap). Revert trialAllow and drop that driver if Athom rejects the 28-driver build.",
+    "lastAcceptedEvidence": "build #236 (2026-11-03) and #261 v1.0.253 (run 45052013833, 2026-11-22)"
+  }
 }

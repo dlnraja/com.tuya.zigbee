@@ -32,13 +32,18 @@ describe('P3384 ZHT-S01 fingerprint move (Z2M moes.ts)', () => {
     assert.ok(!hasMfr(radar, '_tze284_rlytpmij'));
   });
 
-  it('Bastien house fleet does not add wall_thermostat (observed 27-driver ceiling)', () => {
+  it('Bastien house fleet keeps wall_thermostat under the P3262 trial ceiling of 28', () => {
     const ssot = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'architecture', 'bastien-publish-fleet-ssot.json'), 'utf8'));
+    const ceil = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'driver-count-ceiling.json'), 'utf8'));
+    const entry = ceil.apps['com.dlnraja.tuya.zigbee.bastien'];
     assert.ok(ssot.keepDriverIds.includes('presence_sensor_radar'));
-    assert.ok(!ssot.keepDriverIds.includes('wall_thermostat'));
+    assert.ok(ssot.keepDriverIds.includes('wall_thermostat'));
+    assert.strictEqual(entry.lastAccepted, 27);
+    assert.strictEqual(entry.trialAllow, 28);
+    assert.match(String(ssot.p3262Trial || ''), /trial ceiling of 28/);
   });
 
-  it('Bastien live mesh has no ZHT-S01 or wall_thermostat couple, so the drop is safe', () => {
+  it('Bastien live mesh has no ZHT-S01 or wall_thermostat couple (fleet buffer only)', () => {
     const house = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'architecture', 'bastien-house-ssot.json'), 'utf8'));
     const nodes = (house.liveMesh && house.liveMesh.nodes) || [];
     assert.ok(nodes.length > 0, 'liveMesh nodes missing');

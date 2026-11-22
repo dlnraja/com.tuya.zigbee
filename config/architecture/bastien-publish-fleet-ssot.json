@@ -41,6 +41,7 @@
     "motion_sensor",
     "water_leak_sensor",
     "presence_sensor_radar",
+    "wall_thermostat",
     "smart_knob",
     "smart_knob_rotary",
     "curtain_motor",
@@ -56,5 +57,6 @@
   ],
   "alwaysKeepPrefixes": [],
   "contreQuoi": "Full 400+ driver Bastien upload → Athom socket hang / invalid_state → tip stuck on 1.0.93 while remotes dead. Soft flow-keep left 1500+ orphan cards (#106).",
-  "notes": "P2726: empty alwaysKeepPrefixes — only keepDriverIds (house mesh + small buffer). Flow cards kept only when id starts with kept driver id."
+  "notes": "P2726: empty alwaysKeepPrefixes — only keepDriverIds (house mesh + small buffer). Flow cards kept only when id starts with kept driver id.",
+  "p3262Trial": "t1029u 2026-11-22: keep wall_thermostat in the fleet under a trial ceiling of 28 (ZHT-S01 remap from presence_sensor_radar). Last Athom-accepted count is 27 (build #236 and #261 v1.0.253). If Athom rejects the larger build, drop trialAllow and remove wall_thermostat."
 }

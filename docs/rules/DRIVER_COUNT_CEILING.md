@@ -12,6 +12,12 @@ Status: **observed, unconfirmed by Athom.** Question asked on Athom ticket **157
 3. A placeholder or low-value driver can be **swapped one-for-one** for a new driver. The count stays
    the same. Never swap out a driver that paired devices depend on, so that zero couples are lost.
 4. Raise `lastAccepted` only after Athom accepts a build with more drivers, and cite that build.
+5. A `trialAllow` in `config/driver-count-ceiling.json` may temporarily raise the gate above
+   `lastAccepted` for one explicit trial. On 2026-11-22 (t1029u) Bastien `trialAllow` is 28 so
+   `wall_thermostat` can stay in the P2724 house fleet; the last accepted count remains 27
+   (build #236 and #261 v1.0.253). If Athom rejects that build, drop `trialAllow` and revert
+   the fleet to 27 drivers. The Athom public API must not lower the cap below `lastAccepted`
+   or `trialAllow`.
 
 The CI gate `scripts/ci/driver-count-ceiling-gate.js` runs on the prepared publish directory, right
 after payload-preflight. It **warns** on master and **fails** on stable-v5 and bastien-home.
