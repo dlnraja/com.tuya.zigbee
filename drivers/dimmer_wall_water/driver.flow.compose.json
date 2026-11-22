@@ -74,24 +74,24 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_turned_on",
       "title": {
         "en": "Turned on (1gang 1gang turned on)",
-        "fr": "Allumé (1gang 1gang turned on)"
+        "fr": "Allumé (1 voie 1 voie allumé)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (1gang 1gang turned on)",
-        "fr": "Allumé (1gang 1gang turned on)"
+        "fr": "Allumé (1 voie 1 voie allumé)"
       }
     },
     {
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_turned_off",
       "title": {
         "en": "Turned off (1gang 1gang turned off)",
-        "fr": "Éteint (1gang 1gang turned off)"
+        "fr": "Éteint (1 voie 1 voie éteint)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (1gang 1gang turned off)",
-        "fr": "Éteint (1gang 1gang turned off)"
+        "fr": "Éteint (1 voie 1 voie éteint)"
       }
     },
     {
@@ -171,12 +171,12 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (1gang 1gang is on)"
+        "fr": "Est !{{allumé|éteint}} (1 voie 1 voie est allumé)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (1gang 1gang is on)"
+        "fr": "Est !{{allumé|éteint}} (1 voie 1 voie est allumé)"
       }
     },
     {
@@ -201,36 +201,36 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_turn_on",
       "title": {
         "en": "Turn on (1gang 1gang turn on)",
-        "fr": "Allumer (1gang 1gang turn on)"
+        "fr": "Allumer (1 voie 1 voie allumer)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (1gang 1gang turn on)",
-        "fr": "Allumer (1gang 1gang turn on)"
+        "fr": "Allumer (1 voie 1 voie allumer)"
       }
     },
     {
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_turn_off",
       "title": {
         "en": "Turn off (1gang 1gang turn off)",
-        "fr": "Éteindre (1gang 1gang turn off)"
+        "fr": "Éteindre (1 voie 1 voie eteindre)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (1gang 1gang turn off)",
-        "fr": "Éteindre (1gang 1gang turn off)"
+        "fr": "Éteindre (1 voie 1 voie eteindre)"
       }
     },
     {
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (water 1gang 1gang toggle)"
+        "fr": "Basculer (water 1 voie 1 voie basculer)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (water 1gang 1gang toggle)"
+        "fr": "Basculer (water 1 voie 1 voie basculer)"
       }
     },
     {

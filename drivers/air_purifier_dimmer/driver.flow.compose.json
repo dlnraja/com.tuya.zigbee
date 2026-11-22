@@ -74,24 +74,24 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_turned_on",
       "title": {
         "en": "Turned on (dimmer 1gang turned on)",
-        "fr": "Allumé (dimmer 1gang turned on)"
+        "fr": "Allumé (variateur 1 voie allumé)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (dimmer 1gang turned on)",
-        "fr": "Allumé (dimmer 1gang turned on)"
+        "fr": "Allumé (variateur 1 voie allumé)"
       }
     },
     {
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_turned_off",
       "title": {
         "en": "Turned off (dimmer 1gang turned off)",
-        "fr": "Éteint (dimmer 1gang turned off)"
+        "fr": "Éteint (variateur 1 voie éteint)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (dimmer 1gang turned off)",
-        "fr": "Éteint (dimmer 1gang turned off)"
+        "fr": "Éteint (variateur 1 voie éteint)"
       }
     },
     {
@@ -194,12 +194,12 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (dimmer 1gang is on)"
+        "fr": "Est !{{allumé|éteint}} (variateur 1 voie est allumé)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (dimmer 1gang is on)"
+        "fr": "Est !{{allumé|éteint}} (variateur 1 voie est allumé)"
       }
     },
     {
@@ -224,36 +224,36 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_turn_on",
       "title": {
         "en": "Turn on (dimmer 1gang turn on)",
-        "fr": "Allumer (dimmer 1gang turn on)"
+        "fr": "Allumer (variateur 1 voie allumer)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (dimmer 1gang turn on)",
-        "fr": "Allumer (dimmer 1gang turn on)"
+        "fr": "Allumer (variateur 1 voie allumer)"
       }
     },
     {
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_turn_off",
       "title": {
         "en": "Turn off (dimmer 1gang turn off)",
-        "fr": "Éteindre (dimmer 1gang turn off)"
+        "fr": "Éteindre (variateur 1 voie eteindre)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (dimmer 1gang turn off)",
-        "fr": "Éteindre (dimmer 1gang turn off)"
+        "fr": "Éteindre (variateur 1 voie eteindre)"
       }
     },
     {
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (1gang dimmer 1gang toggle)"
+        "fr": "Basculer (1 voie variateur 1 voie basculer)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (1gang dimmer 1gang toggle)"
+        "fr": "Basculer (1 voie variateur 1 voie basculer)"
       }
     },
     {

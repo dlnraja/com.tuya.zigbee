@@ -241,7 +241,7 @@
   },
   "5.12.556": {
     "en": "Fixed: battery reporting and lights and dimmers. Plus 6 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : niveau de batterie et éclairages et variateurs. Et 6 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : niveau de batterie et éclairages et variateurs. Et 6 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.555": {
     "en": "Fixed: pairing and device recognition and general reliability (TS0601, TS0726, TS0505B).",
@@ -249,7 +249,7 @@
   },
   "5.12.554": {
     "en": "New: energy meters. Plus 1 other change in the app core.",
-    "fr": "Nouveau : compteurs d'énergie. Et 1 autre changement dans le cœur de l'app."
+    "fr": "Nouveau : compteurs d'énergie. Et 1 autre changement dans le coeur de l'app."
   },
   "5.12.553": {
     "en": "Fixed: pairing and device recognition and general reliability (TS0601). Behind the scenes: tests and publishing checks.",
@@ -265,19 +265,19 @@
   },
   "5.12.550": {
     "en": "Fixed: memory and timers and energy meters (TS011F). Plus 9 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : mémoire et minuteries et compteurs d'énergie (TS011F). Et 9 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : mémoire et minuteries et compteurs d'énergie (TS011F). Et 9 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.549": {
     "en": "Fixed: pairing and device recognition, valves and device settings. Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : appairage et reconnaissance des appareils, vannes et réglages des appareils. Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : appairage et reconnaissance des appareils, vannes et réglages des appareils. Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.548": {
     "en": "Changed: keep the composed build when staging the payload; stage the prepared directory and leave compose out of it; give the warned cards a titleFormatted and refuse a compose publish dir.",
-    "fr": "Modifié : keep the composed build when staging the payload; stage the prepared directory and leave compose out of it; give the warned cards a titleFormatted and refuse a compose publish dir."
+    "fr": "Modifié : conserver le build compose lors de la préparation de l'envoi ; déposer le répertoire préparé et laisser compose de côté ; donner un titleFormatted aux cartes signalées et refuser un répertoire de publication compose."
   },
   "5.12.547": {
     "en": "Fixed: Flow cards. Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : cartes Flow. Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : cartes Flow. Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.546": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
@@ -285,11 +285,11 @@
   },
   "5.12.545": {
     "en": "Changed: scale bidirectional clamp reports on the 3-phase profile; stderr breadcrumbs for large JSON parses and capped device notes; keep the precise publish call the suite locks; stable bump refuses a stock filler note.",
-    "fr": "Modifié : scale bidirectional clamp reports on the 3-phase profile; stderr breadcrumbs for large JSON parses and capped device notes; keep the precise publish call the suite locks; stable bump refuses a stock filler note."
+    "fr": "Modifié : les rapports bidirectionnels du profil triphasé sont bornés; des traces d'erreur pour les gros JSON et les notes d'appareil trop longues; l'appel de publication que la suite verrouille reste inchangé. La montée de version stable refuse une note de remplissage générique."
   },
   "5.12.544": {
     "en": "Fixed: buttons and remotes & pairing and device recognition. Plus 1 other change in the app core.",
-    "fr": "Corrigé : boutons et télécommandes & appairage et reconnaissance des appareils. Et 1 autre changement dans le cœur de l'app."
+    "fr": "Corrigé : boutons et télécommandes & appairage et reconnaissance des appareils. Et 1 autre changement dans le coeur de l'app."
   },
   "5.12.543": {
     "en": "Version 5.12.543 only moves the version number: the daily sync from the development app found no device change to bring over.",
@@ -325,7 +325,7 @@
   },
   "5.12.535": {
     "en": "Fixed: thermostats & pairing and device recognition (TRV06) and door and window sensors. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : thermostats & appairage et reconnaissance des appareils (TRV06) et capteurs d'ouverture. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : thermostats & appairage et reconnaissance des appareils (TRV06) et capteurs d'ouverture. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.534": {
     "en": "Device database and reliability updates.",
@@ -349,7 +349,7 @@
   },
   "5.12.529": {
     "en": "Fixed: general reliability (TS0044, TS0042, ZG-204ZM). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : fiabilité générale (TS0044, TS0042, ZG-204ZM). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : fiabilité générale (TS0044, TS0042, ZG-204ZM). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.528": {
     "en": "Device database and reliability updates.",
@@ -365,7 +365,7 @@
   },
   "5.12.525": {
     "en": "Fixed: curtains and blinds. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : rideaux et volets. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : rideaux et volets. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.524": {
     "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
@@ -405,11 +405,11 @@
   },
   "5.12.515": {
     "en": "Fixed: Wi-Fi devices & device settings and energy meters & wall switches (SPM01V1-GT). Plus 2 other changes in the app core.",
-    "fr": "Corrigé : appareils Wi-Fi & réglages des appareils et compteurs d'énergie & interrupteurs (SPM01V1-GT). Et 2 autres changements dans le cœur de l'app."
+    "fr": "Corrigé : appareils Wi-Fi & réglages des appareils et compteurs d'énergie & interrupteurs (SPM01V1-GT). Et 2 autres changements dans le coeur de l'app."
   },
   "5.12.514": {
     "en": "New: wall switches. Plus 3 other changes in the app core.",
-    "fr": "Nouveau : interrupteurs. Et 3 autres changements dans le cœur de l'app."
+    "fr": "Nouveau : interrupteurs. Et 3 autres changements dans le coeur de l'app."
   },
   "5.12.513": {
     "en": "Behind the scenes only, no change to devices or pairing: the publishing check now stops right away when a newer commit replaces the one it was checking, and a new report lists, for each multi-gang, multi-channel or multi-phase driver family, which variants are still missing.",
@@ -421,7 +421,7 @@
   },
   "5.12.511": {
     "en": "New: curtains and blinds. Fixed: general reliability (TS0601, SPM02V1-GT, TS0001), pairing and device recognition & translations (TS0601) and Flow cards. Plus 16 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : rideaux et volets. Corrigé : fiabilité générale (TS0601, SPM02V1-GT, TS0001), appairage et reconnaissance des appareils & traductions (TS0601) et cartes Flow. Et 16 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : rideaux et volets. Corrigé : fiabilité générale (TS0601, SPM02V1-GT, TS0001), appairage et reconnaissance des appareils & traductions (TS0601) et cartes Flow. Et 16 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.509": {
     "en": "Smoke and CO detectors: TS0601 models (_TZE284_6ycgarab, _TZE284_aoah6bv8, _TZE2841000000_6ycgarab, _TZE284_qvzsq3s2, _TZE200_qcasmfan) now report smoke, CO, battery and tamper (receive-only). The _TZE284_la2c2uo9 dimmer and nine TS0601 soil/climate couples point again to the driver that pairs them on this channel. Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors.",
@@ -433,11 +433,11 @@
   },
   "5.12.507": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.506": {
     "en": "Fixed: pairing and device recognition (TS0601). Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : appairage et reconnaissance des appareils (TS0601). Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : appairage et reconnaissance des appareils (TS0601). Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.505": {
     "en": "Device database and reliability updates.",
@@ -445,11 +445,11 @@
   },
   "5.12.504": {
     "en": "New: device support (TS0002, TS0012), energy meters & climate sensors (ZG-102ZL) and pairing and device recognition. Fixed: memory and timers. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : prise en charge des appareils (TS0002, TS0012), compteurs d'énergie & capteurs d'ambiance (ZG-102ZL) et appairage et reconnaissance des appareils. Corrigé : mémoire et minuteries. Et 5 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : prise en charge des appareils (TS0002, TS0012), compteurs d'énergie & capteurs d'ambiance (ZG-102ZL) et appairage et reconnaissance des appareils. Corrigé : mémoire et minuteries. Et 5 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.503": {
     "en": "New: Flow cards & memory and timers, battery reporting, buttons and remotes and climate sensors. Plus 17 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : cartes Flow & mémoire et minuteries, niveau de batterie, boutons et télécommandes et capteurs d'ambiance. Et 17 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : cartes Flow & mémoire et minuteries, niveau de batterie, boutons et télécommandes et capteurs d'ambiance. Et 17 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.502": {
     "en": "Fixed: energy meters and general reliability (TS0601). Behind the scenes: tests and publishing checks.",
@@ -477,7 +477,7 @@
   },
   "5.12.495": {
     "en": "New: smart plugs, Wi-Fi devices and device settings. Fixed: Flow cards. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : prises connectées, appareils Wi-Fi et réglages des appareils. Corrigé : cartes Flow. Et 7 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : prises connectées, appareils Wi-Fi et réglages des appareils. Corrigé : cartes Flow. Et 7 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.485": {
     "en": "Device database and reliability updates.",
@@ -489,7 +489,7 @@
   },
   "5.12.481": {
     "en": "Fixed: Wi-Fi devices & memory and timers. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : appareils Wi-Fi & mémoire et minuteries. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : appareils Wi-Fi & mémoire et minuteries. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.480": {
     "en": "Fixed: general reliability (TRV06). Behind the scenes: tests and publishing checks.",
@@ -497,11 +497,11 @@
   },
   "5.12.478": {
     "en": "Fixed: safety sensors & memory and timers. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : détecteurs de sécurité & mémoire et minuteries. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : détecteurs de sécurité & mémoire et minuteries. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.477": {
     "en": "Fixed: battery reporting & pairing and device recognition (TRV06). Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : niveau de batterie & appairage et reconnaissance des appareils (TRV06). Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : niveau de batterie & appairage et reconnaissance des appareils (TRV06). Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.476": {
     "en": "Device database and reliability updates.",
@@ -509,31 +509,31 @@
   },
   "5.12.475": {
     "en": "Fixed: safety sensors & pairing and device recognition (TS0044, TS0011, TS0212). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : détecteurs de sécurité & appairage et reconnaissance des appareils (TS0044, TS0011, TS0212). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : détecteurs de sécurité & appairage et reconnaissance des appareils (TS0044, TS0011, TS0212). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.473": {
     "en": "Fixed: thermostats & smart plugs (TS011F, TS0101, TS0601). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : thermostats & prises connectées (TS011F, TS0101, TS0601). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : thermostats & prises connectées (TS011F, TS0101, TS0601). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.472": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.470": {
     "en": "Fixed: pairing and device recognition. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : appairage et reconnaissance des appareils. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : appairage et reconnaissance des appareils. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.469": {
     "en": "Fixed: Flow cards. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : cartes Flow. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : cartes Flow. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.468": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.467": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.466": {
     "en": "Fixed: buttons and remotes & wall switches (TS0046). Behind the scenes: tests and publishing checks.",
@@ -545,27 +545,27 @@
   },
   "5.12.464": {
     "en": "Faster: lights and dimmers. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Plus rapide : éclairages et variateurs. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Plus rapide : éclairages et variateurs. Et 1 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.462": {
     "en": "Reliability: 5 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 5 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 5 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.461": {
     "en": "Reliability: 4 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 4 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 4 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.460": {
     "en": "Fixed: buttons and remotes (TS004F). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : boutons et télécommandes (TS004F). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : boutons et télécommandes (TS004F). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.459": {
     "en": "Faster: lights and dimmers. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Plus rapide : éclairages et variateurs. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Plus rapide : éclairages et variateurs. Et 1 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.457": {
     "en": "Fixed: buttons and remotes. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : boutons et télécommandes. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : boutons et télécommandes. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.455": {
     "en": "New: buttons and remotes & battery reporting (ZG-101ZD, TS004F). Fixed: climate sensors & pairing and device recognition (TS0601). Behind the scenes: tests and publishing checks.",
@@ -573,11 +573,11 @@
   },
   "5.12.454": {
     "en": "v5.12.454: Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "v5.12.454 : Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "v5.12.454 : Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.452": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.451": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
@@ -585,35 +585,35 @@
   },
   "5.12.450": {
     "en": "Fixed: thermostats & valves & climate sensors (TRV06) and smart plugs & pairing and device recognition. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : thermostats & vannes & capteurs d'ambiance (TRV06) et prises connectées & appairage et reconnaissance des appareils. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : thermostats & vannes & capteurs d'ambiance (TRV06) et prises connectées & appairage et reconnaissance des appareils. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.449": {
     "en": "Fixed: presence radars & memory and timers. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : radars de présence & mémoire et minuteries. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : radars de présence & mémoire et minuteries. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.448": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.446": {
     "en": "New: Flow cards, curtains and blinds & lights and dimmers and energy meters & Wi-Fi devices. Fixed: wall switches (TS0003). Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : cartes Flow, rideaux et volets & éclairages et variateurs et compteurs d'énergie & appareils Wi-Fi. Corrigé : interrupteurs (TS0003). Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : cartes Flow, rideaux et volets & éclairages et variateurs et compteurs d'énergie & appareils Wi-Fi. Corrigé : interrupteurs (TS0003). Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.444": {
     "en": "Fixed: valves. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : vannes. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : vannes. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.443": {
     "en": "Fixed: climate sensors, smart plugs (TS0003) and fans and air purifiers & Flow cards. Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : capteurs d'ambiance, prises connectées (TS0003) et ventilateurs et purificateurs & cartes Flow. Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : capteurs d'ambiance, prises connectées (TS0003) et ventilateurs et purificateurs & cartes Flow. Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.442": {
     "en": "Fixed: memory and timers. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : mémoire et minuteries. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : mémoire et minuteries. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.441": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.440": {
     "en": "v5.12.440: Device database and reliability updates.",
@@ -641,7 +641,7 @@
   },
   "5.12.433": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.430": {
     "en": "Forum fleet silent treat: sacred-keep + cartesian forbids.",
@@ -649,11 +649,11 @@
   },
   "5.12.429": {
     "en": "Fixed: pairing and device recognition and lights and dimmers. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : appairage et reconnaissance des appareils et éclairages et variateurs. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : appairage et reconnaissance des appareils et éclairages et variateurs. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.427": {
     "en": "Fixed: pairing and device recognition. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : appairage et reconnaissance des appareils. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : appairage et reconnaissance des appareils. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.426": {
     "en": "Blakadder recheck: misclassed couple moves.",
@@ -669,7 +669,7 @@
   },
   "5.12.423": {
     "en": "Fixed: presence radars & lights and dimmers and safety sensors. Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : radars de présence & éclairages et variateurs et détecteurs de sécurité. Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : radars de présence & éclairages et variateurs et détecteurs de sécurité. Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.422": {
     "en": "mfs align gnpflcoq/fl8cuafl; drop master-only sacred-keep pins.",
@@ -693,7 +693,7 @@
   },
   "5.12.416": {
     "en": "Fixed: safety sensors (TS0601). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : détecteurs de sécurité (TS0601). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : détecteurs de sécurité (TS0601). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.415": {
     "en": "Improved soil sensor pairing reliability.",
@@ -705,19 +705,19 @@
   },
   "5.12.413": {
     "en": "Improved radiator valve and mmWave radar pairing for recent forum devices.",
-    "fr": "Improved radiator valve and mmWave radar pairing for recent forum devices."
+    "fr": "Appairage amélioré des vannes de radiateur et des radars mmWave pour les appareils récents du forum."
   },
   "5.12.412": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.411": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.410": {
     "en": "Fixed: smart plugs & energy meters and climate sensors (TRV06). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : prises connectées & compteurs d'énergie et capteurs d'ambiance (TRV06). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : prises connectées & compteurs d'énergie et capteurs d'ambiance (TRV06). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.408": {
     "en": "v5.12.408: Device database and reliability updates.",
@@ -729,15 +729,15 @@
   },
   "5.12.406": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.405": {
     "en": "v5.12.405: Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "v5.12.405 : Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "v5.12.405 : Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.402": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.400": {
     "en": ": Fantem ZB003-X motion locks; contact/doorbell/PIR off climate; tank DP2 cm.",
@@ -745,15 +745,15 @@
   },
   "5.12.399": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.398": {
     "en": "v5.12.398: Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "v5.12.398 : Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "v5.12.398 : Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.397": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.396": {
     "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
@@ -761,11 +761,11 @@
   },
   "5.12.395": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.394": {
     "en": "New: buttons and remotes, wall switches (TS0002, TS000F) and pairing and device recognition (TS0225, TS0207, TS0041). Fixed: presence radars & climate sensors. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : boutons et télécommandes, interrupteurs (TS0002, TS000F) et appairage et reconnaissance des appareils (TS0225, TS0207, TS0041). Corrigé : radars de présence & capteurs d'ambiance. Et 15 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : boutons et télécommandes, interrupteurs (TS0002, TS000F) et appairage et reconnaissance des appareils (TS0225, TS0207, TS0041). Corrigé : radars de présence & capteurs d'ambiance. Et 15 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.391": {
     "en": "Device database and reliability updates.",
@@ -773,11 +773,11 @@
   },
   "5.12.390": {
     "en": "Fixed: Flow cards, pairing and device recognition and wall switches (TS011F). Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : cartes Flow, appairage et reconnaissance des appareils et interrupteurs (TS011F). Et 5 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : cartes Flow, appairage et reconnaissance des appareils et interrupteurs (TS011F). Et 5 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.387": {
     "en": "Fixed: energy meters & pairing and device recognition (TS011F, TS0222, TS0001). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : compteurs d'énergie & appairage et reconnaissance des appareils (TS011F, TS0222, TS0001). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : compteurs d'énergie & appairage et reconnaissance des appareils (TS011F, TS0222, TS0001). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.385": {
     "en": "Fixed: Flow cards, lights and dimmers & climate sensors (ZG-106Z, TS0222), general reliability (TS000F) and pairing and device recognition (TS0601). Behind the scenes: tests and publishing checks.",
@@ -785,31 +785,31 @@
   },
   "5.12.384": {
     "en": "Fixed: pairing and device recognition. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : appairage et reconnaissance des appareils. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : appairage et reconnaissance des appareils. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.383": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.382": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.381": {
     "en": "New: memory and timers and thermostats & buttons and remotes. Fixed: pairing and device recognition. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : mémoire et minuteries et thermostats & boutons et télécommandes. Corrigé : appairage et reconnaissance des appareils. Et 5 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : mémoire et minuteries et thermostats & boutons et télécommandes. Corrigé : appairage et reconnaissance des appareils. Et 5 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.380": {
     "en": "Fixed: Flow cards. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : cartes Flow. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : cartes Flow. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.379": {
     "en": "New: device support (TS0601). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : prise en charge des appareils (TS0601). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : prise en charge des appareils (TS0601). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.378": {
     "en": "Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 2 petites corrections dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 2 petites corrections dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.377": {
     "en": "Device database and reliability updates.",
@@ -817,11 +817,11 @@
   },
   "5.12.376": {
     "en": "Fixed: Wi-Fi devices. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : appareils Wi-Fi. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : appareils Wi-Fi. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.375": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.374": {
     "en": "New: smart plugs & lights and dimmers. Fixed: general reliability (TRV06). Behind the scenes: tests and publishing checks.",
@@ -849,15 +849,15 @@
   },
   "5.12.368": {
     "en": "Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged.",
-    "fr": "Dimmers (2-gang dimmer module, dimmer wall switch, wall dimmer 1-gang) now use the Light device type, so the light ring and voice assistants treat them as lights. Paired devices switch once automatically; the device icon may change. Capabilities, IDs and flows are unchanged."
+    "fr": "Les variateurs (module variateur 2 voies, interrupteur variateur mural, variateur mural 1 voie) utilisent désormais le type Lumière, pour que l'anneau lumineux et les assistants vocaux les voient comme des lumières. Les appareils déjà appariés basculent une fois automatiquement ; l'icône peut changer. Capacités, identifiants et flux restent inchangés."
   },
   "5.12.367": {
     "en": "New: curtains and blinds and pairing and device recognition (TS0502B). Fixed: Flow cards. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : rideaux et volets et appairage et reconnaissance des appareils (TS0502B). Corrigé : cartes Flow. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : rideaux et volets et appairage et reconnaissance des appareils (TS0502B). Corrigé : cartes Flow. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.366": {
     "en": "Fixed: thermostats & presence radars. Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : thermostats & radars de présence. Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : thermostats & radars de présence. Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.365": {
     "en": "New: the Repair screen (TS0002) and Wi-Fi devices. Behind the scenes: tests and publishing checks.",
@@ -865,11 +865,11 @@
   },
   "5.12.364": {
     "en": "New: wall switches & pairing and device recognition and energy meters. Fixed: curtains and blinds & memory and timers and translations. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : interrupteurs & appairage et reconnaissance des appareils et compteurs d'énergie. Corrigé : rideaux et volets & mémoire et minuteries et traductions. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : interrupteurs & appairage et reconnaissance des appareils et compteurs d'énergie. Corrigé : rideaux et volets & mémoire et minuteries et traductions. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.363": {
     "en": "New: curtains and blinds and energy meters. Fixed: energy meters. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : rideaux et volets et compteurs d'énergie. Corrigé : compteurs d'énergie. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : rideaux et volets et compteurs d'énergie. Corrigé : compteurs d'énergie. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.362": {
     "en": "Fixed: safety sensors & memory and timers, curtains and blinds and Flow cards. Behind the scenes: tests and publishing checks.",
@@ -877,15 +877,15 @@
   },
   "5.12.361": {
     "en": "New: climate sensors & pairing and device recognition (TS0502B, TS0505B, TS0501A), Wi-Fi devices & pairing and device recognition (ZG-102ZL, SNZB-03) and door and window sensors & wall switches (ZG-102ZL, ZG-102Z). Fixed: general reliability (TS0726, TS130F). Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : capteurs d'ambiance & appairage et reconnaissance des appareils (TS0502B, TS0505B, TS0501A), appareils Wi-Fi & appairage et reconnaissance des appareils (ZG-102ZL, SNZB-03) et capteurs d'ouverture & interrupteurs (ZG-102ZL, ZG-102Z). Corrigé : fiabilité générale (TS0726, TS130F). Et 4 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : capteurs d'ambiance & appairage et reconnaissance des appareils (TS0502B, TS0505B, TS0501A), appareils Wi-Fi & appairage et reconnaissance des appareils (ZG-102ZL, SNZB-03) et capteurs d'ouverture & interrupteurs (ZG-102ZL, ZG-102Z). Corrigé : fiabilité générale (TS0726, TS130F). Et 4 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.360": {
     "en": "Device compatibility and reliability improvements.",
-    "fr": "Device compatibility and reliability improvements."
+    "fr": "Améliorations de compatibilité et de fiabilité des appareils."
   },
   "5.12.359": {
     "en": "LCD temperature/humidity sensors answer time sync requests; better identity detection for sleepy sensors.",
-    "fr": "Capteurs LCD temperature/humidite: reponse aux demandes de synchronisation horaire; meilleure detection d identite des capteurs en veille."
+    "fr": "Capteurs LCD temperature/humidite: reponse aux demandes de synchronisation horaire; meilleure détection d identite des capteurs en veille."
   },
   "5.12.358": {
     "en": "Fixes: colour/CCT lights load again and keep colour temperature in range; smart plugs read power-on state, indicator and child lock independently; repeated unknown Tuya datapoints no longer flood the log.",
@@ -908,8 +908,8 @@
     "fr": "surgical Johan locks + refresh FP collision baseline (Stable)."
   },
   "5.12.350": {
-    "en": "/ CI heal: pay2byax anti-bot → contact_sensor_zigbee; siren safeSetCapabilityValue.",
-    "fr": "/ CI heal: pay2byax anti-bot → contact_sensor_zigbee; siren safeSetCapabilityValue."
+    "en": "/ CI heal: pay2byax anti-bot -> contact_sensor_zigbee; siren safeSetCapabilityValue.",
+    "fr": "/ CI heal: pay2byax anti-bot -> contact_sensor_zigbee; siren safeSetCapabilityValue."
   },
   "5.12.349": {
     "en": "Johan L99: Moes SR-ZS 3-gang, air-monitor couple lock, TS0207 leak enrich.",
@@ -936,7 +936,7 @@
     "fr": "Radar HiepSVG lux/distance/freeze. Maj Test; Repair."
   },
   "5.12.341": {
-    "en": "Ceiling radar lux→motion re-arm + TS0043 productId lock (/). Update Test; Repair.",
+    "en": "Ceiling radar lux->motion re-arm + TS0043 productId lock (/). Update Test; Repair.",
     "fr": "Radar: rearm motion via lux + verrou TS0043 (/). Maj Test; Repair."
   },
   "5.12.340": {
@@ -949,7 +949,7 @@
   },
   "5.12.338": {
     "en": "Improved wireless remote reliability (skip IAS enroll storm on scene buttons).",
-    "fr": "Improved wireless remote reliability (skip IAS enroll storm on scene buttons)."
+    "fr": "Improved wireless remote reliability (skip IAS enroll storm on scène buttons)."
   },
   "5.12.337": {
     "en": "CI publish heal: HOBEIAN OCR collision keys. Update Test.",
@@ -957,7 +957,7 @@
   },
   "5.12.336": {
     "en": "Publish heal: scene remotes stay scene_switch_4 + ceiling radar. Update Test.",
-    "fr": "Heal publish: scene remotes restent scene_switch_4 + radar. Maj Test."
+    "fr": "Heal publish: scène remotes restent scene_switch_4 + radar. Maj Test."
   },
   "5.12.335": {
     "en": "Ceiling radar: sitting no false-clear; motion re-arm; lux less laggy. Update Test + Repair.",
@@ -973,7 +973,7 @@
   },
   "5.12.332": {
     "en": "Ceiling radar: motion re-arms after stillness; distance display ~0.9. Update Test + Repair.",
-    "fr": "Radar plafond: motion se rearme apres immobilite; distance ~0.9. Maj Test + Repair."
+    "fr": "Radar plafond: motion se rearme après immobilite; distance ~0.9. Maj Test + Repair."
   },
   "5.12.331": {
     "en": "Reliability: snappy remotes no multi-second dead window on rapid toggle. Update Stable Test.",
@@ -981,11 +981,11 @@
   },
   "5.12.330": {
     "en": "Reliability: clear leftover LIVE-DATA overlay after OOM; less work on sleepy remote press. Update Stable Test.",
-    "fr": "Fiabilité: purge overlay LIVE-DATA apres OOM; moins de travail au press telecommande. Maj Stable Test."
+    "fr": "Fiabilité: purge overlay LIVE-DATA après OOM; moins de travail au press telecommande. Maj Stable Test."
   },
   "5.12.329": {
     "en": "Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once.",
-    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons apres un appui. Maj Test + redemarrer app."
+    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons après un appui. Maj Test + redemarrer app."
   },
   "5.12.328": {
     "en": "App Settings: fix infinite spinner / blank page (Homey.ready). Update Test.",
@@ -1001,7 +1001,7 @@
   },
   "5.12.325": {
     "en": "Publish heal: scene remotes off button_wireless_4 + TS004x lean Flow. Update Test.",
-    "fr": "Heal: télécommandes scene hors bw4 + Flow lean TS004x. Maj Test."
+    "fr": "Heal: télécommandes scène hors bw4 + Flow lean TS004x. Maj Test."
   },
   "5.12.324": {
     "en": "Strip alarm_battery conflict on remotes/climate (keep %).",
@@ -1037,15 +1037,15 @@
   },
   "5.12.316": {
     "en": "Fixed climate eWeLink couple and battery capability guideline.",
-    "fr": "Fixed climate eWeLink couple and battery capability guideline."
+    "fr": "Corrigé : climate eWeLink couple et battery capability guideline."
   },
   "5.12.315": {
     "en": "Improved fingerprint matching for wireless buttons and radiator valves.",
-    "fr": "Improved fingerprint matching for wireless buttons and radiator valves."
+    "fr": "Correspondance des empreintes améliorée pour les boutons sans fil et les vannes de radiateur."
   },
   "5.12.314": {
     "en": "Improved publish reliability and CI integrity checks.",
-    "fr": "Improved publish reliability and CI integrity checks."
+    "fr": "Fiabilité de publication et contrôles d'intégrité CI améliorés."
   },
   "5.12.313": {
     "en": ": align VicHY MTG075 Contre quoi with DP1 trust (unblocks Stable publish).",
@@ -1073,7 +1073,7 @@
   },
   "5.12.307": {
     "en": "Improved scene remote press latency and radiator valve pairing.",
-    "fr": "Improved scene remote press latency and radiator valve pairing."
+    "fr": "Improved scène remote press latency and radiator valve pairing."
   },
   "5.12.306": {
     "en": "TS0041 battery: less wake TX. Update Test.",
@@ -1081,11 +1081,11 @@
   },
   "5.12.305": {
     "en": "TS0041: pair Wireless Button 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair.",
-    "fr": "TS0041: pair Wireless Button 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair."
+    "fr": "TS0041: pair bouton sans fil 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair."
   },
   "5.12.304": {
     "en": "sticky remotes + sacred 7dcddnye dimmer_wall only. Update Test + re-pair remotes.",
-    "fr": "sticky remotes + sacred 7dcddnye dimmer_wall only. Update Test + re-pair remotes."
+    "fr": "sticky remotes + sacred 7dcddnye dimmer_wall only. Mettez à jour Test puis réappariez remotes."
   },
   "5.12.303": {
     "en": "TS0043 vsxvaj9i + TS0042 sticky: Flow Button pressed (not Zigbee channels), snappier 2-btn. Update + re-pair remotes.",
@@ -1109,7 +1109,7 @@
   },
   "5.12.298": {
     "en": "Fixed WiFi publish validate (drop empty zigbee stubs) + HOBEIAN caseless Athom forms.",
-    "fr": "Fixed WiFi publish validate (drop empty zigbee stubs) + HOBEIAN caseless Athom forms."
+    "fr": "Corrigé : WiFi publish validate (drop empty zigbee stubs) + HOBEIAN caseless Athom forms."
   },
   "5.12.297": {
     "en": "HOBEIAN case-insensitive Athom forms + Z2M pids ( BOTH).",
@@ -1125,7 +1125,7 @@
   },
   "5.12.294": {
     "en": ": 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Stable Test; re-pair if needed.",
-    "fr": ": 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Stable Test; re-pair if needed."
+    "fr": ": 4-gang switch pairing restored (ZCL-safe endpoints; no required metering). Update Stable Test; Réappariez si needed."
   },
   "5.12.293": {
     "en": ": remove liygxtcq+TS0004 from switch_1gang (anti-bot). radar module + wifi stubs.",
@@ -1161,15 +1161,15 @@
   },
   "5.12.285": {
     "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan).",
-    "fr": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
+    "fr": "Corrigé : le chargeur infini vide des réglages de l'app (Homey.ready avant le scan mesh/WiFi)."
   },
   "5.12.284": {
     "en": "Improved local LAN reliability; fixed WiFi driver manifests for publish validation.",
-    "fr": "Improved local LAN reliability; fixed WiFi driver manifests for publish validation."
+    "fr": "Fiabilité LAN locale améliorée; manifestes des pilotes WiFi corriges pour la validation de publication."
   },
   "5.12.283": {
     "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget).",
-    "fr": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
+    "fr": "Fiabilité LAN locale améliorée (surveillance des donnees périmées, envoi sans attente)."
   },
   "5.12.282": {
     "en": "Reliability: TS0043 famkxci2 stays Wireless Button 3; TS130F e3vhyirx curtain wall switch lock; ceiling radar presence clear safer. Update Homey Test Stable + re-pair if Generic.",
@@ -1177,7 +1177,7 @@
   },
   "5.12.281": {
     "en": "Athom republish after processing_failed; same reliability couple prune as 5.12.280. Update Homey Test.",
-    "fr": "Athom republish after processing_failed; same reliability couple prune as 5.12.280. Update Homey Test."
+    "fr": "Republication Athom après processing_failed; même élagage de couples que 5.12.280. Mettez à jour Homey Test."
   },
   "5.12.280": {
     "en": "Reliability: removed misattributed Zigbee couples from wrong switch/LCD drivers; kept curtain/6-gang/dimmer/LCD canonical locks.",
@@ -1185,15 +1185,15 @@
   },
   "5.12.279": {
     "en": "Remove empty zigbee blocks from WiFi drivers (Homey validator). Update Homey Test.",
-    "fr": "Remove empty zigbee blocks from WiFi drivers (Homey validator). Update Homey Test."
+    "fr": "Suppression des blocs zigbee vides des pilotes WiFi (validateur Homey). Mettez à jour Homey Test."
   },
   "5.12.278": {
     "en": "Strip empty zigbee from WiFi compose (validator) + LAN reliability. Update Homey Test.",
-    "fr": "Strip empty zigbee from WiFi compose (validator) + LAN reliability. Update Homey Test."
+    "fr": "Retrait des blocs zigbee vides du compose WiFi (validateur) et fiabilité LAN. Mettez à jour Homey Test."
   },
   "5.12.277": {
     "en": "WiFi LAN reliability: offline grace + command gap + protocol auto-order (backport). Update Homey Test.",
-    "fr": "WiFi LAN reliability: offline grace + command gap + protocol auto-order (backport). Update Homey Test."
+    "fr": "Fiabilité LAN WiFi : grace hors ligne, intervalle de commande et ordre auto du protocole (backport). Mettez à jour Homey Test."
   },
   "5.12.276": {
     "en": "Ceiling radar gkfbdvyx: lux DP103-only (no DP10 junk), skip discovery phantoms after Repair. Update Test + remove/re-add radar.",
@@ -1205,19 +1205,19 @@
   },
   "5.12.274": {
     "en": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths.",
-    "fr": "Improved TS0043/TS0044 scene remote press detection with complementary fallback paths."
+    "fr": "Improved TS0043/TS0044 scène remote press détection with complementary fallback paths."
   },
   "5.12.273": {
     "en": "TS0043 scene remotes: Button 1-3 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance.",
-    "fr": "TS0043 scene remotes: Button 1-3 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
+    "fr": "TS0043 télécommandes de scène: Button 1-3 in fiche appareil + réception hybride. Update Test + Réappariez si tiles were only under Maintenance."
   },
   "5.12.272": {
     "en": "Voice-safety aligns with TS0044 Button N device view. Update Test.",
-    "fr": "Voice-safety aligns with TS0044 Button N device view. Update Test."
+    "fr": "Voice-safety aligns avec TS0044 Button N fiche appareil. Mettez à jour Test."
   },
   "5.12.271": {
     "en": "TS0044 scene remotes: Button 1-4 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance.",
-    "fr": "TS0044 scene remotes: Button 1-4 in device view + hybrid RX. Update Test + re-pair if tiles were only under Maintenance."
+    "fr": "TS0044 télécommandes de scène: Button 1-4 in fiche appareil + réception hybride. Update Test + Réappariez si tiles were only under Maintenance."
   },
   "5.12.270": {
     "en": "Stable: prune remote mfs bleed to sacred mfr+pid couples. Update Stable Test.",
@@ -1225,7 +1225,7 @@
   },
   "5.12.269": {
     "en": "Stable: sacred mfr+pid couple locks for Moes ZT-YK remotes. Update Stable Test.",
-    "fr": "Stable: sacred mfr+pid couple locks for Moes ZT-YK remotes. Update Stable Test."
+    "fr": "Stable: sacred mfr+pid couple locks for Moes ZT-YK remotes. Mettez à jour Stable Test."
   },
   "5.12.268": {
     "en": "Stable: track-adaptive critical test runner (skip MASTER_ONLY deps). Update Stable Test.",
@@ -1241,19 +1241,19 @@
   },
   "5.12.265": {
     "en": "Stable: dual-app layer gate + IAS/battery reliability + Moes YK. Update Stable Test.",
-    "fr": "Stable: dual-app layer gate + IAS/battery reliability + Moes YK. Update Stable Test."
+    "fr": "Stable: dual-app layer gate + IAS/battery reliability + Moes YK. Mettez à jour Stable Test."
   },
   "5.12.264": {
     "en": "mfs_db align after the maintainer outbound tk3s5tyg rehome. Update Stable Test.",
-    "fr": "mfs_db align after the maintainer outbound tk3s5tyg rehome. Update Stable Test."
+    "fr": "mfs_db align after the maintainer outbound tk3s5tyg rehome. Mettez à jour Stable Test."
   },
   "5.12.263": {
     "en": "the maintainer outbound: TS0041 tk3s5tyg rehome from smoke + external inventory tooling. Update Stable Test.",
-    "fr": "the maintainer outbound: TS0041 tk3s5tyg rehome from smoke + external inventory tooling. Update Stable Test."
+    "fr": "the maintainer outbound: TS0041 tk3s5tyg rehome de smoke + external inventory tooling. Mettez à jour Stable Test."
   },
   "5.12.262": {
     "en": "Wall/scene remotes 1-6 btn hybrid RX (battery+mains). Update Stable Test; Repair remotes if presses miss.",
-    "fr": "Wall/scene remotes 1-6 btn hybrid RX (battery+mains). Update Stable Test; Repair remotes if presses miss."
+    "fr": "Wall/télécommandes de scène 1-6 btn réception hybride (battery+mains). Update Stable Test; Réparez les télécommandes si les appuis manquent."
   },
   "5.12.261": {
     "en": "v5.12.261: ZG253 TRV: fix empty caps + setpoint TX (Homey datapoint args). Update + Repair radiator valve.",
@@ -1292,8 +1292,8 @@
     "fr": "Fine treat: Moes ZTS/AM43 + ceiling radar magic handshake; front-pin / couples for pairing."
   },
   "5.12.251": {
-    "en": "Elegant measured-first values: clean titles for real metrics; ≈ estimated, ƒ calculated, → predicted in UI and Smart Flows.",
-    "fr": "Elegant measured-first values: clean titles for real metrics; ≈ estimated, ƒ calculated, → predicted in UI and Smart Flows."
+    "en": "Elegant measured-first values: clean titles for real metrics; ~ estimated, f calculated, -> predicted in UI and Smart Flows.",
+    "fr": "Elegant measured-first values: clean titles for real metrics; ~ estimated, f calculated, -> predicted in UI et Smart Flows."
   },
   "5.12.250": {
     "en": "Fleet provenance keeps estimate/calculated labels; radar class nudge; wall dimmer magic TX heal.",
@@ -1309,7 +1309,7 @@
   },
   "5.12.247": {
     "en": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scene mode.",
-    "fr": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scene mode."
+    "fr": "Wireless buttons: first-press after sleep (Z2M/ZHA magic), TS0046 cascade, Moes remotes skip broken scène mode."
   },
   "5.12.246": {
     "en": ": intelligent History/Insights on across sensor drivers (battery, climate, energy, alarms); silence mmWave distance + twin motion spam.",
@@ -1357,7 +1357,7 @@
   },
   "5.12.235": {
     "en": "Reliability BOTH: SmartBatteryManager L14 safe writers ( gate); no invent 100% from alarm.",
-    "fr": "Reliability BOTH: SmartBatteryManager L14 safe writers ( gate); no invent 100% from alarm."
+    "fr": "Reliability BOTH: SmartBatteryManager L14 safe writers ( gate); no invent 100% de alarm."
   },
   "5.12.234": {
     "en": "Fix remaining sacred-couple audit pairs (curtain + 3gang).",
@@ -1393,15 +1393,15 @@
   },
   "5.12.226": {
     "en": "Hardened cron automations for local-only self-improve and tighter AI plan limits (reliability).",
-    "fr": "Hardened cron automations for local-only self-improve and tighter AI plan limits (reliability)."
+    "fr": "Hardened cron automations for local-only self-improve et tighter AI plan limits (reliability)."
   },
   "5.12.225": {
     "en": "Locked air-quality pairing to one driver and kept complementary DP logic (reliability).",
-    "fr": "Locked air-quality pairing to one driver and kept complementary DP logic (reliability)."
+    "fr": "Locked air-quality pairing to one driver et kept complementary DP logic (reliability)."
   },
   "5.12.224": {
     "en": "Restored complementary air-quality fingerprints and dual-case enrich guards (reliability).",
-    "fr": "Restored complementary air-quality fingerprints and dual-case enrich guards (reliability)."
+    "fr": "Restored complementary air-quality fingerprints et dual-case enrich guards (reliability)."
   },
   "5.12.223": {
     "en": "Improved complementary Zigbee DP/cluster/raw RX-TX paths (reliability) without replacing working EF00 maps.",
@@ -1421,7 +1421,7 @@
   },
   "5.12.219": {
     "en": "Improved air quality pairing for Tuya airbox sensors (reliability) without degrading other devices.",
-    "fr": "Improved air quality pairing for Tuya airbox sensors (reliability) without degrading other devices."
+    "fr": "Amélioré : air quality pairing for Tuya airbox sensors (reliability) without degrading other devices."
   },
   "5.12.218": {
     "en": "Publish unblock: nkjintbl anti-bot (TZE204 on plug only) + Zigbee RF/MCU evolution without degrade.",
@@ -1429,7 +1429,7 @@
   },
   "5.12.217": {
     "en": "Fixed nkjintbl complementary bleed; Zigbee RF/MCU guidance without degrade.",
-    "fr": "Fixed nkjintbl complementary bleed; Zigbee RF/MCU guidance without degrade."
+    "fr": "Corrigé : nkjintbl complementary bleed; Zigbee RF/MCU guidance without degrade."
   },
   "5.12.216": {
     "en": "Improved Zigbee RF coexistence guidance and Tuya MCU time-sync resilience (no pairing degrade).",
@@ -1453,7 +1453,7 @@
   },
   "5.12.211": {
     "en": "Added Contre quoi unit tests for complementary OEM overlays and dual-case compose preserve.",
-    "fr": "Added Contre quoi unit tests for complementary OEM overlays and dual-case compose preserve."
+    "fr": "Added Contre quoi unit tests for complementary OEM overlays et dual-case compose preserve."
   },
   "5.12.210": {
     "en": "Improved complementary OEM/forum/Z2M coverage overlays for recent Zigbee couples.",
@@ -1461,11 +1461,11 @@
   },
   "5.12.209": {
     "en": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs).",
-    "fr": "Improved OEM/case variants and capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
+    "fr": "Amélioré : OEM/case variants et capabilities for recent Zigbee couples (covers, radar, dimmer, soil, DIN, buttons, knobs, plugs)."
   },
   "5.12.208": {
     "en": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints.",
-    "fr": "Synced wall dimmer firmware update manufacturer names with Zigbee fingerprints."
+    "fr": "Synced wall dimmer firmware update manufacturer names avec Zigbee fingerprints."
   },
   "5.12.207": {
     "en": "OEM variants for recent couples; Moes SFC02 kq1l5eu5 on wall curtain switch.",
@@ -1473,7 +1473,7 @@
   },
   "5.12.206": {
     "en": "Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples.",
-    "fr": "Completed OEM/case variants and capabilities for recent curtain, radar, dimmer and button couples."
+    "fr": "Completed OEM/case variants et capabilities for recent curtain, radar, dimmer et button couples."
   },
   "5.12.205": {
     "en": "Deep functional enrich in inbox workflows ÔÇö DP, clusters, flows and RX/TX beyond fingerprint locks.",
@@ -1485,7 +1485,7 @@
   },
   "5.12.202": {
     "en": "Hardened forum and scrape ingest against prompt injection and malicious markup.",
-    "fr": "Hardened forum and scrape ingest against prompt injection and malicious markup."
+    "fr": "Hardened forum et scrape ingest against prompt injection et malicious markup."
   },
   "5.12.201": {
     "en": "Presence radar WHEN cards fire on human presence; remaining flow conditions registered.",
@@ -1609,7 +1609,7 @@
   },
   "5.12.168": {
     "en": "Fixed mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries).",
-    "fr": "Fixed mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries)."
+    "fr": "Corrigé : mains presence radar Homey Energy battery warning (compose no longer ships phantom batteries)."
   },
   "5.12.167": {
     "en": "Improved smartbutton reliability (SH-SC07); AM43 curtain EF00-only.",
@@ -1629,19 +1629,19 @@
   },
   "5.12.163": {
     "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only - no button clutter.",
-    "fr": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only - no button clutter."
+    "fr": "Corrigé : l'appairage filaire Moes/Tuya 2 voies pointe vers l'interrupteur mural avec onoff/onoff.gang2 seulement, sans boutons superflus."
   },
   "5.12.162": {
     "en": "v5.12.162: Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only - no button clutter.",
-    "fr": "v5.12.162 : Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only - no button clutter."
+    "fr": "v5.12.162: Corrigé : l'appairage filaire Moes/Tuya 2 voies pointe vers l'interrupteur mural avec onoff/onoff.gang2 seulement, sans boutons superflus."
   },
   "5.12.161": {
     "en": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only - no button clutter.",
-    "fr": "Fixed Moes/Tuya wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only - no button clutter."
+    "fr": "Corrigé : l'appairage filaire Moes/Tuya 2 voies pointe vers l'interrupteur mural avec onoff/onoff.gang2 seulement, sans boutons superflus."
   },
   "5.12.160": {
     "en": "Fixed BSEED wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only - no battery or button clutter.",
-    "fr": "Fixed BSEED wired 2-gang pairing: maps to wall switch with onoff/onoff.gang2 only - no battery or button clutter."
+    "fr": "Corrigé : BSEED wired 2-gang pairing: maps to interrupteur mural avec onoff/onoff.gang2 only - no battery or button clutter."
   },
   "5.12.159": {
     "en": "CI harden: package-lock integrity gate on Stable publish path.",
@@ -1649,19 +1649,19 @@
   },
   "5.12.158": {
     "en": "Fixed 1-btn remote pairing (ja5osu5g / an5rjiwd) and 4-btn wall remotes (5tqxpine); presence radar sticky motion fix.",
-    "fr": "Fixed 1-btn remote pairing (ja5osu5g / an5rjiwd) and 4-btn wall remotes (5tqxpine); presence radar sticky motion fix."
+    "fr": "Corrigé : 1-btn remote pairing (ja5osu5g / an5rjiwd) et 4-btn wall remotes (5tqxpine); presence radar sticky motion fix."
   },
   "5.12.157": {
     "en": "Fixed switch pairing catalogs and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches.",
-    "fr": "Fixed switch pairing catalogs and Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches."
+    "fr": "Corrigé : switch pairing catalogs et Moes curtain fingerprint routing; removed extra button tiles on 4-gang switches."
   },
   "5.12.156": {
     "en": "Fixed 1-button smart knob presses stuck in dimmer mode; scene mode re-applied after identity is known.",
-    "fr": "Fixed 1-button smart knob presses stuck in dimmer mode; scene mode re-applied after identity is known."
+    "fr": "Corrigé : 1-button smart knob presses stuck in dimmer mode; scène mode re-applied after identity is known."
   },
   "5.12.155": {
     "en": "Fixed rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints and CI gates.",
-    "fr": "Fixed rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints and CI gates."
+    "fr": "Corrigé : rotary smart knobs (ERS-10): rotation uses command/dimmer mode again; improved knob fingerprints et CI gates."
   },
   "5.12.154": {
     "en": "Forum soft-hypothesis prefers mfs/registry pids over polluted compose junk.",
@@ -1709,7 +1709,7 @@
   },
   "5.12.143": {
     "en": "Improved pairing for several Tuya ZCL wall switches that Homey previously left as unknown.",
-    "fr": "Improved pairing for several Tuya ZCL wall switches that Homey previously left as unknown."
+    "fr": "Amélioré : pairing for several Tuya ZCL interrupteurs muraux that Homey previously left as unknown."
   },
   "5.12.142": {
     "en": "HOBEIAN devices now match when Homey reports the brand as product ID or product name, not only manufacturer.",
@@ -1725,19 +1725,19 @@
   },
   "5.12.138": {
     "en": "Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices, resolved Athom 17k combo pass2 budget reduction, and passed all mandatory checks.",
-    "fr": "Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices, resolved Athom 17k combo pass2 budget reduction, and passed all mandatory checks."
+    "fr": "Forum media deep sweep & misattribution cleansing: cleansed wall_switch_5_gang_tuya stubs, added 25 verified forum Zigbee devices, resolved Athom 17k combo pass2 budget réduction, et passed all mandatory checks."
   },
   "5.12.137": {
     "en": "Fixed BSEED 1-gang switch routing (Issue ), pruned manifest flow duplicates, and enforced zero flow guidelines warnings.",
-    "fr": "Fixed BSEED 1-gang switch routing (Issue ), pruned manifest flow duplicates, and enforced zero flow guidelines warnings."
+    "fr": "Corrigé : BSEED 1-gang switch routing (Issue ), pruned manifest flow duplicates, et enforced zero flow guidelines warnings."
   },
   "5.12.136": {
     "en": "Added support for Eduard DC tubular roller blind motor (_TZE284_fodv6bkr); fortified WiFi local-first recovery and safe timers; caseless Hobeian/Heobian exotic PIDs and sacred-keep couples.",
-    "fr": "Added support for Eduard DC tubular roller blind motor (_TZE284_fodv6bkr); fortified WiFi local-first recovery and safe timers; caseless Hobeian/Heobian exotic PIDs and sacred-keep couples."
+    "fr": "Added support for Eduard DC tubular roller blind motor (_TZE284_fodv6bkr); fortified WiFi local-first recovery et safe timers; caseless Hobeian/Heobian exotic PIDs et sacred-keep couples."
   },
   "5.12.135": {
     "en": "Universal cluster resolution, caseless driver & flow card compensation, and enhanced battery cluster detection (reliability).",
-    "fr": "Universal cluster resolution, caseless driver & flow card compensation, and enhanced battery cluster detection (reliability)."
+    "fr": "Universal cluster resolution, caseless driver & flow card compensation, et enhanced battery cluster détection (reliability)."
   },
   "5.12.134": {
     "en": "HOBEIAN full enrich: mmWave ZE/ZK/ZQ/ZX, vibration+contact, tilt, water/vibration alarms.",
@@ -1745,11 +1745,11 @@
   },
   "5.12.133": {
     "en": "HOBEIAN sensors: corrected mmWave DP maps and locked motion-sensing switches; fixed wrong climate/vibration pairing.",
-    "fr": "HOBEIAN sensors: corrected mmWave DP maps and locked motion-sensing switches; fixed wrong climate/vibration pairing."
+    "fr": "HOBEIAN sensors: corrected mmWave DP maps et locked motion-sensing switches; fixed wrong climate/vibration pairing."
   },
   "5.12.132": {
     "en": "Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity.",
-    "fr": "Fixed mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity."
+    "fr": "Corrigé : mains mmWave radar phantom battery warning after app updates; radar settings DPs no longer misread as humidity."
   },
   "5.12.131": {
     "en": "Hang-proof CI compensate + Athom soft-expect when Test tip healthy; soil EF00 clusters only (reliability).",
@@ -1777,15 +1777,15 @@
   },
   "5.12.125": {
     "en": "Fixed Moes curtain wall switch stopping too early after open/close from Homey UI.",
-    "fr": "Fixed Moes curtain wall switch stopping too early after open/close from Homey UI."
+    "fr": "Corrigé : Moes curtain interrupteur mural stopping too early after open/close de Homey UI."
   },
   "5.12.124": {
     "en": "Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied.",
-    "fr": "Fixed garden valve and other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied."
+    "fr": "Corrigé : garden valve et other flow conditions when Homey lacks getDeviceConditionCard; radar presence value 2 now counts as occupied."
   },
   "5.12.123": {
     "en": "Improved multi-gang Homey button UI sync with physical presses; fan countdown/power-on settings; richer per-gang flow cards (reliability).",
-    "fr": "Improved multi-gang Homey button UI sync with physical presses; fan countdown/power-on settings; richer per-gang flow cards (reliability)."
+    "fr": "Amélioré : multi-gang Homey button UI sync avec physical presses; fan countdown/power-on settings; richer per-gang flow cards (reliability)."
   },
   "5.12.122": {
     "en": "Moes curtain: ignore Homey UI stop that cancels open/close within a few seconds.",
@@ -1801,11 +1801,11 @@
   },
   "5.12.119": {
     "en": "Improved wireless button frame handling and calmed presence radar flood alerts (reliability).",
-    "fr": "Improved wireless button frame handling and calmed presence radar flood alerts (reliability)."
+    "fr": "Amélioré : bouton sans fil frame handling et calmed presence radar flood alerts (reliability)."
   },
   "5.12.117": {
     "en": "Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens).",
-    "fr": "Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens)."
+    "fr": "Corrigé : app crash de foreign/flow Invalid Driver ID (Homey class light et third-party Zigbee tokens)."
   },
   "5.12.116": {
     "en": "Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints.",
@@ -1825,11 +1825,11 @@
   },
   "5.12.112": {
     "en": "Stripped leftover plug fingerprint case-variants from wireless buttons; restored smartplug OTA asset for Homey validate.",
-    "fr": "Stripped leftover plug fingerprint case-variants from wireless buttons; restored smartplug OTA asset for Homey validate."
+    "fr": "Stripped leftover plug fingerprint case-variants de boutons sans fil; restored smartplug OTA asset for Homey validate."
   },
   "5.12.111": {
     "en": "Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons.",
-    "fr": "Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons."
+    "fr": "Corrigé : smart plug fingerprint routing so TS011F plugs are not matched as boutons sans fil."
   },
   "5.12.110": {
     "en": "Improved MCU time sync and battery cover init; safer dimmer brightness scaling.",
@@ -1845,11 +1845,11 @@
   },
   "5.12.106": {
     "en": "Improved TS0044 scene remote routing; fixed wall remote driver stealing battery scene switches.",
-    "fr": "Improved TS0044 scene remote routing; fixed wall remote driver stealing battery scene switches."
+    "fr": "Improved TS0044 scène remote routing; fixed wall remote driver stealing battery scène switches."
   },
   "5.12.105": {
     "en": "Fixed Moes TS0044 scene remote and soil sensor pairing; hardened wall dimmer TX failure detection.",
-    "fr": "Fixed Moes TS0044 scene remote and soil sensor pairing; hardened wall dimmer TX failure detection."
+    "fr": "Corrigé : Moes TS0044 scène remote et soil sensor pairing; hardened wall dimmer TX failure détection."
   },
   "5.12.104": {
     "en": "Improved Moes curtain Cover Controller pairing for Tuya EF00 covers.",
@@ -1857,15 +1857,15 @@
   },
   "5.12.103": {
     "en": "Fixed Fingerbot flow card IDs and switch turned-on/off Homey Flow triggers.",
-    "fr": "Fixed Fingerbot flow card IDs and switch turned-on/off Homey Flow triggers."
+    "fr": "Corrigé : Fingerbot flow card IDs et switch turned-on/off Homey Flow triggers."
   },
   "5.12.102": {
     "en": "Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature.",
-    "fr": "Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature."
+    "fr": "Corrigé : wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature."
   },
   "5.12.101": {
     "en": "Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path).",
-    "fr": "Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path)."
+    "fr": "Improved button and scène remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path)."
   },
   "5.12.100": {
     "en": "Improved wall dimmer control reliability after pairing.",
@@ -1905,7 +1905,7 @@
   },
   "5.12.90": {
     "en": "Peter fleet SOS/IAS/heap hardening; DIN meter climate phantom block; scene remote sacred couples.",
-    "fr": "Peter fleet SOS/IAS/heap hardening; DIN meter climate phantom block; scene remote sacred couples."
+    "fr": "Peter fleet SOS/IAS/heap hardening; DIN meter climate phantom block; scène remote sacred couples."
   },
   "5.12.89": {
     "en": "recovery: fresh Stable draft after 5.12.88 processing_failed; k4ej productId hygiene; IAS leftover skip.",
@@ -1913,11 +1913,11 @@
   },
   "5.12.88": {
     "en": "Tuya Unified (Stable) identity (com.the maintainer.tuya.zigbee.stable). Reliability: skip leftover EF00 TX and genPowerCfg bind on IAS-only (TS0207/TS0203/TS0215).",
-    "fr": "Tuya Unified (Stable) identity (com.the maintainer.tuya.zigbee.stable). Reliability: skip leftover EF00 TX and genPowerCfg bind on IAS-only (TS0207/TS0203/TS0215)."
+    "fr": "Tuya Unified (Stable) identity (com.the maintainer.tuya.zigbee.stable). Reliability: skip leftover EF00 TX et genPowerCfg bind on IAS-only (TS0207/TS0203/TS0215)."
   },
   "5.12.87": {
     "en": "Fix: computed caps (meter_*) no longer auto-added from device DP reports. Guard routes meter_power to measure_power (native measurement). Prevents phantom kWh in Energy tab.",
-    "fr": "Fix: computed caps (meter_*) no longer auto-added from device DP reports. Guard routes meter_power to measure_power (native measurement). Prevents phantom kWh in Energy tab."
+    "fr": "Fix: computed caps (meter_*) no longer auto-added de device DP reports. Guard routes meter_power to measure_power (native measurement). Prevents phantom kWh in Energy tab."
   },
   "5.12.86": {
     "en": "Reliability: IAS water/contact/repeater disambiguation, compound fingerprint locks, BrightnessScale backport, battery cascade hardening.",
@@ -1925,7 +1925,7 @@
   },
   "5.12.84": {
     "en": "Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes use open/stop/close. Battery 100% stays 100%.",
-    "fr": "Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes use open/stop/close. Battery 100% stays 100%."
+    "fr": "Garage openers, dual outlets, Wing contacts et HOBEIAN USB switches keep the correct driver. moteurs de rideau that ignore position writes use open/stop/close. Battery 100% stays 100%."
   },
   "5.12.83": {
     "en": "Reliability: skip Test overwrite while 9.0 soaks; treat Athom draft as published.",
@@ -1933,7 +1933,7 @@
   },
   "5.12.82": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure.",
-    "fr": "Stability improvements and Homey test publication retry after transient processing failure."
+    "fr": "Stability improvements et Homey test publication retry after transient processing failure."
   },
   "5.12.81": {
     "en": "Reliability BOTH: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map.",
@@ -1941,11 +1941,11 @@
   },
   "5.12.80": {
     "en": "Athom republish after processing_failed on 5.12.78/79 (socket hang up). Lower Zigbee combo budget for publish processing.",
-    "fr": "Republication apres processing_failed 5.12.78/79. Budget combos Zigbee reduit pour Athom."
+    "fr": "Republication après processing_failed 5.12.78/79. Budget combos Zigbee reduit pour Athom."
   },
   "5.12.79": {
     "en": "reliability republish after Athom processing_failed on 5.12.78 (socket hang up). Includes ZT08 safe timers + Athom changelog keys.",
-    "fr": "Republication fiabilité apres processing_failed Athom sur 5.12.78. Inclut timers ZT08 + cles changelog Athom."
+    "fr": "Republication fiabilité après processing_failed Athom sur 5.12.78. Inclut timers ZT08 + cles changelog Athom."
   },
   "5.12.78": {
     "en": "Reliability BOTH: ZT08 safe time-sync timers; Athom changelog keys so Test publish works (5.12.75-77 crash class).",
@@ -1973,7 +1973,7 @@
   },
   "5.12.68": {
     "en": "Improved pairing for ZT08 climate sensor, TS004F remotes, and presence radar fingerprints.",
-    "fr": "Improved pairing for ZT08 climate sensor, TS004F remotes, and presence radar fingerprints."
+    "fr": "Amélioré : pairing for ZT08 climate sensor, TS004F remotes, et presence radar fingerprints."
   },
   "5.12.67": {
     "en": "Reliability: improved device wake/handshake recovery and interview compensation.",
@@ -1997,7 +1997,7 @@
   },
   "5.12.62": {
     "en": "L99 battery normalize + verify fail-closed; retry after Athom socket hang up.",
-    "fr": "L99 batterie normalize + verify fail-closed; retry apres Athom socket hang up."
+    "fr": "L99 batterie normalize + verify fail-closed; retry après Athom socket hang up."
   },
   "5.12.61": {
     "en": "L99: EnergyJumpGuard wired, Moes 4-btn profile, canonical case variants, CI fail-closed publish promote.",
@@ -2009,7 +2009,7 @@
   },
   "5.12.59": {
     "en": "P95: remove generic_tuya collisions for BSEED dimmer and 4ch relay; harden anti-bot/re-inject; APP_ID Test overwrite warning.",
-    "fr": "P95: remove generic_tuya collisions for BSEED dimmer and 4ch relay; harden anti-bot/re-inject; APP_ID Test overwrite warning."
+    "fr": "P95: remove generic_tuya collisions for BSEED dimmer et 4ch relay; harden anti-bot/re-inject; APP_ID Test overwrite warning."
   },
   "5.12.58": {
     "en": "Retry Homey Test publish after Athom processing_failed (socket hang up) on 5.12.57; harden verify-test-version fail-closed.",
@@ -2096,8 +2096,8 @@
     "fr": "Estimation batterie : doublement échelle 0-50 restreint aux fabricants curés; batterie SOS normalisée + unités voltage ZCL 100mV; listener capability button.1 SOS."
   },
   "5.12.31": {
-    "en": "Smart scaling engine: prefix resolution for sub-capabilities, self-validating divisor cache, vvmbj46n battery 0-50→0-100%, smallest plausible divisor in ProductValueValidator.",
-    "fr": "Scaling intelligent : résolution par préfixe des sub-capabilities, cache diviseur auto-validant, batterie vvmbj46n 0-50→0-100%, plus petit diviseur plausible dans ProductValueValidator."
+    "en": "Smart scaling engine: prefix resolution for sub-capabilities, self-validating divisor cache, vvmbj46n battery 0-50->0-100%, smallest plausible divisor in ProductValueValidator.",
+    "fr": "Scaling intelligent : résolution par préfixe des sub-capabilities, cache diviseur auto-validant, batterie vvmbj46n 0-50->0-100%, plus petit diviseur plausible dans ProductValueValidator."
   },
   "5.12.30": {
     "en": "External probe (DP38) temperature 10x too low fixed (issue ): SmartDivisorManager knows measure_temperature.probe. Publish-blocking -stable version suffix fixed.",
@@ -2105,7 +2105,7 @@
   },
   "5.12.29": {
     "en": "Stable-v5 stability backports from master: fixed broken onDeleted chain (issue, guarded super.onDeleted in 5 classes), added 37 _destroyed guards across 29 files to prevent crashes after device deletion, P52 sync of safe changes. Minimal, zero-regression production line.",
-    "fr": "Stable-v5 stability backports from master: fixed broken onDeleted chain (issue, guarded super.onDeleted in 5 classes), added 37 _destroyed guards across 29 files to prevent crashes after device deletion, P52 sync of safe changes. Minimal, zero-regression production line."
+    "fr": "Stable-v5 stability backports de master: fixed broken onDeleted chain (issue, guarded super.onDeleted in 5 classes), added 37 _destroyed guards across 29 files to prevent crashes after device deletion, P52 sync of safe changes. Minimal, zero-regression production line."
   },
   "5.12.16": {
     "en": "P82-stable: TuyaNormalizer v10.0.0 ULTIMATE - case-insensitive matching library (NFKD + accents + multi-PID + variants + scoring) synced from master. Fixes potential -style issues on stable.",
@@ -2125,7 +2125,7 @@
   },
   "5.12.12": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure.",
-    "fr": "Stability improvements and Homey test publication retry after transient processing failure."
+    "fr": "Stability improvements et Homey test publication retry after transient processing failure."
   },
   "5.12.11": {
     "en": "P76 architectural fix (stable): 7 new HOBEIAN/ga1maeof fingerprint collisions baselined. Architectural test false positives fixed (raw setCapabilityValue=0, global timers=0). 28+ architectural tests passing, 125/125 stable tests passing. 431 drivers, 2902 FPs.",
@@ -2133,23 +2133,23 @@
   },
   "5.12.10": {
     "en": "Stability improvements and Homey test publication retry.",
-    "fr": "Stability improvements and Homey test publication retry."
+    "fr": "Stability improvements et Homey test publication retry."
   },
   "5.12.9": {
-    "en": "P75.27-stable: HOMEY_PUBLISH_MAX 30 → 35 MB fix. P75.32/32b test coverage (49 mixins + 29 flow cards + 23 regression audit = 101 tests passing).",
-    "fr": "P75.27-stable: HOMEY_PUBLISH_MAX 30 → 35 MB fix. P75.32/32b couverture de tests (49 mixins + 29 flow cards + 23 audit régression = 101 tests passants)."
+    "en": "P75.27-stable: HOMEY_PUBLISH_MAX 30 -> 35 MB fix. P75.32/32b test coverage (49 mixins + 29 flow cards + 23 regression audit = 101 tests passing).",
+    "fr": "P75.27-stable: HOMEY_PUBLISH_MAX 30 -> 35 MB fix. P75.32/32b couverture de tests (49 mixins + 29 flow cards + 23 audit régression = 101 tests passants)."
   },
   "5.12.8": {
     "en": "Stability improvements and Homey test publication retry.",
-    "fr": "Stability improvements and Homey test publication retry."
+    "fr": "Stability improvements et Homey test publication retry."
   },
   "5.12.7": {
     "en": "v5.12.7: Stability improvements and Homey test publication retry.",
-    "fr": "v5.12.7 : Stability improvements and Homey test publication retry."
+    "fr": "v5.12.7: Stability improvements et Homey test publication retry."
   },
   "5.12.6": {
     "en": "Stability improvements and Homey test publication retry.",
-    "fr": "Stability improvements and Homey test publication retry."
+    "fr": "Stability improvements et Homey test publication retry."
   },
   "5.12.5": {
     "en": "P75.26-stable: re-inject-manual-fixes.js - always check addIfMissing (fix logic bug that allowed auto-fix-all bot to revert forum-routing test mfrs). Re-applied P75.18-22 mfrs (button_wireless_4, smart_knob_rotary, switch_3gang, wall_switch_4gang_1way) + HOBEIAN to sensor_contact_zigbee (P61 fix preserved). 431 drivers, 2902 FPs.",
@@ -2157,7 +2157,7 @@
   },
   "5.12.4": {
     "en": "v5.12.4: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-classified LCD temp/humidity mfrs from air_quality_co2 and added to lcdtemphumidsensor. Stable-v5 sync from master v9.0.294.",
-    "fr": "v5.12.4: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-classified LCD temp/humidity mfrs from air_quality_co2 and added to lcdtemphumidsensor. Stable-v5 sync from master v9.0.294."
+    "fr": "v5.12.4: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-classified LCD temp/humidity mfrs de air_quality_co2 et added to lcdtemphumidsensor. Stable-v5 sync de master v9.0.294."
   },
   "5.12.3": {
     "en": "v5.12.3: stable-v5 P74 sync - publish-size-gate fix,.homeyignore pruning, HOBEIAN collision resolved, 88 driver.js flow handlers, master baseline updated.",
@@ -2165,7 +2165,7 @@
   },
   "5.12.2": {
     "en": "v5.12.2: stable-v5 sync of v9.0.276-v9.0.282 (drivers, FPs, flows, manifest).",
-    "fr": "Nouveau : niveau de batterie et détecteurs de mouvement (ZG-204ZM). Corrigé : boutons et télécommandes et mémoire et minuteries. Et 35 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : niveau de batterie et détecteurs de mouvement (ZG-204ZM). Corrigé : boutons et télécommandes et mémoire et minuteries. Et 35 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.1": {
     "en": "v5.12.1: stable-v5 sync of v9.0.263-v9.0.275 (drivers, FPs, flows, manifest).",
@@ -2173,6 +2173,6 @@
   },
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240-v9.0.260.",
-    "fr": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240-v9.0.260."
+    "fr": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) de master v9.0.240-v9.0.260."
   }
 }

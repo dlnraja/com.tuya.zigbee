@@ -4,24 +4,24 @@
       "id": "bulb_dimmable_bulb_dimmable_dimmer_turned_on",
       "title": {
         "en": "Turned on (bulb dimmable turned on)",
-        "fr": "Allumé (bulb dimmable turned on)"
+        "fr": "Allumé (bulb dimmable allumé)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (bulb dimmable turned on)",
-        "fr": "Allumé (bulb dimmable turned on)"
+        "fr": "Allumé (bulb dimmable allumé)"
       }
     },
     {
       "id": "bulb_dimmable_bulb_dimmable_dimmer_turned_off",
       "title": {
         "en": "Turned off (bulb dimmable turned off)",
-        "fr": "Éteint (bulb dimmable turned off)"
+        "fr": "Éteint (bulb dimmable éteint)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (bulb dimmable turned off)",
-        "fr": "Éteint (bulb dimmable turned off)"
+        "fr": "Éteint (bulb dimmable éteint)"
       }
     },
     {
@@ -101,12 +101,12 @@
       "id": "bulb_dimmable_bulb_dimmable_dimmer_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (bulb dimmable is on)"
+        "fr": "Est !{{allumé|éteint}} (bulb dimmable est allumé)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (bulb dimmable is on)"
+        "fr": "Est !{{allumé|éteint}} (bulb dimmable est allumé)"
       }
     },
     {
@@ -131,36 +131,36 @@
       "id": "bulb_dimmable_bulb_dimmable_dimmer_turn_on",
       "title": {
         "en": "Turn on (bulb dimmable turn on)",
-        "fr": "Allumer (bulb dimmable turn on)"
+        "fr": "Allumer (bulb dimmable allumer)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (bulb dimmable turn on)",
-        "fr": "Allumer (bulb dimmable turn on)"
+        "fr": "Allumer (bulb dimmable allumer)"
       }
     },
     {
       "id": "bulb_dimmable_bulb_dimmable_dimmer_turn_off",
       "title": {
         "en": "Turn off (bulb dimmable turn off)",
-        "fr": "Éteindre (bulb dimmable turn off)"
+        "fr": "Éteindre (bulb dimmable eteindre)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (bulb dimmable turn off)",
-        "fr": "Éteindre (bulb dimmable turn off)"
+        "fr": "Éteindre (bulb dimmable eteindre)"
       }
     },
     {
       "id": "bulb_dimmable_bulb_dimmable_dimmer_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (dimmable bulb dimmable toggle)"
+        "fr": "Basculer (dimmable bulb dimmable basculer)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (dimmable bulb dimmable toggle)"
+        "fr": "Basculer (dimmable bulb dimmable basculer)"
       }
     },
     {
