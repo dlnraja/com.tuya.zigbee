@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { AirQualityInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 const { isMainsCo2Mfr } = require('../../lib/helpers/batteryPowerSource');
@@ -372,3 +374,5 @@ class AirQualityCO2Device extends SensorBase {
 
 module.exports = AirQualityCO2Device;
 module.exports.decodeOgkdpgy2Temperature = decodeOgkdpgy2Temperature;
+return module.exports;
+});

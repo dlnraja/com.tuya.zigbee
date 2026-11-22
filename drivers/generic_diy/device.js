@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { normalizeZclBatteryPercent } = require('../../lib/battery/zcl-percent');
 
@@ -352,3 +354,5 @@ class GenericDIYDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = GenericDIYDevice;
+return module.exports;
+});

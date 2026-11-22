@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
  * 4-channel relay board (TS0004 multi-endpoint) - single device, 4 gangs.
@@ -61,3 +63,5 @@ class RelayBoard4ChannelDevice extends BaseClass {
 }
 
 module.exports = RelayBoard4ChannelDevice;
+return module.exports;
+});

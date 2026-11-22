@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { lazy } = require('../../lib/utils/lazyRequire');
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 // v5.12.8: WiFi Camera Device - Tuya IPC with local control + RTSP/snapshot streaming
@@ -339,3 +341,5 @@ class WiFiCameraDevice extends Homey.Device {
 }
 
 module.exports = WiFiCameraDevice;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 // v5.5.295: Fix "Class extends value undefined" stderr error
 // Use try-catch to handle potential circular dependency issues
@@ -765,3 +767,5 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 }
 
 module.exports = CurtainMotorDevice;
+return module.exports;
+});

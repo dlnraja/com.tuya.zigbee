@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
  * P3013 - Moes MG-BJQ002 plug-in siren with RGB night light (`_TZE20C_tjz9ad5g` / TS0601).
@@ -54,3 +56,5 @@ class SirenMoesMGBJQ002Device extends SirenDevice {
 }
 
 module.exports = SirenMoesMGBJQ002Device;
+return module.exports;
+});

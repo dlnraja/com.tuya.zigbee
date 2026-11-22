@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeSetTimeout, safeClearTimeout, safeSetInterval, safeClearInterval, isDestroyed } = require('../../lib/utils/safe-timers');
@@ -2606,9 +2608,5 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 }
 
 module.exports = PresenceSensorRadarDevice;
-
-
-
-
-
-
+return module.exports;
+});

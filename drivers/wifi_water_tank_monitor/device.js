@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
@@ -99,3 +101,5 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiWaterTankMonitorDevice;
+return module.exports;
+});

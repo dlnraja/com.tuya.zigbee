@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const GlobalTimeSyncEngine = require('../../lib/tuya/GlobalTimeSyncEngine');
@@ -158,3 +160,5 @@ class ClimateSensorZt08Device extends UnifiedSensorBase {
 }
 
 module.exports = ClimateSensorZt08Device;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
  * P2621 / P2641 / P2642 MASTER_ONLY - WiFi EV Charger (Tuya Local).
@@ -189,3 +191,5 @@ class WiFiEvChargerDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiEvChargerDevice;
+return module.exports;
+});

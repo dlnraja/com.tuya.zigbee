@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
  * P3013 - AE-5503-S-H-ZIGBEE sauna thermostat (`_TZE204_eaasry7v` / TS0601).
@@ -29,3 +31,5 @@ class SaunaThermostatAE5503Device extends ThermostatTuyaDPDevice {
 }
 
 module.exports = SaunaThermostatAE5503Device;
+return module.exports;
+});

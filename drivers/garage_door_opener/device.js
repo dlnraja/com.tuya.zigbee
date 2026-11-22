@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -152,3 +154,5 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
 }
 
 module.exports = GarageDoorOpenerDevice;
+return module.exports;
+});

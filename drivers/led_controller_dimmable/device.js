@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { safeSetTimeout } = require('../../lib/utils/safe-timers');
@@ -275,3 +277,5 @@ class LEDControllerDimmableDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = LEDControllerDimmableDevice;
+return module.exports;
+});

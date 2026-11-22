@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
  * P3013 - TS0601 6-gang wall panel with power metering (`_TZE284_hbxadcl0`).
@@ -23,3 +25,5 @@ class SwitchWall6GangMeteringDevice extends Switch6GangDevice {
 }
 
 module.exports = SwitchWall6GangMeteringDevice;
+return module.exports;
+});

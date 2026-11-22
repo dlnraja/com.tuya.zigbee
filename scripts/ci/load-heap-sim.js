@@ -31,6 +31,8 @@ const MB=()=>{global.gc();global.gc();return +(process.memoryUsage().heapUsed/10
 const DRV=(process.env.DRV||'switch_1gang,switch_2gang,button_wireless_4,climate_sensor,plug_energy_monitor').split(',').filter(d=>fs.existsSync(path.join(root,'drivers',d,'device.js')));
 (async()=>{
  const classes=DRV.map(d=>require(path.join(root,'drivers',d,'device.js')));
+ // P3389: device.js classes build on first use; build them here so 'loaded' keeps meaning classes loaded.
+ classes.forEach(C=>{void C.prototype;});
  const h0=MB();const devs=[];let initErr=0;
  for(let i=0;i<N;i++){const k=i%classes.length;const D=classes[k];const d=new D(`dev-${i}`,DRV[k]);devs.push(d);
   try{await Promise.race([d.onNodeInit({zclNode:mkNode()}),new Promise(r=>setTimeout(r,200))])}catch(e){initErr++}}

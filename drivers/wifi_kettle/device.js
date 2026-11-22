@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
  * P2621 MASTER_ONLY - WiFi Smart Kettle (Tuya Local).
@@ -44,3 +46,5 @@ class WiFiKettleDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiKettleDevice;
+return module.exports;
+});

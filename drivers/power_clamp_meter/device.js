@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
@@ -623,4 +625,5 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = PowerClampMeterDevice;
-
+return module.exports;
+});

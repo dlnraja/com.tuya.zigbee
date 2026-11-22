@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
@@ -464,3 +466,5 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = WaterLeakSensorDevice;
+return module.exports;
+});

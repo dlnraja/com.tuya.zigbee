@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
  * P3013 - Novato ZPV-01 battery water valve (`_TZE284_zm8zpwas` / TS0601).
@@ -28,3 +30,5 @@ class ValveNovatoZPV01Device extends WaterValveSmartDevice {
 }
 
 module.exports = ValveNovatoZPV01Device;
+return module.exports;
+});

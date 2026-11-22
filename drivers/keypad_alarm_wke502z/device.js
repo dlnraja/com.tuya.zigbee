@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaDpProfileDevice = require('../../lib/devices/TuyaDpProfileDevice');
 const { sendEf00DpMaxFallback } = require('../../lib/zigbee/Ef00OnlyInterview');
@@ -145,3 +147,5 @@ class KeypadAlarmWke502zDevice extends TuyaDpProfileDevice {
 }
 
 module.exports = KeypadAlarmWke502zDevice;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const LightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -67,3 +69,5 @@ class DimmableBulbDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBas
 }
 
 module.exports = DimmableBulbDevice;
+return module.exports;
+});

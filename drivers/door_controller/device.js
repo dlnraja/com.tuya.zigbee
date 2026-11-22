@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 class DoorControllerDevice extends UnifiedPlugBase {
@@ -39,3 +41,5 @@ class DoorControllerDevice extends UnifiedPlugBase {
   }
 }
 module.exports = DoorControllerDevice;
+return module.exports;
+});

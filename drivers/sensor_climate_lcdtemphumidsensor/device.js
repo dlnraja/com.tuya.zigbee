@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
@@ -1700,4 +1702,5 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 }
 
 module.exports = ClimateSensorDevice;
-
+return module.exports;
+});

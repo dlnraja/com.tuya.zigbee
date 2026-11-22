@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
@@ -548,3 +550,5 @@ module.exports.isMgDim02z = isMgDim02z;
 module.exports.isKnob = isKnob;
 module.exports.KNOB_DP_MAP = KNOB_DP_MAP;
 module.exports.MG_DIM02Z_DP_MAP = MG_DIM02Z_DP_MAP;
+return module.exports;
+});
