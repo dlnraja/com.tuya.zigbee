@@ -37,7 +37,7 @@ describe('P3262 driver-count ceiling', () => {
   it('Bastien lastAccepted is 29 citing build #263; 30 drivers fail', () => {
     const e = cfg.apps['com.dlnraja.tuya.zigbee.bastien'];
     assert.strictEqual(e.lastAccepted, 29);
-    assert.ok(!e.trialAllow);
+    assert.strictEqual(e.trialAllow, undefined, 'trialAllow dropped after build #263');
     assert.strictEqual(g.effectiveMax(e), 29);
     assert.strictEqual(g.effectiveMax(e, 28), 29);
     assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 28), cfg, 'bastien-home').level, 'ok');
