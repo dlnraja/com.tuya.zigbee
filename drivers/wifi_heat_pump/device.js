@@ -45,6 +45,27 @@ class WiFiHeatPumpDevice extends TuyaLocalDevice {
 
   async onInit() {
     await super.onInit();
+    if (this.hasCapability('target_temperature')) {
+      this.registerCapabilityListener('target_temperature', async (value) => {
+        const settings = (typeof this.getSettings === 'function' ? this.getSettings() : null) || {};
+        const dp = Number(settings.packed_setpoint_dp);
+        const field = Number(settings.packed_setpoint_field);
+        if (Number.isInteger(dp) && dp > 0 && Number.isInteger(field) && field > 0) {
+          const PackedStructDP = require('../../lib/tuya-local/PackedStructDP');
+          const wr = PackedStructDP.buildWrite(this._packedStructStore, dp, field, Math.round(Number(value)));
+          if (!wr.ok) {
+            throw new Error('Packed setpoint write needs a reported block first');
+          }
+          await this._setDP(dp, wr.payload, { capability: 'target_temperature', userAction: true });
+          return;
+        }
+        const mapped = (this.capabilityMap || []).find((c) => c && c.capability === 'target_temperature');
+        if (mapped) {
+          const dpValue = mapped.toDevice ? mapped.toDevice(value) : value;
+          await this._setDP(mapped.dp, dpValue, { capability: 'target_temperature', userAction: true });
+        }
+      });
+    }
     this.log('[WIFI-HEAT-PUMP] Ready');
   }
 

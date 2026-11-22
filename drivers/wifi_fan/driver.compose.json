@@ -196,6 +196,47 @@
       "$extends": [
         "localtuya_advanced"
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Fan quirks (opt-in)"
+      },
+      "children": [
+        {
+          "id": "keep_light_off_when_fan_off",
+          "type": "checkbox",
+          "label": {
+            "en": "Keep the light off when the fan turns off"
+          },
+          "hint": {
+            "en": "Mantra courtesy-light quirk (154077 #539-#540). Off by default."
+          },
+          "value": false
+        },
+        {
+          "id": "remember_direction_off",
+          "type": "checkbox",
+          "label": {
+            "en": "Remember direction while the fan is off"
+          },
+          "hint": {
+            "en": "Send the remembered direction together with power on. Off by default."
+          },
+          "value": false
+        },
+        {
+          "id": "speed_as_text",
+          "type": "checkbox",
+          "label": {
+            "en": "Send speed as text"
+          },
+          "hint": {
+            "en": "Some fans expect speed DP values as \"1\"-\"32\" strings. Off by default."
+          },
+          "value": false
+        }
+      ]
     }
   ],
   "images": {
