@@ -17,6 +17,10 @@
  *  3. capabilitiesOptions `getable` / `setable` / `preventInsights` equal to the capability's own default (system
  *     capability from homey-lib, or the app's custom capability): Homey applies that default when the option is
  *     absent, so the device gets the same options. Values that differ from the default are kept.
+ *  4. Empty or schema-default fields Homey treats as absent: empty driver `flow` / `settings` / `energy` / `ui`,
+ *     empty zigbee endpoint `bindings`, empty flow-card `args`, `tokens[].type` when it is the schema default
+ *     "string". Driver ids, flow card ids, capabilities, languages, platforms
+ *     and connectivity stay untouched.
  * Nothing here touches a driver id, flow card id, capability, setting id or zigbee couple.
  */
 
@@ -94,8 +98,63 @@ function stripDefaultCapOptions(d, appCaps, sys, stats) {
   if (Object.keys(opts).length === 0) { stats.capOptBytes += bytesOf('capabilitiesOptions', opts) + 1; delete d.capabilitiesOptions; }
 }
 
+
+function dropKey(obj, k, stats) {
+  stats.emptyDropped += 1;
+  stats.emptyBytes += bytesOf(k, obj[k]);
+  delete obj[k];
+}
+
+function isEmptyFlow(flow) {
+  if (!flow || typeof flow !== 'object' || Array.isArray(flow)) { return false; }
+  const keys = Object.keys(flow);
+  if (keys.some((k) => k !== 'triggers' && k !== 'conditions' && k !== 'actions')) { return false; }
+  return keys.every((k) => Array.isArray(flow[k]) && flow[k].length === 0);
+}
+
+function stripFlowCards(flow, stats) {
+  if (!flow || typeof flow !== 'object') { return; }
+  for (const kind of ['triggers', 'conditions', 'actions']) {
+    if (Array.isArray(flow[kind]) && flow[kind].length === 0) { dropKey(flow, kind, stats); continue; }
+    for (const c of flow[kind] || []) {
+      if (!c || typeof c !== 'object') { continue; }
+      if (Array.isArray(c.args) && c.args.length === 0) { dropKey(c, 'args', stats); }
+      for (const t of c.tokens || []) {
+        if (t && typeof t === 'object' && t.type === 'string') { dropKey(t, 'type', stats); }
+      }
+    }
+  }
+}
+
+function stripEmptyDefaults(manifest, stats) {
+  for (const d of Array.isArray(manifest.drivers) ? manifest.drivers : []) {
+    if (!d || typeof d !== 'object') { continue; }
+    if (isEmptyFlow(d.flow)) { dropKey(d, 'flow', stats); }
+    else if (d.flow) {
+      stripFlowCards(d.flow, stats);
+      if (d.flow && typeof d.flow === 'object' && !Array.isArray(d.flow) && Object.keys(d.flow).length === 0) {
+        dropKey(d, 'flow', stats);
+      }
+    }
+    if (Array.isArray(d.settings) && d.settings.length === 0) { dropKey(d, 'settings', stats); }
+    if (d.energy && typeof d.energy === 'object' && !Array.isArray(d.energy) && Object.keys(d.energy).length === 0) {
+      dropKey(d, 'energy', stats);
+    }
+    if (d.ui && typeof d.ui === 'object' && !Array.isArray(d.ui) && Object.keys(d.ui).length === 0) {
+      dropKey(d, 'ui', stats);
+    }
+    const eps = d.zigbee && d.zigbee.endpoints;
+    if (eps && typeof eps === 'object') {
+      for (const ep of Object.values(eps)) {
+        if (ep && Array.isArray(ep.bindings) && ep.bindings.length === 0) { dropKey(ep, 'bindings', stats); }
+      }
+    }
+  }
+  if (manifest.flow) { stripFlowCards(manifest.flow, stats); }
+}
+
 function stripInertManifest(manifest, opts = {}) {
-  const stats = { inertDropped: 0, inertBytes: 0, localeDropped: 0, localeBytes: 0, capOptDropped: 0, capOptBytes: 0, bytes: 0 };
+  const stats = { inertDropped: 0, inertBytes: 0, localeDropped: 0, localeBytes: 0, capOptDropped: 0, capOptBytes: 0, emptyDropped: 0, emptyBytes: 0, bytes: 0 };
   const sys = opts.systemCaps === undefined ? systemCaps() : opts.systemCaps;
   if (!manifest || typeof manifest !== 'object') { return stats; }
   for (const d of Array.isArray(manifest.drivers) ? manifest.drivers : []) {
@@ -111,7 +170,8 @@ function stripInertManifest(manifest, opts = {}) {
   }
   if (manifest.flow) { stripExtraLocales(manifest.flow, stats); }
   if (manifest.capabilities) { stripExtraLocales(manifest.capabilities, stats); }
-  stats.bytes = stats.inertBytes + stats.localeBytes + stats.capOptBytes;
+  stripEmptyDefaults(manifest, stats);
+  stats.bytes = stats.inertBytes + stats.localeBytes + stats.capOptBytes + stats.emptyBytes;
   return stats;
 }
 
@@ -125,8 +185,8 @@ function stripFile(file) {
 if (require.main === module) {
   for (const file of process.argv.slice(2)) {
     const r = stripFile(path.resolve(file));
-    console.log(`[P3342 strip-inert] ${file}: -${(r.bytes / 1024).toFixed(1)} KB (inert keys ${r.inertDropped}, locales ${r.localeDropped}, default cap options ${r.capOptDropped})`);
+    console.log(`[P3342 strip-inert] ${file}: -${(r.bytes / 1024).toFixed(1)} KB (inert keys ${r.inertDropped}, locales ${r.localeDropped}, default cap options ${r.capOptDropped}, empty/defaults ${r.emptyDropped})`);
   }
 }
 
-module.exports = { stripInertManifest, stripDefaultCapOptions, FLAG_DEFAULTS, STRIPPABLE_FLAGS, stripFile, INERT_DRIVER_KEYS, CORE_LOCALES, EXTRA_LOCALES, isLocaleObj };
+module.exports = { stripInertManifest, stripDefaultCapOptions, stripEmptyDefaults, FLAG_DEFAULTS, STRIPPABLE_FLAGS, stripFile, INERT_DRIVER_KEYS, CORE_LOCALES, EXTRA_LOCALES, isLocaleObj };

@@ -685,7 +685,7 @@ try {
     // P3342: lossless: drop driver keys Homey ignores (maintenanceActions, capabilityOptions) + locales beyond en/fr/nl/de
     try {
       const si = require('./maintenance/strip-inert-manifest.cjs').stripFile(destAppJson);
-      console.log(`[P3342] inert-key/locale strip -${(si.bytes / 1024).toFixed(1)} KB (inert keys ${si.inertDropped}, locales ${si.localeDropped}, default cap options ${si.capOptDropped})`);
+      console.log(`[P3342] inert-key/locale strip -${(si.bytes / 1024).toFixed(1)} KB (inert keys ${si.inertDropped}, locales ${si.localeDropped}, default cap options ${si.capOptDropped}, empty/defaults ${si.emptyDropped})`);
     } catch (siErr) {
       console.warn('[P3342] inert-key/locale strip skipped:', siErr.message);
     }
@@ -1010,7 +1010,7 @@ try {
   }
   try {
     const si = require('./maintenance/strip-inert-manifest.cjs').stripFile(destAppJson);
-    console.log(`[P3342] post-split inert-key/locale strip -${(si.bytes / 1024).toFixed(1)} KB (inert keys ${si.inertDropped}, locales ${si.localeDropped}, default cap options ${si.capOptDropped})`);
+    console.log(`[P3342] post-split inert-key/locale strip -${(si.bytes / 1024).toFixed(1)} KB (inert keys ${si.inertDropped}, locales ${si.localeDropped}, default cap options ${si.capOptDropped}, empty/defaults ${si.emptyDropped})`);
   } catch (siErr) {
     console.warn('[P3342] post-split inert-key/locale strip skipped:', siErr.message);
   }

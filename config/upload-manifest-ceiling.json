@@ -1,8 +1,16 @@
 {
-  "_why": "P3342 (16/11/2026 Paris): hard ceiling for the UPLOAD app.json bytes (the file prepare-publish writes, after the P3047 ASCII pass). P3340 ties Athom's processing failures (bare AggregateError) to the work per build, which grows with the manifest: stable at 2.85 MB has never been refused, master 3.39 MB was. P3342 brought master to ~3.17 MB losslessly (CI payload ~14 KB larger). Growth above this ceiling blocks prepare-publish and the Platform Budget check. Lower it as the manifest shrinks; raising it needs the owner's go and a new Athom data point (docs/knowledge/athom-driver-ceiling.md). P3360 (21/11/2026): ceilingBytes 3270000 after a measured 3255746 B ASCII manifest for the 368-driver package; see history. Goal unchanged. Athom 4 MB hard limit unchanged.",
+  "_why": "P3342 (16/11/2026 Paris): hard ceiling for the UPLOAD app.json bytes (the file prepare-publish writes, after the P3047 ASCII pass). P3340 ties Athom's processing failures (bare AggregateError) to the work per build, which grows with the manifest: stable at 2.85 MB has never been refused, master 3.39 MB was. P3342 brought master to ~3.17 MB losslessly (CI payload ~14 KB larger). Growth above this ceiling blocks prepare-publish and the Platform Budget check. Lower it as the manifest shrinks; raising it needs the owner's go and a new Athom data point (docs/knowledge/athom-driver-ceiling.md). P3360 (21/11/2026): ceilingBytes 3270000 after a measured 3255746 B ASCII manifest for the 368-driver package; see history. Goal unchanged. Athom 4 MB hard limit unchanged. P3342c (22/11/2026): lossless empty/schema-default strip brought the 370-driver upload app.json from 3272186 B to 3266532 B; ceiling stays 3270000.",
   "ceilingBytes": 3270000,
   "goalBytes": 2850000,
   "history": [
+    {
+      "patch": "P3342c",
+      "date": "2026-11-22",
+      "ceilingBytes": 3270000,
+      "previousCeilingBytes": 3270000,
+      "measuredAsciiBytes": 3266532,
+      "baseline": "t1030u / run 45062875101 FATAL(P3342): upload app.json at a31579bf01 was 3272186 B, 2186 B over the 3270000 ceiling (370 drivers, v9.0.1637). Lossless post-split strip of empty Homey-default fields (empty driver flow/settings/energy/ui, empty zigbee bindings, empty flow-card args) and schema-default tokens[].type=\"string\". Measured 3266532 B (under by 3468 B). Ceiling and goal unchanged. Athom 4 MB hard limit unchanged. No driver id, flow card id, capability or language was removed."
+    },
     {
       "patch": "P3360",
       "date": "2026-11-21",

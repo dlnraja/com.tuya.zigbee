@@ -206,6 +206,8 @@ Platform Budget workflow. Lower it as the manifest shrinks; raising it needs the
 
 Update 2026-11-21 (P3360): `ceilingBytes` is 3 270 000. Graduating 21 held drivers produced a measured ASCII upload app.json of 3 255 746 B after every lossless shrink, 5 746 B over the old 3 250 000 ratchet. Athom #488 ties AggregateError to packaged file count (the new archive is 3 274 files / 30.64 MB, under the 3 830 / 32.7 MB file-count ceiling). Athom's 4 MB app.json limit is unchanged. Goal stays 2 850 000.
 
+Update 2026-11-22 (P3342c, t1030u): run 45062875101 was FATAL(P3342) at 3 272 186 B (2 186 B over 3 270 000) on a 370-driver v9.0.1637 package. A lossless strip of empty Homey-default fields and schema-default flow token types (`tokens[].type` = "string") brought the upload app.json to 3 266 532 B (3 468 B under the existing ceiling). The ceiling was not raised. No driver id, flow card id, capability or language was removed.
+
 Update 2026-11-22 (P3386): the P3370 landing stack (P2626 keeps 1929 `button.*` getable/setable/maintenanceAction
 flags in the payload, ~+34 KB; P3362 standard units on 351 drivers, ~+9 KB; flow title disambiguation, ~+10 KB;
 2 more payload drivers, ~+4 KB) grew the ASCII upload app.json from 3 266 737 B (fa4a882d62, last green Validate)

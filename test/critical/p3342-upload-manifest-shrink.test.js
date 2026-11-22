@@ -1,5 +1,5 @@
 'use strict';
-// P3342: lossless upload app.json shrink (Homey-inert driver keys, locales beyond en/fr/nl/de) + growth ceiling.
+// P3342: lossless upload app.json shrink (Homey-inert driver keys, locales beyond en/fr/nl/de, empty/schema defaults) + growth ceiling.
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('fs');
@@ -121,6 +121,39 @@ test('ceiling policy: at most 3.27 MB (P3360), goal 2.85 MB; over the ceiling fa
     assert.strictEqual(ceiling.checkUploadManifest(tmp, { ceilingBytes: 100, goalBytes: 50 }).ok, true);
     assert.strictEqual(ceiling.checkUploadManifest(tmp, { ceilingBytes: 99, goalBytes: 50 }).ok, false);
   } finally { fs.rmSync(tmp, { force: true }); }
+});
+
+test('empty Homey-default fields and schema-default token types are dropped; ids and languages kept', () => {
+  const m = {
+    drivers: [{
+      id: 'd1', capabilities: ['onoff', 'button.1'],
+      settings: [],
+      energy: {},
+      ui: {},
+      flow: { triggers: [], conditions: [], actions: [] },
+      capabilitiesOptions: { 'button.1': { title: { en: 'B1', fr: 'B1f' }, maintenanceAction: true } },
+      zigbee: { manufacturerName: ['_TZ3000_a'], productId: ['TS0001'], endpoints: { 1: { clusters: [6], bindings: [] } } },
+    }],
+    flow: { triggers: [{ id: 't1', title: { en: 'T', fr: 'Tf' }, args: [], tokens: [{ name: 's', title: { en: 'S' }, type: 'string' }, { name: 'n', title: { en: 'N' }, type: 'number' }] }] },
+  };
+  const caps0 = capList(m);
+  const before = JSON.stringify(shape(m, caps0));
+  const r = strip.stripInertManifest(m);
+  assert.ok(JSON.stringify(shape(m, caps0)) === before, 'shape changed');
+  assert.ok(!('flow' in m.drivers[0]));
+  assert.ok(!('settings' in m.drivers[0]));
+  assert.ok(!('energy' in m.drivers[0]));
+  assert.ok(!('ui' in m.drivers[0]));
+  assert.ok(!('bindings' in m.drivers[0].zigbee.endpoints['1']));
+  assert.deepStrictEqual(m.drivers[0].zigbee.endpoints['1'].clusters, [6]);
+  assert.strictEqual(m.drivers[0].capabilitiesOptions['button.1'].maintenanceAction, true);
+  assert.deepStrictEqual(m.drivers[0].capabilitiesOptions['button.1'].title, { en: 'B1', fr: 'B1f' });
+  assert.ok(!('args' in m.flow.triggers[0]));
+  assert.deepStrictEqual(m.flow.triggers[0].tokens[0], { name: 's', title: { en: 'S' } });
+  assert.deepStrictEqual(m.flow.triggers[0].tokens[1], { name: 'n', title: { en: 'N' }, type: 'number' });
+  assert.ok(r.emptyDropped >= 7, `emptyDropped ${r.emptyDropped}`);
+  assert.strictEqual(m.flow.triggers[0].id, 't1');
+  assert.strictEqual(m.drivers[0].id, 'd1');
 });
 
 test('default capability flags: dropped only when equal to the capability default; differing values and other options kept', () => {
