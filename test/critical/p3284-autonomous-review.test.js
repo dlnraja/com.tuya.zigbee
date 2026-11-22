@@ -68,6 +68,20 @@ describe('P3284 autonomous review', () => {
     assert.ok(moved.moved.some((p) => p.includes('climate_sensor -> device_radiator_valve')));
   });
 
+  it('treats test/_support runner shims as forwarders, not skipped tests', () => {
+    const ar = require('../../scripts/ci/autonomous-review.cjs');
+    // Built from parts so this file itself does not count as a skipped/only test.
+    const S = 'sk' + 'ip';
+    const O = 'on' + 'ly';
+    const before = `out.${S} = (n, f) => api.${S}(n, f);\nassert.strictEqual(1, 1);\n`;
+    const after = before + `it.${S} = (...a) => g.it.${S}(...a);\nit.${O} = (...a) => g.it.${O}(...a);\n`;
+    assert.strictEqual(ar.isRunnerSupport('test/_support/dual-runner.js'), true);
+    assert.strictEqual(ar.isRunnerSupport('test/critical/p3020-dual-runner-ctx.test.js'), false);
+    assert.strictEqual(ar.assertionsWeakened(before, after, { forwarder: true }).ok, true);
+    assert.strictEqual(ar.assertionsWeakened(before, after).ok, false);
+    assert.strictEqual(ar.assertionsWeakened(before, `out.${S} = 1;\n`, { forwarder: true }).ok, false);
+  });
+
   it('does not fail a duplicate the diff left untouched', () => {
     const a = drv('switch_1gang', ['_TZ3000_skueekg3'], ['TS000F'], 'socket');
     const b = drv('switch_module_whd02', ['_TZ3000_skueekg3'], ['TS000F'], 'socket');
