@@ -23,7 +23,7 @@ describe('P3366/t1025u Bastien deferred uploads retry at any hour', function() {
     const now = Date.parse('2026-11-21T16:00:00Z'); // 17h Paris
     const b = D.deferredDecision({ key: 'bastien', artifacts: arts, runs, now });
     assert.strictEqual(b.dispatch, true);
-    assert.ok(!/night window/.test(b.reason));
+    assert.doesNotMatch(b.reason, /night window/);
     assert.strictEqual(D.deferredDecision({ key: 'master', artifacts: arts, runs, now }).dispatch, true);
   });
 
@@ -36,6 +36,6 @@ describe('P3366/t1025u Bastien deferred uploads retry at any hour', function() {
     const wf = fs.readFileSync(path.join(__dirname, '..', '..', '.github/workflows/publish-self-heal.yml'), 'utf8');
     assert.match(wf, /cron: '0 4,8,12,16,20,22 \* \* \*'/);
     assert.match(wf, /sparse-checkout: \|\n\s+\.github\/scripts\/athom-deferred-dispatch\.js/);
-    assert.ok(!/isNightWindow/.test(fs.readFileSync(path.join(__dirname, '..', '..', '.github/scripts/athom-deferred-dispatch.js'), 'utf8')));
+    assert.doesNotMatch(fs.readFileSync(path.join(__dirname, '..', '..', '.github/scripts/athom-deferred-dispatch.js'), 'utf8'), /isNightWindow/);
   });
 });
