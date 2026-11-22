@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.253": {
+    "en": "New: thermostats & climate sensors. Fixed: device settings, climate sensors and fans and air purifiers & Flow cards (TS0043). Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : thermostats & capteurs d'ambiance. Corrigé : réglages des appareils, capteurs d'ambiance et ventilateurs et purificateurs & cartes Flow (TS0043). Et 10 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "1.0.252": {
     "en": "Changed: sync app.json, source-key lookup, mocha test isolation; lint ratchet regression in UnifiedCoverBase.",
     "fr": "Modifié : sync app.json, source-key lookup, mocha test isolation; lint ratchet regression in UnifiedCoverBase."
