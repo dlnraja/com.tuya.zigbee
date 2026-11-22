@@ -28,7 +28,7 @@
       "id": "dimmer_wall_plug_energy_monitor_measure_powe_3c902",
       "title": {
         "en": "Power changed (wall plug energy monitor)",
-        "fr": "Puissance changée (wall plug energy monitor)"
+        "fr": "Puissance changée (mural prise energy monitor)"
       },
       "tokens": [
         {
@@ -51,7 +51,7 @@
       "id": "dimmer_wall_plug_energy_monitor_measure_volt_65f8b",
       "title": {
         "en": "Voltage changed (dimmer wall plug)",
-        "fr": "Tension changée (dimmer wall plug)"
+        "fr": "Tension changée (variateur mural prise)"
       },
       "tokens": [
         {
@@ -74,7 +74,7 @@
       "id": "dimmer_wall_plug_energy_monitor_measure_curr_31d28",
       "title": {
         "en": "Current changed (dimmer wall plug)",
-        "fr": "Courant changé (dimmer wall plug)"
+        "fr": "Courant changé (variateur mural prise)"
       },
       "tokens": [
         {

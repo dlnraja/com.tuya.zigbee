@@ -51,14 +51,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_tu_f68af",
       "title": {
         "en": "Turned on (light tunable)",
-        "fr": "Allumé (light tunable)",
+        "fr": "Allumé (lumière blanc variable)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (light tunable)",
-        "fr": "Allumé (light tunable)",
+        "fr": "Allumé (lumière blanc variable)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -67,14 +67,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_tu_aac6d",
       "title": {
         "en": "Turned off (light tunable)",
-        "fr": "Éteint (light tunable)",
+        "fr": "Éteint (lumière blanc variable)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (light tunable)",
-        "fr": "Éteint (light tunable)",
+        "fr": "Éteint (lumière blanc variable)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -117,12 +117,12 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_f31fc",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (light tunable)"
+        "fr": "Est !{{allumé|éteint}} (lumière blanc variable)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (light tunable)"
+        "fr": "Est !{{allumé|éteint}} (lumière blanc variable)"
       }
     },
     {
@@ -147,12 +147,12 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_a4e5f",
       "title": {
         "en": "Turn on (light tunable)",
-        "fr": "Allumer (light tunable)"
+        "fr": "Allumer (lumière blanc variable)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (light tunable)",
-        "fr": "Allumer (light tunable)"
+        "fr": "Allumer (lumière blanc variable)"
       }
     },
     {
@@ -171,12 +171,12 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_4dbe8",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (light tunable)"
+        "fr": "Basculer (lumière blanc variable)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (light tunable)"
+        "fr": "Basculer (lumière blanc variable)"
       }
     },
     {
@@ -225,14 +225,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_turn_off",
       "title": {
         "en": "Turn off (light tunable)",
-        "fr": "Éteindre (light tunable)",
+        "fr": "Éteindre (lumière blanc variable)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (light tunable)",
-        "fr": "Éteindre (light tunable)",
+        "fr": "Éteindre (lumière blanc variable)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }

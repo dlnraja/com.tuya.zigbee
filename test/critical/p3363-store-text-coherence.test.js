@@ -149,4 +149,14 @@ describe('P3363 store-text coherence', () => {
     assert.equal(card.title.fr, 'Calibrer le moteur du rideau');
     assert.equal(card.titleFormatted, undefined);
   });
+
+  it('turns English uniqueify and flow-title suffixes into French', () => {
+    assert.equal(ST.frenchHint('air purifier din'), 'purificateur d\'air din');
+    assert.equal(ST.frenchHint('wall switch 1 gang tuya'), 'interrupteur mural 1 voie Tuya');
+    assert.equal(ST.frenchHint('dimmer 1gang turned on'), 'variateur 1 voie allum\u00E9');
+    assert.equal(ST.stripEnglishHintSuffix('Interrupteur mural 1 voie (wall switch 1 gang tuya)'), 'Interrupteur mural 1 voie');
+    assert.match(ST.repairFrSuffix('Allum\u00E9 (dimmer 1gang turned on)'), /variateur 1 voie allum\u00E9/);
+    assert.match(ST.frenchHint('interrupteur physique gang1 on'), /voie 1 allum\u00E9/);
+    assert.match(ST.frenchHint('generic Tuya humidity chang\u00E9e'), /g\u00E9n\u00E9rique Tuya humidit\u00E9 chang\u00E9e/);
+  });
 });

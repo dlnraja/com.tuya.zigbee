@@ -1,8 +1,12 @@
 {
   "changelog": [],
+  "1.0.249": {
+    "en": "Fixed: device settings (ZG-301Z), buttons and remotes and battery reporting. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : réglages des appareils (ZG-301Z), boutons et télécommandes et niveau de batterie. En coulisses : tests et contrôles de publication."
+  },
   "1.0.248": {
     "en": "Fixed: lights and dimmers & Flow cards. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : éclairages et variateurs & cartes Flow. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : éclairages et variateurs & cartes Flow. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.247": {
     "en": "New: energy meters. Fixed: general reliability (TS0601, TS0726, TS0505B) and pairing and device recognition. Faster: lights and dimmers. Behind the scenes: tests and publishing checks.",
@@ -22,19 +26,19 @@
   },
   "1.0.238": {
     "en": "Fixed: general reliability (TS0201), memory and timers, energy meters (TS011F) and pairing and device recognition. Plus 9 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : fiabilité générale (TS0201), mémoire et minuteries, compteurs d'énergie (TS011F) et appairage et reconnaissance des appareils. Et 9 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : fiabilité générale (TS0201), mémoire et minuteries, compteurs d'énergie (TS011F) et appairage et reconnaissance des appareils. Et 9 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.230": {
     "en": "Git version caught up with Test 1.0.230. That build keeps the fingerprint shard a lookup just loaded. The git version file had stayed at 1.0.227 because the publish write-back did not land.",
-    "fr": "Le numero git rattrape la version Test 1.0.230. Cette build conserve le shard d'empreinte qu'une recherche vient de charger. Le fichier git etait reste en 1.0.227 faute de reecriture apres publication."
+    "fr": "Le numero git rattrape la version Test 1.0.230. Cette build conserve le shard d'empreinte qu'une recherche vient de charger. Le fichier git etait reste en 1.0.227 faute de reecriture après publication."
   },
   "1.0.229": {
     "en": "Changelog write-back for the build already published as 1.0.229.",
-    "fr": "Note de version pour la build deja publiee en 1.0.229."
+    "fr": "Note de version pour la build déjà publiee en 1.0.229."
   },
   "1.0.228": {
     "en": "Changelog write-back for the build already published as 1.0.228.",
-    "fr": "Note de version pour la build deja publiee en 1.0.228."
+    "fr": "Note de version pour la build déjà publiee en 1.0.228."
   },
   "1.0.227": {
     "en": "Fixed: humidity shown 10 times too low on climate sensors whose Zigbee humidity is reported in tenths of a percent (9 drivers, ).",
@@ -54,11 +58,11 @@
   },
   "1.0.223": {
     "en": "v1.0.223: Reliability: 1 small fix in the app core.",
-    "fr": "v1.0.223 : Fiabilité : 1 petite correction dans le cœur de l'app."
+    "fr": "v1.0.223 : Fiabilité : 1 petite correction dans le coeur de l'app."
   },
   "1.0.222": {
     "en": "Reliability: 1 small fix in the app core.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app."
   },
   "1.0.221": {
     "en": "Fixed: smart plugs & energy meters (TS011F).",
@@ -66,7 +70,7 @@
   },
   "1.0.220": {
     "en": "Reliability: 1 small fix in the app core.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app."
   },
   "1.0.219": {
     "en": "v1.0.219: maintenance build, same devices and behaviour as v1.0.218; only a CI guard changed (the market-couples job now refuses to commit an app.json that was not built from compose).",
@@ -78,7 +82,7 @@
   },
   "1.0.217": {
     "en": "Fixed: memory and timers, Wi-Fi devices & the Repair screen, climate sensors (TS0201) and wall switches. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : mémoire et minuteries, appareils Wi-Fi & l'écran Réparer, capteurs d'ambiance (TS0201) et interrupteurs. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : mémoire et minuteries, appareils Wi-Fi & l'écran Réparer, capteurs d'ambiance (TS0201) et interrupteurs. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.216": {
     "en": "Device database and reliability updates.",
@@ -86,7 +90,7 @@
   },
   "1.0.215": {
     "en": "Fixed: thermostats & energy meters and Flow cards & memory and timers. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : thermostats & compteurs d'énergie et cartes Flow & mémoire et minuteries. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : thermostats & compteurs d'énergie et cartes Flow & mémoire et minuteries. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.214": {
     "en": "Device database and reliability updates.",
@@ -102,7 +106,7 @@
   },
   "1.0.211": {
     "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.210": {
     "en": "Device database and reliability updates.",
@@ -110,7 +114,7 @@
   },
   "1.0.209": {
     "en": "New: Flow cards & memory and timers, battery reporting, buttons and remotes and climate sensors. Plus 21 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : cartes Flow & mémoire et minuteries, niveau de batterie, boutons et télécommandes et capteurs d'ambiance. Et 21 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : cartes Flow & mémoire et minuteries, niveau de batterie, boutons et télécommandes et capteurs d'ambiance. Et 21 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.208": {
     "en": "Device database and reliability updates.",
@@ -150,7 +154,7 @@
   },
   "1.0.198": {
     "en": "New: Wi-Fi devices and device settings. Fixed: general reliability (TS0601) and smart plugs. Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : appareils Wi-Fi et réglages des appareils. Corrigé : fiabilité générale (TS0601) et prises connectées. Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : appareils Wi-Fi et réglages des appareils. Corrigé : fiabilité générale (TS0601) et prises connectées. Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.187": {
     "en": "Device database and reliability updates.",
@@ -158,7 +162,7 @@
   },
   "1.0.186": {
     "en": "New: buttons and remotes & pairing and device recognition (TS004F). Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : boutons et télécommandes & appairage et reconnaissance des appareils (TS004F). Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : boutons et télécommandes & appairage et reconnaissance des appareils (TS004F). Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.185": {
     "en": "Device database and reliability updates.",
@@ -166,7 +170,7 @@
   },
   "1.0.184": {
     "en": "New: buttons and remotes. Fixed: battery reporting & pairing and device recognition (TRV06), safety sensors & memory and timers and general reliability (TRV06). Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : boutons et télécommandes. Corrigé : niveau de batterie & appairage et reconnaissance des appareils (TRV06), détecteurs de sécurité & mémoire et minuteries et fiabilité générale (TRV06). Et 3 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : boutons et télécommandes. Corrigé : niveau de batterie & appairage et reconnaissance des appareils (TRV06), détecteurs de sécurité & mémoire et minuteries et fiabilité générale (TRV06). Et 3 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.182": {
     "en": "v1.0.182: Device database and reliability updates.",
@@ -210,7 +214,7 @@
   },
   "1.0.125": {
     "en": "Soil sensors matched by manufacturer+model couple.",
-    "fr": "Capteurs sol appaires par couple fabricant+modele."
+    "fr": "Capteurs sol appariés par couple fabricant+modele."
   },
   "1.0.124": {
     "en": "Improved soil sensor pairing and Configure readiness.",
@@ -218,7 +222,7 @@
   },
   "1.0.123": {
     "en": "Improved radiator valve and mmWave radar pairing for recent forum devices.",
-    "fr": "Improved radiator valve and mmWave radar pairing for recent forum devices."
+    "fr": "Appairage amélioré des vannes de radiateur et des radars mmWave pour les appareils récents du forum."
   },
   "1.0.122": {
     "en": "Johan comment locks: Fantem/doorbell/PIR/contact.",
@@ -246,7 +250,7 @@
   },
   "1.0.116": {
     "en": ": Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life.",
-    "fr": ": Eliminate button battery drain: disable unsolicited periodic scene recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life."
+    "fr": ": Eliminate button battery drain: disable unsolicited periodic scène recovery writes on sleeping devices, guard awake readAttributes & Tuya DP storms, suppress polling & configureReporting on sleepy remotes, preserving CR2032 life."
   },
   "1.0.115": {
     "en": "Battery consumption optimization & EMA anti-sag stability filter (TS0042/TS0043) + radar presence clear on leave.",
@@ -262,7 +266,7 @@
   },
   "1.0.112": {
     "en": "Tagged Flows (label/token icon) now fire from all paths incl. complementary/raw RX. UPDATE Bastien Test to 1.0.112 then Restart once.",
-    "fr": "Flows etiquetes (icone tag/token) se declenchent aussi en RX complementaire/raw. MAJ Bastien Test 1.0.112 puis Redemarrer une fois."
+    "fr": "Flows etiquetes (icône tag/token) se declenchent aussi en RX complementaire/raw. MAJ Bastien Test 1.0.112 puis Redemarrer une fois."
   },
   "1.0.111": {
     "en": "All Homey tagged Flows: emit *_changed tokens when values update + wire dropdown args. Update Bastien Test 1.0.111 then Restart once.",
@@ -270,7 +274,7 @@
   },
   "1.0.110": {
     "en": "All remote Flows improved: tagged button cards + battery-changed fleet-wide (1-8 btn / scene / wall). Update Bastien Test 1.0.110 then Restart once.",
-    "fr": "Tous les Flows télécommandes ameliores: cartes etiquetees + batterie changee (1-8 btn / scene / mur). Maj Bastien Test 1.0.110 puis Redemarrer une fois."
+    "fr": "Tous les Flows télécommandes améliorés: cartes etiquetees + batterie changee (1-8 btn / scène / mur). Maj Bastien Test 1.0.110 puis Redemarrer une fois."
   },
   "1.0.109": {
     "en": "2-button remote Flows: tagged Bouton appuye/double/long/multi + battery changed now fire on snappy TS0042. Update Bastien Test 1.0.109 then Restart once.",
@@ -318,7 +322,7 @@
   },
   "1.0.98": {
     "en": "Publish fix: radar distance icon asset + house fleet land. Update Bastien Test + restart.",
-    "fr": "Fix publish: icone distance radar + flotte maison. Maj Bastien Test + restart."
+    "fr": "Fix publish: icône distance radar + flotte maison. Maj Bastien Test + restart."
   },
   "1.0.97": {
     "en": "Publish slim house fleet (Athom land) + ceiling radar sitting/motion fix. Update Bastien Test + restart.",
@@ -330,23 +334,23 @@
   },
   "1.0.95": {
     "en": "Retry after Athom hang on 1.0.94: skip battery configureReporting on remotes (settings/opt); less TX storm. Update Test + restart.",
-    "fr": "Retry apres hang Athom 1.0.94: plus de configureReporting batterie sur télécommandes; moins de TX Error. Maj Test + restart."
+    "fr": "Retry après hang Athom 1.0.94: plus de configureReporting batterie sur télécommandes; moins de TX Error. Maj Test + restart."
   },
   "1.0.94": {
     "en": "Ceiling radar + remotes soak: motion re-arm after stillness; distance ~0.9. Update Bastien Test + restart.",
-    "fr": "Radar + télécommandes: motion rearme apres immobilite; distance ~0.9. Maj Bastien Test + restart."
+    "fr": "Radar + télécommandes: motion rearme après immobilite; distance ~0.9. Maj Bastien Test + restart."
   },
   "1.0.93": {
     "en": "Remotes: faster rapid off/on (no ~7s dead window); less lag when TS0042/43 fire. Update Bastien Test + restart once.",
     "fr": "Telecommandes: off/on rapide (plus de ~7s morts); moins de lag quand TS0042/43 tirent. Maj Test Bastien + restart."
   },
   "1.0.92": {
-    "en": "Bastien remotes: purge leftover LIVE-DATA overlay (fixes all dead after OOM); leaner button press. Update Bastien Test ≥1.0.92 + restart once.",
-    "fr": "Telecommandes Bastien: purge overlay LIVE-DATA (plus rien mort apres OOM); press plus leger. Maj Test Bastien ≥1.0.92 + restart une fois."
+    "en": "Bastien remotes: purge leftover LIVE-DATA overlay (fixes all dead after OOM); leaner button press. Update Bastien Test >=1.0.92 + restart once.",
+    "fr": "Telecommandes Bastien: purge overlay LIVE-DATA (plus rien mort après OOM); press plus leger. Maj Test Bastien >=1.0.92 + restart une fois."
   },
   "1.0.91": {
     "en": "Remotes: stop Homey OOM crash that killed all buttons after press. Update Test + restart app once.",
-    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons apres un appui. Maj Test + redemarrer app."
+    "fr": "Telecommandes: stop crash OOM Homey qui tuait tous les boutons après un appui. Maj Test + redemarrer app."
   },
   "1.0.90": {
     "en": "App Settings: fix infinite spinner / blank page (Homey.ready). Update Test.",
@@ -374,7 +378,7 @@
   },
   "1.0.84": {
     "en": "Wall hybrid UI sync gated skipUiPulse (scene remotes keep tiles; black remotes crash-safe).",
-    "fr": "Sync UI hybrid gate skipUiPulse (scene OK; noires crash-safe)."
+    "fr": "Sync UI hybrid gate skipUiPulse (scène OK; noires crash-safe)."
   },
   "1.0.83": {
     "en": "Bastien remotes: TS0041 faster; TS0042/43 snappy + no TS0041 lag; battery % fix; black remotes crash-safe. Update Test.",
@@ -386,11 +390,11 @@
   },
   "1.0.81": {
     "en": "TS0042/TS0043 faster + no longer slow TS0041; black remotes less crashy; TS0043 battery % fix (was stuck ~0-84). Update Bastien Test.",
-    "fr": "TS0042/TS0043 plus rapides + ne ralentissent plus le TS0041; boutons noirs moins de crash; batterie TS0043 corrigee (bloquee ~0-84). Maj Test Bastien."
+    "fr": "TS0042/TS0043 plus rapides + ne ralentissent plus le TS0041; boutons noirs moins de crash; batterie TS0043 corrigée (bloquee ~0-84). Maj Test Bastien."
   },
   "1.0.80": {
-    "en": "Bastien fleet: front-pin HOBEIAN/ZG-301Z, ltt60asa/TS0004, fllyghyj/SNZB-02 + snappy Homey→relay TX. Update Test; Repair lights/4gang if laggy.",
-    "fr": "Flotte Bastien: front-pin HOBEIAN/ZG-301Z, ltt60asa/TS0004, fllyghyj/SNZB-02 + TX Homey→relais rapide. Maj Test; Repar lights/4gang si lent."
+    "en": "Bastien fleet: front-pin HOBEIAN/ZG-301Z, ltt60asa/TS0004, fllyghyj/SNZB-02 + snappy Homey->relay TX. Update Test; Repair lights/4gang if laggy.",
+    "fr": "Flotte Bastien: front-pin HOBEIAN/ZG-301Z, ltt60asa/TS0004, fllyghyj/SNZB-02 + TX Homey->relais rapide. Maj Test; Repar lights/4gang si lent."
   },
   "1.0.79": {
     "en": "Bastien remotes: front-pin TS0041/42/43 fingerprints + IEEE map for Homey « Appareil Zigbee » mis-pair. Update Test; remove Appareil Zigbee nodes 3+7 then re-pair as Bouton 1/3.",
@@ -422,7 +426,7 @@
   },
   "1.0.72": {
     "en": "Improved publish reliability and CI integrity checks.",
-    "fr": "Improved publish reliability and CI integrity checks."
+    "fr": "Fiabilité de publication et contrôles d'intégrité CI améliorés."
   },
   "1.0.71": {
     "en": ": deep mesh couple research (Z2M/ZHA/Blakadder/diags) - all Bastien mfr+pid locked + profiles. Update Test.",
@@ -454,7 +458,7 @@
   },
   "1.0.64": {
     "en": "Improved scene remote press latency and radiator valve pairing.",
-    "fr": "Improved scene remote press latency and radiator valve pairing."
+    "fr": "Improved scène remote press latency and radiator valve pairing."
   },
   "1.0.63": {
     "en": "TS0041 battery: less wake TX (pile). Update + re-pair remotes if tip-lag.",
@@ -462,7 +466,7 @@
   },
   "1.0.62": {
     "en": "TS0041: pair Wireless Button 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair.",
-    "fr": "TS0041: pair Wireless Button 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair."
+    "fr": "TS0041: pair bouton sans fil 1 (not Unknown), Flow Bouton 1 appuye. Update + re-pair."
   },
   "1.0.61": {
     "en": "TS0043 vsxvaj9i + TS0042 sticky: Flow Button pressed (not Zigbee channels), snappier 2-btn. Update + re-pair remotes.",
@@ -474,7 +478,7 @@
   },
   "1.0.59": {
     "en": "Fix random Flows from switch bootstrap + TS0042 sticky buttons. Update Test.",
-    "fr": "Fix random Flows from switch bootstrap + TS0042 sticky buttons. Update Test."
+    "fr": "Fix random Flows de switch bootstrap + TS0042 sticky buttons. Mettez à jour Test."
   },
   "1.0.58": {
     "en": "Dynamic fingerprint shards + Buffer JSON.parse (OOM harden ).",
@@ -490,11 +494,11 @@
   },
   "1.0.55": {
     "en": "Critical: lights/relays boot after MODULE_NOT_FOUND harden. Update Bastien Test and restart.",
-    "fr": "Critique: demarrage lumieres/relais apres correctif MODULE_NOT_FOUND. Maj Bastien Test et redemarrer."
+    "fr": "Critique: demarrage lumières/relais après correctif MODULE_NOT_FOUND. Maj Bastien Test et redemarrer."
   },
   "1.0.54": {
     "en": "Boot fix: app no longer crashes when Zigbee driver module load fails (lights/relays dead). Update Bastien Test and restart app.",
-    "fr": "Correctif demarrage: l app ne plante plus si le module Zigbee manque (lumieres/relais morts). Maj Bastien Test et redemarrer l app."
+    "fr": "Correctif demarrage: l app ne plante plus si le module Zigbee manque (lumières/relais morts). Maj Bastien Test et redemarrer l app."
   },
   "1.0.53": {
     "en": "Publish tip: Bastien-first intelligent energy + HOBEIAN enrich.",
@@ -533,8 +537,8 @@
     "fr": "Bastien checklist: Update+Repair HOBEIAN lights, re-pair Virtuals/Unknown under Zigbee Bastien only, rebuild button Flows."
   },
   "1.0.44": {
-    "en": ": Bastien couple research - HOBEIAN Z2M no-metering energy, learnmodes, TS0004 light class, LCD TH anti-Virtual. Update≥1.0.44 then Repair HOBEIAN + re-pair Virtuals.",
-    "fr": ": Bastien couple research - HOBEIAN Z2M no-metering energy, learnmodes, TS0004 light class, LCD TH anti-Virtual. Update≥1.0.44 then Repair HOBEIAN + re-pair Virtuals."
+    "en": ": Bastien couple research - HOBEIAN Z2M no-metering energy, learnmodes, TS0004 light class, LCD TH anti-Virtual. Update>=1.0.44 then Repair HOBEIAN + re-pair Virtuals.",
+    "fr": ": Bastien couple research - HOBEIAN Z2M no-metering energy, learnmodes, TS0004 light class, LCD TH anti-Virtual. Update>=1.0.44 puis Repair HOBEIAN + re-pair Virtuals."
   },
   "1.0.43": {
     "en": "republish: Bastien Unknown Node recognition + HOBEIAN setClass(light). Retry after Athom 1.0.42 socket hang up.",
@@ -553,24 +557,24 @@
     "fr": "Calme mesh renforce: arrete le flood Zigbee des modules HOBEIAN (~5k msgs). Maj+redemarrer app. Re-appairer Virtual sous Bastien. Retirer les Unknown Nodes."
   },
   "1.0.39": {
-    "en": "Fix battery wall remotes (TS0043): presses reach Flows again; pair as Wireless Button 3 not Homey Zigbee; rebuild Flows with Button pressed → light. Update app then remove+re-add sticky.",
-    "fr": "Correctif télécommandes murales a piles (TS0043): les appuis repartent vers les Flows; appairer en Bouton sans fil 3 pas Homey Zigbee; recreer Flows Bouton appuye → lumiere. Maj app puis retirer+re-ajouter le stick."
+    "en": "Fix battery wall remotes (TS0043): presses reach Flows again; pair as Wireless Button 3 not Homey Zigbee; rebuild Flows with Button pressed -> light. Update app then remove+re-add sticky.",
+    "fr": "Correctif télécommandes murales a piles (TS0043): les appuis repartent vers les Flows; appairer en Bouton sans fil 3 pas Homey Zigbee; recreer Flows Bouton appuye -> lumiere. Maj app puis retirer+re-ajouter le stick."
   },
   "1.0.38": {
     "en": "Zigbee mesh calm: stop aggressive power reporting on HOBEIAN wall modules that flooded the network. Update app then restart; re-pair any Homey Virtual Zigbee tiles under Bastien.",
-    "fr": "Calme du mesh Zigbee: arrete le reporting electrique agressif sur les modules HOBEIAN qui saturaient le reseau. Maj app puis redemarrer; re-appairer les tuiles Homey Zigbee generiques sous Bastien."
+    "fr": "Calme du mesh Zigbee: arrete le reporting electrique agressif sur les modules HOBEIAN qui saturaient le reseau. Maj app puis redemarrer; re-appairer les tuiles Homey Zigbee génériques sous Bastien."
   },
   "1.0.37": {
     "en": "Smarter warning fix: HOBEIAN ZG-301Z heal even when Homey leaves model blank (strips phantom Energy/power). TS0043 pairing text: never Homey Virtual. Update + Repair lights; re-pair 3-btn under Bastien.",
-    "fr": "Correctifs warnings: heal HOBEIAN ZG-301Z même si modele Homey vide (retire Energie/power fantomes). Texte appairage TS0043: jamais Homey generique. Maj + Repair éclairages; re-appairer telecommande 3 sous Bastien."
+    "fr": "Correctifs warnings: heal HOBEIAN ZG-301Z même si modele Homey vide (retire Energie/power fantomes). Texte appairage TS0043: jamais Homey générique. Maj + Repair éclairages; re-appairer telecommande 3 sous Bastien."
   },
   "1.0.36": {
     "en": "Must update: lock mesh couples (TS0043 remote, TS0004 4gang, SNZB-02 climate) - remove Homey Virtual Zigbee tiles + re-pair under Zigbee Bastien. Flow/RX quiet fixes (/).",
-    "fr": "Maj obligatoire: couples mesh (telecommande TS0043, 4-gang TS0004, SNZB-02) - supprimer les tuiles Zigbee Homey generique + re-appairer sous Zigbee Bastien. Correctifs flow/RX (/)."
+    "fr": "Maj obligatoire: couples mesh (telecommande TS0043, 4-gang TS0004, SNZB-02) - supprimer les tuiles Zigbee Homey générique + re-appairer sous Zigbee Bastien. Correctifs flow/RX (/)."
   },
   "1.0.35": {
     "en": "Fixed flow token string + undeclared scene invent ( Bastien diag).",
-    "fr": "Fixed flow token string + undeclared scene invent ( Bastien diag)."
+    "fr": "Corrigé : flow token string + undeclared scène invent ( Bastien diag)."
   },
   "1.0.34": {
     "en": ": remove truncated duplicate Flow card IDs (Athom unique-id). 4-gang pairing. Update Bastien Test.",
@@ -602,11 +606,11 @@
   },
   "1.0.27": {
     "en": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan).",
-    "fr": "Fixed app settings blank infinite loader (Homey.ready before mesh/WiFi scan)."
+    "fr": "Corrigé : le chargeur infini vide des réglages de l'app (Homey.ready avant le scan mesh/WiFi)."
   },
   "1.0.26": {
     "en": "Improved local LAN reliability (stale-data watchdog, fire-and-forget).",
-    "fr": "Improved local LAN reliability (stale-data watchdog, fire-and-forget)."
+    "fr": "Fiabilité LAN locale améliorée (surveillance des donnees périmées, envoi sans attente)."
   },
   "1.0.25": {
     "en": "TS0041 Chinese remotes: collapse phantom 4-EP firmware (HA T455202 class). Flows 1-btn.",
@@ -618,7 +622,7 @@
   },
   "1.0.23": {
     "en": "Mesh inventory sync: LCD Unknown (_TZE284_vvmbj46n), 4-gang salon (_TZ3000_ltt60asa), TS0042 2-btn. Update app then re-pair Unknown LCD + Appareil Zigbee if needed.",
-    "fr": "Mesh inventory sync: LCD Unknown (_TZE284_vvmbj46n), 4-gang salon (_TZ3000_ltt60asa), TS0042 2-btn. Update app then re-pair Unknown LCD + Appareil Zigbee if needed."
+    "fr": "Mesh inventory sync: LCD Unknown (_TZE284_vvmbj46n), 4-gang salon (_TZ3000_ltt60asa), TS0042 2-btn. Update app puis re-pair Unknown LCD + Appareil Zigbee if needed."
   },
   "1.0.22": {
     "en": "2-btn remote _TZ3000_dzwgk7e2+TS0042 (was unrecognized; phantom EP3/4 ignored). Update Bastien Test + re-pair.",
@@ -629,48 +633,48 @@
     "fr": "Module 4-gang _TZ3000_ltt60asa+TS0004 (était Zigbee inconnu); correctifs Flows interrupteurs/boutons. Maj Test Bastien + re-appairer le module."
   },
   "1.0.19": {
-    "en": "Kitchen HOBEIAN ZG-301Z: clear auto-off countdown + force switch type State. TS0041 phantom-EP remotes (adndolvx). Update; for the light open settings → Clear countdown / Switch type=State, or restart app.",
-    "fr": "Kitchen HOBEIAN ZG-301Z: clear auto-off countdown + force switch type State. TS0041 phantom-EP remotes (adndolvx). Update; for the light open settings → Clear countdown / Switch type=State, or restart app."
+    "en": "Kitchen HOBEIAN ZG-301Z: clear auto-off countdown + force switch type State. TS0041 phantom-EP remotes (adndolvx). Update; for the light open settings -> Clear countdown / Switch type=State, or restart app.",
+    "fr": "Kitchen HOBEIAN ZG-301Z: clear auto-off countdown + force switch type State. TS0041 phantom-EP remotes (adndolvx). Update; for the light open settings -> Clear countdown / Switch type=State, or restart app."
   },
   "1.0.18": {
-    "en": "Bastien mesh: eWeLink CK-TLSR TH→climate_sensor (not generic), cleared wrong 7014 fingerprints, clearer TS0041/TS0043 names. Update then remove+re-pair: 1-btn remote, eWeLink TH, verify 3-btn flows.",
-    "fr": "Bastien mesh: eWeLink CK-TLSR TH→climate_sensor (not generic), cleared wrong 7014 fingerprints, clearer TS0041/TS0043 names. Update then remove+re-pair: 1-btn remote, eWeLink TH, verify 3-btn flows."
+    "en": "Bastien mesh: eWeLink CK-TLSR TH->climate_sensor (not generic), cleared wrong 7014 fingerprints, clearer TS0041/TS0043 names. Update then remove+re-pair: 1-btn remote, eWeLink TH, verify 3-btn flows.",
+    "fr": "Bastien mesh: eWeLink CK-TLSR TH->climate_sensor (not generic), cleared wrong 7014 fingerprints, clearer TS0041/TS0043 names. Mettez à jour puis retirez et réappariez: 1-btn remote, eWeLink TH, verify 3-btn flows."
   },
   "1.0.17": {
     "en": "TS0041 _TZ3000_axpdxqgu: locked interview clusters [0,1,6], fixed Flow cards (no args.device gate), 0xFD RX. Update then remove+re-pair the 1-button remote.",
-    "fr": "TS0041 _TZ3000_axpdxqgu: locked interview clusters [0,1,6], fixed cartes Flow (no args.device gate), 0xFD RX. Update then remove+re-pair the 1-button remote."
+    "fr": "TS0041 _TZ3000_axpdxqgu: locked interview clusters [0,1,6], fixed cartes Flow (no args.device gate), 0xFD RX. Mettez à jour puis retirez et réappariez the 1-button remote."
   },
   "1.0.16": {
     "en": "TS0043 _TZ3000_vsxvaj9i: locked interview clusters (OnOff+E000, no EF00), battery EP1, 0xFD RX. Update then remove+re-pair the 3-button remote.",
-    "fr": "TS0043 _TZ3000_vsxvaj9i: locked interview clusters (OnOff+E000, no EF00), battery EP1, 0xFD RX. Update then remove+re-pair the 3-button remote."
+    "fr": "TS0043 _TZ3000_vsxvaj9i: locked interview clusters (OnOff+E000, no EF00), battery EP1, 0xFD RX. Mettez à jour puis retirez et réappariez the 3-button remote."
   },
   "1.0.15": {
     "en": "Flow UX: all buttons of a multi-button remote/wall share one Flow page (dropdown Button 1-N). Fixed Flows that never started. Update then recreate button Flows.",
-    "fr": "Flow UX: all buttons of a multi-button remote/wall share one Flow page (dropdown Button 1-N). Fixed Flows that never started. Update then recreate button Flows."
+    "fr": "Flow UX: all buttons of a multi-button remote/wall share one Flow page (dropdown Button 1-N). Fixed Flows that never started. Update puis recreate button Flows."
   },
   "1.0.14": {
     "en": "Bastien house: fixed fingerprint sync + button flow cards (1-btn numbered, 3-btn, climate). Update to 1.0.14 then REMOVE and re-add the 1-button, 3-button remotes and eWeLink climate sensor. Recreate flows on the new devices.",
-    "fr": "Bastien house: fixed fingerprint sync + button flow cards (1-btn numbered, 3-btn, climate). Update to 1.0.14 then REMOVE and re-add the 1-button, 3-button remotes and eWeLink climate sensor. Recreate flows on the new devices."
+    "fr": "Maison Bastien : synchronisation des empreintes et cartes Flow des boutons corrigée (1 bouton numéroté, 3 boutons, climat). Passez à 1.0.14 puis retirez et rajoutez les télécommandes 1 bouton et 3 boutons et le capteur climatique eWeLink. Récréez les flux sur les nouveaux appareils."
   },
   "1.0.13": {
     "en": "Fixed pairing so 1-button and 3-button remotes join the correct drivers (flows work). Update app, then REMOVE and re-add both remotes + the eWeLink climate sensor.",
-    "fr": "Fixed pairing so 1-button and 3-button remotes join the correct drivers (flows work). Update app, then REMOVE and re-add both remotes + the eWeLink climate sensor."
+    "fr": "Corrigé : pairing so 1-button et 3-button remotes join the correct drivers (flows work). Update app, puis retirez puis rajoutez both remotes + the eWeLink climate sensor."
   },
   "1.0.12": {
     "en": "3-button flat battery remote _TZ3000_vsxvaj9i TS0043: buttons now visible in device UI (Button 1-3), flows and Zigbee clusters locked. Update then remove+re-pair the remote.",
-    "fr": "3-button flat battery remote _TZ3000_vsxvaj9i TS0043: buttons now visible in device UI (Button 1-3), flows and Zigbee clusters locked. Update then remove+re-pair the remote."
+    "fr": "3-button flat battery remote _TZ3000_vsxvaj9i TS0043: buttons now visible in fiche appareil (Button 1-3), flows et Zigbee clusters locked. Mettez à jour puis retirez et réappariez the remote."
   },
   "1.0.11": {
     "en": "Fixed remote button crash (CI is not defined), flow cards, and moved _TZ3000_axpdxqgu TS0041 to Wireless Button 1. Update then remove+re-pair the button.",
-    "fr": "Fixed remote button crash (CI is not defined), flow cards, and moved _TZ3000_axpdxqgu TS0041 to Wireless Button 1. Update then remove+re-pair the button."
+    "fr": "Corrigé : remote button crash (CI is not defined), flow cards, et moved _TZ3000_axpdxqgu TS0041 to bouton sans fil 1. Mettez à jour puis retirez et réappariez the button."
   },
   "1.0.10": {
     "en": "Fixed app settings blank infinite loading so Homey diagnostic reports can be sent. Mesh/WiFi scans are now optional.",
-    "fr": "Fixed app settings blank infinite loading so Homey diagnostic reports can be sent. Mesh/WiFi scans are now optional."
+    "fr": "Corrigé : app settings blank infinite loading so Homey diagnostic reports can be sent. Mesh/WiFi scans are now optional."
   },
   "1.0.9": {
     "en": "Added eWeLink CK-TLSR8656-SS5-01(7014) climate sensor support (temperature, humidity, battery). Re-pair if it was added as a generic Zigbee device.",
-    "fr": "Added eWeLink CK-TLSR8656-SS5-01(7014) climate sensor support (temperature, humidity, battery). Re-pair if it was added as a generic Zigbee device."
+    "fr": "Added eWeLink CK-TLSR8656-SS5-01(7014) climate sensor support (temperature, humidity, battery). Réappariez si it was added as a appareil Zigbee générique."
   },
   "1.0.8": {
     "en": "Draft-to-test fleet sync + house profile refresh. Update Bastien Test.",
@@ -682,7 +686,7 @@
   },
   "1.0.6": {
     "en": "Bastien: sacred mfr+pid couple locks for Moes ZT-YK. Update Bastien Test.",
-    "fr": "Bastien: sacred mfr+pid couple locks for Moes ZT-YK. Update Bastien Test."
+    "fr": "Bastien: sacred mfr+pid couple locks for Moes ZT-YK. Mettez à jour Bastien Test."
   },
   "1.0.5": {
     "en": "Bastien: Moes ZT-YK + dual-app layer gate. Update Bastien Test.",
@@ -694,11 +698,11 @@
   },
   "1.0.3": {
     "en": "Wall/scene remotes 1-6 btn hybrid RX fleet (battery+mains). Update Bastien Test; Repair remotes if presses miss.",
-    "fr": "Wall/scene remotes 1-6 btn hybrid RX fleet (battery+mains). Update Bastien Test; Repair remotes if presses miss."
+    "fr": "Wall/télécommandes de scène 1-6 btn réception hybride fleet (battery+mains). Update Bastien Test; Réparez les télécommandes si les appuis manquent."
   },
   "1.0.2": {
     "en": "Wall 3-btn remotes hybrid RX (TS0043 class) for Bastien house install.",
-    "fr": "Wall 3-btn remotes hybrid RX (TS0043 class) for Bastien house install."
+    "fr": "Wall 3-btn remotes réception hybride (TS0043 class) for Bastien house install."
   },
   "1.0.1": {
     "en": "Athom first-create ready - private Zigbee Bastien house app + publish workflow.",
@@ -707,9 +711,5 @@
   "1.0.0": {
     "en": "Bastien house track bootstrap - private Homey install; upstream enrich only.",
     "fr": "Piste maison Bastien - install Homey privée; enrichissement upstream uniquement."
-  },
-  "1.0.249": {
-    "en": "Fixed: device settings (ZG-301Z), buttons and remotes and battery reporting. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : réglages des appareils (ZG-301Z), boutons et télécommandes et niveau de batterie. En coulisses : tests et contrôles de publication."
   }
 }

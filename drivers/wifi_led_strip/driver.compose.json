@@ -1,13 +1,18 @@
 {
   "name": {
     "en": "WiFi LED Strip RGBCW (Tuya Local)",
-    "fr": "Ruban LED WiFi RGBCW (Tuya Local)",
+    "fr": "Ruban LED WiFi RGBCW",
     "nl": "WiFi LED Strip RGBCW (Tuya Lokaal)",
     "de": "WiFi LED-Streifen RGBCW (Tuya Lokal)",
     "es": "Tira LED WiFi RGBCW (Tuya Local)"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
+  "energy": {
+    "approximation": {
+      "usageOn": 15,
+      "usageOff": 0.5
+    }
+  },
   "capabilities": [
     "onoff",
     "dim",

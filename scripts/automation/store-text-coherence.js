@@ -287,6 +287,78 @@ function applyNameRemap(id, names, compose) {
   return { names: out, changed };
 }
 
+function frenchHint(hint) {
+  let t = String(hint || '').replace(/_/g, ' ').replace(/(\d+)gang\b/gi, '$1 gang').toLowerCase();
+  if (!t || /[{[]/.test(t)) return t;
+  const pairs = [
+    [/air purifier/g, 'purificateur d\'air'],
+    [/\bpurifier\b/g, 'purificateur'],
+    [/\bled strip\b/g, 'bandeau led'],
+    [/\bwall switch(?:es)?\b/g, 'interrupteur mural'],
+    [/\bwall dimmer\b/g, 'variateur mural'],
+    [/\bwall\b/g, 'mural'],
+    [/\bswitch(?:es)?\b/g, 'interrupteur'],
+    [/(\d+)\s*gang\b/g, '$1 voie'],
+    [/\bgang(\d+)\b/g, 'voie $1'],
+    [/\bgang\b/g, 'voie'],
+    [/\bdimmer\b/g, 'variateur'],
+    [/\bturned on\b/g, 'allume'],
+    [/\bturned off\b/g, 'eteint'],
+    [/\bturn on\b/g, 'allumer'],
+    [/\bturn off\b/g, 'eteindre'],
+    [/\bis on\b/g, 'est allume'],
+    [/\btoggle\b/g, 'basculer'],
+    [/\bstrip\b/g, 'bandeau'],
+    [/\bbutton\b/g, 'bouton'],
+    [/\bsensor\b/g, 'capteur'],
+    [/\bcurtain\b/g, 'rideau'],
+    [/\bmotor\b/g, 'moteur'],
+    [/\bradiator valve\b/g, 'vanne de radiateur'],
+    [/\bradiator\b/g, 'radiateur'],
+    [/\bvalve\b/g, 'vanne'],
+    [/\bchanged\b/g, 'changee'],
+    [/\bphysical\b/g, 'physique'],
+    [/\blight\b/g, 'lumiere'],
+    [/\btunable\b/g, 'blanc variable'],
+    [/\bplug\b/g, 'prise'],
+    [/\bcontact\b/g, 'contact'],
+    [/\bsoil\b/g, 'sol'],
+    [/\btuya\b/g, 'Tuya'],
+  ];
+  for (const [re, fr] of pairs) t = t.replace(re, fr);
+  t = t.replace(/\bhumidity\b/g, 'humidite');
+  t = t.replace(/\bgeneric\b/g, 'generique');
+  t = t.replace(/\bdimmer\b/g, 'variateur');
+  t = t.replace(/\s+/g, ' ').trim();
+  t = t.replace(/\bon\b/g, 'allum\u00E9');
+  t = t.replace(/\boff\b/g, '\u00E9teint');
+  t = t.replace(/\ballume\b/g, 'allum\u00E9');
+  t = t.replace(/\beteint\b/g, '\u00E9teint');
+  t = t.replace(/\blumiere\b/g, 'lumi\u00E8re');
+  t = t.replace(/\bchangee\b/g, 'chang\u00E9e');
+  t = t.replace(/\bhumidite\b/g, 'humidit\u00E9');
+  t = t.replace(/\bgenerique\b/g, 'g\u00E9n\u00E9rique');
+  t = t.replace(/(\d+) voie\b(?!s)/g, (_, n) => Number(n) > 1 ? n + ' voies' : n + ' voie');
+  return t;
+}
+
+function stripEnglishHintSuffix(name) {
+  return String(name || '').replace(/\s*\(([^)]*)\)\s*$/, (m, inner) => {
+    if (/[{[]/.test(inner)) return m;
+    if (/\b(gang|dimmer|wall|switch|purifier|tuya|air purifier|led strip|turned |toggle|1gang|2gang|3gang|4gang|humidity)\b/i.test(inner) || /\dgang|gang\d/i.test(inner)) return '';
+    return m;
+  }).trim();
+}
+
+function repairFrSuffix(text) {
+  return String(text || '').replace(/\(([^)]+)\)/g, (m, inner) => {
+    if (/[{[]/.test(inner)) return m;
+    if (!/\b(gang|dimmer|wall|switch|purifier|tuya|air purifier|led strip|turned |turn |is on|toggle|light |radiator|humidity|generic)\b/i.test(inner) && !/\dgang|gang\d/i.test(inner)) return m;
+    const fr = frenchHint(inner);
+    return fr ? '(' + fr + ')' : m;
+  });
+}
+
 function uniqueify(entries) {
   // entries: [{id, names}]
   const byLoc = {};
@@ -305,9 +377,10 @@ function uniqueify(entries) {
       if (group.length < 2) continue;
       for (const e of group) {
         const used = new Set(group.map((x) => x.names[loc]));
-        const hint = (e.hint && group.filter((x) => x.hint === e.hint).length === 1)
+        let rawHint = (e.hint && group.filter((x) => x.hint === e.hint).length === 1)
           ? e.hint
           : e.id.replace(/_/g, ' ');
+        const hint = loc === 'fr' ? frenchHint(rawHint) : rawHint;
         const suffix = ' (' + hint + ')';
         if (title.includes(hint)) continue;
         const next = title + suffix;
@@ -425,7 +498,8 @@ function disambiguateFlowDuplicates(flow) {
           const card = ranked[i];
           if (typeof card.title !== 'object') continue;
           if (i === 0) continue; // keep the shortest/cleanest title
-          const hint = tokenHint(card.id, ranked.filter((c) => c !== card).map((c) => c.id)) || String(i + 1);
+          let hint = tokenHint(card.id, ranked.filter((c) => c !== card).map((c) => c.id)) || String(i + 1);
+          if (loc === 'fr') hint = frenchHint(hint) || hint;
           let next = title.includes(hint) ? title + ' (' + (i + 1) + ')' : title + ' (' + hint + ')';
           let n = 2;
           while (used.has(next)) { next = title + ' (' + hint + ' ' + n + ')'; n++; }
@@ -632,6 +706,12 @@ function apply(root) {
     const r = applyNameRemap(id, names, loaded.json);
     nameEntries.push({ id, path: loaded.path, json: loaded.json, names: r.names, changed: r.changed, hint: productHint(loaded.json) });
   }
+  for (const e of nameEntries) {
+    if (e.names && e.names.fr) {
+      const stripped = stripEnglishHintSuffix(e.names.fr);
+      if (stripped !== e.names.fr) { e.names.fr = stripped; e.changed = true; }
+    }
+  }
   const uniq = uniqueify(nameEntries);
   for (const e of nameEntries) {
     if (!e.changed) continue;
@@ -658,6 +738,13 @@ function apply(root) {
     }
     const dups = disambiguateFlowDuplicates(loaded.json).concat(disambiguateCrossKind(loaded.json));
     if (dups.length) { fileChanged = true; titleRenames += dups.length; }
+    for (const { card } of collectFlowCards(loaded.json)) {
+      for (const field of ['title', 'titleFormatted']) {
+        if (!card[field] || typeof card[field] !== 'object' || !card[field].fr) continue;
+        const next = repairFrSuffix(card[field].fr);
+        if (next !== card[field].fr) { card[field].fr = next; fileChanged = true; }
+      }
+    }
     if (fileChanged) {
       writeJson(loaded.path, loaded.json);
       changes.push({ file: `drivers/${id}/driver.flow.compose.json`, kind: 'flow-titles', titles: titleRenames });
@@ -787,7 +874,7 @@ function check(root) {
 
 module.exports = {
   ACCENT_WORDS, DRIVER_NAME_REMAP, APP_JSON_BUILT_MAX, accentText, audit, apply, check,
-  titlePatcher, disambiguateFlowDuplicates, uniqueify,
+  titlePatcher, disambiguateFlowDuplicates, uniqueify, frenchHint, stripEnglishHintSuffix, repairFrSuffix,
   looksBuiltAppJson, readSourceAppJson, writeSourceAppJson, syncAppJson, overlayEmbeddedFlow, sourceFlow, reconcileEmbeddedFlow,
 };
 
