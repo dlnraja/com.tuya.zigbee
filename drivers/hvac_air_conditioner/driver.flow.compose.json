@@ -4,14 +4,14 @@
       "id": "hvac_air_conditioner_air_conditioner_turned_on",
       "title": {
         "en": "Turned on (report) (air conditioner turned on)",
-        "fr": "Allumé (rapport) (air conditioner turned on)",
+        "fr": "Allumé (rapport) (air conditioner allumé)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (report) (air conditioner turned on)",
-        "fr": "Allumé (rapport) (air conditioner turned on)",
+        "fr": "Allumé (rapport) (air conditioner allumé)",
         "de": "Eingeschaltet",
         "nl": "Aangezet"
       }
@@ -20,14 +20,14 @@
       "id": "hvac_air_conditioner_air_conditioner_turned_off",
       "title": {
         "en": "Turned off (report) (air conditioner turned off)",
-        "fr": "Éteint (rapport) (air conditioner turned off)",
+        "fr": "Éteint (rapport) (air conditioner éteint)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (report) (air conditioner turned off)",
-        "fr": "Éteint (rapport) (air conditioner turned off)",
+        "fr": "Éteint (rapport) (air conditioner éteint)",
         "de": "Ausgeschaltet",
         "nl": "Uitgezet"
       }
@@ -152,14 +152,14 @@
       "id": "hvac_air_conditioner_air_conditioner_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (air conditioner is on)",
+        "fr": "Est !{{allumé|éteint}} (rapport) (air conditioner est allumé)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (air conditioner is on)"
+        "fr": "Est !{{allumé|éteint}} (rapport) (air conditioner est allumé)"
       }
     },
     {
@@ -184,14 +184,14 @@
       "id": "hvac_air_conditioner_air_conditioner_turn_on",
       "title": {
         "en": "Turn on (report) (air conditioner turn on)",
-        "fr": "Allumer (rapport) (air conditioner turn on)",
+        "fr": "Allumer (rapport) (air conditioner allumer)",
         "nl": "Zet aan",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (report) (air conditioner turn on)",
-        "fr": "Allumer (rapport) (air conditioner turn on)",
+        "fr": "Allumer (rapport) (air conditioner allumer)",
         "de": "Einschalten",
         "nl": "Aanzetten"
       }
@@ -200,14 +200,14 @@
       "id": "hvac_air_conditioner_air_conditioner_turn_off",
       "title": {
         "en": "Turn off (report) (air conditioner turn off)",
-        "fr": "Éteindre (rapport) (air conditioner turn off)",
+        "fr": "Éteindre (rapport) (air conditioner eteindre)",
         "nl": "Zet uit",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (report) (air conditioner turn off)",
-        "fr": "Éteindre (rapport) (air conditioner turn off)",
+        "fr": "Éteindre (rapport) (air conditioner eteindre)",
         "de": "Ausschalten",
         "nl": "Uitzetten"
       }
@@ -216,14 +216,14 @@
       "id": "hvac_air_conditioner_air_conditioner_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (conditioner air conditioner toggle)",
+        "fr": "Basculer (rapport) (conditioner air conditioner basculer)",
         "nl": "Aan of uit wisselen",
         "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (conditioner air conditioner toggle)",
+        "fr": "Basculer (rapport) (conditioner air conditioner basculer)",
         "de": "Ein/Aus umschalten",
         "nl": "Aan of uit wisselen"
       }

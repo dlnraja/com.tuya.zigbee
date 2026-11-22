@@ -61,14 +61,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_tu_f68af",
       "title": {
         "en": "Turned on (report) (light tunable)",
-        "fr": "Allumé (rapport) (light tunable)",
+        "fr": "Allumé (rapport) (lumière blanc variable)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (report) (light tunable)",
-        "fr": "Allumé (rapport) (light tunable)",
+        "fr": "Allumé (rapport) (lumière blanc variable)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -77,14 +77,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_tu_aac6d",
       "title": {
         "en": "Turned off (report) (light tunable)",
-        "fr": "Éteint (rapport) (light tunable)",
+        "fr": "Éteint (rapport) (lumière blanc variable)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (report) (light tunable)",
-        "fr": "Éteint (rapport) (light tunable)",
+        "fr": "Éteint (rapport) (lumière blanc variable)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -131,14 +131,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_f31fc",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (light tunable)",
+        "fr": "Est !{{allumé|éteint}} (rapport) (lumière blanc variable)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (light tunable)"
+        "fr": "Est !{{allumé|éteint}} (rapport) (lumière blanc variable)"
       }
     },
     {
@@ -163,14 +163,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_a4e5f",
       "title": {
         "en": "Turn on (report) (light tunable)",
-        "fr": "Allumer (rapport) (light tunable)",
+        "fr": "Allumer (rapport) (lumière blanc variable)",
         "nl": "Zet aan",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (report) (light tunable)",
-        "fr": "Allumer (rapport) (light tunable)",
+        "fr": "Allumer (rapport) (lumière blanc variable)",
         "de": "Einschalten",
         "nl": "Aanzetten"
       }
@@ -195,14 +195,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_4dbe8",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (light tunable)",
+        "fr": "Basculer (rapport) (lumière blanc variable)",
         "nl": "Aan of uit wisselen",
         "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (light tunable)",
+        "fr": "Basculer (rapport) (lumière blanc variable)",
         "de": "Ein/Aus umschalten",
         "nl": "Aan of uit wisselen"
       }
@@ -255,14 +255,14 @@
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_turn_off",
       "title": {
         "en": "Turn off (report) (light tunable)",
-        "fr": "Éteindre (rapport) (light tunable)",
+        "fr": "Éteindre (rapport) (lumière blanc variable)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (report) (light tunable)",
-        "fr": "Éteindre (rapport) (light tunable)",
+        "fr": "Éteindre (rapport) (lumière blanc variable)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }

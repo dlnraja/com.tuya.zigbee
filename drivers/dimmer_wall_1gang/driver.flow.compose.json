@@ -86,14 +86,14 @@
       "id": "dimmer_wall_1gang_dimmer_1gang_turned_on",
       "title": {
         "en": "Turned on (report) (dimmer 1gang turned on)",
-        "fr": "Allumé (rapport) (dimmer 1gang turned on)",
+        "fr": "Allumé (rapport) (variateur 1 voie allumé)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (report) (dimmer 1gang turned on)",
-        "fr": "Allumé (rapport) (dimmer 1gang turned on)",
+        "fr": "Allumé (rapport) (variateur 1 voie allumé)",
         "de": "Eingeschaltet",
         "nl": "Aangezet"
       }
@@ -102,14 +102,14 @@
       "id": "dimmer_wall_1gang_dimmer_1gang_turned_off",
       "title": {
         "en": "Turned off (report) (dimmer 1gang turned off)",
-        "fr": "Éteint (rapport) (dimmer 1gang turned off)",
+        "fr": "Éteint (rapport) (variateur 1 voie éteint)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (report) (dimmer 1gang turned off)",
-        "fr": "Éteint (rapport) (dimmer 1gang turned off)",
+        "fr": "Éteint (rapport) (variateur 1 voie éteint)",
         "de": "Ausgeschaltet",
         "nl": "Uitgezet"
       }
@@ -250,14 +250,14 @@
       "id": "dimmer_wall_1gang_dimmer_1gang_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (dimmer 1gang is on)",
+        "fr": "Est !{{allumé|éteint}} (rapport) (variateur 1 voie est allumé)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (dimmer 1gang is on)"
+        "fr": "Est !{{allumé|éteint}} (rapport) (variateur 1 voie est allumé)"
       }
     },
     {
@@ -282,14 +282,14 @@
       "id": "dimmer_wall_1gang_dimmer_1gang_turn_on",
       "title": {
         "en": "Turn on (report) (dimmer 1gang turn on)",
-        "fr": "Allumer (rapport) (dimmer 1gang turn on)",
+        "fr": "Allumer (rapport) (variateur 1 voie allumer)",
         "nl": "Zet aan",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (report) (dimmer 1gang turn on)",
-        "fr": "Allumer (rapport) (dimmer 1gang turn on)",
+        "fr": "Allumer (rapport) (variateur 1 voie allumer)",
         "de": "Einschalten",
         "nl": "Aanzetten"
       }
@@ -298,14 +298,14 @@
       "id": "dimmer_wall_1gang_dimmer_1gang_turn_off",
       "title": {
         "en": "Turn off (report) (dimmer 1gang turn off)",
-        "fr": "Éteindre (rapport) (dimmer 1gang turn off)",
+        "fr": "Éteindre (rapport) (variateur 1 voie eteindre)",
         "nl": "Zet uit",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (report) (dimmer 1gang turn off)",
-        "fr": "Éteindre (rapport) (dimmer 1gang turn off)",
+        "fr": "Éteindre (rapport) (variateur 1 voie eteindre)",
         "de": "Ausschalten",
         "nl": "Uitzetten"
       }
@@ -314,14 +314,14 @@
       "id": "dimmer_wall_1gang_dimmer_1gang_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (1gang dimmer 1gang toggle)",
+        "fr": "Basculer (rapport) (1 voie variateur 1 voie basculer)",
         "nl": "Aan of uit wisselen",
         "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (1gang dimmer 1gang toggle)",
+        "fr": "Basculer (rapport) (1 voie variateur 1 voie basculer)",
         "de": "Ein/Aus umschalten",
         "nl": "Aan of uit wisselen"
       }

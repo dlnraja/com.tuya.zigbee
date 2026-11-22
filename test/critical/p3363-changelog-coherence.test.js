@@ -72,4 +72,17 @@ describe('P3363 changelog coherence', () => {
     assert.match(note.en, /bidirectional clamp reports/);
     assert.match(note.fr, /./);
   });
+
+  it('folds historical wide characters and translates an English leftover FR body', () => {
+    const folded = CC.foldWideChars('c\u0153ur \u2192 \u2265 10');
+    assert.equal(folded, 'coeur -> >= 10');
+    assert.ok([...folded].every((c) => c.charCodeAt(0) <= 0xFF));
+    const repaired = CC.ensureFr({
+      en: 'Changed: scale bidirectional clamp reports on the 3-phase profile; stderr breadcrumbs for large JSON parses and capped device notes; keep the precise publish call the suite locks;',
+      fr: 'Modifie : scale bidirectional clamp reports on the 3-phase profile; stderr breadcrumbs for large JSON parses and capped device notes; keep the precise publish call the suite locks;',
+    });
+    const fr = CC.accentFr(repaired.fr);
+    assert.match(fr, /triphas\u00E9|born\u00E9s|verrouille/);
+    assert.doesNotMatch(fr, /breadcrumbs|stderr|scale bidirectional/);
+  });
 });

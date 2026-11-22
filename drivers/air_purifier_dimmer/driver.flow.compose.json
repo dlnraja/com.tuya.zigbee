@@ -86,14 +86,14 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang__66522",
       "title": {
         "en": "Turned on (report) (wall 1gang dimmer 1gang)",
-        "fr": "Allumé (rapport) (wall 1gang dimmer 1gang)",
+        "fr": "Allumé (rapport) (mural 1 voie variateur 1 voie)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (report) (wall 1gang dimmer 1gang)",
-        "fr": "Allumé (rapport) (wall 1gang dimmer 1gang)",
+        "fr": "Allumé (rapport) (mural 1 voie variateur 1 voie)",
         "de": "Eingeschaltet",
         "nl": "Aangezet"
       }
@@ -102,14 +102,14 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang__05bb4",
       "title": {
         "en": "Turned off (report) (wall 1gang dimmer 1gang)",
-        "fr": "Éteint (rapport) (wall 1gang dimmer 1gang)",
+        "fr": "Éteint (rapport) (mural 1 voie variateur 1 voie)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (report) (wall 1gang dimmer 1gang)",
-        "fr": "Éteint (rapport) (wall 1gang dimmer 1gang)",
+        "fr": "Éteint (rapport) (mural 1 voie variateur 1 voie)",
         "de": "Ausgeschaltet",
         "nl": "Uitgezet"
       }
@@ -213,14 +213,14 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (dimmer 1gang is on)",
+        "fr": "Est !{{allumé|éteint}} (rapport) (variateur 1 voie est allumé)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (dimmer 1gang is on)"
+        "fr": "Est !{{allumé|éteint}} (rapport) (variateur 1 voie est allumé)"
       }
     },
     {
@@ -245,14 +245,14 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang__70e47",
       "title": {
         "en": "Turn on (report) (wall 1gang dimmer 1gang)",
-        "fr": "Allumer (rapport) (wall 1gang dimmer 1gang)",
+        "fr": "Allumer (rapport) (mural 1 voie variateur 1 voie)",
         "nl": "Zet aan",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (report) (wall 1gang dimmer 1gang)",
-        "fr": "Allumer (rapport) (wall 1gang dimmer 1gang)",
+        "fr": "Allumer (rapport) (mural 1 voie variateur 1 voie)",
         "de": "Einschalten",
         "nl": "Aanzetten"
       }
@@ -261,14 +261,14 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang__4a6fa",
       "title": {
         "en": "Turn off (report) (wall 1gang dimmer 1gang)",
-        "fr": "Éteindre (rapport) (wall 1gang dimmer 1gang)",
+        "fr": "Éteindre (rapport) (mural 1 voie variateur 1 voie)",
         "nl": "Zet uit",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (report) (wall 1gang dimmer 1gang)",
-        "fr": "Éteindre (rapport) (wall 1gang dimmer 1gang)",
+        "fr": "Éteindre (rapport) (mural 1 voie variateur 1 voie)",
         "de": "Ausschalten",
         "nl": "Uitzetten"
       }
@@ -277,14 +277,14 @@
       "id": "air_purifier_dimmer_wall_1gang_dimmer_1gang_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (1gang dimmer 1gang toggle)",
+        "fr": "Basculer (rapport) (1 voie variateur 1 voie basculer)",
         "nl": "Aan of uit wisselen",
         "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (1gang dimmer 1gang toggle)",
+        "fr": "Basculer (rapport) (1 voie variateur 1 voie basculer)",
         "de": "Ein/Aus umschalten",
         "nl": "Aan of uit wisselen"
       }

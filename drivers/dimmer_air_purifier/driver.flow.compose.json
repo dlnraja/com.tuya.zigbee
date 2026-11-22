@@ -143,14 +143,14 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_b55e5",
       "title": {
         "en": "Turned on (report) (wall)",
-        "fr": "Allumé (rapport) (wall)",
+        "fr": "Allumé (rapport) (mural)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (report) (wall)",
-        "fr": "Allumé (rapport) (wall)",
+        "fr": "Allumé (rapport) (mural)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -159,14 +159,14 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_c4016",
       "title": {
         "en": "Turned off (report) (wall)",
-        "fr": "Éteint (rapport) (wall)",
+        "fr": "Éteint (rapport) (mural)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (report) (wall)",
-        "fr": "Éteint (rapport) (wall)",
+        "fr": "Éteint (rapport) (mural)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -257,14 +257,14 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_f05a4",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (wall)",
+        "fr": "Est !{{allumé|éteint}} (rapport) (mural)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (wall)",
+        "fr": "Est !{{allumé|éteint}} (rapport) (mural)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -351,14 +351,14 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_165a6",
       "title": {
         "en": "Turn on (report) (wall)",
-        "fr": "Allumer (rapport) (wall)",
+        "fr": "Allumer (rapport) (mural)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (report) (wall)",
-        "fr": "Allumer (rapport) (wall)",
+        "fr": "Allumer (rapport) (mural)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       }
@@ -367,14 +367,14 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_4c4ad",
       "title": {
         "en": "Turn off (report) (wall)",
-        "fr": "Éteindre (rapport) (wall)",
+        "fr": "Éteindre (rapport) (mural)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (report) (wall)",
-        "fr": "Éteindre (rapport) (wall)",
+        "fr": "Éteindre (rapport) (mural)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -383,14 +383,14 @@
       "id": "dimmer_air_purifier_air_purifier_dimmer_wall_bf27d",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer (rapport) (wall)",
+        "fr": "Basculer (rapport) (mural)",
         "nl": "Wisselen",
         "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer (rapport) (wall)",
+        "fr": "Basculer (rapport) (mural)",
         "nl": "Wisselen",
         "de": "Umschalten"
       }

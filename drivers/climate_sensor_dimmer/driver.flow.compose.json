@@ -86,14 +86,14 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_85e1d",
       "title": {
         "en": "Turned on (report) (dimmer wall 1gang dimmer)",
-        "fr": "Allumé (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Allumé (rapport) (variateur mural 1 voie variateur)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on (report) (dimmer wall 1gang dimmer)",
-        "fr": "Allumé (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Allumé (rapport) (variateur mural 1 voie variateur)",
         "de": "Eingeschaltet",
         "nl": "Aangezet"
       }
@@ -102,14 +102,14 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_f81b9",
       "title": {
         "en": "Turned off (report) (dimmer wall 1gang dimmer)",
-        "fr": "Éteint (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Éteint (rapport) (variateur mural 1 voie variateur)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off (report) (dimmer wall 1gang dimmer)",
-        "fr": "Éteint (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Éteint (rapport) (variateur mural 1 voie variateur)",
         "de": "Ausgeschaltet",
         "nl": "Uitgezet"
       }
@@ -243,14 +243,14 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_ab9c7",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Est !{{allumé|éteint}} (rapport) (variateur mural 1 voie variateur)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}} (rapport) (dimmer wall 1gang dimmer)"
+        "fr": "Est !{{allumé|éteint}} (rapport) (variateur mural 1 voie variateur)"
       }
     },
     {
@@ -275,14 +275,14 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_d1151",
       "title": {
         "en": "Turn on (report) (dimmer wall 1gang dimmer)",
-        "fr": "Allumer (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Allumer (rapport) (variateur mural 1 voie variateur)",
         "nl": "Zet aan",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn on (report) (dimmer wall 1gang dimmer)",
-        "fr": "Allumer (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Allumer (rapport) (variateur mural 1 voie variateur)",
         "de": "Einschalten",
         "nl": "Aanzetten"
       }
@@ -291,14 +291,14 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_02d79",
       "title": {
         "en": "Turn off (report) (dimmer wall 1gang dimmer)",
-        "fr": "Éteindre (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Éteindre (rapport) (variateur mural 1 voie variateur)",
         "nl": "Zet uit",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off (report) (dimmer wall 1gang dimmer)",
-        "fr": "Éteindre (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Éteindre (rapport) (variateur mural 1 voie variateur)",
         "de": "Ausschalten",
         "nl": "Uitzetten"
       }
@@ -307,14 +307,14 @@
       "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_6ec6b",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Basculer (rapport) (variateur mural 1 voie variateur)",
         "nl": "Aan of uit wisselen",
         "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer (rapport) (dimmer wall 1gang dimmer)",
+        "fr": "Basculer (rapport) (variateur mural 1 voie variateur)",
         "de": "Ein/Aus umschalten",
         "nl": "Aan of uit wisselen"
       }
