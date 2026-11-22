@@ -32,10 +32,10 @@ describe('P3384 ZHT-S01 fingerprint move (Z2M moes.ts)', () => {
     assert.ok(!hasMfr(radar, '_tze284_rlytpmij'));
   });
 
-  it('Bastien publish keeps wall_thermostat so the radar remap can load it', () => {
+  it('Bastien house fleet does not add wall_thermostat (observed 27-driver ceiling)', () => {
     const ssot = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'architecture', 'bastien-publish-fleet-ssot.json'), 'utf8'));
     assert.ok(ssot.keepDriverIds.includes('presence_sensor_radar'));
-    assert.ok(ssot.keepDriverIds.includes('wall_thermostat'));
+    assert.ok(!ssot.keepDriverIds.includes('wall_thermostat'));
   });
 
   it('onMapDeviceClass wall_thermostat require is try-guarded (P3310 / preflight)', () => {
