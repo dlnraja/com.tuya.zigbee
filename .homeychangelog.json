@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.255": {
+    "en": "Changed: ship Bastien lcdtemphumidsensor under a trial ceiling of 29.",
+    "fr": "Modifié : ship Bastien lcdtemphumidsensor under a trial ceiling of 29."
+  },
   "1.0.254": {
     "en": "Changed: trial Bastien ceiling at 28 so wall_thermostat stays in the fleet.",
     "fr": "Modifié : trial Bastien ceiling at 28 so wall_thermostat stays in the fleet."
