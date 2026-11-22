@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-22T21:28:57.453Z",
+ "updated": "2026-11-22T23:04:22.023Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -13631,6 +13631,23 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-11-15T16:39:09.000Z"
+  },
+  "diag:c930bda171ea0abd": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "69664f179cf5375d",
+   "note": "diagnostic mail; 1 couple(s); nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-22T21:30:53.000Z",
+   "appVersion": "9.0.1636",
+   "logIdShort": "ec7026a7",
+   "couples": [
+    "_TZE284_9ern5sfh|TS0601"
+   ],
+   "drivers": [
+    "lcdtemphumidsensor_3"
+   ]
   },
   "diag:c9508073eb073c43": {
    "status": "done",

@@ -5,13 +5,14 @@
   "couples": 200,
   "dps": 16
  },
- "updatedAt": "2026-11-22T13:53:16.432Z",
+ "updatedAt": "2026-11-22T23:04:22.068Z",
  "seen": [
   "89502374e10c",
   "10ae1606f66a",
   "3b6509c25e55",
   "b749c5bf1209",
-  "5ff436eb17ba"
+  "5ff436eb17ba",
+  "e63c17f00249"
  ],
  "couples": {
   "_TZE2XX_wjk6rurm|ZG-301Z": {
@@ -112,6 +113,19 @@
    ],
    "firstSeen": "2026-11-21T13:59:42.944Z",
    "lastSeen": "2026-11-21T13:59:42.944Z",
+   "dps": {},
+   "unavailable": 0,
+   "memwarn": 0,
+   "maxHeapMB": 0,
+   "anomalies": []
+  },
+  "_TZE284_9ern5sfh|TS0601": {
+   "status": "candidate",
+   "sources": [
+    "gmail-diag"
+   ],
+   "firstSeen": "2026-11-22T23:04:22.068Z",
+   "lastSeen": "2026-11-22T23:04:22.068Z",
    "dps": {},
    "unavailable": 0,
    "memwarn": 0,
