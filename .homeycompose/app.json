@@ -112,6 +112,14 @@
     "getWifiLanMap": {
       "method": "GET",
       "path": "/wifi-lan-map"
+    },
+    "previewFlowRemap": {
+      "method": "POST",
+      "path": "/flow-remap/preview"
+    },
+    "getFlowRecoveryCandidates": {
+      "method": "GET",
+      "path": "/flow-remap/candidates"
     }
   },
   "changelog": {

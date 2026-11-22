@@ -18,6 +18,12 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { parseTuyaMultiDpFrame } = require('../../lib/TuyaDataPoints');
 const { isBatteryCoverMfr } = require('../../lib/helpers/batteryPowerSource');
 const SDK3BestPractices = require('../../lib/SDK3BestPractices');
+const {
+  isSlidingWindowPusherCouple,
+  slidingWindowPusherDpMappings,
+  encodePusherState,
+  pusherWriteDps,
+} = require('../../lib/covers/slidingWindowPusher');
 
 /**
  * +==============================================================================+
@@ -37,6 +43,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // WHY(P2467b / #533): Moes ZTS-EUR-C is a mains wall switch. Compose still lists
     // measure_battery for tubular rollers - that made mainsPowered=false -> wake-up
     // ping before every DP TX (diag 48baba36) and delayed real EF00 motion frames.
+    if (this._isSlidingWindowPusher()) {return false;}
     if (this._isMoesZtsEurC()) {return true;}
     const powerSetting = this.getSetting('power_source');
     if (powerSetting === 'battery') {return false;}
@@ -105,8 +112,37 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     return mfr.includes('gubdgai2') || mfr.includes('vdiuwbkq');
   }
 
+
+  // WHY(P3374 / forum 156967 #101 + Z2M ZC-LP01 / EPJ-ZB): exact TS0601 couples
+  // only. Default curtain map treats DP102 as close_time and DP104 as lux.
+  _isSlidingWindowPusher() {
+    const mfr = this.getManufacturerName?.()
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || '';
+    const pid = this.getSetting?.('zb_model_id') || this.getData?.()?.productId || 'TS0601';
+    return isSlidingWindowPusherCouple(mfr, pid);
+  }
+
+  getCoverWriteDps() {
+    if (this._isSlidingWindowPusher()) {return pusherWriteDps();}
+    return null;
+  }
+
+  encodeCoverState(state) {
+    if (this._isSlidingWindowPusher()) {
+      const invert = Boolean(this.getSetting?.('invert_position') || this.getSetting?.('moes_control_invert'));
+      return encodePusherState(state, invert);
+    }
+    return null;
+  }
+
   // v5.5.322: Extended DP mappings with lux sensor and button support
   get dpMappings() {
+    if (this._isSlidingWindowPusher()) {
+      const invert = Boolean(this.getSetting?.('invert_position') || this.getSetting?.('moes_control_invert'));
+      return slidingWindowPusherDpMappings(invert);
+    }
     if (this._isQuoyaM515()) {
       return {
         1: {

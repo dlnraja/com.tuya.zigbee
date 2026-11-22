@@ -421,3 +421,11 @@ Reporters of dlnraja/com.tuya.zigbee issues not credited elsewhere in this file.
 
 - P3258 (03/11/2026): publish gate counts only shipped build inputs when adopting a bot-moved tip, and primes CI on the tip when it holds as superseded.
 - P3262 (03/11/2026): observed driver-count ceiling on Athom uploads (every accepted master build has exactly the last-accepted 347 drivers, every 348+ refused AggregateError; unconfirmed by Athom, ticket 157057): rule docs/rules/DRIVER_COUNT_CEILING.md, SSOT, CI gate scripts/ci/driver-count-ceiling-gate.js (warn master, fail stable-v5/bastien-home), requested by dlnraja.
+
+## P3374 — other Homey Tuya app threads (2026-11-22)
+
+- Andi and reporters on [Tuya Local](https://community.homey.app/t/154077) (current-position DP vs target DP; packed heat-pump setpoints; ceiling-fan quirks; diffuser DP mis-guess).
+- SoPhos / SunBeech / ernesto_pons_montoro / Robert_Korus on [MOES](https://community.homey.app/t/156967) (ZC-LP01 `_TZ3210_5rta89nj`+TS0601; scene-remote double single-press; ZM-102-M garage already in `garage_door_opener`).
+- late4marshmellow [Flow Converter](https://community.homey.app/t/154906) (`app.l4m.flowconverter`, [source](https://github.com/late4marshmellow/app.l4m.flowconverter); also thanks Martijn Poppen as credited there). Optional third-party app, never a dependency.
+- Joyce_THart GreenBlue GB740 request in [162420](https://community.homey.app/t/162420) and ZHA issue 5709 (`_TZ3250_int1a7ht`+TS020C).
+- Athom [Permissions](https://apps.developer.homey.app/the-basics/app/permissions): device apps must not request `homey:manager:api` (Tools apps only; store review can refuse it).

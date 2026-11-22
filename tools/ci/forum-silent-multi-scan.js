@@ -51,6 +51,8 @@ const DEFAULT_TOPICS = [
   // TuyaAPI / Neo Coolcam WiFi wall plug — READ-ONLY WiFi local-first patterns
   { id: 15811, name: 'tuyapi-neo-coolcam-wifi', replyAllowed: false },
   { id: 21313, name: 'tuya-cloud', replyAllowed: false },
+  { id: 154077, name: 'tuya-local', replyAllowed: false },
+  { id: 154906, name: 'flow-converter', replyAllowed: false },
   { id: 156053, name: 'tuya-unknown-gang-switches', replyAllowed: false },
   { id: 156792, name: 'tuya-finger-bot', replyAllowed: false },
   { id: 149230, name: 'tuya-garage-door', replyAllowed: false },

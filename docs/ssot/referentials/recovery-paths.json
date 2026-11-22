@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "items": [
+    {
+      "id": "flow-converter",
+      "kind": "user recovery path",
+      "name": "Flow Converter",
+      "author": "late4marshmellow",
+      "appId": "app.l4m.flowconverter",
+      "forum": "https://community.homey.app/t/154906",
+      "github": "https://github.com/late4marshmellow/app.l4m.flowconverter",
+      "store": "https://homey.app/a/app.l4m.flowconverter",
+      "dependency": false,
+      "useWhen": "A device was re-paired or moved to another driver and Flows, Advanced Flows, timers or Insights still point at the old device id. Prefer in-place onMapDeviceClass first.",
+      "notes": "Optional third-party Tools app. Capability mapping since 1.2.0 (e.g. button_up to button_1). Preview (soft run) before apply."
+    }
+  ]
+}
