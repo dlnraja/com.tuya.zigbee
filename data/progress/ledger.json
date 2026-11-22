@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-22T13:53:16.396Z",
+ "updated": "2026-11-22T19:54:45.974Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6498,6 +6498,15 @@
    ],
    "errors": 1
   },
+  "diag:0486b6779a8a9a66": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "feb84100987fa29f",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T18:10:57.000Z"
+  },
   "diag:04a6c2178d72a751": {
    "status": "done",
    "date": "2026-11-01",
@@ -6792,6 +6801,15 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-11-17T05:55:56.000Z"
+  },
+  "diag:0bbf8b0b25086f40": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "97038b9e10b8ddab",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T18:41:34.000Z"
   },
   "diag:0bcd1eaaa8dbbf7e": {
    "status": "done",
@@ -10310,6 +10328,15 @@
    "kind": "general",
    "mailDate": "2026-11-01T22:25:38.000Z"
   },
+  "diag:6c5c04301271642b": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "181261309244cc03",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T16:56:52.000Z"
+  },
   "diag:6ca7062d6826b7c8": {
    "status": "done",
    "date": "2026-10-31",
@@ -10985,6 +11012,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-11-01T22:26:36.000Z"
+  },
+  "diag:82e147a5d4358f09": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "9a8b47ab0b8ae19a",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T18:10:43.000Z"
   },
   "diag:82e55a3e7fc4de9c": {
    "status": "done",
@@ -11735,6 +11771,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T17:48:34.000Z"
   },
+  "diag:9598c5061db024cd": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "195b418a88e997f4",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T15:57:30.000Z"
+  },
   "diag:95de2b057d450c63": {
    "status": "done",
    "date": "2026-11-01",
@@ -11861,6 +11906,15 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-11-02T08:03:44.000Z"
+  },
+  "diag:9848860f58ad1fd8": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "3aaf4188b257c605",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T15:57:45.000Z"
   },
   "diag:9865672ba83c1804": {
    "status": "done",
@@ -12667,6 +12721,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-20T00:34:24.000Z"
+  },
+  "diag:ae4efa0e5d705d1a": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "2a943f215f5bc40d",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T19:16:20.000Z"
   },
   "diag:af1d3720df9c5a38": {
    "status": "done",
@@ -13612,6 +13675,15 @@
    "kind": "general",
    "mailDate": "2026-10-19T08:46:49.000Z"
   },
+  "diag:ca38e1736397317c": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "b7ce794190a7ed52",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T16:46:14.000Z"
+  },
   "diag:ca4c2fb2c24f6139": {
    "status": "done",
    "date": "2026-10-21",
@@ -13888,6 +13960,15 @@
    "kind": "general",
    "mailDate": "2026-11-05T16:41:05.000Z"
   },
+  "diag:d2e5cd21397c8cf9": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "79bb32e170f0ca36",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T18:41:29.000Z"
+  },
   "diag:d306df8603ab9dba": {
    "status": "done",
    "date": "2026-10-25",
@@ -14077,6 +14158,15 @@
    "kind": "device_issue",
    "mailDate": "2026-11-12T16:30:50.000Z"
   },
+  "diag:d764c24024f0567f": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "f318d61362076691",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T19:16:18.000Z"
+  },
   "diag:d778803397e0192f": {
    "status": "done",
    "date": "2026-11-02",
@@ -14202,6 +14292,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-11-03T11:18:17.000Z"
+  },
+  "diag:dae215892a78145c": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "17a7d1a075add263",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T16:46:28.000Z"
   },
   "diag:db31143dfd0ab603": {
    "status": "done",
@@ -14336,6 +14435,15 @@
     "_tze204_ijxvkhd0|TS0601"
    ]
   },
+  "diag:decd60f9ca5c13d3": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "13046145219c4b0a",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T18:10:51.000Z"
+  },
   "diag:df14bcea9aa51fde": {
    "status": "done",
    "date": "2026-11-01",
@@ -14390,6 +14498,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T01:02:11.000Z"
   },
+  "diag:e17bcffb599492c1": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "642b6593ae439ef5",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T18:41:19.000Z"
+  },
   "diag:e185fb9d062dcc2e": {
    "status": "done",
    "date": "2026-10-20",
@@ -14407,6 +14524,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-24T13:46:18.000Z"
+  },
+  "diag:e1ca3e4325e40d5a": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "187a39e25b6b939a",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T19:16:11.000Z"
   },
   "diag:e26a579a054c5d7f": {
    "status": "done",
@@ -14859,6 +14985,15 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-10-25T15:19:23.000Z"
+  },
+  "diag:ef9586e7d0e1b71d": {
+   "status": "done",
+   "date": "2026-11-22",
+   "hash": "a917b0c6a25d7ed4",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-22T16:07:25.000Z"
   },
   "diag:efa39a8ba93780c5": {
    "status": "done",
