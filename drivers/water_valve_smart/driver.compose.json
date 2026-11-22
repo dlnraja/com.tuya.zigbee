@@ -349,6 +349,50 @@
       }
     },
     {
+      "id": "power_off_state",
+      "type": "dropdown",
+      "label": {
+        "en": "After power loss",
+        "fr": "Apres coupure",
+        "nl": "Na stroomuitval",
+        "de": "Nach Stromausfall"
+      },
+      "value": "memory",
+      "values": [
+        {
+          "id": "close",
+          "label": {
+            "en": "Closed",
+            "fr": "Fermee",
+            "nl": "Gesloten",
+            "de": "Geschlossen"
+          }
+        },
+        {
+          "id": "open",
+          "label": {
+            "en": "Open",
+            "fr": "Ouverte",
+            "nl": "Open",
+            "de": "Offen"
+          }
+        },
+        {
+          "id": "memory",
+          "label": {
+            "en": "Remember last state",
+            "fr": "Memoriser l'etat",
+            "nl": "Laatste stand onthouden",
+            "de": "Letzten Zustand merken"
+          }
+        }
+      ],
+      "hint": {
+        "en": "FrankEver FK_V02 DP27 (Z2M power_off_state). Diag 56949320 reported memory (2).",
+        "fr": "FrankEver FK_V02 DP27 (Z2M power_off_state)."
+      }
+    },
+    {
       "$extends": [
         "zcl_cluster_layer"
       ]

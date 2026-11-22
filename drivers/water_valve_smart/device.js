@@ -155,7 +155,8 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         ...parentMappings,
         1: { capability: 'onoff', transform: isTuyaTrue },
         9: { capability: null, internal: 'countdown_seconds' },
-        27: { capability: null, internal: 'power_off_state' },
+        // Z2M power_off_state (diag #2270 reported 2 = memory). Expose as a setting (0 close, 1 open, 2 memory).
+        27: { capability: null, internal: 'power_off_state', setting: 'power_off_state' },
         101: { capability: null, internal: 'threshold_pct' },
         // Forum #2270: DP102 is the actual position. Homey valve_position is 0-1.
         102: { capability: 'valve_position', transform: tuyaPercentToValvePosition },
