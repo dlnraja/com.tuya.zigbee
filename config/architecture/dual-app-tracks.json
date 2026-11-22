@@ -58,7 +58,7 @@
       "versionLine": "1.0.x",
       "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
       "cloneHint": "Documents/homey/bastien",
-      "publish": "Publish Zigbee Bastien workflow, night-only Test — App ID .bastien only; NEVER Universal or Stable slots; NEVER Athom Live",
+      "publish": "Publish Zigbee Bastien workflow, Test at any hour - App ID .bastien only; NEVER Universal or Stable slots; NEVER Athom Live",
       "enrichment": "bastien_to_public_only — fixes, quirks, DPs and learned mappings flow regularly to master and stable-v5 (bastien-promote-upstream.yml), additive, anonymized, exact couple",
       "tipHealthy": "1.0.108",
       "tipNote": "LIVE tip 1.0.108 P2741 (owner Install Test on Bastien account). Diag 6bdc3c5e @ 1.0.107 healthy.",

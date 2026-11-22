@@ -40,7 +40,7 @@ Implemented in `scripts/ci/live-promote-gates.cjs` and enforced by
   (hourly schedule plus workflow_dispatch).
 - **Bastien must never go to Live.** `com.dlnraja.tuya.zigbee.bastien` is only for Bastien's
   house. The gate module and `promote-live.js` refuse that app; it is not in the workflow matrix.
-  Bastien publish stays night-only on its own Test path. Learnings flow Bastien -> master and
+  Bastien publishes to its own Test path at any hour. Learnings flow Bastien -> master and
   stable via `bastien-promote-upstream.yml`.
 - A build that is already Live is left untouched.
 - Fail closed: missing CI, a missing Test timestamp, or a missing target holds the promote.

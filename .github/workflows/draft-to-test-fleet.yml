@@ -97,12 +97,6 @@ jobs:
             items+=$(printf '{"branch":"%s","app_id":"%s","label":"%s"}' "$branch" "$app" "$label")
           }
           if [ "${HOLD_MASTER:-false}" = "true" ]; then INC_M=false; echo "P3034 bisect running: master excluded from promotion"; fi
-          # P3388 (owner rule P3366): the Bastien house app changes only at night, 23:00-06:00 Paris.
-          # The 11:20 / 19:20 UTC slots used to promote a Bastien draft to Test in the daytime.
-          PH=$(TZ=Europe/Paris date +%H); PH=$((10#$PH))
-          if [ "$INC_B" = "true" ] && [ "$PH" -ge 6 ] && [ "$PH" -lt 23 ]; then
-            INC_B=false; echo "P3388: ${PH}h Paris is outside the Bastien night window: Bastien excluded"
-          fi
           [ "$INC_M" = "true" ] && add "master" "com.dlnraja.tuya.zigbee" "Universal"
           [ "$INC_S" = "true" ] && add "stable-v5" "com.dlnraja.tuya.zigbee.stable" "Stable"
           [ "$INC_B" = "true" ] && add "bastien-home" "com.dlnraja.tuya.zigbee.bastien" "Bastien"

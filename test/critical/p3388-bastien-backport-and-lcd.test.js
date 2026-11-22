@@ -52,27 +52,25 @@ describe('P3388 bastien backport selection', () => {
   });
 });
 
-describe('P3388 Bastien night window (23:00-06:00 Paris) in workflows', () => {
+describe('P3388/t1025u backport and Bastien publish at any hour', () => {
   const wf = (f) => fs.readFileSync(path.join(ROOT, '.github/workflows', f), 'utf8');
-  const { isNightWindow } = require('../../.github/scripts/bastien-night-window');
 
-  it('the nightly backport cron starts inside the window in winter and summer', () => {
+  it('the backport workflow still has a nightly cron, ancestor check, kill switch, and never force-pushes', () => {
     const src = wf('bastien-backport-nightly.yml');
     const m = /cron: '(\d+) (\d+) \* \* \*'/.exec(src);
     assert.ok(m);
-    for (const day of ['2026-01-15', '2026-07-15']) {
-      const t = new Date(`${day}T${m[2].padStart(2, '0')}:${m[1].padStart(2, '0')}:00Z`);
-      assert.ok(isNightWindow(t), `${day} ${m[2]}:${m[1]} UTC`);
-    }
-    assert.match(src, /bastien-night-window\.js/);
+    assert.strictEqual(m[1], '40');
+    assert.strictEqual(m[2], '22');
     assert.match(src, /merge-base --is-ancestor origin\/bastien-home HEAD/);
     assert.match(src, /vars\.BASTIEN_BACKPORT != 'off'/);
     assert.ok(!/--force|push -f\b/.test(src));
+    assert.ok(!/bastien-night-window\.js/.test(src));
+    assert.ok(!/steps\.night\.outputs\.inside/.test(src));
   });
 
-  it('draft-to-test paths and the master copy of bastien-publish cannot promote Bastien by day', () => {
-    assert.match(wf('draft-to-test-fleet.yml'), /outside the Bastien night window/);
-    assert.match(wf('draft-to-test.yml'), /needs\.night\.outputs\.ok == 'true'/);
+  it('draft-to-test paths do not hold Bastien for the time of day; master copy still only runs on bastien-home', () => {
+    assert.ok(!/outside the Bastien night window/.test(wf('draft-to-test-fleet.yml')));
+    assert.ok(!/needs\.night\.outputs\.ok == 'true'/.test(wf('draft-to-test.yml')));
     assert.match(wf('bastien-publish.yml'), /if: github\.ref_name == 'bastien-home'/);
   });
 });

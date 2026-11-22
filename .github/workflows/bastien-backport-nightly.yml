@@ -1,6 +1,6 @@
 # >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
-# What it does: Nightly backport of master fixes to the Bastien house app, pushed only when the gates are
-#   green and inside 23h-06h Paris.
+# What it does: Nightly backport of master fixes to the Bastien house app, pushed when the gates are green
+#   (any hour; Athom publish still goes through bastien-publish.yml and P3036 quotas).
 # Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
 #   actions/labeler maintainers.
 # Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
@@ -13,7 +13,7 @@
 # What: cherry-picks master fix/feat/perf commits that touch shared lib/ or drivers present on
 # bastien-home (alt-control P3380-P3383, [auto:*] chores, master-only infra and driver.compose
 # changes are excluded or reported as candidate tasks), runs the same gates as .githooks/pre-push,
-# and pushes to bastien-home only when green AND the Paris clock is inside 23:00-06:00.
+# and pushes to bastien-home when green (any hour, t1024u/t1025u).
 # Conflict or red: no push; job summary + ledger (cache + artifact) record a candidate task;
 # attempts are bounded (3 conflicts / 2 red nights, one commit per night while isolating a red).
 # Kill switch: repository variable BASTIEN_BACKPORT=off.
@@ -67,7 +67,6 @@ jobs:
           git fetch --no-tags origin master:refs/remotes/origin/master --depth=1600
           git show origin/master:tools/ci/bastien-backport.js > "$RUNNER_TEMP/bastien-backport.js"
           git show origin/master:config/ci/bastien-backport.json > "$RUNNER_TEMP/bastien-backport.json"
-          git show origin/master:.github/scripts/bastien-night-window.js > "$RUNNER_TEMP/bastien-night-window.js"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           echo ".bastien-backport/" >> .git/info/exclude
@@ -103,18 +102,13 @@ jobs:
           set -o pipefail
           bash .githooks/pre-push < /dev/null 2>&1 | tee "$RUNNER_TEMP/gates.log" | tail -80
 
-      - name: Night window (23:00-06:00 Paris) right before the push
-        id: night
-        if: steps.apply.outputs.picked != '0' && steps.gates.outcome == 'success'
-        run: node "$RUNNER_TEMP/bastien-night-window.js"
-
       - name: Push (no force; ancestor check)
         id: push
-        if: steps.apply.outputs.picked != '0' && steps.gates.outcome == 'success' && steps.night.outputs.inside == 'true' && (github.event_name == 'schedule' || inputs.dry_run == false)
+        if: steps.apply.outputs.picked != '0' && steps.gates.outcome == 'success' && (github.event_name == 'schedule' || inputs.dry_run == false)
         run: |
           git fetch --no-tags origin bastien-home:refs/remotes/origin/bastien-home
           if ! git merge-base --is-ancestor origin/bastien-home HEAD; then
-            echo "bastien-home moved during the run: no push, retried next night" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "bastien-home moved during the run: no push, retried next run" | tee -a "$GITHUB_STEP_SUMMARY"
             echo "result=rejected" >> "$GITHUB_OUTPUT"; exit 0
           fi
           # shared race-safe helper, one attempt: it never forces; tested tip only (ancestor-ok above)
@@ -129,13 +123,11 @@ jobs:
         env:
           PICKED: ${{ steps.apply.outputs.picked }}
           GATES: ${{ steps.gates.outcome }}
-          INSIDE: ${{ steps.night.outputs.inside }}
           PUSHED: ${{ steps.push.outputs.result }}
           SHA: ${{ steps.push.outputs.sha }}
         run: |
           if [ "${PICKED:-0}" = "0" ]; then R=none
           elif [ "$GATES" != "success" ]; then R=red
-          elif [ "$INSIDE" != "true" ]; then R=outside-window
           elif [ -n "$PUSHED" ]; then R="$PUSHED"
           else R=dry-run; fi
           node "$RUNNER_TEMP/bastien-backport.js" finalize --config "$RUNNER_TEMP/bastien-backport.json" \
@@ -163,8 +155,8 @@ jobs:
           retention-days: 30
           include-hidden-files: true
 
-      - name: Hand the pushed tip to the night publish
+      - name: Hand the pushed tip to bastien-publish
         if: steps.push.outputs.result == 'green'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run bastien-publish.yml --ref bastien-home -f force_publish=false || echo "dispatch failed; publish-self-heal re-dispatches at night"
+        run: gh workflow run bastien-publish.yml --ref bastien-home -f force_publish=false || echo "dispatch failed; publish-self-heal will retry"

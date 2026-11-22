@@ -100,7 +100,7 @@
     },
     "bastien-backport-nightly.yml": {
       "group": "autopilot",
-      "what": "Nightly backport of master fixes to the Bastien house app, pushed only when the gates are green and inside 23h-06h Paris."
+      "what": "Nightly backport of master fixes to the Bastien house app, pushed when the gates are green (any hour)."
     },
     "blakadder-fetch.yml": {
       "group": "enrich",

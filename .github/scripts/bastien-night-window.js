@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 'use strict';
-// P3366: the private Bastien house app is uploaded to Athom only at night, 23:00-06:00 Europe/Paris
-// (owner rule: no daytime update on the house box). Before P3366 nothing enforced it: any push to
+// P3366 clock helper (t1025u: no longer a publish gate; Bastien may upload at any hour).
+// Kept so tests and tools can still read Europe/Paris hours. Before P3366 nothing enforced the old
+// night rule: any push to
 // bastien-home touching lib/** or a manual dispatch uploaded at once (build #256 was created at
 // 22:48 Paris on 2026-11-21). A run outside the window is held as "deferred"; publish-self-heal
 // (master, cron) re-dispatches it only inside the window. DST is handled by Intl (Europe/Paris).
