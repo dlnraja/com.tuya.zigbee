@@ -98,6 +98,10 @@
       "group": "publish",
       "what": "Publishes the private Bastien house app (its own app ID only); manual by default."
     },
+    "bastien-backport-nightly.yml": {
+      "group": "autopilot",
+      "what": "Nightly backport of master fixes to the Bastien house app, pushed only when the gates are green and inside 23h-06h Paris."
+    },
     "blakadder-fetch.yml": {
       "group": "enrich",
       "what": "Reads the Blakadder Zigbee database and cross-references it with our device list."

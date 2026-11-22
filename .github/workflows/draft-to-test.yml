@@ -54,8 +54,30 @@ defaults:
     shell: bash
 
 jobs:
+  # P3388 (owner rule P3366): the Bastien house app is promoted only at night, 23:00-06:00 Paris.
+  night:
+    name: Bastien night window
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      ok: ${{ steps.w.outputs.ok }}
+    steps:
+      - id: w
+        env:
+          BRANCH: ${{ inputs.branch || 'master' }}
+        run: |
+          PH=$(TZ=Europe/Paris date +%H); PH=$((10#$PH))
+          if [ "$BRANCH" = "bastien-home" ] && [ "$PH" -ge 6 ] && [ "$PH" -lt 23 ]; then
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "P3388: ${PH}h Paris is outside the Bastien night window (23h-06h): not promoted" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
   promote:
     name: Promote Draft to Test (${{ inputs.branch || 'master' }})
+    needs: night
+    if: needs.night.outputs.ok == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     # P3036: one lock per app shared by every publish workflow (job level: the workflow group stays promote-to-test-*).

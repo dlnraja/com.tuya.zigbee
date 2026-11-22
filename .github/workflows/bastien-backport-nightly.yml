@@ -1,0 +1,170 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Nightly backport of master fixes to the Bastien house app, pushed only when the gates are
+#   green and inside 23h-06h Paris.
+# Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
+#   actions/labeler maintainers.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# Nightly backport master -> bastien-home (P3388, owner rules t737u + t1022u)
+# Triggers: cron 40 22 * * * UTC (23:40 Paris in winter, 00:40 in summer) + workflow_dispatch
+# Secrets: GITHUB_TOKEN only. No AI step. Never force-pushes, never opens an issue or PR.
+#
+# What: cherry-picks master fix/feat/perf commits that touch shared lib/ or drivers present on
+# bastien-home (alt-control P3380-P3383, [auto:*] chores, master-only infra and driver.compose
+# changes are excluded or reported as candidate tasks), runs the same gates as .githooks/pre-push,
+# and pushes to bastien-home only when green AND the Paris clock is inside 23:00-06:00.
+# Conflict or red: no push; job summary + ledger (cache + artifact) record a candidate task;
+# attempts are bounded (3 conflicts / 2 red nights, one commit per night while isolating a red).
+# Kill switch: repository variable BASTIEN_BACKPORT=off.
+
+name: Bastien nightly backport (P3388)
+
+on:
+  schedule:
+    - cron: '40 22 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Plan and gate only, never push'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: bastien-backport
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+
+jobs:
+  backport:
+    name: Backport master fixes to bastien-home
+    if: vars.BASTIEN_BACKPORT != 'off'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - name: Checkout bastien-home
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: bastien-home
+          fetch-depth: 1600
+
+      - name: Fetch master and take the backport tool from master
+        run: |
+          git fetch --no-tags origin master:refs/remotes/origin/master --depth=1600
+          git show origin/master:tools/ci/bastien-backport.js > "$RUNNER_TEMP/bastien-backport.js"
+          git show origin/master:config/ci/bastien-backport.json > "$RUNNER_TEMP/bastien-backport.json"
+          git show origin/master:.github/scripts/bastien-night-window.js > "$RUNNER_TEMP/bastien-night-window.js"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          echo ".bastien-backport/" >> .git/info/exclude
+          echo "base=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Restore ledger
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .bastien-backport/ledger.json
+          key: bastien-backport-ledger-${{ github.run_id }}
+          restore-keys: bastien-backport-ledger-
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+
+      - name: Cherry-pick eligible master commits
+        id: apply
+        run: |
+          node "$RUNNER_TEMP/bastien-backport.js" apply --config "$RUNNER_TEMP/bastien-backport.json" \
+            --ledger .bastien-backport/ledger.json --report .bastien-backport/report.md
+          cat .bastien-backport/report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Install dependencies
+        if: steps.apply.outputs.picked != '0'
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+
+      - name: Same gates as .githooks/pre-push (full suite included)
+        id: gates
+        if: steps.apply.outputs.picked != '0'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          bash .githooks/pre-push < /dev/null 2>&1 | tee "$RUNNER_TEMP/gates.log" | tail -80
+
+      - name: Night window (23:00-06:00 Paris) right before the push
+        id: night
+        if: steps.apply.outputs.picked != '0' && steps.gates.outcome == 'success'
+        run: node "$RUNNER_TEMP/bastien-night-window.js"
+
+      - name: Push (no force; ancestor check)
+        id: push
+        if: steps.apply.outputs.picked != '0' && steps.gates.outcome == 'success' && steps.night.outputs.inside == 'true' && (github.event_name == 'schedule' || inputs.dry_run == false)
+        run: |
+          git fetch --no-tags origin bastien-home:refs/remotes/origin/bastien-home
+          if ! git merge-base --is-ancestor origin/bastien-home HEAD; then
+            echo "bastien-home moved during the run: no push, retried next night" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "result=rejected" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          # shared race-safe helper, one attempt: it never forces; tested tip only (ancestor-ok above)
+          if bash .github/scripts/git-push-retry.sh --branch bastien-home --attempts 1; then
+            echo "result=green" >> "$GITHUB_OUTPUT"; echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          else
+            echo "result=rejected" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Record the outcome in the ledger
+        if: always() && steps.apply.outcome == 'success'
+        env:
+          PICKED: ${{ steps.apply.outputs.picked }}
+          GATES: ${{ steps.gates.outcome }}
+          INSIDE: ${{ steps.night.outputs.inside }}
+          PUSHED: ${{ steps.push.outputs.result }}
+          SHA: ${{ steps.push.outputs.sha }}
+        run: |
+          if [ "${PICKED:-0}" = "0" ]; then R=none
+          elif [ "$GATES" != "success" ]; then R=red
+          elif [ "$INSIDE" != "true" ]; then R=outside-window
+          elif [ -n "$PUSHED" ]; then R="$PUSHED"
+          else R=dry-run; fi
+          node "$RUNNER_TEMP/bastien-backport.js" finalize --config "$RUNNER_TEMP/bastien-backport.json" \
+            --ledger .bastien-backport/ledger.json --result "$R" --pushed "${SHA:-none}"
+          {
+            echo ""; echo "### Outcome: $R"
+            [ "$R" = "red" ] && { echo '```'; grep -E "BLOCKED|failing|Error" "$RUNNER_TEMP/gates.log" | head -30; echo '```'; }
+            echo "Base bastien-home: $base  Pushed: ${SHA:-none}"
+          } >> "$GITHUB_STEP_SUMMARY"
+          cp "$RUNNER_TEMP/gates.log" .bastien-backport/gates.log 2>/dev/null || true
+
+      - name: Save ledger
+        if: always()
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .bastien-backport/ledger.json
+          key: bastien-backport-ledger-${{ github.run_id }}
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: bastien-backport-${{ github.run_id }}
+          path: .bastien-backport/
+          retention-days: 30
+          include-hidden-files: true
+
+      - name: Hand the pushed tip to the night publish
+        if: steps.push.outputs.result == 'green'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run bastien-publish.yml --ref bastien-home -f force_publish=false || echo "dispatch failed; publish-self-heal re-dispatches at night"

@@ -78,6 +78,9 @@ env:
 jobs:
   publish-bastien:
     name: Publish Bastien house app
+    # P3388: this master copy has no P3366 night gate. GitHub runs the workflow file of the
+    # dispatched ref, so only the bastien-home copy (night window 23h-06h Paris) may upload.
+    if: github.ref_name == 'bastien-home'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
