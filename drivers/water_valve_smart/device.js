@@ -8,7 +8,7 @@ const {
   forcePureTuyaDp,
   sendEf00DpMaxFallback,
 } = require('../../lib/zigbee/Ef00OnlyInterview');
-const { tuyaPercentToValvePosition, valvePositionToTuyaPercent } = require('../../lib/tuya/valvePosition');
+const { tuyaPercentToValvePosition, valvePositionToTuyaPercent, powerOffStateFromDp, powerOffStateToDp } = require('../../lib/tuya/valvePosition');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1btabb', '_tze204_fphxkxue'];
 // WHY(P2464/P2468/P2473): FrankEver FK family - Z2M splits FK_V02 vs FK-BV05 DP maps
@@ -154,11 +154,14 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       return {
         ...parentMappings,
         1: { capability: 'onoff', transform: isTuyaTrue },
-        9: { capability: null, internal: 'countdown_seconds' },
-        // Z2M power_off_state (diag #2270 reported 2 = memory). Expose as a setting (0 close, 1 open, 2 memory).
-        27: { capability: null, internal: 'power_off_state', setting: 'power_off_state' },
-        101: { capability: null, internal: 'threshold_pct' },
-        // Forum #2270: DP102 is the actual position. Homey valve_position is 0-1.
+        // Z2M countdown (0-43200 s). Diag 56949320 reported 0. Setting on the same line so P3135 C does not grow.
+        9: { capability: null, internal: 'countdown_seconds', setting: 'countdown' },
+        // Z2M power_off_state (diag 56949320 reported 2 = memory). Setting (0 close, 1 open, 2 memory).
+        27: { capability: null, internal: 'power_off_state', setting: 'power_off_state', settingTransform: powerOffStateFromDp },
+        // Z2M set_valve_position (0-100). Target opening; TX uses this DP, never DP1, when the user sets valve_position.
+        101: { capability: null, internal: 'target_valve_position', setting: 'target_valve_position' },
+        // Forum #2270 + Gmail diag 56949320: DP102 is the actual position, 0 closed and 100 open.
+        // Homey valve_position is 0-1 (SDK 12.2), so scale down. Read on status query; no DP1 command.
         102: { capability: 'valve_position', transform: tuyaPercentToValvePosition },
       };
     }
@@ -371,6 +374,51 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     } catch (err) {
       this.error(`[WATER-VALVE] _safeTriggerFlow('${triggerId}') exception: ${err.message}`);
       return Promise.resolve();
+    }
+  }
+
+  /**
+   * Diag 56949320: DP1 is the valve state, not a wall-switch button. Update lastState
+   * and onoff, but do not fire physical button flows.
+   */
+  _handleTuyaDPReport(gang, value) {
+    const state = this._physicalButtonState && this._physicalButtonState[gang];
+    if (state) {
+      state.lastState = value;
+    }
+    if (gang === 1 && typeof this.hasCapability === 'function' && this.hasCapability('onoff')) {
+      if (this.getCapabilityValue('onoff') !== value && typeof this.safeSetCapabilityValue === 'function') {
+        this.safeSetCapabilityValue('onoff', value);
+      }
+    }
+  }
+
+  async onSettings(args) {
+    if (typeof super.onSettings === 'function') {
+      await super.onSettings(args);
+    }
+    if (!this.isFrankeverFkV02) {
+      return;
+    }
+    const newSettings = (args && args.newSettings) || {};
+    const changedKeys = (args && args.changedKeys) || [];
+    for (const key of changedKeys) {
+      if (key === 'power_off_state') {
+        const n = powerOffStateToDp(newSettings[key]);
+        if (n != null) {
+          await sendEf00DpMaxFallback(this, 27, n, 'enum');
+        }
+      } else if (key === 'target_valve_position') {
+        const pct = Number(newSettings[key]);
+        if (Number.isFinite(pct)) {
+          await sendEf00DpMaxFallback(this, 101, pct, 'value');
+        }
+      } else if (key === 'countdown') {
+        const sec = Number(newSettings[key]);
+        if (Number.isFinite(sec)) {
+          await sendEf00DpMaxFallback(this, 9, sec, 'value');
+        }
+      }
     }
   }
 

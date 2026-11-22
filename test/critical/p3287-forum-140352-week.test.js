@@ -35,7 +35,10 @@ describe('P3287 forum 140352 week couples', () => {
   it('a one-byte open report is true and an unknown value is not stored as false', () => {
     assert.strictEqual(tuyaDpBool(Buffer.from([1])), true);
     assert.strictEqual(tuyaDpBool('true'), true);
+    assert.strictEqual(tuyaDpBool('hex:01'), true);
+    assert.strictEqual(tuyaDpBool({ dp: 1, datatype: 1, data: 'hex:01' }), true);
     assert.strictEqual(tuyaDpBool(Buffer.from([0])), false);
+    assert.strictEqual(tuyaDpBool('hex:00'), false);
     assert.strictEqual(tuyaDpBool('later'), null);
   });
 
