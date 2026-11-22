@@ -101,16 +101,21 @@ function asciiJsonTree(root, opts = {}) {
 
 /**
  * Publish step: every JSON file of the payload in ASCII, app.json checked against the
- * Athom 4 MB limit. If full ASCII would push app.json over it, app.json falls back to
- * escaping only chars above U+00FF (one-byte in V8 all the same).
+ * Athom 4 MB limit. If full ASCII would push app.json over it (or over opts.wideAboveBytes,
+ * P3386), app.json falls back to escaping only chars above U+00FF (one-byte in V8 all the same).
  */
 function asciiPublishPayload(destDir, opts = {}) {
   const limit = opts.maxAppJsonBytes || 4 * 1024 * 1024;
+  // P3386: soft threshold (prepare-publish passes the P3342 goal). Above it app.json is written in
+  // wide mode: Latin-1 chars stay raw UTF-8 (2 bytes instead of a 6-byte \u00XX escape), chars above
+  // U+00FF stay escaped, so V8 still parses a one-byte string with fewer chars. Lossless, same value.
+  const wideAbove = Number.isFinite(opts.wideAboveBytes) && opts.wideAboveBytes > 0 ? opts.wideAboveBytes : Infinity;
   const appJson = path.join(destDir, 'app.json');
   const original = fs.existsSync(appJson) ? fs.readFileSync(appJson) : null;
   const changed = asciiJsonTree(destDir, opts);
   let appJsonMode = 'ascii';
-  if (original && fs.statSync(appJson).size > limit) {
+  const asciiBytes = original ? fs.statSync(appJson).size : 0;
+  if (original && (asciiBytes > limit || asciiBytes > wideAbove)) {
     fs.writeFileSync(appJson, original);
     const r = asciiJsonFile(appJson, { mode: 'wide' });
     appJsonMode = 'wide';
@@ -122,6 +127,7 @@ function asciiPublishPayload(destDir, opts = {}) {
   return {
     files: changed.length,
     appJsonMode,
+    appJsonAsciiBytes: asciiBytes,
     appJsonBytes: original ? fs.statSync(appJson).size : 0,
     bytesBefore: sum('bytesBefore'),
     bytesAfter: sum('bytesAfter'),

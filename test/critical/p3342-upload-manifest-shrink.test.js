@@ -100,7 +100,7 @@ test('pipeline wiring: prepare-publish, size-gate and p2842 projections strip; c
   assert.match(pp, /strip-inert-manifest\.cjs'\)\.stripFile\(destAppJson\)/);
   assert.ok(pp.indexOf('strip-inert-manifest') > pp.indexOf("compact-shared-text.cjs').compactFile(destAppJson)"), 'after P3068');
   assert.match(pp, /upload-manifest-ceiling\.cjs'\);[\s\S]{0,200}checkUploadManifest\(destAppJson\)[\s\S]{0,400}process\.exit\(1\)/);
-  assert.ok(pp.indexOf('checkUploadManifest(destAppJson)') > pp.indexOf('asciiPublishPayload(destDir)'), 'measured after the ASCII pass');
+  assert.ok(pp.indexOf('checkUploadManifest(destAppJson)') > pp.indexOf('asciiPublishPayload(destDir'), 'measured after the ASCII pass');
   assert.match(read('scripts/ci/publish-size-gate.cjs'), /strip-inert-manifest\.cjs'\)\.stripFile\(tmp\)/);
   assert.match(read('tools/ci/p2842-flow-publish-self-heal.js'), /strip-inert-manifest\.cjs'\)\)\.stripFile\(tmp\)/);
   const wf = read('.github/workflows/platform-budget.yml');

@@ -206,6 +206,17 @@ Platform Budget workflow. Lower it as the manifest shrinks; raising it needs the
 
 Update 2026-11-21 (P3360): `ceilingBytes` is 3 270 000. Graduating 21 held drivers produced a measured ASCII upload app.json of 3 255 746 B after every lossless shrink, 5 746 B over the old 3 250 000 ratchet. Athom #488 ties AggregateError to packaged file count (the new archive is 3 274 files / 30.64 MB, under the 3 830 / 32.7 MB file-count ceiling). Athom's 4 MB app.json limit is unchanged. Goal stays 2 850 000.
 
+Update 2026-11-22 (P3386): the P3370 landing stack (P2626 keeps 1929 `button.*` getable/setable/maintenanceAction
+flags in the payload, ~+34 KB; P3362 standard units on 351 drivers, ~+9 KB; flow title disambiguation, ~+10 KB;
+2 more payload drivers, ~+4 KB) grew the ASCII upload app.json from 3 266 737 B (fa4a882d62, last green Validate)
+to 3 331 861 B, 61 861 B over the ceiling (runs 44982711877, 44982711950). All of that growth is intended, so the
+fix is encoding only: above `goalBytes`, `asciiPublishPayload(destDir, { wideAboveBytes })` writes app.json in
+**wide** mode (Latin-1 chars raw UTF-8, every char above U+00FF still `\uXXXX`). Same JSON value; the decoded text
+still has no char above U+00FF, so V8 keeps it one-byte (checked with `v8.serialize` tag `"`) and it is ~90 K chars
+shorter than full ASCII. Measured: CI-variant 3 259 789 B (-72 072), staged variant 3 247 201 B. Data JSON files stay
+full ASCII. Ceiling, goal, hold list and couples unchanged. Test: `test/critical/p3386-upload-manifest-wide.test.js`.
+Headroom is small (~10 KB): the next growth needs a content trade-off below (owner decision) or a new lossless pass.
+
 ### What else was measured (not applied)
 Already done by earlier passes: identical-to-en locales (P3068), titleFormatted without args (P2830h), doc keys
 (P3075), Zigbee matrix compaction. No exact duplicate manufacturer/product entries remain; the 1744 case-only
@@ -219,3 +230,4 @@ P3342 payload, ASCII bytes):
 - settings hints (all locales): 291 515 B (only nl+de of them: 22 765 B).
 - flow card hints: 95 210 B.
 - writing app.json as UTF-8 instead of P3047 ASCII escapes: ~75 600 B, but doubles the parse-text heap on Homey.
+  P3386 applies the safe half (wide mode: Latin-1 raw, chars above U+00FF escaped, heap stays one-byte).

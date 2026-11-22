@@ -130,7 +130,7 @@ describe('P3312 Latin-1 payload JavaScript', () => {
 
   it('prepare-publish runs the step after the ASCII JSON step and fails closed', () => {
     const src = fs.readFileSync(path.join(ROOT, 'scripts', 'prepare-publish.js'), 'utf8');
-    const json = src.indexOf('asciiPublishPayload(destDir)');
+    const json = src.indexOf('asciiPublishPayload(destDir');
     const js = src.indexOf('latin1JsTree(destDir)');
     assert.ok(json > 0 && js > json, 'Latin-1 JS step runs after the ASCII JSON step');
     assert.ok(src.indexOf('FATAL(P3312)') > js);

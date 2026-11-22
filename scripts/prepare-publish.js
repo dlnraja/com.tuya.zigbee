@@ -1021,8 +1021,11 @@ try {
   // Done here, not in the sources, so CI and enrichment writers keep readable UTF-8.
   try {
     const { asciiPublishPayload } = require('./maintenance/ascii-json.cjs');
-    const a = asciiPublishPayload(destDir);
-    console.log(`[P3047] ${a.files} JSON file(s) written as ASCII (app.json mode=${a.appJsonMode}, ${(a.appJsonBytes / 1048576).toFixed(2)} MB); parse text heap ${(a.textHeapBefore / 1048576).toFixed(2)} -> ${(a.textHeapAfter / 1048576).toFixed(2)} MB`);
+    // P3386: above the P3342 goal, app.json keeps Latin-1 raw (wide mode, still one-byte in V8).
+    let wideAboveBytes;
+    try { wideAboveBytes = require('./ci/upload-manifest-ceiling.cjs').policy().goalBytes; } catch (_) { wideAboveBytes = undefined; }
+    const a = asciiPublishPayload(destDir, { wideAboveBytes });
+    console.log(`[P3047] ${a.files} JSON file(s) written as ASCII (app.json mode=${a.appJsonMode}, ${(a.appJsonBytes / 1048576).toFixed(2)} MB${a.appJsonMode === 'wide' ? `, full ASCII would be ${a.appJsonAsciiBytes} B` : ''}); parse text heap ${(a.textHeapBefore / 1048576).toFixed(2)} -> ${(a.textHeapAfter / 1048576).toFixed(2)} MB`);
     if (a.appJsonBytes > 4 * 1024 * 1024) {
       console.error('FATAL(P3047): app.json is larger than 4MB after ASCII escaping. Athom will reject.');
       process.exit(1);
