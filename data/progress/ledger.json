@@ -1,33 +1,41 @@
 {
- "version": 1,
- "updated": "2026-10-25T19:07:57.209Z",
- "checkpoints": {
-  "journal": "docs/progress/JOURNAL.md"
- },
- "items": {
-  "p3044-golden-refresh-stable-v5": {
-   "status": "done",
-   "date": "2026-10-25",
-   "note": "golden refreshed; lost lines = P3038 wildcard drops + sourced moves; exact couples lost: 0; restored: 0",
-   "by": "p3044"
+  "version": 1,
+  "updated": "2026-11-22T00:16:45.815Z",
+  "checkpoints": {
+    "journal": "docs/progress/JOURNAL.md"
   },
-  "task:p3045-corrige-tout": {
-   "status": "done",
-   "date": "2026-10-25",
-   "note": "memwarn ENOENT fallback, safeFlowCard guard (stable port)",
-   "by": "p3045"
-  },
-  "task:p3046-bastien-oom-flow-ids": {
-   "status": "done",
-   "date": "2026-10-25",
-   "note": "Per-device flow-id set clone (about 330 KB per device) replaced by one set per driver; Bastien OOM diag 097f1743; all 3 branches",
-   "by": "executor"
-  },
-  "task:p3047-ascii-json-payload": {
-   "status": "done",
-   "date": "2026-10-25",
-   "note": "prepare-publish writes every payload JSON as ASCII (\\uXXXX, round trip checked); app.json load text 5.74 -> 2.96 MB on stable; all 3 branches",
-   "by": "executor"
+  "items": {
+    "p3044-golden-refresh-stable-v5": {
+      "status": "done",
+      "date": "2026-10-25",
+      "note": "golden refreshed; lost lines = P3038 wildcard drops + sourced moves; exact couples lost: 0; restored: 0",
+      "by": "p3044"
+    },
+    "task:p3045-corrige-tout": {
+      "status": "done",
+      "date": "2026-10-25",
+      "note": "memwarn ENOENT fallback, safeFlowCard guard (stable port)",
+      "by": "p3045"
+    },
+    "task:p3046-bastien-oom-flow-ids": {
+      "status": "done",
+      "date": "2026-10-25",
+      "note": "Per-device flow-id set clone (about 330 KB per device) replaced by one set per driver; Bastien OOM diag 097f1743; all 3 branches",
+      "by": "executor"
+    },
+    "task:p3047-ascii-json-payload": {
+      "status": "done",
+      "date": "2026-10-25",
+      "note": "prepare-publish writes every payload JSON as ASCII (\\uXXXX, round trip checked); app.json load text 5.74 -> 2.96 MB on stable; all 3 branches",
+      "by": "executor"
+    },
+    "ci-attempt:node22-runtime-tests/node-test-strict/p2876-store-text-coherence-safe-auto-commit": {
+      "status": "done",
+      "date": "2026-11-22",
+      "attempts": 1,
+      "branch": "stable-v5",
+      "note": "P3368: store-text-coherence.yml (P3363) called scripts/ci/safe-auto-commit.js missing on stable-v5; ported from master + test",
+      "by": "homey-ci-prs"
+    }
   }
- }
 }
