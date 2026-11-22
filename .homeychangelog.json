@@ -4312,6 +4312,10 @@
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
+  "1.0.249": {
+    "en": "Fixed: device settings (ZG-301Z), buttons and remotes and battery reporting. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : réglages des appareils (ZG-301Z), boutons et télécommandes et niveau de batterie. En coulisses : tests et contrôles de publication."
+  },
   "1.0.248": {
     "en": "Fixed: lights and dimmers & Flow cards. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : éclairages et variateurs & cartes Flow. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
