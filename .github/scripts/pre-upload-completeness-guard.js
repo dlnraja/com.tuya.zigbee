@@ -86,10 +86,30 @@ function stripComments(src) {
   return src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"`\\])\/\/.*$/gm, '$1');
 }
 
+/**
+ * WHY(ciprs-1729 / P3310): true when `idx` sits inside an unclosed `try { ... }`
+ * block (brace walk backwards, bounded to 4000 chars). Same logic as
+ * scripts/ci/payload-preflight.cjs so a long try (presence_sensor_radar ZHT-S01
+ * -> wall_thermostat) is try-guarded even when the opener is past 400 chars.
+ */
+function insideTryBlock(src, idx) {
+  let depth = 0;
+  const stop = Math.max(0, idx - 4000);
+  for (let i = idx - 1; i >= stop; i--) {
+    const ch = src[i];
+    if (ch === '}') depth++;
+    else if (ch === '{') {
+      if (depth > 0) { depth--; continue; }
+      if (/\btry\s*$/.test(src.slice(Math.max(0, i - 20), i))) return true;
+    }
+  }
+  return false;
+}
+
 function tryGuarded(src, idx) {
   const before = src.slice(Math.max(0, idx - 400), idx);
   const t = before.search(/try\s*\{(?![\s\S]*try\s*\{)/);
-  return t >= 0 && !/\bcatch\b/.test(before.slice(t));
+  return (t >= 0 && !/\bcatch\b/.test(before.slice(t))) || insideTryBlock(src, idx);
 }
 
 function resolveRel(set, fromRel, spec) {
@@ -351,4 +371,4 @@ if (require.main === module) {
   }
   console.log('[pre-upload-guard] OK: package complete');
 }
-module.exports = { check, driverCeiling, DRIVER_CEILING, requireClosure, loadBaseline, buildManifest, diffManifests, ignoredTopDirs, STRAY_TOP, MAX_DROP, MIN_PAYLOAD_BYTES, MIN_ARCHIVE_GZ_BYTES };
+module.exports = { check, driverCeiling, DRIVER_CEILING, requireClosure, loadBaseline, buildManifest, diffManifests, ignoredTopDirs, STRAY_TOP, MAX_DROP, MIN_PAYLOAD_BYTES, MIN_ARCHIVE_GZ_BYTES, insideTryBlock, tryGuarded };
