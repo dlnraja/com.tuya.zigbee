@@ -1,7 +1,8 @@
 'use strict';
 // P3226: a leaked critical shared MemoryBudget changes MethodChain backoff (x4);
 // _resetShared() must restore nominal behaviour (root cause of P3016/P3017/P3023 'not ok').
-const { describe, it } = require('node:test');
+const { describe, it, afterEach } = require('../_support/dual-runner');
+afterEach(() => { require('../../lib/memory/MemoryBudget')._resetShared(); });
 const assert = require('node:assert');
 const MB = require('../../lib/memory/MemoryBudget');
 const MC = require('../../lib/zigbee/MethodChain');

@@ -1,6 +1,6 @@
 'use strict';
 /** P3023: smarter, additive and bounded — confidence, couple knowledge, backoff, anomalies, chains. */
-const { describe, it, afterEach } = require('node:test');
+const { describe, it, afterEach } = require('../_support/dual-runner');
 const assert = require('node:assert');
 const Flags = require('../../lib/smart/SoakFlags');
 const AB = require('../../lib/smart/AdaptiveBackoff');

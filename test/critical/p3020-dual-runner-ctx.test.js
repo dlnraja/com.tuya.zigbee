@@ -14,4 +14,9 @@ describe('P3020 dual runner context', function suite() {
   });
   it('done-callback style is honoured', (done) => { setImmediate(() => done()); });
   it('async style is honoured', async () => { await new Promise((r) => setImmediate(r)); assert.ok(true); });
+
+  it('node:test skip option is honoured (does not fail the suite)', { skip: 'p3020 dual-runner skip-option probe' }, () => {
+    throw new Error('must not run when skip is set');
+  });
+  it('node:test skip:false still runs', { skip: false }, () => { assert.ok(true); });
 });
