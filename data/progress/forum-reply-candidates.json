@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22T01:56:24.827955+01:00",
+  "generated": "2026-11-22T02:54:23.271964+01:00",
   "note": "P3362 candidates only. Do not post. SHA_PENDING_MASTER_PUSH is filled after FREEZE-LIFTED and the push lands. Topic 26439 has no reply-candidates.",
   "limits": {
     "autoPost": false,
@@ -14,7 +14,8 @@
       "status": "fixed-local-unpushed",
       "commit": "SHA_PENDING_MASTER_PUSH",
       "appVersion": "9.0.1636 (next Test after the push)",
-      "body": "Thanks Arve. The Gmail diagnostic 56949320 already showed DP102 as 0 or 100, but Homey's official valve_position capability is 0-1 (SDK 12.2), so the tile stayed empty. I scaled DP102 reports to 0-1, write a percent set to DP101, keep a status refresh read-only (no DP1 open/close), expose DP27 power-off behaviour (close / open / memory) as a setting, and skip app-level button flows on this driver. The fix is in master commit SHA_PENDING_MASTER_PUSH and will be in the Test build after 9.0.1636. FrankEver _TZE200_1n2zev06 / TS0601."
+      "body": "Thanks Arve. I went through diagnostic 56949320 (Universal Tuya v9.0.1615, two FrankEver valves, message 'Finne status pa ventilen'). Three things were wrong: DP101/DP102/DP27/DP9 were mapped to null, so the official valve_position tile stayed empty; when DP1=true arrived the physical-DP path still said 'Gang 1: false unchanged' and left onoff false; and the dataQuery reply (EF00 command 0x11, payload 0300) was guessed as a short-payload value instead of an MCU version response. The fix scales DP102 to valve_position 0-1 (100 -> fully open, 0 -> closed), treats DP101 as the target opening setting (Z2M set_valve_position), DP27 as the after-power-loss setting (your report was memory), and DP9 as the countdown in seconds (Z2M countdown; yours was 0). Status refresh stays read-only (no DP1 open/close command). The onoff comparison now follows the incoming DP1 instead of the stale false, and command 0x11 is recognized as mcuVersionResponse. The work is in master commit SHA_PENDING_MASTER_PUSH and will be in the Test build after 9.0.1636. Couple: _TZE200_1n2zev06 / TS0601.",
+      "diag": "56949320-88a3-40cf-8a5d-1213787e5dad"
     },
     {
       "topic": 140352,

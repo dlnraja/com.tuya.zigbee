@@ -10,7 +10,7 @@
 const assert = require('assert');
 const path = require('path');
 const audit = require('../scripts/ci/capability-coherence-audit');
-const BASE = {"A":27,"B":346,"C":186};
+const BASE = {"A":27,"B":346,"C":184};
 
 describe('P3135 capability coherence audit (ratchet)', () => {
   const r = audit.run(path.join(__dirname, '..'));

@@ -53,8 +53,8 @@ assert.ok(valveJs.includes("'_tze200_nbqnmkee'") || valveJs.includes('_tze200_nb
   'P2468: FK-BV05 nbqnmkee');
 assert.ok(/9:\s*\{\s*capability:\s*null,\s*internal:\s*'countdown_seconds'/.test(valveJs),
   'P2468: FK_V02 DP9 countdown_seconds');
-assert.ok(/101:\s*\{\s*capability:\s*null,\s*internal:\s*'threshold_pct'/.test(valveJs),
-  'P2468: FK_V02 DP101 threshold_pct');
+assert.ok(/101:\s*\{\s*capability:\s*null,\s*internal:\s*'target_valve_position'/.test(valveJs),
+  'P2468: FK_V02 DP101 target_valve_position (Z2M set_valve_position)');
 assert.ok(/2:\s*\{\s*capability:\s*null,\s*internal:\s*'threshold_pct'/.test(valveJs),
   'P2468: FK-BV05 DP2 threshold_pct');
 assert.ok(!/invent.*frankever.*pid/i.test(valveJs), 'P2468: no invent-pid comments as live lock');

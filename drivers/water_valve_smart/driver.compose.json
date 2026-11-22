@@ -446,6 +446,48 @@
       }
     },
     {
+      "id": "countdown",
+      "type": "number",
+      "label": {
+        "en": "Countdown (s)",
+        "fr": "Compte a rebours (s)",
+        "nl": "Aftelling (s)",
+        "de": "Countdown (s)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 43200,
+      "step": 1,
+      "units": {
+        "en": "s"
+      },
+      "hint": {
+        "en": "FrankEver FK_V02 DP9 (Z2M countdown, 0-43200 s). Diag 56949320 reported 0.",
+        "fr": "FrankEver FK_V02 DP9 (Z2M countdown)."
+      }
+    },
+    {
+      "id": "target_valve_position",
+      "type": "number",
+      "label": {
+        "en": "Target opening (%)",
+        "fr": "Ouverture cible (%)",
+        "nl": "Doelopening (%)",
+        "de": "Zieloeffnung (%)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "units": {
+        "en": "%"
+      },
+      "hint": {
+        "en": "FrankEver FK_V02 DP101 (Z2M set_valve_position). Actual position is DP102 / valve_position.",
+        "fr": "FrankEver FK_V02 DP101 (Z2M set_valve_position)."
+      }
+    },
+    {
       "$extends": [
         "zcl_cluster_layer"
       ]
