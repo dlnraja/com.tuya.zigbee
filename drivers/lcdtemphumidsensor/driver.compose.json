@@ -287,12 +287,14 @@
     "measure_temperature": {
       "getable": true,
       "preventInsights": false,
-      "decimals": 1
+      "decimals": 1,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
       "preventInsights": false,
-      "decimals": 1
+      "decimals": 1,
+      "units": "%"
     },
     "measure_battery": {
       "getable": true,

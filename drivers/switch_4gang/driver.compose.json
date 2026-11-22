@@ -1087,7 +1087,17 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
+    },
+    "meter_power": {
+      "units": "kWh"
+    },
+    "measure_voltage": {
+      "units": "V"
+    },
+    "measure_current": {
+      "units": "A"
     }
   },
   "metadata": {
