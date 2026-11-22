@@ -152,10 +152,16 @@ jobs:
             node -e "const j=require('./reports/driver-class-enrich-'+new Date().toISOString().slice(0,10)+'/summary.json'); console.log(JSON.stringify({totals:j.totals,classes:Object.fromEntries(Object.entries(j.classes||{}).map(([k,v])=>[k,v.count]))},null,2))" >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Strip curated couple removals (P3395 safety net)
+        # WHY: gates below fail on couples a human removed on purpose (P2698 rlytpmij -> curtain_motor,
+        # run 45066450460) before the commit-time couple guard can revert them; strip only those strings.
+        run: node tools/ci/strip-curated-couple-removals.js --apply
+
       - name: Sacred + anti-bot gates
         run: |
           node tools/ci/strip-registry-forbidden-compose.js --apply
           node tools/ci/p2138-sacred-couple-matrix-gate.js
+          node --test test/critical/p3395-curated-removals-enrich.test.js
           node tools/ci/p2519-anti-regression-enrich-gate.js
           node tools/ci/anti-bot-regression-gate.js
           node tools/ci/free-scrape-budget.js --report >> "$GITHUB_STEP_SUMMARY" || true

@@ -173,6 +173,11 @@ for (const [classId, drivers] of Object.entries(byClass)) {
 
 if (APPLY || process.argv.includes('--run-phases')) {
   summary.applyResults = applyPhases([...phasesNeeded]);
+  // WHY(P3395): class phases may re-bleed curated removals (P2698 rlytpmij -> curtain_motor); strip before writing reports.
+  if (APPLY) {
+    const { run: stripCurated } = require('./strip-curated-couple-removals.js');
+    summary.curatedRemovalsStripped = stripCurated({ root: ROOT, apply: true }).hits;
+  }
 }
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
