@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-22T20:33:15.745Z",
+ "updated": "2026-11-22T20:55:06.828Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -47943,6 +47943,13 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "44765764703"
+  },
+  "ci-fail:fleet-intelligent-enrich|Sacred + anti-bot gates|NEW dual couple _tze284_rlytpmij curtain_motor": {
+   "status": "fixed",
+   "date": "2026-11-22",
+   "by": "homey-ci-prs",
+   "attempts": 1,
+   "note": "attempt 1/3 (24h) run 45066450460 master: fleet-enrich re-added _TZE284_rlytpmij to curtain_motor (P2698 curated removal, owner wall_thermostat) and native-matrix failed in Sacred + anti-bot gates before the commit-time couple guard; P3395 tools/ci/strip-curated-couple-removals.js strips curated removals (case-insensitive, mfr only) as a fleet-enrich phase, in driver-class-fleet-enrich --apply and as a workflow step before the gates; test p3395-curated-removals-enrich"
   }
  }
 }

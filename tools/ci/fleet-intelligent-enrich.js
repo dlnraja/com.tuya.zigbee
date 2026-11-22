@@ -128,6 +128,9 @@ if (APPLY) {
   // WHY(P2523): strip doNotLock invent bleeds before anti-bot (Fleet krwtzhfd→climate)
   phase('strip-registry-forbidden', () => run('strip-forbidden', 'tools/ci/strip-registry-forbidden-compose.js', ['--apply'], 180000, false));
   phase('master-automation-fix', () => run('master-auto', 'scripts/master-automation.js', ['--fix'], 300000, false));
+  // WHY(P3395): curated-couple-removals.json is enforced by the enrichment itself, not only by the
+  // commit-time couple guard — run 45066450460 re-bled _TZE284_rlytpmij onto curtain_motor (P2698).
+  phase('strip-curated-removals', () => run('curated-removals', 'tools/ci/strip-curated-couple-removals.js', ['--apply'], 60000, false));
   phase('sync-enrichment-profiles', () => run('profiles', 'tools/ci/sync-enrichment-profiles.js', [], 120000, true));
   // WHY P2797: last step — keep P2794 dual-couple removals and resync app.json fingerprint lists with
   // compose, so compose clean-ups made after harden-unknown-zigbee's mid-run sync reach app.json too.
