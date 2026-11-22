@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T06:45:34.852Z",
+ "generated": "2026-11-22T02:33:39.190Z",
  "drivers": 420,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -423,9 +423,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 271,
+   "mfr": 272,
    "pid": 48,
-   "mfrSha": "515dbddcf97bd185",
+   "mfrSha": "3598ee069eb2c7a5",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_2": {
@@ -1251,10 +1251,10 @@
    "pidSha": "d68625ae238bbefa"
   },
   "pir_sensor_2": {
-   "mfr": 10,
-   "pid": 35,
-   "mfrSha": "36acb20f9fd6b6f3",
-   "pidSha": "170e7d8f355a0e2c"
+   "mfr": 11,
+   "pid": 36,
+   "mfrSha": "f22190b878d12ae7",
+   "pidSha": "0426af92ffaf40cf"
   },
   "pirsensor": {
    "mfr": 0,
@@ -2325,9 +2325,9 @@
    "pidSha": "70cfa840ba93f96b"
   },
   "wall_dimmer_tuya": {
-   "mfr": 134,
+   "mfr": 133,
    "pid": 14,
-   "mfrSha": "9a0b723189265eaa",
+   "mfrSha": "805a3b4c9aacbb25",
    "pidSha": "86e609055c5d6281"
   },
   "wall_remote_1_gang": {
