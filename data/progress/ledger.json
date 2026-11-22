@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-21T22:40:36.614Z",
+ "updated": "2026-11-22T04:31:58.606Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -332,6 +332,12 @@
    "by": "homey-ci-prs",
    "note": "attempt 1/3 (24h) run 41402776968 master 4d90c647d9: validate payload build had no top-up env (17000 ceiling) and the restore cut _tze200_9caxna4s|TS0301 via a stale parasite candidate; P3201b 7d475e95f2 snapshot-first restore + reused-row filter + validate env 20000/2000, 2 tests"
   },
+  "ci-fail:intake-triage:source-digest-privacy-guard:time": {
+   "status": "fixed",
+   "date": "2026-11-22",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 44979635836 master e1984ae0fb: intake-triage writeJson -> assertClean read \"16:10\" inside the digest generated ISO timestamp (Date().toISOString() with ms) as a clock time; ISO-8601 machine timestamps masked before the leak check (bare times still fail), test ci-prs-1122-source-digest-iso-timestamp"
+  },
   "ci-fail:node22-tests:p2914-heap-flake-no-gc": {
    "status": "fixed",
    "date": "2026-11-02",
@@ -374,6 +380,14 @@
    "date": "2026-11-01",
    "by": "homey-ci-prs",
    "note": "attempt 1/3 (24h) run 41295715547: Save state did git add of gitignored .github/state/upstream-watch.json (exit 1); P3133 persists it via pinned actions/cache restore/save, contents: read"
+  },
+  "ci-fail:validate:P3342-upload-manifest-ceiling": {
+   "status": "fixed",
+   "date": "2026-11-22",
+   "commit": "46aebafc39",
+   "note": "attempt 1/3 (24h) runs 44982711877 (Homey App Validate, Publish payload build) + 44982711950 (Autonomous review, staged publish validate) master 79c7b274a8: FATAL(P3342) upload app.json 3331659 B > 3270000 B after the P3370 stack (P2626 button flags ~34 KB, P3362 units ~9 KB, flow title disambiguation ~10 KB, +2 payload drivers); P3386 46aebafc39 writes app.json in wide mode above goalBytes (Latin-1 raw, >U+00FF escaped, one-byte V8): 3259789 B CI variant, 3247201 B staged; ceiling/goal/hold list unchanged; test p3386-upload-manifest-wide",
+   "by": "homey-ci-prs",
+   "attempts": 1
   },
   "ci-opt:daily-digest:trim-to-lead-harvest": {
    "status": "fixed",
@@ -47569,12 +47583,6 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "44765764703"
-  },
-  "ci-fail:intake-triage:source-digest-privacy-guard:time": {
-   "status": "fixed",
-   "date": "2026-11-22",
-   "by": "homey-ci-prs",
-   "note": "attempt 1/3 (24h) run 44979635836 master e1984ae0fb: intake-triage writeJson -> assertClean read \"16:10\" inside the digest generated ISO timestamp (Date().toISOString() with ms) as a clock time; ISO-8601 machine timestamps masked before the leak check (bare times still fail), test ci-prs-1122-source-digest-iso-timestamp"
   }
  }
 }
