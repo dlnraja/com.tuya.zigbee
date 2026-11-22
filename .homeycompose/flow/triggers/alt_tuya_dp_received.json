@@ -1,0 +1,84 @@
+{
+  "id": "alt_tuya_dp_received",
+  "title": {
+    "en": "Tuya DP received (any device)",
+    "fr": "DP Tuya reçu (tout appareil)",
+    "nl": "Tuya-DP ontvangen (elk apparaat)",
+    "de": "Tuya-DP empfangen (jedes Gerät)"
+  },
+  "titleFormatted": {
+    "en": "DP [[dp]] received from [[device]]",
+    "fr": "DP [[dp]] reçu de [[device]]"
+  },
+  "hint": {
+    "en": "Fires for every DP report, also unknown ones. DP 0 = any DP. Tokens give the raw value.",
+    "fr": "Se déclenche à chaque DP reçu, même inconnu. DP 0 = tous. Les jetons donnent la valeur brute."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device"
+    },
+    {
+      "type": "number",
+      "name": "dp",
+      "title": {
+        "en": "DP number (0 = any)",
+        "fr": "Numéro de DP (0 = tous)"
+      },
+      "min": 0,
+      "max": 255,
+      "placeholder": {
+        "en": "0",
+        "fr": "0"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "dp",
+      "type": "number",
+      "title": {
+        "en": "DP",
+        "fr": "DP"
+      },
+      "example": 101
+    },
+    {
+      "name": "dp_type",
+      "type": "string",
+      "title": {
+        "en": "Type",
+        "fr": "Type"
+      },
+      "example": "value"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur"
+      },
+      "example": "215"
+    },
+    {
+      "name": "value_number",
+      "type": "number",
+      "title": {
+        "en": "Numeric value",
+        "fr": "Valeur numérique"
+      },
+      "example": 215
+    },
+    {
+      "name": "hex",
+      "type": "string",
+      "title": {
+        "en": "Hex",
+        "fr": "Hex"
+      },
+      "example": "d7"
+    }
+  ]
+}

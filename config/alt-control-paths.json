@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "id": "alt-control-paths",
+    "rule": "docs/rules/ALT_CONTROL_PATHS.md",
+    "source": "https://community.homey.app/t/21313/296 (Peter_Kawa, 2021-02-14); #300/#302 dimmer scale; #291/#292 metering",
+    "added": "P3380 2026-11-22",
+    "note": "Proposed automatically by intake triage for unsupported devices / unknown DPs while the native fix is investigated. Never a reason to skip the native fix."
+  },
+  "triggers": {
+    "statuses": ["missing", "unsupported", "bug"],
+    "symptomPatterns": ["unknown dp", "unsupported", "not supported", "missing (dp|capability|feature)", "no (power|energy|metering)", "not exposed", "can'?t (control|see|read)", "raw", "dp ?[0-9]{1,3}", "dimm?(ing|er).*(range|scale|33 ?%|third)"]
+  },
+  "paths": [
+    {
+      "id": "raw_dp",
+      "title": "Read/write any Tuya DP from a flow",
+      "cards": ["alt_tuya_dp_received (trigger, tokens dp/dp_type/value/value_number/hex)", "alt_tuya_dp_is (condition)", "alt_tuya_dp_send (action, dp + type bool/value/enum/string/raw/bitmap)"],
+      "applies": "Zigbee 0xEF00 and Wi-Fi local devices of this app",
+      "reply": "While we add native support: use the flow cards 'Tuya DP received (any device)' to see which DP changes, and 'Send Tuya DP (any device)' to drive it."
+    },
+    {
+      "id": "dp_map",
+      "title": "Turn an unknown DP into a normal capability",
+      "cards": ["alt_dp_map_set (action, mapping 'dp:capability[:divisor[:offset]]')", "alt_dp_map_clear (action)"],
+      "store": "altUserDpMap",
+      "applies": "standard Homey capabilities only (measure_*, meter_*, alarm_*, onoff, dim, target_temperature, windowcoverings_set, volume_set); read-only display",
+      "reply": "Run once the flow card 'Map Tuya DPs to capabilities' with e.g. 101:measure_temperature:10 and the value appears on the device (plus Insights)."
+    },
+    {
+      "id": "raw_zcl",
+      "title": "Raw Zigbee command / attribute write",
+      "cards": ["alt_zcl_frame_send (action)", "alt_zcl_attribute_write (action)"],
+      "applies": "Zigbee devices only, expert",
+      "reply": "Expert option: 'Send raw Zigbee (ZCL) command' or 'Write Zigbee attribute' with the cluster/attribute from Zigbee2MQTT."
+    },
+    {
+      "id": "cloud_scene",
+      "title": "Tuya cloud tap-to-run scene",
+      "cards": ["alt_tuya_scene_trigger (action, home_id + scene_id)"],
+      "settings": ["alt_tuya_scenes_enabled (app setting, off by default)", "tuya_cloud_access_id / tuya_cloud_access_secret / tuya_cloud_region (own Tuya IoT project)"],
+      "applies": "any device visible in Smart Life; needs the user's own Tuya IoT cloud project (free trial, renewable); optional",
+      "reply": "Last resort for a device we cannot drive yet: create a tap-to-run scene in Smart Life and start it with 'Run a Tuya cloud scene (opt-in)' after enabling it in the app settings."
+    },
+    {
+      "id": "brightness_scale",
+      "title": "Dimmer range squeezed or repeating",
+      "settings": ["brightness_scale (wifi_dimmer device setting: auto / 0-100 / 0-255 / 10-1000 / 0-1000)"],
+      "symptomPatterns": ["dimm?(ing|er).*(range|scale|33 ?%|third|repeat)"],
+      "applies": "Wi-Fi dimmers (auto-detected from echo / reports)",
+      "reply": "If 0-100 % in Smart Life fits in a third of the Homey slider, set 'Brightness scale' to 0-255 in the device settings (auto-detection also learns it after one full-range change)."
+    }
+  ]
+}

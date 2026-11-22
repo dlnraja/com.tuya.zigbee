@@ -1,0 +1,222 @@
+{
+  "id": "alt_zcl_attribute_write",
+  "title": {
+    "en": "Write Zigbee attribute",
+    "fr": "Écrire un attribut Zigbee",
+    "nl": "Zigbee-attribuut schrijven",
+    "de": "Zigbee-Attribut schreiben"
+  },
+  "titleFormatted": {
+    "en": "Write attribute [[attribute]] ([[data_type]]) = [[value]] in cluster [[cluster]] ep [[endpoint]] mfr [[manufacturer_code]] on [[device]]",
+    "fr": "Écrire l'attribut [[attribute]] ([[data_type]]) = [[value]] du cluster [[cluster]] ep [[endpoint]] fab [[manufacturer_code]] sur [[device]]"
+  },
+  "hint": {
+    "en": "Expert escape hatch: ZCL Write Attributes for settings the app does not expose yet. Zigbee devices only.",
+    "fr": "Secours expert : écriture d'attribut ZCL pour un réglage pas encore exposé. Zigbee uniquement."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device"
+    },
+    {
+      "type": "number",
+      "name": "endpoint",
+      "title": {
+        "en": "Endpoint",
+        "fr": "Endpoint"
+      },
+      "min": 1,
+      "max": 240,
+      "placeholder": {
+        "en": "1",
+        "fr": "1"
+      }
+    },
+    {
+      "type": "number",
+      "name": "cluster",
+      "title": {
+        "en": "Cluster id (decimal)",
+        "fr": "Id du cluster (décimal)"
+      },
+      "min": 0,
+      "max": 65535,
+      "placeholder": {
+        "en": "61184",
+        "fr": "61184"
+      }
+    },
+    {
+      "type": "number",
+      "name": "attribute",
+      "title": {
+        "en": "Attribute id (decimal)",
+        "fr": "Id de l'attribut (décimal)"
+      },
+      "min": 0,
+      "max": 65535,
+      "placeholder": {
+        "en": "0",
+        "fr": "0"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "data_type",
+      "title": {
+        "en": "Data type",
+        "fr": "Type de donnée"
+      },
+      "values": [
+        {
+          "id": "bool",
+          "title": {
+            "en": "bool",
+            "fr": "bool"
+          },
+          "label": {
+            "en": "bool",
+            "fr": "bool"
+          }
+        },
+        {
+          "id": "uint8",
+          "title": {
+            "en": "uint8",
+            "fr": "uint8"
+          },
+          "label": {
+            "en": "uint8",
+            "fr": "uint8"
+          }
+        },
+        {
+          "id": "uint16",
+          "title": {
+            "en": "uint16",
+            "fr": "uint16"
+          },
+          "label": {
+            "en": "uint16",
+            "fr": "uint16"
+          }
+        },
+        {
+          "id": "uint32",
+          "title": {
+            "en": "uint32",
+            "fr": "uint32"
+          },
+          "label": {
+            "en": "uint32",
+            "fr": "uint32"
+          }
+        },
+        {
+          "id": "int8",
+          "title": {
+            "en": "int8",
+            "fr": "int8"
+          },
+          "label": {
+            "en": "int8",
+            "fr": "int8"
+          }
+        },
+        {
+          "id": "int16",
+          "title": {
+            "en": "int16",
+            "fr": "int16"
+          },
+          "label": {
+            "en": "int16",
+            "fr": "int16"
+          }
+        },
+        {
+          "id": "int32",
+          "title": {
+            "en": "int32",
+            "fr": "int32"
+          },
+          "label": {
+            "en": "int32",
+            "fr": "int32"
+          }
+        },
+        {
+          "id": "enum8",
+          "title": {
+            "en": "enum8",
+            "fr": "enum8"
+          },
+          "label": {
+            "en": "enum8",
+            "fr": "enum8"
+          }
+        },
+        {
+          "id": "enum16",
+          "title": {
+            "en": "enum16",
+            "fr": "enum16"
+          },
+          "label": {
+            "en": "enum16",
+            "fr": "enum16"
+          }
+        },
+        {
+          "id": "bitmap8",
+          "title": {
+            "en": "bitmap8",
+            "fr": "bitmap8"
+          },
+          "label": {
+            "en": "bitmap8",
+            "fr": "bitmap8"
+          }
+        },
+        {
+          "id": "bitmap16",
+          "title": {
+            "en": "bitmap16",
+            "fr": "bitmap16"
+          },
+          "label": {
+            "en": "bitmap16",
+            "fr": "bitmap16"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "value",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur"
+      },
+      "placeholder": {
+        "en": "1",
+        "fr": "1"
+      }
+    },
+    {
+      "type": "number",
+      "name": "manufacturer_code",
+      "title": {
+        "en": "Manufacturer code (0 = none)",
+        "fr": "Code fabricant (0 = aucun)"
+      },
+      "min": 0,
+      "max": 65535,
+      "placeholder": {
+        "en": "0",
+        "fr": "0"
+      }
+    }
+  ]
+}
