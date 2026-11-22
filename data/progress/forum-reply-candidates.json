@@ -1,6 +1,6 @@
 {
   "generated": "2026-11-22T02:54:23.271964+01:00",
-  "note": "P3362 candidates only. Do not post. SHA_PENDING_MASTER_PUSH is filled after FREEZE-LIFTED and the push lands. Topic 26439 has no reply-candidates.",
+  "note": "P3362 candidates only. Do not post. Commit SHAs filled after the post-rewrite landing (P3370). Topic 26439 has no reply-candidates.",
   "limits": {
     "autoPost": false,
     "postNothing": true
@@ -11,11 +11,15 @@
       "post": 2270,
       "author": "Arve_Vang1",
       "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/2270",
-      "status": "fixed-local-unpushed",
-      "commit": "SHA_PENDING_MASTER_PUSH",
+      "status": "fixed-pushed-master",
+      "commit": "9b7485171c",
       "appVersion": "9.0.1636 (next Test after the push)",
-      "body": "Thanks Arve. I went through diagnostic 56949320 (Universal Tuya v9.0.1615, two FrankEver valves, message 'Finne status pa ventilen'). Three things were wrong: DP101/DP102/DP27/DP9 were mapped to null, so the official valve_position tile stayed empty; when DP1=true arrived the physical-DP path still said 'Gang 1: false unchanged' and left onoff false; and the dataQuery reply (EF00 command 0x11, payload 0300) was guessed as a short-payload value instead of an MCU version response. The fix scales DP102 to valve_position 0-1 (100 -> fully open, 0 -> closed), treats DP101 as the target opening setting (Z2M set_valve_position), DP27 as the after-power-loss setting (your report was memory), and DP9 as the countdown in seconds (Z2M countdown; yours was 0). Status refresh stays read-only (no DP1 open/close command). The onoff comparison now follows the incoming DP1 instead of the stale false, and command 0x11 is recognized as mcuVersionResponse. The work is in master commit SHA_PENDING_MASTER_PUSH and will be in the Test build after 9.0.1636. Couple: _TZE200_1n2zev06 / TS0601.",
-      "diag": "56949320-88a3-40cf-8a5d-1213787e5dad"
+      "body": "Thanks Arve. I went through diagnostic 56949320 (Universal Tuya v9.0.1615, two FrankEver valves, message 'Finne status pa ventilen'). Three things were wrong: DP101/DP102/DP27/DP9 were mapped to null, so the official valve_position tile stayed empty; when DP1=true arrived the physical-DP path still said 'Gang 1: false unchanged' and left onoff false; and the dataQuery reply (EF00 command 0x11, payload 0300) was guessed as a short-payload value instead of an MCU version response. The fix scales DP102 to valve_position 0-1 (100 -> fully open, 0 -> closed), treats DP101 as the target opening setting (Z2M set_valve_position), DP27 as the after-power-loss setting (your report was memory), and DP9 as the countdown in seconds (Z2M countdown; yours was 0). Status refresh stays read-only (no DP1 open/close command). The onoff comparison now follows the incoming DP1 instead of the stale false, and command 0x11 is recognized as mcuVersionResponse. The work is in master commit 9b7485171c and will be in the Test build after 9.0.1636. Couple: _TZE200_1n2zev06 / TS0601.",
+      "diag": "56949320-88a3-40cf-8a5d-1213787e5dad",
+      "relatedCommits": [
+        "21c3c51791",
+        "183aa2a82b"
+      ]
     },
     {
       "topic": 140352,
@@ -23,7 +27,7 @@
       "author": "TFD_Home",
       "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/2272",
       "status": "uuid-not-in-mailbox-or-ledger",
-      "commit": "SHA_PENDING_MASTER_PUSH",
+      "commit": "b13c38e062",
       "diagUuid": "64a2399b-a2af-4c07-89f5-bfe238577770",
       "body": "Thanks. I looked up diagnostic 64a2399b-a2af-4c07-89f5-bfe238577770 in the developer mailbox for all three apps (including spam and trash) and in the fetch-diags ledgers. I only found the forum notification, not an Athom diagnostic-report email (the last report in that mailbox is a different device from 11 Nov 2026). This is not blocked pending a new report: if you can say which Homey app generated the report (Universal Tuya, the stable app, or another), the manufacturerName + productId, and the symptom, I can take it from there. If the mail arrives later I will ingest that same UUID."
     }
