@@ -1,0 +1,161 @@
+#!/usr/bin/env node
+'use strict';
+/**
+ * scripts/ci/safe-auto-commit.js — the ONLY way automation should commit to master/stable-v5.
+ *
+ *   node scripts/ci/safe-auto-commit.js --id=fleet-enrich --message="fleet-enrich: …" \
+ *        --paths="drivers data app.json" [--branch=master] [--max-per-day=1] [--dry]
+ *
+ * Safety (Node built-ins only):
+ *  1. Loop guard   — refuses when triggered by a push from a bot, or when the last 3 commits on the
+ *                    branch are all automation commits from the last hour (re-trigger storm).
+ *  2. Daily cap    — max N commits per workflow id per UTC day (default 1), counted on the remote
+ *                    via the "[auto:<id>]" tag appended to every commit message.
+ *  3. Local gate   — on the STAGED files only: JSON parse, `node --check`, TITAN patterns (raw
+ *                    setCapabilityValue / console.* in drivers, utf8 JSON loads in lib, wildcard mfr),
+ *                    then the repo's own gates if present: auto-validation-gate, P2138 sacred-couple
+ *                    matrix, regression-lessons, anti-bot regression.
+ *  4. Push         — commit "<message> [auto:<id>] [skip ci]", fetch + rebase + push, 5 tries, exp. backoff + jitter (P3025),
+ *                    never force. Rebase conflict → abort.
+ *  On any gate failure / conflict: nothing is pushed; ONE comment per workflow id on the tracking
+ *  issue (#557, label bot-digest) is created or edited in place (no flood). Exit code stays 0 so the
+ *  workflow does not go red for a refused commit; output `committed=true|false` → $GITHUB_OUTPUT.
+ */
+const fs = require('fs');
+const path = require('path');
+const { spawnSync } = require('child_process');
+const { select: selectRulesGates } = require('./rules-gates');
+const { pushWithRetry } = require('./push-with-retry'); // P3025
+
+const RULES_GATE_FILES = selectRulesGates({ profile: 'full' }).map((g) => g.file);
+
+const arg = (k, d) => { const a = process.argv.find((x) => x.startsWith(`--${k}=`)); return a ? a.slice(k.length + 3) : d; };
+const ID = arg('id');
+const MSG = arg('message', `chore(${ID}): automated enrichment`);
+const PATHS = (arg('paths', '') || '').split(/\s+/).filter(Boolean);
+const BRANCH = arg('branch', 'master');
+const MAX = Number(arg('max-per-day', process.env.AUTO_COMMIT_MAX_PER_DAY || 1));
+const DRY = process.argv.includes('--dry');
+const ROOT = process.cwd();
+if (!ID || !PATHS.length) { console.error('usage: --id=<workflow-id> --paths="<paths>" [--message=…]'); process.exit(2); }
+
+const sh = (cmd, args, opts = {}) => spawnSync(cmd, args, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 << 20, ...opts });
+const git = (...a) => sh('git', a);
+const out = (k, v) => { if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `${k}=${v}\n`); };
+const summary = (md) => { if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + '\n'); console.log(md); };
+
+async function report(reason, details) {
+  summary(`### 🚧 safe-auto-commit [${ID}] refused: ${reason}\n${details ? '```\n' + String(details).slice(-3000) + '\n```' : ''}`);
+  // P3022: SAFE_AUTO_COMMIT_NO_COMMENT=1 keeps a refusal in the run summary only (no issue comment).
+  if (DRY || !process.env.GITHUB_TOKEN || process.env.SAFE_AUTO_COMMIT_NO_COMMENT === '1') return;
+  try {
+    const L = require(path.join(ROOT, 'scripts', 'digest', 'lib.js'));
+    const issue = await L.findTrackingIssue({ create: false });
+    if (!issue) return;
+    const marker = `<!-- safe-auto-commit:${ID} -->`;
+    const comments = await L.gh(`/repos/${L.REPO}/issues/${issue.number}/comments?per_page=100`);
+    const body = `${marker}\n### 🚧 Auto-commit refusé — \`${ID}\`\n**Raison :** ${reason}\n\nRun : ${process.env.GITHUB_SERVER_URL || 'https://github.com'}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID || '?'} · ${new Date().toISOString()}\n\n${details ? '<details><summary>détails</summary>\n\n```\n' + String(details).slice(-2500).replace(/```/g, "'''") + '\n```\n</details>' : ''}\n\n_Aucun push effectué. Ce commentaire est mis à jour en place à chaque refus de ce workflow._`;
+    const mine = (comments || []).find((c) => (c.body || '').includes(marker));
+    if (mine) await L.gh(`/repos/${L.REPO}/issues/comments/${mine.id}`, { method: 'PATCH', body: { body } });
+    else await L.gh(`/repos/${L.REPO}/issues/${issue.number}/comments`, { method: 'POST', body: { body } });
+  } catch (e) { console.error('report failed:', e.message); }
+}
+
+function gate(files) {
+  const errs = [];
+  for (const f of files) {
+    if (!fs.existsSync(f)) continue; // deletion
+    if (f.endsWith('.json')) { try { JSON.parse(fs.readFileSync(f, 'utf8')); } catch (e) { errs.push(`JSON invalide: ${f}: ${e.message}`); } }
+    if (/\.(c?js)$/.test(f)) { const r = sh(process.execPath, ['--check', f]); if (r.status !== 0) errs.push(`syntaxe: ${f}: ${(r.stderr || '').split('\n').slice(0, 4).join(' ')}`); }
+    if (/^drivers\/.+\/device\.js$/.test(f)) {
+      const t = fs.readFileSync(f, 'utf8');
+      if (/this\.setCapabilityValue\(/.test(t)) errs.push(`TITAN: raw setCapabilityValue dans ${f}`);
+      if (/console\.(log|error|warn)\(/.test(t)) errs.push(`TITAN: console.* dans ${f}`);
+    }
+    if (/^lib\/.+\.js$/.test(f) && /JSON\.parse\(fs\.readFileSync.*'utf8'/.test(fs.readFileSync(f, 'utf8'))) errs.push(`TITAN: JSON utf8 load dans ${f}`);
+    if (f.endsWith('.json') && /_TZE200_\*|_TZ3000_\*|_TZE204_\*/.test(fs.readFileSync(f, 'utf8'))) errs.push(`TITAN: wildcard mfr dans ${f}`);
+  }
+  if (errs.length) return errs;
+  const touchesApp = files.some((f) => /^(drivers|lib|app\.json|\.homeycompose|data)\//.test(f) || f === 'app.json');
+  if (touchesApp) {
+    // Gate list shared with the rules-gates composite action (scripts/ci/rules-gates.js, profile full).
+    for (const g of RULES_GATE_FILES) {
+      if (!fs.existsSync(g)) continue;
+      const r = sh(process.execPath, [g], { timeout: 600000 });
+      if (r.status === 0) continue;
+      // Differential: only block when THIS change introduces the failure (gate green on baseline).
+      const st = git('stash', 'push', '-q', '--include-untracked', '-m', 'safe-auto-commit-baseline');
+      let baseOk = false;
+      if (st.status === 0) {
+        baseOk = sh(process.execPath, [g], { timeout: 600000 }).status === 0;
+        git('stash', 'pop', '-q', '--index');
+      }
+      if (baseOk) errs.push(`${g} exit ${r.status} (introduit par ce changement): ${((r.stdout || '') + (r.stderr || '')).trim().split('\n').slice(-8).join(' | ')}`);
+      else summary(`⚠️ ${g} déjà rouge sur la base (pré-existant) — non bloquant pour ce commit additif.`);
+    }
+  }
+  return errs;
+}
+
+(async () => {
+  out('committed', 'false');
+  // 1. loop guard
+  const actor = process.env.GITHUB_ACTOR || '';
+  if (process.env.GITHUB_EVENT_NAME === 'push' && /\[bot\]$/.test(actor)) { summary(`safe-auto-commit [${ID}]: push by ${actor} — loop guard, skip.`); return; }
+  git('fetch', '-q', 'origin', BRANCH);
+  const recent = git('log', `origin/${BRANCH}`, '-3', '--format=%ct|%an|%s').stdout.trim().split('\n').filter(Boolean);
+  if (recent.length === 3 && recent.every((l) => { const [ts, an, s] = l.split('|'); return /\[bot\]/.test(an) && /\[auto:/.test(s) && Date.now() / 1000 - Number(ts) < 3600; })) {
+    await report('tempête de commits automatiques détectée (3 derniers commits = bots < 1 h)', recent.join('\n')); return;
+  }
+  // 2. stage + daily cap
+  // WHY(P2797c): keep dual-couple removals and resync app.json fingerprint lists with compose before
+  // staging, so no auto-commit lands compose/app.json drift (ff1de8d2e, 26 drivers).
+  if (PATHS.some((p) => /^(drivers|app\.json)/.test(p)) && fs.existsSync('tools/ci/enforce-dual-couple-legacy.js')) {
+    const s = sh(process.execPath, ['tools/ci/enforce-dual-couple-legacy.js', '--sync'], { timeout: 120000 });
+    summary(`safe-auto-commit [${ID}]: ${(s.stdout || '').trim().split('\n').join(' · ')}`);
+  }
+  // WHY(P3243): new couples on a root marked full go to the first chain driver with room (P3206/P3229).
+  if (PATHS.some((p) => /^(drivers|app\.json)/.test(p)) && fs.existsSync('scripts/ci/chain-route-new-couples.js')) {
+    const c = sh(process.execPath, ['scripts/ci/chain-route-new-couples.js', '--apply'], { timeout: 120000 });
+    summary(`safe-auto-commit [${ID}]: ${(c.stdout || '').trim().split('\n').slice(-3).join(' · ')}`);
+  }
+  // WHY(2026-10-11): couple guard — restore files that undo pins / sacred-keep / curated
+  // removals / golden couples; abort when still dirty.
+  if (fs.existsSync('tools/ci/automation-couple-guard.js')) {
+    const g = sh(process.execPath, ['tools/ci/automation-couple-guard.js', '--revert'], { timeout: 120000 });
+    summary(`safe-auto-commit [${ID}]: ${(g.stdout || '').trim().split('\n').slice(-3).join(' · ')}`);
+    if (g.status !== 0) { await report('couple guard en échec', g.stdout || g.stderr); return; }
+  }
+  for (const p of PATHS) git('add', '-A', '--', p);
+  const files = git('diff', '--cached', '--name-only').stdout.trim().split('\n').filter(Boolean);
+  if (!files.length) { summary(`safe-auto-commit [${ID}]: nothing to commit.`); return; }
+  const today = new Date().toISOString().slice(0, 10);
+  const n = git('log', `origin/${BRANCH}`, `--since=${today}T00:00:00Z`, '--fixed-strings', `--grep=[auto:${ID}]`, '--format=%h').stdout.trim().split('\n').filter(Boolean).length;
+  if (n >= MAX) { git('reset', '-q'); summary(`safe-auto-commit [${ID}]: daily cap reached (${n}/${MAX}) — ${files.length} file(s) left for tomorrow.`); return; }
+  // 3. gate
+  // WHY(P2918): earlier scan/apply steps of the same job can leave unrelated, unstaged edits (e.g. a
+  // compose-only case variant on switch_2gang, forum-poll run 39513142380). The gates must judge the
+  // staged change alone, so those edits are set aside during the gate and restored right after;
+  // they are never committed here (the commit only takes the index).
+  const dirty = git('status', '--porcelain', '--untracked-files=all').stdout.split('\n')
+    .filter((l) => l && (l[1] !== ' ' || l.startsWith('??')));
+  let isolated = false;
+  if (dirty.length) {
+    summary(`safe-auto-commit [${ID}]: ${dirty.length} unrelated working-tree change(s) set aside for the gate: ${dirty.slice(0, 10).map((l) => l.slice(3)).join(', ')}`);
+    isolated = git('stash', 'push', '-q', '--keep-index', '--include-untracked', '-m', 'safe-auto-commit-unrelated').status === 0;
+  }
+  const errs = gate(files);
+  if (isolated && git('stash', 'pop', '-q').status !== 0) summary(`⚠️ safe-auto-commit [${ID}]: could not restore the set-aside changes (left in git stash).`);
+  if (errs.length) { git('reset', '-q'); await report(`gate locale en échec (${errs.length})`, errs.join('\n')); return; }
+  if (DRY) { git('reset', '-q'); summary(`safe-auto-commit [${ID}] DRY: gate OK on ${files.length} file(s), would commit.`); return; }
+  // 4. commit + push with rebase retries (never force)
+  if (!git('config', 'user.name').stdout.trim()) { git('config', 'user.name', 'github-actions[bot]'); git('config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'); }
+  const c = git('commit', '-q', '-m', `${MSG} [auto:${ID}] [skip ci]`);
+  if (c.status !== 0) { await report('git commit a échoué', c.stderr); return; }
+  // P3025: shared bounded fetch/rebase(autostash)/push, exponential backoff + jitter; a fetch blip is retried,
+  // only a real rebase conflict stops (before, any failed pull was reported on #557 as a conflict).
+  const pr = await pushWithRetry({ branch: BRANCH, cwd: ROOT, git });
+  if (pr.ok) { out('committed', pr.reason === 'pushed' ? 'true' : 'false'); summary(`✅ safe-auto-commit [${ID}]: ${files.length} file(s) ${pr.reason === 'pushed' ? 'pushed' : 'already'} on ${BRANCH} (attempt ${pr.attempts}).`); return; }
+  if (pr.reason === 'conflict') { await report('conflit de rebase (autre worker sur la même zone)', pr.details); return; }
+  await report(`push refusé après ${pr.attempts} tentatives`, pr.details);
+})();
