@@ -231,9 +231,13 @@
       ]
     }
   ],
-  "5.12.559": {
+  "5.12.560": {
     "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
     "fr": "Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication."
+  },
+  "5.12.559": {
+    "en": "New: thermostats & climate sensors. Fixed: fans and air purifiers and translations. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : thermostats & capteurs d'ambiance. Corrigé : ventilateurs et purificateurs et traductions. Et 4 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
   },
   "5.12.558": {
     "en": "New: Flow cards. Fixed: pairing and device recognition & Flow cards and device settings. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.",
