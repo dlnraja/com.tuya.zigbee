@@ -26,6 +26,7 @@ class WiFiCoverDevice extends TuyaLocalDevice {
           else if (v === 'close' || v === '2' || v === 2) {state = 'down';}
           else {state = 'idle';}
           this._travelOnState(state);
+          this._npcOnState(state); // P3371
           return state;
         },
         reverseTransform: (v) => {
@@ -120,11 +121,54 @@ class WiFiCoverDevice extends TuyaLocalDevice {
     }
   }
 
+  // ---- P3371: open/stop/close-only motors (forum 146735 #499/#503, CAWV EMTECO) ----
+  // Apple Home / Matter send position targets only; a DP2 write does nothing on these motors.
+  // Without the opt-in estimator, translate the target to open/close. Capabilities are kept.
+  _isNoPositionCover() {
+    if (this._hasPositionDp) {return false;}
+    let cloud = null; let moves = 0;
+    try { const c = this.getStoreValue?.('cloud_has_position_dp'); cloud = typeof c === 'boolean' ? c : null; } catch (_e) { /* ignore */ }
+    try { moves = Number(this.getStoreValue?.('cover_nopos_moves')) || 0; } catch (_e) { /* ignore */ }
+    return require('../../lib/covers/NoPositionCover').isNoPosition({
+      positionSeen: false,
+      cloudHasPosition: cloud, moves, minMoves: 3,
+    });
+  }
+
+  _npcOnState(state) {
+    try {
+      if (this._hasPositionDp) {return;}
+      if (state === 'up' || state === 'down') {
+        this._npcLastDir = state;
+        const n = (Number(this.getStoreValue?.('cover_nopos_moves')) || 0) + 1;
+        if (n <= 1000) {this.setStoreValue?.('cover_nopos_moves', n)?.catch?.(() => {});}
+        return;
+      }
+      // Bidirectional HomeKit consistency: once a run ends, report 100 % / 0 % on the position tile.
+      if (state !== 'idle' || !this._npcLastDir || this._travel() || !this._isNoPositionCover()) {return;}
+      const pos = require('../../lib/covers/NoPositionCover').stateToPosition(this._npcLastDir);
+      this._npcLastDir = null;
+      if (pos !== null && typeof this.safeSetCapabilityValue === 'function' && this.hasCapability?.('windowcoverings_set')) {
+        this.safeSetCapabilityValue('windowcoverings_set', pos).catch(() => {});
+      }
+    } catch (_e) { /* soft */ }
+  }
+
   async _setDP(dp, value) {
     const est = String(dp) === '2' ? this._travel() : null;
     const plan = est ? est.plan(Number(value) / 100) : null;
-    if (!plan) {return super._setDP(dp, value);}
     const cmd = (st) => this._coverCommandSet ? coverValueFromState(st, this._coverCommandSet) : { up: 'open', down: 'close', idle: 'stop' }[st];
+    if (!plan && String(dp) === '2' && this._isNoPositionCover()) {
+      const st = require('../../lib/covers/NoPositionCover').positionToState(Number(value) / 100);
+      this.log(`[WIFI-COVER] P3371 no-position motor: target ${value}% -> DP1 ${cmd(st)}`);
+      this._npcLastDir = st;
+      await super._setDP('1', cmd(st));
+      if (typeof this.safeSetCapabilityValue === 'function' && this.hasCapability?.('windowcoverings_state')) {
+        this.safeSetCapabilityValue('windowcoverings_state', st).catch(() => {});
+      }
+      return undefined;
+    }
+    if (!plan) {return super._setDP(dp, value);}
     this._clearTravelTimer();
     await super._setDP('1', cmd(plan.state));
     this._travelOnState(plan.state);
