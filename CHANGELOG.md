@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1635] - 2026-11-21
+## [9.0.1636] - 2026-11-22
+
+The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss.
+---
+
+ [9.0.1635] - 2026-11-21
 
 Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.
 ---

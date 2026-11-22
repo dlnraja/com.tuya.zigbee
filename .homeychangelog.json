@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1637": {
+    "en": "New: Flow cards. Fixed: memory and timers, pairing and device recognition and buttons and remotes & climate sensors (ZG-204ZM). Plus 21 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : cartes Flow. Corrigé : mémoire et minuteries, appairage et reconnaissance des appareils et boutons et télécommandes & capteurs d'ambiance (ZG-204ZM). Et 21 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1636": {
-    "en": "The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss.",
-    "fr": "La version Test inclut des appareils auparavant retenus dans le paquet. Les images ont été dédupliquées sans perte de qualité."
+    "en": "The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss."
   },
   "9.0.1635": {
     "en": "Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.",
@@ -982,9 +985,5 @@
   "9.0.1616": {
     "en": "Fixed: pairing and device recognition (TS0201), lights and dimmers, thermostats (TRV06) and climate sensors. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : appairage et reconnaissance des appareils (TS0201), éclairages et variateurs, thermostats (TRV06) et capteurs climatiques. Et 4 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
-  },
-  "9.0.1613": {
-    "en": "New: pairing and device recognition & Flow cards (TS0601) and thermostats & climate sensors. Fixed: Flow cards and pairing and device recognition. Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : appairage et reconnaissance des appareils & cartes Flow (TS0601) et thermostats & capteurs climatiques. Corrigé : cartes Flow et appairage et reconnaissance des appareils. Et 10 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   }
 }
