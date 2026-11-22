@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
 const {
@@ -86,3 +88,5 @@ class Switch1GangDevice extends UnifiedSwitchBase {
 }
 
 module.exports = Switch1GangDevice;
+return module.exports;
+});

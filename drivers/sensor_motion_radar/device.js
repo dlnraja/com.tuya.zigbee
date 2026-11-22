@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
@@ -282,3 +284,5 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
 }
 
 module.exports = MotionRadarHybridDevice;
+return module.exports;
+});

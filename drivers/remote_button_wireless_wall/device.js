@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 // A8: NaN Safety - use safeDivide/safeMultiply
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
@@ -975,4 +977,5 @@ class Button1GangDevice extends ButtonDevice {
 // toggle = single, on = double, off = long (button_mode 'dimmer' keeps single).
 Button1GangDevice.RAW_ONOFF_PRESS_MAP = Object.freeze({ 2: 'single', 1: 'double', 0: 'long' });
 module.exports = Button1GangDevice;
-
+return module.exports;
+});

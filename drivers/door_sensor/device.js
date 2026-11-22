@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 // v2026-07-12: Door / Window Sensor driver
 // Created to absorb the 5 mfrs that were previously mapped to the non-existent
 // 'door_sensor' driver. These mfrs use TS0203 (door/window contact sensor)
@@ -46,3 +48,5 @@ class DoorSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = DoorSensorDevice;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
@@ -115,3 +117,5 @@ class WiFiFanDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiFanDevice;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -262,4 +264,5 @@ class RainSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = RainSensorDevice;
-
+return module.exports;
+});

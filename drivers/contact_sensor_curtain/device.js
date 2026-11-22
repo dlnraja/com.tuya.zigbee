@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHelper');
 
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
@@ -48,3 +50,5 @@ class ContactSensorCurtainDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = ContactSensorCurtainDevice;
+return module.exports;
+});

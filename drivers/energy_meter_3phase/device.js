@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { spmVariant, decodePhase } = require('../../lib/tuya/SpmPhaseDecoder');
 // P3071: SDM01V1-GT (s4sa1mcx), SDM02V1-GT (x8diwkqb), ATMS10013Z3 (a14rjslz), SPM01V1-GT (d2zfgtij):
@@ -215,3 +217,5 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
 }
 module.exports = EnergyMeter3PhaseDevice;
 module.exports.isGtPhase = isGtPhase;
+return module.exports;
+});

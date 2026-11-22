@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const E=require('../../lib/ewelink-local/EweLinkLocalDevice');
 class D extends E{
   get stateMappings(){return{switch_0:{capability:'onoff',transform:v=>v==='on'},switch_1:{capability:'onoff.2',transform:v=>v==='on'}};}
@@ -14,3 +16,5 @@ class D extends E{
   }
 }
 module.exports=D;
+return module.exports;
+});

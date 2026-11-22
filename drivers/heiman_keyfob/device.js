@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { IasAceBoundCluster, CLUSTER_NAME } = require('../../lib/clusters/IasAceCluster');
@@ -61,3 +63,5 @@ class HeimanKeyfobDevice extends ZigBeeDevice {
 module.exports = HeimanKeyfobDevice;
 module.exports.armModeOf = armModeOf;
 module.exports.ARM_TRIGGER = ARM_TRIGGER;
+return module.exports;
+});
