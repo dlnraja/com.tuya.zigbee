@@ -9,6 +9,34 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
 const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
+// WHY(P3388): exact ZTH05Z couples from Z2M tuya.ts (model ZTH05Z, TS0601). On these the
+// MCU uses DP15 for humidity_alarm (enum) and DP18 for humidity_periodic_report (minutes),
+// DP9-14/17/19/20 for settings. The generic LCD map read DP18 as a temperature and DP15 as a
+// battery percent (cancel=2 -> 2%). Bastien's house LCD is _TZE284_vvmbj46n + TS0601.
+// https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZTH05Z)
+const ZTH05Z_MANUFACTURERS = [
+  '_TZE200_vvmbj46n',
+  '_TZE284_vvmbj46n',
+  '_TZE200_w6n8jeuu',
+  '_TZE284_cwyqwqbf',
+  '_TZE284_qf5mzewi',
+];
+const ZTH05Z_ALARM_ENUM = ['lower_alarm', 'upper_alarm', 'cancel'];
+// dp -> [store key, divisor, enum list]
+const ZTH05Z_SETTING_DPS = {
+  9: ['lcd_temperature_unit', 1, ['celsius', 'fahrenheit']],
+  10: ['lcd_max_temperature_alarm', 10, null],
+  11: ['lcd_min_temperature_alarm', 10, null],
+  12: ['lcd_max_humidity_alarm', 1, null],
+  13: ['lcd_min_humidity_alarm', 1, null],
+  14: ['lcd_temperature_alarm', 1, ZTH05Z_ALARM_ENUM],
+  15: ['lcd_humidity_alarm', 1, ZTH05Z_ALARM_ENUM],
+  17: ['lcd_temperature_periodic_report', 1, null],
+  18: ['lcd_humidity_periodic_report', 1, null],
+  19: ['lcd_temperature_sensitivity', 10, null],
+  20: ['lcd_humidity_sensitivity', 1, null],
+};
+
 const DIRECT_HUMIDITY_MANUFACTURERS = [
   '_TZE200_vvmbj46n',
   '_TZE284_vvmbj46n',
@@ -72,7 +100,40 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       },
       4: { capability: 'measure_battery', transform: (v) => this._lcdMarkBatteryPct(UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct')) },
       15: { capability: 'measure_battery', transform: (v) => this._lcdMarkBatteryPct(UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct')) },
+      ...this._zth05zSettingMappings(),
     };
+  }
+
+  /** P3388: exact ZTH05Z couple (mfr list above + TS0601). */
+  get isZth05z() {
+    const mfr = String(ManufacturerNameHelper.getManufacturerName(this) || '');
+    if (!includesCI(ZTH05Z_MANUFACTURERS, mfr)) {return false;}
+    const pid = String(this.getData?.()?.productId || this.getSetting?.('zb_model_id')
+      || this.getSetting?.('zb_product_id') || 'TS0601');
+    return /^ts0601/i.test(pid);
+  }
+
+  /**
+   * P3388: ZTH05Z settings/alarm DPs are kept as store values (no capability, no
+   * permissive inference). They override the generic DP15 battery / DP18 temperature.
+   */
+  _zth05zSettingMappings() {
+    const out = {};
+    if (!this.isZth05z) {return out;}
+    for (const [dp, [key, div, list]] of Object.entries(ZTH05Z_SETTING_DPS)) {
+      out[dp] = {
+        capability: null,
+        transform: (v) => {
+          let val = v;
+          if (list && typeof v === 'number' && list[v] !== undefined) {val = list[v];}
+          else if (div !== 1 && typeof v === 'number') {val = v / div;}
+          try { this.setStoreValue?.(key, val)?.catch?.(() => {}); } catch (_e) { /* soft */ }
+          this.log?.(`[LCD] P3388 ZTH05Z DP${dp} ${key} = ${val} (no capability)`);
+          return null;
+        },
+      };
+    }
+    return out;
   }
 
   /** P2766: remember that this unit reports a real battery percentage (soft, never blocks). */
