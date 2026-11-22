@@ -102,6 +102,14 @@
     "replaceDevice": {
       "method": "POST",
       "path": "/replace"
+    },
+    "previewFlowRemap": {
+      "method": "POST",
+      "path": "/flow-remap/preview"
+    },
+    "getFlowRecoveryCandidates": {
+      "method": "GET",
+      "path": "/flow-remap/candidates"
     }
   },
   "channel": "stable",

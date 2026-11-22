@@ -377,8 +377,15 @@
   <div class="repair-card">
     <h3>Flow Repair & Replacement Tool</h3>
     <p style="font-size:11px;color:#64748b;margin-bottom:12px;">
-      Seamlessly replace references to old, broken, or removed devices inside all Standard and Advanced Flows with your newly paired replacement device.
+      After a re-pair or a driver move in this app, preview which Flows still point at the old device id.
+      Nothing is written unless you run a preview first, tick the confirm box, and press Apply.
+      Writes stay off by default (kill switch). This app does not request the Homey Web API permission
+      a Tools app would need, so a full rewrite of Flows, Advanced Flows, timers and Insights may not
+      be possible here. In that case use the optional third-party
+      <a href="https://community.homey.app/t/154906" target="_blank" rel="noopener">Flow Converter</a>
+      by late4marshmellow (never a dependency of this app).
     </p>
+    <div id="flow-remap-candidates" style="font-size:11px;color:#334155;margin-bottom:10px;"></div>
     
     <div class="row">
       <div class="select-wrapper">
@@ -395,13 +402,22 @@
       </div>
     </div>
 
-    <button class="btn btn-repair" id="btn-repair" disabled onclick="executeFlowRepair()">
-      <span class="spinner" id="repair-spinner"></span>
-      <span id="btn-text">Replace Device in Flows</span>
-    </button>
+    <label style="font-size:11px;display:flex;align-items:center;gap:8px;margin:8px 0;">
+      <input type="checkbox" id="flow-remap-confirm"/>
+      I have reviewed the preview and I want to apply the remap (never automatic).
+    </label>
+    <div class="row" style="gap:8px;">
+      <button class="btn btn-c" type="button" id="btn-repair-preview">Preview (dry run)</button>
+      <button class="btn btn-repair" id="btn-repair" type="button" disabled>
+        <span class="spinner" id="repair-spinner"></span>
+        <span id="btn-text">Apply remap</span>
+      </button>
+    </div>
 
     <div class="repair-result-box" id="repair-result"></div>
   </div>
+
+  <div class="card">
 
   <div class="card">
     <h3>WiFi / SmartLife — Local-First</h3>
@@ -856,24 +872,55 @@
       });
     }
 
-    function executeFlowRepair() {
+    function formatRemapPlan(res) {
+      if (!res) return 'No response.';
+      var lines = [];
+      if (res.listError) {
+        lines.push('Cannot list Homey flows from this device app: ' + res.listError);
+      }
+      lines.push((res.dryRun !== false ? 'PREVIEW (no writes). ' : 'APPLY. ')
+        + 'Standard flows: ' + (res.standardCount || 0)
+        + ', Advanced flows: ' + (res.advancedCount || 0) + '.');
+      (res.standard || []).slice(0, 20).forEach(function (f) {
+        lines.push('- ' + (f.name || f.id) + ' (' + f.hits + ')');
+      });
+      (res.advanced || []).slice(0, 20).forEach(function (f) {
+        lines.push('- [AF] ' + (f.name || f.id) + ' (' + f.hits + ')');
+      });
+      if (res.guidance) lines.push(res.guidance);
+      if (res.flowConverter && res.flowConverter.forum) {
+        lines.push('Flow Converter (optional): ' + res.flowConverter.forum);
+      }
+      if (res.error) lines.push(res.error);
+      return lines.join('\n');
+    }
+
+    function runFlowRemap(dryRun) {
       var oldId = el('device-old') && el('device-old').value;
       var newId = el('device-new') && el('device-new').value;
       var resultBox = el('repair-result');
       if (!resultBox) return;
-      
+
       if (!oldId || !newId) {
         resultBox.textContent = 'Please select both an old device and a new replacement device.';
         resultBox.className = 'repair-result-box error';
         resultBox.style.display = 'block';
         return;
       }
-
       if (oldId === newId) {
         resultBox.textContent = 'Old device and replacement device cannot be the same device.';
         resultBox.className = 'repair-result-box error';
         resultBox.style.display = 'block';
         return;
+      }
+      if (!dryRun) {
+        var box = el('flow-remap-confirm');
+        if (!box || !box.checked) {
+          resultBox.textContent = 'Preview first, then tick the confirmation box before Apply.';
+          resultBox.className = 'repair-result-box error';
+          resultBox.style.display = 'block';
+          return;
+        }
       }
 
       var btnRepair = el('btn-repair');
@@ -881,13 +928,17 @@
       var btnText = el('btn-text');
       if (btnRepair) btnRepair.disabled = true;
       if (spinner) spinner.style.display = 'inline-block';
-      if (btnText) btnText.textContent = 'Repairing flows...';
+      if (btnText) btnText.textContent = dryRun ? 'Previewing...' : 'Applying...';
       resultBox.style.display = 'none';
 
-      Homey.api('POST', '/replace', { oldId: oldId, newId: newId }, function(err, res) {
+      var path = dryRun ? '/flow-remap/preview' : '/replace';
+      var payload = { oldId: oldId, newId: newId, dryRun: !!dryRun };
+      if (!dryRun) payload.confirm = 'APPLY';
+
+      Homey.api('POST', path, payload, function(err, res) {
         if (btnRepair) btnRepair.disabled = false;
         if (spinner) spinner.style.display = 'none';
-        if (btnText) btnText.textContent = 'Replace Device in Flows';
+        if (btnText) btnText.textContent = 'Apply remap';
 
         if (err) {
           resultBox.textContent = 'Error: ' + (err.message || err);
@@ -896,20 +947,40 @@
           return;
         }
 
-        if (res && res.success) {
-          resultBox.innerHTML = '<strong>Successfully updated flows!</strong><br>' +
-                                '• Standard Flows updated: <strong>' + res.flowsUpdated + '</strong><br>' +
-                                '• Advanced Flows updated: <strong>' + res.advancedFlowsUpdated + '</strong>';
-          resultBox.className = 'repair-result-box success';
-          resultBox.style.display = 'block';
+        resultBox.textContent = formatRemapPlan(res);
+        resultBox.className = (res && (res.error || res.listError) && !res.standardCount && !res.advancedCount)
+          ? 'repair-result-box error'
+          : 'repair-result-box success';
+        resultBox.style.display = 'block';
+        if (!dryRun && res && res.success) {
           populateDevices();
-        } else {
-          resultBox.textContent = 'Unexpected response from server.';
-          resultBox.className = 'repair-result-box error';
-          resultBox.style.display = 'block';
         }
       });
     }
+
+    function executeFlowRepair() { runFlowRemap(false); }
+
+    function loadFlowRecoveryCandidates() {
+      if (!Homey || !Homey.api) return;
+      Homey.api('GET', '/flow-remap/candidates', {}, function (err, res) {
+        var box = el('flow-remap-candidates');
+        if (!box) return;
+        if (err || !res) return;
+        var pairs = (res.candidates || []);
+        if (!pairs.length) {
+          box.textContent = 'No obvious re-pair pairs (same IEEE or same manufacturer+product on two devices) in this app right now.';
+          return;
+        }
+        var lines = ['Suggested pairs in this app (same IEEE or same mfr+pid):'];
+        pairs.slice(0, 8).forEach(function (p) {
+          var o = p.older || {};
+          var n = p.newer || {};
+          lines.push((o.name || o.id) + ' -> ' + (n.name || n.id) + ' (' + p.reason + ')');
+        });
+        box.textContent = lines.join('\n');
+      });
+    }
+
 
     /**
      * P2717: lazy-load zigbee-map.js only when user opens mesh (never block ready).
@@ -999,6 +1070,7 @@
       // Soft-load device list — never block paint; API may be slow on sleepy Homey
       setTimeout(function () {
         try { populateDevices(); } catch (x) { console.error('populateDevices', x); }
+        try { loadFlowRecoveryCandidates(); } catch (x2) { console.error('flow candidates', x2); }
       }, 200);
     }
 

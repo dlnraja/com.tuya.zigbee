@@ -2,9 +2,26 @@
 // setCapabilityValue alone only updates Homey state (PresentSky #2206 dead controls).
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { isSlidingWindowPusherCouple } = require('../../lib/covers/slidingWindowPusher');
 
-class WallDimmerTuyaDriver extends Driver {
+class WallDimmerTuyaDriver extends ZigBeeDriver {
+
+  // WHY(P3374): ZC-LP01 was listed on this dimmer by a stale local hint (confidence 0.08).
+  // Z2M/forum: sliding window pusher. Keep the same device id (no re-pair required)
+  // by instantiating the curtain device class for this exact couple only.
+  onMapDeviceClass(device) {
+    try {
+      const data = device && typeof device.getData === 'function' ? device.getData() : (device && device.data) || {};
+      const mfr = (device && device.manufacturerName) || data.manufacturerName || data.manufacturer || '';
+      const pid = data.productId || data.modelId || 'TS0601';
+      if (isSlidingWindowPusherCouple(mfr, pid)) {
+        return require('../curtain_motor/device');
+      }
+    } catch (_e) { /* keep dimmer class */ }
+    return require('./device');
+  }
+
 
   async onInit() {
     await super.onInit();
