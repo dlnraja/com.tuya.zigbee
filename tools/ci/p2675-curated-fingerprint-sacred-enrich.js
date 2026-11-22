@@ -58,29 +58,85 @@ function buildFromKeep(keep) {
   return byMfr;
 }
 
+/** Case-insensitive key already in `out`, or null. */
+function existingKey(out, mfr) {
+  const n = String(mfr || '').toLowerCase();
+  if (!n) return null;
+  for (const k of Object.keys(out)) {
+    if (k.toLowerCase() === n) return k;
+  }
+  return null;
+}
+
+/**
+ * Prefer the mixed-case Tuya spelling when collapsing duplicate case keys.
+ */
+function preferredKey(keys) {
+  const mixed = keys.find((k) => k !== k.toLowerCase() && k !== k.toUpperCase());
+  return mixed || keys[0];
+}
+
+function copyFp(fp) {
+  const next = { ...fp };
+  next.modelIds = [...(fp.modelIds || [])];
+  if (!next.type) next.type = next.driverId;
+  if (!('powerSource' in next)) next.powerSource = null;
+  return next;
+}
+
+function unionEntry(base, incoming) {
+  const next = copyFp(base);
+  next.modelIds = unionStrings(next.modelIds, incoming.modelIds);
+  if (!next.driverId) next.driverId = incoming.driverId;
+  if (!next.type) next.type = incoming.type || incoming.driverId;
+  const rank = { battery: 3, mains: 2, unknown: 1 };
+  if ((rank[incoming.powerSource] || 0) > (rank[next.powerSource] || 0)) {
+    next.powerSource = incoming.powerSource;
+  }
+  if (incoming.dps && typeof incoming.dps === 'object') {
+    next.dps = { ...(next.dps || {}), ...incoming.dps };
+  }
+  for (const k of Object.keys(incoming)) {
+    if (k === 'driverId' || k === 'type' || k === 'powerSource' || k === 'modelIds' || k === 'dps') continue;
+    if (next[k] == null && incoming[k] != null) next[k] = incoming[k];
+  }
+  return next;
+}
+
+/**
+ * WHY(P2675): DeviceFingerprintDB already looks up via a lowercase index, so
+ * storing lower/UPPER copies of every mfr (caseVariants) tripled the file.
+ * P2607 re-added 86 sacred-keep couples; a pretty-printed 3-way case expand
+ * then measured 231019 bytes and failed the 200KB pressure budget. Collapse
+ * to one key per mfr and write compact JSON. Coverage stays case-insensitive.
+ */
 function mergeCurated(curated, fromKeep) {
-  const out = { ...curated };
+  const groups = new Map();
+  for (const [mfr, fp] of Object.entries(curated || {})) {
+    const n = String(mfr || '').toLowerCase();
+    if (!n) continue;
+    if (!groups.has(n)) groups.set(n, []);
+    groups.get(n).push([mfr, fp]);
+  }
+  const out = {};
+  for (const items of groups.values()) {
+    const key = preferredKey(items.map((x) => x[0]));
+    let entry = copyFp(items[0][1]);
+    for (let i = 1; i < items.length; i++) entry = unionEntry(entry, items[i][1]);
+    out[key] = entry;
+  }
   let added = 0;
   let updated = 0;
-
   for (const [mfr, fp] of Object.entries(fromKeep)) {
-    for (const variant of caseVariants(mfr)) {
-      if (!out[variant]) {
-        out[variant] = {
-          driverId: fp.driverId,
-          type: fp.type || fp.driverId,
-          powerSource: fp.powerSource || null,
-          modelIds: [...(fp.modelIds || [])],
-        };
-        added += 1;
-        continue;
-      }
-      const before = JSON.stringify(out[variant].modelIds || []);
-      out[variant].modelIds = unionStrings(out[variant].modelIds, fp.modelIds);
-      if (!out[variant].driverId) out[variant].driverId = fp.driverId;
-      if (!out[variant].type) out[variant].type = fp.type || fp.driverId;
-      if (JSON.stringify(out[variant].modelIds) !== before) updated += 1;
+    const hit = existingKey(out, mfr);
+    if (!hit) {
+      out[mfr] = copyFp(fp);
+      added += 1;
+      continue;
     }
+    const before = JSON.stringify(out[hit].modelIds || []);
+    out[hit] = unionEntry(out[hit], fp);
+    if (JSON.stringify(out[hit].modelIds) !== before) updated += 1;
   }
   return { out, added, updated };
 }
@@ -93,7 +149,7 @@ function main() {
   const curated = JSON.parse(fs.readFileSync(CURATED, 'utf8'));
   const fromKeep = buildFromKeep(keep);
   const { out, added, updated } = mergeCurated(curated, fromKeep);
-  const json = `${JSON.stringify(out, null, 2)}\n`;
+  const json = `${JSON.stringify(out)}\n`;
   const bytes = Buffer.byteLength(json);
 
   const summary = {
@@ -115,9 +171,11 @@ function main() {
   const missing = [];
   for (const c of keep.couples || []) {
     if (!c?.mfr) continue;
-    const hit = caseVariants(c.mfr).some((v) => out[v]?.driverId === c.driverId
-      || (out[v]?.modelIds || []).map((x) => String(x).toLowerCase()).includes(String(c.pid).toLowerCase()));
-    if (!hit && !caseVariants(c.mfr).some((v) => out[v])) missing.push(`${c.mfr}+${c.pid}`);
+    const key = existingKey(out, c.mfr);
+    const entry = key ? out[key] : null;
+    const hit = !!(entry && (entry.driverId === c.driverId
+      || (entry.modelIds || []).map((x) => String(x).toLowerCase()).includes(String(c.pid).toLowerCase())));
+    if (!hit && !entry) missing.push(`${c.mfr}+${c.pid}`);
   }
 
   if (check) {
