@@ -1,6 +1,7 @@
 'use strict';
 /** P3023: hard caps on every per-device structure + release/trim on lifecycle and pressure. */
-const { describe, it } = require('node:test');
+const { describe, it, afterEach } = require('../_support/dual-runner');
+afterEach(() => { require('../../lib/memory/MemoryBudget')._resetShared(); });
 const assert = require('node:assert');
 const RFD = require('../../lib/zigbee/RawFrameDeduplicator');
 const Engine = require('../../lib/zigbee/UnknownCommandEngine');

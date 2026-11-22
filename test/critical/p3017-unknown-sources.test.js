@@ -2,7 +2,8 @@
 
 // P3017 — sourced decoders harvested from issues/forums/other projects, per-couple DP name
 // catalogue, ZHA-style TSN dedup, app-level teach/forget Flow actions, ZCL header description.
-const { describe, it, beforeEach } = require('node:test');
+const { describe, it, beforeEach, afterEach } = require('../_support/dual-runner');
+afterEach(() => { require('../../lib/memory/MemoryBudget')._resetShared(); });
 const assert = require('node:assert');
 const fs = require('fs');
 const path = require('path');
