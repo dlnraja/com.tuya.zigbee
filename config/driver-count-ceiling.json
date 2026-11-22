@@ -23,12 +23,12 @@
     "com.dlnraja.tuya.zigbee.bastien": {
       "branch": "bastien-home",
       "mode": "fail",
-      "lastAccepted": 27,
-      "evidence": "last accepted 27: build #236 Test 2026-11-03 (run 41629128967) and build #261 v1.0.253 Test 2026-11-22 (run 45052013833). trialAllow 28 is a t1029u trial, not yet accepted.",
-      "athomApiCount": 27,
+      "lastAccepted": 28,
+      "evidence": "last accepted 28: build #262 v1.0.254 Test 2026-11-22 (run 45054962935, 28 drivers / 651 flow cards). Previously 27: build #236 (2026-11-03) and #261 v1.0.253 (run 45052013833).",
+      "athomApiCount": 28,
       "apiOffset": 0,
-      "trialAllow": 28,
-      "trialNote": "t1029u 2026-11-22: trial 28 so wall_thermostat stays in the P2724 fleet (ZHT-S01 remap). Last Athom-accepted count remains 27 (build #236 and #261 v1.0.253, run 45052013833). If Athom rejects the larger build, drop trialAllow and remove wall_thermostat (option b)."
+      "trialAllow": 29,
+      "trialNote": "t1029u 2026-11-22 follow-up: trialAllow 29 so lcdtemphumidsensor (live ZTH05Z _TZE284_vvmbj46n+TS0601) can join the P2724 fleet. lastAccepted is now 28 citing #262. If Athom rejects the 29-driver build, drop trialAllow and swap a zero-paired buffer for lcdtemphumidsensor (do not drop a driver a paired device uses)."
     }
   },
   "athomApi": "https://apps-api.athom.com/api/v1/app/<id> (public, no auth): testBuild.drivers"

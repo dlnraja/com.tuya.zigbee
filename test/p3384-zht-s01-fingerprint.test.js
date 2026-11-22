@@ -32,15 +32,17 @@ describe('P3384 ZHT-S01 fingerprint move (Z2M moes.ts)', () => {
     assert.ok(!hasMfr(radar, '_tze284_rlytpmij'));
   });
 
-  it('Bastien house fleet keeps wall_thermostat under the P3262 trial ceiling of 28', () => {
+  it('Bastien house fleet keeps wall_thermostat and live lcdtemphumidsensor (trial ceiling 29)', () => {
     const ssot = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'architecture', 'bastien-publish-fleet-ssot.json'), 'utf8'));
     const ceil = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'driver-count-ceiling.json'), 'utf8'));
     const entry = ceil.apps['com.dlnraja.tuya.zigbee.bastien'];
     assert.ok(ssot.keepDriverIds.includes('presence_sensor_radar'));
     assert.ok(ssot.keepDriverIds.includes('wall_thermostat'));
-    assert.strictEqual(entry.lastAccepted, 27);
-    assert.strictEqual(entry.trialAllow, 28);
-    assert.match(String(ssot.p3262Trial || ''), /trial ceiling of 28/);
+    assert.ok(ssot.keepDriverIds.includes('lcdtemphumidsensor'));
+    assert.strictEqual(entry.lastAccepted, 28);
+    assert.strictEqual(entry.trialAllow, 29);
+    assert.match(String(ssot.p3262Trial || ''), /trialAllow 29/);
+    assert.match(String(ssot.p3262Trial || ''), /lcdtemphumidsensor/);
   });
 
   it('Bastien live mesh has no ZHT-S01 or wall_thermostat couple (fleet buffer only)', () => {
@@ -60,6 +62,8 @@ describe('P3384 ZHT-S01 fingerprint move (Z2M moes.ts)', () => {
     assert.strictEqual(tze[0].mfr, '_TZE284_vvmbj46n');
     assert.strictEqual(tze[0].pid, 'TS0601');
     assert.strictEqual(tze[0].driver, 'lcdtemphumidsensor');
+    const fleet = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'architecture', 'bastien-publish-fleet-ssot.json'), 'utf8'));
+    assert.ok(fleet.keepDriverIds.includes('lcdtemphumidsensor'));
   });
 
   it('onMapDeviceClass wall_thermostat require is try-guarded (P3310 / preflight)', () => {

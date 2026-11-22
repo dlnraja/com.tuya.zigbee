@@ -34,16 +34,17 @@ describe('P3262 driver-count ceiling', () => {
     assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee', 348), cfg, 'master', 345).level, 'warn');
     assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.stable', 343), cfg, 'stable-v5', 341).level, 'fail');
   });
-  it('Bastien trialAllow 28 lets one extra driver through even when Athom API still reports 27', () => {
+  it('Bastien trialAllow 29 lets one extra driver through even when Athom API still reports 28', () => {
     const e = cfg.apps['com.dlnraja.tuya.zigbee.bastien'];
-    assert.strictEqual(e.lastAccepted, 27);
-    assert.strictEqual(e.trialAllow, 28);
-    assert.strictEqual(g.effectiveMax(e), 28);
-    assert.strictEqual(g.effectiveMax(e, 27), 28);
+    assert.strictEqual(e.lastAccepted, 28);
+    assert.strictEqual(e.trialAllow, 29);
+    assert.strictEqual(g.effectiveMax(e), 29);
+    assert.strictEqual(g.effectiveMax(e, 28), 29);
     assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 28), cfg, 'bastien-home').level, 'ok');
-    assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 28), cfg, 'bastien-home', 27).level, 'ok');
-    assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 29), cfg, 'bastien-home').level, 'fail');
-    assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 29), cfg, 'bastien-home', 27).level, 'fail');
+    assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 29), cfg, 'bastien-home').level, 'ok');
+    assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 29), cfg, 'bastien-home', 28).level, 'ok');
+    assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 30), cfg, 'bastien-home').level, 'fail');
+    assert.strictEqual(g.evaluate(app('com.dlnraja.tuya.zigbee.bastien', 30), cfg, 'bastien-home', 28).level, 'fail');
   });
   it('counts unique driver ids (one-for-one swap keeps the count)', () => {
     const a = app('com.dlnraja.tuya.zigbee', 347);

@@ -18,7 +18,8 @@
       { "mfr": "_TZ3000_ltt60asa", "pid": "TS0004", "driver": "switch_4gang" }
     ],
     "sensors": [
-      { "mfr": "_TZ3000_fllyghyj", "pid": "SNZB-02", "driver": "climate_sensor" }
+      { "mfr": "_TZ3000_fllyghyj", "pid": "SNZB-02", "driver": "climate_sensor" },
+      { "mfr": "_TZE284_vvmbj46n", "pid": "TS0601", "driver": "lcdtemphumidsensor" }
     ],
     "note": "NodOn + eWeLink are other apps — not in Bastien fleet"
   },
@@ -36,6 +37,7 @@
     "wall_switch_4gang_1way",
     "switch_4gang",
     "climate_sensor",
+    "lcdtemphumidsensor",
     "contact_sensor",
     "contact_sensor_zigbee",
     "motion_sensor",
@@ -58,5 +60,5 @@
   "alwaysKeepPrefixes": [],
   "contreQuoi": "Full 400+ driver Bastien upload → Athom socket hang / invalid_state → tip stuck on 1.0.93 while remotes dead. Soft flow-keep left 1500+ orphan cards (#106).",
   "notes": "P2726: empty alwaysKeepPrefixes — only keepDriverIds (house mesh + small buffer). Flow cards kept only when id starts with kept driver id.",
-  "p3262Trial": "t1029u 2026-11-22: keep wall_thermostat in the fleet under a trial ceiling of 28 (ZHT-S01 remap from presence_sensor_radar). Last Athom-accepted count is 27 (build #236 and #261 v1.0.253). If Athom rejects the larger build, drop trialAllow and remove wall_thermostat."
+  "p3262Trial": "t1029u 2026-11-22: lastAccepted is 28 (build #262 v1.0.254, wall_thermostat in the fleet). trialAllow 29 so lcdtemphumidsensor (live ZTH05Z _TZE284_vvmbj46n+TS0601) ships too. If Athom rejects the 29-driver build, drop trialAllow and swap a zero-paired buffer for lcdtemphumidsensor so the needed driver stays at 28."
 }
