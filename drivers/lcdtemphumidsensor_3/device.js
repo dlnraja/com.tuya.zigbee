@@ -135,13 +135,15 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
         this.log('measure_humidity | relativeHumidity - measuredValue (humidity):', parsedValue, '+ humidity offset', humidityOffset);
 
         // WHY(P3396): reject a sudden jump that copies a sibling (diag ec7026a7).
-        const humidityNext = parsedValue + humidityOffset;
-        if (shouldRejectSiblingCrosstalk(this, 'measure_humidity', humidityNext)) {
-          this.log('[P3396] dropped measure_humidity', humidityNext, 'as sibling crosstalk');
-          break;
+        {
+          const humidityNext = parsedValue + humidityOffset;
+          if (shouldRejectSiblingCrosstalk(this, 'measure_humidity', humidityNext)) {
+            this.log('[P3396] dropped measure_humidity', humidityNext, 'as sibling crosstalk');
+            break;
+          }
+          recordAccepted(this, 'measure_humidity', humidityNext);
+          this.safeSetCapabilityValue('measure_humidity', humidityNext).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
-        recordAccepted(this, 'measure_humidity', humidityNext);
-        this.safeSetCapabilityValue('measure_humidity', humidityNext).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case dataPoints.currentTemperature:
@@ -150,13 +152,15 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
         this.log('measure_temperature | temperatureMeasurement - measuredValue (temperature):', parsedValue, '+ temperature offset', temperatureOffset);
 
         // WHY(P3396): reject a sudden jump that copies a sibling (diag ec7026a7).
-        const temperatureNext = parsedValue + temperatureOffset;
-        if (shouldRejectSiblingCrosstalk(this, 'measure_temperature', temperatureNext)) {
-          this.log('[P3396] dropped measure_temperature', temperatureNext, 'as sibling crosstalk');
-          break;
+        {
+          const temperatureNext = parsedValue + temperatureOffset;
+          if (shouldRejectSiblingCrosstalk(this, 'measure_temperature', temperatureNext)) {
+            this.log('[P3396] dropped measure_temperature', temperatureNext, 'as sibling crosstalk');
+            break;
+          }
+          recordAccepted(this, 'measure_temperature', temperatureNext);
+          this.safeSetCapabilityValue('measure_temperature', temperatureNext).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
-        recordAccepted(this, 'measure_temperature', temperatureNext);
-        this.safeSetCapabilityValue('measure_temperature', temperatureNext).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
     }
   }
