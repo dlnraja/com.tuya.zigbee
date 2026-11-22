@@ -231,9 +231,13 @@
       ]
     }
   ],
-  "5.12.563": {
+  "5.12.564": {
     "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
     "fr": "Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication."
+  },
+  "5.12.563": {
+    "en": "Fixed: climate sensors and pairing and device recognition. Plus 1 other change in the app core.",
+    "fr": "Corrigé : capteurs d'ambiance et appairage et reconnaissance des appareils. Et 1 autre changement dans le cœur de l'app."
   },
   "5.12.562": {
     "en": "Changed: lazy unit tests stay lazy when Module._load is hooked; boot reporting gate and bounded per-device trackers; device classes load on first use, not at app start [skip ci].",
