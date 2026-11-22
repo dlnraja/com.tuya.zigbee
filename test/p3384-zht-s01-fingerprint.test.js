@@ -38,6 +38,25 @@ describe('P3384 ZHT-S01 fingerprint move (Z2M moes.ts)', () => {
     assert.ok(!ssot.keepDriverIds.includes('wall_thermostat'));
   });
 
+  it('Bastien live mesh has no ZHT-S01 or wall_thermostat couple, so the drop is safe', () => {
+    const house = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'config', 'architecture', 'bastien-house-ssot.json'), 'utf8'));
+    const nodes = (house.liveMesh && house.liveMesh.nodes) || [];
+    assert.ok(nodes.length > 0, 'liveMesh nodes missing');
+    const meshText = JSON.stringify(nodes);
+    assert.doesNotMatch(meshText, /rlytpmij/i);
+    assert.doesNotMatch(meshText, /wall_thermostat/i);
+    assert.doesNotMatch(meshText, /presence_sensor_radar/i);
+    assert.doesNotMatch(meshText, /ZHT-S01/i);
+    const inventory = JSON.stringify(house.devicesInventory || []);
+    assert.doesNotMatch(inventory, /rlytpmij/i);
+    assert.doesNotMatch(inventory, /wall_thermostat/i);
+    const tze = nodes.filter((n) => String(n.mfr || '').toLowerCase().includes('tze284'));
+    assert.strictEqual(tze.length, 1);
+    assert.strictEqual(tze[0].mfr, '_TZE284_vvmbj46n');
+    assert.strictEqual(tze[0].pid, 'TS0601');
+    assert.strictEqual(tze[0].driver, 'lcdtemphumidsensor');
+  });
+
   it('onMapDeviceClass wall_thermostat require is try-guarded (P3310 / preflight)', () => {
     const src = fs.readFileSync(path.join(__dirname, '..', 'drivers', 'presence_sensor_radar', 'driver.js'), 'utf8')
       .replace(/\/\*[\s\S]*?\*\//g, '')
