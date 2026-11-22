@@ -1,3 +1,12 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekday Apple Home / Insights coherence: add missing standard units, check official app.json
+#   and flow ids, no eager big JSON; commit [skip ci] only when tests pass, otherwise fail with a job summary
+#   and open no PR.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
 # >>> about (P3362) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
 # What it does: Weekday Apple Home / Insights coherence: add missing standard units, check official app.json and flow ids, no eager big JSON; commit [skip ci] only when tests pass, otherwise fail with a job summary and open no PR.
 # Ideas from (thank you): GitHub Actions docs, rhysd (actionlint), the Athom homey CLI docs for the validate levels.
@@ -33,6 +42,7 @@ defaults:
   run:
     shell: bash
 
+# P2542 forfait / local-first (auto-injected)
 env:
   AI_PLAN_MODE: 'forfait'
   AI_FORCE_LOCAL: 'true'
@@ -42,6 +52,11 @@ env:
   FORUM_AUTO_POST: '0'
   GITHUB_RESOLVER_COMMENT: '0'
   SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
 
 jobs:
   coherence:
@@ -54,7 +69,7 @@ jobs:
         branch: [master, stable-v5, bastien-home]
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           ref: ${{ matrix.branch }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -74,7 +89,7 @@ jobs:
 
       - name: Setup Node 22
         if: steps.gate.outputs.run == 'true'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: npm
@@ -152,6 +167,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bash scripts/ci/bot-commit-guard.sh
           git commit -m "fix(P3362): Apple Home / Insights coherence auto-apply [skip ci]"
-          git push origin "HEAD:${{ matrix.branch }}"
+          bash .github/scripts/git-push-retry.sh --branch "${{ matrix.branch }}"
           echo "Committed and pushed to ${{ matrix.branch }}" >> "$GITHUB_STEP_SUMMARY"

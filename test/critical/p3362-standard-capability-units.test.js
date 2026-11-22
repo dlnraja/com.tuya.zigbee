@@ -13,6 +13,7 @@ const {
   standardUnitFor,
   hasDeclaredUnits,
   healSensorCapabilityGetable,
+  scheduleUnitsRecycle,
 } = require('../../lib/utils/HomeyCapabilityUx');
 const { scanMissingUnits, APP_FLOW_IDS, checkEagerJson } = require('../../scripts/ci/apple-home-coherence.cjs');
 
@@ -76,6 +77,28 @@ describe('P3362 standard capability units', () => {
     assert.equal(dist.opts.units, 'm');
     assert.equal(dist.opts.preventInsights, true);
     assert.ok(r.unitsHealed.includes('measure_humidity'));
+  });
+
+
+  it('unit recycle does not removeCapability on first init (P3040b)', async () => {
+    const store = {};
+    const removed = [];
+    const device = {
+      getCapabilities: () => ['measure_humidity'],
+      getCapabilityOptions: () => ({}),
+      getCapabilityValue: () => null,
+      getStoreValue: (k) => store[k],
+      setStoreValue: async (k, v) => { store[k] = v; },
+      removeCapability: async (c) => { removed.push(c); },
+      addCapability: async () => {},
+      setCapabilityOptions: async () => {},
+    };
+    scheduleUnitsRecycle(device, ['measure_humidity']);
+    assert.deepEqual(removed, []);
+    assert.equal(store.p3362_units_insights_recycle_needed, 1);
+    scheduleUnitsRecycle(device, ['measure_humidity']);
+    assert.deepEqual(removed, []);
+    assert.equal(store.p3362_units_insights_recycle, 1);
   });
 
   it('app-level flow card ids remain available', () => {
