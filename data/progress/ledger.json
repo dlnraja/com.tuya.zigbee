@@ -47569,6 +47569,12 @@
     "leadsAdded": 0
    },
    "lastChangeRun": "44765764703"
+  },
+  "ci-fail:intake-triage:source-digest-privacy-guard:time": {
+   "status": "fixed",
+   "date": "2026-11-22",
+   "by": "homey-ci-prs",
+   "note": "attempt 1/3 (24h) run 44979635836 master e1984ae0fb: intake-triage writeJson -> assertClean read \"16:10\" inside the digest generated ISO timestamp (Date().toISOString() with ms) as a clock time; ISO-8601 machine timestamps masked before the leak check (bare times still fail), test ci-prs-1122-source-digest-iso-timestamp"
   }
  }
 }

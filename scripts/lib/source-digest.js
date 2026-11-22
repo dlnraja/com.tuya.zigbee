@@ -31,7 +31,11 @@ const ROOM_EN_RE = /\b(living ?room|kitchen|bedroom|kids'? room|bathroom|garage(
 // the leak check (never stored differently): Z2M/ZHA converter enum maps ("lookup:{...}" lists the
 // device's own scene names such as "kitchen") and Shelly model tokens ("Shelly|1PM", "1PM Gen4"),
 // which TIME_RE would read as 1 pm. Narrow and case-sensitive on purpose.
-const UPSTREAM_FACT_RES = [/\blookup:\{[^{}\n]{0,2000}\}/g, /(?<=Shelly[ |](?:Plus ?|Pro ?|Mini ?)?)[1-4]PM\b/g, /\b[1-4]PM(?= ?(?:Mini |Plus |Pro )?Gen ?\d)/g];
+// ci-prs 22/11/2026 (Intake triage run 44979635836): machine ISO-8601 timestamps (generated/createdAt
+// metadata such as 2026-11-22T03:16:10.929Z) are not clock times of a household routine; TIME_RE read
+// "16:10" in them and failed every write. Full date+T+time only; bare times stay checked.
+const ISO_TS_RE = /\b\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d{1,9})?)?(?:Z|[+-]\d{2}:?\d{2})?(?![\w:])/g;
+const UPSTREAM_FACT_RES = [/\blookup:\{[^{}\n]{0,2000}\}/g, ISO_TS_RE, /(?<=Shelly[ |](?:Plus ?|Pro ?|Mini ?)?)[1-4]PM\b/g, /\b[1-4]PM(?= ?(?:Mini |Plus |Pro )?Gen ?\d)/g];
 function maskUpstreamFacts(s) { let out = String(s); for (const re of UPSTREAM_FACT_RES) { re.lastIndex = 0; out = out.replace(re, '[upstream-fact]'); } return out; }
 const DEVNAME_RE = /["“]([^"”\n]{2,40})["”]\s*(?:device|sensor|switch|plug|capteur|prise|interrupteur)/gi;
 const IEEE_LOOSE = /\b0x[0-9a-f]{16}\b|\b(?:[0-9a-f]{2}:){7}[0-9a-f]{2}\b/gi;
