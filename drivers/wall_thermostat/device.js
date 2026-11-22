@@ -9,6 +9,7 @@ const { getDataValue } = require('./helpers');
 const { Cluster } = require('zigbee-clusters');
 const { equalsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const TuyaDeviceHelper = require('../../lib/utils/TuyaDeviceHelper');
+const { isZhtS01Couple, DATA_POINTS: ZHT_S01_DATA_POINTS } = require('../../lib/thermostats/ZhtS01Map');
 
 Cluster.addCluster(TuyaOnOffCluster);
 Cluster.addCluster(TuyaSpecificCluster);
@@ -162,7 +163,13 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     if (touched) { Promise.resolve(this.setStoreValue?.('wall_thermo_fcu_unused_marked', true)).catch(() => {}); }
   }
 
+  _isZhtS01Couple() {
+    const { mfr, pid } = this._resolveMfrPid();
+    return isZhtS01Couple(mfr, pid);
+  }
+
   _isFcuCouple() {
+    if (this._isZhtS01Couple()) { return false; }
     if (this._isNeverFcu()) { return false; }
     if (this.getStoreValue?.('wall_thermo_fcu') === true || this._fcuSignalSeen) {
       return true;
@@ -177,7 +184,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
   /** Prevent TuyaEF00Manager generic DP1->measure_temperature for this driver. */
   _installDpMappings() {
-    const map = this._fcu ? FCU_DATA_POINTS : BHT_DATA_POINTS;
+    const map = this._zhtS01 ? ZHT_S01_DATA_POINTS : this._fcu ? FCU_DATA_POINTS : BHT_DATA_POINTS;
     const bac002 = !!this._bac002;
     this.dpMappings = {
       [map.onOff]: { capability: 'onoff', type: 'bool' },
@@ -303,12 +310,15 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     }
 
     this._refreshBac002Flag();
+    this._zhtS01 = this._isZhtS01Couple();
     this._fcu = this._isFcuCouple();
     this._installDpMappings();
     const id = this._resolveMfrPid();
-    this.log(this._fcu
-      ? `[WALL-THERMO] FCU path (${id.mfr}|${id.pid})`
-      : `[WALL-THERMO] BHT path (${id.mfr}|${id.pid}) - will arm on DP28/36/101`);
+    this.log(this._zhtS01
+      ? `[WALL-THERMO] ZHT-S01 path (${id.mfr}|${id.pid})`
+      : this._fcu
+        ? `[WALL-THERMO] FCU path (${id.mfr}|${id.pid})`
+        : `[WALL-THERMO] BHT path (${id.mfr}|${id.pid}) - will arm on DP28/36/101`);
     if (this._bac002) { this.log('[WALL-THERMO] P2970 BAC-002 profile (DP16 whole °C, DP4 preset, DP101 schedule)'); }
 
     for (const cap of ['thermostat_programming', 'child_lock']) {
@@ -371,7 +381,12 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       }
       const wasBac = !!this._bac002;
       if (this._refreshBac002Flag() && !wasBac) { this._installDpMappings(); }
-      if (!this._fcu && this._isFcuCouple()) {
+      if (!this._zhtS01 && this._isZhtS01Couple()) {
+        this._zhtS01 = true;
+        this._installDpMappings();
+        this.log('[WALL-THERMO] ZHT-S01 path after basic identity');
+      }
+      if (!this._fcu && !this._zhtS01 && this._isFcuCouple()) {
         await this._armFcu('basic-cluster');
       }
     } catch (e) {
@@ -388,7 +403,8 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       this._fcuSyncing = true;
       try {
         // WHY(P2324): DP1 first (Z2M power switch). DP101 only if confirmed - never block OFF.
-        await this._txBool(BHT_DATA_POINTS.onOff, !!onOff);
+        // P3384: ZHT-S01 also uses DP1 as heat/off (Z2M moes.ts).
+        await this._txBool(this._zhtS01 ? ZHT_S01_DATA_POINTS.onOff : BHT_DATA_POINTS.onOff, !!onOff);
         await this._ensureFcuManualForTx().catch((e) => {
           this.log('[WALL-THERMO] DP101 after onoff skipped:', e?.message || e);
         });
@@ -427,7 +443,10 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
         rawValue = Math.round(Number(targetTemperature));
       }
       // WHY(P2324): setpoint DP16 first; optional DP101 only when RX-confirmed.
-      await this._txValue(BHT_DATA_POINTS.targetTemperature, rawValue);
+      // P3384: ZHT-S01 setpoint is DP 111 /10 (Z2M moes.ts).
+      const setpointDp = this._zhtS01 ? ZHT_S01_DATA_POINTS.targetTemperature : BHT_DATA_POINTS.targetTemperature;
+      if (this._zhtS01) {rawValue = Math.round(Number(targetTemperature) * 10);}
+      await this._txValue(setpointDp, rawValue);
       await this._ensureFcuManualForTx().catch((e) => {
         this.log('[WALL-THERMO] DP101 after setpoint skipped:', e?.message || e);
       });
@@ -435,7 +454,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('child_lock', async (childlock) => {
-      await this._txBool(BHT_DATA_POINTS.childlock, !!childlock);
+      await this._txBool(this._zhtS01 ? ZHT_S01_DATA_POINTS.childlock : BHT_DATA_POINTS.childlock, !!childlock);
       this.log('[WALL-THERMO] child_lock TX', childlock);
     });
   }
@@ -532,8 +551,13 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     if (ThermostatMeteringDps.handle(this, this._resolveMfrPid().mfr, dp, parsedValue)) {return;}
 
     // WHY(P2303 / Adam diag f84180b7): DP36 valve proved FCU while path was still BHT
-    if (!this._fcu && FCU_SIGNAL_DPS.has(dp)) {
+    if (!this._fcu && !this._zhtS01 && FCU_SIGNAL_DPS.has(dp)) {
       await this._armFcu(`dp${dp}`);
+    }
+
+    if (this._zhtS01) {
+      await this._processZhtS01Response(dp, parsedValue);
+      return;
     }
 
     if (this._fcu) {
@@ -574,6 +598,25 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
         break;
       default:
         this.log('[WALL-THERMO] BHT DP', dp, parsedValue);
+    }
+  }
+
+  async _processZhtS01Response(dp, parsedValue) {
+    switch (dp) {
+      case ZHT_S01_DATA_POINTS.onOff:
+        await this.safeSetCapabilityValue('onoff', !!parsedValue).catch(() => {});
+        break;
+      case ZHT_S01_DATA_POINTS.currentTemperature:
+        await this.safeSetCapabilityValue('measure_temperature', Number(parsedValue) / 10).catch(() => {});
+        break;
+      case ZHT_S01_DATA_POINTS.targetTemperature:
+        await this.safeSetCapabilityValue('target_temperature', Number(parsedValue) / 10).catch(() => {});
+        break;
+      case ZHT_S01_DATA_POINTS.childlock:
+        await this.safeSetCapabilityValue('child_lock', !!parsedValue).catch(() => {});
+        break;
+      default:
+        this.log('[WALL-THERMO] ZHT-S01 DP', dp, parsedValue);
     }
   }
 

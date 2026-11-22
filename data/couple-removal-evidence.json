@@ -300,6 +300,95 @@
         "git_history": "climate_sensor bulk import",
         "sibling_pids": "_TZE284_3yp57tby|TS0601"
       }
-    }
+    },
+    {
+      "couple": "_TZE200_zl1kmjqx|TS0601",
+      "driver": "button_wireless_2",
+      "pr": "P3321",
+      "verdict": "moved to lcdtemphumidsensor_3: real hardware is a TS0601 LCD temp/humidity sensor per Zigbee2MQTT TS0601_temperature_humidity_sensor_1, ZHA tuya_sensor.py and deCONZ; not a 2-button remote",
+      "sources": {
+        "z2m": "z2m:TS0601_temperature_humidity_sensor_1; zhc:TS0601_temperature_humidity_sensor_1",
+        "zha": "zha:zhaquirks/tuya/tuya_sensor.py",
+        "deconz": "deconz:Tuya multi sensor (TS0601)",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "johan:lcdtemphumidsensor_3",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "ff0d4b9217 fix(P3321): recommend lcdtemphumidsensor_3 for _TZE200_zl1kmjqx / TS0601 | 383290373b test(ci): P3199 no third-party email in fixture",
+        "sibling_pids": "_TZE200_zl1kmjqx|TS0601"
+      }
+    },
+    {
+      "couple": "_tze200_zl1kmjqx|TS0601",
+      "driver": "button_wireless_2",
+      "pr": "P3321",
+      "verdict": "moved to lcdtemphumidsensor_3: real hardware is a TS0601 LCD temp/humidity sensor per Zigbee2MQTT TS0601_temperature_humidity_sensor_1, ZHA tuya_sensor.py and deCONZ; not a 2-button remote",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "ff0d4b9217 fix(P3321): recommend lcdtemphumidsensor_3 for _TZE200_zl1kmjqx / TS0601 | 383290373b test(ci): P3199 no third-party email in fixture",
+        "sibling_pids": "_TZE200_zl1kmjqx|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_ZL1KMJQX|TS0601",
+      "driver": "button_wireless_2",
+      "pr": "P3321",
+      "verdict": "moved to lcdtemphumidsensor_3: real hardware is a TS0601 LCD temp/humidity sensor per Zigbee2MQTT TS0601_temperature_humidity_sensor_1, ZHA tuya_sensor.py and deCONZ; not a 2-button remote",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "ff0d4b9217 fix(P3321): recommend lcdtemphumidsensor_3 for _TZE200_zl1kmjqx / TS0601 | 383290373b test(ci): P3199 no third-party email in fixture",
+        "sibling_pids": "_TZE200_zl1kmjqx|TS0601"
+      }
+    },
+    {
+      "couple": "_tze200_ZL1KMJQX|TS0601",
+      "driver": "button_wireless_2",
+      "pr": "P3321",
+      "verdict": "moved to lcdtemphumidsensor_3: real hardware is a TS0601 LCD temp/humidity sensor per Zigbee2MQTT TS0601_temperature_humidity_sensor_1, ZHA tuya_sensor.py and deCONZ; not a 2-button remote",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "ff0d4b9217 fix(P3321): recommend lcdtemphumidsensor_3 for _TZE200_zl1kmjqx / TS0601 | 383290373b test(ci): P3199 no third-party email in fixture",
+        "sibling_pids": "_TZE200_zl1kmjqx|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_rlytpmij|TS0601",
+      "driver": "presence_sensor_radar",
+      "pr": "P3384",
+      "verdict": "wrong driver: official Z2M/ZHC Moes ZHT-S01 wall thermostat (moes.ts fingerprint TS0601 + _TZE284_rlytpmij; DP 111 setpoint /10, DP 117 ambient /10); not a presence radar; moved to wall_thermostat with onMapDeviceClass so the device id is kept",
+      "sources": {
+        "z2m": "z2m:ZHT-S01; zhc:ZHT-S01",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "4ec01c0fe7 feat(P92.62): couverture casse 4-combos pairing (3996 variantes) - tout firmware case-insensitive au pairing [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_rlytpmij|TS0601"
+      }    }
   ]
 }
