@@ -5,6 +5,10 @@ require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { Cluster, debug} = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
+const {
+  shouldRejectSiblingCrosstalk,
+  recordAccepted,
+} = require('../../lib/tuya/SiblingCrosstalkGuard');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
@@ -124,7 +128,16 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
         parsedValue = measuredValue > 100 ? measuredValue / 10 : measuredValue;
         this.log('measure_humidity | relativeHumidity - measuredValue (humidity):', parsedValue, '+ humidity offset', humidityOffset);
 
-        this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        // WHY(P3396): reject a sudden jump that copies a sibling (diag ec7026a7).
+        {
+          const humidityNext = parsedValue + humidityOffset;
+          if (shouldRejectSiblingCrosstalk(this, 'measure_humidity', humidityNext)) {
+            this.log('[P3396] dropped measure_humidity', humidityNext, 'as sibling crosstalk');
+            break;
+          }
+          recordAccepted(this, 'measure_humidity', humidityNext);
+          this.safeSetCapabilityValue('measure_humidity', humidityNext).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        }
         break;
 
       case dataPoints.currentTemperature:
@@ -132,7 +145,16 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
         parsedValue = measuredValue/10;
         this.log('measure_temperature | temperatureMeasurement - measuredValue (temperature):', parsedValue, '+ temperature offset', temperatureOffset);
 
-        this.safeSetCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        // WHY(P3396): reject a sudden jump that copies a sibling (diag ec7026a7).
+        {
+          const temperatureNext = parsedValue + temperatureOffset;
+          if (shouldRejectSiblingCrosstalk(this, 'measure_temperature', temperatureNext)) {
+            this.log('[P3396] dropped measure_temperature', temperatureNext, 'as sibling crosstalk');
+            break;
+          }
+          recordAccepted(this, 'measure_temperature', temperatureNext);
+          this.safeSetCapabilityValue('measure_temperature', temperatureNext).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        }
         break;
     }
   }

@@ -45,6 +45,14 @@ function childEnv() {
   return env;
 }
 
+// P3390 (22/11/2026 Paris): node:test children get the same setup as mocha (.mocharc require
+// test/setup/host-env.js). Without it lib/utils/LazyDeviceClass.js was first loaded INSIDE a test's
+// hooked Module._load window, took that hook as the start loader, kept device.js lazy, and the body ran
+// after the test restored the loader and evicted the cache: fingerbot / sauna_thermostat_ae5503 then
+// bound to fresh copies of their bases (instanceof false, 'seq is an unexpected property', run 45062873515).
+const SETUP_FILE = path.join(ROOT, 'test', 'setup', 'host-env.js');
+function setupArgs() { return fs.existsSync(SETUP_FILE) ? ['--require', SETUP_FILE] : []; }
+
 const keyOf = (f) => `${f.file}::${f.name}`;
 
 function parseFailures(text) {
@@ -89,7 +97,7 @@ function main(argv) {
   if (fs.existsSync(opt.out)) {fs.unlinkSync(opt.out);}
   const reporter = path.join(__dirname, 'node-test-fail-reporter.mjs');
   const r = spawnSync(process.execPath, [
-    '--test', `--test-concurrency=${opt.concurrency}`,
+    ...setupArgs(), '--test', `--test-concurrency=${opt.concurrency}`,
     '--test-reporter=dot', '--test-reporter-destination=stdout',
     `--test-reporter=${reporter}`, `--test-reporter-destination=${opt.out}`,
     ...targets,
@@ -97,7 +105,7 @@ function main(argv) {
   if (r.error) { console.error(`node-test-strict: spawn failed: ${r.error.message}`); return 2; }
   const failures = fs.existsSync(opt.out) ? parseFailures(fs.readFileSync(opt.out, 'utf8')) : [];
   if (r.status !== 0 && failures.length === 0) {
-    console.error(`node-test-strict: node --test exited ${r.status} without a recorded failure (crash?) — failing closed`);
+    console.error(`node-test-strict: node --test exited ${r.status} without a recorded failure (crash?) - failing closed`);
     return 1;
   }
   const rel = targets.map((f) => path.relative(ROOT, f).split(path.sep).join('/'));
@@ -107,7 +115,7 @@ function main(argv) {
   for (const k of res.stale) {console.log(`::notice::baseline entry now passes, remove it: ${k}`);}
   for (const k of res.unexpected) {
     const f = failures.find((x) => keyOf(x) === k);
-    console.log(`::error::node:test failure: ${k}${f && f.msg ? ` — ${f.msg.split('\n')[0]}` : ''}`);
+    console.log(`::error::node:test failure: ${k}${f && f.msg ? ` - ${f.msg.split('\n')[0]}` : ''}`);
   }
   if (!res.ok) {return isolatedFlakyRetry(res.unexpected) ? 0 : 1;}
   return 0;
@@ -127,7 +135,7 @@ function isolatedFlakyRetry(unexpected) {
   const files = flakyRetryFiles(unexpected);
   if (!files) {return false;}
   console.log(`node-test-strict: only flaky failures (${files.join(', ')}): one isolated retry with --expose-gc`);
-  const r = spawnSync(process.execPath, ['--expose-gc', '--test', '--test-concurrency=1', ...files.map((f) => path.join(ROOT, f))], { cwd: ROOT, stdio: 'inherit', env: childEnv() });
+  const r = spawnSync(process.execPath, [...setupArgs(), '--expose-gc', '--test', '--test-concurrency=1', ...files.map((f) => path.join(ROOT, f))], { cwd: ROOT, stdio: 'inherit', env: childEnv() });
   const ok = r.status === 0;
   const line = `node-test-strict flaky retry: ${files.join(', ')} -> ${ok ? 'GREEN isolated (flake, reported)' : 'RED isolated (real failure)'}`;
   console.log(ok ? `::warning::${line}` : `::error::${line}`);
@@ -135,5 +143,5 @@ function isolatedFlakyRetry(unexpected) {
   return ok;
 }
 
-module.exports = { flakyRetryFiles, FLAKY_FILES, childEnv, NODE_TEST_RE, listTestFiles, nodeTestFiles, parseFailures, evaluate, keyOf };
+module.exports = { setupArgs, SETUP_FILE, flakyRetryFiles, FLAKY_FILES, childEnv, NODE_TEST_RE, listTestFiles, nodeTestFiles, parseFailures, evaluate, keyOf };
 if (require.main === module) {process.exitCode = main(process.argv);}
