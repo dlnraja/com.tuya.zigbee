@@ -57,6 +57,8 @@ const DEFAULT_TOPICS = [
   { id: 155212, name: 'zemismart-energy-meters', replyAllowed: false },
   { id: 154092, name: 'zemismart-hello', replyAllowed: false },
   { id: 156967, name: 'moes-official', replyAllowed: false },
+  { id: 154077, name: 'tuya-local', replyAllowed: false },
+  { id: 154906, name: 'flow-converter', replyAllowed: false },
   { id: 150690, name: 'relax-moes-zigbee', replyAllowed: false },
   { id: 99614, name: 'nous-energy', replyAllowed: false },
   // Satellite thematic — rain / Moes presence (silent enrich only)

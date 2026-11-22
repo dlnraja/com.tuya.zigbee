@@ -569,3 +569,11 @@ A heartfelt thank you to:
 - P3263 (03/11/2026): master Athom probe swap (user OK) — placeholder-only device_radiator_valve_thermostat removed (its one payload couple _tze200_9xfjixap/TS0601 stays on thermostatic_radiator_valve), water_leak_aoyan_ay222z released from the publish hold; payload stays at 347 drivers to test the observed driver-count ceiling. Own work.
 - P3343 (2026-11-16) KB daily: **the zigbee-herdsman-converters contributors** (`tuya.ts` Nova Digital SA-6 #13815, `bseed.ts` BSEED_TS0601_cover #13822, `girier.ts` TS0601_GIRIER #13824, `tuya.ts` TS0726_1_gang and TS0505B_2 / MiBoxer FUTC04ZR) for five exact couples. Facts only, own implementation.
 - P3345 (2026-11-16) weekly upstream: **the zigbee-herdsman-converters contributors** (`tuya.ts`, `hobeian.ts`, `nova_digital.ts`, `nous.ts`, `neo.ts`) for 19 exact couples and 5 class corrections, and **JohanBendz/com.tuya.zigbee** for the 4-gang class of `_TZE204_iik0pquw`. Facts only, own implementation.
+
+## P3374 — other Homey Tuya app threads (2026-11-22)
+
+- Andi and reporters on [Tuya Local](https://community.homey.app/t/154077) (current-position DP vs target DP; packed heat-pump setpoints; ceiling-fan quirks; diffuser DP mis-guess).
+- SoPhos / SunBeech / ernesto_pons_montoro / Robert_Korus on [MOES](https://community.homey.app/t/156967) (ZC-LP01 `_TZ3210_5rta89nj`+TS0601; scene-remote double single-press; ZM-102-M garage already in `garage_door_opener`).
+- late4marshmellow [Flow Converter](https://community.homey.app/t/154906) (`app.l4m.flowconverter`, [source](https://github.com/late4marshmellow/app.l4m.flowconverter); also thanks Martijn Poppen as credited there). Optional third-party app, never a dependency.
+- Joyce_THart GreenBlue GB740 request in [162420](https://community.homey.app/t/162420) and ZHA issue 5709 (`_TZ3250_int1a7ht`+TS020C).
+- Athom [Permissions](https://apps.developer.homey.app/the-basics/app/permissions): device apps must not request `homey:manager:api` (Tools apps only; store review can refuse it).

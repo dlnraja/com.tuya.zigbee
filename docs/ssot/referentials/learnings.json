@@ -1,0 +1,111 @@
+{
+  "v": 1,
+  "items": [
+    {
+      "key": "lesson|_tz3210_5rta89nj|TS0601|window pusher routed as wall dimmer",
+      "kind": "lesson",
+      "couple": "_TZ3210_5rta89nj|TS0601",
+      "symptom": "MOES ZC-LP01 sliding window pusher would pair as a wall dimmer",
+      "cause": "stale local mfs hint (confidence 0.08, TS0601_dim1) listed the manufacturer on wall_dimmer_tuya, whose productId includes TS0601",
+      "check": "compose: couple is on curtain_motor, absent from wall_dimmer_tuya; dpMappings lock DP102=state DP104=position DP4=battery",
+      "fix": "move exact couple to curtain_motor, sacred DP map from Z2M/ZHC, onMapDeviceClass so already-paired devices keep the same id",
+      "evidence": "Z2M ZC-LP01; ZHC moes.ts; forum 156967 post 101",
+      "source": "forum-156967-101",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.95,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://www.zigbee2mqtt.io/devices/ZC-LP01.html",
+        "https://community.homey.app/t/156967/101"
+      ]
+    },
+    {
+      "key": "lesson|cover|DP2 vs DP3|target position overwrites actual",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "curtain tile stuck on last requested position; hand moves not shown",
+      "cause": "DP2 is target/set; actual position is often DP3 (or another report DP). Updating the tile from the target DP after the actual DP has reported hides the real position.",
+      "check": "CoverPositionSource.accept(2, x) is false after accept(3, y)",
+      "fix": "wire CoverPositionSource into UnifiedCoverBase as well as wifi_cover",
+      "evidence": "Tuya Local topic 154077 posts 485-489 (Andi, Mario/Mark)",
+      "source": "forum-154077-487",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.9,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/154077/487"
+      ]
+    },
+    {
+      "key": "lesson|_tz3250_int1a7ht|TS020C|GreenBlue GB740 motion",
+      "kind": "lesson",
+      "couple": "_TZ3250_int1a7ht|TS020C",
+      "symptom": "device request; ZHA exposes unused temp/humidity/lux and PIR stays off without a Tuya handshake",
+      "cause": "fingerprint missing from our motion drivers; advertised clusters are not proof of hardware",
+      "check": "pir_sensor_2 lists the exact couple; capabilities stay alarm_motion + battery (no invented temp/humidity)",
+      "fix": "add exact couple to pir_sensor_2 (IAS Zone already handled)",
+      "evidence": "forum 162420 post 1; ZHA issue 5709; Z2M TS020C page as family reference",
+      "source": "forum-162420-1",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.85,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/162420/1",
+        "https://github.com/zigpy/zha-device-handlers/issues/5709"
+      ]
+    },
+    {
+      "key": "lesson|flow-converter|re-pair|remap flows after driver move",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "after re-pair or driver move, Flows still point at the old device id",
+      "cause": "Homey binds flow cards to a device UUID; a new pairing gets a new id",
+      "check": "prefer onMapDeviceClass so the id is kept; if re-pair is required, changelog/digest/settings mention Flow Converter",
+      "fix": "in-place map first; settings preview + optional Flow Converter; do not request homey:manager:api on this device app",
+      "evidence": "forum 154906 (late4marshmellow Flow Converter, capability mapping since 1.2.0)",
+      "source": "forum-154906",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.95,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/154906",
+        "https://github.com/late4marshmellow/app.l4m.flowconverter",
+        "https://apps.developer.homey.app/the-basics/app/permissions"
+      ]
+    },
+    {
+      "key": "lesson|21313|temperature x10|radiator 163 instead of 16.3",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "Tuya Cloud tile showed 163 C for a 16.3 C electric radiator",
+      "cause": "Tuya often ships temperatures (and some timers) with a decimal scale; treating the raw integer as Celsius overshoots by 10",
+      "check": "implausible ambient temperature (e.g. > 80 C) should apply the documented scale, same family as humidity x10",
+      "fix": "recorded for existing scale helpers; do not invent a couple from this Wi-Fi-only report",
+      "evidence": "Tuya Cloud topic 21313 posts 2782 and 2786 (Calvin)",
+      "source": "forum-21313-2782",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.7,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/21313/2782"
+      ]
+    },
+    {
+      "key": "lesson|156967|scene remote double single-press ~1s",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "MOES ZT-SY-EU 2-gang scene remotes occasionally fire two single-press events about 1s apart, often first press after a Homey restart",
+      "cause": "developer logs showed two real Zigbee frames; Johan TS0044 work already covers transport-keyed dedup. A long same-action debounce can help but must not swallow a real double-press report.",
+      "check": "existing button dedup tests; do not treat two typed 'double' events as bounce",
+      "fix": "recorded; TS0044/scene dedup remains the in-tree fix path (other session). User suggestion of 1.5s same-button single debounce is a candidate only.",
+      "evidence": "MOES topic 156967 posts 99-141 (SunBeech, SergeP)",
+      "source": "forum-156967-99",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.6,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/156967/99"
+      ]
+    }
+  ]
+}

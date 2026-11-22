@@ -116,6 +116,14 @@
     "getWifiFixIt": {
       "method": "GET",
       "path": "/wifi-fix-it"
+    },
+    "previewFlowRemap": {
+      "method": "POST",
+      "path": "/flow-remap/preview"
+    },
+    "getFlowRecoveryCandidates": {
+      "method": "GET",
+      "path": "/flow-remap/candidates"
     }
   },
   "changelog": {
