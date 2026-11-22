@@ -100,10 +100,21 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
+      # Same path as Auto-Publish 44937269110: pinned homey@4.4.1 provides
+      # homey/services/AthomApi (wraps HOMEY_PAT as AthomCloudAPIToken).
+      - name: Install pinned Homey CLI (AthomApi)
+        if: steps.want.outputs.go == 'true'
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund homey@4.4.1
+      - name: Homey AthomApi module load
+        if: steps.want.outputs.go == 'true'
+        run: |
+          set -euo pipefail
+          node -e "const c=require('./.github/scripts/homey-apps-api-client'); if(!c.sdkModulesAvailable()) { console.error('AthomApi modules missing after homey@4.4.1 install'); process.exit(1);} console.log('Homey AthomApi modules loaded');"
       - name: Promote if gates pass
         if: steps.want.outputs.go == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_HEADLESS: '1'
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           LIVE_APP: ${{ matrix.app }}

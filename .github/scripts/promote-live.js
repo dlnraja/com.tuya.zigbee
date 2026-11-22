@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const G = require('../../scripts/ci/live-promote-gates.cjs');
+const Client = require('./homey-apps-api-client');
 
 const ROOT = path.join(__dirname, '..', '..');
 const argv = process.argv.slice(2);
@@ -228,21 +229,46 @@ async function main() {
   let builds = [];
   let apiBase = 'https://apps-api.athom.com/api/v1';
   let appsToken = null;
+  let sdkClient = null;
   if (process.env.HOMEY_PAT) {
-    const pat = process.env.HOMEY_PAT;
-    appsToken = await getDelegationToken(pat, log);
-    let listed = await listBuilds(appsToken, profile.appId, log);
-    // Delegation tokens from api.athom.com can come back as 401 on apps-api
-    // (runs 44965860182 / 44965865695). auto-publish-draft already retries with the raw PAT.
-    if ((!listed.builds || !listed.builds.length) && appsToken !== pat) {
-      log('Delegation token was not accepted by apps-api; retrying with raw PAT');
-      listed = await listBuilds(pat, profile.appId, log);
-      if (listed.builds && listed.builds.length) appsToken = pat;
+    // Proven path (Auto-Publish 44937269110 Tier 3): pinned homey CLI AthomApi
+    // + createDelegationToken({ audience: 'apps' }) + AthomAppsAPI.getBuilds.
+    if (Client.sdkModulesAvailable()) {
+      try {
+        sdkClient = await Client.createClient({ log });
+        const raw = await Client.getBuilds(sdkClient, profile.appId, { limit: 50 });
+        if (raw && raw.length) {
+          builds = raw;
+          appsToken = sdkClient.token;
+          log('Found ' + builds.length + ' builds via HomeySDK');
+        } else {
+          log('HomeySDK returned no builds');
+        }
+      } catch (e) {
+        if (e && e.code === 'HOMEY_PAT_NOT_LOGGED_IN') {
+          log('FATAL: ' + e.message);
+          summarize('live', 'HOMEY_PAT not accepted as an Athom Cloud login (expired or lacking scope). Not retrying.\n');
+          return 2;
+        }
+        log('HomeySDK listing failed: ' + (e && e.message || e));
+      }
+    } else {
+      log('WARN: pinned homey CLI AthomApi modules are not installed in this job');
     }
-    builds = listed.builds || [];
-    apiBase = listed.base || apiBase;
-    appsToken = listed.token || appsToken;
-    if (!builds.length) log('WARN: could not list Athom builds with delegation token or raw PAT');
+    if (!builds.length) {
+      const pat = process.env.HOMEY_PAT;
+      appsToken = await getDelegationToken(pat, log);
+      let listed = await listBuilds(appsToken, profile.appId, log);
+      if ((!listed.builds || !listed.builds.length) && appsToken !== pat) {
+        log('Delegation token was not accepted by apps-api; retrying with raw PAT');
+        listed = await listBuilds(pat, profile.appId, log);
+        if (listed.builds && listed.builds.length) appsToken = pat;
+      }
+      builds = listed.builds || [];
+      apiBase = listed.base || apiBase;
+      appsToken = listed.token || appsToken;
+      if (!builds.length) log('WARN: could not list Athom builds with HomeySDK or REST');
+    }
   } else {
     log('WARN: HOMEY_PAT missing; gates will run without a live Athom listing');
   }
@@ -331,8 +357,13 @@ async function main() {
     summarize('live', 'HELD: no confirmed Athom listing; not promoting.\n');
     return DISPATCH ? 2 : 0;
   }
-  log(`Promoting #${target.id} v${target.version} to Live via updateBuildChannel (PAT / apps-api)`);
-  const res = await setChannel(appsToken, profile.appId, target.id, 'live', apiBase, log);
+  log(`Promoting #${target.id} v${target.version} to Live via updateBuildChannel`);
+  let res;
+  if (sdkClient) {
+    res = await Client.updateBuildChannel(sdkClient, profile.appId, target.id, 'live');
+  } else {
+    res = await setChannel(appsToken, profile.appId, target.id, 'live', apiBase, log);
+  }
   log('Channel update result:', JSON.stringify(res));
   summarize('live', `Promoted #${target.id} v${target.version} to Live.\n`);
   return 0;

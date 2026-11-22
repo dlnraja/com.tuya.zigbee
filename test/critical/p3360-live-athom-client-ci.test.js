@@ -1,8 +1,8 @@
 'use strict';
 /**
- * P3360: the Live promote job runs on GitHub Actions, which does not ship
- * homey/services/AthomApi or homey/lib/AthomApi. The client module must load
- * anyway, and promote-live.js must talk to apps-api.athom.com with HOMEY_PAT.
+ * P3360: Live promote must use the same Homey CLI AthomApi path as Auto-Publish
+ * (homey@4.4.1, HOMEY_PAT as AthomCloudAPIToken, audience 'apps'). The client
+ * module must still load when those packages are missing.
  */
 const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
@@ -23,7 +23,6 @@ describe('P3360 Live Athom client loads in CI', () => {
   it('createClient fails with ATHOM_API_MODULE_MISSING when the CLI SDK paths are absent, never a raw require() crash', async () => {
     const c = require('../../.github/scripts/homey-apps-api-client');
     if (c.sdkModulesAvailable()) {
-      // Local machine with a Homey CLI install: still must export the hook.
       assert.equal(typeof c.createClient, 'function');
       return;
     }
@@ -32,18 +31,39 @@ describe('P3360 Live Athom client loads in CI', () => {
       assert.fail('createClient should reject when SDK modules are missing');
     } catch (err) {
       assert.equal(err.code, 'ATHOM_API_MODULE_MISSING');
-      assert.match(String(err.message), /HOMEY_PAT|apps-api\.athom\.com/i);
+      assert.match(String(err.message), /homey@4\.4\.1|not installed/i);
       assert.doesNotMatch(String(err.message), /Cannot find module 'homey\/services\/AthomApi'/);
     }
   });
 
-  it('promote-live.js uses HOMEY_PAT + apps-api REST and does not call createClient', () => {
+  it('promote-live.js prefers HomeySDK createClient (Auto-Publish path) and keeps REST as fallback', () => {
     const src = fs.readFileSync(path.join(ROOT, '.github/scripts/promote-live.js'), 'utf8');
-    assert.match(src, /delegation\/token/);
-    assert.match(src, /apps-api\.athom\.com/);
+    assert.match(src, /homey-apps-api-client/);
+    assert.match(src, /sdkModulesAvailable\(\)/);
+    assert.match(src, /Client\.createClient/);
+    assert.match(src, /Client\.getBuilds/);
+    assert.match(src, /Client\.updateBuildChannel/);
+    assert.match(src, /HOMEY_PAT_NOT_LOGGED_IN/);
     assert.match(src, /getDelegationToken/);
-    assert.doesNotMatch(src, /require\('\.\/homey-apps-api-client'\)/);
+    assert.match(src, /apps-api\.athom\.com/);
     assert.doesNotMatch(src, /require\([^)]*homey\/services\/AthomApi/);
     assert.doesNotMatch(src, /require\([^)]*homey\/lib\/AthomApi/);
+  });
+
+  it('promote-live.yml installs pinned homey@4.4.1 and checks the AthomApi module loads', () => {
+    const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/promote-live.yml'), 'utf8');
+    assert.match(yml, /homey@4\.4\.1/);
+    assert.match(yml, /Homey AthomApi module load/);
+    assert.match(yml, /sdkModulesAvailable/);
+    assert.match(yml, /HOMEY_HEADLESS: '1'/);
+    assert.match(yml, /dry_run/);
+  });
+
+  it('createClient fails closed with HOMEY_PAT_NOT_LOGGED_IN instead of interactive login', () => {
+    const src = fs.readFileSync(path.join(ROOT, '.github/scripts/homey-apps-api-client.js'), 'utf8');
+    assert.match(src, /isLoggedIn/);
+    assert.match(src, /HOMEY_PAT_NOT_LOGGED_IN/);
+    assert.match(src, /not starting interactive login/);
+    assert.doesNotMatch(src, /AthomApi\.login\(/);
   });
 });

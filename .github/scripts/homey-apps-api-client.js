@@ -95,16 +95,39 @@ function sdkModulesAvailable() {
 }
 
 async function createClient({ log = () => {}, timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
-  // GitHub Actions runners do not ship homey/services/AthomApi or homey/lib/AthomApi
-  // (run 44958418798). Callers in CI should use HOMEY_PAT + apps-api.athom.com
-  // (promote-live.js, auto-publish-draft.js). This helper stays for local Homey CLI.
+  // Auto-Publish (run 44937269110) lists and promotes via this helper after npm ci:
+  // AthomApi (homey@4.4.1) wraps HOMEY_PAT as AthomCloudAPIToken.access_token,
+  // then AthomCloudAPI.createDelegationToken({ audience: 'apps' }) and AthomAppsAPI.
+  // Raw Bearer REST to apps-api.athom.com with the PAT or a hand-rolled delegation
+  // token returns 401 (runs 44965860182 / 44967442304). The Live job must install
+  // the pinned homey CLI so these modules resolve.
   if (!sdkModulesAvailable()) {
-    const err = new Error('Homey CLI AthomApi modules are not installed here; use HOMEY_PAT and apps-api.athom.com');
+    const err = new Error('Homey CLI AthomApi modules are not installed here; install pinned homey@4.4.1 in the job');
     err.code = 'ATHOM_API_MODULE_MISSING';
     throw err;
   }
   const AthomApi = loadAthomApi();
   const AthomAppsAPI = loadAthomAppsApi();
+  // _initApi() would otherwise call interactive login() if the PAT is not a
+  // logged-in Cloud token. Fail closed in CI instead of hanging on a browser prompt.
+  if (typeof AthomApi._createApi === 'function') {
+    AthomApi._createApi();
+    if (AthomApi._api && typeof AthomApi._api.isLoggedIn === 'function') {
+      let loggedIn = false;
+      try {
+        loggedIn = await AthomApi._api.isLoggedIn();
+      } catch (error) {
+        const err = new Error('HOMEY_PAT is not accepted as an Athom Cloud login: ' + (error.message || error));
+        err.code = 'HOMEY_PAT_NOT_LOGGED_IN';
+        throw err;
+      }
+      if (!loggedIn) {
+        const err = new Error('HOMEY_PAT is not accepted as an Athom Cloud login (expired or lacking scope); not starting interactive login');
+        err.code = 'HOMEY_PAT_NOT_LOGGED_IN';
+        throw err;
+      }
+    }
+  }
   log('  [HomeySDK] Requesting apps delegation token...');
   let token = null;
   try {
