@@ -1,0 +1,30 @@
+{
+  "generated": "2026-11-22T01:56:24.827955+01:00",
+  "note": "P3362 candidates only. Do not post. SHA_PENDING_MASTER_PUSH is filled after FREEZE-LIFTED and the push lands. Topic 26439 has no reply-candidates.",
+  "limits": {
+    "autoPost": false,
+    "postNothing": true
+  },
+  "candidates": [
+    {
+      "topic": 140352,
+      "post": 2270,
+      "author": "Arve_Vang1",
+      "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/2270",
+      "status": "fixed-local-unpushed",
+      "commit": "SHA_PENDING_MASTER_PUSH",
+      "appVersion": "9.0.1636 (next Test after the push)",
+      "body": "Thanks Arve. The Gmail diagnostic 56949320 already showed DP102 as 0 or 100, but Homey's official valve_position capability is 0-1 (SDK 12.2), so the tile stayed empty. I scaled DP102 reports to 0-1, write a percent set to DP101, keep a status refresh read-only (no DP1 open/close), expose DP27 power-off behaviour (close / open / memory) as a setting, and skip app-level button flows on this driver. The fix is in master commit SHA_PENDING_MASTER_PUSH and will be in the Test build after 9.0.1636. FrankEver _TZE200_1n2zev06 / TS0601."
+    },
+    {
+      "topic": 140352,
+      "post": 2272,
+      "author": "TFD_Home",
+      "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/2272",
+      "status": "uuid-not-in-mailbox-or-ledger",
+      "commit": "SHA_PENDING_MASTER_PUSH",
+      "diagUuid": "64a2399b-a2af-4c07-89f5-bfe238577770",
+      "body": "Thanks. I looked up diagnostic 64a2399b-a2af-4c07-89f5-bfe238577770 in the developer mailbox for all three apps (including spam and trash) and in the fetch-diags ledgers. I only found the forum notification, not an Athom diagnostic-report email (the last report in that mailbox is a different device from 11 Nov 2026). This is not blocked pending a new report: if you can say which Homey app generated the report (Universal Tuya, the stable app, or another), the manufacturerName + productId, and the symptom, I can take it from there. If the mail arrives later I will ingest that same UUID."
+    }
+  ]
+}

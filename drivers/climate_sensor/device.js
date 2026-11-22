@@ -3,6 +3,7 @@
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { scaleHumidity } = require('../../lib/utils/scaleHumidity');
 
 const BATTERY_STATE_ENUM = { 0: 10, 1: 50, 2: 100 };
 
@@ -183,6 +184,12 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       if (mapping.capability === 'measure_temperature' || mapping.capability === 'measure_temperature.probe') {
         val = this._climateInference.validateTemperature(val);
       } else if (mapping.capability === 'measure_humidity') {
+        // Forum 26439/5540: _TZE200_bjawzodf humidity is often x10. Adaptive scale
+        // (values >100 -> /10) before inference, so the tile is not 450%.
+        if (/bjawzodf/i.test(String(this._manufacturerName() || ''))) {
+          const scaled = scaleHumidity(val);
+          if (scaled != null) {val = scaled;}
+        }
         val = this._climateInference.validateHumidity(val);
       } else if (mapping.capability === 'measure_battery') {
         val = this._batteryInference.validateBattery(val);

@@ -1,24 +1,24 @@
 {
  "v": 1,
- "generated": "2026-11-22T00:49:28.713Z",
- "freshness": "2026-11-22T00:49:28.713Z",
+ "generated": "2026-11-22T00:56:14.910Z",
+ "freshness": "2026-11-22T00:56:14.910Z",
  "counts": {
   "causes": 8,
-  "cards": 1,
+  "cards": 5,
   "dp": 0,
-  "history": 2,
+  "history": 30,
   "lessons": 0,
   "ideas": 0,
-  "learnings": 1
+  "learnings": 5
  },
  "hashes": {
   "causes": "5218e2735d10cdac",
-  "cards": "52273d1c823c5274",
+  "cards": "65e9bd9d725589e4",
   "dp": "64cd6a43e576e320",
-  "history": "3be2fa08d4958631",
+  "history": "a6b7ed7c20e87000",
   "lessons": "0d411754ec61a32d",
   "ideas": "0d411754ec61a32d",
-  "learnings": "cce74d70a5bca04c"
+  "learnings": "cf65d5ef6a0d8e28"
  },
  "changed": [
   "device-cards.json",

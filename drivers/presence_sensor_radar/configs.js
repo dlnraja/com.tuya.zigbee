@@ -478,7 +478,7 @@ const SENSOR_CONFIGS = {
     sensors: [
       'HOBEIAN',
       '_TZE200_2aaelwxk', '_TZE204_2aaelwxk',
-      '_TZE200_kb5noeto', '_TZE204_kb5noeto',
+      // WHY(P3141 / Johan #1481): _TZE200_kb5noeto+TS0601 is IAS motion on pir_sensor_2, not this radar map.
       '_TZE200_tyffvoij', '_TZE204_tyffvoij',
       '_TZE200_yflzeeqj', '_TZE204_yflzeeqj',
     ],

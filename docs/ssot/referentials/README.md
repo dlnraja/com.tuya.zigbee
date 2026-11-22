@@ -9,7 +9,7 @@ Freshness: see manifest.json.
 
 Machine-readable JSON plus generated Markdown. Not shipped in the Homey package.
 Consult first in intake triage and deep investigations; write back learned entries.
-Counts: {"causes":8,"cards":1,"dp":0,"history":2,"lessons":0,"ideas":0,"learnings":1}
+Counts: {"causes":8,"cards":5,"dp":0,"history":30,"lessons":0,"ideas":0,"learnings":5}
 
 - malfunction-causes
 - device-cards

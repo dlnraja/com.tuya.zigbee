@@ -1,4 +1,6 @@
 'use strict';
+
+const { shouldDrop, installOnce } = require('../../lib/utils/PressActionDedup');
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 // A8: NaN Safety - use safeDivide/safeMultiply
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -48,15 +50,18 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
     // Setup battery reporting
     await this._setupBatteryReporting(zclNode);
 
-    // Setup button/knob event handling
-    await this._setupKnobEventHandling(zclNode);
+    // Setup button/knob event handling (idempotent bind below)
 
-    // P2449: dim action listener + press+rotate helpers (no second levelControl bind)
-    this._registerKnobDimListener();
-
-    // v5.9.3: E000 + Tuya DP detection layers
-    await this._setupE000Detection(zclNode);
-    await this._setupTuyaDPDetection(zclNode);
+    // P3362 / 26439#5537: bind press/rotate listeners once per zclNode
+    // (re-init / migration must not double-fire).
+    if (installOnce(zclNode || this, '_smartKnobRotaryStacksBound')) {
+      await this._setupKnobEventHandling(zclNode);
+      this._registerKnobDimListener();
+      await this._setupE000Detection(zclNode);
+      await this._setupTuyaDPDetection(zclNode);
+    } else {
+      this.log('[KNOB] skip event re-bind (already bound on this node)');
+    }
 
     this.log('Smart Knob Rotary initialization complete');
   }
@@ -417,13 +422,13 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
   // WHY(P3143): one physical press can arrive on several paths (onOff toggle cmd, 0xE000
   // buttonPress, EF00 DP, scenes) - Johan forum 26439 #5526-5537 reported double/extra
   // presses on _TZ3000_qja6nq5z/TS004F. Collapse same press class within a short window.
-  _isDuplicateKnobPress(action, windowMs = 300) {
-    const isSingle = action === 'on' || action === 'off' || action === 'toggle';
-    const cls = isSingle ? 'single' : String(action);
-    const now = Date.now();
-    const last = this._lastKnobPress;
-    this._lastKnobPress = { cls, t: now };
-    return !!(last && last.cls === cls && (now - last.t) < windowMs);
+  _isDuplicateKnobPress(action, windowMs = 400) {
+    // Forum 26439#5537 (qja6nq5z): a single press can arrive as on/off/toggle
+    // plus another path. Those three are one 'single' class on this knob
+    // (not the TS0044 0xFD on=single/off=double/toggle=long encoding).
+    const mapped = (action === 'on' || action === 'off' || action === 'toggle') ? 'single' : action;
+    if (!this._pressDedup) {this._pressDedup = {};}
+    return shouldDrop(this._pressDedup, 1, mapped, Date.now(), windowMs).drop;
   }
 
   async _triggerButtonPress(action) {
