@@ -498,7 +498,7 @@
     },
     "crash-watch.yml": {
       "group": "ci",
-      "what": "Daily free crash watch: reads the sanitized diag reports and ledger of the Gmail diag workflows, flags OOM / SIGABRT / CPU-limit signatures per app version, writes a ledger, candidate tasks and a job summary; posts nothing, opens no PR."
+      "what": "Daily free crash watch: reads sanitized diag reports and the Gmail-diag ledger, flags OOM / SIGABRT / CPU-limit signatures per app version, writes a ledger, candidate tasks and a job summary; posts nothing, opens no PR."
     }
   }
 }

@@ -1,6 +1,6 @@
 # >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
 # What it does: Nightly backport of master fixes to the Bastien house app, pushed when the gates are green
-#   (any hour; Athom publish still goes through bastien-publish.yml and P3036 quotas).
+#   (any hour).
 # Ideas from (thank you): Renovate and Dependabot for the merge-when-green pattern; the actions/stale and
 #   actions/labeler maintainers.
 # Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public

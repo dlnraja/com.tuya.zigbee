@@ -1,7 +1,7 @@
 # >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
-# What it does: Daily free crash watch: reads the sanitized diag reports and ledger of the Gmail diag
-#   workflows, flags OOM / SIGABRT / CPU-limit signatures per app version, writes a ledger, candidate tasks
-#   and a job summary; posts nothing, opens no PR.
+# What it does: Daily free crash watch: reads sanitized diag reports and the Gmail-diag ledger, flags OOM /
+#   SIGABRT / CPU-limit signatures per app version, writes a ledger, candidate tasks and a job summary; posts
+#   nothing, opens no PR.
 # Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
 #   levels.
 # Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public

@@ -29,6 +29,13 @@ try {
   CanonicalCluster = require('../../lib/clusters/TuyaSpecificCluster');
   TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
   FingerBotDevice = require('../../drivers/fingerbot/device');
+  // P3389: materialize the lazy fingerbot stand-in (and keep the base / cluster prototypes)
+  // before evicting the hermetic requires. Otherwise later prototype patches and sendData
+  // calls bind to a rematerialized class copy, so fallback never sees the stub and hangs.
+  void FingerBotDevice.prototype;
+  void TuyaSpecificClusterDevice.prototype;
+  if (LibTuyaCluster) {void LibTuyaCluster.prototype;}
+  if (CanonicalCluster) {void CanonicalCluster.prototype;}
 } finally {
   Module._load = originalLoad;
   for (const k of Object.keys(require.cache)) { if (!cacheBefore.has(k)) {delete require.cache[k];} }
