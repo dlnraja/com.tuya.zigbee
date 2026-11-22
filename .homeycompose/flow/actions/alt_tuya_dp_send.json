@@ -1,0 +1,125 @@
+{
+  "id": "alt_tuya_dp_send",
+  "title": {
+    "en": "Send Tuya DP (any device)",
+    "fr": "Envoyer un DP Tuya (tout appareil)",
+    "nl": "Tuya-DP verzenden (elk apparaat)",
+    "de": "Tuya-DP senden (jedes Gerät)"
+  },
+  "titleFormatted": {
+    "en": "Send DP [[dp]] as [[dp_type]] = [[value]] to [[device]]",
+    "fr": "Envoyer le DP [[dp]] en [[dp_type]] = [[value]] à [[device]]"
+  },
+  "hint": {
+    "en": "Escape hatch for unsupported features: writes any Tuya data point (Zigbee 0xEF00 or Wi-Fi local). Max 5 sends per 2 s per device.",
+    "fr": "Solution de secours pour les fonctions non gérées : écrit n'importe quel DP Tuya (Zigbee 0xEF00 ou Wi-Fi local). 5 envois max par 2 s et par appareil."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device"
+    },
+    {
+      "type": "number",
+      "name": "dp",
+      "title": {
+        "en": "DP number",
+        "fr": "Numéro de DP"
+      },
+      "min": 1,
+      "max": 255,
+      "placeholder": {
+        "en": "1-255",
+        "fr": "1-255"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "dp_type",
+      "title": {
+        "en": "DP type",
+        "fr": "Type de DP"
+      },
+      "values": [
+        {
+          "id": "bool",
+          "title": {
+            "en": "Bool (true/false)",
+            "fr": "Booléen (vrai/faux)"
+          },
+          "label": {
+            "en": "Bool (true/false)",
+            "fr": "Booléen (vrai/faux)"
+          }
+        },
+        {
+          "id": "value",
+          "title": {
+            "en": "Value (integer)",
+            "fr": "Valeur (entier)"
+          },
+          "label": {
+            "en": "Value (integer)",
+            "fr": "Valeur (entier)"
+          }
+        },
+        {
+          "id": "enum",
+          "title": {
+            "en": "Enum (0-255)",
+            "fr": "Enum (0-255)"
+          },
+          "label": {
+            "en": "Enum (0-255)",
+            "fr": "Enum (0-255)"
+          }
+        },
+        {
+          "id": "string",
+          "title": {
+            "en": "String",
+            "fr": "Texte"
+          },
+          "label": {
+            "en": "String",
+            "fr": "Texte"
+          }
+        },
+        {
+          "id": "raw",
+          "title": {
+            "en": "Raw (hex)",
+            "fr": "Brut (hex)"
+          },
+          "label": {
+            "en": "Raw (hex)",
+            "fr": "Brut (hex)"
+          }
+        },
+        {
+          "id": "bitmap",
+          "title": {
+            "en": "Bitmap",
+            "fr": "Bitmap"
+          },
+          "label": {
+            "en": "Bitmap",
+            "fr": "Bitmap"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "value",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur"
+      },
+      "placeholder": {
+        "en": "true / 100 / 0a0b",
+        "fr": "true / 100 / 0a0b"
+      }
+    }
+  ]
+}

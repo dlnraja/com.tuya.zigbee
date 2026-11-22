@@ -1,0 +1,123 @@
+{
+  "id": "alt_zcl_frame_send",
+  "title": {
+    "en": "Send raw Zigbee (ZCL) command",
+    "fr": "Envoyer une commande Zigbee (ZCL) brute",
+    "nl": "Ruwe Zigbee (ZCL) opdracht verzenden",
+    "de": "Rohen Zigbee (ZCL) Befehl senden"
+  },
+  "titleFormatted": {
+    "en": "Send ZCL command [[command]] ([[frame_type]]) payload [[payload]] to cluster [[cluster]] ep [[endpoint]] mfr [[manufacturer_code]] on [[device]]",
+    "fr": "Envoyer la commande ZCL [[command]] ([[frame_type]]) charge [[payload]] au cluster [[cluster]] ep [[endpoint]] fab [[manufacturer_code]] sur [[device]]"
+  },
+  "hint": {
+    "en": "Expert escape hatch: sends one raw ZCL frame (no default response). Zigbee devices only, max 5 per 2 s.",
+    "fr": "Secours expert : envoie une trame ZCL brute (sans réponse par défaut). Zigbee uniquement, 5 max par 2 s."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device"
+    },
+    {
+      "type": "number",
+      "name": "endpoint",
+      "title": {
+        "en": "Endpoint",
+        "fr": "Endpoint"
+      },
+      "min": 1,
+      "max": 240,
+      "placeholder": {
+        "en": "1",
+        "fr": "1"
+      }
+    },
+    {
+      "type": "number",
+      "name": "cluster",
+      "title": {
+        "en": "Cluster id (decimal)",
+        "fr": "Id du cluster (décimal)"
+      },
+      "min": 0,
+      "max": 65535,
+      "placeholder": {
+        "en": "61184",
+        "fr": "61184"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "frame_type",
+      "title": {
+        "en": "Frame type",
+        "fr": "Type de trame"
+      },
+      "values": [
+        {
+          "id": "cluster",
+          "title": {
+            "en": "Cluster specific",
+            "fr": "Spécifique au cluster"
+          },
+          "label": {
+            "en": "Cluster specific",
+            "fr": "Spécifique au cluster"
+          }
+        },
+        {
+          "id": "global",
+          "title": {
+            "en": "Global (profile)",
+            "fr": "Global (profil)"
+          },
+          "label": {
+            "en": "Global (profile)",
+            "fr": "Global (profil)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "command",
+      "title": {
+        "en": "Command id",
+        "fr": "Id de commande"
+      },
+      "min": 0,
+      "max": 255,
+      "placeholder": {
+        "en": "0",
+        "fr": "0"
+      }
+    },
+    {
+      "type": "text",
+      "name": "payload",
+      "title": {
+        "en": "Payload (hex, may be empty)",
+        "fr": "Charge (hex, peut être vide)"
+      },
+      "placeholder": {
+        "en": "00",
+        "fr": "00"
+      }
+    },
+    {
+      "type": "number",
+      "name": "manufacturer_code",
+      "title": {
+        "en": "Manufacturer code (0 = none)",
+        "fr": "Code fabricant (0 = aucun)"
+      },
+      "min": 0,
+      "max": 65535,
+      "placeholder": {
+        "en": "0",
+        "fr": "0"
+      }
+    }
+  ]
+}

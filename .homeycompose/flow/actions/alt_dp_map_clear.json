@@ -1,0 +1,23 @@
+{
+  "id": "alt_dp_map_clear",
+  "title": {
+    "en": "Clear Tuya DP mappings",
+    "fr": "Effacer les associations de DP Tuya",
+    "nl": "Tuya-DP-koppelingen wissen",
+    "de": "Tuya-DP-Zuordnungen löschen"
+  },
+  "titleFormatted": {
+    "en": "Clear DP mappings on [[device]]",
+    "fr": "Effacer les associations de DP sur [[device]]"
+  },
+  "hint": {
+    "en": "Removes the user DP mappings (capabilities already added are kept).",
+    "fr": "Supprime les associations utilisateur (les capacités déjà ajoutées restent)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device"
+    }
+  ]
+}
