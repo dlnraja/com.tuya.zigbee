@@ -40,7 +40,7 @@ describe('P3389 lazy device classes', function () {
       mod.exports = Real;
       mod.exports.helper = (x) => x * 2;
       return mod.exports;
-    });
+    }, { alwaysLazy: true });
     assert.strictEqual(runs, 0, 'body must not run at require time');
     assert.strictEqual(isMaterialized(L), false);
     assert.strictEqual(mod.exports, L, 'module.exports is the stand-in');
@@ -70,7 +70,7 @@ describe('P3389 lazy device classes', function () {
   it('a body that touches itself while loading fails loudly instead of returning a half class', () => {
     const { lazyDeviceClass } = require(HELPER);
     const mod = { exports: {}, filename: 'loop/device.js' };
-    const L = lazyDeviceClass(mod, () => { void mod.exports.prototype; return class X {}; });
+    const L = lazyDeviceClass(mod, () => { void mod.exports.prototype; return class X {}; }, { alwaysLazy: true });
     assert.throws(() => new L(), /still loading/);
   });
 

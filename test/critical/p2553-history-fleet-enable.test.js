@@ -63,19 +63,41 @@ describe('P2553 intelligent History fleet', () => {
     const device = {
       _homeyCapabilityUxHealed: false,
       getCapabilities: () => ['measure_battery', 'alarm_motion', 'alarm_human', 'measure_luminance.distance'],
-      getCapabilityOptions: () => ({}),
+      getCapabilityOptions: (cap) => {
+        if (cap === 'measure_battery' || cap === 'alarm_human') {return {};}
+        // twin motion / distance already flood Insights unless explicitly silenced
+        return cap === 'alarm_motion' || cap === 'measure_luminance.distance' ? {} : {};
+      },
+      setCapabilityOptions: async (cap, opts) => { calls.push({ cap, opts }); },
+      log: () => {},
+    };
+    const r = await healSensorCapabilityGetable(device);
+    // P3354: missing flags are Homey's default (History ON). No History rewrite
+    // for battery/human. A units restore (P3362) may still write units only.
+    assert.ok(!r.healed.includes('measure_battery'));
+    assert.ok(!r.healed.includes('alarm_human'));
+    assert.ok(r.silenced.includes('alarm_motion'));
+    assert.ok(r.silenced.includes('measure_luminance.distance'));
+    const batt = calls.find((c) => c.cap === 'measure_battery');
+    if (batt) {assert.ok(batt.opts.preventInsights !== true);}
+    const motion = calls.find((c) => c.cap === 'alarm_motion');
+    assert.equal(motion.opts.preventInsights, true);
+  });
+
+  it('runtime heal still repairs an explicit getable:false or preventInsights:true', async () => {
+    const calls = [];
+    const device = {
+      _homeyCapabilityUxHealed: false,
+      getCapabilities: () => ['measure_battery', 'alarm_human'],
+      getCapabilityOptions: (cap) => (cap === 'measure_battery' ? { getable: false } : { preventInsights: true }),
       setCapabilityOptions: async (cap, opts) => { calls.push({ cap, opts }); },
       log: () => {},
     };
     const r = await healSensorCapabilityGetable(device);
     assert.ok(r.healed.includes('measure_battery'));
     assert.ok(r.healed.includes('alarm_human'));
-    assert.ok(r.silenced.includes('alarm_motion'));
-    assert.ok(r.silenced.includes('measure_luminance.distance'));
-    const batt = calls.find((c) => c.cap === 'measure_battery');
-    assert.equal(batt.opts.preventInsights, false);
-    const motion = calls.find((c) => c.cap === 'alarm_motion');
-    assert.equal(motion.opts.preventInsights, true);
+    assert.equal(calls.find((c) => c.cap === 'measure_battery').opts.preventInsights, false);
+    assert.equal(calls.find((c) => c.cap === 'alarm_human').opts.getable, true);
   });
 
   it('fleet enable tool + APPLY report exist', () => {

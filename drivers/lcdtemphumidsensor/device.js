@@ -121,7 +121,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     if (!this.isZth05z) {return out;}
     for (const [dp, [key, div, list]] of Object.entries(ZTH05Z_SETTING_DPS)) {
       out[dp] = {
-        capability: null,
+        capability: null, setting: key,
         transform: (v) => {
           let val = v;
           if (list && typeof v === 'number' && list[v] !== undefined) {val = list[v];}
