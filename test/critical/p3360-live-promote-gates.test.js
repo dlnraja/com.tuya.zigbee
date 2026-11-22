@@ -66,6 +66,41 @@ describe('P3360 Live promotion objective gates', () => {
     assert.strictEqual(r.ok, true);
   });
 
+  it('does not treat a kind:ok Test ledger note that says No AggregateError as a new crash', () => {
+    const row = {
+      at: '2026-11-21T19:33:47Z',
+      app_id: 'com.dlnraja.tuya.zigbee',
+      version: '9.0.1636',
+      build: 3717,
+      state: 'test',
+      kind: 'ok',
+      note: 'Write-back 3247bd6341. No AggregateError; no retry.',
+    };
+    const r = G.evaluateLiveGates(base({
+      crashTexts: [{ atMs: T0, text: JSON.stringify(row), source: 'athom-publish-outcomes.jsonl', kind: 'ok' }],
+    }));
+    assert.strictEqual(r.ok, true, r.reasons.join('; '));
+  });
+
+  it('ignores undated historical AggregateError rows when a Test timestamp exists', () => {
+    const r = G.evaluateLiveGates(base({
+      crashTexts: [{
+        atMs: 0,
+        text: JSON.stringify({ build: 3483, version: '9.0.1365', state: 'processing_failed', stateMeta: 'AggregateError' }),
+        source: 'athom-publish-outcomes.jsonl',
+      }],
+    }));
+    assert.strictEqual(r.ok, true, r.reasons.join('; '));
+  });
+
+  it('still holds on a real AggregateError dated after this Test', () => {
+    const r = G.evaluateLiveGates(base({
+      crashTexts: [{ atMs: T0 + 3600000, text: 'upload 9.0.1637 processing_failed AggregateError', source: 'ledger' }],
+    }));
+    assert.strictEqual(r.ok, false);
+    assert.ok(r.reasons.some((x) => /crash signal/.test(x)));
+  });
+
   it('holds when required CI or validate-publish is missing or red', () => {
     const red = G.evaluateLiveGates(base({ ci: { ...base().ci, 'Node 22 runtime tests': 'failure' } }));
     assert.strictEqual(red.ok, false);

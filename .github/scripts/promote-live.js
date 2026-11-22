@@ -184,7 +184,7 @@ function collectCrashTexts(sinceMs) {
     if (file.endsWith('.jsonl')) {
       for (const ev of loadJsonl(file)) {
         const at = Date.parse(ev.at || ev.date || ev.when || 0);
-        texts.push({ atMs: at || 0, text: JSON.stringify(ev), source: path.basename(file), historical: at && sinceMs && at < sinceMs });
+        texts.push({ atMs: at || 0, text: JSON.stringify(ev), source: path.basename(file), kind: ev.kind, historical: !at || (sinceMs && at < sinceMs) });
       }
     } else {
       for (const line of raw.split(/\n/)) {
@@ -203,8 +203,14 @@ function collectCrashTexts(sinceMs) {
 
 function candidateFromLedger(appId, version, build) {
   const rows = loadJsonl(path.join(ROOT, 'docs/knowledge/athom-publish-outcomes.jsonl'));
-  const ev = [...rows].reverse().find((e) => String(e.app_id) === appId && String(e.version) === String(version)
-    && (!build || String(e.build) === String(build)) && /test/i.test(e.state));
+  const ev = [...rows].reverse().find((e) => {
+    const id = String(e.app_id || e.app || '');
+    if (id !== String(appId) && !(appId.endsWith('.stable') && id === 'stable') && !(appId.endsWith('.zigbee') && id === 'master')) return false;
+    if (!/test/i.test(e.state || '')) return false;
+    if (version && String(e.version) !== String(version).replace(/^v/i, '')) return false;
+    if (build && String(e.build) !== String(build)) return false;
+    return true;
+  });
   return ev || null;
 }
 
@@ -223,11 +229,20 @@ async function main() {
   let apiBase = 'https://apps-api.athom.com/api/v1';
   let appsToken = null;
   if (process.env.HOMEY_PAT) {
-    appsToken = await getDelegationToken(process.env.HOMEY_PAT, log);
-    const listed = await listBuilds(appsToken, profile.appId, log);
-    builds = listed.builds;
-    apiBase = listed.base;
+    const pat = process.env.HOMEY_PAT;
+    appsToken = await getDelegationToken(pat, log);
+    let listed = await listBuilds(appsToken, profile.appId, log);
+    // Delegation tokens from api.athom.com can come back as 401 on apps-api
+    // (runs 44965860182 / 44965865695). auto-publish-draft already retries with the raw PAT.
+    if ((!listed.builds || !listed.builds.length) && appsToken !== pat) {
+      log('Delegation token was not accepted by apps-api; retrying with raw PAT');
+      listed = await listBuilds(pat, profile.appId, log);
+      if (listed.builds && listed.builds.length) appsToken = pat;
+    }
+    builds = listed.builds || [];
+    apiBase = listed.base || apiBase;
     appsToken = listed.token || appsToken;
+    if (!builds.length) log('WARN: could not list Athom builds with delegation token or raw PAT');
   } else {
     log('WARN: HOMEY_PAT missing; gates will run without a live Athom listing');
   }
@@ -245,6 +260,15 @@ async function main() {
   if (!target && !wantBuild && !wantVersion) target = list.find((b) => b.state === 'test');
 
   const ledger = candidateFromLedger(profile.appId, (target && target.version) || wantVersion, (target && target.id) || wantBuild);
+  if (!target && ledger) {
+    target = {
+      id: ledger.build,
+      version: String(ledger.version || '').replace(/^v/i, ''),
+      state: 'test',
+      atMs: Date.parse(ledger.at || 0) || 0,
+    };
+    log('No Athom listing; using ledger Test #' + target.id + ' v' + target.version);
+  }
   const testAtMs = (target && target.atMs) || (ledger && Date.parse(ledger.at)) || 0;
   const sha = ledger && ledger.source_sha;
   const ci = collectCi(sha);
@@ -271,7 +295,7 @@ async function main() {
   const verdict = G.evaluateLiveGates({
     app: appKey,
     nowMs: Date.now(),
-    target: target || (wantBuild || wantVersion ? { id: wantBuild, version: wantVersion, state: 'unknown' } : null),
+    target: target || (wantBuild || wantVersion ? { id: wantBuild, version: wantVersion, state: (ledger && ledger.state) || 'unknown' } : null),
     testAtMs,
     ci,
     validatePublish,
@@ -301,6 +325,11 @@ async function main() {
     log(DRY ? 'DRY-RUN: would call updateBuildChannel(live)' : 'No HOMEY_PAT: skip setChannel');
     summarize('live', 'DRY-RUN or no PAT; no channel update.\n');
     return 0;
+  }
+  if (!list.length) {
+    log('HELD: will not setChannel without a confirmed Athom build listing');
+    summarize('live', 'HELD: no confirmed Athom listing; not promoting.\n');
+    return DISPATCH ? 2 : 0;
   }
   log(`Promoting #${target.id} v${target.version} to Live via updateBuildChannel (PAT / apps-api)`);
   const res = await setChannel(appsToken, profile.appId, target.id, 'live', apiBase, log);

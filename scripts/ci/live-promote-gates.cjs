@@ -62,11 +62,17 @@ function stateOf(build) {
 function scanCrashSignals(texts, sinceMs) {
   const out = [];
   const re = /\b(crash|OOM|out of memory|segfault|processing_failed|AggregateError|MemwarnGuard ENOENT)\b/i;
+  const negated = /\bno(?:t)?\s+(?:an?\s+)?(crash|OOM|out of memory|segfault|processing_failed|AggregateError|MemwarnGuard ENOENT)\b/gi;
   for (const item of texts || []) {
     const at = Number(item.atMs || 0);
-    if (sinceMs && at && at < sinceMs) continue;
+    // Signals must be strictly after this Test (the Test row itself is not "new").
+    // Undated rows cannot be proven "since this Test" (e.g. reconstructed ATHOM_LIMITS 9.0.1365).
+    if (sinceMs && (!at || at <= sinceMs)) continue;
     const text = String(item.text || '');
-    if (!re.test(text)) continue;
+    if (String(item.kind || '').toLowerCase() === 'ok') continue;
+    if (/"kind"\s*:\s*"ok"/i.test(text)) continue;
+    const stripped = text.replace(negated, ' ');
+    if (!re.test(stripped)) continue;
     // Historical mentions of older versions/builds are not "new" signals.
     if (item.historical === true) continue;
     out.push({
