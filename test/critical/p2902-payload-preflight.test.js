@@ -74,3 +74,22 @@ test('double leading slash image path resolves (warn only); UTF-16 JSON is an er
   assert.ok(r.errors.some((x) => /UTF-16 JSON/.test(x)));
   assert.ok(!r.errors.some((x) => /points to missing/.test(x)));
 });
+test('ciprs-1729: require deep inside a long try block is only a warning', () => {
+  const pad = '      // filler line to push the try opener beyond the 400-char window\n'.repeat(12);
+  const body = "class D { m() {\n    try {\n" + pad + "      if (x) { return require('../pruned_driver/device'); }\n    } catch (_e) { /* keep */ }\n    return require('./device');\n  } }";
+  const r = preflight(fixture((app, w) => w('drivers/a/driver.js', body)));
+  assert.deepStrictEqual(r.errors, []);
+  assert.ok(r.warns.some((x) => /optional require\('\.\.\/pruned_driver\/device'\)/.test(x)));
+});
+test('ciprs-1729: a require after a closed try block stays an error', () => {
+  const pad = '// filler line to push the try opener beyond the 400-char window\n'.repeat(12);
+  const r = preflight(fixture((app, w) => w('drivers/a/driver.js', "try { a(); } catch (e) {}\n" + pad + "require('../../lib/missing');")));
+  assert.ok(r.errors.some((x) => /unresolved require\('\.\.\/\.\.\/lib\/missing'\)/.test(x)));
+});
+test('ciprs-1729: insideTryBlock brace walk', () => {
+  const { insideTryBlock } = require('../../scripts/ci/payload-preflight.cjs');
+  const s1 = 'try { if (a) { b(); } X';
+  assert.strictEqual(insideTryBlock(s1, s1.indexOf('X')), true);
+  const s2 = 'try { b(); } catch (e) {} X';
+  assert.strictEqual(insideTryBlock(s2, s2.indexOf('X')), false);
+});

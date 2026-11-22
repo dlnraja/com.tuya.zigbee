@@ -8,6 +8,12 @@
    "date": "2026-10-31",
    "note": "autofix attempt 1/3, signature node22-tests|Full suite on Node 22|p3075 changelog ceiling 118>117; cause: write-back v1.0.219 repeated the v1.0.218 maintenance note (counted as duplicate); fix: precise 1.0.219 note + updateChangelog prefixes the version when the generated note equals the previous one (+test p3092)",
    "by": "homey-ci-prs"
+  },
+  "ciprs-1729-bastien-preflight-try": {
+   "status": "done",
+   "date": "2026-11-22",
+   "note": "autofix attempt 1/3, signature bastien-publish|Publish Bastien draft -> Test|payload preflight unresolved require(../wall_thermostat/device) in presence_sensor_radar (P2724 prune removes wall_thermostat; require is inside try/catch >400 chars from try); fix: enclosing-try brace walk in payload-preflight (+3 tests). Also autonomous-review p3366 strict assertions 13->7: helper DST assertions restored (14).",
+   "by": "homey-ci-prs"
   }
  },
  "items": {

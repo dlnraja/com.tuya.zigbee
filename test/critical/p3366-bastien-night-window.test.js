@@ -33,4 +33,15 @@ describe('P3366/t1025u Bastien publish is allowed at any hour', function() {
     assert.strictEqual(isNightWindow(new Date('2026-11-21T16:00:00Z')), false);
     assert.strictEqual(isNightWindow(new Date('2026-11-21T22:00:00Z')), true);
   });
+
+  it('t1025u keeps the historical 23h-06h helper exact (winter UTC+1, summer UTC+2)', function() {
+    const { parisHour, isNightWindow } = require('../../.github/scripts/bastien-night-window');
+    assert.strictEqual(isNightWindow(new Date('2026-11-21T21:48:00Z')), false); // 22:48, build #256
+    assert.strictEqual(isNightWindow(new Date('2026-11-22T04:59:00Z')), true); // 05:59
+    assert.strictEqual(isNightWindow(new Date('2026-11-22T05:00:00Z')), false); // 06:00
+    assert.strictEqual(isNightWindow(new Date('2026-11-22T11:00:00Z')), false); // noon
+    assert.strictEqual(parisHour(new Date('2026-07-01T21:00:00Z')), 23);
+    assert.strictEqual(isNightWindow(new Date('2026-07-01T21:00:00Z')), true);
+    assert.strictEqual(isNightWindow(new Date('2026-07-01T04:00:00Z')), false); // 06:00 CEST
+  });
 });

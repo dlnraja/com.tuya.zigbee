@@ -74,6 +74,25 @@ function manifestStringProblems(app) {
   return out;
 }
 
+/**
+ * WHY(ciprs-1729): true when `idx` sits inside an unclosed `try { ... }` block
+ * (brace walk backwards, bounded to 4000 chars). Strings with braces may confuse it;
+ * that only matters for the warn/error split of an already-missing module.
+ */
+function insideTryBlock(src, idx) {
+  let depth = 0;
+  const stop = Math.max(0, idx - 4000);
+  for (let i = idx - 1; i >= stop; i--) {
+    const ch = src[i];
+    if (ch === '}') depth++;
+    else if (ch === '{') {
+      if (depth > 0) { depth--; continue; }
+      if (/\btry\s*$/.test(src.slice(Math.max(0, i - 20), i))) return true;
+    }
+  }
+  return false;
+}
+
 function preflight(root) {
   const errors = [];
   const warns = [];
@@ -118,7 +137,11 @@ function preflight(root) {
         // A require guarded by try/catch in the preceding lines is an optional CI-only module.
         const before = src.slice(Math.max(0, m.index - 400), m.index);
         const t = before.search(/try\s*\{(?![\s\S]*try\s*\{)/);
-        if (t >= 0 && !/\bcatch\b/.test(before.slice(t))) warns.push(`optional require('${m[1]}') absent in ${rel} (try-guarded)`);
+        // WHY(ciprs-1729): the 400-char window missed a require deep inside a long try block
+        // (presence_sensor_radar ZHT-S01 class switch -> wall_thermostat, pruned by the P2724
+        // Bastien house-fleet prune). Also accept a truly enclosing try block found by braces.
+        const guarded = (t >= 0 && !/\bcatch\b/.test(before.slice(t))) || insideTryBlock(src, m.index);
+        if (guarded) warns.push(`optional require('${m[1]}') absent in ${rel} (try-guarded)`);
         else errors.push(`unresolved require('${m[1]}') in ${rel}`);
       }
     }
@@ -192,4 +215,4 @@ if (require.main === module) {
   }
   process.exit(r.errors.length ? 1 : 0);
 }
-module.exports = { preflight, manifestStringProblems };
+module.exports = { preflight, manifestStringProblems, insideTryBlock };
