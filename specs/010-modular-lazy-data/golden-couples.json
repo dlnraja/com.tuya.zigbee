@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15T11:28:11.908Z",
+ "generated": "2026-11-22T02:33:42.319Z",
  "drivers": 392,
  "snapshot": {
   "air_purifier": {
@@ -393,9 +393,9 @@
    "pidSha": "c4343290bac9e455"
   },
   "curtain_motor": {
-   "mfr": 279,
+   "mfr": 281,
    "pid": 48,
-   "mfrSha": "6fc71638d89f6f72",
+   "mfrSha": "756febcc6b649181",
    "pidSha": "00ba96ff94eb4bb5"
   },
   "curtain_motor_shutter": {
@@ -1077,9 +1077,9 @@
    "pidSha": "75ff00740ab2c7c9"
   },
   "light_bulb_rgb_rgbw": {
-   "mfr": 39,
+   "mfr": 40,
    "pid": 6,
-   "mfrSha": "3b551b35219d9a3c",
+   "mfrSha": "e0881b9321edeef8",
    "pidSha": "34650de2fdf4668a"
   },
   "light_bulb_tunable_white": {
@@ -1185,10 +1185,10 @@
    "pidSha": "d68625ae238bbefa"
   },
   "pir_sensor_2": {
-   "mfr": 10,
-   "pid": 35,
-   "mfrSha": "36acb20f9fd6b6f3",
-   "pidSha": "170e7d8f355a0e2c"
+   "mfr": 11,
+   "pid": 36,
+   "mfrSha": "f22190b878d12ae7",
+   "pidSha": "0426af92ffaf40cf"
   },
   "pirsensor": {
    "mfr": 0,
@@ -1245,9 +1245,9 @@
    "pidSha": "3041fd34f640ddcb"
   },
   "presence_sensor_radar": {
-   "mfr": 251,
+   "mfr": 252,
    "pid": 56,
-   "mfrSha": "dfe0a16a80e0a672",
+   "mfrSha": "dac21ab63167dec1",
    "pidSha": "ac803567e8fc211a"
   },
   "radar_sensor": {
@@ -1881,9 +1881,9 @@
    "pidSha": "b46b96d17990cf37"
   },
   "switch_1gang": {
-   "mfr": 356,
+   "mfr": 357,
    "pid": 38,
-   "mfrSha": "286617ba8d764aa8",
+   "mfrSha": "19c7a2133da75777",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -1983,9 +1983,9 @@
    "pidSha": "632a83d2820316dd"
   },
   "switch_wall_6gang": {
-   "mfr": 15,
+   "mfr": 16,
    "pid": 4,
-   "mfrSha": "cad0ee283b99ef2c",
+   "mfrSha": "3d7d31839567dd47",
    "pidSha": "f55cc95aa962bca2"
   },
   "switch_wall_7gang": {
@@ -2175,9 +2175,9 @@
    "pidSha": "1326f3b1090e234a"
   },
   "wall_dimmer_tuya": {
-   "mfr": 133,
+   "mfr": 132,
    "pid": 10,
-   "mfrSha": "ccaf09011adeadbb",
+   "mfrSha": "e9c15a7c585d0167",
    "pidSha": "2523e8285401a387"
   },
   "wall_remote_1_gang": {
