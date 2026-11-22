@@ -8,8 +8,9 @@
  *   threw "endpointForCapability is not a function" before sending a frame;
  * - findTuyaCluster was imported from lib/tuya/MagicPacketRegistry.js in four places
  *   without being exported.
- * The scan is a ratchet: the KNOWN list holds pre-existing cases still to triage and
- * may only shrink.
+ * The scan is a ratchet: the KNOWN list may only shrink. Triage 2026-11-22 (P3368): the
+ * remaining entries have no live caller (SmartCoordinator is never required; ZigbeeHealthMixin
+ * is only named in a comment; LifecycleCleanup.safeReadAttribute has no caller).
  */
 
 require('../../tools/ci/preload-homey-stub');
@@ -20,8 +21,6 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const KNOWN = new Set([
-  'lib/UniversalZigbeeDevice.js: getSafeCluster <- ./Util',
-  'lib/devices/UnifiedSensorBase.js: // v5.5.143 <- ../tuya/TuyaUnifiedParser',
   'lib/mixins/ZigbeeHealthMixin.js: RadioSensingInference <- ../IntelligentSensorInference',
   'lib/smart/SmartCoordinator.js: SessionManager <- ../session/SessionManager',
   'lib/smart/SmartCoordinator.js: HealthMonitor <- ../health/HealthMonitor',
@@ -53,7 +52,7 @@ function missingNamedImports() {
       let mod;
       try { mod = require(target); } catch (_e) { continue; }
       if (!mod || (typeof mod !== 'object' && typeof mod !== 'function')) { continue; }
-      for (const raw of m[1].split(',')) {
+      for (const raw of m[1].replace(/\/\/[^\n]*/g, '').replace(/\/\*[\s\S]*?\*\//g, '').split(',')) {
         const name = raw.split(':')[0].split('=')[0].trim();
         if (!name || name.startsWith('...')) { continue; }
         if (!(name in mod)) { bad.push(`${path.relative(ROOT, f)}: ${name} <- ${m[2]}`); }
