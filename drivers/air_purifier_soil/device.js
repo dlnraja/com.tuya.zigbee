@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 // WHY(P3018): DP5 is temperature in tenths (Z2M tuyaDatapoints soil sensors: [5,'temperature',divideBy10]).
@@ -63,3 +65,5 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
 module.exports = SoilSensorDevice;
 module.exports.soilTemperature = soilTemperature;
+return module.exports;
+});

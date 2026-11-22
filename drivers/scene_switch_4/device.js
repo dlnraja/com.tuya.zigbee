@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
@@ -352,3 +354,5 @@ class SceneSwitch4Device extends ButtonDevice {
 }
 
 module.exports = SceneSwitch4Device;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
@@ -68,3 +70,5 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   }
 }
 module.exports = EnergyMeter3PhaseDevice;
+return module.exports;
+});

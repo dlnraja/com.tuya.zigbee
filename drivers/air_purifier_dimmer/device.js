@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
@@ -69,5 +71,5 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
 }
 
 module.exports = DimmerWall1GangDevice;
-
-
+return module.exports;
+});

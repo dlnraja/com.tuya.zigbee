@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
@@ -205,3 +207,5 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = CeilingPresenceSensorDevice;
+return module.exports;
+});

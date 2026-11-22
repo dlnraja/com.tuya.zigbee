@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
@@ -3068,3 +3070,5 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 }
 
 module.exports = PresenceSensorRadarDevice;
+return module.exports;
+});

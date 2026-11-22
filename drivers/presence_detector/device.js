@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const Homey = require('homey');
 const VirtualPresenceDetector = require('../../lib/presence/VirtualPresenceDetector');
@@ -288,3 +290,5 @@ class PresenceDetectorDevice extends Homey.Device {
 }
 
 module.exports = PresenceDetectorDevice;
+return module.exports;
+});

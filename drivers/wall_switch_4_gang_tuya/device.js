@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
  * 4-Gang EF00 wall switch - P2485 max DP/flow/heuristic adaptation.
@@ -259,3 +261,5 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
 }
 
 module.exports = wall_switch_4_gang_tuya;
+return module.exports;
+});

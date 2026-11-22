@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ThermostatMeteringDps = require('../../lib/tuya/ThermostatMeteringDps');
 
@@ -737,3 +739,5 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 module.exports = WallThermostatDevice;
 module.exports.BAC002_MFRS = BAC002_MFRS;
 module.exports.BAC002_DATA_POINTS = BAC002_DATA_POINTS;
+return module.exports;
+});

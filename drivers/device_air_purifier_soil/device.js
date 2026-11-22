@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { scaleSoilDp5 } = require('../../lib/sensors/SoilTempScale');
 
@@ -588,5 +590,5 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 }
 
 module.exports = SoilSensorDevice;
-
-
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 // A8: NaN Safety - use safeDivide/safeMultiply
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -522,3 +524,5 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = SmartKnobRotaryDevice;
+return module.exports;
+});

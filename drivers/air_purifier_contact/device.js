@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
@@ -277,3 +279,5 @@ class ContactSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = ContactSensorDevice;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
@@ -145,3 +147,5 @@ module.exports = christmas_lights;
 // The device does report the on/off state, but the app does not use this, because it is not reliable.
 // The device also reports the current mode, but the app does not use this, because it is not reliable.
 // The device does not report the current dim level, color or effect, so the app has to poll the device to get the current state.
+return module.exports;
+});

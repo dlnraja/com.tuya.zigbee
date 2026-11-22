@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
@@ -284,3 +286,5 @@ class RemoteButtonWirelessPlugDevice extends PhysicalButtonMixin(VirtualButtonMi
 
 
 module.exports = RemoteButtonWirelessPlugDevice;
+return module.exports;
+});

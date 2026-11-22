@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { safeSetInterval, safeClearInterval, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
@@ -460,4 +462,5 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 }
 
 module.exports = EnergyMonitorPlugDevice;
-
+return module.exports;
+});

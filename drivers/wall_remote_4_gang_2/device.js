@@ -1,3 +1,6 @@
+'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
@@ -68,3 +71,5 @@ class wall_remote_4_gang_2 extends UnifiedSwitchBase {
 }
 
 module.exports = wall_remote_4_gang_2;
+return module.exports;
+});

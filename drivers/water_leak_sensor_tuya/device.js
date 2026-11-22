@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
@@ -134,3 +136,5 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
 }
 
 module.exports = TuyaWaterLeakSensor;
+return module.exports;
+});

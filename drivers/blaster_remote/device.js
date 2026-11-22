@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeFlowCard } = require('../../lib/flow/FlowCardPresence'); // P3068: undeclared legacy ids -> logged-once no-op
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -369,3 +371,5 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = IRRemoteDevice;
+return module.exports;
+});

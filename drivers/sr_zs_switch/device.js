@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeFlowCard } = require('../../lib/flow/FlowCardPresence');
 const { CLUSTER } = require('zigbee-clusters');
@@ -308,3 +310,5 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
 }
 
 module.exports = SRZSSwitch;
+return module.exports;
+});

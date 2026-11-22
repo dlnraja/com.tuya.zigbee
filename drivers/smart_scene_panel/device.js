@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 // P24.7: Safe import for TuyaZigbeeDevice (crash-resilient)
 const { safeExtends } = require('../../lib/utils/ClassExtendsGuard');
@@ -78,7 +80,5 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = SmartScenePanelDevice;
-
-
-
-
+return module.exports;
+});
