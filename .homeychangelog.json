@@ -231,9 +231,13 @@
       ]
     }
   ],
-  "5.12.562": {
+  "5.12.563": {
     "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
     "fr": "Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication."
+  },
+  "5.12.562": {
+    "en": "Changed: lazy unit tests stay lazy when Module._load is hooked; boot reporting gate and bounded per-device trackers; device classes load on first use, not at app start [skip ci].",
+    "fr": "Modifié : lazy unit tests stay lazy when Module._load is hooked; boot reporting gate and bounded per-device trackers; device classes load on first use, not at app start [skip ci]."
   },
   "5.12.561": {
     "en": "Fixed: fans and air purifiers & Flow cards (TS0043). Plus 2 other changes in the app core.",
