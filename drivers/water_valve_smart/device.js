@@ -205,8 +205,8 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         1: { capability: 'onoff', transform: isTuyaTrue },
         // DP9 countdown stays internal (Z2M countdown). Not a required capability.
         9: { capability: null, internal: 'countdown_seconds' },
-        // Z2M power_off_state (diag #2270 reported 2). Keep internal; enum not fully documented.
-        27: { capability: null, internal: 'power_off_state' },
+        // Z2M power_off_state (diag #2270 reported 2 = memory). Expose as a setting (0 close, 1 open, 2 memory).
+        27: { capability: null, internal: 'power_off_state', setting: 'power_off_state' },
         // Z2M set_valve_position (0-100). Internal on RX; TX uses this DP, never DP1, when the user sets valve_position.
         101: { capability: null, internal: 'threshold_pct' },
         // Forum #2270 + Gmail diag 56949320: DP102 is the actual position, 0 closed and 100 open.
