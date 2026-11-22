@@ -3,6 +3,11 @@
 const { Driver } = require('homey');
 
 class HumidifierDriver extends Driver {
+  // P3360: already-shipped _TZE284_ikul00sx+TS0601 stays on this driver id but gets the fan+light class.
+  onMapDeviceClass(device) {
+    return require('../../lib/drivers/PublishedHostClassMap').mappedDeviceClass('humidifier', device) || require('./device');
+  }
+
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.

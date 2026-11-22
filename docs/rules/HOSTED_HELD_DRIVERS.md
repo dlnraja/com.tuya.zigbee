@@ -62,3 +62,13 @@ When a held id is released or graduates, it ships as itself and its fold is igno
 held in this payload). Devices already paired on the host stay there (Homey binds a device to its driver id).
 
 Tests: `test/critical/p3331-hosted-held-drivers.test.js`, `test/critical/p3330-held-driver-folds.test.js`.
+
+## P3360 class maps (couples already on a published host)
+
+Four leftover P3085 held drivers have their exact couples already shipped on a published host (last Test package). Do not fold them with kind:host (that would append or steal couples). Use `lib/drivers/published-host-class-maps.json` and `onMapDeviceClass` on the published owner instead:
+
+- Couples stay on the published driver id.
+- The held id stays in `config/publish-hold-drivers.json`.
+- Held JS is copied into the payload under `lib/hosted/<id>/` (same keepDirs path as P3331, without applyHeldFolds).
+- Map only the listed manufacturerName + productId pairs (e.g. Excellux only, not every pid on motion_sensor_switch).
+

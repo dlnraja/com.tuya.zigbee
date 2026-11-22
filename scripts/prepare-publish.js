@@ -777,6 +777,10 @@ try {
         const retargeted = retargetHostedCards(manifest, fr.hostOf);
         if (fr.keepDirs.length) { console.log(`[P3331] ${fr.keepDirs.length} held driver(s) hosted, ${retargeted} flow card(s) re-targeted to their host`); }
         p3331KeepDirs = new Set(fr.keepDirs);
+        // P3360 class maps: held JS must also ship under lib/hosted/<id>/ (couples stay on the published host).
+        const classMaps = require('../lib/drivers/published-host-class-maps.json');
+        for (const m of classMaps.maps || []) { if (m && m.held) p3331KeepDirs.add(m.held); }
+
         // A card is dropped only when every driver its device filter names is held.
         const cardUsesHeld = (card) => {
           const args = Array.isArray(card && card.args) ? card.args : [];
