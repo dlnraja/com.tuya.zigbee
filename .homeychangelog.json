@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.252": {
+    "en": "Changed: sync app.json, source-key lookup, mocha test isolation; lint ratchet regression in UnifiedCoverBase.",
+    "fr": "Modifié : sync app.json, source-key lookup, mocha test isolation; lint ratchet regression in UnifiedCoverBase."
+  },
   "1.0.251": {
     "en": "New: Flow cards. Fixed: pairing and device recognition, general reliability (ZG-301Z) and Flow cards. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
     "fr": "Nouveau : cartes Flow. Corrigé : appairage et reconnaissance des appareils, fiabilité générale (ZG-301Z) et cartes Flow. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
