@@ -426,7 +426,7 @@ class SmartKnobRotaryDevice extends SmartKnobRotationMixin(TuyaZigbeeDevice) {
     // Forum 26439#5537 (qja6nq5z): a single press can arrive as on/off/toggle
     // plus another path. Those three are one 'single' class on this knob
     // (not the TS0044 0xFD on=single/off=double/toggle=long encoding).
-    const mapped = (action === 'on' || action === 'off' || action === 'toggle') ? 'single' : action;
+    const mapped = ['on', 'off', 'toggle'].includes(action) ? 'single' : action;
     if (!this._pressDedup) {this._pressDedup = {};}
     return shouldDrop(this._pressDedup, 1, mapped, Date.now(), windowMs).drop;
   }
