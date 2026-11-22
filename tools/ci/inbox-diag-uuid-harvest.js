@@ -82,6 +82,16 @@ function main() {
   const doFetch = argFlag('--fetch') || process.env.INBOX_DIAG_FETCH === '1';
   const maxFetch = Math.max(1, Math.min(20, Number(argVal('--max', '6')) || 6));
   const uuids = new Set();
+  // t1006u: optional explicit UUID(s) from workflow_dispatch so intake can join later.
+  const requested = [];
+  for (const a of process.argv) {
+    if (a.startsWith('--uuid=')) {
+      String(a.slice(7)).split(',').forEach((u) => {
+        const n = String(u || '').trim().toLowerCase();
+        if (n) { uuids.add(n); requested.push(n); }
+      });
+    }
+  }
 
   const sources = [
     path.join(ROOT, '.github', 'state', 'forum', 'forum-media-deep.json'),
@@ -102,8 +112,9 @@ function main() {
     'ace66ff9-0a41-44e0-abf4-bf0850b689ae',
   ];
   const ordered = [
-    ...priority.filter((u) => uuids.has(u)),
-    ...[...uuids].filter((u) => !priority.includes(u)).sort(),
+    ...requested.filter((u) => uuids.has(u)),
+    ...priority.filter((u) => uuids.has(u) && !requested.includes(u)),
+    ...[...uuids].filter((u) => !priority.includes(u) && !requested.includes(u)).sort(),
   ];
 
   fs.mkdirSync(OUT_DIR, { recursive: true });

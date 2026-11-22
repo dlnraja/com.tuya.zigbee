@@ -17,6 +17,7 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 const sd = require('../lib/source-digest');
 const refsLib = require('../lib/referentials');
+const diagUuid = require('../lib/diag-uuid-lookup');
 
 const ROOT = path.join(__dirname, '../..');
 const OUT_DIR = path.join(ROOT, 'data/ssot');
@@ -511,11 +512,49 @@ function triageItem(raw, opts = {}) {
     models: raw.models || [],
     dps: raw.dps || [],
   } : extractIntake(raw.text || '');
+  const diagLookups = (extracted.diagIds || []).map((id) => diagUuid.lookupUuid(id, root));
+  const foundDiags = diagLookups.filter((x) => x.found);
+  // t1006u: a UUID-only post is not 'blocked pending a real diag'. Join fetch-diags ledger first.
+  if (!(extracted.couples || []).length && foundDiags.length) {
+    const recs = foundDiags.flatMap((x) => x.records || []);
+    for (const rec of recs) {
+      for (const c of rec.couples || []) {
+        if (c && !(extracted.couples || []).includes(c)) extracted.couples = [...(extracted.couples || []), c];
+      }
+      for (const m of rec.mfrs || []) {
+        if (m && !(extracted.mfrs || []).map((x) => String(x).toLowerCase()).includes(String(m).toLowerCase())) {
+          extracted.mfrs = [...(extracted.mfrs || []), m];
+        }
+      }
+      for (const pid of rec.pids || []) {
+        if (pid && !(extracted.pids || []).map(String).includes(String(pid))) {
+          extracted.pids = [...(extracted.pids || []), pid];
+        }
+      }
+    }
+    if (!(extracted.couples || []).length && (extracted.mfrs || []).length && (extracted.pids || []).length) {
+      extracted.couples = [`${extracted.mfrs[0]}|${extracted.pids[0]}`];
+    }
+  }
   const couple = extracted.couples[0];
   if (!couple) {
+    if ((extracted.diagIds || []).length) {
+      return {
+        skipped: false,
+        untrusted,
+        item: { ...raw, ...extracted, diagLookups, uuidOnly: diagUuid.isUuidOnlyRequest(extracted) },
+        classification: {
+          status: 'diag_uuid_not_in_ledger',
+          reason: 'UUID extracted but no fetch-diags or mail-ingest record. Ask Fetch Homey Diagnostics to ingest this UUID. Not blocked pending a new diagnostic.',
+          malfunction: false,
+        },
+        plan: { action: 'ingest-uuid', uuids: extracted.diagIds, reason: 'join the existing UUID in fetch-diags' },
+        diagLookups,
+      };
+    }
     return { skipped: true, reason: 'no exact mfr+pid couple', untrusted };
   }
-  const item = { ...raw, ...extracted, couple };
+  const item = { ...raw, ...extracted, couple, diagLookups, diagFound: foundDiags.length > 0 };
   const bundle = opts.refs || refsLib.load(root);
   const consulted = refsLib.consultFirst(bundle, { couple, symptoms: item.symptoms, text: item.text });
   const sources = lookupSources(couple, root);
@@ -728,6 +767,7 @@ if (require.main === module) {
 
 module.exports = {
   extractIntake, lookupSources, indexDrivers, ownersOf, siblingPids,
+  attachDiagLookups: diagUuid.lookupUuid, isUuidOnlyRequest: diagUuid.isUuidOnlyRequest,
   classify, planAction, gitHistory, testSkeleton, triageItem, canAutoApply, applyPlan,
   addExactCouple, stripMfr, ssotComplement, run, SYMPTOMS, collectGithubEvent,
   flagUntrusted, isMalfunctionReport, deepChecks, INJECTION_PATTERNS, MALFUNCTION_RE,

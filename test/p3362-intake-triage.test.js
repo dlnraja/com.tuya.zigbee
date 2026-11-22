@@ -189,4 +189,39 @@ describe('P3362 intake triage and referentials', () => {
     assert.strictEqual(refs.schemaErrors(after).length, 0);
     assert.ok(after.manifest.freshness);
   });
+
+  it('joins a UUID-only request to a fetch-diags ledger record and does not skip it as blocked', () => {
+    const root = tmpRoot();
+    writeCompose(root, 'water_valve_smart', ['_TZE200_1n2zev06'], ['TS0601']);
+    fs.mkdirSync(path.join(root, 'data'), { recursive: true });
+    const uuid = '64a2399b-a2af-4c07-89f5-bfe238577770';
+    fs.writeFileSync(path.join(root, 'data/diag-ids.json'), `${JSON.stringify({
+      note: 'fixture',
+      reports: [{
+        id: 'fixture-diag',
+        date: '2026-11-17T12:37:09Z',
+        kind: 'diag',
+        mfrs: ['_TZE200_1n2zev06'],
+        pids: ['TS0601'],
+        logIds: [uuid],
+        couples: [['_TZE200_1n2zev06', 'TS0601']],
+        url: 'gmail',
+        excerpt: 'fixture',
+      }],
+    }, null, 2)}\n`);
+    const found = s.triageItem({ text: uuid, sourceType: 'forum' }, { root, writeBack: false, gitRunner: () => '' });
+    assert.strictEqual(found.skipped, undefined);
+    assert.ok(found.item.diagFound);
+    assert.ok(found.item.couples.some((c) => c.toLowerCase() === '_tze200_1n2zev06|ts0601'));
+    assert.notStrictEqual(found.classification && found.classification.status, 'diag_uuid_not_in_ledger');
+
+    const missingRoot = tmpRoot();
+    writeCompose(missingRoot, 'water_valve_smart', ['_TZE200_1n2zev06'], ['TS0601']);
+    const missing = s.triageItem({ text: uuid, sourceType: 'forum' }, { root: missingRoot, writeBack: false, gitRunner: () => '' });
+    assert.strictEqual(missing.skipped, false);
+    assert.strictEqual(missing.classification.status, 'diag_uuid_not_in_ledger');
+    assert.match(missing.classification.reason, /Not blocked pending a new diagnostic/);
+    assert.ok(s.isUuidOnlyRequest(s.extractIntake(uuid)));
+  });
+
 });

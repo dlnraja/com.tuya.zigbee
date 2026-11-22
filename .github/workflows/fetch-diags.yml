@@ -44,6 +44,9 @@ on:
         type: boolean
         default: false
         required: false
+      uuid:
+        description: "Optional diagnostic UUID to ingest from mail or Athom so intake triage can join it"
+        required: false
       require_access:
         description: "Fail the workflow when Gmail IMAP and OAuth diagnostics access are both unavailable"
         type: boolean
@@ -256,10 +259,20 @@ jobs:
             node tools/ci/forum-media-deep-scan.js --max=20 --topics=140352,89271 || true
           fi
           if [ -f tools/ci/inbox-diag-uuid-harvest.js ]; then
+            UUID_ARG=""
+            if [ -n "${{ inputs.uuid }}" ]; then UUID_ARG="--uuid=${{ inputs.uuid }}"; fi
             if [ -n "${HOMEY_PAT:-}${HOMEY_REFRESH_TOKEN:-}" ]; then
-              node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=8 || echo "uuid harvest warn"
+              node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=8 $UUID_ARG || echo "uuid harvest warn"
             else
-              node tools/ci/inbox-diag-uuid-harvest.js || echo "uuid list warn"
+              node tools/ci/inbox-diag-uuid-harvest.js $UUID_ARG || echo "uuid list warn"
+            fi
+            if [ -n "${{ inputs.uuid }}" ]; then
+              if [ -f scripts/ci/gmail-search-diag-uuid.js ]; then
+                node scripts/ci/gmail-search-diag-uuid.js "${{ inputs.uuid }}" || echo "gmail uuid search warn"
+              fi
+              if [ -f scripts/ci/fetch-homey-app-diag-by-uuid.js ]; then
+                node scripts/ci/fetch-homey-app-diag-by-uuid.js "${{ inputs.uuid }}" || echo "athom uuid fetch warn"
+              fi
             fi
           fi
           node .github/scripts/privacy-redactor.js .github/state/inbox-diag-harvest .github/state/homey-app-diag || true
