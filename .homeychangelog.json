@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.256": {
+    "en": "Fixed: climate sensors: port host-env strict preload and LCD sibling guard (P3390, P3396).",
+    "fr": "Corrigé : capteurs d'ambiance : port host-env strict preload and LCD sibling guard (P3390, P3396)."
+  },
   "1.0.255": {
     "en": "Changed: ship Bastien lcdtemphumidsensor under a trial ceiling of 29.",
     "fr": "Modifié : ship Bastien lcdtemphumidsensor under a trial ceiling of 29."
