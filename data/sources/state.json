@@ -1,36 +1,36 @@
 {
   "sources": {
     "z2m-converters": {
-      "lastSha": "9d19151d867e96bac907e5aa249517cb2d7acb9a",
-      "checkedAt": "2026-11-21T10:13:52.061Z",
+      "lastSha": "9bb230d6bd294a459abee1bb5a9bb4fb868c5fd9",
+      "checkedAt": "2026-11-22T10:18:54.828Z",
       "lastError": null
     },
     "z2m-issues": {
       "lastSha": "3c841fdfd66c92239921ef84fde8f039c64e1662",
-      "issuesSince": "2026-11-21T09:27:24Z",
-      "checkedAt": "2026-11-21T10:13:52.859Z",
+      "issuesSince": "2026-11-22T09:53:46Z",
+      "checkedAt": "2026-11-22T10:18:55.604Z",
       "lastError": null
     },
     "z2m-device-pages": {
-      "lastSha": "2fda20c44f0a647abf73dffffc64ada6545eb2cc",
-      "checkedAt": "2026-11-15T09:55:47.739Z",
+      "lastSha": "09847bd6f3aec1ac9843bd46d93288b7d25f947f",
+      "checkedAt": "2026-11-22T10:18:57.445Z",
       "lastError": null
     },
     "zha-quirks": {
       "lastSha": "b07fa76876e081d48744968f9fb806e7f1fee0ee",
-      "issuesSince": "2026-11-21T09:05:49Z",
-      "checkedAt": "2026-11-21T10:13:53.533Z",
+      "issuesSince": "2026-11-22T09:46:12Z",
+      "checkedAt": "2026-11-22T10:18:58.144Z",
       "lastError": null
     },
     "zha": {
       "lastSha": "c552c7b47892564dfd1681bf36839473bd99afb2",
-      "checkedAt": "2026-11-15T09:55:48.798Z",
+      "checkedAt": "2026-11-22T10:18:58.432Z",
       "lastError": null
     },
     "deconz": {
       "lastSha": "a4c17adfa04abc63637ad17de7f85256a825a2cb",
-      "issuesSince": "2026-11-14T23:36:21Z",
-      "checkedAt": "2026-11-15T09:55:49.473Z",
+      "issuesSince": "2026-11-21T12:26:30Z",
+      "checkedAt": "2026-11-22T10:18:59.224Z",
       "lastError": null
     },
     "localtuya": {
@@ -39,14 +39,14 @@
       "lastError": null
     },
     "hass-localtuya": {
-      "lastSha": "d0e951f4218caa0889b3896b48b559630d0d9dc2",
-      "checkedAt": "2026-11-15T09:55:49.756Z",
+      "lastSha": "63a2dc924779c52255b967e8254aab028af62723",
+      "checkedAt": "2026-11-22T10:18:59.903Z",
       "lastError": null
     },
     "tuya-local": {
-      "lastSha": "4eaa964a176a0baa46863771874884aeaf0d9705",
-      "issuesSince": "2026-11-12T19:10:29Z",
-      "checkedAt": "2026-11-15T09:55:51.627Z",
+      "lastSha": "922810052b88afb7da38896d6729303054a5014e",
+      "issuesSince": "2026-11-22T01:39:17Z",
+      "checkedAt": "2026-11-22T10:19:01.409Z",
       "lastError": null
     },
     "blakadder": {
@@ -56,69 +56,69 @@
     },
     "st-edge-mariano": {
       "lastSha": "88f56fd20466dee8bbb0c0264f5eb7a473765179",
-      "checkedAt": "2026-11-15T09:55:52.155Z",
+      "checkedAt": "2026-11-22T10:19:02.708Z",
       "lastError": null
     },
     "hubitat-kkossev": {
-      "lastSha": "77f95e829bc5fb99909d51c7a5c4e07758d2aaab",
-      "checkedAt": "2026-11-15T09:55:53.005Z",
+      "lastSha": "be29f39d74e4f8dc872cb220fa4354d328ba2d2a",
+      "checkedAt": "2026-11-22T10:19:03.441Z",
       "lastError": null
     },
     "jeedom-abeille": {
-      "lastSha": "10a57783a658e8c53b1110747f8fcd28cb5305f6",
-      "checkedAt": "2026-11-15T09:55:53.949Z",
+      "lastSha": "2bc6da42ec683ab9275682bca414d0349bf60c83",
+      "checkedAt": "2026-11-22T10:19:04.405Z",
       "lastError": null
     },
     "homed": {
-      "lastSha": "c594b217006b0d06d1c84ebe7df092ff9b2c8285",
-      "checkedAt": "2026-11-15T09:55:54.913Z",
+      "lastSha": "6a1802d9f727ea242eee951f84cd7fd358b861cc",
+      "checkedAt": "2026-11-22T10:19:05.288Z",
       "lastError": null
     },
     "athombv-zigbee-clusters": {
       "lastSha": "1e926b119c5b481b2f50de4e80057f69a8b27daf",
       "issuesSince": "2026-11-14T10:28:49Z",
-      "checkedAt": "2026-11-15T09:55:55.525Z",
+      "checkedAt": "2026-11-22T10:19:05.788Z",
       "lastError": null
     },
     "athombv-zigbeedriver": {
       "lastSha": "29eccfc5e503cb79559d5bd69de067aabc36986a",
-      "checkedAt": "2026-11-15T09:55:56.357Z",
+      "checkedAt": "2026-11-22T10:19:06.344Z",
       "lastError": null,
       "issuesSince": "2026-10-27T14:58:39Z"
     },
     "athombv-matter-bridge": {
       "lastSha": "5f7cf4783330d95ce3d00b187a2ca53f3d3416a2",
-      "issuesSince": "2026-11-12T19:52:37Z",
-      "checkedAt": "2026-11-15T09:55:57.789Z",
+      "issuesSince": "2026-11-16T07:33:02Z",
+      "checkedAt": "2026-11-22T10:19:06.790Z",
       "lastError": null
     },
     "johan": {
       "lastSha": "328d24ed315131528f2358b66bb0b8259615a49e",
       "issuesSince": "2026-11-21T08:44:20Z",
-      "checkedAt": "2026-11-21T10:13:54.131Z",
+      "checkedAt": "2026-11-22T10:19:07.576Z",
       "lastError": null
     },
     "johan-forks": {
-      "pushedSince": "2026-11-15T09:40:19.000Z",
-      "checkedAt": "2026-11-15T09:55:59.924Z",
+      "pushedSince": "2026-11-22T09:53:56.000Z",
+      "checkedAt": "2026-11-22T10:19:09.327Z",
       "lastError": null
     },
     "homey-forum": {
       "lastPost": {
         "26439": 5543,
-        "140352": 2272
+        "140352": 2275
       },
-      "checkedAt": "2026-11-21T10:13:54.729Z",
+      "checkedAt": "2026-11-22T10:19:10.139Z",
       "lastError": null
     },
     "homey-sdk-changelog": {
-      "hash": "40622c280f3b0be73ffc7e96228facb012a9fc411004bff427e6383d3cce9144",
-      "checkedAt": "2026-11-15T09:56:00.737Z",
+      "hash": "0d1a81c9acf3faf35dff4d1d9fb4c27581bd205b761b4b0e03a416abd711a5c1",
+      "checkedAt": "2026-11-22T10:19:10.405Z",
       "lastError": null
     },
     "homey-sdk-sitemap": {
       "hash": "94500c4c48ca5da398b4190c90725c112b7f4dfcf8ea60d52ceaceb3a7f94a2d",
-      "checkedAt": "2026-11-15T09:56:00.905Z",
+      "checkedAt": "2026-11-22T10:19:10.555Z",
       "lastError": null
     },
     "tuya-zigbee-docs": {
@@ -129,8 +129,8 @@
     "homey-app-store-tuya": {
       "lastError": null,
       "erroredAt": "2026-10-04T02:19:08.776Z",
-      "hash": "dc8136c4f61a3ab1ac1287df31ed9271b51ba6ecd62e00bc14c7c0ab529f9b80",
-      "checkedAt": "2026-11-15T09:56:01.478Z"
+      "hash": "edb6822f25d0e182e2b7445e61dad99c26b6fb085f93635f23f54224c9793b62",
+      "checkedAt": "2026-11-22T10:19:10.874Z"
     },
     "homey-news": {
       "seen": [
@@ -246,41 +246,42 @@
         "/news/introducing-talks-homey/",
         "/news/introducing-homey-music/",
         "/news/welcome-to-the-official-athom-blog/",
-        "/news/alphaess-app-for-homey/"
+        "/news/alphaess-app-for-homey/",
+        "/news/black-friday-partner-deals/"
       ],
-      "checkedAt": "2026-11-15T09:56:01.365Z",
+      "checkedAt": "2026-11-22T10:19:10.834Z",
       "lastError": null
     },
     "ha-tuya-device-handlers": {
-      "lastSha": "4ae2bf3befe18f5defea533eb5c50893c4f0a3dd",
-      "checkedAt": "2026-11-15T09:55:51.895Z",
+      "lastSha": "83bb9405dba0e02fe76c862dd0a6a48a40b5de41",
+      "checkedAt": "2026-11-22T10:19:02.479Z",
       "lastError": null
     },
     "homey-forum-apps-category": {
-      "maxTopicId": 162515,
-      "checkedAt": "2026-11-21T10:13:55.492Z",
+      "maxTopicId": 162542,
+      "checkedAt": "2026-11-22T10:19:15.708Z",
       "lastError": null,
       "tracked": {
-        "26439": 5543,
-        "61482": 507,
-        "63027": 411,
-        "76977": 135,
-        "104470": 160,
-        "149264": 13,
-        "151169": 1747,
-        "152198": 9,
-        "152648": 31,
-        "155475": 397,
-        "156967": 142,
-        "157330": 124,
-        "160366": 38,
-        "160453": 441,
-        "161114": 20,
-        "161151": 54,
-        "162009": 14,
-        "162169": 25,
-        "162451": 4,
-        "162515": 1
+        "14064": 391,
+        "20535": 4195,
+        "30801": 248,
+        "42296": 2432,
+        "109007": 100,
+        "140352": 2275,
+        "151165": 17,
+        "151169": 1754,
+        "151476": 29,
+        "151738": 83,
+        "152198": 11,
+        "156885": 7,
+        "156895": 28,
+        "157537": 185,
+        "157997": 32,
+        "160962": 36,
+        "161182": 11,
+        "162417": 7,
+        "162541": 1,
+        "162542": 1
       }
     },
     "homey-forum-apps-tracked": {
@@ -305,12 +306,13 @@
         "160624": 1
       },
       "checkedAt": "2026-11-15T09:56:10.835Z",
-      "lastError": null
+      "lastError": "HTTP 429 https://community.homey.app/t/155815.json",
+      "erroredAt": "2026-11-22T10:19:18.451Z"
     },
     "homey-forum-tag-zigbee": {
       "maxTopicId": 162501,
       "checkedAt": "2026-11-21T10:13:57.311Z",
-      "lastError": null,
+      "lastError": "HTTP 429 https://community.homey.app/tag/zigbee.json?page=0",
       "tracked": {
         "156": 7612,
         "29734": 1239,
@@ -353,7 +355,7 @@
         "162479": 1,
         "162501": 7
       },
-      "erroredAt": "2026-11-15T09:56:11.926Z"
+      "erroredAt": "2026-11-22T10:19:18.647Z"
     },
     "homey-forum-tag-app": {
       "maxTopicId": 162500,
@@ -400,61 +402,61 @@
         "162500": 2
       },
       "checkedAt": "2026-11-21T10:14:01.085Z",
-      "lastError": null,
-      "erroredAt": "2026-11-18T10:45:23.473Z"
+      "lastError": "HTTP 429 https://community.homey.app/tag/app.json?page=0",
+      "erroredAt": "2026-11-22T10:19:18.715Z"
     },
     "npm-homey-cli": {
       "hash": "25da121ba483c45bf1a18ea06d3e2b6ce0a9a74998609b2e0c2763b6db830837",
-      "checkedAt": "2026-11-15T09:56:01.563Z",
+      "checkedAt": "2026-11-22T10:19:11.014Z",
       "lastError": null
     },
     "npm-homey-lib": {
-      "hash": "0812cc9737a219f80a7c0d9c87a4bc0754511b0e9308654a4fba6c320da2e18a",
-      "checkedAt": "2026-11-15T09:56:01.635Z",
+      "hash": "667631950920af8439f74da64de0baf3d4512414f04d8fb283ae8e64c599a73f",
+      "checkedAt": "2026-11-22T10:19:11.126Z",
       "lastError": null
     },
     "athombv-node-homey": {
       "lastSha": "5589bf2576b54d04b77ae368a6c5477ae64dc1c3",
-      "checkedAt": "2026-11-15T09:56:02.540Z",
+      "checkedAt": "2026-11-22T10:19:11.549Z",
       "lastError": null
     },
     "homey-sdk-v3-docs": {
-      "hash": "84c565202a42c72e5929a53be9b9b4d83babe9ac20229503c446f7ab6ccc8ae8",
-      "checkedAt": "2026-11-15T09:56:02.713Z",
+      "hash": "e1fea774582e83af7d65c8a24296b3b8831d332aeec572e0338f81909a6e59e4",
+      "checkedAt": "2026-11-22T10:19:11.672Z",
       "lastError": null
     },
     "athom-dev-blog": {
       "hash": "94500c4c48ca5da398b4190c90725c112b7f4dfcf8ea60d52ceaceb3a7f94a2d",
-      "checkedAt": "2026-11-15T09:56:02.777Z",
+      "checkedAt": "2026-11-22T10:19:11.799Z",
       "lastError": null
     },
     "homey-forum-ecosystem": {
       "lastPost": {
-        "156": 7595,
-        "36418": 560,
+        "156": 7612,
+        "36418": 561,
         "43287": 2326,
         "144805": 13,
         "146735": 509,
         "146971": 160,
-        "154077": 535,
-        "158748": 259
+        "154077": 541,
+        "158748": 274
       },
-      "checkedAt": "2026-11-15T09:56:04.696Z",
+      "checkedAt": "2026-11-22T10:19:14.081Z",
       "lastError": null
     },
     "npm-zigbee-clusters": {
       "hash": "1ac388363788f7b4b9ec362b0aad3bc6d30355a99de35c2170d7a559e2f67d66",
-      "checkedAt": "2026-11-15T09:56:04.763Z",
+      "checkedAt": "2026-11-22T10:19:14.196Z",
       "lastError": null
     },
     "npm-homey-zigbeedriver": {
       "hash": "ce475e670b66b36c06e3606d469ab2e726add672d69b3fe6a38fe3f1d059ea48",
-      "checkedAt": "2026-11-15T09:56:04.832Z",
+      "checkedAt": "2026-11-22T10:19:14.331Z",
       "lastError": null
     },
     "npm-homey-sdk-types": {
-      "hash": "10f609caa32244abc97b6d1b461af23bc80940eebe1586dfc7c0a5779e9421cd",
-      "checkedAt": "2026-11-15T09:56:04.901Z",
+      "hash": "46625be47d0b9282f70763cadcc4512f99d1a1b625f81fbb862ec2e2bdd7f4c3",
+      "checkedAt": "2026-11-22T10:19:14.455Z",
       "lastError": null
     },
     "silabs-zigbee-release-notes": {
@@ -464,8 +466,8 @@
       "erroredAt": "2026-11-08T09:29:14.282Z"
     },
     "homey-firmware-changelog": {
-      "hash": "9f25b3ddc9216443f507442c5b4e036fef6cd0a28aa104c5390ffa080247433d",
-      "checkedAt": "2026-11-15T09:56:07.090Z",
+      "hash": "628dd46a907440068ffceb4b4f2dc440dd990e45347af0afb1f0598ca649cc1b",
+      "checkedAt": "2026-11-22T10:19:14.853Z",
       "lastError": null
     }
   }
