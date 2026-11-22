@@ -208,3 +208,29 @@ describe('P3310 pre-upload completeness guard', () => {
     assert.match(d, /pre-upload-completeness-guard/);
   });
 });
+
+const { insideTryBlock, tryGuarded } = require('../../.github/scripts/pre-upload-completeness-guard');
+
+describe('P3310 / ciprs-1729: try-guard sees an enclosing try beyond 400 chars', () => {
+  it('insideTryBlock brace walk', () => {
+    const s1 = 'try { if (a) { b(); } X';
+    assert.strictEqual(insideTryBlock(s1, s1.indexOf('X')), true);
+    const s2 = 'try { b(); } catch (e) {} X';
+    assert.strictEqual(insideTryBlock(s2, s2.indexOf('X')), false);
+  });
+
+  it('a require deep inside a long try block is try-guarded', () => {
+    const pad = '      // filler line to push the try opener beyond the 400-char window\n'.repeat(12);
+    const src = 'class D { m() {\n    try {\n' + pad + "      if (x) { return require('../pruned_driver/device'); }\n    } catch (_e) { /* keep */ }\n    return require('./device');\n  } }";
+    const idx = src.indexOf("require('../pruned_driver/device')");
+    assert.ok(idx >= 0);
+    assert.strictEqual(tryGuarded(src, idx), true);
+  });
+
+  it('a require after a closed try block is not try-guarded', () => {
+    const pad = '// filler line to push the try opener beyond the 400-char window\n'.repeat(12);
+    const src = 'try { a(); } catch (e) {}\n' + pad + "require('../../lib/missing');";
+    const idx = src.indexOf("require('../../lib/missing')");
+    assert.strictEqual(tryGuarded(src, idx), false);
+  });
+});
