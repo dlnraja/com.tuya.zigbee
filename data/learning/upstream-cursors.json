@@ -25,7 +25,7 @@
   },
   "deconz": {
    "last": "c24e81cf01c121583887acea24e647c3496ebd9a",
-   "checkedAt": "2026-11-19T14:20:36.285Z",
+   "checkedAt": "2026-11-22T13:16:08.081Z",
    "kind": "commits",
    "what": "dresden-elektronik/deconz-rest-plugin",
    "changedAt": "2026-11-09T13:48:33.858Z"
@@ -62,11 +62,11 @@
    "what": "athombv/homey-apps-sdk-issues"
   },
   "tuya-local": {
-   "last": "1260db9d65ec5f101ac9086823d99b57b688f671",
-   "checkedAt": "2026-11-19T14:20:36.285Z",
+   "last": "922810052b88afb7da38896d6729303054a5014e",
+   "checkedAt": "2026-11-22T13:16:08.081Z",
    "kind": "commits",
    "what": "make-all/tuya-local",
-   "changedAt": "2026-11-19T14:20:36.285Z"
+   "changedAt": "2026-11-22T13:16:08.081Z"
   },
   "localtuya": {
    "last": "59c95cd06c2696afc98f6bc52d5fa060f3c517da",
@@ -123,11 +123,11 @@
    "backoffUntil": "2026-11-28T13:24:58.997Z"
   },
   "r-tuya": {
-   "checkedAt": "2026-11-15T12:40:45.359Z",
+   "checkedAt": "2026-11-22T13:16:08.081Z",
    "kind": "reddit",
    "what": "r/tuya",
    "lastError": "403",
-   "backoffUntil": "2026-11-22T12:40:45.359Z"
+   "backoffUntil": "2026-11-29T13:16:08.081Z"
   }
  },
  "forum": {
@@ -215,5 +215,5 @@
    }
   }
  },
- "updatedAt": "2026-11-21T13:24:58.997Z"
+ "updatedAt": "2026-11-22T13:16:08.081Z"
 }
