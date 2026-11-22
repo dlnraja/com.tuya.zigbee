@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.251": {
+    "en": "New: Flow cards. Fixed: pairing and device recognition, general reliability (ZG-301Z) and Flow cards. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : cartes Flow. Corrigé : appairage et reconnaissance des appareils, fiabilité générale (ZG-301Z) et cartes Flow. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "1.0.249": {
     "en": "Fixed: device settings (ZG-301Z), buttons and remotes and battery reporting. Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : réglages des appareils (ZG-301Z), boutons et télécommandes et niveau de batterie. En coulisses : tests et contrôles de publication."
