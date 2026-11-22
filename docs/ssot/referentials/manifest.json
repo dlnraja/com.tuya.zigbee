@@ -1,32 +1,28 @@
 {
  "v": 1,
- "generated": "2026-11-21T22:46:20.430Z",
- "freshness": "2026-11-21T22:46:20.433Z",
+ "generated": "2026-11-22T00:49:28.713Z",
+ "freshness": "2026-11-22T00:49:28.713Z",
  "counts": {
   "causes": 8,
-  "cards": 0,
+  "cards": 1,
   "dp": 0,
-  "history": 0,
+  "history": 2,
   "lessons": 0,
   "ideas": 0,
-  "learnings": 0
+  "learnings": 1
  },
  "hashes": {
   "causes": "5218e2735d10cdac",
-  "cards": "d06de12806d1fcf3",
+  "cards": "52273d1c823c5274",
   "dp": "64cd6a43e576e320",
-  "history": "0d411754ec61a32d",
+  "history": "3be2fa08d4958631",
   "lessons": "0d411754ec61a32d",
   "ideas": "0d411754ec61a32d",
-  "learnings": "0d411754ec61a32d"
+  "learnings": "cce74d70a5bca04c"
  },
  "changed": [
-  "malfunction-causes.json",
   "device-cards.json",
-  "dp-conversion.json",
   "intake-history.json",
-  "lessons-index.json",
-  "cross-app-ideas.json",
   "learnings.json"
  ],
  "note": "Incremental referentials. Enrich, do not wipe learnings. Outside the app package."

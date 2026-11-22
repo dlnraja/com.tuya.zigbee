@@ -1,4 +1,23 @@
 {
  "v": 1,
- "items": []
+ "items": [
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  }
+ ]
 }

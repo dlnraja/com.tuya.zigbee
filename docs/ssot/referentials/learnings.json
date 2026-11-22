@@ -106,6 +106,24 @@
       "sources": [
         "https://community.homey.app/t/156967/99"
       ]
+    },
+    {
+      "key": "lesson|_tz3000_wkai4ga5|ts0044|duplicate trigger per press; missing long press|two cluster-6 frames per press (commandon/off/toggle + tuya 0xfd); transport-keyed dedup and double listener registration after re-init/migration",
+      "kind": "lesson",
+      "couple": "_TZ3000_wkai4ga5|TS0044",
+      "symptom": "duplicate trigger per press; missing long press",
+      "cause": "two cluster-6 frames per press (commandOn/Off/Toggle + Tuya 0xFD); transport-keyed dedup and double listener registration after re-init/migration",
+      "check": "assert PressActionDedup drops mixed transports for the same endpoint+action; installOnce on zclNode",
+      "fix": "dedup per endpoint+action in a short window; bind listeners once per zclNode; forward release only when sent (MOES long press about 5s)",
+      "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+      "source": "johan-issue-864",
+      "workflow": "p3362-forum-sweep",
+      "confidence": 0.9,
+      "date": "2026-11-22T00:47:00.000Z",
+      "sources": [
+        "johan-issue-864"
+      ],
+      "seen": 1
     }
   ]
 }

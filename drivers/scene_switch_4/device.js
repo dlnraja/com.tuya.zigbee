@@ -3,6 +3,7 @@
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
+const { shouldDrop, normalizeAction, installOnce } = require('../../lib/utils/PressActionDedup');
 
 /**
  * SceneSwitch4Device - v10.1.1 E000 + DP + P2616 complementary hybrid
@@ -10,6 +11,17 @@ const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRem
  * Dedicated hotfix stacks (E000/OnOff-0xFD/DP/raw P2312/P2328) stay armed.
  * Fleet installWallSceneRemoteHybrid is UNION - never a replacement (P2520).
  * P2614: Homey Button N device view. TX: never 0x8004 on TS0044.
+ *
+ * P3362 / t1008u (JohanBendz/com.tuya.zigbee issues #864 and #793, fix
+ * 2024-10-12, reporters RBouroubi, roxart, SunBeech; lesson from forum
+ * 26439/5542, read-only): _TZ3000_wkai4ga5 model TS0044 (not TS004F) emits
+ * two cluster-6 frames per physical press (standard commandOn/Off/Toggle
+ * plus Tuya 0xFD, payload 0=single 1=double 2=hold). Dedup is per
+ * endpoint+action in PressActionDedup, not per transport path, so one
+ * press fires one Flow card. Listeners bind once per zclNode (re-init /
+ * migration must not double-register). Long press is about 5 s on this
+ * MOES model; long-press release is forwarded only when the device sends
+ * it (never invented).
  */
 class SceneSwitch4Device extends ButtonDevice {
 
@@ -41,17 +53,22 @@ class SceneSwitch4Device extends ButtonDevice {
     }
 
     // v10.1.1 dedicated hotfix stacks (complementary to hybrid - never wipe)
-    await this._setupE000Detection(zclNode);
-    // WHY(P2312): PhysicalButtonMixin already owns OnOffBound 0xFD + wrapHandleFrame.
-    // Driver used to overwrite bindings.onOff + blind-replace handleFrame (orphans mixin).
-    // Only fill gaps if mixin did not initialize (exotic subclass order).
-    if (!this._onOffFdBoundClusterInitialized && typeof this._setupOnOffFdBoundCluster === 'function') {
-      await this._setupOnOffFdBoundCluster(zclNode);
+    // P3362: bind once per zclNode so a re-init / migration cannot double .on() listeners.
+    if (installOnce(zclNode || this, '_sceneSwitch4StacksBound')) {
+      await this._setupE000Detection(zclNode);
+      // WHY(P2312): PhysicalButtonMixin already owns OnOffBound 0xFD + wrapHandleFrame.
+      // Driver used to overwrite bindings.onOff + blind-replace handleFrame (orphans mixin).
+      // Only fill gaps if mixin did not initialize (exotic subclass order).
+      if (!this._onOffFdBoundClusterInitialized && typeof this._setupOnOffFdBoundCluster === 'function') {
+        await this._setupOnOffFdBoundCluster(zclNode);
+      } else {
+        this.log('[SCENE_SWITCH_4] P2312 skip duplicate OnOffBound - mixin owns 0xFD');
+      }
+      await this._setupTuyaDPButtonDetection(zclNode);
+      await this._setupRawFrameInterceptor(zclNode);
     } else {
-      this.log('[SCENE_SWITCH_4] P2312 skip duplicate OnOffBound - mixin owns 0xFD');
+      this.log('[SCENE_SWITCH_4] skip dedicated stack re-bind (already bound on this node)');
     }
-    await this._setupTuyaDPButtonDetection(zclNode);
-    await this._setupRawFrameInterceptor(zclNode);
 
     // WHY(P2253): parallel hybrid stack - native ZCL + Tuya mfr 0xFD + E000 + EF00 RX + raw
     this.log('[SCENE_SWITCH_4] P2616 hybrid UNION dedicated (E000/0xFD/DP/raw); TX: no 0x8004; UI: Button N device view');
@@ -63,7 +80,7 @@ class SceneSwitch4Device extends ButtonDevice {
   async _setupE000Detection(zclNode) {
     const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     this.log(`[E000-S4] Setting up E000 detection (mfr: ${mfr || 'unknown'})`);
-    this._e000Dedup = {};
+    if (!this._pressDedup) {this._pressDedup = {};}
 
     for (let ep = 1; ep <= 4; ep++) {
       const endpoint = zclNode?.endpoints?.[ep];
@@ -95,17 +112,14 @@ class SceneSwitch4Device extends ButtonDevice {
       const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
       if (onOff && typeof onOff.on === 'function') {
         onOff.on('commandOn', async () => {
-          if (this._isDeduped(ep, 'on')) {return;}
           this.log(`[E000-S4] EP${ep} commandOn -> Button ${ep} single`);
           await this._triggerSceneSwitch4(ep, 'single');
         });
         onOff.on('commandOff', async () => {
-          if (this._isDeduped(ep, 'off')) {return;}
           this.log(`[E000-S4] EP${ep} commandOff -> Button ${ep} double`);
           await this._triggerSceneSwitch4(ep, 'double');
         });
         onOff.on('commandToggle', async () => {
-          if (this._isDeduped(ep, 'toggle')) {return;}
           this.log(`[E000-S4] EP${ep} commandToggle -> Button ${ep} long`);
           await this._triggerSceneSwitch4(ep, 'long');
         });
@@ -131,7 +145,6 @@ class SceneSwitch4Device extends ButtonDevice {
         if (!endpoint) {continue;}
         const bc = new OnOffBoundCluster({
           onSetOn: async (payload) => {
-            if (this._isDeduped(ep, 'fd-on')) {return;}
             let press = 'single';
             if (payload && (payload.cmdId === 0xFD || payload.scene !== undefined)) {
               press = PRESS_MAP[payload.scene] || payload.press || 'single';
@@ -254,10 +267,8 @@ class SceneSwitch4Device extends ButtonDevice {
                 : d && d.length > 1 ? d[d.length - 1] : 0;
               const pt = require('../../lib/utils/TuyaPressTypeMap').PRESS_MAP[scene] || 'single';
               const gang = epId >= 1 && epId <= 4 ? epId : 1;
-              if (!self._isDeduped(gang, `raw-fd-${scene}`)) {
-                self.log(`[ONOFF-S4-RAW] EP${epId} 0xFD scene=${scene} -> ${pt}`);
-                await self._triggerSceneSwitch4(gang, pt);
-              }
+              self.log(`[ONOFF-S4-RAW] EP${epId} 0xFD scene=${scene} -> ${pt}`);
+              await self._triggerSceneSwitch4(gang, pt);
             }
           }
           if (cId === 57344 || cId === 0xE000) {
@@ -274,9 +285,7 @@ class SceneSwitch4Device extends ButtonDevice {
             } else if (d?.length >= 1) {
               pt = resolvePressType(d[0], 'E000-S4-RAW');
             }
-            if (!self._isDeduped(btn, `e000-raw-${pt}`)) {
-              await self._triggerSceneSwitch4(btn, pt);
-            }
+            await self._triggerSceneSwitch4(btn, pt);
           }
         } catch (_e) { /* soft */ }
         return next(...args);
@@ -291,8 +300,16 @@ class SceneSwitch4Device extends ButtonDevice {
    * v10.1.1: Trigger button flow for scene switch 4-gang
    */
   async _triggerSceneSwitch4(button, pressType) {
+    const action = normalizeAction(pressType);
+    if (!this._pressDedup) {this._pressDedup = {};}
+    // Johan #864: one physical press can arrive as commandOn/Off/Toggle and 0xFD.
+    // Drop the second frame for the same endpoint+action inside the short window.
+    if (shouldDrop(this._pressDedup, button, action).drop) {
+      this.log(`[SCENE_SWITCH_4] dedup drop EP${button} ${action}`);
+      return;
+    }
     if (typeof this.triggerButtonPress === 'function') {
-      await this.triggerButtonPress(button, pressType === 'long_press' ? 'long' : pressType, 1, { source: 'physical' });
+      await this.triggerButtonPress(button, action, 1, { source: 'physical' });
       return;
     }
     if (typeof this._triggerPhysicalFlow === 'function') {
@@ -338,15 +355,12 @@ class SceneSwitch4Device extends ButtonDevice {
   }
 
   /**
-   * v10.1.1: Debounce helper
+   * Kept for older call sites. Prefer the central gate in _triggerSceneSwitch4.
+   * Keys on the normalized action, not the transport path (Johan #864).
    */
   _isDeduped(ep, cmd) {
-    const now = Date.now();
-    const key = `${ep}_${cmd}`;
-    if (now - (this._e000Dedup?.[key] || 0) < 500) {return true;}
-    if (!this._e000Dedup) {this._e000Dedup = {};}
-    this._e000Dedup[key] = now;
-    return false;
+    if (!this._pressDedup) {this._pressDedup = {};}
+    return shouldDrop(this._pressDedup, ep, cmd).drop;
   }
 
 }
