@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1639": {
+    "en": "Fixed: presence radars & motion sensors, Flow cards and climate sensors. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : radars de présence & détecteurs de mouvement, cartes Flow et capteurs d'ambiance. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1638": {
-    "en": "New: thermostats & climate sensors. Fixed: pairing and device recognition, lights and dimmers & Flow cards and device settings. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : thermostats & capteurs d'ambiance. Corrigé : appairage et reconnaissance des appareils, éclairages et variateurs & cartes Flow et réglages des appareils. Et 15 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "New: thermostats & climate sensors. Fixed: pairing and device recognition, lights and dimmers & Flow cards and device settings. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1637": {
     "en": "New: Flow cards. Fixed: memory and timers, pairing and device recognition and buttons and remotes & climate sensors (ZG-204ZM). Plus 21 other changes in the app core. Behind the scenes: tests and publishing checks."
@@ -980,9 +983,5 @@
   "9.0.1618": {
     "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line.",
     "fr": "Modifié : ne pas réutiliser une exécution rouge après un changement de manifeste; noter que le point de terminaison du porte-clés déclare IAS ACE; déclarer le cluster IAS ACE du porte-clés et conserver la sonde AOYAN en échec; respecter le cliquet de lint pour la ligne de budget."
-  },
-  "9.0.1617": {
-    "en": "Fixed: buttons and remotes, pairing and device recognition and battery reporting. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : boutons et télécommandes, appairage et reconnaissance des appareils et niveau de batterie. Et 5 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   }
 }

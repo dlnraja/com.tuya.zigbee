@@ -106,7 +106,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1637] - 2026-11-22
+## [9.0.1638] - 2026-11-23
+
+New: thermostats & climate sensors. Fixed: pairing and device recognition, lights and dimmers & Flow cards and device settings. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1637] - 2026-11-22
 
 New: Flow cards. Fixed: memory and timers, pairing and device recognition and buttons and remotes & climate sensors (ZG-204ZM). Plus 21 other changes in the app core. Behind the scenes: tests and publishing checks.
 ---
