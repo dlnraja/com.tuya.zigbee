@@ -8,9 +8,9 @@ Couples audited (known to a source AND served by a driver): **1223** — source 
 
 | class | DPs | runtime behaviour |
 |---|---|---|
-| driver | 3510 | decoded by the driver (dpMappings or its DP handler) |
-| exact | 7987 | catalogue converter → exact value (UnknownCommandInterpreter 1b); master also writes 549 of them to an existing measurement/alarm capability via DpCatalogDecoder (guarded: driver-owned caps / DPs, range, one DP per capability) |
-| generic | 2773 | no exact converter in any source → generic typed value (bool/value/enum/raw/bitmap), learned, exposed to Flows, stored as `_unknown_dp_N` — never dropped |
+| driver | 3507 | decoded by the driver (dpMappings or its DP handler) |
+| exact | 7989 | catalogue converter → exact value (UnknownCommandInterpreter 1b); master also writes 550 of them to an existing measurement/alarm capability via DpCatalogDecoder (guarded: driver-owned caps / DPs, range, one DP per capability) |
+| generic | 2774 | no exact converter in any source → generic typed value (bool/value/enum/raw/bitmap), learned, exposed to Flows, stored as `_unknown_dp_N` — never dropped |
 | ↳ inferred candidate | 728 | of the generic DPs, 558 have a same-productId+driver family candidate 13 a same-driver (category) candidate and 157 a same-name+DP-id candidate in `lib/zigbee/data/inferred-dp-family.json` — label **inferred**, low confidence, never a fact (see below) |
 
 ### Per driver
@@ -42,7 +42,7 @@ Built by `scripts/data/build-inferred-dp-family.js` from EXACT catalogue rows on
 | co_sensor_dcr_co | 1 | 0 | 0 | 6 | 0 | 0 |
 | contact_sensor | 2 | 2 | 0 | 0 | 0 | 0 |
 | contact_sensor_zigbee | 5 | 19 | 4 | 0 | 0 | 0 |
-| curtain_motor | 116 | 298 | 338 | 368 | 74 | 3 |
+| curtain_motor | 117 | 300 | 341 | 369 | 74 | 3 |
 | curtain_motor_2 | 1 | 0 | 5 | 5 | 2 | 1 |
 | curtain_motor_shutter | 10 | 66 | 14 | 3 | 0 | 0 |
 | curtain_motor_tilt | 3 | 5 | 6 | 4 | 0 | 0 |
@@ -87,7 +87,7 @@ Built by `scripts/data/build-inferred-dp-family.js` from EXACT catalogue rows on
 | power_clamp_meter | 5 | 29 | 0 | 0 | 0 | 0 |
 | power_meter | 6 | 6 | 63 | 3 | 0 | 15 |
 | presence_radar_aoyan_ay204t | 1 | 0 | 12 | 0 | 0 | 2 |
-| presence_sensor_radar | 139 | 671 | 853 | 554 | 166 | 84 |
+| presence_sensor_radar | 138 | 668 | 839 | 552 | 165 | 84 |
 | radiator_valve | 38 | 97 | 469 | 191 | 117 | 33 |
 | rain_sensor | 6 | 18 | 14 | 3 | 2 | 4 |
 | relay_board_4_channel | 1 | 0 | 12 | 0 | 0 | 0 |
@@ -139,13 +139,13 @@ Built by `scripts/data/build-inferred-dp-family.js` from EXACT catalogue rows on
 | vibration_sensor | 7 | 16 | 20 | 5 | 5 | 1 |
 | vibration_sensor_excellux_zg103v | 1 | 0 | 3 | 0 | 0 | 1 |
 | wall_curtain_switch | 1 | 0 | 3 | 4 | 1 | 0 |
-| wall_dimmer_tuya | 46 | 24 | 377 | 7 | 3 | 0 |
+| wall_dimmer_tuya | 45 | 22 | 374 | 6 | 3 | 0 |
 | wall_switch_1_gang_tuya | 1 | 0 | 8 | 8 | 0 | 0 |
 | wall_switch_1gang_1way | 3 | 3 | 18 | 0 | 0 | 0 |
 | wall_switch_3gang_1way | 3 | 8 | 47 | 0 | 0 | 0 |
 | wall_switch_4_gang_tuya | 7 | 0 | 53 | 0 | 0 | 0 |
 | wall_switch_6_gang_tuya | 6 | 0 | 48 | 0 | 0 | 0 |
-| wall_thermostat | 22 | 0 | 248 | 94 | 17 | 22 |
+| wall_thermostat | 23 | 0 | 264 | 97 | 18 | 23 |
 | water_leak_sensor | 7 | 29 | 5 | 26 | 0 | 1 |
 | water_leak_sensor_tuya | 4 | 4 | 13 | 12 | 6 | 0 |
 | water_tank_monitor | 2 | 15 | 2 | 2 | 0 | 0 |
@@ -168,7 +168,7 @@ Reason for each: the only sources are a name without converter (Z2M custom / unk
 | siren | `_tz3000_vdfwjopk` TS0219 | 1:onoff 4:alarm_tamper 5:volume_set 6:dp_6 7:dp_7 14:dp_14 15:measure_battery 16:dp_16 21:dp_21 104:onoff | 1~alarm_state=lookup:{"0":"alarm_sound","1":"alarm_light","2":"alarm_sound_light","3":"no_alarm"}(cat) 5~alarm_volume=lookup:{"0":"low","1":"medium","2":"high"}(cat) 6~charging=raw(cat) 15~battery=raw(cat) |
 | pir_sensor_2 | `_tz3040_bb6xaihh` TS0202 | 1:zha 2:zha 3:zha 4:zha 6:zha 9:zha 10:zha 11:zha 12:zha 13:zha 15:zha 16:zha 19:zha 101:zha 102:zha 103:zha 104:zha 105:zha 106:zha 107:zha 108:zha 109:zha 110:zha 111:zha 112:zha 114:zha 115:zha 116:zha 117:zha 118:zha 121:zha 122:zha 123:zha |  |
 | light_bulb_rgb | `_tz3210_0zabbfax` TS0503B | 3:dim 5:dp_5 26:dp_26 |  |
-| wall_dimmer_tuya | `_tz3210_5rta89nj` TS0601 | 104:position |  |
+| curtain_motor | `_tz3210_5rta89nj` TS0601 | 102:state |  |
 | light_bulb_rgb_led | `_tz3210_iystcadi` TS0505B | 3:dim 5:dp_5 26:dp_26 |  |
 | lcdtemphumidsensor | `_tz3210_qkj7rujp` TS0201 | 3:measure_battery |  |
 | curtain_motor | `_tz3210_rundhkxp` TS030F | 2:position |  |
@@ -610,7 +610,7 @@ Reason for each: the only sources are a name without converter (Z2M custom / unk
 | curtain_motor | `_tze284_qoi1aqxg` TS0601 | 1:state 9:position 11:motor_direction 16:cover_limit | 1~state=onOff(name) |
 | curtain_motor | `_tze284_r3szw0xr` TS0601 | 1:state 9:position 16:cover_limit | 1~state=onOff(name) |
 | ufh_controller_pro_line_x10 | `_tze284_rfpyqax9` TS0601 | 109:pump 110:boiler 111:system_mode |  |
-| presence_sensor_radar | `_tze284_rlytpmij` TS0601 | 20:fault_alarm 103:antifreeze | 20~illuminance=raw |
+| wall_thermostat | `_tze284_rlytpmij` TS0601 | 1:system_mode 20:fault_alarm 103:antifreeze | 103~factory_reset=onOff |
 | device_radiator_valve | `_tze284_roujjevx` TS0601 | 7:schedules |  |
 | soil_sensor | `_tze284_rovbuqdo` TS0601 | 124:step_count 125:effect 126:speed 128:motion_up 129:motion_down 134:light_off_delay |  |
 | climate_sensor | `_tze284_rqcuwlsa` TS0601 | 102:humidity_alarm |  |
