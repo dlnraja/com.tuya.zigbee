@@ -108,8 +108,10 @@ jobs:
         continue-on-error: true
         run: node scripts/scanners/johan-acceptance.js
 
-      - name: Commit sweep checkpoint (gated)
-        if: vars.SCRAPE_COMMIT == '1'  # P3255e (t834u): scrape output goes to artifacts/summary; set repo var SCRAPE_COMMIT=1 to commit
+      - name: Commit sweep checkpoint
+        # P3400: the history-sweep checkpoint is resume state, not scrape output. Behind
+        # SCRAPE_COMMIT (P3255e, never set) the sweep restarted from the same cursor every day
+        # (johan 856 / own 241 frozen since 03/11). Other scrape commits stay gated.
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
