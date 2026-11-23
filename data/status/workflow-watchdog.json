@@ -1,13 +1,7 @@
 {
-  "at": "2026-11-22T13:17:18.326Z",
-  "checked": 67,
+  "at": "2026-11-23T15:54:21.690Z",
+  "checked": 69,
   "findings": [
-    {
-      "kind": "stale",
-      "sig": "7356bb049710",
-      "wf": "publish-self-heal.yml",
-      "detail": "no scheduled run for 16 h (expected <= 14 h)"
-    },
     {
       "kind": "repeated-failure",
       "sig": "ci-2a1553568063",
@@ -16,15 +10,21 @@
     },
     {
       "kind": "repeated-failure",
+      "sig": "ci-5be26e541885",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)"
+    },
+    {
+      "kind": "repeated-failure",
       "sig": "ci-36aeff16af05",
       "wf": ".github/workflows/homey-app-validate.yml",
-      "detail": "4 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: code-or-test)"
+      "detail": "5 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: code-or-test)"
     },
     {
       "kind": "repeated-failure",
       "sig": "ci-5f7fe9c41b03",
       "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "3 failures in 72 h: Autonomous review failed on master (staged publish validate / Compose, stage, validate, guard: unknown)"
+      "detail": "4 failures in 72 h: Autonomous review failed on master (staged publish validate / Compose, stage, validate, guard: unknown)"
     },
     {
       "kind": "repeated-failure",
@@ -66,7 +66,7 @@
       "kind": "repeated-failure",
       "sig": "ci-943a14060e21",
       "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "3 failures in 72 h: Autonomous review failed on bastien-home (semantic review / Exact couples, weakened tests, identity: unknown)"
+      "detail": "5 failures in 72 h: Autonomous review failed on bastien-home (semantic review / Exact couples, weakened tests, identity: unknown)"
     },
     {
       "kind": "repeated-failure",

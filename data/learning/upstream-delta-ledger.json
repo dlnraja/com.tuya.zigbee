@@ -889,6 +889,30 @@
    "ref": "v26.135.0",
    "title": "v26.135.0",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.135.0"
+  },
+  {
+   "at": "2026-11-23T15:53:04.824Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "d1c26d21de",
+   "title": "feat(add): 100050768800 https://github.com/Koenkk/zigbee2mqtt/issues/33777",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/d1c26d21dec746200f378ada1506fa7415b6bf6a"
+  },
+  {
+   "at": "2026-11-23T15:53:04.824Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9bb230d6bd",
+   "title": "feat: Tuya WHD02: expose inching control (#13879)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9bb230d6bd294a459abee1bb5a9bb4fb868c5fd9"
+  },
+  {
+   "at": "2026-11-23T15:53:04.824Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.136.0",
+   "title": "v26.136.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.136.0"
   }
  ]
 }

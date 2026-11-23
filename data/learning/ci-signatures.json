@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updatedAt": "2026-11-22T13:16:08.032Z",
+ "updatedAt": "2026-11-23T15:53:04.765Z",
  "cap": 300,
  "seenKeys": [
   "ci-fail:40227923450:1",
@@ -430,7 +430,21 @@
   "ci-fail:44964591756:1",
   "ci-fail:44958418798:1",
   "ci-fail:44955401709:1",
-  "ci-fail:44929853492:1"
+  "ci-fail:44929853492:1",
+  "ci-fail:45139686381:1",
+  "ci-fail:45083992888:1",
+  "ci-fail:45075364135:1",
+  "ci-fail:45071608132:1",
+  "ci-fail:45071608131:1",
+  "ci-fail:45071608060:1",
+  "ci-fail:45066607552:1",
+  "ci-fail:45066450460:1",
+  "ci-fail:45062875101:1",
+  "ci-fail:45062873515:1",
+  "ci-fail:45047996827:1",
+  "ci-fail:45045584385:1",
+  "ci-fail:45042530622:1",
+  "ci-fail:45042530643:1"
  ],
  "signatures": {
   "c567adb8a6e1": {
@@ -1258,8 +1272,8 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-10-27T10:30:16.422Z",
-   "lastSeen": "2026-11-21T13:24:22.813Z",
-   "fails": 16,
+   "lastSeen": "2026-11-23T15:52:58.608Z",
+   "fails": 19,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -1329,6 +1343,18 @@
     ],
     [
      "2026-11-21T13:24:22.813Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:52:51.818Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:52:54.548Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:52:58.608Z",
      "f"
     ]
    ]
@@ -2329,8 +2355,8 @@
    "unit": "validate / Publish payload build + size/structure report",
    "test": "",
    "firstSeen": "2026-11-02T13:27:06.758Z",
-   "lastSeen": "2026-11-22T13:15:38.078Z",
-   "fails": 5,
+   "lastSeen": "2026-11-23T15:52:57.274Z",
+   "fails": 6,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -2357,6 +2383,10 @@
     ],
     [
      "2026-11-22T13:15:38.078Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:52:57.274Z",
      "f"
     ]
    ]
@@ -2907,8 +2937,8 @@
    "unit": "semantic review / Exact couples, weakened tests, identity",
    "test": "",
    "firstSeen": "2026-11-14T12:05:20.451Z",
-   "lastSeen": "2026-11-22T13:15:50.144Z",
-   "fails": 6,
+   "lastSeen": "2026-11-23T15:53:03.250Z",
+   "fails": 8,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -2941,6 +2971,14 @@
     [
      "2026-11-22T13:15:50.144Z",
      "f"
+    ],
+    [
+     "2026-11-23T15:52:47.605Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:53:03.250Z",
+     "f"
     ]
    ]
   },
@@ -2971,17 +3009,22 @@
    "unit": "",
    "test": "",
    "firstSeen": "2026-11-14T12:05:28.033Z",
-   "lastSeen": "2026-11-14T12:05:28.033Z",
-   "fails": 1,
+   "lastSeen": "2026-11-23T15:52:53.075Z",
+   "fails": 2,
    "transient": 0,
    "recovered": 0,
    "branches": [
-    "bastien-home"
+    "bastien-home",
+    "master"
    ],
    "sample": "\u001b[<n>;<n>mif [ \"$JOB_STATUS\" = \"success\" ]; then s=\"Every CI file gate passed on this commit. Nothing to fix.\"; else s=\"At least one CI file gate failed; the fa",
    "events": [
     [
      "2026-11-14T12:05:28.033Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:52:53.075Z",
      "f"
     ]
    ]
@@ -3497,8 +3540,8 @@
    "unit": "staged publish validate / Compose, stage, validate, guard",
    "test": "",
    "firstSeen": "2026-11-21T13:24:33.898Z",
-   "lastSeen": "2026-11-22T13:15:39.945Z",
-   "fails": 3,
+   "lastSeen": "2026-11-23T15:52:50.502Z",
+   "fails": 4,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -3517,6 +3560,10 @@
     ],
     [
      "2026-11-22T13:15:39.945Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:52:50.502Z",
      "f"
     ]
    ]
@@ -3625,8 +3672,8 @@
    "unit": "Validate & Auto-Publish to Homey App Store / Publish to Homey App Store",
    "test": "",
    "firstSeen": "2026-11-22T13:15:30.844Z",
-   "lastSeen": "2026-11-22T13:15:30.844Z",
-   "fails": 1,
+   "lastSeen": "2026-11-23T15:52:49.065Z",
+   "fails": 2,
    "transient": 0,
    "recovered": 0,
    "branches": [
@@ -3636,6 +3683,10 @@
    "events": [
     [
      "2026-11-22T13:15:30.844Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:52:49.065Z",
      "f"
     ]
    ]
@@ -3753,6 +3804,77 @@
     ],
     [
      "2026-11-22T13:16:06.660Z",
+     "f"
+    ]
+   ]
+  },
+  "f4fbd98e0dec": {
+   "category": "validate",
+   "workflow": "🔍 Validate Homey App",
+   "unit": "",
+   "test": "",
+   "firstSeen": "2026-11-23T15:52:45.186Z",
+   "lastSeen": "2026-11-23T15:52:45.186Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "cursor/gh632-trv602z-ltwbm23f-3270"
+   ],
+   "sample": "\u001b[<n>;<n>m s=\"Validation failed. Run npx homey app validate --level ${LEVEL} locally; the red step above has the reason.\"\u001b[<n>m",
+   "events": [
+    [
+     "2026-11-23T15:52:45.186Z",
+     "f"
+    ]
+   ]
+  },
+  "3bcfeee1284a": {
+   "category": "gate",
+   "workflow": "🧠 Fleet Intelligent Enrich (P2372)",
+   "unit": "Fleet enrich all driver classes / Sacred + anti-bot gates",
+   "test": "",
+   "firstSeen": "2026-11-23T15:52:55.894Z",
+   "lastSeen": "2026-11-23T15:52:55.894Z",
+   "fails": 1,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "master"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-23T15:52:55.894Z",
+     "f"
+    ]
+   ]
+  },
+  "350159bda9fd": {
+   "category": "test",
+   "workflow": "Publish Zigbee Bastien",
+   "unit": "Publish Bastien house app / Publish Bastien draft → Test",
+   "test": "",
+   "firstSeen": "2026-11-23T15:53:00.179Z",
+   "lastSeen": "2026-11-23T15:53:04.712Z",
+   "fails": 3,
+   "transient": 0,
+   "recovered": 0,
+   "branches": [
+    "bastien-home"
+   ],
+   "sample": "Process completed with exit code <n>.",
+   "events": [
+    [
+     "2026-11-23T15:53:00.179Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:53:01.785Z",
+     "f"
+    ],
+    [
+     "2026-11-23T15:53:04.712Z",
      "f"
     ]
    ]
