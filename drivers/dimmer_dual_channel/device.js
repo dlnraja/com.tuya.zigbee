@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -13,12 +15,12 @@ const { CLUSTER } = require('zigbee-clusters');
  * Channel 1: Endpoint 1 (onoff, dim)
  * Channel 2: Endpoint 2 (onoff.channel2, dim.channel2)
  *
- * v9.0.417 (P92.124): UNSUPPORTED_CLUSTER fallback — some devices sold as
+ * v9.0.417 (P92.124): UNSUPPORTED_CLUSTER fallback - some devices sold as
  * "2-channel dimmer" are TS0601 Tuya-DP devices (no levelControl/onOff on
  * endpoint 2), and even ZCL variants reject commands on a missing cluster
  * (forum JohnLundin #2069: red UNSUPPORTED_CLUSTER banner on every touch).
  * Every command now cascades via CapabilityCommandRouter:
- * ZCL named → ZCL raw/numeric → Tuya DP (parallel discover on first write).
+ * ZCL named -> ZCL raw/numeric -> Tuya DP (parallel discover on first write).
  */
 class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigbeeDevice)) {
 
@@ -30,34 +32,34 @@ class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
     await this.removeCapability('alarm_battery').catch(() => {});
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
     await this.initVirtualButtons();
-      this.log('╔══════════════════════════════════════════════════════════════╗');
-      this.log('║         DUAL CHANNEL DIMMER v5.3.90 (+DP fallback)           ║');
-      this.log('╚══════════════════════════════════════════════════════════════╝');
+      this.log('+==============================================================+');
+      this.log('|         DUAL CHANNEL DIMMER v5.3.90 (+DP fallback)           |');
+      this.log('+==============================================================+');
 
-      // CHANNEL 1 — onoff / dim with ZCL → DP fallback
+      // CHANNEL 1 - onoff / dim with ZCL -> DP fallback
       if (this.hasCapability('onoff')) {
         this.registerCapabilityListener('onoff', async (value) => this._setChannelOnOff(zclNode, 1, value));
         this._registerZclAttrMirror(zclNode, 1, 'onOff', 'onoff', Boolean);
-        this.log('[CH1] ✅ onoff (ZCL ep1 + DP1 fallback)');
+        this.log('[CH1] [OK] onoff (ZCL ep1 + DP1 fallback)');
       }
       if (this.hasCapability('dim')) {
         this.registerCapabilityListener('dim', async (value) => this._setChannelDim(zclNode, 1, value));
         this._registerZclAttrMirror(zclNode, 1, 'currentLevel', 'dim', (v) => v / 254);
-        this.log('[CH1] ✅ dim (ZCL ep1 + DP2 fallback)');
+        this.log('[CH1] [OK] dim (ZCL ep1 + DP2 fallback)');
       }
 
-      // CHANNEL 2 — onoff.channel2 / dim.channel2 with ZCL → DP fallback
+      // CHANNEL 2 - onoff.channel2 / dim.channel2 with ZCL -> DP fallback
       if (this.hasCapability('onoff.channel2')) {
         this.registerCapabilityListener('onoff.channel2', async (value) => this._setChannelOnOff(zclNode, 2, value));
         this._registerZclAttrMirror(zclNode, 2, 'onOff', 'onoff.channel2', Boolean);
-        this.log('[CH2] ✅ onoff.channel2 (ZCL ep2 + DP3 fallback)');
+        this.log('[CH2] [OK] onoff.channel2 (ZCL ep2 + DP3 fallback)');
       }
       if (this.hasCapability('dim.channel2')) {
         this.registerCapabilityListener('dim.channel2', async (value) => this._setChannelDim(zclNode, 2, value));
         this._registerZclAttrMirror(zclNode, 2, 'currentLevel', 'dim.channel2', (v) => v / 254);
-        this.log('[CH2] ✅ dim.channel2 (ZCL ep2 + DP4 fallback)');
+        this.log('[CH2] [OK] dim.channel2 (ZCL ep2 + DP4 fallback)');
       }
-      this.log('[DIMMER-DUAL] ✅ 2-Channel Dimmer Ready');
+      this.log('[DIMMER-DUAL] [OK] 2-Channel Dimmer Ready');
     }, 'onNodeInit');
   }
 
@@ -76,7 +78,7 @@ class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
     if (typeof this._sendTuyaDP === 'function') {
       return this._sendTuyaDP(dp, value, type).catch(() => false);
     }
-    this.log('[DIMMER-DUAL] ⚠️ no Tuya DP sender available');
+    this.log('[DIMMER-DUAL] [WARN] no Tuya DP sender available');
     return false;
   }
 
@@ -136,3 +138,5 @@ class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
 }
 
 module.exports = DimmerDualChannelDevice;
+return module.exports;
+});

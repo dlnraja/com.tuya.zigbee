@@ -76,6 +76,47 @@ Modern Tuya devices (TZE284 series) require precise timing responses:
 
 ---
 
+### 8. Shipped JavaScript Latin-1 and package images (P3320)
+
+Shipped JS (everything not excluded by `.homeyignore`) must contain no raw character above U+00FF.
+Replace decorative emoji and typographic symbols with ASCII (`[OK]`, `[WARN]`, `[ERR]`, `->`, `-`)
+or `\uXXXX` escapes when the exact character is required. Accented Latin-1 (`é`, `à`) stays.
+Do not change meaning in `locales/*.json` or compose/app titles. Do not ship unreferenced or heavy
+logos or images; keep Athom-required `small` / `large` / `xlarge` and manifest-referenced icons.
+The gate honours `.gitignore` and `.homeyignore` (it must not flag gitignored screenshots or other
+ignored files as unreferenced packaged images). Enforced fail-closed by
+`tools/ci/p3320-shipped-latin1-assets-gate.js` (rules-gates id `p3320-latin1`, core profile / pre-push).
+See `docs/rules/SHIPPED_JS_LATIN1.md`. Today's lessons: `docs/rules/LESSONS_2026-11-21.md`.
+
+---
+
+
+---
+
+### 9. Standard units, official app.json, flow ids, startup JSON (P3362)
+
+- Every `measure_*` / `meter_*` / `target_temperature` capability (including sub-capabilities
+  of the same physical quantity) must declare its standard unit (`°C`, `%`, `W`, `V`, `A`,
+  `kWh`, `lx`, ...). `measure_luminance.distance*` uses `m`, not `lx`. Missing units hide
+  Homey Insights History and break Apple Home / Matter coherence (P3361, P3362).
+- Apply additively: never overwrite a unit already declared (string or localized object).
+- Runtime healer: `lib/utils/HomeyCapabilityUx.js` (`standardUnitFor`, `healSensorCapabilityGetable`).
+  Already-paired devices get a bounded one-shot recycle (`p3362_units_insights_recycle`).
+- CI ratchet: `npm run check:p3362` (`scripts/ci/apple-home-coherence.cjs --check`) blocks new
+  drivers that lack units. The weekday GitHub Actions workflow
+  `.github/workflows/apple-home-coherence.yml` auto-adds missing units, never opens a PR,
+  and commits with `[skip ci]` only when tests pass. Kill switch:
+  `config/ci/apple-home-coherence.json` or `vars.APPLE_HOME_COHERENCE_DISABLED`. No Grok Bot
+  routine, no paid services, `GITHUB_TOKEN` only.
+- Committed `app.json` must be the official compose rebuild
+  (`scripts/maintenance/regen-appjson-from-compose.cjs`: compose + flow dedupe + sanitize).
+  Never commit a `normalise()` rewrite (P3079 parity).
+- App-level flow card ids (`home_mode_changed`, `capability_value_changed_generic`,
+  `device_interaction`, and any other published id) must never be dropped by consolidation.
+- Startup must not eagerly parse large JSON catalogs (`product-reference`, `mfs_db`,
+  `dp_registry`, `driver-mapping`). Load lazily, stream, or shard. The degree sign `°`
+  (U+00B0) is Latin-1 and is allowed in JSON and shipped JS.
+
 ##  Sources for Device Research
 
 1. **Zigbee2MQTT**: https://www.zigbee2mqtt.io/supported-devices/

@@ -63,7 +63,8 @@ describe('P2553 intelligent History fleet', () => {
     const device = {
       _homeyCapabilityUxHealed: false,
       getCapabilities: () => ['measure_battery', 'alarm_motion', 'alarm_human', 'measure_luminance.distance'],
-      getCapabilityOptions: () => ({}),
+      // P3354: a missing flag is Homey's default (History on); only explicit bad values are healed.
+      getCapabilityOptions: (cap) => cap === 'measure_battery' || cap === 'alarm_human' ? { preventInsights: true } : {},
       setCapabilityOptions: async (cap, opts) => { calls.push({ cap, opts }); },
       log: () => {},
     };

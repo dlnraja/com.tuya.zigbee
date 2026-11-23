@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const Homey = require('homey');
@@ -47,3 +49,5 @@ class temphumidsensor2 extends TuyaZigbeeDevice {
 }
 
 module.exports = temphumidsensor2;
+return module.exports;
+});

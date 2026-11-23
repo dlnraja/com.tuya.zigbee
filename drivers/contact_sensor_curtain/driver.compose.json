@@ -42,7 +42,8 @@
         "fr": "Batterie"
       },
       "preventInsights": false,
-      "getable": true
+      "getable": true,
+      "units": "%"
     },
     "button.1": {
       "title": {
@@ -55,7 +56,8 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "alarm_contact": {
       "getable": true,

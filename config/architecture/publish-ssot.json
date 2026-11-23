@@ -1,21 +1,29 @@
 {
   "_meta": {
-    "id": "P2286-P2288-P2495",
-    "updated": "2026-09-14",
-    "why": "Orphan Athom builds + tip hang soft-continue (P2325) + inbox diag harvest (P2326) + P2490 sacred-keep failover + P2494 couple-native + P2495 publish CI/CD path lock.",
+    "id": "P2286-P2288-P2495+P3320",
+    "updated": "2026-11-21",
+    "why": "Orphan Athom builds + tip hang soft-continue (P2325) + inbox diag harvest (P2326) + P2490 sacred-keep failover + P2494 couple-native + P2495 publish CI/CD path lock. P3360 21/11/2026 lessons: AggregateError=file count (#488), superseded terminal, P3320 honours gitignore, sacred reinclude before FATAL, no stolen published couples, Live after gates for master/stable only (never Bastien), Bastien learnings flow upstream, never amend/force-push a pushed commit.",
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md",
     "workflowGuidelines": ".github/WORKFLOW_GUIDELINES.md §M.8",
     "forumFailoverSsot": "config/architecture/forum-complementary-failover-ssot.json",
     "coupleSsot": "config/architecture/sacred-couple-ssot.json",
-    "classify": "BOTH"
+    "classify": "BOTH",
+    "lessons": "docs/rules/LESSONS_2026-11-21.md"
   },
   "payloadSize": {
     "id": "P2840",
     "why": "Athom socket hang / processing_failed when upload bloats (root backups/ ~12MB dumps in .homeybuild).",
-    "homeyignoreMustExclude": ["backups", "tmp", "reports", "data/mfs_db.json"],
+    "homeyignoreMustExclude": [
+      "backups",
+      "tmp",
+      "reports",
+      "data/mfs_db.json"
+    ],
     "sizeGate": "scripts/ci/publish-size-gate.cjs",
     "leanWarnMB": 14,
-    "failIfBuildContains": ["backups/"],
+    "failIfBuildContains": [
+      "backups/"
+    ],
     "npm": "check:p2840",
     "test": "test/critical/p2840-publish-payload-no-backups.test.js"
   },
@@ -77,7 +85,9 @@
       "_TZE200_fodv6bkr+TS0601→curtain_motor"
     ],
     "p2490Gate": "npm run check:p2490",
-    "granularity": "Sibling OEM prefixes (TZE200/204/284) and sibling pids under one mfr are separate couples — pin each verified pair"
+    "granularity": "Sibling OEM prefixes (TZE200/204/284) and sibling pids under one mfr are separate couples — pin each verified pair",
+    "reincludeBeforeFatal": true,
+    "reincludeHelper": "scripts/publish-hold-release.js#reincludeMissingSacredDrivers"
   },
   "iasLeftoverEf00": {
     "why": "Sleepy IAS-only devices brick on leftover HYBRID-QUERY / queryAllDPs.",
@@ -319,5 +329,68 @@
     "test": "test/critical/p2831-socket-hang-tip-mail-storm.test.js",
     "npm": "check:p2831",
     "classify": "BOTH"
+  },
+  "shippedJsLatin1": {
+    "id": "P3320",
+    "updated": "2026-11-21",
+    "why": "V8 retains module source; any char > U+00FF doubles a file's retained size (Bastien OOM). Unreferenced images bloat the Athom package.",
+    "rule": "No raw character above U+00FF in shipped JS (ASCII tags or \\u escapes). Accented Latin-1 stays. Do not change locales or compose titles. No unreferenced or heavy logos/images in the package; keep Athom small/large/xlarge and manifest-referenced icons.",
+    "gate": "tools/ci/p3320-shipped-latin1-assets-gate.js",
+    "rulesGatesId": "p3320-latin1",
+    "test": "test/critical/p3320-shipped-latin1-assets.test.js",
+    "helper": "scripts/maintenance/p3320-latin1-source.cjs",
+    "allowlist": "tools/ci/p3320-latin1-allowlist.json",
+    "humanDoc": "docs/rules/SHIPPED_JS_LATIN1.md",
+    "publishSafetyNet": "scripts/maintenance/latin1-js.cjs (P3312, payload only)",
+    "honoursGitignore": true
+  },
+  "bareAggregateRetry": {
+    "id": "P3341",
+    "updated": "2026-11-16",
+    "why": "Athom stateMeta 'AggregateError' with an empty message is Node's net multi-address connect failure; identical content flips Test <-> AggregateError (P3340).",
+    "rule": "A bare Athom AggregateError (stateMeta exactly \"AggregateError\", empty message: the Node net multi-address connect failure) gets exactly ONE identical retry: bumped version, P3311 first backoff (>= 300 s + jitter), only when Athom already holds a final processing_failed build for that version (no duplicate). It keeps class real: push runs stay blocked by the breaker, only retry 1 of the chain is exempt, and a second failure trips the breaker and notifies as before. AggregateError with a message and every other real error get no retry.",
+    "policy": ".github/scripts/athom-publish-policy.js (BARE_AGGREGATE_KIND, isBareAggregate, RETRY.maxBareAggregateRetries)",
+    "retryPolicy": ".github/scripts/athom-retry-policy.js",
+    "masterChain": ".github/scripts/transient-publish-retry.js",
+    "test": "test/critical/p3341-bare-aggregate-retry.test.js",
+    "humanDoc": "docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md",
+    "evidence": "docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md"
+  },
+  "fileCountCeiling": {
+    "id": "P3356",
+    "updated": "2026-11-21",
+    "why": "Athom #488 (wouter-athom, 17/11/2026): AggregateError is a packaged file-count issue. A blocking ceiling remains.",
+    "issue": "athombv/homey-apps-sdk-issues#488",
+    "maxFiles": 3830,
+    "maxArchiveMB": 32.7,
+    "evidence": "docs/knowledge/ATHOM_LIMITS.md",
+    "lesson": "docs/rules/LESSONS_2026-11-21.md"
+  },
+  "supersededTerminal": {
+    "id": "P3360",
+    "updated": "2026-11-21",
+    "rule": "An Athom build state of superseded is terminal (the build was replaced), not busy. Do not wait on it.",
+    "wired": [
+      ".github/scripts/athom-publish-policy.js",
+      ".github/scripts/wait-athom-idle.js"
+    ]
+  },
+  "livePromotion": {
+    "id": "P3360",
+    "updated": "2026-11-21",
+    "rule": "Live is automatic only after objective gates, for master and stable only. Bastien (com.dlnraja.tuya.zigbee.bastien) must never go to Live.",
+    "workflow": ".github/workflows/promote-live.yml",
+    "gates": "scripts/ci/live-promote-gates.cjs",
+    "humanDoc": "docs/rules/LIVE_PROMOTION.md"
+  },
+  "heldGraduation": {
+    "id": "P3360",
+    "updated": "2026-11-21",
+    "rule": "Do not graduate a held driver if that would steal exact couples already in the published Test baseline. Use onMapDeviceClass (or equivalent) on the published host so paired devices keep their id but get the right class and capabilities.",
+    "humanDoc": "docs/rules/LESSONS_2026-11-21.md"
+  },
+  "gitHistory": {
+    "updated": "2026-11-21",
+    "rule": "Never amend or force-push a pushed commit. Put the fix in a new commit on top."
   }
 }

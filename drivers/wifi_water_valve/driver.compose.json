@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Water Valve (Tuya Local)",
-    "fr": "Vanne d'eau WiFi (Tuya Local)",
+    "fr": "Vanne d'eau WiFi",
     "nl": "WiFi Waterklep (Tuya Lokaal)",
     "de": "WiFi-Wasserventil (Tuya Lokal)",
     "es": "Válvula de agua WiFi (Tuya Local)"
@@ -254,7 +254,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "ui": {

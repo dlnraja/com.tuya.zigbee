@@ -153,6 +153,11 @@ jobs:
             node -e "const j=require('./reports/driver-class-enrich-'+new Date().toISOString().slice(0,10)+'/summary.json'); console.log(JSON.stringify({totals:j.totals,classes:Object.fromEntries(Object.entries(j.classes||{}).map(([k,v])=>[k,v.count]))},null,2))" >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Strip curated couple removals (P3395 safety net)
+        # WHY: gates below fail on couples a human removed on purpose (P2698 rlytpmij -> curtain_motor,
+        # run 45066450460) before the commit-time couple guard can revert them; strip only those strings.
+        run: node tools/ci/strip-curated-couple-removals.js --apply
+
       - name: Sacred + anti-bot gates
         run: |
           node tools/ci/strip-registry-forbidden-compose.js --apply
@@ -161,7 +166,7 @@ jobs:
           node tools/ci/enforce-dual-couple-legacy.js --sync
           # Shared list (scripts/ci/rules-gates.js, profile full = core + compose/app.json sync).
           node scripts/ci/rules-gates.js --profile=full
-          node --test test/critical/p2794-dual-couples.test.js test/critical/p2692-publish-heal-energy.test.js test/critical/p2433-hobeian-fodv6bkr-enrich.test.js
+          node --test test/critical/p2794-dual-couples.test.js test/critical/p2692-publish-heal-energy.test.js test/critical/p2433-hobeian-fodv6bkr-enrich.test.js test/critical/p3395-curated-removals-enrich.test.js
           node tools/ci/p2519-anti-regression-enrich-gate.js
           node tools/ci/free-scrape-budget.js --report >> "$GITHUB_STEP_SUMMARY" || true
 
@@ -175,6 +180,24 @@ jobs:
           node scripts/ci/safe-auto-commit.js --id=fleet-enrich \
             --message="fleet-enrich: intelligent all-class coverage (P2372)" \
             --paths="drivers data app.json docs/knowledge reports config/enrichment tools/ci lib/scraper lib/flow"
+
+      - name: Enrich referentials from fleet enrich
+        if: vars.REFERENTIALS_DISABLED != 'true'
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node scripts/scanners/build-referentials.js --enrich --from=fleet-enrich
+      - name: Commit referential enrichments (gated)
+        if: vars.SCRAPE_COMMIT == '1' && vars.REFERENTIALS_DISABLED != 'true'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=referentials-enrich --max-per-day=12 \
+            --message="chore(ssot): enrich referentials from fleet-enrich" \
+            --paths="docs/ssot/referentials"
 
       - name: Upload reports
         if: always()

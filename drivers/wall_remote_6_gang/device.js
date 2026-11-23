@@ -1,17 +1,19 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
 
 /**
- * WallRemote6GangDevice — 6-btn wall scene remote (TS0046 class)
+ * WallRemote6GangDevice - 6-btn wall scene remote (TS0046 class)
  * P2609: hybrid RX fleet
  *
  * WHY(P2795 / #554 / ZHA#2034 / Z2M TS0046):
  * Loratap SS9600ZB-V2 / T066 (_TZ3000_iszegwpd + TS0046) interviews with ONLY
- * endpoints 1–4. Declaring EP5–6 in compose made Homey fail pairing with
+ * endpoints 1-4. Declaring EP5-6 in compose made Homey fail pairing with
  * "Connection impossible" after Zigbee join+interview succeeded. Compose now
- * lists EP1–4 only; buttons 5–6 stay as capabilities and are armed when the
+ * lists EP1-4 only; buttons 5-6 stay as capabilities and are armed when the
  * Tuya magic handshake reveals late endpoints, or via mfr 0xFD/E000 payloads
  * that carry a button id. Never configureReporting onOff on this sleepy ED.
  */
@@ -24,7 +26,7 @@ class WallRemote6GangDevice extends ButtonDevice {
 
   /**
    * Count real Zigbee endpoints present on the node (ignore GP 242).
-   * Soft — never throws.
+   * Soft - never throws.
    */
   _observedButtonEndpoints(zclNode) {
     try {
@@ -44,15 +46,15 @@ class WallRemote6GangDevice extends ButtonDevice {
 
     const observed = this._observedButtonEndpoints(zclNode);
     this._observedButtonEps = observed;
-    // WHY(P2795/#554): 4-EP firmware is valid — do not demand EP5/6 at pair time
-    this.log(`[WALL_REMOTE_6_GANG] observed EPs [${observed.join(',') || 'none'}] (compose declares 1–4; caps 1–6)`);
+    // WHY(P2795/#554): 4-EP firmware is valid - do not demand EP5/6 at pair time
+    this.log(`[WALL_REMOTE_6_GANG] observed EPs [${observed.join(',') || 'none'}] (compose declares 1-4; caps 1-6)`);
 
     await Promise.resolve()
       .then(() => super.onNodeInit({ zclNode }))
       .catch((err) => this.error('[INIT] Error:', err.message));
 
     // WHY(P2795 / ZHA EnchantedDevice / Z2M configureMagicPacket): soft magic may
-    // surface late EP5–6 after pair; never block init if magic/bind soft-fails.
+    // surface late EP5-6 after pair; never block init if magic/bind soft-fails.
     try {
       const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
       await sendTuyaMagicPacket(this, zclNode, 1, { force: true }).catch((e) => {
@@ -72,14 +74,14 @@ class WallRemote6GangDevice extends ButtonDevice {
       await installWallSceneRemoteHybrid(this, zclNode, {
         maxButtons: 6,
         tag: 'WALL_REMOTE_6',
-        // WHY(P2795): interview has no EF00 61184 — skip EF00 TX storm on sleepy remote
+        // WHY(P2795): interview has no EF00 61184 - skip EF00 TX storm on sleepy remote
         skipEf00Tx: true,
       });
     } catch (e) {
       this.log('[WALL_REMOTE_6_GANG] hybrid soft-fail:', e.message);
     }
 
-    // WHY(P2795): never configureReporting(onOff) — sleepy EndDevice bind/report
+    // WHY(P2795): never configureReporting(onOff) - sleepy EndDevice bind/report
     // storms are a known "Connection impossible" / first-press-dead cause.
     try {
       for (const epId of this._observedButtonEps || observed) {
@@ -97,3 +99,5 @@ class WallRemote6GangDevice extends ButtonDevice {
 }
 
 module.exports = WallRemote6GangDevice;
+return module.exports;
+});

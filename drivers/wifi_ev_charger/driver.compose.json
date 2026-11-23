@@ -2,7 +2,7 @@
   "id": "wifi_ev_charger",
   "name": {
     "en": "WiFi EV Charger (Tuya Local)",
-    "fr": "Borne EV WiFi (Tuya Local)",
+    "fr": "Borne EV WiFi",
     "nl": "WiFi EV-lader (Tuya Lokaal)",
     "de": "WiFi EV-Ladegerät (Tuya Lokal)"
   },
@@ -26,6 +26,21 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_power": {
+      "units": "W"
+    },
+    "meter_power": {
+      "units": "kWh"
+    },
+    "measure_current": {
+      "units": "A"
+    },
+    "measure_voltage": {
+      "units": "V"
+    },
+    "measure_temperature": {
+      "units": "°C"
     }
   },
   "pair": [

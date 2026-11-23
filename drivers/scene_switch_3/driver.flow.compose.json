@@ -226,8 +226,8 @@
     {
       "id": "scene_switch_3_measure_battery_changed",
       "title": {
-        "en": "The battery level changed",
-        "fr": "Le niveau de la batterie a changé",
+        "en": "battery level changed (report)",
+        "fr": "Niveau de la batterie changé (rapport)",
         "nl": "Batterijniveau is veranderd",
         "de": "Batteriestand hat sich geändert"
       },
@@ -320,14 +320,14 @@
       "id": "scene_switch_3_button_3gang_button_1_release",
       "title": {
         "en": "Button 1 released",
-        "fr": "Bouton 1 relache",
+        "fr": "Bouton 1 relâché",
         "nl": "Knop 1 losgelaten",
         "de": "Taste 1 losgelassen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 1 released",
-        "fr": "Bouton 1 relache",
+        "fr": "Bouton 1 relâché",
         "de": "Taste 1 losgelassen",
         "nl": "Knop 1 losgelaten"
       }
@@ -400,14 +400,14 @@
       "id": "scene_switch_3_button_3gang_button_2_release",
       "title": {
         "en": "Button 2 released",
-        "fr": "Bouton 2 relache",
+        "fr": "Bouton 2 relâché",
         "nl": "Knop 2 losgelaten",
         "de": "Taste 2 losgelassen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 2 released",
-        "fr": "Bouton 2 relache",
+        "fr": "Bouton 2 relâché",
         "de": "Taste 2 losgelassen",
         "nl": "Knop 2 losgelaten"
       }
@@ -480,14 +480,14 @@
       "id": "scene_switch_3_button_3gang_button_3_release",
       "title": {
         "en": "Button 3 released",
-        "fr": "Bouton 3 relache",
+        "fr": "Bouton 3 relâché",
         "nl": "Knop 3 losgelaten",
         "de": "Taste 3 losgelassen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 3 released",
-        "fr": "Bouton 3 relache",
+        "fr": "Bouton 3 relâché",
         "de": "Taste 3 losgelassen",
         "nl": "Knop 3 losgelaten"
       }

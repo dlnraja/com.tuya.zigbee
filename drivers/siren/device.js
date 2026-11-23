@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
@@ -15,7 +17,7 @@ const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
  */
 class SirenDevice extends UnifiedPlugBase {
 
-  // WHY P2466: Cleverio SA100 (_TZ3000_vdfwjopk+TS0219) is mains IAS WD — no phantom battery
+  // WHY P2466: Cleverio SA100 (_TZ3000_vdfwjopk+TS0219) is mains IAS WD - no phantom battery
   get mainsPowered() {
     try {
       const mfr = String(this.getData?.()?.manufacturerName || this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
@@ -81,7 +83,7 @@ class SirenDevice extends UnifiedPlugBase {
     this._isInitializing = true;
     await super.onNodeInit({ zclNode });
 
-    // WHY P2466: Cleverio SA100 is mains — strip phantom battery capability
+    // WHY P2466: Cleverio SA100 is mains - strip phantom battery capability
     if (this.mainsPowered && this.hasCapability('measure_battery')) {
       try { await this.removeCapability('measure_battery'); } catch (_) { /* ignore */ }
     }
@@ -234,4 +236,5 @@ class SirenDevice extends UnifiedPlugBase {
 }
 
 module.exports = SirenDevice;
-
+return module.exports;
+});

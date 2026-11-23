@@ -1,10 +1,10 @@
 {
   "id": "WaterLeakSensor",
   "name": {
-    "en": "Water Leak Sensor",
-    "fr": "Détecteur de fuite d'eau",
-    "de": "Wasserlecksensor",
-    "nl": "Waterlekdetector"
+    "en": "Water leak sensor (Tuya)",
+    "fr": "Capteur de fuite d'eau (ts0601)",
+    "de": "Wasserlecksensor (Tuya)",
+    "nl": "Waterlek-sensor (Tuya)"
   },
   "class": "sensor",
   "platforms": [
@@ -225,7 +225,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   }
 }

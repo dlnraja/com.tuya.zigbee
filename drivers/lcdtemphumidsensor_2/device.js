@@ -1,10 +1,12 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * P123 — migrate off bare ZigBeeDevice onto TuyaZigbeeDevice (L14 pipeline).
+ * P123 - migrate off bare ZigBeeDevice onto TuyaZigbeeDevice (L14 pipeline).
  */
 class lcdtemphumidsensor2 extends TuyaZigbeeDevice {
 
@@ -346,3 +348,5 @@ module.exports = lcdtemphumidsensor2;
       }
     }
   } */
+return module.exports;
+});

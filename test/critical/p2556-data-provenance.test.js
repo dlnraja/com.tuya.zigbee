@@ -33,7 +33,7 @@ describe('P2556 data provenance', () => {
   it('UX titles append · estimated / · calculated and unit marks', () => {
     const est = DP.buildProvenanceCapabilityOptions({ title: { en: 'Power' }, units: 'W' }, 'estimated');
     assert.match(est.title.en, /estimated/i);
-    assert.match(est.units, /≈/);
+    assert.match(est.units, /≈|~=/);
     const calc = DP.buildProvenanceCapabilityOptions({ title: { en: 'Current' }, units: 'A' }, 'calculated');
     assert.match(calc.title.en, /calculated/i);
     assert.match(calc.units, /ƒ/);

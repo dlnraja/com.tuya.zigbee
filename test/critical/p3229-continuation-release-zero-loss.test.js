@@ -9,7 +9,7 @@ const path = require('path');
 const fs = require('fs');
 const ROOT = path.join(__dirname, '..', '..');
 const DC = require('../../lib/drivers/DriverContinuations');
-const { effectiveHoldIds, foldContinuations, splitContinuations } = require('../../scripts/publish-hold-release');
+const { effectiveHoldIds, foldContinuations, splitContinuations, reincludeMissingSacredDrivers } = require('../../scripts/publish-hold-release');
 const { sourceToPayload, payloadCouples } = require('../../scripts/maintenance/publish-baseline-gate.cjs');
 const { loadSourcedCouples } = require('../../scripts/maintenance/publish-sourced-restore.cjs');
 
@@ -20,10 +20,14 @@ describe('P3229 continuation release zero-loss', function () {
   if (this && this.timeout) this.timeout(600000);
   DC.clearCache();
   const reg = DC.load(ROOT);
-  const { ids } = effectiveHoldIds(JSON.parse(fs.readFileSync(path.join(ROOT, 'config/publish-hold-drivers.json'), 'utf8')), '');
-  const heldConts = [...ids].filter((id) => reg.isContinuation(id));
+  const hold = JSON.parse(fs.readFileSync(path.join(ROOT, 'config/publish-hold-drivers.json'), 'utf8'));
+  const { ids } = effectiveHoldIds(hold, '');
+  const allConts = Object.keys((reg.drivers || {})).filter((id) => reg.isContinuation(id));
+  // Exercise zero-loss against a simulated hold of every continuation (works after P3360 graduation too).
+  const heldConts = allConts.length ? allConts : [...ids].filter((id) => reg.isContinuation(id));
+  const simulatedHold = new Set(heldConts);
 
-  it('there is at least one held continuation to check', () => assert.ok(heldConts.length >= 1));
+  it('there is at least one registered continuation to check', () => assert.ok(heldConts.length >= 1));
 
   it('split restores a released continuation exactly (unit)', () => {
     const m = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1', 'P2'] } }, { id: 'c', zigbee: { manufacturerName: ['B'], productId: ['P1'] } }] };
@@ -33,6 +37,36 @@ describe('P3229 continuation release zero-loss', function () {
     splitContinuations(m, r.splits);
     assert.deepStrictEqual(m.drivers.map((d) => [d.id, d.zigbee.manufacturerName, d.zigbee.productId]), [['r', ['A'], ['P1', 'P2']], ['c', ['B'], ['P1']]]);
   });
+
+  it('split restores a released continuation even if compaction dropped its makers from the root', () => {
+    const m = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1', 'P2'] } }] };
+    const splits = [{ id: 'c', rootId: 'r', def: { id: 'c', zigbee: { manufacturerName: ['B'], productId: ['P1'] } }, mfrs: ['B'], pids: ['P1'] }];
+    const n = splitContinuations(m, splits);
+    assert.strictEqual(n, 1);
+    assert.deepStrictEqual(m.drivers.map((d) => [d.id, d.zigbee.manufacturerName, d.zigbee.productId]), [['r', ['A'], ['P1', 'P2']], ['c', ['B'], ['P1']]]);
+  });
+
+  it('split restores a pid dropped from the root is still restored from the snapshot', () => {
+    const m = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1'] } }] };
+    const splits = [{ id: 'c', rootId: 'r', def: { id: 'c', zigbee: { manufacturerName: ['B'], productId: ['P1', 'P3'] } }, mfrs: ['B'], pids: ['P1', 'P3'] }];
+    const n = splitContinuations(m, splits);
+    assert.strictEqual(n, 1);
+    assert.deepStrictEqual(m.drivers.find((d) => d.id === 'c').zigbee.productId, ['P1', 'P3']);
+  });
+
+  it('reincludes a missing released sacred continuation from the fold snapshot instead of only FATAL', () => {
+    const m = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1'] } }] };
+    const splits = [{ id: 'c', rootId: 'r', def: { id: 'c', zigbee: { manufacturerName: ['B'], productId: ['P1'] } }, mfrs: ['B'], pids: ['P1'] }];
+    const misses = ['B+P1 → c (driver missing in publish)'];
+    const readded = reincludeMissingSacredDrivers(m, misses, splits, new Set());
+    assert.deepStrictEqual(readded, ['c']);
+    assert.strictEqual(m.drivers.some((d) => d.id === 'c'), true);
+    assert.deepStrictEqual(m.drivers.find((d) => d.id === 'c').zigbee, { manufacturerName: ['B'], productId: ['P1'] });
+    const held = { drivers: [{ id: 'r', zigbee: { manufacturerName: ['A'], productId: ['P1'] } }] };
+    assert.deepStrictEqual(reincludeMissingSacredDrivers(held, misses, splits, new Set(['c'])), [], 'held drivers stay out');
+    assert.strictEqual(held.drivers.some((d) => d.id === 'c'), false);
+  });
+
 
   it('continuation makers have no sourced couple (within the root pids) outside the continuation pids', () => {
     const src = [...loadSourcedCouples(ROOT).keys()].map(lc);
@@ -53,8 +87,8 @@ describe('P3229 continuation release zero-loss', function () {
 
   for (const id of heldConts) {
     it(`releasing ${id} loses 0 couples vs the held view`, () => {
-      const held = payloadCouples(sourceToPayload(app(), ROOT, { holdIds: ids }));
-      const rel = new Set(ids); rel.delete(id);
+      const held = payloadCouples(sourceToPayload(app(), ROOT, { holdIds: simulatedHold }));
+      const rel = new Set(simulatedHold); rel.delete(id);
       const after = payloadCouples(sourceToPayload(app(), ROOT, { holdIds: rel }));
       const lost = [...held].filter((k) => !after.has(k));
       assert.deepStrictEqual(lost.slice(0, 20), [], `${id}: ${lost.length} couple(s) lost at release`);

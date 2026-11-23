@@ -1,8 +1,10 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
- * P2621 MASTER_ONLY — WiFi Smart Kettle (Tuya Local).
- * WHY: Dedicated driver for Tuya category bh — temperature + keep-warm style kettles.
+ * P2621 MASTER_ONLY - WiFi Smart Kettle (Tuya Local).
+ * WHY: Dedicated driver for Tuya category bh - temperature + keep-warm style kettles.
  * HOW: Default DPs from com.tuyalocal / tuya-local kettle family; registry fills gaps.
  * AGAINST: Pairing kettles as wifi_heater (wrong class / temp range).
  */
@@ -13,7 +15,7 @@ class WiFiKettleDevice extends TuyaLocalDevice {
 
   get dpMappings() {
     // Common smart kettle DPs (Aeno / Tuya bh family):
-    // DP1 on/off, DP2 current °C, DP4 target °C, DP13 keep-warm (bool → ignored if no cap)
+    // DP1 on/off, DP2 current °C, DP4 target °C, DP13 keep-warm (bool -> ignored if no cap)
     return {
       1: {
         capability: 'onoff',
@@ -44,3 +46,5 @@ class WiFiKettleDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiKettleDevice;
+return module.exports;
+});

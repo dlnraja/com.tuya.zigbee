@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Dimmer Wall Plug",
+    "en": "Wall-plug dimmer",
     "nl": "Dimmer Wandstopcontact",
-    "fr": "Prise Murale Dimmer",
+    "fr": "Variateur sur prise murale",
     "de": "Dimmer Wandstecker",
     "es": "Enchufe de Pared Regulable"
   },
@@ -278,19 +278,23 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     },
     "measure_current": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "A"
     }
   },
   "maintenanceActions": [

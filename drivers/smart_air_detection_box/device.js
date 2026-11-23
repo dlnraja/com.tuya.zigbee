@@ -1,4 +1,6 @@
-"use strict";
+'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { Cluster } = require("zigbee-clusters");
 const TuyaSpecificCluster = require("../../lib/TuyaSpecificCluster");
@@ -14,7 +16,7 @@ try {
 }
 
 // Data Points for TS0601 air_quality_sensor family (_TZE200_yvx5lh6k etc.)
-// WHY(P2541): Z2M legacy tuya_air_quality / airbox — DP21=VOC, DP22=HCHO (was swapped)
+// WHY(P2541): Z2M legacy tuya_air_quality / airbox - DP21=VOC, DP22=HCHO (was swapped)
 const dataPoints = {
   tsCO2: 2,
   tsTemperature: 18,
@@ -163,3 +165,5 @@ class SmartAirDetectionBox extends TuyaSpecificClusterDevice {
 }
 
 module.exports = SmartAirDetectionBox;
+return module.exports;
+});

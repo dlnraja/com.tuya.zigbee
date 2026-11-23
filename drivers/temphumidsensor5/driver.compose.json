@@ -1,8 +1,8 @@
 {
   "id": "temphumidsensor5",
   "name": {
-    "en": "Temperature & Humidity Sensor",
-    "fr": "Capteur de température et d'humidité",
+    "en": "Temperature & Humidity Sensor (temphumidsensor5)",
+    "fr": "Capteur de température et d'humidité (temphumidsensor5)",
     "sv": "Temperatur- och fuktighetssensor",
     "de": "Temperatur- & Feuchtesensor",
     "nl": "Temperatuur- & vochtsensor"
@@ -26,15 +26,18 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "energy": {

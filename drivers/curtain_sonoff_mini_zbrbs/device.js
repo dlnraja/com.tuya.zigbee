@@ -1,10 +1,12 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * P3080 — SONOFF MINI-ZBRBS roller shutter switch (standard ZCL 0x0102, no Tuya DP).
+ * P3080 - SONOFF MINI-ZBRBS roller shutter switch (standard ZCL 0x0102, no Tuya DP).
  * Source: zigbee-herdsman-converters sonoff.ts (windowCovering lift, coverInverted false).
  * WHY invert: ZCL lift 0 % = open while Homey windowcoverings_set 1 = open.
  * Nothing is mandatory at pairing: every step below is best effort and never throws.
@@ -32,3 +34,5 @@ class CurtainSonoffMiniZbrbsDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = CurtainSonoffMiniZbrbsDevice;
+return module.exports;
+});

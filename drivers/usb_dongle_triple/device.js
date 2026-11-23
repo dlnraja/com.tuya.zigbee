@@ -1,8 +1,10 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
   measure_power: { divisor: 10 },
   measure_voltage: { divisor: 10 },
@@ -185,3 +187,5 @@ class UsbDongleTripleDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = UsbDongleTripleDevice;
+return module.exports;
+});

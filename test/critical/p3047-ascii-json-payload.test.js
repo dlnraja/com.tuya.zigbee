@@ -119,7 +119,7 @@ test('one char above U+00FF doubles the text heap; the ASCII file loads one-byte
 
 test('prepare-publish runs the ASCII step after the last app.json write and before the pruned validate', () => {
   const src = fs.readFileSync(path.join(ROOT, 'scripts', 'prepare-publish.js'), 'utf8');
-  const step = src.indexOf('asciiPublishPayload(destDir)');
+  const step = src.indexOf('asciiPublishPayload(destDir');
   assert.ok(step > 0, 'P3047 step missing');
   const lastWrite = src.lastIndexOf('fs.writeFileSync(destAppJson');
   assert.ok(lastWrite > 0 && lastWrite < step, 'no app.json write may follow the ASCII step');

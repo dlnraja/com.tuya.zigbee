@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -16,10 +18,12 @@ class SmartButtonSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
     await this._safeInvoke(async () => { this.buttonCount = 1;
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
-      this.log('[SmartButtonSwitch] ✅ Initialized with Mixin architecture');
+      this.log('[SmartButtonSwitch] [OK] Initialized with Mixin architecture');
     }, 'onNodeInit');
   }
 
 }
 
 module.exports = SmartButtonSwitchDevice;
+return module.exports;
+});

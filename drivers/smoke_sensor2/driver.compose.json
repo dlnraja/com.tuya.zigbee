@@ -1,8 +1,8 @@
 {
   "id": "smoke_sensor2",
   "name": {
-    "en": "Smoke Sensor",
-    "fr": "Détecteur de fumée",
+    "en": "Smoke Sensor (smoke sensor2)",
+    "fr": "Détecteur de fumée (smoke sensor2)",
     "de": "Rauchmelder",
     "nl": "Rookmelder"
   },
@@ -219,7 +219,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_smoke": {
       "getable": true,

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
@@ -7,13 +9,13 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      ENERGY MONITOR PLUG - v5.5.255 INTELLIGENT ENERGY MANAGEMENT           ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  - Auto-detects energy meter type per manufacturerName                       ║
- * ║  - Supports ZCL (TS011F) and Tuya DP (TS0601) protocols                     ║
- * ║  - Dynamic divisors for power/voltage/current/energy                         ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      ENERGY MONITOR PLUG - v5.5.255 INTELLIGENT ENERGY MANAGEMENT           |
+ * +==============================================================================+
+ * |  - Auto-detects energy meter type per manufacturerName                       |
+ * |  - Supports ZCL (TS011F) and Tuya DP (TS0601) protocols                     |
+ * |  - Dynamic divisors for power/voltage/current/energy                         |
+ * +==============================================================================+
  */
 
 const ENERGY_DEVICE_CONFIGS = {
@@ -212,7 +214,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       
       await setupSonoffEnergy(this, zclNode);
       await this.initPhysicalButtonDetection(zclNode);
-      this.log('[ENERGY] ✅ Energy monitor plug ready');
+      this.log('[ENERGY] [OK] Energy monitor plug ready');
     }, 'onNodeInit');
   }
 
@@ -262,7 +264,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
   _pollMetering(mc, parseE) {
     if (!mc.readAttributes) {return;}
-    // v9.0.98: Increased from 120s to 600s — battery drain prevention
+    // v9.0.98: Increased from 120s to 600s - battery drain prevention
     // 120s polling on a battery device causes excessive wake-ups
     this._meterPoll = (this.homey && typeof this.homey.setInterval === 'function' ? this.homey : globalThis).setInterval(async () => {
       if (this._destroyed) {return;}
@@ -285,3 +287,5 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 }
 
 module.exports = EnergyMonitorPlugDevice;
+return module.exports;
+});

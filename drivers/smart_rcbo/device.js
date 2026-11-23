@@ -1,14 +1,16 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMART RCBO - v9.7.3 UNIFIED (extends UnifiedPlugBase properly)          ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║ UnifiedPlugBase handles: onoff, electrical measurement, Tuya DP               ║
- * ║  v9.7.3: Standardized initialization and reporting                            ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      SMART RCBO - v9.7.3 UNIFIED (extends UnifiedPlugBase properly)          |
+ * +==============================================================================+
+ * | UnifiedPlugBase handles: onoff, electrical measurement, Tuya DP               |
+ * |  v9.7.3: Standardized initialization and reporting                            |
+ * +==============================================================================+
  */
 class SmartRCBODevice extends UnifiedPlugBase {
 
@@ -32,7 +34,7 @@ class SmartRCBODevice extends UnifiedPlugBase {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
-      this.log('[RCBO] v9.7.3 ✅ Ready');
+      this.log('[RCBO] v9.7.3 [OK] Ready');
     }, 'onNodeInit');
   }
 
@@ -45,4 +47,5 @@ class SmartRCBODevice extends UnifiedPlugBase {
 }
 
 module.exports = SmartRCBODevice;
-
+return module.exports;
+});

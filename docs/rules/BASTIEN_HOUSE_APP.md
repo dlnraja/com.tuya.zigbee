@@ -13,6 +13,7 @@
 | **Store name** | Zigbee Bastien | Universal Tuya | Tuya Unified (Stable) |
 | **Version** | `1.0.x` | `9.0.x` | `5.12.x` |
 | **Purpose** | House-only soak + install | Public preview | Public LTS |
+| **Athom Live** | **Never** (house Test / local install only) | Automatic after objective gates | Automatic after objective gates |
 
 Machine SSOT: [`config/architecture/bastien-house-ssot.json`](../../config/architecture/bastien-house-ssot.json)  
 Triple tracks: [`config/architecture/dual-app-tracks.json`](../../config/architecture/dual-app-tracks.json) → `tracks.bastien`
@@ -39,6 +40,8 @@ Bastien box (live) ──AUTO promote (P2607)──► master ──BOTH reliabi
 - Soft hooks: `auto-enrich-closed-loop.yml`, `forum-poll.yml` → `npm run bastien:promote:apply` (continue-on-error).
 - AUTO_SAFE = complementary `driver.compose.json`, misattribution cases, sacred-keep couples, `test/critical`, `docs/knowledge`, BOTH `lib/{tuya,zigbee,io,…}`.
 - Manual review = existing `device.js` rewrites, mega `mfs_db`, non-allowlisted paths.
+- Scope: fixes, quirks, DPs and learned mappings, additive, anonymized, per exact mfr+pid couple. Never invent ids. Never copy App ID or version.
+- **Live:** this app must never be promoted to the Athom Live channel. See `docs/rules/LIVE_PROMOTION.md` and `docs/rules/LESSONS_2026-11-21.md`.
 
 ## Athom « Create a Homey App »
 

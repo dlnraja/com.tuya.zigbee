@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Power Strip (Tuya Local)",
-    "fr": "Multiprise WiFi (Tuya Local)",
+    "fr": "Multiprise WiFi",
     "nl": "WiFi-stekkerdoos (Tuya Lokaal)",
     "de": "WiFi-Steckdosenleiste (Tuya Lokal)",
     "es": "Regleta WiFi (Tuya Local)"
@@ -49,11 +49,13 @@
     },
     "measure_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     }
   },
   "pair": [

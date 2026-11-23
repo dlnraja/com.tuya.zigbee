@@ -93,7 +93,15 @@ describe('P2830f version alignment', () => {
     if (fs.existsSync(wf)) {
       const y = fs.readFileSync(wf, 'utf8');
       const i = y.indexOf('Athom final state gate');
-      if (i >= 0) assert.match(y.slice(i, i + 1200), /HOMEY_EXPECTED_VERSION: \$\{\{ steps\.info\.outputs\.version \}\}/);
+      if (i >= 0) {
+        // Scope to the gate step itself (up to the next step), not a fixed character window:
+        // P3293 added env lines that pushed the key past the old 1200-char slice. Stricter: the
+        // env key must belong to THIS step, never leak in from a following step.
+        const rest = y.slice(i);
+        const next = rest.search(/\n {6}- name: /);
+        const step = next > 0 ? rest.slice(0, next) : rest;
+        assert.match(step, /\n {10}HOMEY_EXPECTED_VERSION: \$\{\{ steps\.info\.outputs\.version \}\}/);
+      }
     }
     const r = path.join(ROOT, '.github', 'scripts', 'transient-publish-retry.js');
     if (fs.existsSync(r)) assert.match(fs.readFileSync(r, 'utf8'), /process\.env\.HOMEY_EXPECTED_VERSION \|\|/);

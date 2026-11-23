@@ -1,3 +1,6 @@
+'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
@@ -9,7 +12,7 @@ const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
   meter_power: { divisor: 100.0 },
   measure_power: { divisor: 100 },
@@ -93,7 +96,7 @@ class switch_4_gang_metering extends UnifiedSwitchBase {
       const cap = `button.${gang}`;
       if (!this.hasCapability(cap)) {continue;}
       this.registerCapabilityListener(cap, async () => {
-        this.log(`[SWITCH-4G] ${cap} pressed (UI) — toggling endpoint ${gang}`);
+        this.log(`[SWITCH-4G] ${cap} pressed (UI) - toggling endpoint ${gang}`);
         const onOffCluster = zclNode.endpoints[gang]?.clusters?.onOff;
         if (onOffCluster && typeof onOffCluster.toggle === 'function') {
           await onOffCluster.toggle();
@@ -182,4 +185,5 @@ class switch_4_gang_metering extends UnifiedSwitchBase {
 }
 
 module.exports = switch_4_gang_metering;
-
+return module.exports;
+});

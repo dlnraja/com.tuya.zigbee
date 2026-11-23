@@ -1,5 +1,15 @@
 # Athom / Homey publish limits — what we know (2026-10-10, Paris)
 
+## 21/11/2026 update (P3360, #488)
+
+Athom issue athombv/homey-apps-sdk-issues#488 (wouter-athom, 17/11/2026) identified
+`AggregateError` as a **packaged file-count** problem and deployed a server-side fix.
+Our remaining blocking ceiling (P3356) is **3830 files / 32.7 MB** for the packed
+archive. #3716 v9.0.1635 reached Test at 347 drivers / 3739 files; #3717 v9.0.1636
+reached Test at 368 drivers / 3253 files (26.59 MB, archive 7.49 MB gz), under the
+ceiling. `superseded` is a terminal Athom state, not "busy". See
+`docs/rules/LESSONS_2026-11-21.md` and `config/upload-manifest-ceiling.json`.
+
 ## Measured facts (our bisects, publish.yml, same pipeline)
 | Build | Change vs last Test build | Result |
 |---|---|---|
@@ -188,3 +198,11 @@ The Auto-Fix doctrine (P139: no bump loops while an older Test is healthy) is un
   carries the canonical form, the shipped form is pinned as fallback (no new row). Opt-out: `HOMEY_PUBLISH_BASELINE_FULL=1`.
   Master pins 14282 → 7028; replay: 19943 combos, 1928 source-backed couples restored, strong 1876/3126 in payload
   (P3201 alone: 1444), parasite ratio 0.258, the 13 tracked couples (kb-compaction-losses + #584/#581/#598) present.
+
+## P3330 (2026-11-15 Paris): driver-count ceiling enforced
+
+348+ uploaded drivers: refused 12/12 (AggregateError). 347: accepted 6 times, refused once (#3706) with a
+package that differs from accepted #3705 only by version strings and 2.7 KB of JS. The pre-upload guard
+now blocks any upload above 347 drivers (master and stable); held drivers ship their couples through
+`lib/drivers/held-driver-folds.json` instead of new ids. Evidence and fold list:
+docs/knowledge/athom-driver-ceiling.md.

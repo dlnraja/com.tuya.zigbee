@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const LightBase = require('../../lib/devices/UnifiedLightBase');
@@ -35,7 +37,7 @@ class RGBBulbLedDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)
       await this.initVirtualButtons();
       await this._setupColorCluster(zclNode);
       this._setupRGBListeners();
-      this.log('[RGB-LED] ✅ Ready');
+      this.log('[RGB-LED] [OK] Ready');
     }, 'onNodeInit');
   }
 
@@ -94,3 +96,5 @@ class RGBBulbLedDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)
 }
 
 module.exports = RGBBulbLedDevice;
+return module.exports;
+});

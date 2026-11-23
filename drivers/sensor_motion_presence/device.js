@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -102,7 +104,7 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
     await this._setupTuyaDPListeners(zclNode);
-    this.log('[MOTION-HYBRID] ✅ Motion presence sensor ready');
+    this.log('[MOTION-HYBRID] [OK] Motion presence sensor ready');
   }
   _handleTuyaResponse(data) {
     if (!data) {return;}
@@ -154,3 +156,5 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
   }
 }
 module.exports = MotionPresenceHybridDevice;
+return module.exports;
+});

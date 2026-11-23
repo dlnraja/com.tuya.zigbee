@@ -625,6 +625,270 @@
    "ref": "v26.131.0",
    "title": "v26.131.0",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.131.0"
+  },
+  {
+   "at": "2026-11-15T12:40:45.359Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "490d101f48",
+   "title": "fix: Tuya Nuos A7Z: hide unsupported switch type button option (#13814)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/490d101f487f412a59e7771a9bcba7a906cb2133"
+  },
+  {
+   "at": "2026-11-15T12:40:45.359Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "4a4238484a",
+   "title": "Add EKAZA EKAV-T229Z Zigbee door lock (#5536)",
+   "url": "https://github.com/make-all/tuya-local/commit/4a4238484a840a82277df29d6e10aa76725d2b70"
+  },
+  {
+   "at": "2026-11-15T12:40:45.359Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "cf1f04ab9c",
+   "title": "feat(devices): add Beok TCC31 thermostat",
+   "url": "https://github.com/make-all/tuya-local/commit/cf1f04ab9c37a6aa74d94cbe15effa70e9b4a8ec"
+  },
+  {
+   "at": "2026-11-15T12:40:45.359Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "cb165e2963",
+   "title": "deps(tinytuya): upgrade tinytuya to 1.21.1",
+   "url": "https://github.com/make-all/tuya-local/commit/cb165e29635f87cd874e20cb30b19dac56a394cc"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "5ef4f9864a",
+   "title": "fix: Moes BHT-002: allow `min_temperature_limit` up to 10 °C https://github.com/Koenkk/zigbee2mqtt/i",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/5ef4f9864a9b4ef412dffa628a15411acac3c228"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9049f8f9ff",
+   "title": "fix: Tuya ME202WZ: allow liquid depth readings above the reported installation height (#13832)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9049f8f9ffc5bd9a3d333bbea93ae7437f0e7200"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "a8de0c9782",
+   "title": "fix: Legrand 067776A, 067776: skip tilt reporting when unsupported https://github.com/Koenkk/zigbee-",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/a8de0c9782ac86a3f1ab79a7a8f60c814dcd0ab8"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "4ef6642c91",
+   "title": "feat(add): TS0601_GIRIER (#13824)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/4ef6642c9167edd3ff32075fab78a6988b173c0e"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "8984240686",
+   "title": "fix: Nobø SWT-IZ and SPC-IZ: fix stale thermostat state after restart (#13807)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/8984240686ac715313cd83fcf215e0cb99dbda8c"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "f39ccaae76",
+   "title": "chore: update vesternet owner https://github.com/Koenkk/zigbee-herdsman-converters/pull/13818",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/f39ccaae76f80aedf5f9165b52dae38d6f94c5f6"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.132.0",
+   "title": "v26.132.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.132.0"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "jbothe/com.tuya.zigbee",
+   "title": "jbothe/com.tuya.zigbee",
+   "url": "https://github.com/jbothe/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "PRo25/com.tuya.zigbee",
+   "title": "To add support to additional device manufacturers of switch modules and presence sensors",
+   "url": "https://github.com/PRo25/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-16T13:33:18.792Z",
+   "source": "hubitat-kkossev",
+   "kind": "commit",
+   "ref": "44edbe560d",
+   "title": "Tuya Zigbee Valve 1.8.2: fix SWV-ZFU reporting",
+   "url": "https://github.com/kkossev/Hubitat/commit/44edbe560d1e40a9a25889edbffe0c66e3bf03ef"
+  },
+  {
+   "at": "2026-11-17T14:17:24.543Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "bdbd553087",
+   "title": "fix(detect): Detect `_TZE2841000000_kyyu8rbj` and `_TZE2841000000_7uqwvoua` as Tuya ME201WZ",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/bdbd553087fa6203edf84257b192b51a174334a3"
+  },
+  {
+   "at": "2026-11-17T14:17:24.543Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "ab9491b21b",
+   "title": "fix: Tuya ME201WZ: clarify that `liquid_depth_max` sets the full tank depth (#13808)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/ab9491b21b347b23187c38a267b6ac2a7ea6f7f4"
+  },
+  {
+   "at": "2026-11-17T14:17:24.543Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "240b645caf",
+   "title": "feat: Tuya ZP01: expose `sensitivity` and `keep_time` (#13840)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/240b645caf5f17daaaab821f729ccd5935480c01"
+  },
+  {
+   "at": "2026-11-17T14:17:24.543Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.133.0",
+   "title": "v26.133.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.133.0"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "0d5153eb41",
+   "title": "fix(detect): Detect `_TZE28C1000000_ac0fhfiq` as Tuya TS0601_bidirectional_energy meter (#13849)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/0d5153eb41e03c79b0046db02902eb983ee9b7f0"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "e8bab441de",
+   "title": "fix(detect): Detect `_TZ3000_sjb7pafq` as AVATTO ZWSM16-2 and `_TZ3000_9il3ag1z` as AVATTO ZWSM16-DC",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/e8bab441def982a2b7f3d98807f16068b7c51898"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "499256d998",
+   "title": "fix(detect): Detect `_TZE28C1000000_cvub6xbb` as Tuya TGM50-ZB https://github.com/Koenkk/zigbee2mqtt",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/499256d998205a39cb9c0752637cc24ed91c41ae"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "197f8a795c",
+   "title": "fix(detect): Detect `_TZE2841000000_sonkaxrd` as Nous E12 https://github.com/Koenkk/zigbee2mqtt/issu",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/197f8a795cea6ea75508b7ee2c1dced1410f22d2"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.134.0",
+   "title": "v26.134.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.134.0"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "35165d117c",
+   "title": "fix(mty2_breaker): use correct state class for energy sensors",
+   "url": "https://github.com/make-all/tuya-local/commit/35165d117c1400b43eedd0551c0395b994205846"
+  },
+  {
+   "at": "2026-11-19T14:20:36.285Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.2",
+   "title": "2026.11.2",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.2"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9d19151d86",
+   "title": "feat: Tuya TS0601_6gang_switch_2: support separate ON/OFF indicator colours (#13609)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9d19151d867e96bac907e5aa249517cb2d7acb9a"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "f9f83c5194",
+   "title": "feat(add): TS0601_floor_thermostat_jrtvxwvy https://github.com/Koenkk/zigbee2mqtt/issues/33766",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/f9f83c5194e53acdd6f415bdfe20f42a2bb80222"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "c4b7a7f222",
+   "title": "fix: Tuya TO-Q-SYS-JZT, PRO-900Z and MTD085-ZB, and Avatto TRV26: accept all exposed setting values ",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/c4b7a7f222884ce14677df064fa627879a86f5ce"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "a2d7043e2a",
+   "title": "fix: Tuya PJ-MGW1203: fix `energy` resetting instead of accumulating https://github.com/Koenkk/zigbe",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/a2d7043e2a8fa3dd1605ca12357ecf840c18dc5e"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "3bc5cf0ec2",
+   "title": "fix: Aqara LLKZMK12LM: report energy correctly on firmware 33 and newer (#13872)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/3bc5cf0ec2da740252ca61229f0c71a056e0cf2c"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "fd22e1d0fb",
+   "title": "feat: Namron 4512788: expose energy metering and dimming settings (#13867)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/fd22e1d0fb3829f7f91ae0986129ba3ae8abfbb9"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9cacc3b796",
+   "title": "fix: Shelly BLU TRV: apply settings reliably across sleep periods (#13842)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9cacc3b796e0456e49b58e15845ff4240b5f918f"
+  },
+  {
+   "at": "2026-11-21T13:24:58.997Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.135.0",
+   "title": "v26.135.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.135.0"
   }
  ]
 }

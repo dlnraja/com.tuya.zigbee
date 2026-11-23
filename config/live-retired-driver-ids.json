@@ -1,0 +1,6 @@
+{
+  "_comment": "P3360: driver IDs retired from the published payload with evidence. They do not block Live versus the 9.0.1574 ID baseline. Their couples must still live on a remaining driver.",
+  "ids": {
+    "device_radiator_valve_thermostat": "P3263 (03/11/2026): placeholder-only driver removed; couple _tze200_9xfjixap/TS0601 stays on thermostatic_radiator_valve"
+  }
+}

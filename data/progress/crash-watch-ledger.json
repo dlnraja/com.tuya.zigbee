@@ -1,0 +1,22 @@
+{
+ "version": 1,
+ "updated": "2026-11-22T14:43:54.718Z",
+ "entries": {
+  "oom-heap|com.dlnraja.tuya.zigbee.bastien|1.0.229": {
+   "sig": "oom-heap",
+   "appId": "com.dlnraja.tuya.zigbee.bastien",
+   "version": "1.0.229",
+   "firstSeen": "2026-11-06T18:04:32.000Z",
+   "lastSeen": "2026-11-07T11:11:05.000Z",
+   "count": 2,
+   "ids": [
+    "e3d59e07",
+    "ae9f84a9"
+   ],
+   "drivers": [
+    "switch_4gang",
+    "switch_1gang"
+   ]
+  }
+ }
+}

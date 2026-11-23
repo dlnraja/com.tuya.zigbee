@@ -51,3 +51,23 @@ Classify **BOTH** (UI/Insights reliability). No Stable→Test publish spam.
 ## Silent policy
 
 T43287 / satellites = SHADOW read only (T157628). Scan → code/CI. Never forum POST.
+
+## P3362 - Standard units, official app.json, flow ids, startup JSON
+
+- Every `measure_*` / `meter_*` / `target_temperature` capability must declare its standard
+  unit (`config/architecture/standard-capability-units.json`). Missing units hide Insights
+  History and break Apple Home coherence (P3361 battery, then climate and energy).
+- Runtime healer: `standardUnitFor` in `lib/utils/HomeyCapabilityUx.js`. Already-paired
+  devices get a bounded one-shot recycle (`p3362_units_insights_recycle`).
+- Ratchet: `npm run check:p3362`. Weekday free GitHub Actions workflow
+  `.github/workflows/apple-home-coherence.yml` auto-adds missing units, ports anonymized
+  Bastien learnings (`config/ci/bastien-anon-learnings.json`) as checks, commits with
+  `[skip ci]` only when tests pass, and opens no PR. Kill switch:
+  `vars.APPLE_HOME_COHERENCE_DISABLED` or `config/ci/apple-home-coherence.json`.
+  `GITHUB_TOKEN` only, no paid services, no Grok Bot routine.
+- Committed `app.json` is the official compose rebuild (P3079). Never a `normalise()` rewrite.
+- App-level flow card ids (`home_mode_changed`, `capability_value_changed_generic`,
+  `device_interaction`) must never be dropped by consolidation.
+- Startup must not eagerly parse large JSON catalogs.
+- The degree sign `°` (U+00B0) is Latin-1 and is allowed in unit strings.
+

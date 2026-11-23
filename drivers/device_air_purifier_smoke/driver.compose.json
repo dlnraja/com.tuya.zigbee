@@ -296,15 +296,18 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_tamper": {
       "getable": true,
@@ -312,7 +315,8 @@
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     }
   },
   "maintenanceActions": [

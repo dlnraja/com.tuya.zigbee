@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -19,7 +21,7 @@ const rainMv = (threshold) => (v) => {
 /**
  * Rain Sensor Device
  * v9.7.4: FIX for Issue #326 - _TZE200_u6x1zyv2 pairs but reports no values
- *         Added DP 2 → measure_humidity (rain level %) and DP 106 mappings
+ *         Added DP 2 -> measure_humidity (rain level %) and DP 106 mappings
  *         Fixed TS0601 rain sensors using Tuya EF00 DP protocol
  * v5.5.889: Added IAS Zone support for TS0207 devices (Dominique_C forum report)
  * v5.3.64: SIMPLIFIED base implementation
@@ -35,7 +37,7 @@ class RainSensorDevice extends UnifiedSensorBase {
     get dpMappings() {
     const mfr = typeof this.getSetting === 'function' ? this.getSetting('zb_manufacturer_name') || '' : '';
 
-    // ── HOBEIAN ZG-223Z (Z2M: IAS rain + ZCL illuminance + battery) ──
+    // -- HOBEIAN ZG-223Z (Z2M: IAS rain + ZCL illuminance + battery) --
     if (containsCI(mfr, 'HOBEIAN') || containsCI(mfr, 'u6x1zyv2') || containsCI(mfr, 'jsaqgakf') || containsCI(mfr, '2pddnnrk') || containsCI(mfr, 'gt1gge3x')) {
       // gt1gge3x: Z2M ZG-223Z sibling (Koenkk/zigbee-herdsman-converters PR #13340, jomders, 2026-10-01)
       return {
@@ -52,7 +54,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       };
     }
 
-    // ── TS0207 Solar Rain Sensor (RB-SRAIN01) ──
+    // -- TS0207 Solar Rain Sensor (RB-SRAIN01) --
     // _TZ3210_tgvtvdoc / _TZ3210_p68kms0l
     // Per Z2M: DP4=battery, DP101=solar mV, DP102=avg20min mV,
     //   DP103=maxToday mV, DP104=cleaning reminder, DP105=rain intensity mV
@@ -68,7 +70,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       };
     }
 
-    // ── TS0601 generic fallback ──
+    // -- TS0601 generic fallback --
     return {
       // TS0601 DP layout (_TZE200_u6x1zyv2, _TZE200_jsaqgakf, etc.)
       1: { capability: 'alarm_water', transform: boolean() }, // Rain alarm boolean
@@ -114,7 +116,7 @@ class RainSensorDevice extends UnifiedSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    // v8.4.1: _registerCapabilityListeners removed — UnifiedSensorBase uses
+    // v8.4.1: _registerCapabilityListeners removed - UnifiedSensorBase uses
     // capability listeners via dpMappings + UnifiedSensorBase native handlers
     
     // v5.5.889: IAS Zone support for TS0207 rain sensors
@@ -189,10 +191,9 @@ class RainSensorDevice extends UnifiedSensorBase {
 
       // Try to write CIE address
       try {
-        const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
-        if (homeyIeeeAddress) {
-          await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
-          this.log('[RAIN-IAS] CIE address written:', homeyIeeeAddress);
+        // P3397: iasCIEAddress (iasCieAddress threw before any frame); real coordinator IEEE only.
+        if (await require('../../lib/zigbee/ZoneStatusRx').writeCieAddress(this, iasCluster)) {
+          this.log('[RAIN-IAS] CIE address written');
         }
       } catch (cieErr) {
         this.log('[RAIN-IAS] CIE address write (normal if already set):', cieErr.message);
@@ -212,8 +213,10 @@ class RainSensorDevice extends UnifiedSensorBase {
 
       // Attribute listener for zone status (SDK3 event-based)
       iasCluster.on('attr.zoneStatus', (status) => {
-        const raining = (status & 0x01) !== 0 || (status & 0x02) !== 0;
-        this.log(`[RAIN-IAS] Zone attr status: ${status} raining=${raining}`);
+        // WHY(P3397): map16 Bitmap, `& 0x01` on it was always 0.
+        const raining = require('../../lib/zigbee/ZoneStatusRx').zoneStatusMotion(status);
+        if (raining === null) {return;}
+        this.log(`[RAIN-IAS] Zone attr status: raining=${raining}`);
 
         if (this.hasCapability('alarm_water')) {
           this.safeSetCapabilityValue('alarm_water', raining).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
@@ -262,4 +265,5 @@ class RainSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = RainSensorDevice;
-
+return module.exports;
+});

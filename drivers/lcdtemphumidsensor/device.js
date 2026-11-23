@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const GlobalTimeSyncEngine = require('../../lib/tuya/GlobalTimeSyncEngine');
@@ -6,6 +8,34 @@ const ManufacturerNameHelper = require('../../lib/helpers/ManufacturerNameHelper
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
 const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+
+// WHY(P3388): exact ZTH05Z couples from Z2M tuya.ts (model ZTH05Z, TS0601). On these the
+// MCU uses DP15 for humidity_alarm (enum) and DP18 for humidity_periodic_report (minutes),
+// DP9-14/17/19/20 for settings. The generic LCD map read DP18 as a temperature and DP15 as a
+// battery percent (cancel=2 -> 2%). Bastien's house LCD is _TZE284_vvmbj46n + TS0601.
+// https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZTH05Z)
+const ZTH05Z_MANUFACTURERS = [
+  '_TZE200_vvmbj46n',
+  '_TZE284_vvmbj46n',
+  '_TZE200_w6n8jeuu',
+  '_TZE284_cwyqwqbf',
+  '_TZE284_qf5mzewi',
+];
+const ZTH05Z_ALARM_ENUM = ['lower_alarm', 'upper_alarm', 'cancel'];
+// dp -> [store key, divisor, enum list]
+const ZTH05Z_SETTING_DPS = {
+  9: ['lcd_temperature_unit', 1, ['celsius', 'fahrenheit']],
+  10: ['lcd_max_temperature_alarm', 10, null],
+  11: ['lcd_min_temperature_alarm', 10, null],
+  12: ['lcd_max_humidity_alarm', 1, null],
+  13: ['lcd_min_humidity_alarm', 1, null],
+  14: ['lcd_temperature_alarm', 1, ZTH05Z_ALARM_ENUM],
+  15: ['lcd_humidity_alarm', 1, ZTH05Z_ALARM_ENUM],
+  17: ['lcd_temperature_periodic_report', 1, null],
+  18: ['lcd_humidity_periodic_report', 1, null],
+  19: ['lcd_temperature_sensitivity', 10, null],
+  20: ['lcd_humidity_sensitivity', 1, null],
+};
 
 const DIRECT_HUMIDITY_MANUFACTURERS = [
   '_TZE200_vvmbj46n',
@@ -19,9 +49,9 @@ const DIRECT_HUMIDITY_MANUFACTURERS = [
  *
  * Couples: TS0201 / TY0201 LCD sensors (ZCL ± EF00 hybrid).
  * WHY P2266 (HACF #38762 / ZHA #2862): `_TZ3000_bjawzodf`+TY0201 Temu round
- *      display — ZCL 0x0402/0x0405 on EP1; needs Tuya magic 0xFFFE (Z2M WSD500A).
+ *      display - ZCL 0x0402/0x0405 on EP1; needs Tuya magic 0xFFFE (Z2M WSD500A).
  * Contre quoi: humidity missing / no entities (same symptom as Neo qaaysllp family).
- * Sibling: `_TZE200_bjawzodf`+TS0601 is EF00 climate — different sacred couple.
+ * Sibling: `_TZE200_bjawzodf`+TS0601 is EF00 climate - different sacred couple.
  */
 class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
@@ -55,8 +85,8 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       // Battery
       // v5.12.3: DP 3 battery enum (0=low, 1=med, 2=high)
       // WHY(P2766 / forum 26439 #5524 TH05Z _TZE200_vvmbj46n): the MCU sends both
-      // DP3 battery_state (enum) and DP4 battery (%) — once a real percentage was
-      // seen, the coarse enum must not overwrite it (flip 100% ↔ real %).
+      // DP3 battery_state (enum) and DP4 battery (%) - once a real percentage was
+      // seen, the coarse enum must not overwrite it (flip 100% <-> real %).
       // https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts (ZTH05Z DP3/DP4)
       3: {
         capability: 'measure_battery',
@@ -70,7 +100,40 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       },
       4: { capability: 'measure_battery', transform: (v) => this._lcdMarkBatteryPct(UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct')) },
       15: { capability: 'measure_battery', transform: (v) => this._lcdMarkBatteryPct(UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct')) },
+      ...this._zth05zSettingMappings(),
     };
+  }
+
+  /** P3388: exact ZTH05Z couple (mfr list above + TS0601). */
+  get isZth05z() {
+    const mfr = String(ManufacturerNameHelper.getManufacturerName(this) || '');
+    if (!includesCI(ZTH05Z_MANUFACTURERS, mfr)) {return false;}
+    const pid = String(this.getData?.()?.productId || this.getSetting?.('zb_model_id')
+      || this.getSetting?.('zb_product_id') || 'TS0601');
+    return /^ts0601/i.test(pid);
+  }
+
+  /**
+   * P3388: ZTH05Z settings/alarm DPs are kept as store values (no capability, no
+   * permissive inference). They override the generic DP15 battery / DP18 temperature.
+   */
+  _zth05zSettingMappings() {
+    const out = {};
+    if (!this.isZth05z) {return out;}
+    for (const [dp, [key, div, list]] of Object.entries(ZTH05Z_SETTING_DPS)) {
+      out[dp] = {
+        capability: null, setting: key,
+        transform: (v) => {
+          let val = v;
+          if (list && typeof v === 'number' && list[v] !== undefined) {val = list[v];}
+          else if (div !== 1 && typeof v === 'number') {val = v / div;}
+          try { this.setStoreValue?.(key, val)?.catch?.(() => {}); } catch (_e) { /* soft */ }
+          this.log?.(`[LCD] P3388 ZTH05Z DP${dp} ${key} = ${val} (no capability)`);
+          return null;
+        },
+      };
+    }
+    return out;
   }
 
   /** P2766: remember that this unit reports a real battery percentage (soft, never blocks). */
@@ -100,7 +163,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
     this._zclNode = zclNode;
 
-    // WHY P2266: Z2M WSD500A / ZHA #2862 — enchant before reporting config
+    // WHY P2266: Z2M WSD500A / ZHA #2862 - enchant before reporting config
     await this._sendLcdMagicPacket(zclNode);
     safeSetTimeout(this, () => {
       this._sendLcdMagicPacket(zclNode).catch(() => {});
@@ -171,7 +234,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
   /**
    * P3141: couples that reject ZCL configureReporting (exact mfr+pid, case-insensitive).
-   * Unknown pid → only mfr checked, since the mfr is unique to the TY0201 LCD.
+   * Unknown pid -> only mfr checked, since the mfr is unique to the TY0201 LCD.
    */
   static skipsReportingConfig(mfr, pid) {
     const m = String(mfr || '').toLowerCase();
@@ -185,7 +248,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * v7.4.6 + P2266: rejoin → re-enchant magic packet (humidity often silent otherwise)
+   * v7.4.6 + P2266: rejoin -> re-enchant magic packet (humidity often silent otherwise)
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
@@ -229,3 +292,5 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = LCDTempHumidSensorDevice;
+return module.exports;
+});

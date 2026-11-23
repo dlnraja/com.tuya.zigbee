@@ -11,13 +11,15 @@ const pol = require('../.github/scripts/athom-retry-policy');
 describe('P2900 GHA hardening', () => {
   it('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
     const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, '.github/scripts/athom-retry-policy.js'))).digest('hex');
-    assert.strictEqual(h, 'd357cf061d2ced203b1a72c58f4396cbdaa34b06a03efbcfeecb00021cd14888', 'edit athom-retry-policy.js on all three branches together and update this hash');
+    assert.strictEqual(h, '8a483ce55425fc1f9fdb1ad968da7c75e6c315af68a2a2a01475c6da4682f256', 'edit athom-retry-policy.js on all three branches together and update this hash');
   });
-  it('backoff is >= 5 min and jittered (P3036, was 60/120/240 s)', () => {
+  it('backoff is progressive 5/15/30 min and jittered (P3311, was a flat 300 s)', () => {
     assert.strictEqual(pol.backoffSeconds(1, () => 0), 300);
-    assert.strictEqual(pol.backoffSeconds(2, () => 0), 300);
-    assert.strictEqual(pol.backoffSeconds(9, () => 0), 300);
+    assert.strictEqual(pol.backoffSeconds(2, () => 0), 900);
+    assert.strictEqual(pol.backoffSeconds(3, () => 0), 1800);
+    assert.strictEqual(pol.backoffSeconds(9, () => 0), 1800);
     assert.strictEqual(pol.backoffSeconds(1, () => 0.999), 360);
+    assert.strictEqual(pol.backoffSeconds(2, () => 0.999), 960);
   });
   it('classifies and budgets failures', () => {
     assert.strictEqual(pol.classify('Error: socket hang up'), 'socket hang up');
@@ -25,8 +27,10 @@ describe('P2900 GHA hardening', () => {
     assert.strictEqual(pol.classify('invalid_state'), 'invalid_state');
     assert.strictEqual(pol.classify('bad driver compose'), 'unknown');
     assert.ok(pol.shouldRetry('socket hang up', 0));
-    assert.ok(!pol.shouldRetry('socket hang up', 1)); // P3036: exactly one retry (was 4, P2924)
-    assert.ok(!pol.shouldRetry('transient', 1));
+    assert.ok(pol.shouldRetry('socket hang up', 1)); // P3311: 2 transport retries = 3 attempts (P3036 had 1)
+    assert.ok(!pol.shouldRetry('socket hang up', 2));
+    assert.ok(pol.shouldRetry('transient', 1));
+    assert.ok(!pol.shouldRetry('transient', 2));
     assert.ok(!pol.shouldRetry('AggregateError', 0)); // P3036: real failure, no retry
     assert.ok(!pol.shouldRetry('unknown', 0));
     assert.ok(!pol.shouldRetry('invalid_state', 0, { idleWaited: false }));

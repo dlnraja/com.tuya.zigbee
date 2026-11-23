@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "4-Buttons TS0041 Wireless Controller",
-    "fr": "Controleur sans fil TS0041 4 boutons",
-    "nl": "TS0041 4-knoppen draadloze controller",
-    "de": "TS0041 4-Tasten Drahtlos-Controller",
+    "en": "4-button wireless remote (TS0041)",
+    "fr": "Contrôleur sans fil 4 boutons (TS0041)",
+    "nl": "Draadloze 4-knops afstandsbediening (TS0041)",
+    "de": "Drahtlose 4-Tasten-Fernbedienung (TS0041)",
     "it": "4-Pulsanti Controller Wireless",
     "sv": "4-Knappar Trådlös Kontroller",
     "no": "4-Knapper Trådløs Kontroller",
@@ -63,7 +63,8 @@
         "de": "Batterie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "energy": {

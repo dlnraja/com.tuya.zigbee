@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 // v5.5.295: Fix "Class extends value undefined" stderr error
 // Use try-catch to handle potential circular dependency issues
@@ -18,28 +20,35 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { parseTuyaMultiDpFrame } = require('../../lib/TuyaDataPoints');
 const { isBatteryCoverMfr } = require('../../lib/helpers/batteryPowerSource');
 const SDK3BestPractices = require('../../lib/SDK3BestPractices');
+const {
+  isSlidingWindowPusherCouple,
+  slidingWindowPusherDpMappings,
+  encodePusherState,
+  pusherWriteDps,
+} = require('../../lib/covers/slidingWindowPusher');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      CURTAIN / COVER MOTOR - v5.7.9 Enhanced Communication                  ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.7.9: Exponential backoff, wake-up ping, health monitoring              ║
- * ║  v5.6.0: Bidirectional physical/virtual button support                     ║
- * ║  DPs: 1-15,101-105 | ZCL: 258,6,8,EF00                                     ║
- * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      CURTAIN / COVER MOTOR - v5.7.9 Enhanced Communication                  |
+ * +==============================================================================+
+ * |  v5.7.9: Exponential backoff, wake-up ping, health monitoring              |
+ * |  v5.6.0: Bidirectional physical/virtual button support                     |
+ * |  DPs: 1-15,101-105 | ZCL: 258,6,8,EF00                                     |
+ * |  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      |
+ * +==============================================================================+
  */
 // WHY(P3051 / GH#576): Z2M bseed.ts BSEED_TS0601_cover fingerprint, exact couples (x TS0601).
 const BSEED_CURTAIN_SWITCH_MFRS = new Set(['_tze200_yenbr4om', '_tze200_bdblidq3', '_tze204_bdblidq3']);
 
 class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedCoverBase)) {
 
-  // WHY(P2296): Homey battery-status — ZM16EL/ZM85EL are Battery EndDevices (DP13 %).
+  // WHY(P2296): Homey battery-status - ZM16EL/ZM85EL are Battery EndDevices (DP13 %).
   // Never default to UnifiedCoverBase mains=true for those couples.
   get mainsPowered() {
     // WHY(P2467b / #533): Moes ZTS-EUR-C is a mains wall switch. Compose still lists
-    // measure_battery for tubular rollers — that made mainsPowered=false → wake-up
+    // measure_battery for tubular rollers - that made mainsPowered=false -> wake-up
     // ping before every DP TX (diag 48baba36) and delayed real EF00 motion frames.
+    if (this._isSlidingWindowPusher()) {return false;}
     if (this._isMoesZtsEurC()) {return true;}
     const powerSetting = this.getSetting('power_source');
     if (powerSetting === 'battery') {return false;}
@@ -51,7 +60,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   }
 
   // WHY(P2304): Moes ZTS-EUR-C (`_TZE204_5slehgeo`+TS0601) uses DP3=calib, DP7=backlight,
-  // DP8=motor reverse, DP10=calib seconds — not the generic cover lux/dim map.
+  // DP8=motor reverse, DP10=calib seconds - not the generic cover lux/dim map.
   _isMoesZtsEurC() {
     const mfr = String(
       this.getManufacturerName?.()
@@ -69,11 +78,11 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   }
 
   // WHY(P2433 / Eduard #2228): DC tubular battery rollers (`_TZE284_fodv6bkr` / `libht6ua`)
-  // share EF00 DPs with sibling motors — DP3 is position (%), NOT robot `dim`.
+  // share EF00 DPs with sibling motors - DP3 is position (%), NOT robot `dim`.
   // Homey has no native windowCovering (258); all TX/RX via 0xEF00.
   // WHY(P2441 / MIAMO #2229): AM43 solar/battery siblings (`icka1clh` / `zah67ekd`)
-  // use the same cover_4 DP family (state/position/reverse) — never shutter driver.
-  // WHY(P2514): Zemismart ZM16B `_TZE284_3mzb0sdz` — ZHA/Z2M cover DP1/8/9/13 (not IR).
+  // use the same cover_4 DP family (state/position/reverse) - never shutter driver.
+  // WHY(P2514): Zemismart ZM16B `_TZE284_3mzb0sdz` - ZHA/Z2M cover DP1/8/9/13 (not IR).
   _isBatteryTubularRoller() {
     const mfr = String(
       this.getManufacturerName?.()
@@ -86,7 +95,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       || mfr.includes('3mzb0sdz');
   }
 
-  /** WHY(P2514): ZM16B AKE tubular — position report DP8 / set DP9 (not DP2/3). */
+  /** WHY(P2514): ZM16B AKE tubular - position report DP8 / set DP9 (not DP2/3). */
   _isZm16bAkeTubular() {
     const mfr = String(
       this.getManufacturerName?.()
@@ -97,7 +106,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     return mfr.includes('3mzb0sdz');
   }
 
-  /** WHY(Johan #1472 / #1405): Quoya M515EGBZTN — 0=open, 100=closed + DP16 limits */
+  /** WHY(Johan #1472 / #1405): Quoya M515EGBZTN - 0=open, 100=closed + DP16 limits */
   _isQuoyaM515() {
     const mfr = String(
       this.getManufacturerName?.()
@@ -126,10 +135,39 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     return pid === 'TS0601' && BSEED_CURTAIN_SWITCH_MFRS.has(mfr);
   }
 
+
+  // WHY(P3374 / forum 156967 #101 + Z2M ZC-LP01 / EPJ-ZB): exact TS0601 couples
+  // only. Default curtain map treats DP102 as close_time and DP104 as lux.
+  _isSlidingWindowPusher() {
+    const mfr = this.getManufacturerName?.()
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || '';
+    const pid = this.getSetting?.('zb_model_id') || this.getData?.()?.productId || 'TS0601';
+    return isSlidingWindowPusherCouple(mfr, pid);
+  }
+
+  getCoverWriteDps() {
+    if (this._isSlidingWindowPusher()) {return pusherWriteDps();}
+    return null;
+  }
+
+  encodeCoverState(state) {
+    if (this._isSlidingWindowPusher()) {
+      const invert = Boolean(this.getSetting?.('invert_position') || this.getSetting?.('moes_control_invert'));
+      return encodePusherState(state, invert);
+    }
+    return null;
+  }
+
   // v5.5.322: Extended DP mappings with lux sensor and button support
   get dpMappings() {
+    if (this._isSlidingWindowPusher()) {
+      const invert = Boolean(this.getSetting?.('invert_position') || this.getSetting?.('moes_control_invert'));
+      return slidingWindowPusherDpMappings(invert);
+    }
     if (this._isBseedCurtainSwitch()) {
-      // WHY(P3051): direction kept as the generic map (no inversion) — Z2M does not list these
+      // WHY(P3051): direction kept as the generic map (no inversion) - Z2M does not list these
       // in coverPositionInvert; ZHA uses an inverted class, so the user setting invert_position stays the switch.
       return {
         1: {
@@ -206,7 +244,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       10: { capability: null, internal: 'speed', writable: true },
       12: { capability: null, internal: 'backlight', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
-      // v9.0.400 (fork ErnieV, Quoya M515EGBZTN): DP16 border/limits —
+      // v9.0.400 (fork ErnieV, Quoya M515EGBZTN): DP16 border/limits -
       // 0=set upper, 1=set lower, 2=delete upper, 3=delete lower, 4=remove both
       16: { capability: null, internal: 'border_limits', writable: true },
       // v5.5.322: Luminance sensor (Eftychis #779 - curtain robot has lux sensor)
@@ -243,7 +281,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   }
 
   async onNodeInit({ zclNode }) {
-    // WHY(P2296): Homey SDK — never both measure_battery + alarm_battery;
+    // WHY(P2296): Homey SDK - never both measure_battery + alarm_battery;
     // battery covers (ZM16EL) KEEP measure_battery; mains covers strip both.
     if (this.mainsPowered) {
       await this.removeCapability('measure_battery').catch(() => {});
@@ -263,7 +301,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     await SDK3BestPractices.ensureBatteryBestPractices(this).catch(() => {});
     this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00 | mains=', this.mainsPowered);
 
-    // WHY(P2412 / #533): Z2M ZTS-EUR-C uses forceTimeUpdates — MCU may ignore motor
+    // WHY(P2412 / #533): Z2M ZTS-EUR-C uses forceTimeUpdates - MCU may ignore motor
     // commands until time is synced (Homey ACK still succeeds on empty MCU action).
     // WHY(P2467): actually SEND mcuSyncTime (prior tip only logged + called missing helpers).
     // WHY(P2559 / Z2M configureMagicPacket): Moes ZTS + AM43 need magic before EF00 TX
@@ -296,18 +334,18 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     if (batteryTubular) {
       this._isPureTuyaDP = true;
     }
-    // WHY(P2304/P2433): Moes ZTS + battery tubular rollers — no lux/button robot extras
+    // WHY(P2304/P2433): Moes ZTS + battery tubular rollers - no lux/button robot extras
     if (protocol !== 'ZCL' && !moesZts && !batteryTubular) {
       if (!this.hasCapability('measure_luminance')) {
         try {
           await this.addCapability('measure_luminance');
-          this.log('[CURTAIN] ✅ Added measure_luminance capability');
+          this.log('[CURTAIN] [OK] Added measure_luminance capability');
         } catch (e) { /* ignore */ }
       }
       if (!this.hasCapability('button')) {
         try {
           await this.addCapability('button');
-          this.log('[CURTAIN] ✅ Added button capability');
+          this.log('[CURTAIN] [OK] Added button capability');
         } catch (e) { /* ignore */ }
       }
     } else {
@@ -319,12 +357,12 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       for (const cap of strip) {
         if (this.hasCapability(cap)) {
           this.removeCapability(cap).catch(() => {});
-          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ${protocol === 'ZCL' ? 'ZCL' : batteryTubular ? 'battery-tubular' : 'Moes ZTS'} curtain`);
+          this.log(`[CURTAIN] [DEL] Removed incorrect ${cap} from ${protocol === 'ZCL' ? 'ZCL' : batteryTubular ? 'battery-tubular' : 'Moes ZTS'} curtain`);
         }
       }
     }
 
-    // WHY(P2356): button.1 maintenanceAction without listener → Homey UI errors on #533
+    // WHY(P2356): button.1 maintenanceAction without listener -> Homey UI errors on #533
     if ((moesZts || batteryTubular) && this.hasCapability('button.1')) {
       await this.removeCapability('button.1').catch(() => {});
     }
@@ -350,11 +388,11 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
           } catch (_e) { /* soft */ }
         }
       } catch (e) {
-        this.log('[CURTAIN] ⚠️ Tuya DP re-arm:', e.message);
+        this.log('[CURTAIN] [WARN] Tuya DP re-arm:', e.message);
       }
       await this._applyCalibrationSettings();
     } else {
-      this.log('[CURTAIN] ℹ️ ZCL device - skipping Tuya DP listener and calibration');
+      this.log('[CURTAIN] [INFO] ZCL device - skipping Tuya DP listener and calibration');
     }
 
     // v5.6.0: Initialize bidirectional button support
@@ -364,7 +402,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // v5.7.9: Start connection health monitor
     this._startHealthMonitor();
 
-    this.log('[CURTAIN] v5.7.9 ✅ Ready with enhanced communication');
+    this.log('[CURTAIN] v5.7.9 [OK] Ready with enhanced communication');
   }
 
   /**
@@ -383,17 +421,17 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       // Skip if no failures tracked
       if (!this._commFailures || this._commFailures < 1) {return;}
 
-      this.log('[CURTAIN] 🔍 Running health check...');
+      this.log('[CURTAIN] [SCAN] Running health check...');
       try {
         await this._wakeUpDevice();
         // If wake-up succeeds, clear the warning
         if (this._commFailures > 0) {
           this._commFailures = 0;
           this.unsetWarning().catch(() => {});
-          this.log('[CURTAIN] ✅ Health check passed - device responsive');
+          this.log('[CURTAIN] [OK] Health check passed - device responsive');
         }
       } catch (e) {
-        this.log('[CURTAIN] ⚠️ Health check failed - device may be offline');
+        this.log('[CURTAIN] [WARN] Health check failed - device may be offline');
       }
     }, 300000); // Every 5 minutes
   }
@@ -437,14 +475,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         tuyaCluster.on('reporting', (data) => {
           this._handleTuyaDP(data);
         });
-        this.log('[CURTAIN] ✅ Tuya DP listener registered');
+        this.log('[CURTAIN] [OK] Tuya DP listener registered');
       } else {
-        // Hollow interview cluster — still arm passive frame path via I/O facade
+        // Hollow interview cluster - still arm passive frame path via I/O facade
         this.io?._enablePassiveTuyaListen?.({});
-        this.log('[CURTAIN] ⚠️ No live Tuya cluster object — passive EF00 listen armed');
+        this.log('[CURTAIN] [WARN] No live Tuya cluster object - passive EF00 listen armed');
       }
     } catch (err) {
-      this.log('[CURTAIN] ⚠️ Tuya DP listener setup failed:', err.message);
+      this.log('[CURTAIN] [WARN] Tuya DP listener setup failed:', err.message);
     }
   }
 
@@ -488,7 +526,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 
     this.log(`[CURTAIN] DP${dp} = ${value}`);
 
-    // Primary path — unified RX (state, position, internal Moes settings)
+    // Primary path - unified RX (state, position, internal Moes settings)
     try {
       this._handleDP(dp, rawBuf ?? value);
     } catch (err) {
@@ -503,13 +541,13 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     if ((dp === 14 || dp === 104) && this.hasCapability('measure_luminance')) {
       const lux = typeof value === 'number' ? value : parseInt(value, 10) || 0;
       this.safeSetCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
-      this.log(`[CURTAIN] 💡 Lux: ${lux}`);
+      this.log(`[CURTAIN] [HINT] Lux: ${lux}`);
     }
 
     if (dp === 13 && this.hasCapability('measure_battery')) {
       const battery = typeof value === 'number' ? value : parseInt(value, 10) || 0;
       this.safeSetCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
-      this.log(`[CURTAIN] 🔋 Battery: ${battery}%`);
+      this.log(`[CURTAIN] [BAT] Battery: ${battery}%`);
     }
 
     // WHY(P3051 / GH#576): BSEED DP105 is motor speed (Z2M bseed.ts), not a button press
@@ -524,7 +562,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async _syncMoesSettingFromDp(dp, value) {
     if (this._destroyed || !this._isMoesZtsEurC()) {return;}
-    // WHY(P2478): never block Homey settings UI — defer setSettings off the Zigbee RX path
+    // WHY(P2478): never block Homey settings UI - defer setSettings off the Zigbee RX path
     const v = typeof value === 'number' ? value : parseInt(value, 10);
     if (!Number.isFinite(v)) {return;}
     const updates = {};
@@ -572,7 +610,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       } catch (err) {
         const msg = err?.message || String(err);
         if (/timeout/i.test(msg)) {
-          this.log(`[CURTAIN] ⚠️ Moes DP${dp} timeout (transient): ${msg}`);
+          this.log(`[CURTAIN] [WARN] Moes DP${dp} timeout (transient): ${msg}`);
           return;
         }
         throw err;
@@ -606,7 +644,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async _handleButtonPress(value) {
     if (this._destroyed) {return;}
-    this.log(`[CURTAIN] 🔘 Button pressed: ${value}`);
+    this.log(`[CURTAIN] [BTN] Button pressed: ${value}`);
     try {
       // Set button capability to trigger flows
       await this._safeSetCapability('button', true);
@@ -619,7 +657,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         await triggerCard.trigger(this, { button: 1, scene: 'pressed' }).catch(() => { });
       }
     } catch (err) {
-      this.log('[CURTAIN] ⚠️ Button trigger error:', err.message);
+      this.log('[CURTAIN] [WARN] Button trigger error:', err.message);
     }
   }
 
@@ -632,7 +670,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   async _applyCalibrationSettings() {
     try {
       if (this._isMoesZtsEurC()) {
-        // WHY(P2424 / #533 salvagr): Do NOT blast DP3/7/8/10 at boot — switch keeps its
+        // WHY(P2424 / #533 salvagr): Do NOT blast DP3/7/8/10 at boot - switch keeps its
         // flash calibration and direction. Blasting 4 writes at boot saturates MCU queue
         // and triggers a setSettings echo loop that blocks DP1 (open/close).
         this.log('[CURTAIN] Moes ZTS - skipping boot calibration blast (retaining hardware config)');
@@ -662,7 +700,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       }
 
       // WHY(P3067 family 6): DP101/102 are not travel times on these motors. AM43 `_TZE200_zah67ekd` /
-      // `_icka1clh` (Z2M tuya.ts TS0601_cover_4): DP101 opening_mode, DP102 factory_reset — writing a
+      // `_icka1clh` (Z2M tuya.ts TS0601_cover_4): DP101 opening_mode, DP102 factory_reset - writing a
       // close time there resets the motor at every start. `libht6ua` (Z2M): DP101 motor_direction.
       // fodv6bkr / ZM16B / Quoya M515 have no DP101/102 upstream. Keep the user settings, skip the writes.
       const noTravelDps = this._isBatteryTubularRoller() || this._isQuoyaM515();
@@ -687,7 +725,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         await this._sendTuyaDP(5, 1, 'bool');
       }
     } catch (err) {
-      this.log('[CURTAIN] ⚠️ Could not apply calibration:', err.message);
+      this.log('[CURTAIN] [WARN] Could not apply calibration:', err.message);
     }
   }
 
@@ -729,3 +767,5 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 }
 
 module.exports = CurtainMotorDevice;
+return module.exports;
+});

@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Humidifier (Tuya Local)",
-    "fr": "Humidificateur WiFi (Tuya Local)",
+    "fr": "Humidificateur WiFi",
     "nl": "WiFi Luchtbevochtiger (Tuya Lokaal)",
     "de": "WiFi-Luftbefeuchter (Tuya Lokal)",
     "es": "Humidificador WiFi (Tuya Local)"
@@ -231,11 +231,13 @@
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "alarm_water": {
       "getable": true,

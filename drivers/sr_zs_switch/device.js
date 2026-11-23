@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { CLUSTER } = require('zigbee-clusters');
 const { Cluster } = require('zigbee-clusters');
@@ -61,7 +63,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
         if (this.hasCapability('button.1')) {
             this.registerCapabilityListener('button.1', async () => {
                 const next = !this.getCapabilityValue('onoff_1');
-                this.log(`button.1 pressed (UI) — toggling onoff_1 → ${next}`);
+                this.log(`button.1 pressed (UI) - toggling onoff_1 -> ${next}`);
                 return await this.handleOnOffCapability(zclNode, SWITCH_CONFIG.FIRST_SWITCH_ID, next);
             });
         }
@@ -270,7 +272,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
             .registerRunListener(async (args) => {
                 const switchId = args.switch;
                 const state = args.state === 'true';
-                // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
+                // WHY: listener is shared by all devices of this driver (last registration wins) - act on the Flow's device, not the registering one.
                 const dev = (args && args.device) || this;
                 try {
                     if (state) {
@@ -317,3 +319,5 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
 }
 
 module.exports = SRZSSwitch;
+return module.exports;
+});

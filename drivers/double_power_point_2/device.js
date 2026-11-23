@@ -1,9 +1,11 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
-// Energy scaling divisors — ZCL pass-through (Homey approximation / SmartDivisor on DP paths)
+// Energy scaling divisors - ZCL pass-through (Homey approximation / SmartDivisor on DP paths)
 const ENERGY_DIVISORS = {
   measure_power: { divisor: 1 },
   meter_power: { divisor: 1 },
@@ -12,7 +14,7 @@ const ENERGY_DIVISORS = {
 };
 
 /**
- * P124 — TuyaZigbeeDevice (L14) + mainsPowered
+ * P124 - TuyaZigbeeDevice (L14) + mainsPowered
  */
 class doublepowerpoint2 extends TuyaZigbeeDevice {
 
@@ -74,3 +76,5 @@ class doublepowerpoint2 extends TuyaZigbeeDevice {
 }
 
 module.exports = doublepowerpoint2;
+return module.exports;
+});

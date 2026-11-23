@@ -36,14 +36,14 @@
       "id": "relay_board_4_channel_gang2_turned_on",
       "title": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allume",
+        "fr": "Voie 2 allume",
         "nl": "Kanaal 2 aangezet",
         "de": "Kanal 2 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned on",
-        "fr": "Gang 2 allume",
+        "fr": "Voie 2 allume",
         "de": "Kanal 2 eingeschaltet",
         "nl": "Kanaal 2 aangezet"
       }
@@ -52,14 +52,14 @@
       "id": "relay_board_4_channel_gang2_turned_off",
       "title": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 eteint",
+        "fr": "Voie 2 eteint",
         "nl": "Kanaal 2 uitgezet",
         "de": "Kanal 2 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 turned off",
-        "fr": "Gang 2 eteint",
+        "fr": "Voie 2 eteint",
         "de": "Kanal 2 ausgeschaltet",
         "nl": "Kanaal 2 uitgezet"
       }
@@ -68,14 +68,14 @@
       "id": "relay_board_4_channel_gang3_turned_on",
       "title": {
         "en": "Gang 3 turned on",
-        "fr": "Gang 3 allume",
+        "fr": "Voie 3 allume",
         "nl": "Kanaal 3 aangezet",
         "de": "Kanal 3 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 turned on",
-        "fr": "Gang 3 allume",
+        "fr": "Voie 3 allume",
         "de": "Kanal 3 eingeschaltet",
         "nl": "Kanaal 3 aangezet"
       }
@@ -84,14 +84,14 @@
       "id": "relay_board_4_channel_gang3_turned_off",
       "title": {
         "en": "Gang 3 turned off",
-        "fr": "Gang 3 eteint",
+        "fr": "Voie 3 eteint",
         "nl": "Kanaal 3 uitgezet",
         "de": "Kanal 3 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 turned off",
-        "fr": "Gang 3 eteint",
+        "fr": "Voie 3 eteint",
         "de": "Kanal 3 ausgeschaltet",
         "nl": "Kanaal 3 uitgezet"
       }
@@ -100,14 +100,14 @@
       "id": "relay_board_4_channel_gang4_turned_on",
       "title": {
         "en": "Gang 4 turned on",
-        "fr": "Gang 4 allume",
+        "fr": "Voie 4 allume",
         "nl": "Kanaal 4 aangezet",
         "de": "Kanal 4 eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 turned on",
-        "fr": "Gang 4 allume",
+        "fr": "Voie 4 allume",
         "de": "Kanal 4 eingeschaltet",
         "nl": "Kanaal 4 aangezet"
       }
@@ -116,14 +116,14 @@
       "id": "relay_board_4_channel_gang4_turned_off",
       "title": {
         "en": "Gang 4 turned off",
-        "fr": "Gang 4 eteint",
+        "fr": "Voie 4 eteint",
         "nl": "Kanaal 4 uitgezet",
         "de": "Kanal 4 ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 turned off",
-        "fr": "Gang 4 eteint",
+        "fr": "Voie 4 eteint",
         "de": "Kanal 4 ausgeschaltet",
         "nl": "Kanaal 4 uitgezet"
       }
@@ -228,56 +228,56 @@
       "id": "relay_board_4_channel_gang1_is_on",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allume|eteint}}",
+        "fr": "Voie 1 est !{{allume|eteint}}",
         "nl": "Kanaal 1 is !{{aan|uit}}",
         "de": "Kanal 1 ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allume|eteint}}"
+        "fr": "Voie 1 est !{{allume|eteint}}"
       }
     },
     {
       "id": "relay_board_4_channel_gang2_is_on",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allume|eteint}}",
+        "fr": "Voie 2 est !{{allume|eteint}}",
         "nl": "Kanaal 2 is !{{aan|uit}}",
         "de": "Kanal 2 ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allume|eteint}}"
+        "fr": "Voie 2 est !{{allume|eteint}}"
       }
     },
     {
       "id": "relay_board_4_channel_gang3_is_on",
       "title": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allume|eteint}}",
+        "fr": "Voie 3 est !{{allume|eteint}}",
         "nl": "Kanaal 3 is !{{aan|uit}}",
         "de": "Kanal 3 ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allume|eteint}}"
+        "fr": "Voie 3 est !{{allume|eteint}}"
       }
     },
     {
       "id": "relay_board_4_channel_gang4_is_on",
       "title": {
         "en": "Gang 4 is !{{on|off}}",
-        "fr": "Gang 4 est !{{allume|eteint}}",
+        "fr": "Voie 4 est !{{allume|eteint}}",
         "nl": "Kanaal 4 is !{{aan|uit}}",
         "de": "Kanal 4 ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 is !{{on|off}}",
-        "fr": "Gang 4 est !{{allume|eteint}}"
+        "fr": "Voie 4 est !{{allume|eteint}}"
       }
     }
   ],

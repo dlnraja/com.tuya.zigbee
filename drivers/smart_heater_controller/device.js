@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
@@ -21,8 +23,8 @@ const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase')
  *
  * Tuya DPs:
  * - DP 1: Power (on / off)
- * - DP 2: Target temperature (Â°C)
- * - DP 3: Current temperature (Â°C)
+ * - DP 2: Target temperature (°C)
+ * - DP 3: Current temperature (°C)
  * - DP 4: Thermostat mode (manual/auto/schedule)
  * - DP 6: Power consumption (W)
  * - DP 7: Energy consumed (kWh)
@@ -123,7 +125,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     this._powerLimit = this.getSetting('power_limit') || 2000;
     this._childLock = this.getSetting('child_lock') || false;
 
-    this.log(`[HEATER]  Configuration: Calibration=${this._temperatureCalibration}Â°C, Hysteresis=${this._heatingHysteresis}Â°C, Overheat=${this._overheatProtection}Â°C`);
+    this.log(`[HEATER]  Configuration: Calibration=${this._temperatureCalibration}°C, Hysteresis=${this._heatingHysteresis}°C, Overheat=${this._overheatProtection}°C`);
 
     // Call parent initialization
     await super.onNodeInit({ zclNode });
@@ -176,7 +178,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       for (const key of event.changedKeys) {
         const v = (event.newSettings || {})[key];
         // temperature_calibration: the base class already sends it once via the DP map (P3002);
-        // overheat_protection: _sendOverheatProtection packs a 1-byte value DP, unverified → memory only.
+        // overheat_protection: _sendOverheatProtection packs a 1-byte value DP, unverified -> memory only.
         if (key === 'temperature_calibration') { this._temperatureCalibration = v; continue; }
         if (key === 'overheat_protection') { this._overheatProtection = v; continue; }
         const h = handlers.get(key);
@@ -193,19 +195,19 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   registerSettings() {
     this.registerSetting('temperature_calibration', (newValue) => {
       this._temperatureCalibration = newValue;
-      this.log(`[HEATER]  Temperature calibration updated: ${newValue}Â°C`);
+      this.log(`[HEATER]  Temperature calibration updated: ${newValue}°C`);
       // Send calibration to device
       this._sendCalibration(newValue);
       });
 
     this.registerSetting('heating_hysteresis', (newValue) => {
       this._heatingHysteresis = newValue;
-      this.log(`[HEATER]  Heating hysteresis updated: ${newValue}Â°C`);
+      this.log(`[HEATER]  Heating hysteresis updated: ${newValue}°C`);
       });
 
     this.registerSetting('overheat_protection', (newValue) => {
       this._overheatProtection = newValue;
-      this.log(`[HEATER]  Overheat protection updated: ${newValue}Â°C`);
+      this.log(`[HEATER]  Overheat protection updated: ${newValue}°C`);
       this._sendOverheatProtection(newValue);
       });
 
@@ -262,7 +264,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       break;
 
     case 103: // Temperature calibration response
-      this.log(`[HEATER]  Temperature calibration confirmed: ${value}Â°C`);
+      this.log(`[HEATER]  Temperature calibration confirmed: ${value}°C`);
       break;
 
     default:
@@ -295,7 +297,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     if (typeof temperature === 'number' && temperature >= 5 && temperature <= 35) {
       // WHY(P3002): a setpoint is never calibrated (calibration corrects the measured value only).
       await this.safeSetCapabilityValue('target_temperature', parseFloat(temperature)).catch(() => {});
-      this.log(`[HEATER]  Target temperature: ${temperature}Â°C`);
+      this.log(`[HEATER]  Target temperature: ${temperature}°C`);
     } else {
       this.log(`[HEATER]  Invalid target temperature: ${temperature}`);
     }
@@ -307,15 +309,15 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handleCurrentTemperature(temperature) {
     if (this._destroyed) {return;}
     if (typeof temperature === 'number' && temperature >= -40 && temperature <= 80) {
-      // WHY(P3002): raw value — UnifiedThermostatBase._applyCalibration (called by safeSet) adds
+      // WHY(P3002): raw value - UnifiedThermostatBase._applyCalibration (called by safeSet) adds
       // the temperature_calibration offset exactly once (was: here + again in safeSet).
       const calibratedTemp = this._applyCalibration('measure_temperature', temperature, { forSet: true });
       await this.safeSetCapabilityValue('measure_temperature', parseFloat(temperature)).catch(() => {});
-      this.log(`[HEATER]  Current temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
+      this.log(`[HEATER]  Current temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
 
       // Check overheat protection
       if (temperature >= this._overheatProtection) {
-        this.log(`[HEATER]  OVERHEAT DETECTED: ${temperature}Â°C >= ${this._overheatProtection}Â°C`);
+        this.log(`[HEATER]  OVERHEAT DETECTED: ${temperature}°C >= ${this._overheatProtection}°C`);
         await this.safeSetCapabilityValue('alarm_generic', true).catch(() => {});
         // Trigger emergency shutdown
         await this._emergencyShutdown();
@@ -529,4 +531,5 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
 }
 
 module.exports = SmartHeaterControllerDevice;
-
+return module.exports;
+});

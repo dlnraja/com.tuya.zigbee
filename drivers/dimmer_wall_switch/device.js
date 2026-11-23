@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { migrateDeviceClass } = require('../../lib/utils/DeviceClassMigration');
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -14,7 +16,7 @@ class DimmerWallSwitchDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
   // system capability configs (lib/system/capabilities/meter_power/metering.js,
   // measure_power|measure_current|measure_voltage/electricalMeasurement.js)
   // apply scaling from the device-reported multiplier/divisor attributes
-  // (metering multiplier/divisor, acPowerMultiplier/acPowerDivisor, etc.) —
+  // (metering multiplier/divisor, acPowerMultiplier/acPowerDivisor, etc.) -
   // factor = multiplier / divisor: default 1 when unread.
 
   async onNodeInit({ zclNode }) {
@@ -23,7 +25,7 @@ class DimmerWallSwitchDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
     await super.onNodeInit({ zclNode });
     this.log('Dimmer Wall Switch v5.9.12 Ready');
 
-    // v9.0.411 (P92.119): UI maintenance buttons — this driver extends
+    // v9.0.411 (P92.119): UI maintenance buttons - this driver extends
     // ZigBeeDevice directly, so the universal TuyaZigbeeDevice button
     // listeners do not apply here.
     for (const [cap, epNum] of [['button.1', 1], ['button.toggle_1', 1], ['button.toggle_2', 2]]) {
@@ -99,3 +101,5 @@ class DimmerWallSwitchDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 }
 
 module.exports = DimmerWallSwitchDevice;
+return module.exports;
+});

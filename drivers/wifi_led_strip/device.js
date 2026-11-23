@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeMultiply, safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const { colorTempToHomey, colorTempToDevice } = require('../../lib/tuya-local/TuyaDeviceTemplates');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
@@ -23,7 +25,7 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
       '22': { capability: 'dim', writable: true,
         transform: (v) => Math.max(0, Math.min(1, safeDivide(v - 10, 990))),
         reverseTransform: (v) => Math.round(safeMultiply(v, 990) + 10) },
-      // WHY(2026-10-10): Tuya temp_value 0 = warm .. 1000 = cool (tuya-local rgbcw_lightbulb 0..1000 → 2700..6500 K;
+      // WHY(2026-10-10): Tuya temp_value 0 = warm .. 1000 = cool (tuya-local rgbcw_lightbulb 0..1000 -> 2700..6500 K;
       // localtuya light.py maps 0 to the warmest mired unless "reverse" is set). Homey light_temperature is
       // 0 = cold .. 1 = warm, so the raw ratio was inverted. Opt-in setting color_temp_reversed restores the
       // raw ratio for the rare firmware that really is reversed.
@@ -47,7 +49,7 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
   _registerCapabilityListeners() {
     if (this._ledColorListenersRegistered) {return;}
     this._ledColorListenersRegistered = true;
-    // TuyaLocalDevice (base) has no _registerCapabilityListeners — guard the super call.
+    // TuyaLocalDevice (base) has no _registerCapabilityListeners - guard the super call.
     if (typeof super._registerCapabilityListeners === 'function') {
       super._registerCapabilityListeners();
     }
@@ -104,3 +106,5 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiLedStripDevice;
+return module.exports;
+});

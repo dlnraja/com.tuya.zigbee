@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -99,7 +101,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   /**
    * Les cartes flow de ce driver sont préfixées « air_purifier_switch_1gang_ »
    * alors que PhysicalButtonMixin construit les IDs depuis this.driver.id
-   * (« air_purifier_switch »). Remap pour aligner code et cartes — fournit
+   * (« air_purifier_switch »). Remap pour aligner code et cartes - fournit
    * notamment les tokens duration/clicks/action des cartes physical_* et
    * gang1_scene.
    */
@@ -121,3 +123,5 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 }
 
 module.exports = Switch1GangDevice;
+return module.exports;
+});

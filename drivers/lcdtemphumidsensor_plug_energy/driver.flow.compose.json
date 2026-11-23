@@ -35,8 +35,8 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_power_af4dd",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (measurement)",
+        "fr": "Puissance changée (mesure)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
@@ -60,8 +60,8 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_volta_fb6e7",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée",
+        "en": "Voltage changed (measurement)",
+        "fr": "Tension changée (mesure)",
         "nl": "Spanning gewijzigd",
         "de": "Spannung geändert"
       },
@@ -85,8 +85,8 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_curre_bf97f",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé",
+        "en": "Current changed (measurement)",
+        "fr": "Courant changé (mesure)",
         "nl": "Stroom gewijzigd",
         "de": "Strom geändert"
       },
@@ -135,15 +135,15 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
@@ -187,8 +187,8 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_voltage_changed",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée",
+        "en": "Voltage changed (report)",
+        "fr": "Tension changée (rapport)",
         "nl": "Spanning gewijzigd",
         "de": "Spannung geändert"
       },
@@ -212,8 +212,8 @@
     {
       "id": "lcdtemphumidsensor_plug_energy_current_changed",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé",
+        "en": "Current changed (report)",
+        "fr": "Courant changé (rapport)",
         "nl": "Stroom gewijzigd",
         "de": "Strom geändert"
       },

@@ -61,7 +61,7 @@
     {
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_b3cd9",
       "title": {
-        "en": "Illuminance changed",
+        "en": "Illuminance changed (report) (radar motion sensor radar)",
         "fr": "Luminosité changée",
         "nl": "Verlichtingssterkte gewijzigd",
         "de": "Beleuchtungsstärke geändert"
@@ -86,8 +86,8 @@
     {
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_f8e99",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report) (mmwa)",
+        "fr": "Température changée (rapport) (mmwa)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -111,8 +111,8 @@
     {
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_88701",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report) (radar motion sensor radar)",
+        "fr": "Humidité changée (rapport) (radar motion sensor radar)",
         "nl": "Luchtvochtigheid gewijzigd",
         "de": "Luftfeuchtigkeit geändert"
       },
@@ -218,15 +218,15 @@
     {
       "id": "sensor_motion_radar_motion_sensor_radar_mmwa_73ab1",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report) (mmwa 2)",
+        "fr": "Température changée (rapport) (mmwa 2)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report) (mmwa 2)",
+        "fr": "Température changée (rapport) (mmwa 2)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -250,8 +250,8 @@
     {
       "id": "sensor_motion_radar_temperature_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report)",
+        "fr": "Température changée (rapport)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -275,8 +275,8 @@
     {
       "id": "sensor_motion_radar_humidity_changed",
       "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "en": "Humidity changed (report)",
+        "fr": "Humidité changée (rapport)",
         "nl": "Luchtvochtigheid gewijzigd",
         "de": "Luftfeuchtigkeit geändert"
       },
@@ -300,7 +300,7 @@
     {
       "id": "sensor_motion_radar_illuminance_changed",
       "title": {
-        "en": "Illuminance changed",
+        "en": "Illuminance changed (report)",
         "fr": "Luminosité ambiante changée",
         "nl": "Verlichtingssterkte gewijzigd",
         "de": "Beleuchtungsstärke geändert"

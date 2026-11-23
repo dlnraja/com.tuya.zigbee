@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js'); // P3065: safeMultiply was used but not imported
 
 
@@ -13,7 +15,7 @@ const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHel
 class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 
   // Energy DP scaling handled by SmartEnergyManager (lib/managers/SmartEnergyManager.js)
-  // via AdaptiveDataParser — per-DP divisor table + cached divisor detection for
+  // via AdaptiveDataParser - per-DP divisor table + cached divisor detection for
   // measure_power / meter_power / measure_voltage / measure_current.
   // Initialized by UniversalZigbeeDevice.onNodeInit (this.smartEnergy), so this
   // driver needs no local divisor logic.
@@ -130,4 +132,5 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 }
 
 module.exports = UniversalZigbeeDeviceSub;
-
+return module.exports;
+});

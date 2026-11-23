@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { migrateDeviceClass } = require('../../lib/utils/DeviceClassMigration');
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
@@ -122,7 +124,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
   }
 
   /**
-   * L11: Set backlight mode — 0-based canonical mapping
+   * L11: Set backlight mode - 0-based canonical mapping
    * DP15 primary (0=off, 1=normal, 2=inverted)
    * DP36+DP37 fallback for alternate firmware (issue #26578)
    */
@@ -143,7 +145,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(() => {});
     } else {
       await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(() => {});
-      // L11: ternary maps string → DP integer
+      // L11: ternary maps string -> DP integer
       const lightMode = backlightMode === 'inverted' ? 2 : 1;
       await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(() => {});
     }
@@ -226,7 +228,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       }
       
       if (this._lastOnoffState !== state) {
-        this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
+        this.log(`State changed: ${this._lastOnoffState} -> ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         this._lastOnoffState = state;
         this['safeSetCapabilityValue']('onoff', state).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         
@@ -255,7 +257,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       
       const changeThreshold = 10;
       if (this._lastBrightnessValue === null || Math.abs(brightnessRaw - this._lastBrightnessValue) >= changeThreshold) {
-        this.log(`Brightness changed: ${this._lastBrightnessValue} → ${brightnessRaw} (${brightness.toFixed(2)}) (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
+        this.log(`Brightness changed: ${this._lastBrightnessValue} -> ${brightnessRaw} (${brightness.toFixed(2)}) (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         
         const brightnessIncreased = this._lastBrightnessValue !== null && brightnessRaw > this._lastBrightnessValue;
         const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
@@ -288,9 +290,9 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         throw new Error('Tuya cluster not available');
       }
 
-      this.log('════════════════════════════════════════');
+      this.log('========================================');
       this.log(`Sending Tuya command: DP ${dp} = ${value} (${type})`);
-      this.log('════════════════════════════════════════');
+      this.log('========================================');
 
       let dataBuffer;
       let datatype;
@@ -342,7 +344,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         data: dataBuffer,
       });
 
-      this.log('✅ Tuya command sent successfully');
+      this.log('[OK] Tuya command sent successfully');
 
     } catch (err) {
       this.error('Failed to send Tuya command:', err);
@@ -367,3 +369,5 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 }
 
 module.exports = WallDimmer1Gang1Way;
+return module.exports;
+});

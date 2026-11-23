@@ -3,7 +3,7 @@
 const { Driver } = require('homey');
 
 /**
- * Flow cards for 4-channel relay — gang actions via _setGangOnOff / capabilities.
+ * Flow cards for 4-channel relay - gang actions via _setGangOnOff / capabilities.
  */
 class RelayBoard4ChannelDriver extends Driver {
   async onInit() {

@@ -1,7 +1,7 @@
 'use strict';
 /**
  * Forum 140352 requests from the week of 12–13 Nov 2026.
- * Sources: post 2270 diagnostic (FrankEver DP102 0/100), Z2M tuya.ts TZ-ZT01_GA4,
+ * Sources: post 2270 diagnostic (FrankEver DP102 0/100, Gmail 56949320), Z2M tuya.ts TZ-ZT01_GA4,
  * Z2M neo.ts NAS-WV03B2, post 2264 TS0046. No invented product ids.
  */
 const { describe, it } = require('../_support/dual-runner');
@@ -35,7 +35,10 @@ describe('P3287 forum 140352 week couples', () => {
   it('a one-byte open report is true and an unknown value is not stored as false', () => {
     assert.strictEqual(tuyaDpBool(Buffer.from([1])), true);
     assert.strictEqual(tuyaDpBool('true'), true);
+    assert.strictEqual(tuyaDpBool('hex:01'), true);
+    assert.strictEqual(tuyaDpBool({ dp: 1, datatype: 1, data: 'hex:01' }), true);
     assert.strictEqual(tuyaDpBool(Buffer.from([0])), false);
+    assert.strictEqual(tuyaDpBool('hex:00'), false);
     assert.strictEqual(tuyaDpBool('later'), null);
   });
 
@@ -51,6 +54,29 @@ describe('P3287 forum 140352 week couples', () => {
     assert.match(mgr, /DP1 not requested/);
     const cat = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib/zigbee/data/unknown-dp-catalog.json'), 'utf8'));
     assert.deepStrictEqual(cat.caps['_tze200_1n2zev06|TS0601'], { onoff: 1, valve_position: 102 });
+  });
+
+  it('FrankEver DP102 is scaled to Homey valve_position 0-1 and status can be refreshed read-only', () => {
+    const { tuyaPercentToValvePosition, valvePositionToTuyaPercent } = require('../../lib/tuya/valvePosition');
+    // Diag 56949320: one valve reported 100 (open), the other 0 (closed).
+    assert.strictEqual(tuyaPercentToValvePosition(100), 1);
+    assert.strictEqual(tuyaPercentToValvePosition(0), 0);
+    assert.strictEqual(tuyaPercentToValvePosition(50), 0.5);
+    assert.strictEqual(tuyaPercentToValvePosition(1), 1);
+    assert.strictEqual(tuyaPercentToValvePosition('later'), null);
+    assert.strictEqual(valvePositionToTuyaPercent(1), 100);
+    assert.strictEqual(valvePositionToTuyaPercent(0), 0);
+    assert.strictEqual(valvePositionToTuyaPercent(0.5), 50);
+    const src = fs.readFileSync(path.join(ROOT, 'drivers/water_valve_smart/device.js'), 'utf8');
+    assert.match(src, /transform:\s*tuyaPercentToValvePosition/);
+    assert.match(src, /27:\s*\{[^}]*internal:\s*'power_off_state'/);
+    assert.match(src, /refreshValveStatus\(/);
+    assert.match(src, /requestAllDPs\(\{\s*readOnly:\s*true\s*\}\)/);
+    assert.match(src, /_triggerAppLevelButtonFlows\(\)\s*\{/);
+    assert.match(src, /sendEf00DpMaxFallback\(this, 101,/);
+    const fk = src.split('if (this.isFrankeverFkV02)')[1].split('if (this.isFrankeverFkBv05)')[0];
+    assert.match(fk, /transform:\s*tuyaPercentToValvePosition/);
+    assert.doesNotMatch(fk, /Math\.min\(100,\s*Math\.round\(n\)\)/);
   });
 
   it('LCD _TZE284_9ern5sfh stays on the LCD driver and the typo is absent', () => {

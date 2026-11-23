@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 // A8: NaN Safety - use safeDivide/safeMultiply
 const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
@@ -38,3 +40,5 @@ class LEDStripRGBWDevice extends UnifiedLightBase {
   }
 }
 module.exports = LEDStripRGBWDevice;
+return module.exports;
+});

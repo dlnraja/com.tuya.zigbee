@@ -2,7 +2,7 @@
   "id": "smoke_sensor_ts0601_dp",
   "name": {
     "en": "Smoke detector (Tuya TS0601 DP)",
-    "fr": "Détecteur de fumée (Tuya TS0601 DP)",
+    "fr": "Détecteur de fumée",
     "nl": "Rookmelder (Tuya TS0601 DP)",
     "de": "Rauchmelder (Tuya TS0601 DP)"
   },
@@ -18,6 +18,11 @@
     "alarm_tamper",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    }
+  },
   "energy": {
     "batteries": [
       "OTHER"

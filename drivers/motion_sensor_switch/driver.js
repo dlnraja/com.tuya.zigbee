@@ -3,6 +3,11 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class TuyaZigbeeDriver extends ZigBeeDriver {
+  // P3360: already-shipped Excellux PIR/vibration couples keep this driver id but get the held sensor class.
+  onMapDeviceClass(device) {
+    return require('../../lib/drivers/PublishedHostClassMap').mappedDeviceClass('motion_sensor_switch', device) || require('./device');
+  }
+
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiHeaterDevice extends TuyaLocalDevice {
@@ -27,7 +29,7 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
     const getCondition = (id) => { try { return cf.getConditionCard(id); } catch (e) { return null; } };
     const getAction = (id) => { try { return cf.getActionCard(id); } catch (e) { return null; } };
 
-    // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
+    // WHY: listener is shared by all devices of this driver (last registration wins) - act on the Flow's device, not the registering one.
     getCondition('wifi_heater_is_heating')?.registerRunListener(async (a) => ((a && a.device) || this).getCapabilityValue('onoff') === true);
     getCondition('wifi_heater_mode_is')?.registerRunListener(async (a) => ((a && a.device) || this).getCapabilityValue('wifi_heater_mode') === a.mode);
     
@@ -64,3 +66,5 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiHeaterDevice;
+return module.exports;
+});

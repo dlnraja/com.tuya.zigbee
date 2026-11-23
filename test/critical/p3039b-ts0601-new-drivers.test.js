@@ -28,7 +28,10 @@ describe('P3039b/c new TS0601 drivers', () => {
   for (const [id, exp] of Object.entries(DRIVERS)) {
     describe(id, () => {
       const c = JSON.parse(read('drivers', id, 'driver.compose.json'));
-      const dev = read('drivers', id, 'device.js');
+      // P3330: a held driver folded into a published one re-exports its class from lib/devices/held/.
+      const rawDev = read('drivers', id, 'device.js');
+      const heldImpl = rawDev.match(/module\.exports = require\('\.\.\/\.\.\/(lib\/devices\/held\/\w+)'\)/);
+      const dev = heldImpl ? read(`${heldImpl[1]}.js`) : rawDev;
       it('matches the exact TS0601 pid and the exact manufacturer forms', () => {
         assert.ok(c.zigbee.productId.includes('TS0601'));
         assert.ok(c.zigbee.manufacturerName.length >= 4);

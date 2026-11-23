@@ -3,7 +3,7 @@
     {
       "id": "device_radiator_valve_smart",
       "title": {
-        "en": "Target temperature changed",
+        "en": "Target temperature changed (report)",
         "fr": "Température cible changée",
         "nl": "Doeltemperatuur gewijzigd",
         "de": "Zieltemperatur geändert"
@@ -28,8 +28,8 @@
     {
       "id": "device_radiator_valve_smart_measure_temperat_b253a",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (measurement)",
+        "fr": "Température changée (mesure)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -53,15 +53,15 @@
     {
       "id": "device_radiator_valve_smart_temp_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
@@ -105,7 +105,7 @@
     {
       "id": "device_radiator_valve_smart_target_temperature_changed",
       "title": {
-        "en": "Target temperature changed",
+        "en": "Target temperature changed (report) (device radiator valve smart)",
         "fr": "Consigne changée",
         "nl": "Doeltemperatuur gewijzigd",
         "de": "Zieltemperatur geändert"

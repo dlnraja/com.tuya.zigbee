@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
@@ -84,7 +86,7 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
     this.homey.setTimeout(() => { if (this._destroyed) {return;} const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[TUYATEC]  T:', temp, 'Â°C H:', hum, '% B:', bat, '%'); }, 100);
+      this.log('[TUYATEC]  T:', temp, '°C H:', hum, '% B:', bat, '%'); }, 100);
   }
 
 
@@ -108,3 +110,5 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = TuyatecTempHumidSensorDevice;
+return module.exports;
+});

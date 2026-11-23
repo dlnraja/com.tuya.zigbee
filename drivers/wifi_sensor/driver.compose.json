@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Sensor (Tuya Local)",
-    "fr": "Capteur WiFi (Tuya Local)",
+    "fr": "Capteur WiFi",
     "nl": "WiFi-sensor (Tuya Lokaal)",
     "de": "WiFi-Sensor (Tuya Lokal)",
     "es": "Sensor WiFi (Tuya Local)"
@@ -255,15 +255,18 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "discovery": "tuya_wifi"

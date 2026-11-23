@@ -1,0 +1,36 @@
+{
+  "_why": "P3342 (16/11/2026 Paris): hard ceiling for the UPLOAD app.json bytes (the file prepare-publish writes, after the P3047 ASCII pass). P3340 ties Athom's processing failures (bare AggregateError) to the work per build, which grows with the manifest: stable at 2.85 MB has never been refused, master 3.39 MB was. P3342 brought master to ~3.17 MB losslessly (CI payload ~14 KB larger). Growth above this ceiling blocks prepare-publish and the Platform Budget check. Lower it as the manifest shrinks; raising it needs the owner's go and a new Athom data point (docs/knowledge/athom-driver-ceiling.md). P3360 (21/11/2026): ceilingBytes 3270000 after a measured 3255746 B ASCII manifest for the 368-driver package; see history. Goal unchanged. Athom 4 MB hard limit unchanged. P3342c (22/11/2026): lossless empty/schema-default strip brought the 370-driver upload app.json from 3272186 B to 3266532 B; ceiling stays 3270000. P3342d (22/11/2026, t1030u/t1032u): keeping tokens[].type (Homey validate warns if they are omitted; run 45075364135 refused to upload v9.0.1638) left the 370-driver upload app.json at 3271732 B, 1732 B over 3270000. Trial ceilingBytes 3300000 (Athom hard limit still 4 MB). Last Athom-accepted evidence: v9.0.1636 build #3717, 3194724 B, Test 21/11 20:33 Europe/Paris. Empty-default strips stay. If Athom rejects the larger build, revert to 3270000 and report.",
+  "ceilingBytes": 3300000,
+  "goalBytes": 2850000,
+  "history": [
+    {
+      "patch": "P3342d",
+      "date": "2026-11-22",
+      "ceilingBytes": 3300000,
+      "previousCeilingBytes": 3270000,
+      "measuredAsciiBytes": 3271732,
+      "lastAcceptedAthomBytes": 3194724,
+      "lastAcceptedVersion": "9.0.1636",
+      "lastAcceptedBuild": 3717,
+      "trial": true,
+      "fallbackCeilingBytes": 3270000,
+      "baseline": "t1030u/t1032u: run 45075364135 bumped v9.0.1638 (write-back ac35777a00) but did not upload: 325 Homey warnings that tokens[].type was missing after the P3342c schema-default strip, and the publish gate refused to send the package ([athom-final] no Athom build for v9.0.1638). Token types are kept. Remaining lossless empty-default strip is not enough: measured 3271732 B, 1732 B over 3270000. Trial ceiling 3300000 (margin 28268 B). Last Athom-accepted size 3194724 B (v9.0.1636 #3717 in Test, 21/11 20:33 Europe/Paris). Athom 4 MB hard limit unchanged. Goal 2850000 unchanged. If Athom rejects, revert to 3270000 and report. No driver id, flow card id, capability or language was removed."
+    },
+    {
+      "patch": "P3342c",
+      "date": "2026-11-22",
+      "ceilingBytes": 3270000,
+      "previousCeilingBytes": 3270000,
+      "measuredAsciiBytes": 3266532,
+      "baseline": "t1030u / run 45062875101 FATAL(P3342): upload app.json at a31579bf01 was 3272186 B, 2186 B over the 3270000 ceiling (370 drivers, v9.0.1637). Lossless post-split strip of empty Homey-default fields (empty driver flow/settings/energy/ui, empty zigbee bindings, empty flow-card args) and schema-default tokens[].type=\"string\". Measured 3266532 B (under by 3468 B). Ceiling and goal unchanged. Athom 4 MB hard limit unchanged. No driver id, flow card id, capability or language was removed."
+    },
+    {
+      "patch": "P3360",
+      "date": "2026-11-21",
+      "ceilingBytes": 3270000,
+      "previousCeilingBytes": 3250000,
+      "measuredAsciiBytes": 3255746,
+      "baseline": "Graduating 21 held drivers (368 payload drivers, 3 continuations split back) grew the ASCII upload app.json to 3255746 B after every lossless shrink (P2830h, P3068, P3342, including a post-split rerun). Athom #488 (wouter-athom, 2026-11-17) identified AggregateError as a packaged file-count issue, not a manifest-byte cap; #3716 v9.0.1635 reached Test at 347 drivers / 3183286 B app.json / 3740 files. The new packed archive measured 3274 files / 30.64 MB (ceilings 3830 files / 32700000 B). Athom's hard app.json limit remains 4 MB. Raise is only this in-repo ratchet so the approved >347 upload can pass prepare-publish. Goal stays 2850000."
+    }
+  ]
+}

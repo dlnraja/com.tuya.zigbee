@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
@@ -11,13 +13,13 @@ const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timer
 const BootBudget = require('../../lib/performance/BootBudget');
 
 /**
- * Water leak sensor — IAS Zone (TS0207) + selective Tuya DP (TS0601) profiles.
+ * Water leak sensor - IAS Zone (TS0207) + selective Tuya DP (TS0601) profiles.
  *
- * Sacred couple example: `_TZ3000_k4ej3ww2` + `TS0207` → IAS only (never EF00 tuya water driver).
+ * Sacred couple example: `_TZ3000_k4ej3ww2` + `TS0207` -> IAS only (never EF00 tuya water driver).
  * See data/user-misattribution-registry.json + reports/P151_*.
  *
  * Known quirks: HOBEIAN INVALID_EP bind on sleepy devices; some units use alarm2 vs alarm1;
- * batteryPercentageRemaining often 0–200; passive until wet/dry.
+ * batteryPercentageRemaining often 0-200; passive until wet/dry.
  */
 
 const WATER_SENSOR_PROFILES = {
@@ -47,7 +49,7 @@ const WATER_SENSOR_PROFILES = {
     model: 'ZG-222Z/ZG-222ZA',
     iasAlarmBit: 'both',
     hasTamper: true,
-    notes: 'HOBEIAN/Aubess IAS water leak — sacred couple; never EF00 tuya driver'
+    notes: 'HOBEIAN/Aubess IAS water leak - sacred couple; never EF00 tuya driver'
   },
   '_tz3000_k4ej3ww2': {
     type: 'ias_zone', productId: 'TS0207', brand: 'HOBEIAN',
@@ -143,7 +145,7 @@ const WATER_SENSOR_PROFILES = {
     hasTamper: true,
     notes: 'HOBEIAN branded'
   },
-  // P93: explicit lowercase alias — some interviews report manufacturerName as "hobeian"
+  // P93: explicit lowercase alias - some interviews report manufacturerName as "hobeian"
   // (forum #2090/#2111 "no data" when profile match failed before IAS enroll)
   'hobeian': {
     type: 'ias_zone', productId: 'ZG-222Z',
@@ -235,6 +237,18 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         104: { capability: null, internal: 'alarm_volume' },
       };
     }
+    // Weekly upstream 2026-11-16: Nous E13 / Sygonix W08-Z10T (Z2M nous.ts, _TZE284_pfbtmgo1 and _TZE284_1di7ujzp).
+    // DP1 water (1 = water present), DP4 battery, DP102 water_leak (1 = alarm condition met, buzzer on).
+    // DP101 (alarm mode enum 0 presence / 1 absence) and DP103 (ringtone) are left out on purpose: the default
+    // map reads DP101 as alarm_water, which would raise a false leak from a mode setting.
+    const e13Mfr = String(getManufacturer(this) || this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    if (e13Mfr === '_tze284_pfbtmgo1' || e13Mfr === '_tze284_1di7ujzp') {
+      return {
+        1: { capability: 'alarm_water', transform: transformAlarm },
+        4: { capability: 'measure_battery', divisor: 1 },
+        102: { capability: 'alarm_water', transform: boolean() },
+      };
+    }
     return {
       1: { capability: 'alarm_water', transform: transformAlarm },
       101: { capability: 'alarm_water', transform: boolean() },
@@ -261,13 +275,13 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       this._invertAlarm = !!pol.shouldInvert;
       this.log(`[WATER] polarity mode=${pol.mode} invert=${this._invertAlarm} reason=${pol.reason} userCheckbox=${userInv}`);
       if (this._deviceProfile?.type === 'ias_zone') {
-        // P2184 Peter 1cf775a2: TS0207 IAS-only — never EF00 DP storm at boot/30min
+        // P2184 Peter 1cf775a2: TS0207 IAS-only - never EF00 DP storm at boot/30min
         this._skipTuyaDataQuery = true;
         this._iasOnlyProfile = true;
       }
       await super.onNodeInit({ zclNode });
 
-      // Forum #2134: Homey shows "-" for Sabotagealarm until first report —
+      // Forum #2134: Homey shows "-" for Sabotagealarm until first report -
       // seed false so UI is known (not "unknown").
       if (this.hasCapability('alarm_tamper') && this.getCapabilityValue('alarm_tamper') == null) {
         await this.safeSetCapabilityValue('alarm_tamper', false).catch(() => {});
@@ -291,7 +305,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         `tamper=${!!profile.hasTamper} invert=${this._invertAlarm}`,
       );
 
-      // WHY P2203: IAS-only TS0207 (k4ej3ww2) has no useful EF00 — Tuya mirror
+      // WHY P2203: IAS-only TS0207 (k4ej3ww2) has no useful EF00 - Tuya mirror
       // only adds DP query noise (Peter 1cf775a2). Hybrid/DP waters keep mirror.
       this._iasFallback = new IASAlarmFallback(this, {
         pollInterval: 6 * 60 * 60 * 1000,
@@ -317,7 +331,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       logFleetIdentity(this, 'WATER-WAKE');
     } catch (_e) { /* ignore */ }
     BootBudget.markRadioActivity(this);
-    this.log('[WATER] wake/rejoin — re-attach IAS Zone listener');
+    this.log('[WATER] wake/rejoin - re-attach IAS Zone listener');
     try {
       if (typeof this._reattachIasOnWake === 'function') {
         await this._reattachIasOnWake();
@@ -385,11 +399,11 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
             await tuyaCluster.dataQuery({}).catch(() => { });
           }
         } catch (e) {
-          this.log(`[WATER] ⚠️ Tuya DP query failed: ${e.message}`);
+          this.log(`[WATER] [WARN] Tuya DP query failed: ${e.message}`);
         }
       }
     } catch (e) {
-      this.log(`[WATER] ⚠️ Force initial read error: ${e.message}`);
+      this.log(`[WATER] [WARN] Force initial read error: ${e.message}`);
     }
   }
 
@@ -402,7 +416,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     }
     if (changedKeys.includes('invert_alarm') || changedKeys.includes('alarm_polarity')) {
       const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
-      // resolvePolarity reads getSetting — temporarily apply newSettings for resolve
+      // resolvePolarity reads getSetting - temporarily apply newSettings for resolve
       const prevGet = this.getSetting.bind(this);
       this.getSetting = (k) => Object.prototype.hasOwnProperty.call(newSettings, k)
         ? newSettings[k]
@@ -427,7 +441,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       this._iasOriginatedWaterAlarm = false;
       if (this._invertAlarm && !isIAS) {
         const invertedValue = !value;
-        this.log(`[WATER] 🔄 Inverting alarm: ${value} → ${invertedValue}`);
+        this.log(`[WATER] [SYNC] Inverting alarm: ${value} -> ${invertedValue}`);
         return super.setCapabilityValue(capability, invertedValue);
       }
     }
@@ -452,3 +466,5 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = WaterLeakSensorDevice;
+return module.exports;
+});

@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "note": "SSOT old_cap -> new_cap for in-app flow remap previews and Flow Converter capability mapping. Additive aliases only. Never remove a published capability id.",
+    "source": "P3374 / forum 154906 (button_up vs button_1 lesson)"
+  },
+  "aliases": {
+    "button_up": ["button.1", "button_1", "button.up"],
+    "button_down": ["button.2", "button_2", "button.down"],
+    "button_1": ["button.1"],
+    "button_2": ["button.2"],
+    "button_3": ["button.3"],
+    "button_4": ["button.4"],
+    "onoff": ["onoff"],
+    "dim": ["dim"],
+    "windowcoverings_set": ["windowcoverings_set"],
+    "windowcoverings_state": ["windowcoverings_state"],
+    "garagedoor_closed": ["garagedoor_closed", "alarm_contact"],
+    "alarm_motion": ["alarm_motion", "alarm_generic"],
+    "measure_temperature": ["measure_temperature"],
+    "measure_humidity": ["measure_humidity"],
+    "measure_battery": ["measure_battery"],
+    "target_temperature": ["target_temperature"]
+  },
+  "driverFamilies": {
+    "wireless_button": ["button_wireless", "button_wireless_1", "button_wireless_2", "button_wireless_3", "button_wireless_4", "button_wireless_4_ts0041", "button_wireless_6", "button_wireless_8", "remote_button_wireless_smart", "remote_button_wireless_wall", "smart_knob_rotary"],
+    "curtain_motor": ["curtain_motor", "curtain_motor_2", "curtain_motor_shutter", "curtain_motor_tilt", "curtain_motor_wall", "curtain_module", "wall_curtain_switch"],
+    "motion_sensor": ["pir_sensor_2", "pirsensor", "slim_motion_sensor", "motion_sensor", "smart_motion_sensor"]
+  }
+}

@@ -52,6 +52,7 @@ Full texts (SSOT):
 - [R22 architecture sources (spec 010 / T0)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/R22_ARCHITECTURE_SOURCES.md)
 - [🔐 Security Rules v8.5.0](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SECURITY_RULES.md)
 - [Session Stability & Heuristic Rules Specification](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SESSION_STABILITY_SUMMARY.md)
+- [Shipped JavaScript Latin-1 and package images (P3320)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SHIPPED_JS_LATIN1.md)
 - [The "56 Years Ago" Bug and Tuya Sleepy Devices](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SLEEPY_TUYA_56_YEARS_BUG.md)
 - [Source digest rule (P3138 — t734u / t735u / t736u)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SOURCE_DIGEST.md)
 - [SSOT couple-sources ledger (P3136, t731u)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/rules/SSOT_COUPLE_SOURCES.md)

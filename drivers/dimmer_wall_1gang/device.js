@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
@@ -7,13 +9,13 @@ const LightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      1-GANG DIMMER - v5.5.412 + Virtual Buttons                             ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║ LightBase handles: onoff, dim listeners and ZCL setup                ║
- * ║  v5.5.412: Added virtual toggle/dim up/dim down buttons                     ║
- * ║  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      1-GANG DIMMER - v5.5.412 + Virtual Buttons                             |
+ * +==============================================================================+
+ * | LightBase handles: onoff, dim listeners and ZCL setup                |
+ * |  v5.5.412: Added virtual toggle/dim up/dim down buttons                     |
+ * |  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   |
+ * +==============================================================================+
  */
 class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) {
 
@@ -67,7 +69,7 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
 
       // v5.5.412: Initialize virtual buttons
       await this.initVirtualButtons();
-      this.log('[DIMMER-1G] v5.8.97 ✅ Ready + physical detection');
+      this.log('[DIMMER-1G] v5.8.97 [OK] Ready + physical detection');
     }, 'onNodeInit');
   }
 
@@ -94,7 +96,7 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
       const v = rawValue === 1 || rawValue === true;
       if (this._lastOnoffState === null && typeof prevCapOnoff === 'boolean') {this._lastOnoffState = prevCapOnoff;}
       if (this._lastOnoffState === v) {return;}
-      const firstReport = this._lastOnoffState === null; // P2774: unknown baseline → baseline only
+      const firstReport = this._lastOnoffState === null; // P2774: unknown baseline -> baseline only
       this._lastOnoffState = v;
       if (isPhysical && !firstReport) {
         const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
@@ -133,3 +135,5 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
 }
 
 module.exports = DimmerWall1GangDevice;
+return module.exports;
+});

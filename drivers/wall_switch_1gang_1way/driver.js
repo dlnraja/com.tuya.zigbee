@@ -6,6 +6,12 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * Wall Switch 1-Gang 1-Way Driver
  */
 class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
+  // P3330: exact couples of a held driver folded here (lib/drivers/held-driver-folds.json) run that
+  // driver's own device class; every other device keeps ./device.
+  onMapDeviceClass(device) {
+    return require('../../lib/drivers/HeldDriverFolds').foldedDeviceClass('wall_switch_1gang_1way', device) || require('./device');
+  }
+
 
   async onInit() {
     this.log('Wall Switch 1-Gang 1-Way Driver initialized');
@@ -24,21 +30,21 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     try {
       this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_turned_on');
-      this.log('✅ Flow card registered: wall_switch_1gang_1way_turned_on');
+      this.log('[OK] Flow card registered: wall_switch_1gang_1way_turned_on');
     } catch (err) {
       this.error('Failed to register turned_on flow card:', err.message);
     }
 
     try {
       this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_turned_off');
-      this.log('✅ Flow card registered: wall_switch_1gang_1way_turned_off');
+      this.log('[OK] Flow card registered: wall_switch_1gang_1way_turned_off');
     } catch (err) {
       this.error('Failed to register turned_off flow card:', err.message);
     }
 
     try {
       this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_gang1_scene');
-      this.log('✅ Flow card registered: wall_switch_1gang_1way_gang1_scene');
+      this.log('[OK] Flow card registered: wall_switch_1gang_1way_gang1_scene');
     } catch (err) {
       this.error('Scene trigger failed:', err.message);
     }
@@ -69,7 +75,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
         });
       }
     } catch (err) {
-      this.log(`⚠️ Flow card registration failed: ${err.message}`);
+      this.log(`[WARN] Flow card registration failed: ${err.message}`);
     }
 
     // ACTION: Set power-on behavior (v5.11.30)

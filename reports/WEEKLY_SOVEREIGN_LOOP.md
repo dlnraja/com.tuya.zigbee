@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-11-01T13:41:39.587Z
-Version: **9.0.1609** · Branch: `master`
+Generated: 2026-11-22T14:45:29.835Z
+Version: **9.0.1637** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -40,23 +40,23 @@ Version: **9.0.1609** · Branch: `master`
 - ❌ `self-improve.yml` — workflow not found
 
 ## Recent workflow runs
-- [skipped] CI autofix (P3048, no AI) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312452192
-- [skipped] CI autofix (P3048, no AI) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312382519
-- [skipped] Bot revert on red (P3105) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312273355
-- [skipped] CI autofix (P3048, no AI) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312273344
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312229879
-- [skipped] CI autofix (P3048, no AI) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312225771
-- [skipped] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312165536
-- [success] Publish hold bisect (P3095) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312165517
-- [success] Secret scan (gitleaks) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312115410
-- [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312115361
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45034195844
+- [in_progress] Bastien Promote Upstream (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45033721698
+- [success] Bastien diag auto-reply (P3110) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45033659788
+- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45032070389
+- [success] Secure Notifications (Enhanced) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45032070244
+- [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45031678220
+- [success] 🔄 Auto-Enrich Closed Loop (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45031423490
+- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45029701667
+- [success] Batch Analyze & Respond (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45028447939
+- [success] Athom build history (read-only) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45028390209
 
 ## Publish / validate related
-- [success] Publish hold bisect (P3095) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312165517
-- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312115361
-- [success] Auto-Publish on Push — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/41312115331
+- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45031678220
+- [success] Homey Store Peer Probe — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/45028271035
 
 ## Open issues
+- [#632](https://github.com/dlnraja/com.tuya.zigbee/issues/632) — about: thermostat — `_TZE204_ltwbm23f` `TS0601`
 - [#584](https://github.com/dlnraja/com.tuya.zigbee/issues/584) — about: `TS0601`
 - [#581](https://github.com/dlnraja/com.tuya.zigbee/issues/581) — about: unclassified
 - [#559](https://github.com/dlnraja/com.tuya.zigbee/issues/559) — about: unclassified
@@ -64,13 +64,15 @@ Version: **9.0.1609** · Branch: `master`
 - [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — about: unclassified
 
 ## Open PRs
-- none
+- [#634](https://github.com/dlnraja/com.tuya.zigbee/pull/634) — about: thermostat, pairing — `_TZE204_ltwbm23f`
 
 ## Cursor brain — do this week (max)
 - **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
-  - [#584](https://github.com/dlnraja/com.tuya.zigbee/issues/584) — about: `TS0601` · [#581](https://github.com/dlnraja/com.tuya.zigbee/issues/581) — about: unclassified · [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — about: unclassified
+  - [#632](https://github.com/dlnraja/com.tuya.zigbee/issues/632) — about: thermostat — `_TZE204_ltwbm23f` `TS0601` · [#584](https://github.com/dlnraja/com.tuya.zigbee/issues/584) — about: `TS0601` · [#581](https://github.com/dlnraja/com.tuya.zigbee/issues/581) — about: unclassified · [#550](https://github.com/dlnraja/com.tuya.zigbee/issues/550) — about: unclassified
 - **P0**: Local gates failing: dualClaim — fix before any publish.
 - **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
+- **P1**: Open non-draft PRs — review for reliability merges on master only.
+  - https://github.com/dlnraja/com.tuya.zigbee/pull/634
 
 ## Hard stops
 - Do NOT paste unchecked AI to Homey forum

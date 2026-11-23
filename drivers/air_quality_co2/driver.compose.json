@@ -41,7 +41,8 @@
       "title": {
         "en": "VOC",
         "fr": "COV"
-      }
+      },
+      "units": "ppb"
     },
     "measure_formaldehyde": {
       "title": {
@@ -69,15 +70,18 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "energy": {

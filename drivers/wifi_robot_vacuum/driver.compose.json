@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Robot Vacuum (Tuya Local)",
-    "fr": "Aspirateur robot WiFi (Tuya Local)",
+    "fr": "Aspirateur robot WiFi",
     "nl": "WiFi Robotstofzuiger (Tuya Lokaal)",
     "de": "WiFi-Saugroboter (Tuya Lokal)",
     "es": "Aspiradora robot WiFi (Tuya Local)"
@@ -155,7 +155,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "pair": [

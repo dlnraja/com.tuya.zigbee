@@ -25,7 +25,11 @@
     "target_temperature": {
       "min": 16,
       "max": 32,
-      "step": 1
+      "step": 1,
+      "units": "°C"
+    },
+    "measure_temperature": {
+      "units": "°C"
     }
   },
   "energy": {

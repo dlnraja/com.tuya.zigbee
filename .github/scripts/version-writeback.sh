@@ -6,7 +6,7 @@
 # Skips when the branch is already >= version. Rebase + 3 bounded tries; never dispatches a run (no loop).
 set -u
 BR="$1"; APP="$2"
-V=$(node scripts/ci/homey-build-status.js "$APP" 2>/dev/null | node -e '
+V=$(timeout 90 node scripts/ci/homey-build-status.js "$APP" 2>/dev/null | node -e '
   let v=""; const cmp=(a,b)=>{const x=a.split(".").map(Number),y=b.split(".").map(Number);for(let i=0;i<3;i++){if(x[i]!==y[i])return x[i]-y[i];}return 0;};
   for (const l of require("fs").readFileSync(0,"utf8").split("\n")) { try { const r=JSON.parse(l); if (String(r.state).toLowerCase()==="test" && r.version && (!v||cmp(r.version,v)>0)) v=r.version; } catch {} }
   process.stdout.write(v);')
@@ -15,7 +15,7 @@ echo "confirmed Test version: $V"
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 for i in 1 2 3; do
-  git fetch -q origin "$BR" || { sleep $((i*10)); continue; }
+  timeout 60 git fetch -q origin "$BR" || { echo "::warning::write-back fetch attempt $i failed or timed out"; sleep $((i*10)); continue; }
   git reset -q --hard "origin/$BR"
   CUR=$(node -p "require('./app.json').version")
   if [ "$(printf '%s\n%s\n' "$CUR" "$V" | sort -V | tail -1)" = "$CUR" ]; then echo "branch at $CUR >= $V: nothing to write back"; exit 0; fi
@@ -33,7 +33,11 @@ for i in 1 2 3; do
     fs.writeFileSync(".github/homey-version-floor", V+"\n");'
   for f in app.json .homeycompose/app.json package.json package-lock.json .homeychangelog.json .github/homey-version-floor; do [ -f "$f" ] && git add "$f"; done
   git commit -q -m "chore(version): v${V} written back after Test [skip ci]" || { echo "::warning::commit failed"; exit 0; }
-  git push -q origin "HEAD:$BR" && { echo "wrote back v$V"; exit 0; }
+  # WHY(P3299): `npm ci` (prepare script) installs the repo git hooks, so this push ran the pre-push hook and its full
+  # mocha suite (> 5 min): the 5 min step timed out on every run since 07/11. The commit only changes version
+  # fields + changelog of an already CI-green commit; every fast gate of the hook still runs, only the full suite
+  # is skipped (documented switch). Bounded: 120 s per attempt, 3 attempts.
+  HOOKS_SKIP_FULL_SUITE=1 timeout 120 git push -q origin "HEAD:$BR" && { echo "wrote back v$V"; exit 0; }
   echo "::warning::write-back push attempt $i failed; retrying"; sleep $((i*10))
 done
 echo "::warning::version write-back not pushed (next run re-applies the Athom floor)"

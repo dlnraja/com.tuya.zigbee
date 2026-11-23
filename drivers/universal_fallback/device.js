@@ -1,23 +1,25 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { CLUSTER_MAP } = require('./fallback_config');
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║          UNIVERSAL FALLBACK DEVICE - v5.8.36 HARDENED                     ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  🧠 v5.8.36: ENHANCED STABILITY & AUTO-DETECTION                          ║
- * ║  - Recursively detects ALL standard ZCL clusters                            ║
- * ║  - Maps manufacturer-specific clusters to fallback capabilities            ║
- * ║  - Safely handles cluster registration timeouts                            ║
- * ║  - Implements defensive SDK3 getDeviceById guard                          ║
- * ║                                                                              ║
- * ║  v7.5.36: SYNTAX REPAIR                                                      ║
- * ║  - Restored proper brace balancing for try/catch blocks                    ║
- * ║  - Fixed 'this.' scope for capability management                          ║
- * ║  - Converted promise chains to async/await for better stack traces         ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |          UNIVERSAL FALLBACK DEVICE - v5.8.36 HARDENED                     |
+ * +==============================================================================+
+ * |  [SMART] v5.8.36: ENHANCED STABILITY & AUTO-DETECTION                          |
+ * |  - Recursively detects ALL standard ZCL clusters                            |
+ * |  - Maps manufacturer-specific clusters to fallback capabilities            |
+ * |  - Safely handles cluster registration timeouts                            |
+ * |  - Implements defensive SDK3 getDeviceById guard                          |
+ * |                                                                              |
+ * |  v7.5.36: SYNTAX REPAIR                                                      |
+ * |  - Restored proper brace balancing for try/catch blocks                    |
+ * |  - Fixed 'this.' scope for capability management                          |
+ * |  - Converted promise chains to async/await for better stack traces         |
+ * +==============================================================================+
  */
 class UniversalFallbackDevice extends TuyaUnifiedDevice {
 
@@ -25,7 +27,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
 
-      this.log('[UNIVERSAL] 🔍 Starting universal discovery...');
+      this.log('[UNIVERSAL] [SCAN] Starting universal discovery...');
       this._detectedCaps = [];
 
       // 1. Detect capabilities based on clusters
@@ -33,7 +35,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
 
       // 2. Register capabilities found
       if (this._detectedCaps.length > 0) {
-        this.log(`[UNIVERSAL] ✅ Registering ${  this._detectedCaps.length  } detected capabilities`);
+        this.log(`[UNIVERSAL] [OK] Registering ${  this._detectedCaps.length  } detected capabilities`);
         for (const cap of this._detectedCaps) {
           if (this.hasCapability(cap)) {
             // Register handlers for detected capabilities
@@ -42,9 +44,9 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
         }
       }
 
-      this.log('[UNIVERSAL] ════════════════════════════════════════════════════════════');
-      this.log(`[UNIVERSAL] ✅ Ready - Caps: ${  this._detectedCaps.join(', ')}`);
-      this.log('[UNIVERSAL] ════════════════════════════════════════════════════════════');
+      this.log('[UNIVERSAL] ============================================================');
+      this.log(`[UNIVERSAL] [OK] Ready - Caps: ${  this._detectedCaps.join(', ')}`);
+      this.log('[UNIVERSAL] ============================================================');
     }, 'onNodeInit');
   }
 
@@ -64,7 +66,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
       this.log(`[Z2M] Added caps from config: ${  this._z2mConfig.capabilities.join(', ')}`);
     }
     
-    this.log('[UNIVERSAL] 🔍 Detecting from clusters...');
+    this.log('[UNIVERSAL] [SCAN] Detecting from clusters...');
     const clusters = [];
     
     for (const [epId, ep] of Object.entries(zclNode.endpoints || {})) {
@@ -85,7 +87,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
             try {
               await this.addCapability(cap);
               this._detectedCaps.push(cap);
-              this.log(`[UNIVERSAL] ✅ +${  cap}`);
+              this.log(`[UNIVERSAL] [OK] +${  cap}`);
             } catch (e) { 
               /* ignore */ 
             }
@@ -98,7 +100,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
   }
 
   _registerFallbackHandlers(cap) {
-    this.log(`[UNIVERSAL] 🔧 Registering handler for ${  cap}`);
+    this.log(`[UNIVERSAL] [FIX] Registering handler for ${  cap}`);
     
     // Default handlers for common capabilities
     if (cap.startsWith('onoff')) {
@@ -124,3 +126,5 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
 }
 
 module.exports = UniversalFallbackDevice;
+return module.exports;
+});

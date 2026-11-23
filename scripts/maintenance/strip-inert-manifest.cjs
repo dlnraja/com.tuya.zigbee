@@ -1,0 +1,193 @@
+#!/usr/bin/env node
+'use strict';
+
+/**
+ * P3342: lossless shrink of the UPLOAD app.json (publish copy only; source compose files untouched).
+ *
+ * WHY: P3340 (docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md) ties Athom's processing failures to the work per
+ * build, which grows with the manifest. stable at 2.85 MB has never been refused; master was 3.39 MB.
+ *  1. Driver keys Homey does not know and the app never reads from the manifest:
+ *     - `maintenanceActions`: not in the homey-lib app schema and not an SDK feature. Homey's maintenance
+ *       actions are `button.*` capabilities with `capabilitiesOptions[x].maintenanceAction = true`
+ *       (apps.developer.homey.app/the-basics/devices/capabilities#maintenance-actions), which stay untouched.
+ *       No code reads `manifest.maintenanceActions` (grep app.js, lib/, drivers/).
+ *     - `capabilityOptions`: a typo of `capabilitiesOptions`; Homey ignores it and no code reads it.
+ *  2. Locales outside en/fr/nl/de inside drivers, flow cards and custom capabilities. Homey only requires
+ *     `en` and falls back to it for a missing language; app name/description (store listing) untouched.
+ *  3. capabilitiesOptions `getable` / `setable` / `preventInsights` equal to the capability's own default (system
+ *     capability from homey-lib, or the app's custom capability): Homey applies that default when the option is
+ *     absent, so the device gets the same options. Values that differ from the default are kept.
+ *  4. Empty or schema-default fields Homey treats as absent: empty driver `flow` / `settings` / `energy` / `ui`,
+ *     empty zigbee endpoint `bindings`, empty flow-card `args`. Do not drop `tokens[].type` even when it is the
+ *     schema default "string": Homey validate warns and the publish gate then refuses to upload (run 45075364135, v9.0.1638 never reached Athom). Driver ids, flow card ids, capabilities, languages, platforms
+ *     and connectivity stay untouched.
+ * Nothing here touches a driver id, flow card id, capability, setting id or zigbee couple.
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const INERT_DRIVER_KEYS = Object.freeze(['maintenanceActions', 'capabilityOptions']);
+const CORE_LOCALES = Object.freeze(['en', 'fr', 'nl', 'de']);
+// Homey UI languages (+pt seen in the source); only these keys are treated as locales.
+const EXTRA_LOCALES = Object.freeze(['it', 'es', 'sv', 'no', 'da', 'pl', 'ru', 'ko', 'pt']);
+const LOCALE_KEYS = new Set([...CORE_LOCALES, ...EXTRA_LOCALES]);
+
+const bytesOf = (k, v) => Buffer.byteLength(JSON.stringify(v)) + Buffer.byteLength(k) + 4;
+
+function isLocaleObj(o) {
+  if (!o || typeof o !== 'object' || Array.isArray(o) || typeof o.en !== 'string') { return false; }
+  return Object.keys(o).every((k) => LOCALE_KEYS.has(k) && typeof o[k] === 'string');
+}
+
+function stripExtraLocales(node, stats) {
+  if (Array.isArray(node)) { for (const x of node) { stripExtraLocales(x, stats); } return; }
+  if (!node || typeof node !== 'object') { return; }
+  if (isLocaleObj(node)) {
+    for (const k of Object.keys(node)) {
+      if (CORE_LOCALES.includes(k)) { continue; }
+      stats.localeBytes += bytesOf(k, node[k]);
+      stats.localeDropped += 1;
+      delete node[k];
+    }
+    return;
+  }
+  for (const v of Object.values(node)) { stripExtraLocales(v, stats); }
+}
+
+let SYSTEM_CAPS;
+function systemCaps() {
+  if (SYSTEM_CAPS === undefined) {
+    try { SYSTEM_CAPS = require('homey-lib').getCapabilities(); } catch (_) { SYSTEM_CAPS = null; }
+  }
+  return SYSTEM_CAPS;
+}
+
+// Effective default of each flag when the option is absent.
+// P3354: only getable:true and preventInsights:false are stripped, and only when they equal the
+// capability default; the runtime heals read a missing flag as that default. setable and
+// getable:false stay explicit: DynamicFlowCardManager, InteractionHistory and FeatureFlowCards
+// read them as given values.
+const FLAG_DEFAULTS = Object.freeze({
+  getable: (def) => def.getable !== false,
+  setable: (def) => def.setable === true,
+  preventInsights: (def) => def.preventInsights === true,
+});
+// The only flag values the strip may drop (when they also equal the capability default).
+const STRIPPABLE_FLAGS = Object.freeze({ getable: true, preventInsights: false });
+
+function stripDefaultCapOptions(d, appCaps, sys, stats) {
+  const opts = d.capabilitiesOptions;
+  if (!sys || !opts || typeof opts !== 'object') { return; }
+  for (const [cap, o] of Object.entries(opts)) {
+    if (!o || typeof o !== 'object') { continue; }
+    const base = cap.split('.')[0];
+    const def = (appCaps && appCaps[base]) || sys[base];
+    if (!def || typeof def !== 'object') { continue; }
+    for (const [flag, dflt] of Object.entries(FLAG_DEFAULTS)) {
+      if (typeof o[flag] !== 'boolean' || o[flag] !== dflt(def) || STRIPPABLE_FLAGS[flag] !== o[flag]) { continue; }
+      stats.capOptBytes += bytesOf(flag, o[flag]);
+      stats.capOptDropped += 1;
+      delete o[flag];
+    }
+    if (Object.keys(o).length === 0) {
+      stats.capOptBytes += bytesOf(cap, o) + 1;
+      delete opts[cap];
+    }
+  }
+  if (Object.keys(opts).length === 0) { stats.capOptBytes += bytesOf('capabilitiesOptions', opts) + 1; delete d.capabilitiesOptions; }
+}
+
+
+function dropKey(obj, k, stats) {
+  stats.emptyDropped += 1;
+  stats.emptyBytes += bytesOf(k, obj[k]);
+  delete obj[k];
+}
+
+function isEmptyFlow(flow) {
+  if (!flow || typeof flow !== 'object' || Array.isArray(flow)) { return false; }
+  const keys = Object.keys(flow);
+  if (keys.some((k) => k !== 'triggers' && k !== 'conditions' && k !== 'actions')) { return false; }
+  return keys.every((k) => Array.isArray(flow[k]) && flow[k].length === 0);
+}
+
+function stripFlowCards(flow, stats) {
+  if (!flow || typeof flow !== 'object') { return; }
+  for (const kind of ['triggers', 'conditions', 'actions']) {
+    if (Array.isArray(flow[kind]) && flow[kind].length === 0) { dropKey(flow, kind, stats); continue; }
+    for (const c of flow[kind] || []) {
+      if (!c || typeof c !== 'object') { continue; }
+      if (Array.isArray(c.args) && c.args.length === 0) { dropKey(c, 'args', stats); }
+      // Keep tokens[].type even when it is the schema default "string". Homey validate
+      // warns "type is missing, it defaults to string", and the publish gate treats that
+      // warning as a hard stop, so the 22/11 23:09 Paris upload of v9.0.1638 never left
+      // the runner (45075364135).
+    }
+  }
+}
+
+function stripEmptyDefaults(manifest, stats) {
+  for (const d of Array.isArray(manifest.drivers) ? manifest.drivers : []) {
+    if (!d || typeof d !== 'object') { continue; }
+    if (isEmptyFlow(d.flow)) { dropKey(d, 'flow', stats); }
+    else if (d.flow) {
+      stripFlowCards(d.flow, stats);
+      if (d.flow && typeof d.flow === 'object' && !Array.isArray(d.flow) && Object.keys(d.flow).length === 0) {
+        dropKey(d, 'flow', stats);
+      }
+    }
+    if (Array.isArray(d.settings) && d.settings.length === 0) { dropKey(d, 'settings', stats); }
+    if (d.energy && typeof d.energy === 'object' && !Array.isArray(d.energy) && Object.keys(d.energy).length === 0) {
+      dropKey(d, 'energy', stats);
+    }
+    if (d.ui && typeof d.ui === 'object' && !Array.isArray(d.ui) && Object.keys(d.ui).length === 0) {
+      dropKey(d, 'ui', stats);
+    }
+    const eps = d.zigbee && d.zigbee.endpoints;
+    if (eps && typeof eps === 'object') {
+      for (const ep of Object.values(eps)) {
+        if (ep && Array.isArray(ep.bindings) && ep.bindings.length === 0) { dropKey(ep, 'bindings', stats); }
+      }
+    }
+  }
+  if (manifest.flow) { stripFlowCards(manifest.flow, stats); }
+}
+
+function stripInertManifest(manifest, opts = {}) {
+  const stats = { inertDropped: 0, inertBytes: 0, localeDropped: 0, localeBytes: 0, capOptDropped: 0, capOptBytes: 0, emptyDropped: 0, emptyBytes: 0, bytes: 0 };
+  const sys = opts.systemCaps === undefined ? systemCaps() : opts.systemCaps;
+  if (!manifest || typeof manifest !== 'object') { return stats; }
+  for (const d of Array.isArray(manifest.drivers) ? manifest.drivers : []) {
+    if (!d || typeof d !== 'object') { continue; }
+    for (const k of INERT_DRIVER_KEYS) {
+      if (!(k in d)) { continue; }
+      stats.inertBytes += bytesOf(k, d[k]);
+      stats.inertDropped += 1;
+      delete d[k];
+    }
+    stripDefaultCapOptions(d, manifest.capabilities, sys, stats);
+    stripExtraLocales(d, stats);
+  }
+  if (manifest.flow) { stripExtraLocales(manifest.flow, stats); }
+  if (manifest.capabilities) { stripExtraLocales(manifest.capabilities, stats); }
+  stripEmptyDefaults(manifest, stats);
+  stats.bytes = stats.inertBytes + stats.localeBytes + stats.capOptBytes + stats.emptyBytes;
+  return stats;
+}
+
+function stripFile(file) {
+  const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const r = stripInertManifest(manifest);
+  if (r.bytes > 0) { fs.writeFileSync(file, JSON.stringify(manifest), 'utf8'); }
+  return r;
+}
+
+if (require.main === module) {
+  for (const file of process.argv.slice(2)) {
+    const r = stripFile(path.resolve(file));
+    console.log(`[P3342 strip-inert] ${file}: -${(r.bytes / 1024).toFixed(1)} KB (inert keys ${r.inertDropped}, locales ${r.localeDropped}, default cap options ${r.capOptDropped}, empty/defaults ${r.emptyDropped})`);
+  }
+}
+
+module.exports = { stripInertManifest, stripDefaultCapOptions, stripEmptyDefaults, FLAG_DEFAULTS, STRIPPABLE_FLAGS, stripFile, INERT_DRIVER_KEYS, CORE_LOCALES, EXTRA_LOCALES, isLocaleObj };

@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Contact Sensor Dimmer",
+    "en": "Contact sensor dimmer",
     "nl": "Contactsensor dimmer",
-    "fr": "Capteur de contact dimmer",
+    "fr": "Variateur de capteur de contact",
     "de": "Kontakt-Sensor Dimmer",
     "es": "Sensor de contacto regulador"
   },
@@ -461,7 +461,8 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "alarm_contact": {
       "getable": true,
@@ -473,7 +474,8 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     }
   },
   "ui": {

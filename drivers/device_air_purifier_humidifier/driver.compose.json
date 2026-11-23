@@ -45,11 +45,13 @@
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     }
   },
   "zigbee": {

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { CLUSTER } = require('zigbee-clusters');
@@ -50,7 +52,7 @@ class wall_switch_4_gang extends UnifiedSwitchBase {
             const cap = `button.${gang}`;
             if (!this.hasCapability(cap)) {continue;}
             this.registerCapabilityListener(cap, async () => {
-              this.log(`[WALL-4G] ${cap} pressed (UI) — toggling endpoint ${gang}`);
+              this.log(`[WALL-4G] ${cap} pressed (UI) - toggling endpoint ${gang}`);
               const onOffCluster = zclNode.endpoints[gang]?.clusters?.onOff;
               if (onOffCluster && typeof onOffCluster.toggle === 'function') {
                 await onOffCluster.toggle();
@@ -60,7 +62,7 @@ class wall_switch_4_gang extends UnifiedSwitchBase {
           }
         }
 
-        // WHY(P2332): onNodeInit skips super — PhysicalButtonMixin never armed;
+        // WHY(P2332): onNodeInit skips super - PhysicalButtonMixin never armed;
         // compose has physical_gangN_* but RX never fired (same class of bug as
         // wall_switch_4gang_1way forum #2099 / v10.6.1).
         if (typeof this.initPhysicalButtonDetection === 'function') {
@@ -883,3 +885,5 @@ module.exports = wall_switch_4_gang;
     }
   }
 } */
+return module.exports;
+});

@@ -7,13 +7,29 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  */
 class PresenceSensorRadarDriver extends ZigBeeDriver {
 
+  // WHY(P3384): official Z2M couple for Moes ZHT-S01 (wall thermostat) was listed
+  // on this radar driver by casing expansion. Keep the same device id (no re-pair)
+  // by instantiating the wall thermostat class for this exact couple only.
+  onMapDeviceClass(device) {
+    try {
+      const { isZhtS01Couple } = require('../../lib/thermostats/ZhtS01Map');
+      const data = device && typeof device.getData === 'function' ? device.getData() : (device && device.data) || {};
+      const mfr = (device && device.manufacturerName) || data.manufacturerName || data.manufacturer || '';
+      const pid = data.productId || data.modelId || 'TS0601';
+      if (isZhtS01Couple(mfr, pid)) {
+        return require('../wall_thermostat/device');
+      }
+    } catch (_e) { /* keep radar class */ }
+    return require('./device');
+  }
+
   async onInit() {
     this.log('PresenceSensorRadarDriver v5.5.580 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // WHY(P2526 / VicHY 74e5cae7): register ALL compose conditions — motion_active was
+    // WHY(P2526 / VicHY 74e5cae7): register ALL compose conditions - motion_active was
     // declared but never wired; users confuse native motion WHEN vs custom presence WHEN.
     // WHY(P2534 / #2240): warm trigger cards so getDeviceTriggerCard().trigger works after tip.
     // WHY(P2826 / VicHY #2255): warm EVERY declared WHEN card so Advanced Flows
@@ -34,11 +50,11 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     ]) {
       try {
         this.homey.flow.getDeviceTriggerCard(id);
-      } catch (_e) { /* soft — compose may omit zone cards */ }
+      } catch (_e) { /* soft - compose may omit zone cards */ }
     }
     const conditionCards = [
       {
-        // WHY(P2524): condition must accept alarm_human OR alarm_motion (presence≡motion)
+        // WHY(P2524): condition must accept alarm_human OR alarm_motion (presence==motion)
         id: 'presence_sensor_radar_is_present',
         fn: async (args) => {
           const d = args.device;
@@ -101,7 +117,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
       }
     }
 
-    // WHY(P2589): Flow action — clear stuck Occupied without unplug (same Contre quoi as ZHA refresh)
+    // WHY(P2589): Flow action - clear stuck Occupied without unplug (same Contre quoi as ZHA refresh)
     try {
       const clearCard = this.homey.flow.getActionCard('presence_sensor_radar_clear_presence');
       if (clearCard) {

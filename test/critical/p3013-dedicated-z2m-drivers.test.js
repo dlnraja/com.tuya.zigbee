@@ -150,6 +150,14 @@ test('device classes load, subclass their base, and route TX/RX through the P301
   let loaded;
   try {
     loaded = CASES.map((c) => ({ c, Dev: require(`../../drivers/${c.id}/device`), Base: require(`../../drivers/${c.base}/device`) }));
+    // P3389: first require of LazyDeviceClass under a hermetic Module._load hook makes the
+    // export a lazy stand-in. Touch the prototype now, while cache still holds the same class
+    // copies. Evicting first rematerializes Dev and Base as two different classes, so
+    // `Dev.prototype instanceof Base` fails even though the source still extends the base.
+    for (const { Dev, Base } of loaded) {
+      void Dev.prototype;
+      void Base.prototype;
+    }
   } finally {
     Module._load = originalLoad;
     for (const k of Object.keys(require.cache)) { if (!cacheBefore.has(k)) { delete require.cache[k]; } }

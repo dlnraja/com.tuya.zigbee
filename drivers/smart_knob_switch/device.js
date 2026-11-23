@@ -1,11 +1,13 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const SmartKnobRotationMixin = require('../../lib/mixins/SmartKnobRotationMixin');
 
 /**
- * SmartKnobSwitchDevice — ButtonDevice + rotation UX (P2448/P2449)
- * Couple: _TZ3000_uri7ber7 + TS004F → command/dimmer default.
+ * SmartKnobSwitchDevice - ButtonDevice + rotation UX (P2448/P2449)
+ * Couple: _TZ3000_uri7ber7 + TS004F -> command/dimmer default.
  */
 class SmartKnobSwitchDevice extends SmartKnobRotationMixin(ButtonDevice) {
 
@@ -42,3 +44,5 @@ class SmartKnobSwitchDevice extends SmartKnobRotationMixin(ButtonDevice) {
 }
 
 module.exports = SmartKnobSwitchDevice;
+return module.exports;
+});

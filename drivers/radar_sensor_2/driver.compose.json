@@ -1,8 +1,8 @@
 {
   "id": "radar_sensor_2",
   "name": {
-    "en": "Radar Sensor",
-    "fr": "Capteur radar",
+    "en": "Radar Sensor (radar sensor 2)",
+    "fr": "Capteur radar (radar sensor 2)",
     "nl": "Radar Sensor",
     "de": "Radarsensor"
   },
@@ -84,7 +84,8 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "alarm_motion": {
       "getable": true,

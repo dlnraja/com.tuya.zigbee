@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 // A8: NaN Safety - use safeDivide/safeMultiply
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
@@ -91,7 +93,7 @@ class Button1GangDevice extends ButtonDevice {
     this.buttonCount = 1;
 
     // WHY(P2664 / Bastien e8d98608+4c0d232b): 3-btn TS0043 sometimes lands here or
-    // Homey Virtual. Soft-detect multi EP onOff → arm hybrid so flows get btn1–3.
+    // Homey Virtual. Soft-detect multi EP onOff -> arm hybrid so flows get btn1-3.
     try {
       const eps = Object.keys(zclNode?.endpoints || {})
         .map((k) => Number(k))
@@ -104,7 +106,7 @@ class Button1GangDevice extends ButtonDevice {
       const pid = String(this.getSetting?.('zb_model_id') || zclNode?.modelId || '');
       if (onOffEps.length >= 3 || /TS0043/i.test(pid) || containsCI(mfr, 'vsxvaj9i')) {
         this.buttonCount = Math.min(4, Math.max(3, onOffEps.length));
-        this.log(`[P2664] multi-btn sticky detected (eps=${onOffEps.join(',')}) — soft buttonCount=${this.buttonCount}; prefer re-pair as button_wireless_3`);
+        this.log(`[P2664] multi-btn sticky detected (eps=${onOffEps.join(',')}) - soft buttonCount=${this.buttonCount}; prefer re-pair as button_wireless_3`);
         this._p2664MultiSticky = true;
       }
     } catch (_e) { /* soft */ }
@@ -890,7 +892,7 @@ class Button1GangDevice extends ButtonDevice {
     const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || '';
     const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     
-    // WHY(P2624/e8d98608): CI was never imported → ReferenceError killed onNodeInit
+    // WHY(P2624/e8d98608): CI was never imported -> ReferenceError killed onNodeInit
     // Only setup for TS004F Smart Knob devices
     const isSmartKnob = containsCI(modelId, 'TS004F')
       || containsCI(manufacturerName, 'gwkzibhs');
@@ -975,4 +977,5 @@ class Button1GangDevice extends ButtonDevice {
 // toggle = single, on = double, off = long (button_mode 'dimmer' keeps single).
 Button1GangDevice.RAW_ONOFF_PRESS_MAP = Object.freeze({ 2: 'single', 1: 'double', 0: 'long' });
 module.exports = Button1GangDevice;
-
+return module.exports;
+});

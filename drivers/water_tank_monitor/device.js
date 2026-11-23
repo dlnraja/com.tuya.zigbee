@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 
 /**
@@ -21,7 +23,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * Handle Tuya datapoints — Z2M TLC2206 verified mapping
+   * Handle Tuya datapoints - Z2M TLC2206 verified mapping
    */
   async _handleDP(dp, value) {
     if (this._destroyed) {return;}
@@ -33,7 +35,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
           await this._handleLiquidState(value);
           break;
 
-        case 2: // liquid_depth (cm) — WHY(P2761 Johan #1477/Z2M TLC2206): DP2=cm; DP19/21 settings=mm
+        case 2: // liquid_depth (cm) - WHY(P2761 Johan #1477/Z2M TLC2206): DP2=cm; DP19/21 settings=mm
           await this._handleLiquidDepth(value);
           break;
 
@@ -167,3 +169,5 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
 }
 
 module.exports = WaterTankMonitorDevice;
+return module.exports;
+});

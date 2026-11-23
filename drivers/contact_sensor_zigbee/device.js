@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { resolveContactInvert } = require('../../lib/sensors/ContactDefaultInvert');
@@ -113,7 +115,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_n2egfsli'
     ].some((_m) => _includesCI([_m], mfr));
 
-    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` — reversed args, always false.
+    // WHY(P3011): was `[...].some(id => includesCI(mfr, id))` - reversed args, always false.
     // DP-only inverted ids (Z2M ZG-102ZL inverse) now apply; IAS ids stay with AlarmPolarityManager.
     const _pol = resolveContactInvert(mfr, userInvert, userReverse);
     this._invertedByDefault = _pol.invertedByDefault;
@@ -172,7 +174,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       const finalValue = shouldInvert ? !value : value;
 
       // WHY(P2763b): single source of truth DP1 > IAS (see lib/sensors/ContactSourceLatch).
-      // latch is complementary — never block the contact path.
+      // latch is complementary - never block the contact path.
       if (!ContactSourceLatch.applyToDevice(this, isIAS, finalValue)) {return;}
 
       const now = Date.now();
@@ -274,3 +276,5 @@ class ContactSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = ContactSensorDevice;
+return module.exports;
+});

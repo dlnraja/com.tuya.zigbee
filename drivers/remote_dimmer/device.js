@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -31,7 +33,7 @@ class RemoteDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigb
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[RemoteDimmer] Init — Lidl HG06323 / TS1001');
+    this.log('[RemoteDimmer] Init - Lidl HG06323 / TS1001');
 
     try {
       const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
@@ -139,3 +141,5 @@ class RemoteDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigb
 }
 
 module.exports = RemoteDimmerDevice;
+return module.exports;
+});

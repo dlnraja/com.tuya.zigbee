@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { lazy } = require('../../lib/utils/lazyRequire');
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 // v5.12.8: WiFi Camera Device - Tuya IPC with local control + RTSP/snapshot streaming
@@ -329,7 +331,7 @@ class WiFiCameraDevice extends Homey.Device {
       
       const ptzCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_ptz_move'); } catch (e) { return null; } })();
       if (ptzCard) {ptzCard.registerRunListener(async (args) => {
-        // WHY: shared listener — target the Flow's device (multi-camera setups).
+        // WHY: shared listener - target the Flow's device (multi-camera setups).
         const dev = (args && args.device) || this;
         await dev._setDP(DP.PTZ_CONTROL, args.direction);
         safeSetTimeout(dev, () => { if (dev._destroyed) {return;} dev._setDP(DP.PTZ_STOP, true).catch(() => {}); }, 1000);
@@ -339,3 +341,5 @@ class WiFiCameraDevice extends Homey.Device {
 }
 
 module.exports = WiFiCameraDevice;
+return module.exports;
+});

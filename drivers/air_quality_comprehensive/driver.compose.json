@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Comprehensive Air Monitor",
-    "fr": "Comprehensive Air Monitor",
+    "en": "Comprehensive air monitor",
+    "fr": "Moniteur d'air complet",
     "nl": "Uitgebreide Luchtkwaliteit",
     "de": "Umfassende Luftqualität"
   },
@@ -37,19 +37,32 @@
     },
     "measure_co2": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "ppm"
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
+    },
+    "measure_pm10": {
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "units": "ppb"
+    },
+    "measure_formaldehyde": {
+      "units": "mg/m³"
     }
   },
   "energy": {

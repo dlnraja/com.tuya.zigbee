@@ -73,3 +73,7 @@ Run 42393708150 (Auto-Publish on Push, master, 7 Nov 2026 16:55Z) is success bec
 The crashing parse is not named. Nothing here is a release. The same source-level change is on the local bastien-home and stable-v5 work branches and has not been pushed. The Athom table that says 0 crashes is not a result. P3264 stays out.
 
 Test: `test/critical/p3265-bastien-json-oom-sleepy-battery.test.js`.
+
+## Follow-up (P3320, 2026-11-15)
+
+Shipped JS is now Latin-1 at the source (no raw char > U+00FF); unreferenced package images are removed. Standing rule and fail-closed gate: `docs/rules/SHIPPED_JS_LATIN1.md`.

@@ -1,0 +1,43 @@
+{
+  "id": "alt_tuya_scene_trigger",
+  "title": {
+    "en": "Run a Tuya cloud scene (opt-in)",
+    "fr": "Lancer une scène cloud Tuya (option)",
+    "nl": "Tuya-cloudscène starten (optioneel)",
+    "de": "Tuya-Cloud-Szene starten (optional)"
+  },
+  "titleFormatted": {
+    "en": "Run Tuya scene [[scene_id]] of home [[home_id]]",
+    "fr": "Lancer la scène Tuya [[scene_id]] de la maison [[home_id]]"
+  },
+  "hint": {
+    "en": "Disabled by default. Needs your own Tuya IoT cloud project keys in the app settings. Runs a Smart Life tap-to-run scene for devices the app cannot drive.",
+    "fr": "Désactivé par défaut. Nécessite vos clés de projet Tuya IoT dans les réglages de l'app. Lance une scène « tap-to-run » Smart Life pour un appareil non géré."
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "home_id",
+      "title": {
+        "en": "Home id",
+        "fr": "Id de la maison"
+      },
+      "placeholder": {
+        "en": "12345678",
+        "fr": "12345678"
+      }
+    },
+    {
+      "type": "text",
+      "name": "scene_id",
+      "title": {
+        "en": "Scene id",
+        "fr": "Id de la scène"
+      },
+      "placeholder": {
+        "en": "abcdef0123456789",
+        "fr": "abcdef0123456789"
+      }
+    }
+  ]
+}

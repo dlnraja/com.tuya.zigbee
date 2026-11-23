@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Device Radiator Valve Smart",
+    "en": "Device Radiator Valve Smart (TS0601)",
     "nl": "Slimme radiatorkraan",
-    "fr": "Vanne de radiateur intelligente",
+    "fr": "Vanne de radiateur intelligente (TS0601)",
     "de": "Intelligentes Heizkörperventil",
     "es": "Válvula de radiador inteligente"
   },
@@ -350,15 +350,21 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
+    },
+    "target_temperature": {
+      "units": "°C"
     }
   },
   "zigbee": {

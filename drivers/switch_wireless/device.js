@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -19,7 +21,7 @@ class SwitchWirelessDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
       await this.initVirtualButtons();
       // WHY(P2792): smoke identity paired here keeps this driver; smoke / tamper / battery DPs in place.
       await InPlaceIdentityLayer.applyInPlaceIdentityLayer(this, zclNode);
-      this.log('[WIRELESS-SWITCH] ✅ Universal initialization complete');
+      this.log('[WIRELESS-SWITCH] [OK] Universal initialization complete');
     }, 'onNodeInit');
   }
 
@@ -39,3 +41,5 @@ class SwitchWirelessDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifie
 }
 
 module.exports = SwitchWirelessDevice;
+return module.exports;
+});

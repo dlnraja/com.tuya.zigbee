@@ -1,7 +1,9 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
- * P120 — smart_switch: migrate off bare ZigBeeDevice onto TuyaZigbeeDevice
+ * P120 - smart_switch: migrate off bare ZigBeeDevice onto TuyaZigbeeDevice
  * for L14 safeSetCapabilityValue / anti-flood / mains hygiene.
  */
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -34,3 +36,5 @@ class smart_switch extends TuyaZigbeeDevice {
 }
 
 module.exports = smart_switch;
+return module.exports;
+});

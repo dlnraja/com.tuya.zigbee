@@ -52,7 +52,7 @@ describe('P2577 VicHY MTG075 anti false-positive', () => {
     assert.ok(
       src.includes('P2577 distance units coerced')
       || src.includes('_ensureDistanceUnitsString')
-      || src.includes('distance units → "m"'),
+      || src.includes('distance units -> "m"') || src.includes('distance units → "m"'),
     );
     assert.ok(src.includes("cap === 'alarm_motion'"));
     assert.ok(!src.includes('/^alarm_motion|^alarm_human$|^alarm_presence$|^button\\.1$/'));

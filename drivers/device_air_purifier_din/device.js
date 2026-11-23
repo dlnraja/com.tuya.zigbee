@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -6,7 +8,7 @@ const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
 const { smartDivisorDetect } = require('../../lib/managers/SmartDivisorManager');
 
 /**
- * DIN / air-purifier metering path — P126 + L99 energy SSOT
+ * DIN / air-purifier metering path - P126 + L99 energy SSOT
  *
  * Prefer SmartDivisorManager (KNOWN + learned cache) with ENERGY_DIVISORS as defaults.
  * meter_power always goes through EnergyJumpGuard (forum #2092/#2093 jump bug).
@@ -40,7 +42,7 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
     if (capability === 'meter_power' || capability.startsWith('meter_power.')) {
       this._energyParseMeta = { mfr: this._mfr(), dpId, divisor, capability: 'meter_power' };
     }
-    // Single detect — avoid double smartParse cache churn
+    // Single detect - avoid double smartParse cache churn
     return Math.round((n / divisor) * 10) / 10;
   }
 
@@ -185,3 +187,5 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = DinRailMeterDevice;
+return module.exports;
+});

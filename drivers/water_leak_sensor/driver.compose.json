@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Water Leak Sensor",
-    "fr": "Water Leak Sensor",
-    "nl": "Waterlek Sensor",
+    "en": "Water leak sensor",
+    "fr": "Capteur de fuite d'eau (ts0207)",
+    "nl": "Waterlek-sensor",
     "de": "Wasserlecksensor"
   },
   "class": "sensor",
@@ -32,7 +32,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_tamper": {
       "getable": true,
@@ -248,7 +249,15 @@
       "_TZ3000_85CZD6FY",
       "_tz3000_85CZD6FY",
       "_TZ3000_syetgitm",
-      "_tz3000_syetgitm"
+      "_tz3000_syetgitm",
+      "_TZE284_pfbtmgo1",
+      "_tze284_pfbtmgo1",
+      "_TZE284_PFBTMGO1",
+      "_tze284_PFBTMGO1",
+      "_TZE284_1di7ujzp",
+      "_tze284_1di7ujzp",
+      "_TZE284_1DI7UJZP",
+      "_tze284_1DI7UJZP"
     ]
   },
   "settings": [

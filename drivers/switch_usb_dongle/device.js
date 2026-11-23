@@ -1,26 +1,28 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
-  meter_power: { divisor: 100 },   // seMetering currentSummationDelivered → kWh
-  measure_power: { divisor: 10 }   // haElectricalMeasurement activePower → W
+  meter_power: { divisor: 100 },   // seMetering currentSummationDelivered -> kWh
+  measure_power: { divisor: 10 }   // haElectricalMeasurement activePower -> W
 };
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SWITCH USB DONGLE - v8.1.0 (ZCL-Only 1-Port USB Relay/Repeater)        ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Supports _TZ3000_h1ipgkwn / TS0001 USB 1-Port Relay & Zigbee Repeater      ║
- * ║  - 1 x USB On/Off (endpoint 1=l1)                                           ║
- * ║  - Power-on behavior (moesStartUpOnOff via cluster 0xE001)                   ║
- * ║  - Mains-powered (USB bus) - NO battery                                     ║
- * ║  - ZCL-only (clusters: OnOff, manuSpecificTuya3, manuSpecificTuya4)          ║
- * ║  - Physical button detection via PhysicalButtonMixin                        ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      SWITCH USB DONGLE - v8.1.0 (ZCL-Only 1-Port USB Relay/Repeater)        |
+ * +==============================================================================+
+ * |  Supports _TZ3000_h1ipgkwn / TS0001 USB 1-Port Relay & Zigbee Repeater      |
+ * |  - 1 x USB On/Off (endpoint 1=l1)                                           |
+ * |  - Power-on behavior (moesStartUpOnOff via cluster 0xE001)                   |
+ * |  - Mains-powered (USB bus) - NO battery                                     |
+ * |  - ZCL-only (clusters: OnOff, manuSpecificTuya3, manuSpecificTuya4)          |
+ * |  - Physical button detection via PhysicalButtonMixin                        |
+ * +==============================================================================+
  */
 class SwitchUsbDongleDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
@@ -55,20 +57,20 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
       // Setup power measurement (optional, not all USB dongles have metering)
       await this._setupPowerMeasurement(zclNode);
 
-      this.log('[USB-DONGLE] ✅ 1-port USB relay initialized');
+      this.log('[USB-DONGLE] [OK] 1-port USB relay initialized');
     }, 'onNodeInit');
   }
 
   /**
    * Register OnOff listener for the USB endpoint
-   * Endpoint 1 → onoff
+   * Endpoint 1 -> onoff
    */
   _registerOnOffListeners() {
     this.registerCapabilityListener('onoff', async (value) => {
       await this._sendZCLCommand(1, value);
     });
 
-    this.log('[USB-DONGLE] ✅ ZCL OnOff listener registered');
+    this.log('[USB-DONGLE] [OK] ZCL OnOff listener registered');
   }
 
   /**
@@ -98,7 +100,7 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
       } else {
         await cluster.setOff();
       }
-      this.log(`[USB-DONGLE] 📡 ZCL endpoint ${endpoint}: ${value ? 'ON' : 'OFF'}`);
+      this.log(`[USB-DONGLE] [ZB] ZCL endpoint ${endpoint}: ${value ? 'ON' : 'OFF'}`);
     } catch (err) {
       this.error(`[USB-DONGLE] ZCL command failed endpoint ${endpoint}: ${err.message}`);
     }
@@ -151,7 +153,7 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
           minChange: 1
         });
 
-        // Raw summation → kWh via named divisor
+        // Raw summation -> kWh via named divisor
         metering.on('attr.currentSummationDelivered', (value) => {
           const kwh = value / ENERGY_DIVISORS.meter_power.divisor;
           if (this.hasCapability('meter_power')) {
@@ -168,7 +170,7 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
           minChange: 5
         });
 
-        // Raw activePower → W via named divisor
+        // Raw activePower -> W via named divisor
         electrical.on('attr.activePower', (value) => {
           const watts = value / ENERGY_DIVISORS.measure_power.divisor;
           if (this.hasCapability('measure_power')) {
@@ -184,3 +186,5 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 }
 
 module.exports = SwitchUsbDongleDevice;
+return module.exports;
+});

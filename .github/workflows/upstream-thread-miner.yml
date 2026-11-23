@@ -151,3 +151,21 @@ jobs:
           node scripts/ci/safe-auto-commit.js --id=upstream-thread-miner \
             --message="chore(knowledge): upstream thread digests (P3138) [skip ci]" \
             --paths="docs/knowledge/upstream data/ssot/thread-digests.json data/leads/digest-candidates.json"
+
+      - name: Enrich referentials from upstream miner
+        if: vars.REFERENTIALS_DISABLED != 'true'
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node scripts/scanners/build-referentials.js --enrich --from=upstream-thread-miner
+      - name: Commit referential enrichments (gated)
+        if: vars.SCRAPE_COMMIT == '1' && vars.REFERENTIALS_DISABLED != 'true'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=referentials-enrich --max-per-day=12 \
+            --message="chore(ssot): enrich referentials from upstream-thread-miner" \
+            --paths="docs/ssot/referentials"

@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Thermostat (Tuya Local)",
-    "fr": "Thermostat WiFi (Tuya Local)",
+    "fr": "Thermostat WiFi",
     "nl": "WiFi Thermostaat (Tuya Lokaal)",
     "de": "WiFi Thermostat (Tuya Lokal)",
     "es": "Termostato WiFi (Tuya Local)"
@@ -232,11 +232,16 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
+    },
+    "target_temperature": {
+      "units": "°C"
     }
   },
   "ui": {

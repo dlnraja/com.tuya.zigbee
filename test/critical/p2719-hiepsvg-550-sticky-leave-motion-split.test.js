@@ -55,7 +55,7 @@ describe('P2719 HiepSVG #550 sticky leave + motion/presence split', () => {
     const src = fs.readFileSync(DEVICE, 'utf8');
     assert.ok(src.includes('splitMotionPresence'));
     assert.ok(src.includes('P2719 DP1 none'));
-    assert.ok(src.includes('skip distance→presence (sticky-ignore'));
+    assert.ok(src.includes('skip distance->presence (sticky-ignore') || src.includes('skip distance→presence (sticky-ignore'));
     assert.ok(src.includes('during sticky-ignore after leave, stagnant ghost'));
   });
 

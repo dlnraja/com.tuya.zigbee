@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -41,8 +43,10 @@ class smart_motion_sensor extends TuyaZigbeeDevice {
 		}
 
 		// alarm_motion & alarm_tamper
-		zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME]
-		.on('attr.zoneStatus', this.onZoneStatusAttributeReport.bind(this));
+		// P3397: guarded parallel RX (attr 0x0002 report + IAS notification + occupancy 0x0406).
+		// The old code only listened to the attribute report and threw when endpoint 1 had no
+		// iasZone (ts0601 entries), so notification-only PIRs never showed motion.
+		require('../../lib/zigbee/ZoneStatusRx').attachMotionRx(this, zclNode);
 }
 
 	onZoneStatusAttributeReport(status) {
@@ -426,3 +430,5 @@ module.exports = smart_motion_sensor;
       }
     }
   } */
+return module.exports;
+});

@@ -39,9 +39,11 @@ describe('P3228 climate_sensor continuation', () => {
     for (const m of contC.zigbee.manufacturerName) assert.ok(!r.has(m.toLowerCase()), m);
   });
 
-  it('climate_sensor_2 is held for publish', () => {
-    const { ids } = effectiveHoldIds(require('../../config/publish-hold-drivers.json'), '');
-    assert.ok(ids.has('climate_sensor_2'));
+  it('climate_sensor_2 is a registered continuation (held or P3360-graduated)', () => {
+    const hold = require('../../config/publish-hold-drivers.json');
+    const { ids } = effectiveHoldIds(hold, '');
+    const graduated = /P3360|Athom #488/.test(String((hold._graduated || {}).climate_sensor_2 || ''));
+    assert.ok(ids.has('climate_sensor_2') || graduated);
   });
 
   it('foldHeldContinuations merges exact lists into the root and drops the held driver', () => {

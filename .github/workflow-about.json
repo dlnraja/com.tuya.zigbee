@@ -98,6 +98,10 @@
       "group": "publish",
       "what": "Publishes the private Bastien house app (its own app ID only); manual by default."
     },
+    "bastien-backport-nightly.yml": {
+      "group": "autopilot",
+      "what": "Nightly backport of master fixes to the Bastien house app, pushed when the gates are green (any hour)."
+    },
     "blakadder-fetch.yml": {
       "group": "enrich",
       "what": "Reads the Blakadder Zigbee database and cross-references it with our device list."
@@ -195,7 +199,7 @@
     },
     "forum-poll.yml": {
       "group": "forum",
-      "what": "Every four hours: scans the forum thread, PMs and screenshots for device data. Never posts."
+      "what": "Every four hours: scans topic 140352 and other Homey app threads via public Discourse JSON. Writes a structured request digest, candidate tasks and reply candidates into the SSOT. Never posts."
     },
     "free-scrape-crossref.yml": {
       "group": "enrich",
@@ -471,6 +475,30 @@
     "bot-data-fold.yml": {
       "group": "autopilot",
       "what": "Once a day, folds the bot data commits parked on the bot/data branch into one quiet master commit, keeping human edits."
+    },
+    "promote-live.yml": {
+      "group": "publish",
+      "what": "Promotes a healthy Athom Test build to Live only after objective gates pass, for master and stable regularly. Never promotes the Bastien house app."
+    },
+    "apple-home-coherence.yml": {
+      "group": "ci",
+      "what": "Weekday Apple Home / Insights coherence: add missing standard units, check official app.json and flow ids, no eager big JSON; commit [skip ci] only when tests pass, otherwise fail with a job summary and open no PR."
+    },
+    "store-text-coherence.yml": {
+      "group": "autopilot",
+      "what": "Weekly and on demand: rebuild changelogs from the published history and check names, titles, locales and accents on all three app branches. Safe auto-commit only; leftovers are a report artifact."
+    },
+    "intake-triage.yml": {
+      "group": "forum",
+      "what": "Schedule plus issue, PR and discussion events: deterministic intake triage that consults referentials first, escalates malfunction reports, may add or move a couple, and writes learnings back. Never posts."
+    },
+    "referentials.yml": {
+      "group": "enrich",
+      "what": "Regular incremental rebuild and enrichment of the SSOT referentials (malfunction catalogue, device cards, DP conversion, intake history, lessons, cross-app ideas). Deterministic, no AI, GITHUB_TOKEN only. Never posts."
+    },
+    "crash-watch.yml": {
+      "group": "ci",
+      "what": "Daily free crash watch: reads sanitized diag reports and the Gmail-diag ledger, flags OOM / SIGABRT / CPU-limit signatures per app version, writes a ledger, candidate tasks and a job summary; posts nothing, opens no PR."
     }
   }
 }

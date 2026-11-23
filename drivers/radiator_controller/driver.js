@@ -126,7 +126,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       this.log('[Flow] triggers', e.message);
     }
 
-    // Conditions — SDK3-safe getters
+    // Conditions - SDK3-safe getters
     const regCond = (id, fn) => {
       try {
         const flow = this.homey.flow;
@@ -146,7 +146,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       return device.currentMode === mode;
     });
 
-    // Actions — prefer getActionCard; fall back via app.js FLOW-GUARD polyfill
+    // Actions - prefer getActionCard; fall back via app.js FLOW-GUARD polyfill
     const regAction = (id, fn) => {
       try {
         const flow = this.homey.flow;

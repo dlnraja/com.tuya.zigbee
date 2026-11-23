@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Air Quality Monitor (Tuya Local)",
-    "fr": "Moniteur de qualité d'air WiFi (Tuya Local)",
+    "fr": "Moniteur de qualité d'air WiFi",
     "nl": "WiFi Luchtkwaliteitsmonitor (Tuya Lokaal)",
     "de": "WiFi Luftqualitätsmonitor (Tuya Lokal)",
     "es": "Monitor de calidad del aire WiFi (Tuya Local)"
@@ -231,19 +231,23 @@
     },
     "measure_co2": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "ppm"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     }
   },
   "discovery": "tuya_wifi"

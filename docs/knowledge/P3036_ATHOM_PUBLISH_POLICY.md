@@ -37,7 +37,8 @@ This policy turns those findings into rules that every upload path follows.
 | Kind | Examples | Retry | Breaker | Diagnostic |
 |---|---|---|---|---|
 | transient | socket hang up, ECONNRESET, ETIMEDOUT, 5xx, timeouts, invalid_state | exactly 1, after >= 300 s + 0-60 s jitter, once the previous build is final | not tripped; the retry is exempt (fixes run 40194918949) | no |
-| real | AggregateError, processing_failed (without a transient cause), validation errors, unknown | none | tripped | yes |
+| bare AggregateError (P3341) | stateMeta exactly `AggregateError` (empty message) | exactly 1 identical retry, P3311 first backoff, only for an existing final failed build of that version | tripped for normal runs; only retry 1 of the chain is exempt; tripped for good after the retry fails | after the retry |
+| real | AggregateError with a message, processing_failed (without a transient cause), validation errors, unknown | none | tripped | yes |
 
 A bare `processing_failed` row with no reason at all keeps the P3025 rule in `athom-classify-failure.js`
 (wait log first, then empty error -> transient): Athom history shows those are mostly hang-ups.
@@ -60,7 +61,7 @@ publish-stable and bastien-publish loops) call `athom-publish-policy.js fallback
 
 ## Bisect exit
 `docs/knowledge/athom-bisect-state.json` status=done → `bisect-hold.js` allows everything: no forced drafts,
-no `bisect_trial`. Normal flow: draft → Test automatically when processing is OK. **Live is never automatic.**
+no `bisect_trial`. Normal flow: draft → Test automatically when processing is OK. **Live is automatic only after objective gates** (see `docs/rules/LIVE_PROMOTION.md`, P3360). A schedule or dispatch may call `updateBuildChannel(..., 'live')` only when CI is green, validate-publish is green, no driver IDs or couples are lost versus the previous Live (or the 9.0.1574 published baseline), the Test version is healthy with no new crash signals in the notebook or diags, and an evidence-driven minimum Test soak has passed (quiet floor, not a fixed 7 days). This Live path applies to master and stable only. Bastien (com.dlnraja.tuya.zigbee.bastien) must never go to Live; it is only for Bastien's house. Learnings from bastien-home are ported regularly to master and stable-v5 (bastien-promote-upstream.yml).
 If rejections come back, rerun the bisect: set status=running (drafts only + `bisect_trial` are re-armed).
 
 ## Env flags
@@ -90,3 +91,21 @@ build snapshot; unreadable = held), only `test/`, `.github/`, `tools/ci/`, `scri
 `*.md` and the `dataSafetyAllow` list are promoted. Drivers, sacred pins, `app.json` and other `lib/`
 files are restored (reason `publish_hold_active`) and stay on Bastien until the accept is recorded.
 Test: `test/critical/p3057-2-promote-hold-guard.test.js`.
+
+## P3341 (16/11/2026, owner go 03:03 Paris): one retry for a bare AggregateError
+
+A bare Athom AggregateError (stateMeta exactly "AggregateError", empty message: the Node net multi-address connect failure) gets exactly ONE identical retry: bumped version, P3311 first backoff (>= 300 s + jitter), only when Athom already holds a final processing_failed build for that version (no duplicate). It keeps class real: push runs stay blocked by the breaker, only retry 1 of the chain is exempt, and a second failure trips the breaker and notifies as before. AggregateError with a message and every other real error get no retry.
+Why: docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md (identical content flips Test <-> AggregateError; the bare text is Node's connect failure). Code: `athom-publish-policy.js` (`BARE_AGGREGATE_KIND`, `isBareAggregate`, `RETRY.maxBareAggregateRetries = 1`), `athom-retry-policy.js` (stable/bastien in-run loops), `transient-publish-retry.js` (master chain). Test: `test/critical/p3341-bare-aggregate-retry.test.js`.
+
+## P3355 (17/11/2026): retry chain counted per error class
+
+Run 44004265730 was transport retry 1/2 after a socket hang up (#3709); its build #3710 failed with a bare
+AggregateError and was refused as "single identical retry already used". The chain input `transient_retry`
+now carries `<total>:t<transport>a<bare>` (for example `2:t1a1`; `parseInt` still reads the total).
+Transport kinds keep up to 2 retries (3 attempts), a bare AggregateError exactly 1 identical retry, and a
+chain never exceeds 3 retries. A legacy plain number is read the old, stricter way. The breaker exemption
+uses the same per-class counts. Backoff, idle wait and the same-version / orphan guards are unchanged.
+
+## P3357: at most 3 uploads per chain
+
+User rule (2026-11-15): a publish chain makes at most 3 uploads (1 initial + 2 retries), whatever the error mix, then stops and notifies. `RETRY.maxChainUploads = 3`, `RETRY.maxChainRetries = 2`. A bare AggregateError still gets at most its one identical retry inside those 3; transport retries fill the rest. The breaker exemption refuses any chain value above 2 retries. (P3355 allowed 3 retries = 4 uploads.)

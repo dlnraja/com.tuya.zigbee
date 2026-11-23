@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
@@ -115,7 +117,7 @@ class GasPresenceHybridDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
     await this._setupTuyaDPListeners(zclNode);
-    this.log('[GAS-HYBRID] ✅ Gas presence sensor ready');
+    this.log('[GAS-HYBRID] [OK] Gas presence sensor ready');
   }
   _handleTuyaResponse(data) {
     if (!data) {return;}
@@ -168,3 +170,5 @@ class GasPresenceHybridDevice extends UnifiedSensorBase {
   }
 }
 module.exports = GasPresenceHybridDevice;
+return module.exports;
+});

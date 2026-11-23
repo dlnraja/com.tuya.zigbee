@@ -1,9 +1,11 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
 /**
- * AutomatOn AUT000069 — underfloor heating / irrigation valves controller, 5 zones.
+ * AutomatOn AUT000069 - underfloor heating / irrigation valves controller, 5 zones.
  * Exact couple only: _TZ3000_j0ktmul1 + TS011F.
  * WHY: five native ZCL onOff endpoints (1..5), Tuya magic packet on configure, onOff reporting per
  * endpoint. Sources: Zigbee2MQTT automaton.ts (Koen Kanters and contributors, herdsman-converters
@@ -15,3 +17,5 @@ class ValveController5ZoneDevice extends UnifiedSwitchBase {
 }
 
 module.exports = ValveController5ZoneDevice;
+return module.exports;
+});

@@ -1,6 +1,6 @@
 'use strict';
 /** P3023: bounded primitives + app-wide memory budget (levels, hooks, memwarn, fallbacks). */
-const { describe, it, afterEach } = require('node:test');
+const { describe, it, afterEach } = require('../_support/dual-runner');
 const assert = require('node:assert');
 const { BoundedMap, brief, fnv1a } = require('../../lib/memory/BoundedMap');
 const MB = require('../../lib/memory/MemoryBudget');

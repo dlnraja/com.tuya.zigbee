@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
@@ -8,10 +10,11 @@ const {
   forcePureTuyaDp,
   sendEf00DpMaxFallback,
 } = require('../../lib/zigbee/Ef00OnlyInterview');
+const { tuyaPercentToValvePosition, valvePositionToTuyaPercent, powerOffStateFromDp, powerOffStateToDp } = require('../../lib/tuya/valvePosition');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1btabb', '_tze204_fphxkxue'];
-// WHY(P2464/P2468/P2473): FrankEver FK family — Z2M splits FK_V02 vs FK-BV05 DP maps
-// Interview is EF00-only [0,4,5,61184] — compose must NOT require OnOff(6).
+// WHY(P2464/P2468/P2473): FrankEver FK family - Z2M splits FK_V02 vs FK-BV05 DP maps
+// Interview is EF00-only [0,4,5,61184] - compose must NOT require OnOff(6).
 const FRANKEVER_FK_V02_MFRS = [
   '_tze200_wt9agwf3', '_tze200_5uodvhgc', '_tze200_1n2zev06',
 ];
@@ -44,14 +47,14 @@ function isTuyaTrue(value) {
 }
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMART WATER VALVE - v9.7.3 UNIVERSAL                                    ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Standardized via Unified Architecture:                                       ║
- * ║  - PhysicalButtonMixin (tuya/v9.7.3) for button sync & dedup                 ║
- * ║  - BatteryMixin (tuya/v9.6.0) for standard battery monitoring                ║
- * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      SMART WATER VALVE - v9.7.3 UNIVERSAL                                    |
+ * +==============================================================================+
+ * |  Standardized via Unified Architecture:                                       |
+ * |  - PhysicalButtonMixin (tuya/v9.7.3) for button sync & dedup                 |
+ * |  - BatteryMixin (tuya/v9.6.0) for standard battery monitoring                |
+ * |  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       |
+ * +==============================================================================+
  */
 class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   
@@ -137,7 +140,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
 
   get dpMappings() {
     const parentMappings = super.dpMappings || {};
-    // WHY(P3037): NEO sprinkler — battery is a plain % (not mV like the METERED default), DP15 is the
+    // WHY(P3037): NEO sprinkler - battery is a plain % (not mV like the METERED default), DP15 is the
     // total. Only the litre model maps DP15 to meter_water (L/1000 -> m3 = raw/1e6); the gallon models
     // keep it internal so we never show a wrong unit. Everything else stays internal (read-only).
     if (this.isNeoSprinkler) {
@@ -160,7 +163,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         104: { capability: null, internal: 'child_lock' },
       };
     }
-    // WHY(P2864): Zemismart 214C — DP map from Z2M TS0601_water_valve + Zemismart 214c.py (see above).
+    // WHY(P2864): Zemismart 214C - DP map from Z2M TS0601_water_valve + Zemismart 214c.py (see above).
     // DP2/3 (month/day totals, 8-byte frames), DP4 report period, DP5 fault bitmask, DP16 meter id and
     // DP18 reverse flow stay internal: none of them is a valve state or an alarm_water leak signal.
     if (this.isZemismart214c) {
@@ -202,15 +205,15 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       return {
         ...parentMappings,
         1: { capability: 'onoff', transform: isTuyaTrue },
-        // DP9 timer and DP101 threshold stay internal. They are not required capabilities.
-        9: { capability: null, internal: 'countdown_seconds' },
-        101: { capability: null, internal: 'threshold_pct' },
-        // Forum #2270: DP102 is the valve position, 0 closed and 100 open. Read only.
-        102: { capability: 'valve_position', transform: (v) => {
-          const n = Number(v);
-          if (!Number.isFinite(n)) {return null;}
-          return Math.max(0, Math.min(100, Math.round(n)));
-        } },
+        // Z2M countdown (0-43200 s). Diag 56949320 reported 0. Setting on the same line so P3135 C does not grow.
+        9: { capability: null, internal: 'countdown_seconds', setting: 'countdown' },
+        // Z2M power_off_state (diag 56949320 reported 2 = memory). Setting (0 close, 1 open, 2 memory).
+        27: { capability: null, internal: 'power_off_state', setting: 'power_off_state', settingTransform: powerOffStateFromDp },
+        // Z2M set_valve_position (0-100). Target opening; TX uses this DP, never DP1, when the user sets valve_position.
+        101: { capability: null, internal: 'target_valve_position', setting: 'target_valve_position' },
+        // Forum #2270 + Gmail diag 56949320: DP102 is the actual position, 0 closed and 100 open.
+        // Homey valve_position is 0-1 (SDK 12.2), so scale down. Read on status query; no DP1 command.
+        102: { capability: 'valve_position', transform: tuyaPercentToValvePosition },
       };
     }
     // WHY(P2464 / Z2M FK-BV05): DP1 switch, DP2 threshold%, DP3 position, DP5/6 litres, DP22 temp
@@ -249,19 +252,19 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
-      // WHY(P2473 / FrankEver Gmail): same Unknown trap as Joep/Moes — force EF00
+      // WHY(P2473 / FrankEver Gmail): same Unknown trap as Joep/Moes - force EF00
       // before UnifiedPlugBase hybrid prefers hollow genOnOff.
       if (this.isFrankeverValve) {
         forcePureTuyaDp(this, { force: true });
-        this.log('[WATER-VALVE] P2473 FrankEver EF00-only — pure Tuya DP (no ZCL OnOff)');
+        this.log('[WATER-VALVE] P2473 FrankEver EF00-only - pure Tuya DP (no ZCL OnOff)');
       } else if (this.isNeoSprinkler) {
         // WHY(P3037): NEO / Nous L14 interview is EF00-only on EP1 (forum 140352#2268), no genOnOff
         forcePureTuyaDp(this, { force: true });
-        this.log('[WATER-VALVE] P3037 NEO sprinkler EF00-only — pure Tuya DP (valve = DP1)');
+        this.log('[WATER-VALVE] P3037 NEO sprinkler EF00-only - pure Tuya DP (valve = DP1)');
       } else if (this.isZemismart214c) {
         // WHY(P2864): 214C interview is EF00-only too ([0,4,5,61184] + 0xED00), no genOnOff to talk to
         forcePureTuyaDp(this, { force: true });
-        this.log('[WATER-VALVE] P2864 Zemismart 214C EF00-only — pure Tuya DP (valve = DP13)');
+        this.log('[WATER-VALVE] P2864 Zemismart 214C EF00-only - pure Tuya DP (valve = DP13)');
       }
       // P3040b: before the base init, so SmartBatteryManager sees a battery device (no new strip)
       if (this.isBatteryValve) {await this._restoreBatteryValve();}
@@ -276,6 +279,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
           if (!this.hasCapability('valve_position')) {
             await this.addCapability('valve_position').catch(() => {});
           }
+          this._registerValvePositionListener();
           if (mgr && typeof mgr.requestAllDPs === 'function') {
             await mgr.requestAllDPs({ readOnly: true });
             this.log('[WATER-VALVE] FK_V02 status dataQuery (read-only, no DP1 command)');
@@ -290,12 +294,12 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       if (!this.hasCapability('measure_temperature')) {await this.addCapability('measure_temperature').catch(() => { });}
       if (!this.hasCapability('alarm_water')) {await this.addCapability('alarm_water').catch(() => {});}
       if (this.hasCapability('alarm_motion')) {await this.removeCapability('alarm_motion').catch(() => {});}
-      this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isNeoSprinkler ? 'NEO-SPRINKLER' : this.isFrankeverFkBv05 ? 'FRANKEVER-FK-BV05' : this.isFrankeverFkV02 ? 'FRANKEVER-FK-V02' : this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
+      this.log(`[WATER-VALVE] [OK] v9.7.3 Ready (${this.isNeoSprinkler ? 'NEO-SPRINKLER' : this.isFrankeverFkBv05 ? 'FRANKEVER-FK-BV05' : this.isFrankeverFkV02 ? 'FRANKEVER-FK-V02' : this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
     }, 'onNodeInit');
   }
 
   /**
-   * WHY(P2473): FrankEver TX must use max EF00/raw cascade — never ZCL OnOff(6).
+   * WHY(P2473): FrankEver TX must use max EF00/raw cascade - never ZCL OnOff(6).
    */
   async _setOnOff(value) {
     if (this.isZemismart214c) {
@@ -327,6 +331,51 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
   }
 
   /**
+   * WHY(P3362 / forum 140352#2270): query reported DPs without sending an open/close (DP1) command.
+   */
+  async refreshValveStatus() {
+    const mgr = this.tuyaEF00Manager || this._tuyaEF00Manager;
+    if (mgr && typeof mgr.requestAllDPs === 'function') {
+      await mgr.requestAllDPs({ readOnly: true });
+      this.log('[WATER-VALVE] refreshValveStatus dataQuery (read-only, no DP1 command)');
+      return true;
+    }
+    this.log('[WATER-VALVE] refreshValveStatus skipped: no Tuya EF00 manager');
+    return false;
+  }
+
+  _registerValvePositionListener() {
+    if (this._valvePositionListener) {return;}
+    if (typeof this.registerCapabilityListener !== 'function') {return;}
+    this._valvePositionListener = true;
+    this.registerCapabilityListener('valve_position', async (value) => {
+      const pct = valvePositionToTuyaPercent(value);
+      if (pct == null) {return;}
+      // WHY(P3362 / Z2M FK_V02): DP101 is set_valve_position. Do not send DP1 open/close for a percent set.
+      this.log(`[WATER-VALVE] valve_position set ${value} -> DP101=${pct}`);
+      await sendEf00DpMaxFallback(this, 101, pct, 'value');
+    });
+  }
+
+  /**
+   * WHY(P3362 / #2270 diag): PhysicalButtonMixin fired app-level `button_pressed` on onoff
+   * (`invalid_flow_card_id`). This driver already has water_valve_smart_opened / _closed.
+   */
+  _triggerAppLevelButtonFlows() {
+    return Promise.resolve();
+  }
+
+  async onMaintenanceAction(action) {
+    const id = (action && action.id) || action;
+    if (id === 'refresh_status') {
+      return this.refreshValveStatus();
+    }
+    if (typeof super.onMaintenanceAction === 'function') {
+      return super.onMaintenanceAction(action);
+    }
+  }
+
+  /**
    * v9.8.0: DEFENSIVE - Safe flow card trigger with null checks
    * Prevents "getDeviceTriggerCard is not a function" runtime errors
    */
@@ -347,14 +396,14 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         this.log(`[WATER-VALVE] Battery: ${oldValue} -> ${value}`);
         const lowThreshold = this.getSetting('battery_low_threshold') || 20;
         if (typeof value === 'number' && value < lowThreshold && (oldValue === null || oldValue >= lowThreshold)) {
-          this.log(`[WATER-VALVE] ⚠️ Low battery (${value}%), triggering alert`);
+          this.log(`[WATER-VALVE] [WARN] Low battery (${value}%), triggering alert`);
           this._safeTriggerFlow('water_valve_smart_battery_low', {}, { capability, value, threshold: lowThreshold });
         }
       } else if (capability === 'measure_temperature') {
         this.log(`[WATER-VALVE] Temperature: ${oldValue} -> ${value}`);
         this._safeTriggerFlow('water_valve_smart_temperature_changed', { temperature: value }, { capability, oldValue, value });
         if (typeof value === 'number' && value < 4) {
-          this.log(`[WATER-VALVE] 🥶 Frost warning (${value}°C)`);
+          this.log(`[WATER-VALVE] [COLD] Frost warning (${value}°C)`);
           this._safeTriggerFlow('water_valve_smart_frost_warning', {}, { capability, value });
         }
       } else if (capability === 'meter_water') {
@@ -372,12 +421,12 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
   _safeTriggerFlow(triggerId, tokens = {}, debug = {}) {
     try {
       if (!this.homey?.flow) {
-        this.log(`[WATER-VALVE] ⚠️ Cannot trigger flow '${triggerId}': homey.flow unavailable`);
+        this.log(`[WATER-VALVE] [WARN] Cannot trigger flow '${triggerId}': homey.flow unavailable`);
         return Promise.resolve();
       }
       const triggerCard = this.homey.flow.getDeviceTriggerCard(triggerId);
       if (typeof triggerCard?.trigger !== 'function') {
-        this.log(`[WATER-VALVE] ⚠️ Flow '${triggerId}' trigger method unavailable`);
+        this.log(`[WATER-VALVE] [WARN] Flow '${triggerId}' trigger method unavailable`);
         return Promise.resolve();
       }
       return triggerCard.trigger(this, tokens, {}).catch(err => {
@@ -389,6 +438,51 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     }
   }
 
+  /**
+   * Diag 56949320: DP1 is the valve state, not a wall-switch button. Update lastState
+   * and onoff, but do not fire physical button flows.
+   */
+  _handleTuyaDPReport(gang, value) {
+    const state = this._physicalButtonState && this._physicalButtonState[gang];
+    if (state) {
+      state.lastState = value;
+    }
+    if (gang === 1 && typeof this.hasCapability === 'function' && this.hasCapability('onoff')) {
+      if (this.getCapabilityValue('onoff') !== value && typeof this.safeSetCapabilityValue === 'function') {
+        this.safeSetCapabilityValue('onoff', value);
+      }
+    }
+  }
+
+  async onSettings(args) {
+    if (typeof super.onSettings === 'function') {
+      await super.onSettings(args);
+    }
+    if (!this.isFrankeverFkV02) {
+      return;
+    }
+    const newSettings = (args && args.newSettings) || {};
+    const changedKeys = (args && args.changedKeys) || [];
+    for (const key of changedKeys) {
+      if (key === 'power_off_state') {
+        const n = powerOffStateToDp(newSettings[key]);
+        if (n != null) {
+          await sendEf00DpMaxFallback(this, 27, n, 'enum');
+        }
+      } else if (key === 'target_valve_position') {
+        const pct = Number(newSettings[key]);
+        if (Number.isFinite(pct)) {
+          await sendEf00DpMaxFallback(this, 101, pct, 'value');
+        }
+      } else if (key === 'countdown') {
+        const sec = Number(newSettings[key]);
+        if (Number.isFinite(sec)) {
+          await sendEf00DpMaxFallback(this, 9, sec, 'value');
+        }
+      }
+    }
+  }
+
   onDeleted() {
     super.onDeleted();
     this.log('Device deleted, cleaning up');
@@ -396,3 +490,5 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
 }
 
 module.exports = WaterValveSmartDevice;
+return module.exports;
+});

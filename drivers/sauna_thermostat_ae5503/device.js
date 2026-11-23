@@ -1,10 +1,12 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
- * P3013 — AE-5503-S-H-ZIGBEE sauna thermostat (`_TZE204_eaasry7v` / TS0601).
+ * P3013 - AE-5503-S-H-ZIGBEE sauna thermostat (`_TZE204_eaasry7v` / TS0601).
  * Source: Koenkk/zigbee-herdsman-converters PR #13225 (Vadim Surpin, 2026-09-18).
  * Runtime = thermostat_tuya_dp; only the DP table and three write paths differ:
- * DP1 heat on/off (bool), DP16 setpoint 0–120 °C raw, DP24 local temp raw, DP40 child lock.
+ * DP1 heat on/off (bool), DP16 setpoint 0-120 °C raw, DP24 local temp raw, DP40 child lock.
  */
 const ThermostatTuyaDPDevice = require('../thermostat_tuya_dp/device');
 const { SAUNA_AE5503: P, rxTable, sendEncoded } = require('../../lib/tuya/profiles/P3013DedicatedZ2MProfiles');
@@ -29,3 +31,5 @@ class SaunaThermostatAE5503Device extends ThermostatTuyaDPDevice {
 }
 
 module.exports = SaunaThermostatAE5503Device;
+return module.exports;
+});

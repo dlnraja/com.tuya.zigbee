@@ -18,6 +18,14 @@
     "measure_battery",
     "measure_luminance"
   ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    },
+    "measure_luminance": {
+      "units": "lx"
+    }
+  },
   "energy": {
     "batteries": [
       "OTHER"

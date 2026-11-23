@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
@@ -18,9 +20,11 @@ class Button8GangDevice extends ButtonDevice {
         try { this.log('[INIT] Error: ' + (err && err.message)); } catch (_e) { /* ignore */ }
       });
     
-    this.log('[BUTTON_WIRELESS_8] 🔘 v10.0.0 initialized via ButtonDevice');
+    this.log('[BUTTON_WIRELESS_8] [BTN] v10.0.0 initialized via ButtonDevice');
   }
 
 }
 
 module.exports = Button8GangDevice;
+return module.exports;
+});

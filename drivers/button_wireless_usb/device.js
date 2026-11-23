@@ -1,16 +1,18 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
 // Multipliers are the exact inverses of the ZCL divisors, so results stay identical to the raw scaling.
 const ENERGY_SCALING = {
-  measure_power: { multiplier: 10 },      // activePower raw ×10 → W
-  measure_voltage: { multiplier: 10 },    // rmsVoltage raw ×10 → V
-  measure_current: { multiplier: 1000 },  // rmsCurrent raw ×1000 → A
-  meter_power: { divisor: 1000 },         // currentSummationDelivered raw ÷1000 → kWh
+  measure_power: { multiplier: 10 },      // activePower raw ×10 -> W
+  measure_voltage: { multiplier: 10 },    // rmsVoltage raw ×10 -> V
+  measure_current: { multiplier: 1000 },  // rmsCurrent raw ×1000 -> A
+  meter_power: { divisor: 1000 },         // currentSummationDelivered raw ÷1000 -> kWh
 };
 
 /**
@@ -249,7 +251,7 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
       this.log('[USB_DONGLE] Energy reporting configured' );
     } catch (err) {
       this.error('[USB_DONGLE] Failed to configure energy reporting, will retry:', err.message);
-      // Retry 1 min plus tard si le Zigbee stack n'était pas prÃªt
+      // Retry 1 min plus tard si le Zigbee stack n'était pas prêt
       (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(() => { if (this._destroyed) {return;} this._configureEnergyReporting(zclNode); }, 60 * 1000);
     }
   }
@@ -263,5 +265,5 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = UsbDongleDualRepeaterDevice;
-
-
+return module.exports;
+});

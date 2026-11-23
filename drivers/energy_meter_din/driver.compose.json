@@ -1,6 +1,6 @@
 {
   "name": {
-    "en": "DIN Rail Energy Meter",
+    "en": "DIN Rail Energy Meter (energy meter din)",
     "fr": "Compteur Énergie Rail DIN",
     "de": "Hutschienen-Energiezähler",
     "nl": "DIN-rail energiemeter"
@@ -36,19 +36,23 @@
     },
     "measure_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     },
     "measure_current": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "A"
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     }
   },
   "zigbee": {

@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Lock Smart",
-    "fr": "Lock Smart",
+    "en": "Smart lock",
+    "fr": "Serrure connectée",
     "nl": "Smart Slot",
     "de": "Smart Schloss"
   },
@@ -343,7 +343,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_tamper": {
       "getable": true,

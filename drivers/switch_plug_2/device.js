@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -11,7 +13,7 @@ class SwitchPlug2Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPl
     const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
     return {
       ...parentMappings,
-      17: { capability: 'measure_current', smartDivisor: true },   // mA → A
+      17: { capability: 'measure_current', smartDivisor: true },   // mA -> A
       18: { capability: 'measure_power', smartDivisor: true },     // W * 10
       19: { capability: 'measure_voltage', smartDivisor: true },   // V * 10
       20: { capability: 'meter_power', smartDivisor: true }        // kWh * 100
@@ -49,3 +51,5 @@ class SwitchPlug2Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPl
   }
 }
 module.exports = SwitchPlug2Device;
+return module.exports;
+});

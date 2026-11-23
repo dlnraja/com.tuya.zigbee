@@ -1,0 +1,45 @@
+{
+  "id": "alt_tuya_dp_is",
+  "title": {
+    "en": "Last Tuya DP value is (any device)",
+    "fr": "Dernière valeur du DP Tuya est (tout appareil)",
+    "nl": "Laatste Tuya-DP-waarde is",
+    "de": "Letzter Tuya-DP-Wert ist"
+  },
+  "titleFormatted": {
+    "en": "DP [[dp]] !{{is|is not}} [[value]] on [[device]]",
+    "fr": "Le DP [[dp]] !{{est|n'est pas}} [[value]] sur [[device]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device"
+    },
+    {
+      "type": "number",
+      "name": "dp",
+      "title": {
+        "en": "DP number",
+        "fr": "Numéro de DP"
+      },
+      "min": 1,
+      "max": 255,
+      "placeholder": {
+        "en": "1",
+        "fr": "1"
+      }
+    },
+    {
+      "type": "text",
+      "name": "value",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur"
+      },
+      "placeholder": {
+        "en": "true",
+        "fr": "true"
+      }
+    }
+  ]
+}

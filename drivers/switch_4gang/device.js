@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
@@ -16,11 +18,11 @@ const { healTs0004SwitchModule } = require('../../lib/tuya/Ts0004SwitchModuleHea
 
 /**
  * 4-GANG SWITCH - v5.9.23
- * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
- * WHY(P2634): _TZ3000_ltt60asa/mmkbptmx/liygxtcq + TS0004 — Z2M switch_module L99 heal.
+ * WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
+ * WHY(P2634): _TZ3000_ltt60asa/mmkbptmx/liygxtcq + TS0004 - Z2M switch_module L99 heal.
  */
 
-// P141: _TYZB01_bagt1e4o + TS0014 — Oz Smart Things 4-gang; EndDevice, ZCL OnOff only.
+// P141: _TYZB01_bagt1e4o + TS0014 - Oz Smart Things 4-gang; EndDevice, ZCL OnOff only.
 const ZCL_ONLY_MANUFACTURERS_4G = [
   '_TZ3002_pzao9ls1', '_TZ3002_vaq2bfcu', '_TZ3000_blhvsaqf',
   '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', '_TZ3000_e98krvvk',
@@ -36,8 +38,8 @@ class Switch4GangDevice extends BaseClass {
   get gangCount() { return 4; }
 
   /**
-   * WHY(P2704): `_TZ3000_ltt60asa`+TS0004 — snappy Homey UI / Flow → relay.
-   * Contre quoi: multi-gang pace jitter (15–50ms) + 350ms retry made channels feel laggy.
+   * WHY(P2704): `_TZ3000_ltt60asa`+TS0004 - snappy Homey UI / Flow -> relay.
+   * Contre quoi: multi-gang pace jitter (15-50ms) + 350ms retry made channels feel laggy.
    */
   getDeviceProfile() {
     const base = (typeof super.getDeviceProfile === 'function' && super.getDeviceProfile()) || {};
@@ -107,7 +109,7 @@ class Switch4GangDevice extends BaseClass {
 
   /**
    * EXTEND parent dpMappings with energy monitoring DPs (smartDivisor).
-   * Contre quoi(P2696c): compose has meter_power → check-energy-divisor must see smartDivisor.
+   * Contre quoi(P2696c): compose has meter_power -> check-energy-divisor must see smartDivisor.
    */
   get dpMappings() {
     const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
@@ -120,7 +122,7 @@ class Switch4GangDevice extends BaseClass {
     };
   }
 
-  /** WHY(P2463): relay-only — P2397 must not invent button.N */
+  /** WHY(P2463): relay-only - P2397 must not invent button.N */
   get skipGangButtonUi() { return true; }
 
   /**
@@ -155,11 +157,11 @@ class Switch4GangDevice extends BaseClass {
       await super.onNodeInit({ zclNode });
       await this._stripPhantomButtonCaps(); // again after base may soft-add
       await this.initPhysicalButtonDetection(zclNode);
-      // WHY(P2634): SML-04Z family — magic + EP1–4 bind + E001 switch_type + metering
+      // WHY(P2634): SML-04Z family - magic + EP1-4 bind + E001 switch_type + metering
       await healTs0004SwitchModule(this, zclNode).catch((e) => {
         this.log(`[P2634] heal soft-fail: ${e && e.message}`);
       });
-      // WHY(P2668 / Bastien Virtual→Bastien): [pièce A] 4-gang used as lighting (ZHA quirk family).
+      // WHY(P2668 / Bastien Virtual->Bastien): [pièce A] 4-gang used as lighting (ZHA quirk family).
       // Prefer light class so Homey Energy does not treat it as a metered socket tile.
       try {
         const mfr = String(
@@ -185,7 +187,7 @@ class Switch4GangDevice extends BaseClass {
 
   async _initZclOnlyMode(zclNode) {
     await this._migrateCapabilities().catch(() => {});
-    // P141: TS001x ZCL-only — no electricalMeasurement; strip phantom energy caps
+    // P141: TS001x ZCL-only - no electricalMeasurement; strip phantom energy caps
     for (const phantom of ['measure_power', 'measure_voltage', 'measure_current', 'meter_power']) {
       if (this.hasCapability(phantom)) {
         await this.removeCapability(phantom).catch(e => this.log(`[BSEED-4G] strip ${phantom}: ${e.message}`));
@@ -293,7 +295,7 @@ class Switch4GangDevice extends BaseClass {
               const card = this.homey.flow.getDeviceTriggerCard(flowId);
               if (card) {
                 await card.trigger(this, { gang: epNum, button: String(epNum), state: value }, { gang: String(epNum), button: String(epNum) }).catch(() => {});
-                this.log(`[BSEED-4G] ✅ Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+                this.log(`[BSEED-4G] [OK] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
               }
             } catch (e) { }
           }
@@ -304,7 +306,7 @@ class Switch4GangDevice extends BaseClass {
               const card = this.homey.flow.getDeviceTriggerCard(sceneId);
               if (card) {
                 await card.trigger(this, { action: value ? 'on' : 'off', gang: epNum, button: String(epNum) }, { gang: String(epNum), button: String(epNum), action: value ? 'on' : 'off' }).catch(() => {});
-                this.log(`[BSEED-4G] ✅ Scene G${epNum} ${value ? 'on' : 'off'}`);
+                this.log(`[BSEED-4G] [OK] Scene G${epNum} ${value ? 'on' : 'off'}`);
               }
             } catch (e) { }
           }
@@ -313,7 +315,7 @@ class Switch4GangDevice extends BaseClass {
       this.log(`[BSEED-4G] EP${epNum} attr listener registered`);
     }
 
-    // WHY(P2457): wired relay — no button.* listeners / virtual button tiles
+    // WHY(P2457): wired relay - no button.* listeners / virtual button tiles
     await this._stripPhantomButtonCaps();
   }
 
@@ -369,3 +371,5 @@ class Switch4GangDevice extends BaseClass {
 }
 
 module.exports = Switch4GangDevice;
+return module.exports;
+});

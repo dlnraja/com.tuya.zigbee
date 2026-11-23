@@ -33,13 +33,18 @@ function couplesOf(id) {
 }
 
 describe('P3084 publish hold after #3684 AggregateError', () => {
-  it('the nine pure-new ids are held with a P3084 reason', () => {
+  function reasonOf(id) {
+    const e = (hold.drivers || []).find((d) => d.id === id);
+    if (e && e.reason) return e.reason;
+    return String((hold._graduated || {})[id] || '');
+  }
+  it('the nine pure-new ids are held or P3360-graduated with a P3084 reason', () => {
     const { ids } = effectiveHoldIds(hold, '');
     for (const id of P3084) {
       if (!fs.existsSync(path.join(ROOT, 'drivers', id))) continue;
-      assert.ok(ids.has(id), `${id} not held`);
-      const e = hold.drivers.find((d) => d.id === id);
-      assert.ok(/P3084/.test(e.reason) && /#3684/.test(e.reason), id);
+      const reason = reasonOf(id);
+      assert.ok(ids.has(id) || /P3360|Athom #488/.test(reason), `${id} not held or P3360-graduated`);
+      assert.ok(/P3084/.test(reason) && /#3684/.test(reason), id);
     }
   });
   it('none of them was ever published (absent from Test 1574)', () => {
@@ -59,15 +64,17 @@ describe('P3084 publish hold after #3684 AggregateError', () => {
   });
   // P3085 (#3685 failed too): the moved-couple ids are now held as well; compaction re-pins their
   // Test couples on the shipped Test driver (test/critical/p3085-hold-aware-baseline-pins.test.js).
-  it('ids carrying moved Test couples are held under P3085, not P3084', () => {
+  it('ids carrying moved Test couples are held or P3360-graduated under P3085, not P3084', () => {
     const { ids } = effectiveHoldIds(hold, '');
     for (const id of MOVED_COUPLES) {
-      assert.ok(ids.has(id), id);
-      assert.ok(/P3085/.test(hold.drivers.find((d) => d.id === id).reason), id);
+      const reason = reasonOf(id);
+      assert.ok(ids.has(id) || /P3360|Athom #488/.test(reason), id);
+      assert.ok(/P3085/.test(reason), id);
     }
   });
   it('release_held frees one P3084 id only', () => {
-    const r = effectiveHoldIds(hold, 'keypad_alarm_wke502z');
+    const fake = { drivers: P3084.map((id) => ({ id, reason: 'fixture for release_held unit test (never-published id).' })) };
+    const r = effectiveHoldIds(fake, 'keypad_alarm_wke502z');
     assert.deepStrictEqual(r.released, ['keypad_alarm_wke502z']);
     assert.ok(!r.ids.has('keypad_alarm_wke502z') && r.ids.has('ufh_controller_ch8z'));
   });

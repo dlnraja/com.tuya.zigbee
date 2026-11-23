@@ -16,14 +16,17 @@ describe('P3233 curtain_motor_2 continuation', () => {
   const root = j('drivers/curtain_motor/driver.compose.json');
   const cont = j('drivers/curtain_motor_2/driver.compose.json');
 
-  it('registry links curtain_motor -> curtain_motor_2 and it is held', () => {
+  it('registry links curtain_motor -> curtain_motor_2 and it is held or P3360-graduated', () => {
     DC.clearCache(); const reg = DC.load(ROOT);
     assert.strictEqual(reg.rootOf('curtain_motor_2'), 'curtain_motor');
-    assert.ok(j('config/publish-hold-drivers.json').drivers.some((d) => d.id === 'curtain_motor_2'));
+    { const hold = j('config/publish-hold-drivers.json');
+      const held = (hold.drivers || []).some((d) => d.id === 'curtain_motor_2');
+      const graduated = /P3360|Athom #488/.test(String((hold._graduated || {}).curtain_motor_2 || ''));
+      assert.ok(held || graduated); }
   });
 
   it('carries exactly the 2 sourced TS0601-only makers, TS0601 only, none left on the root', () => {
-    assert.deepStrictEqual([...new Set(cont.zigbee.manufacturerName.map(lc))].sort(), ['_tze200_cpbo62rn', '_tze200_eegnwoyw']);
+    assert.deepStrictEqual([...new Set(cont.zigbee.manufacturerName.map(lc))].sort(), ['_tze200_cpbo62rn', '_tze200_eegnwoyw', '_tze284_lqhqj73n']); // + P3345 new TS0601 couple (root full, rule 4)
     assert.deepStrictEqual([...new Set(cont.zigbee.productId.map(lc))], ['ts0601']);
     const rm = new Set(root.zigbee.manufacturerName.map(lc));
     assert.ok(!rm.has('_tze200_cpbo62rn') && !rm.has('_tze200_eegnwoyw'));

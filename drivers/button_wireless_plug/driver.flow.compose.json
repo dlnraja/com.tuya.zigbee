@@ -35,8 +35,8 @@
     {
       "id": "button_wireless_plug_measure_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (measurement)",
+        "fr": "Puissance changée (mesure)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
@@ -135,15 +135,15 @@
     {
       "id": "button_wireless_plug_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }

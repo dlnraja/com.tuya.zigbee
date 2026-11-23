@@ -45,7 +45,8 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "target_humidity": {
       "title": {
@@ -61,15 +62,20 @@
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "alarm_water": {
       "getable": true,
       "preventInsights": false
+    },
+    "target_temperature": {
+      "units": "°C"
     }
   },
   "energy": {},

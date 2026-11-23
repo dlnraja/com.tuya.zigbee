@@ -2,7 +2,7 @@
   "id": "energy_meter_3ch_bidirectional",
   "name": {
     "en": "3-channel bidirectional energy meter with relay",
-    "fr": "Compteur d’énergie bidirectionnel 3 canaux avec relais",
+    "fr": "Compteur d'énergie bidirectionnel 3 canaux avec relais",
     "nl": "Bidirectionele energiemeter 3 kanalen met relais",
     "de": "Bidirektionaler 3-Kanal-Energiezähler mit Relais"
   },
@@ -43,7 +43,8 @@
         "fr": "Énergie produite",
         "nl": "Geproduceerde energie",
         "de": "Erzeugte Energie"
-      }
+      },
+      "units": "kWh"
     },
     "measure_current.a": {
       "title": {
@@ -51,7 +52,8 @@
         "fr": "Courant A",
         "nl": "Stroom A",
         "de": "Strom A"
-      }
+      },
+      "units": "A"
     },
     "measure_power.a": {
       "title": {
@@ -59,7 +61,8 @@
         "fr": "Puissance A",
         "nl": "Vermogen A",
         "de": "Leistung A"
-      }
+      },
+      "units": "W"
     },
     "measure_power_factor.a": {
       "title": {
@@ -75,7 +78,8 @@
         "fr": "Énergie A",
         "nl": "Energie A",
         "de": "Energie A"
-      }
+      },
+      "units": "kWh"
     },
     "meter_power.reverse_a": {
       "title": {
@@ -83,7 +87,8 @@
         "fr": "Énergie inverse A",
         "nl": "Teruggeleverde energie A",
         "de": "Rückspeisung A"
-      }
+      },
+      "units": "kWh"
     },
     "measure_current.b": {
       "title": {
@@ -91,7 +96,8 @@
         "fr": "Courant B",
         "nl": "Stroom B",
         "de": "Strom B"
-      }
+      },
+      "units": "A"
     },
     "measure_power.b": {
       "title": {
@@ -99,7 +105,8 @@
         "fr": "Puissance B",
         "nl": "Vermogen B",
         "de": "Leistung B"
-      }
+      },
+      "units": "W"
     },
     "measure_power_factor.b": {
       "title": {
@@ -115,7 +122,8 @@
         "fr": "Énergie B",
         "nl": "Energie B",
         "de": "Energie B"
-      }
+      },
+      "units": "kWh"
     },
     "meter_power.reverse_b": {
       "title": {
@@ -123,7 +131,8 @@
         "fr": "Énergie inverse B",
         "nl": "Teruggeleverde energie B",
         "de": "Rückspeisung B"
-      }
+      },
+      "units": "kWh"
     },
     "measure_current.c": {
       "title": {
@@ -131,7 +140,8 @@
         "fr": "Courant C",
         "nl": "Stroom C",
         "de": "Strom C"
-      }
+      },
+      "units": "A"
     },
     "measure_power.c": {
       "title": {
@@ -139,7 +149,8 @@
         "fr": "Puissance C",
         "nl": "Vermogen C",
         "de": "Leistung C"
-      }
+      },
+      "units": "W"
     },
     "measure_power_factor.c": {
       "title": {
@@ -155,7 +166,8 @@
         "fr": "Énergie C",
         "nl": "Energie C",
         "de": "Energie C"
-      }
+      },
+      "units": "kWh"
     },
     "meter_power.reverse_c": {
       "title": {
@@ -163,7 +175,20 @@
         "fr": "Énergie inverse C",
         "nl": "Teruggeleverde energie C",
         "de": "Rückspeisung C"
-      }
+      },
+      "units": "kWh"
+    },
+    "meter_power": {
+      "units": "kWh"
+    },
+    "measure_power": {
+      "units": "W"
+    },
+    "measure_voltage": {
+      "units": "V"
+    },
+    "measure_temperature": {
+      "units": "°C"
     }
   },
   "images": {

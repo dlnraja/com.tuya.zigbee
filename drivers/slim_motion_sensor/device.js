@@ -1,9 +1,11 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const Homey = require('homey');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const { debug, CLUSTER } = require('zigbee-clusters');
+const { debug } = require('zigbee-clusters');
 
 class SlimMotionSensor extends TuyaZigbeeDevice {
 
@@ -14,15 +16,26 @@ class SlimMotionSensor extends TuyaZigbeeDevice {
 		this.printNode();
 
 		// alarm_motion
-		zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME].onZoneStatusChangeNotification = payload => {
-			this.onIASZoneStatusChangeNotification(payload);
-		}
+		// P3397: parallel RX (IAS notification + attr 0x0002 report + occupancy 0x0406),
+		// guarded when endpoint 1 has no iasZone (the old direct assignment threw and
+		// left every capability dead). Works on existing pairings, no re-pair.
+		require('../../lib/zigbee/ZoneStatusRx').attachMotionRx(this, zclNode, {
+			onStatus: (motion, bits, source) => {
+				if (source === 'ias-notify') {
+					this.log('IASZoneStatusChangeNotification received:', bits && bits.value);
+				}
+			},
+		});
 	}
 
 	onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
 		this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
-		this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
-		this.safeSetCapabilityValue('alarm_battery', zoneStatus.battery).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+		const bits = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(zoneStatus);
+		if (!bits) {
+			return;
+		}
+		this.safeSetCapabilityValue('alarm_motion', bits.alarm1 || bits.alarm2).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+		this.safeSetCapabilityValue('alarm_battery', bits.battery).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
 
 	onDeleted(){
@@ -33,3 +46,5 @@ class SlimMotionSensor extends TuyaZigbeeDevice {
 }
 
 module.exports = SlimMotionSensor;
+return module.exports;
+});

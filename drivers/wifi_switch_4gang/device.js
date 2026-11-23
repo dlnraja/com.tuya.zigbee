@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
@@ -44,7 +46,7 @@ class WiFiSwitch4GangDevice extends TuyaLocalDevice {
       this.registerCapabilityListener(cap, async () => {
         const onoffCap = gang === 1 ? 'onoff' : `onoff.gang${gang}`;
         const next = !this.getCapabilityValue(onoffCap);
-        this.log(`[WIFI-SWITCH-4G] ${cap} pressed (UI) — DP${gang} → ${next}`);
+        this.log(`[WIFI-SWITCH-4G] ${cap} pressed (UI) - DP${gang} -> ${next}`);
         await this._setDP(gang, next);
         return true;
       });
@@ -62,3 +64,5 @@ class WiFiSwitch4GangDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiSwitch4GangDevice;
+return module.exports;
+});

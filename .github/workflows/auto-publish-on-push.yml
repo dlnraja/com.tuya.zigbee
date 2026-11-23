@@ -40,7 +40,7 @@ on:
         type: string
         default: ''
       transient_retry:
-        description: 'Internal: retries already done in this chain (true=1); P3036: transient max 1, AggregateError 0'
+        description: 'Internal: retries already done in this chain (true=1); P3036: transient max 1, AggregateError 0 (bare AggregateError 1, P3341)'
         type: string
         default: 'false'
       deferred_retry:
@@ -59,6 +59,10 @@ on:
         description: 'Manual diagnostic only: release every held real driver into an isolated draft (more than 350). Does not promote Test or Live and does not edit the hold file.'
         type: boolean
         default: false
+      diagnostic_swap_out:
+        description: 'P3292 manual diagnostic only: driver id(s) left out of THIS payload while release_held brings in the same number of held ids (constant driver count). Draft only: no Test/Live promotion, no GitHub release, no P3095 verdict; source and hold file unchanged.'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -77,6 +81,7 @@ env:
   NODE_VERSION: "22"
   PUBLISH_HOLD_RELEASE: ${{ github.event.inputs.release_held || '' }}
   PUBLISH_DIAGNOSTIC_CATALOGUE: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true && '1' || '0' }}
+  PUBLISH_DIAG_SWAP_OUT: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic_swap_out || '' }}
   PUBLISH_DIAGNOSTIC_MIN_DRIVERS: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true && '351' || '' }}
   NODE_OPTIONS: "--dns-result-order=ipv4first"
   # P2491: publish bots stay local — no remote AI burn
@@ -169,7 +174,7 @@ jobs:
     # WHY(P2384): workflow_dispatch must run even when tip commit is [skip ci]
     if: ${{ needs.breaker.outputs.skip != 'true' && needs.breaker.outputs.bisect_hold_upload != 'true' && needs.breaker.outputs.p3036_go != 'false' && (github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')) }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 65  # P3311: + up to 16 min backoff before the 2nd transport retry dispatch
     # v9.0.287 (P74): Bumped publish-size limits to 50 MB. With .homeyignore
     # pruning (mfs_db.json, dev artifacts, branding assets) the source
     # directory is ~40 MB. The gzipped tarball is ~18 MB.
@@ -597,6 +602,11 @@ jobs:
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false'
         uses: ./.github/actions/homey-app-publish
+        # P3310: the pre-upload completeness guard checks the package version against THIS run's version and
+        # fetches the last accepted build's manifest (read-only artifact download) for the file-level diff.
+        env:
+          HOMEY_EXPECTED_VERSION: ${{ steps.info.outputs.version }}
+          GH_TOKEN: ${{ github.token }}
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
@@ -604,7 +614,7 @@ jobs:
       # 7. POST-PUBLISH (all continue-on-error)
       # ─────────────────────────────────────────────────────────────
       - name: Create GitHub Release
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         continue-on-error: true
         uses: softprops/action-gh-release@e598afbe1493e6b1bafb1f389cabb956eab91231 # v3.0.3 (node24, P3025b)
         with:
@@ -638,6 +648,15 @@ jobs:
         run: |
           OUT=$(mktemp)
           GITHUB_OUTPUT="$OUT" node .github/scripts/wait-athom-draft-ready.js || true
+          # P3293 (stable run 43710885652, #425): an orphan waiting_for_files (CLI submit timeout, no files) is
+          # NEVER ready. Skip promotion; the final gate decides the single bumped retry (transient-publish-retry.js).
+          if grep -q '^orphan_waiting_for_files=true' "$OUT"; then
+            OBID=$(sed -n 's/^orphan_build_id=//p' "$OUT" | head -1)
+            { echo "athom_failed=true"; echo "orphan_waiting_for_files=true"; } >> "$GITHUB_OUTPUT"
+            echo "::error::Athom build #${OBID:-?} v$HOMEY_EXPECTED_VERSION is an orphan waiting_for_files (files never uploaded); not ready (P3293)"
+            echo "### Test NOT updated: v$HOMEY_EXPECTED_VERSION build #${OBID:-?} orphan waiting_for_files (P3293)" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
           if ! grep -q 'processing_failed_degraded=true' "$OUT"; then
             echo "Athom build for v$HOMEY_EXPECTED_VERSION is processing/ready"; exit 0
           fi
@@ -652,12 +671,12 @@ jobs:
       # WHY(2026-10-11): transient retry moved into the final Athom gate (run 38099611305 decided at
       # 00:51 on an empty state; the failure #3513 landed at 00:58). Decide only on the final state.
       - name: Install Puppeteer (draft → test promotion)
-        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         continue-on-error: true
         run: npm install puppeteer athom-api --no-save
 
       - name: "Tier 1: Promote via Browser"
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
@@ -669,7 +688,7 @@ jobs:
 
       - name: "Tier 2: Promote via OAuth"
         id: promote_oauth
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -681,7 +700,7 @@ jobs:
 
       - name: "Tier 3: Promote via PAT API"
         id: promote_api
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success' && steps.waitdraft.outputs.athom_failed != 'true' && needs.breaker.outputs.bisect_hold_promote != 'true' && steps.p3036_busy.outputs.go != 'false' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -689,7 +708,7 @@ jobs:
         run: node .github/scripts/auto-publish-draft.js
 
       - name: Record diagnostic draft
-        if: github.event_name == 'workflow_dispatch' && inputs.diagnostic_catalogue == true
+        if: github.event_name == 'workflow_dispatch' && (inputs.diagnostic_catalogue == true || inputs.diagnostic_swap_out != '')
         run: |
           echo "### Diagnostic catalogue" >> "$GITHUB_STEP_SUMMARY"
           echo "Uploaded channel: draft. Test promotion: skipped. Live promotion: skipped." >> "$GITHUB_STEP_SUMMARY"
@@ -711,7 +730,7 @@ jobs:
 
       - name: Verify draft promotion result
         id: verify_test
-        if: steps.check_pat.outputs.has_pat == 'true' && (github.event_name != 'workflow_dispatch' || inputs.diagnostic_catalogue != true)
+        if: steps.check_pat.outputs.has_pat == 'true' && (github.event_name != 'workflow_dispatch' || (inputs.diagnostic_catalogue != true && inputs.diagnostic_swap_out == ''))
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P2325: soft-continue when Athom hang + healthy Test (do not fail-closed/bump-loop)
@@ -924,13 +943,15 @@ jobs:
         # 39224444574 -> #3622 v9.0.1541 AggregateError got no retry). The retry decision only acts when Athom
         # has a build for HOMEY_EXPECTED_VERSION ("no Athom build" -> skip), so pre-upload errors never retry.
         if: always() && (steps.pub.outcome == 'success' || steps.pub.outcome == 'failure')
-        timeout-minutes: 15
+        timeout-minutes: 35  # P3311: backoff 5 / 15 min (+ jitter) before the next transport retry
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           TRANSIENT_RETRY: ${{ github.event.inputs.transient_retry || 'false' }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # P-KB4: master retries only a socket hang up, once (no AggregateError / processing_failed auto retry).
+          # P-KB4 / P3311: only transport failures retry (2 bumped retries = 3 attempts; no AggregateError / processing_failed auto retry).
           ATHOM_RETRY_HANGUP_ONLY: '1'
+          # P3293: the draft wait confirmed an orphan waiting_for_files -> one bumped retry per chain.
+          ATHOM_ORPHAN_CONFIRMED: ${{ steps.waitdraft.outputs.orphan_waiting_for_files }}
           # P2830g: gate + retry decision must judge the version THIS run uploaded (app.json can be reset by the
           # metadata step; run 39211896020 judged v9.0.1533 while it had uploaded v9.0.1534 -> Test).
           HOMEY_EXPECTED_VERSION: ${{ steps.info.outputs.version }}
@@ -943,10 +964,10 @@ jobs:
           kind=$(printf '%s' "$final_out" | node .github/scripts/athom-retry-policy.js classify 2>/dev/null || echo unknown)
           if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then
             node .github/scripts/publish-size-telemetry.js record test
-            [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && mkdir -p p3095-outcome && printf '{"outcome":"test","released":"%s","version":"%s","run":"%s"}\n' "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
+            [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && [ -z "${PUBLISH_DIAG_SWAP_OUT:-}" ] && mkdir -p p3095-outcome && printf '{"outcome":"test","released":"%s","version":"%s","run":"%s"}\n' "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
             exit 0
           fi
-          # Final state known and not Test: retry decision (P3036: one transient retry, backoff >= 300 s + jitter).
+          # Final state known and not Test: retry decision (P3311: transport -> up to 2 bumped retries, backoff 5/15 min + jitter).
           out=$(node .github/scripts/transient-publish-retry.js) || true
           # P2901: assert-athom-final only prints "processing_failed"; the Athom error text (AggregateError, socket
           # hang up...) is read by the retry decision, so classify both outputs before recording the CSV row.
@@ -960,13 +981,15 @@ jobs:
             # WHY(P2893, 19/10/2026): carry release_held so the flake check retries the SAME content.
             # SPI one-shot 39281159242 (#3630 AggregateError) retried WITHOUT the held driver (#3631 Test),
             # which tells nothing about the held driver (bisect needs same-content flip).
-            .github/scripts/gh-retry.sh gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" -f release_held="${PUBLISH_HOLD_RELEASE:-}" || true
+            .github/scripts/gh-retry.sh gh workflow run auto-publish-on-push.yml --ref "${GITHUB_REF_NAME}" -f transient_retry="${next:-1}" -f release_held="${PUBLISH_HOLD_RELEASE:-}" -f diagnostic_swap_out="${PUBLISH_DIAG_SWAP_OUT:-}" || true
           fi
           # P3095: hand the verdict of a release_held upload to publish-hold-bisect.yml (workflow_run).
-          if [ -n "${PUBLISH_HOLD_RELEASE:-}" ]; then
+          # P3292: a diagnostic swap Draft is judged by hand, never by the bisect.
+          if [ -n "${PUBLISH_HOLD_RELEASE:-}" ] && [ -z "${PUBLISH_DIAG_SWAP_OUT:-}" ]; then
             v=other
             if [ "$final_rc" -eq 0 ] && ! printf '%s' "$final_out" | grep -q 'SOFT-EXPECT'; then v=test
-            elif [ "$kind" = "AggregateError" ] && ! printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY'; then v=AggregateError; fi
+            # P3341: a bare AggregateError reaches the bisect only after its single identical retry failed too.
+            else case "$kind" in AggregateError|AggregateError-bare) printf '%s' "$out" | grep -q '^\[transient-retry\] RETRY' || v=AggregateError;; esac; fi
             mkdir -p p3095-outcome && printf '{"outcome":"%s","released":"%s","version":"%s","run":"%s"}\n' "$v" "$PUBLISH_HOLD_RELEASE" "${HOMEY_EXPECTED_VERSION:-}" "$GITHUB_RUN_ID" > p3095-outcome/outcome.json
           fi
           if printf '%s' "$out" | grep -q '^\[transient-retry\] BISECT'; then

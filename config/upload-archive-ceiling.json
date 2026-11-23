@@ -1,0 +1,25 @@
+{
+  "_doc": "P3356 ratchet on the packed upload archive (exact Homey CLI tar stream: scripts/ci/upload-archive-ceiling.cjs). Top level = final upload dir after npm ci --omit=dev and prune (homey-app-publish action, blocking). appOnly = same dir without node_modules (Platform Budget, blocking). Lower when the archive shrinks; raise only with a reviewed reason added to history.",
+  "maxFiles": 3830,
+  "maxTarBytes": 32700000,
+  "appOnly": {
+    "maxFiles": 3390,
+    "maxTarBytes": 31400000
+  },
+  "history": [
+    {
+      "patch": "P3360",
+      "date": "2026-11-21",
+      "baseline": "build #3716 v9.0.1635 upload dir: 3740 files, tar 32040960 B (30.56 MB); pre-upload-guard 3739 files, 27.14 MB, 347 drivers",
+      "afterTrim": "P3360 lossless packaged driver-image dedupe (identical small/large PNGs folded to assets/driver-images/<sha>/, sources untouched). Ceiling values unchanged until the next packed measurement (headroom kept so the approved >347 upload cannot be blocked by an over-tight ratchet).",
+      "headroom": "maxFiles 3830 / maxTarBytes 32700000 unchanged; expected file count drops after image dedupe, then rises when 27 graduated drivers ship"
+    },
+    {
+      "patch": "P3356",
+      "date": "2026-11-17",
+      "baseline": "build #3710 v9.0.1629 upload dir: 3853 files, tar 33285632 B (CLI 31.7 MB)",
+      "afterTrim": "upload dir (estimate from the #3710 manifest minus the dropped paths): 3752 files, tar 32086016 B; Platform Budget app part (unoptimized images, measured locally): 3320 files, 30786048 B",
+      "headroom": "about 2 percent over the trimmed size, below the failing baseline"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Dimmer Bulb Dimmable",
+    "en": "Dimmable bulb dimmer",
     "nl": "Dimmer Bulb Dimmable",
-    "fr": "Dimmer Bulb Dimmable",
+    "fr": "Variateur d'ampoule",
     "de": "Dimmbare Lampe"
   },
   "class": "light",
@@ -423,7 +423,8 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     }
   },
   "maintenanceActions": [

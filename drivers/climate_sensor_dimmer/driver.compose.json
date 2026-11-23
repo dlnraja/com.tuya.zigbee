@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Climate Sensor Dimmer",
+    "en": "Climate sensor dimmer",
     "nl": "Klimaatsensor Dimmer",
-    "fr": "Dimmer de Capteur Climatique",
+    "fr": "Variateur de capteur climatique",
     "de": "Dimmer für Klimasensor",
     "es": "Atenuador de Sensor Climático"
   },
@@ -386,15 +386,18 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "maintenanceActions": [

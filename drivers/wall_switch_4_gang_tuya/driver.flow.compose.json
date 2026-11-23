@@ -36,14 +36,14 @@
       "id": "wall_switch_4_gang_tuya_physical_on",
       "title": {
         "en": "Physical ON",
-        "fr": "Physique ON",
+        "fr": "Allumé physiquement",
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical ON",
-        "fr": "Physique ON",
+        "fr": "Allumé physiquement",
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       }
@@ -52,14 +52,14 @@
       "id": "wall_switch_4_gang_tuya_physical_off",
       "title": {
         "en": "Physical OFF",
-        "fr": "Physique OFF",
+        "fr": "Éteint physiquement",
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical OFF",
-        "fr": "Physique OFF",
+        "fr": "Éteint physiquement",
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       }
@@ -68,14 +68,14 @@
       "id": "wall_switch_4_gang_tuya_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
+        "fr": "Voie 1 allumée physiquement",
         "nl": "Kanaal 1 fysiek AAN",
         "de": "Kanal 1 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
+        "fr": "Voie 1 allumée physiquement",
         "de": "Kanal 1 physisch EIN",
         "nl": "Kanaal 1 fysiek AAN"
       }
@@ -84,14 +84,14 @@
       "id": "wall_switch_4_gang_tuya_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement",
         "nl": "Kanaal 1 fysiek UIT",
         "de": "Kanal 1 physisch AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
+        "fr": "Voie 1 éteinte physiquement",
         "de": "Kanal 1 physisch AUS",
         "nl": "Kanaal 1 fysiek UIT"
       }
@@ -100,14 +100,14 @@
       "id": "wall_switch_4_gang_tuya_physical_gang2_on",
       "title": {
         "en": "Physical gang 2 ON",
-        "fr": "Physique gang 2 ON",
+        "fr": "Voie 2 allumée physiquement",
         "nl": "Kanaal 2 fysiek AAN",
         "de": "Kanal 2 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 2 ON",
-        "fr": "Physique gang 2 ON",
+        "fr": "Voie 2 allumée physiquement",
         "de": "Kanal 2 physisch EIN",
         "nl": "Kanaal 2 fysiek AAN"
       }
@@ -116,14 +116,14 @@
       "id": "wall_switch_4_gang_tuya_physical_gang2_off",
       "title": {
         "en": "Physical gang 2 OFF",
-        "fr": "Physique gang 2 OFF",
+        "fr": "Voie 2 éteinte physiquement",
         "nl": "Kanaal 2 fysiek UIT",
         "de": "Kanal 2 physisch AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 2 OFF",
-        "fr": "Physique gang 2 OFF",
+        "fr": "Voie 2 éteinte physiquement",
         "de": "Kanal 2 physisch AUS",
         "nl": "Kanaal 2 fysiek UIT"
       }
@@ -132,14 +132,14 @@
       "id": "wall_switch_4_gang_tuya_physical_gang3_on",
       "title": {
         "en": "Physical gang 3 ON",
-        "fr": "Physique gang 3 ON",
+        "fr": "Voie 3 allumée physiquement",
         "nl": "Kanaal 3 fysiek AAN",
         "de": "Kanal 3 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 3 ON",
-        "fr": "Physique gang 3 ON",
+        "fr": "Voie 3 allumée physiquement",
         "de": "Kanal 3 physisch EIN",
         "nl": "Kanaal 3 fysiek AAN"
       }
@@ -148,14 +148,14 @@
       "id": "wall_switch_4_gang_tuya_physical_gang3_off",
       "title": {
         "en": "Physical gang 3 OFF",
-        "fr": "Physique gang 3 OFF",
+        "fr": "Voie 3 éteinte physiquement",
         "nl": "Kanaal 3 fysiek UIT",
         "de": "Kanal 3 physisch AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 3 OFF",
-        "fr": "Physique gang 3 OFF",
+        "fr": "Voie 3 éteinte physiquement",
         "de": "Kanal 3 physisch AUS",
         "nl": "Kanaal 3 fysiek UIT"
       }
@@ -164,14 +164,14 @@
       "id": "wall_switch_4_gang_tuya_physical_gang4_on",
       "title": {
         "en": "Physical gang 4 ON",
-        "fr": "Physique gang 4 ON",
+        "fr": "Voie 4 allumée physiquement",
         "nl": "Kanaal 4 fysiek AAN",
         "de": "Kanal 4 physisch EIN"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 4 ON",
-        "fr": "Physique gang 4 ON",
+        "fr": "Voie 4 allumée physiquement",
         "de": "Kanal 4 physisch EIN",
         "nl": "Kanaal 4 fysiek AAN"
       }
@@ -180,14 +180,14 @@
       "id": "wall_switch_4_gang_tuya_physical_gang4_off",
       "title": {
         "en": "Physical gang 4 OFF",
-        "fr": "Physique gang 4 OFF",
+        "fr": "Voie 4 éteinte physiquement",
         "nl": "Kanaal 4 fysiek UIT",
         "de": "Kanal 4 physisch AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical gang 4 OFF",
-        "fr": "Physique gang 4 OFF",
+        "fr": "Voie 4 éteinte physiquement",
         "de": "Kanal 4 physisch AUS",
         "nl": "Kanaal 4 fysiek UIT"
       }
@@ -212,14 +212,14 @@
       "id": "wall_switch_4_gang_tuya_gang1_is_on",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "fr": "Voie 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "fr": "Voie 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       }
@@ -228,14 +228,14 @@
       "id": "wall_switch_4_gang_tuya_gang2_is_on",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "fr": "Voie 2 est !{{allumé|éteint}}",
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "fr": "Voie 2 est !{{allumé|éteint}}",
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       }
@@ -244,14 +244,14 @@
       "id": "wall_switch_4_gang_tuya_gang3_is_on",
       "title": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allumé|éteint}}",
+        "fr": "Voie 3 est !{{allumé|éteint}}",
         "nl": "Gang 3 is !{{aan|uit}}",
         "de": "Gang 3 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allumé|éteint}}",
+        "fr": "Voie 3 est !{{allumé|éteint}}",
         "nl": "Gang 3 is !{{aan|uit}}",
         "de": "Gang 3 ist !{{ein|aus}}"
       }
@@ -260,14 +260,14 @@
       "id": "wall_switch_4_gang_tuya_gang4_is_on",
       "title": {
         "en": "Gang 4 is !{{on|off}}",
-        "fr": "Gang 4 est !{{allumé|éteint}}",
+        "fr": "Voie 4 est !{{allumé|éteint}}",
         "nl": "Gang 4 is !{{aan|uit}}",
         "de": "Gang 4 ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gang 4 is !{{on|off}}",
-        "fr": "Gang 4 est !{{allumé|éteint}}",
+        "fr": "Voie 4 est !{{allumé|éteint}}",
         "nl": "Gang 4 is !{{aan|uit}}",
         "de": "Gang 4 ist !{{ein|aus}}"
       }

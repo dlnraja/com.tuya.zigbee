@@ -1,7 +1,9 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
- * P3013 — Moes MG-BJQ002 plug-in siren with RGB night light (`_TZE20C_tjz9ad5g` / TS0601).
+ * P3013 - Moes MG-BJQ002 plug-in siren with RGB night light (`_TZE20C_tjz9ad5g` / TS0601).
  * Source: Koenkk/zigbee-herdsman-converters PR #13201 (Paap, 2026-09-16).
  * DP1 is an alarm-mode ENUM (0 sound, 1 light, 2 sound+light, 3 off), not the TS0216 bool,
  * so the siren runtime is reused with its own RX table and TX encoders.
@@ -54,3 +56,5 @@ class SirenMoesMGBJQ002Device extends SirenDevice {
 }
 
 module.exports = SirenMoesMGBJQ002Device;
+return module.exports;
+});

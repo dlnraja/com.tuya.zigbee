@@ -34,7 +34,8 @@
         "fr": "Niveau Remplissage",
         "nl": "Vulniveau",
         "de": "Fullstand"
-      }
+      },
+      "units": "%"
     },
     "alarm_water_low": {
       "title": {
@@ -77,11 +78,13 @@
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "platforms": [

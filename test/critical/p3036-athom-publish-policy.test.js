@@ -109,18 +109,25 @@ test('spacing: stable and bastien are 15 min and 12 per day, and one app does no
   for (let i = 0; i < 12; i++) bastienFull.push(b(i + 1, 'test', 20 + i * 20));
   assert.strictEqual(P.slotDecision({ appId: BASTIEN, builds: bastienFull, eventName: 'push', now: NOW, env: {} }).go, false);
 });
-test('spacing: a hang-up retry bypasses spacing once but waits >= 5 min', () => {
+test('spacing: a hang-up retry (1 or 2) bypasses spacing but waits >= 5 min; a 3rd never', () => {
   const hang = b(12, 'processing_failed', 3, { error: 'socket hang up' });
   assert.strictEqual(P.slotDecision({ appId: MASTER, builds: [hang], eventName: 'workflow_dispatch', transientRetry: '1', now: NOW, env: {} }).go, false);
   const hang6 = b(12, 'processing_failed', 6, { error: 'socket hang up' });
   assert.strictEqual(P.slotDecision({ appId: MASTER, builds: [hang6], eventName: 'workflow_dispatch', transientRetry: '1', now: NOW, env: {} }).go, true);
-  assert.strictEqual(P.slotDecision({ appId: MASTER, builds: [hang6], eventName: 'workflow_dispatch', transientRetry: '2', now: NOW, env: {} }).go, false);
+  assert.strictEqual(P.slotDecision({ appId: MASTER, builds: [hang6], eventName: 'workflow_dispatch', transientRetry: '2', now: NOW, env: {} }).go, true);
+  assert.strictEqual(P.slotDecision({ appId: MASTER, builds: [hang6], eventName: 'workflow_dispatch', transientRetry: '3', now: NOW, env: {} }).go, false);
+  assert.strictEqual(P.singleRetryExempt({ builds: [hang6], transientRetry: '3' }).exempt, false);
 });
 test('busy: no upload while the previous build is still processing', () => {
   const d = P.slotDecision({ appId: MASTER, builds: [b(13, 'processing', 200)], eventName: 'workflow_dispatch', force: 'false', now: NOW, env: {} });
   assert.strictEqual(d.go, false); assert.match(d.reason, /still processing/);
   // waiting_for_files older than 5 min is a stuck upload, not busy (same rule as wait-athom-idle.js)
   assert.strictEqual(P.busyBuild([b(14, 'waiting_for_files', 200)], NOW), null);
+  // P3360: a superseded older build (Athom replaced it; e.g. #3715 after Test #3716) is terminal, not busy.
+  assert.strictEqual(P.busyBuild([b(16, 'test', 200), b(15, 'superseded', 180)], NOW), null);
+  const released = P.slotDecision({ appId: MASTER, builds: [b(16, 'test', 200), b(15, 'superseded', 180)], eventName: 'workflow_dispatch', force: 'false', now: NOW, env: {} });
+  assert.strictEqual(released.go, true, released.reason);
+  assert.strictEqual(P.busyBuild([b(13, 'processing', 200)], NOW).id, 13);
 });
 test('slot: unreadable build list holds automatic runs (fail closed), manual dispatch may try', () => {
   assert.strictEqual(P.slotDecision({ appId: MASTER, snapshotOk: false, eventName: 'push', now: NOW }).go, false);
@@ -163,26 +170,38 @@ test('classify: real = AggregateError (even with a hang-up), processing_failed, 
   assert.strictEqual(P.classify({ state: 'processing_failed', error: 'socket hang up' }).cls, 'transient');
   assert.strictEqual(P.classify({ state: 'test' }).cls, 'none');
 });
-test('retry: transient gets exactly one retry, backoff >= 5 min, breaker untouched', () => {
+test('retry: transport failures get 2 retries (5 then 15 min), invalid_state 1, breaker untouched (P3311)', () => {
   const r = P.retryDecision({ text: 'socket hang up', retriesDone: 0, rnd: 0 });
   assert.deepStrictEqual([r.retry, r.backoffS, r.tripBreaker], [true, 300, false]);
   assert.ok(P.retryDecision({ text: 'ECONNRESET', rnd: 0.999 }).backoffS <= 360);
-  assert.strictEqual(P.retryDecision({ text: 'socket hang up', retriesDone: 1 }).retry, false);
+  const r2 = P.retryDecision({ text: 'socket hang up', retriesDone: 1, rnd: 0 });
+  assert.deepStrictEqual([r2.retry, r2.backoffS], [true, 900]);
+  for (const t of ['socket hang up', 'ECONNRESET', 'ETIMEDOUT', 'Bad Gateway']) {
+    assert.strictEqual(P.retryDecision({ text: t, retriesDone: 2 }).retry, false, `${t}: 3 attempts max`);
+  }
+  assert.strictEqual(P.retryDecision({ text: 'invalid_state', retriesDone: 1, idleWaited: true }).retry, false);
+  assert.strictEqual(P.retryDecision({ text: 'AggregateError socket hang up', retriesDone: 0 }).retry, false, 'AggregateError wins');
   assert.strictEqual(P.retryDecision({ text: 'invalid_state', idleWaited: false }).retry, false);
 });
 test('retry: real failure never retries, trips the breaker, asks for a diagnostic', () => {
-  for (const t of ['AggregateError', 'processing_failed', 'validation failed']) {
+  // P3341: a bare AggregateError gets one retry (test p3341); with a message it stays real.
+  for (const t of ['AggregateError: x', 'processing_failed', 'validation failed']) {
     const r = P.retryDecision({ text: t });
     assert.deepStrictEqual([r.retry, r.tripBreaker, r.diagnose], [false, true, true], t);
   }
 });
 
 // ── rule 4: the single retry never trips / is never blocked by the breaker ───────────────────
-test('breaker: the single automatic retry after a hang-up is exempt (run 40194918949)', () => {
+test('breaker: the automatic retries (1 and 2) after a hang-up are exempt, a 3rd is not (run 40194918949)', () => {
   const builds = [b(3, 'processing_failed', 10, { error: 'socket hang up' }), b(2, 'processing_failed', 200, { error: 'socket hang up' }), b(1, 'processing_failed', 400, { error: 'socket hang up' })];
   assert.strictEqual(P.singleRetryExempt({ builds, transientRetry: '1' }).exempt, true);
-  assert.strictEqual(P.singleRetryExempt({ builds, transientRetry: '2' }).exempt, false);
-  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'AggregateError' })], transientRetry: '1' }).exempt, false);
+  assert.strictEqual(P.singleRetryExempt({ builds, transientRetry: '2' }).exempt, true);
+  assert.strictEqual(P.singleRetryExempt({ builds, transientRetry: '3' }).exempt, false);
+  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'invalid_state' })], transientRetry: '2' }).exempt, false);
+  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'AggregateError: x' })], transientRetry: '1' }).exempt, false);
+  // P3341: bare AggregateError -> only retry 1 is exempt.
+  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'AggregateError' })], transientRetry: '1' }).exempt, true);
+  assert.strictEqual(P.singleRetryExempt({ builds: [b(3, 'processing_failed', 10, { error: 'AggregateError' })], transientRetry: '2' }).exempt, false);
   const brk = require(path.join(ROOT, '.github/scripts/master-publish-breaker.js'));
   assert.strictEqual(brk.decide({ builds, event: 'workflow_dispatch', transientRetry: '1', snapshotOk: true }).skip, false);
 });
@@ -195,7 +214,10 @@ test('fallback CLI: in-run re-upload only for a transient failure, after >= 300 
   const run = (text, env = {}) => spawnSync(process.execPath, [path.join(ROOT, '.github/scripts/athom-publish-policy.js'), 'fallback'],
     { input: text, encoding: 'utf8', env: { ...process.env, ATHOM_RETRY_USED: '', ...env } }).stdout.trim();
   assert.match(run('Error: socket hang up'), /^RETRY (3\d\d)$/);
-  assert.match(run('AggregateError'), /^STOP AggregateError/);
+  assert.match(run('AggregateError: x'), /^STOP AggregateError/);
+  // P3341: bare AggregateError -> the single in-run re-upload, never a second one.
+  assert.match(run('AggregateError'), /^RETRY (3\d\d)$/);
+  assert.match(run('AggregateError', { ATHOM_RETRY_USED: '1' }), /^STOP AggregateError-bare/);
   assert.match(run('socket hang up', { ATHOM_RETRY_USED: '1' }), /^STOP/);
 });
 
@@ -210,7 +232,7 @@ test('bisect exit: status=done never forces drafts or bisect_trial; status=runni
   const r = decide({ state: { status: 'running', app_id: MASTER_APP, current_trial: 1 }, appId: MASTER_APP, eventName: 'push', bisectTrial: '', now });
   assert.deepStrictEqual([r.hold_upload, r.hold_promote], [true, true]);
 });
-test('bisect exit: state file and docs describe the normal flow (draft -> Test, Live never automatic)', () => {
+test('bisect exit: state file and docs describe the normal flow (draft -> Test, Live automatic only after objective gates)', () => {
   const st = path.join(ROOT, 'docs/knowledge/athom-bisect-state.json');
   if (!fs.existsSync(st)) return;
   const j = JSON.parse(fs.readFileSync(st, 'utf8'));
@@ -218,12 +240,12 @@ test('bisect exit: state file and docs describe the normal flow (draft -> Test, 
   const txt = JSON.stringify(j);
   assert.doesNotMatch(String(j.conclusion || ''), /drafts only until/i);
   assert.match(txt, /rerun the bisect/i);
-  assert.match(txt, /Live (is )?never automatic/i);
+  assert.match(txt, /Live is automatic only after objective gates/i);
 });
 
 test('policy file is byte-identical on master, stable-v5 and bastien-home', () => {
   const h = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, '.github/scripts/athom-publish-policy.js'))).digest('hex');
-  assert.strictEqual(h, '5efb1afa2927a80274853caf6e0a870418ddd4f87476d65b0e718d0d07e980f1', 'edit athom-publish-policy.js on all three branches together and update this hash');
+  assert.strictEqual(h, '37a09228049bf65ae07dd921d0d172bfb62c27a5df73c47c1ad8c30cfd480419', 'edit athom-publish-policy.js on all three branches together and update this hash');
 });
 test('ci gate: a version-only package.json bump is not a code change', () => {
   assert.strictEqual(P.versionOnlyDiff('--- a/package.json\n+++ b/package.json\n@@ -3 +3 @@\n-  "version": "9.0.1599",\n+  "version": "9.0.1600",'), true);

@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Plug Energy Monitor",
-    "fr": "Plug Energy Monitor",
-    "nl": "Stekker met Energiemeting",
+    "en": "Energy-monitoring plug",
+    "fr": "Prise avec suivi d'énergie",
+    "nl": "Stekker met energiestand",
     "de": "Steckdose mit Energiemessung"
   },
   "class": "socket",
@@ -787,19 +787,23 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     },
     "measure_current": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "A"
     }
   },
   "maintenanceActions": [

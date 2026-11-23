@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
@@ -9,7 +11,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
   measure_power: { divisor: 10 },
   measure_voltage: { divisor: 10 },
@@ -189,12 +191,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
                 }
               }
             }
-            // WHY(P2330): never invent `*_switch_switch_2gang_*` — compose declares
+            // WHY(P2330): never invent `*_switch_switch_2gang_*` - compose declares
             // `button_wireless_switch_2gang_*` (+ short `*_physical_gang*`). Prefer mixin path.
             if (isPhysical && (mode === 'auto' || mode === 'both' || mode === 'magic')) {
               if (typeof this._triggerPhysicalFlow === 'function') {
                 this._triggerPhysicalFlow(epNum, value ? 'on' : 'off');
-                this.log(`[BSEED-2G] ✅ Physical/scene via mixin G${epNum} ${value ? 'ON' : 'OFF'}`);
+                this.log(`[BSEED-2G] [OK] Physical/scene via mixin G${epNum} ${value ? 'ON' : 'OFF'}`);
               } else if (typeof this._safeTriggerFlow === 'function') {
                 const state = value ? 'on' : 'off';
                 await this._safeTriggerFlow(
@@ -246,3 +248,5 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 }
 
 module.exports = Switch2GangDevice;
+return module.exports;
+});

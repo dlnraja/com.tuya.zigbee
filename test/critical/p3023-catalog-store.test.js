@@ -1,6 +1,6 @@
 'use strict';
 /** P3023: sharded CatalogStore gives exactly the full catalogue's answers, with less heap. */
-const { describe, it, afterEach } = require('node:test');
+const { describe, it, afterEach } = require('../_support/dual-runner');
 const assert = require('node:assert');
 const fs = require('fs');
 const path = require('path');

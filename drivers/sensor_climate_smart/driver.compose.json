@@ -2,7 +2,7 @@
   "name": {
     "en": "Sensor Climate Smart",
     "nl": "Slimme Klimaatsensor",
-    "fr": "Capteur Climatique Intelligent",
+    "fr": "Capteur Climatique Intelligent (sensor climate smart)",
     "de": "Intelligenter -Klimasensor",
     "es": "Sensor Climático Inteligente"
   },
@@ -61,11 +61,13 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "settings": [

@@ -907,66 +907,81 @@
       ]
     }
   ],
+  "9.0.1639": {
+    "en": "Fixed: presence radars & motion sensors, Flow cards and climate sensors. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : radars de présence & détecteurs de mouvement, cartes Flow et capteurs d'ambiance. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
+  "9.0.1638": {
+    "en": "New: thermostats & climate sensors. Fixed: pairing and device recognition, lights and dimmers & Flow cards and device settings. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks."
+  },
+  "9.0.1637": {
+    "en": "New: Flow cards. Fixed: memory and timers, pairing and device recognition and buttons and remotes & climate sensors (ZG-204ZM). Plus 21 other changes in the app core. Behind the scenes: tests and publishing checks."
+  },
+  "9.0.1636": {
+    "en": "The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss."
+  },
+  "9.0.1635": {
+    "en": "Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : éclairages et variateurs et réglages des appareils. Et 7 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
+  },
+  "9.0.1634": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
+  "9.0.1633": {
+    "en": "Changed: homeyignore CI screenshots so the gate stops blocking the version write-back; cap a publish chain at 3 uploads.",
+    "fr": "Modifié : les captures CI sont ignorées pour que le contrôle ne bloque plus l'enregistrement de version; une chaîne de publication est plafonnée à 3 envois."
+  },
+  "9.0.1631": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
+  "9.0.1630": {
+    "en": "Changed: lossless upload-archive trim and a ratchet on archive size and file count; count the publish retry chain per error class.",
+    "fr": "Modifié : réduction sans perte de l'archive d'envoi et un garde-fou sur sa taille et son nombre de fichiers; les nouvelles tentatives de publication sont comptées par type d'erreur."
+  },
+  "9.0.1629": {
+    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
+    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+  },
+  "9.0.1628": {
+    "en": "Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : éclairages et variateurs. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
+  },
+  "9.0.1627": {
+    "en": "New: lights and dimmers and energy meters. Fixed: pairing and device recognition and safety sensors & climate sensors. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : éclairages et variateurs et compteurs d'énergie. Corrigé : appairage et reconnaissance des appareils et capteurs de sécurité & capteurs climatiques. Et 8 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
+  },
+  "9.0.1626": {
+    "en": "Fixed: pairing and device recognition, general reliability (TS0601) and device settings. Faster: lights and dimmers. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : appairage et reconnaissance des appareils, fiabilité générale (TS0601) et réglages des appareils. Plus rapide : éclairages et variateurs. En coulisses : tests et contrôles de publication."
+  },
+  "9.0.1624": {
+    "en": "Changed: keep the contract - a changed DP value still logs once more before the per-DP log throt.",
+    "fr": "Modifié : le contrat est conserve : une valeur DP changee est encore journalisée une fois avant le plafonnement par DP."
+  },
+  "9.0.1623": {
+    "en": "Fixed: memory and timers and energy meters (TS011F). Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : mémoire et minuteries et compteurs d'énergie (TS011F). Et 5 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1622": {
     "en": "Fixed: pairing and device recognition. Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : appairage et reconnaissance des appareils. En coulisses : tests et contrôles de publication."
   },
   "9.0.1621": {
-    "en": "Fixed: safety sensors & memory and timers, wall switches & pairing and device recognition and device settings. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "Fixed: safety sensors & memory and timers, wall switches & pairing and device recognition and device settings. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : capteurs de sécurité & mémoire et minuteries, interrupteurs muraux & appairage et reconnaissance des appareils et réglages des appareils. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.1620": {
-    "en": "Changed: rename energy_source off the reserved energy_ prefix."
+    "en": "Changed: rename energy_source off the reserved energy_ prefix.",
+    "fr": "Modifié : rename energy_source off the reserved energy_ prefix."
   },
   "9.0.1619": {
-    "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run."
+    "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run.",
+    "fr": "Brouillon de diagnostic uniquement : l'envoi inclut les vrais pilotes source que les publications ordinaires retiennent encore, pour rester au-dessus de 350 appareils. Le canal Test n'est pas modifié par cet envoi."
   },
   "9.0.1618": {
-    "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line."
-  },
-  "9.0.1617": {
-    "en": "Fixed: buttons and remotes, pairing and device recognition and battery reporting. Plus 5 other changes in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1616": {
-    "en": "Fixed: pairing and device recognition (TS0201), lights and dimmers, thermostats (TRV06) and climate sensors. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1613": {
-    "en": "New: pairing and device recognition & Flow cards (TS0601) and thermostats & climate sensors. Fixed: Flow cards and pairing and device recognition. Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1612": {
-    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1611": {
-    "en": "New: pairing and device recognition. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1610": {
-    "en": "New: Flow cards (TS0603) and energy meters & device settings. Fixed: device settings (ZG-204ZH, ZG-204ZM) and battery reporting & crash fixes (TS0601). Plus 12 other changes in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1609": {
-    "en": "New: sirens & battery reporting (TRV06). Fixed: general reliability (TS0042, TS0043), memory and timers and lights and dimmers. Plus 4 other changes in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1608": {
-    "en": "Maintenance build: same devices and behaviour; the publish ."
-  },
-  "9.0.1607": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only)."
-  },
-  "9.0.1606": {
-    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1605": {
-    "en": "New: Flow cards & device settings. Fixed: memory and timers and smart plugs & energy meters (TS011F). Plus 3 other changes in the app core. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1604": {
-    "en": "Fixed: energy meters. Behind the scenes: tests and publishing checks."
-  },
-  "9.0.1602": {
-    "en": "Thanks to the Zigbee2MQTT / zigbee-herdsman-converters contributors: SPM02V1-GT power meter now also matched with the exact TS0601 product id. Nine new drivers thanks to the MakeGood, Daewoo, Box, Beca, AutomatOn and Tervix device authors in zigbee-herdsman-converters: MG-AU03, MG-GPO02Z, WKE502Z keypad, EWS1154-Z, BVRF-L001, CH8Z, Pro Line X10, 3-channel bidirectional meter, TS0601 smoke sensor."
-  },
-  "9.0.1601": {
-    "en": "More TS0601 devices recognised again: device identifiers that were trimmed to save space are topped back up after packing. Publishing now waits for a green test run and spaces out uploads, so fewer broken builds reach the Test channel."
-  },
-  "9.0.1600": {
-    "en": "Drivers that have no manufacturer list no longer grab every TS0601 device, so those devices land on the right driver at pairing. New: NEO sprinkler family on the smart water valve driver, and a notice when a device reconnects after a long silence.",
-    "fr": "Les drivers sans liste de fabricants n'attrapent plus tous les appareils TS0601 : ceux-ci tombent sur le bon driver à l'appairage. Nouveau : famille d'arroseurs NEO sur le driver de vanne connectée, et une notification quand un appareil revient après un long silence."
+    "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line.",
+    "fr": "Modifié : ne pas réutiliser une exécution rouge après un changement de manifeste; noter que le point de terminaison du porte-clés déclare IAS ACE; déclarer le cluster IAS ACE du porte-clés et conserver la sonde AOYAN en échec; respecter le cliquet de lint pour la ligne de budget."
   }
 }

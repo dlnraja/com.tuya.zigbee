@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 
@@ -22,7 +24,7 @@ class AirPurifierDevice extends BaseUnifiedDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    this.log('[AirPurifier] 🚀 Initializing hardened driver...');
+    this.log('[AirPurifier] [GO] Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
 
     // 1. Capability Listeners
@@ -36,7 +38,7 @@ class AirPurifierDevice extends BaseUnifiedDevice {
       return this.sendTuyaCommand(DP.speed, speed, 'value');
     });
 
-    this.log('[AirPurifier] ✅ Ready');
+    this.log('[AirPurifier] [OK] Ready');
   }
 
   /**
@@ -51,13 +53,13 @@ class AirPurifierDevice extends BaseUnifiedDevice {
     switch (dpId) {
       case DP.state: {
         const state = Boolean(value);
-        this.log(`[AirPurifier] 📥 State: ${state}`);
+        this.log(`[AirPurifier] [IN] State: ${state}`);
         await this['safeSetCapabilityValue']('onoff', state);
         break; }
 
       case DP.pm25: {
         const pm25 = typeof value === 'number' ? value : parseInt(value);
-        this.log(`[AirPurifier] 📥 PM2.5: ${pm25}`);
+        this.log(`[AirPurifier] [IN] PM2.5: ${pm25}`);
         await this.safeSetCapabilityValue('measure_pm25', pm25).catch(() => {});
         this._triggerPm25Changed(pm25);
         break;
@@ -65,13 +67,13 @@ class AirPurifierDevice extends BaseUnifiedDevice {
 
       case DP.speed: {
         const speed = typeof value === 'number' ? value : parseInt(value);
-        this.log(`[AirPurifier] 📥 Speed: ${speed}`);
+        this.log(`[AirPurifier] [IN] Speed: ${speed}`);
         await this['safeSetCapabilityValue']('dim', Math.min(1, Math.max(0, speed / 100)));
         break;
       }
 
       default:
-        this.log(`[AirPurifier] 📥 Unhandled DP ${dpId}:`, value);
+        this.log(`[AirPurifier] [IN] Unhandled DP ${dpId}:`, value);
     }
   }
 
@@ -90,3 +92,5 @@ class AirPurifierDevice extends BaseUnifiedDevice {
 }
 
 module.exports = AirPurifierDevice;
+return module.exports;
+});

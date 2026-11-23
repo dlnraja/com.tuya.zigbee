@@ -21,7 +21,8 @@
         "fr": "Luminosité"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "alarm_motion": {
       "title": {
@@ -42,7 +43,8 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     }
   },
   "energy": {

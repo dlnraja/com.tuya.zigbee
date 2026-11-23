@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 
@@ -9,7 +11,7 @@ const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 class GarageDoorDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('[Garage] 🚀 Initializing hardened driver...');
+    this.log('[Garage] [GO] Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
 
     // 1. Capability Listeners
@@ -20,7 +22,7 @@ class GarageDoorDevice extends BaseUnifiedDevice {
       });
     }
 
-    this.log('[Garage] ✅ Ready');
+    this.log('[Garage] [OK] Ready');
   }
 
   /**
@@ -32,7 +34,7 @@ class GarageDoorDevice extends BaseUnifiedDevice {
     const value = data.data ?? data.value;
     const dpId = data.dp;
 
-    this.log(`[Garage] 📥 DP ${dpId}: ${value}`);
+    this.log(`[Garage] [IN] DP ${dpId}: ${value}`);
 
     switch (dpId) {
       case 2: {
@@ -57,10 +59,12 @@ class GarageDoorDevice extends BaseUnifiedDevice {
         break;
 
       default:
-        this.log(`[Garage] 📥 Unhandled DP ${dpId}:`, value);
+        this.log(`[Garage] [IN] Unhandled DP ${dpId}:`, value);
     }
   }
 
 }
 
 module.exports = GarageDoorDevice;
+return module.exports;
+});

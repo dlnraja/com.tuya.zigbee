@@ -81,7 +81,7 @@ describe('P2621 wifi heat_pump / kettle / EV + Fix-It', () => {
 
   it('WifiFixIt redacts keys and builds bundle', () => {
     const FixIt = require('../../lib/wifi/WifiFixIt');
-    assert.ok(FixIt.redactKey('abcdefghijklmnop').includes('…'));
+    assert.ok(FixIt.redactKey('abcdefghijklmnop').includes('...') || FixIt.redactKey('abcdefghijklmnop').includes('…'));
     assert.ok(!FixIt.redactKey('abcdefghijklmnop').includes('abcdefghijklmnop'));
     const findings = FixIt.checkLocalKeys([
       { id: '1', name: 'A', has_local_key: false },

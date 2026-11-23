@@ -3,7 +3,7 @@
 const { Driver } = require('homey');
 
 /**
- * P2485 — wire gang TX + backlight / power-on / child-lock / countdown.
+ * P2485 - wire gang TX + backlight / power-on / child-lock / countdown.
  * Prefer device._setGangOnOff (EF00 write) over setCapabilityValue-only.
  */
 class WallSwitch4GangTuyaDriver extends Driver {
@@ -88,7 +88,7 @@ class WallSwitch4GangTuyaDriver extends Driver {
         return true;
       });
 
-    // Conditions — gang is on (main tile / subdevice onoff)
+    // Conditions - gang is on (main tile / subdevice onoff)
     for (const gang of [1, 2, 3, 4]) {
       this.homey.flow.getConditionCard(`wall_switch_4_gang_tuya_gang${gang}_is_on`)
         ?.registerRunListener(async (args) => {

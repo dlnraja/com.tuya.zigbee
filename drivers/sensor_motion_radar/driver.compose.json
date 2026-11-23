@@ -58,8 +58,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🎯 Radar Detection (FP300-like)",
-        "fr": "🎯 Détection Radar (FP300-like)"
+        "en": "Radar Detection (FP300-like)",
+        "fr": "Détection Radar (FP300-like)"
       },
       "children": [
         {
@@ -149,8 +149,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🌡️ Calibration (v5.5.28)",
-        "fr": "🌡️ Calibration (v5.5.28)"
+        "en": "Calibration (v5.5.28)",
+        "fr": "Calibration (v5.5.28)"
       },
       "children": [
         {
@@ -507,23 +507,28 @@
     },
     "measure_luminance.distance": {
       "getable": true,
-      "preventInsights": true
+      "preventInsights": true,
+      "units": "m"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   }
 }

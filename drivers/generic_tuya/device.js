@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js'); // P3065: safeMultiply was used but not imported
 
 
@@ -208,7 +210,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       101: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
 
-      // Temperature (CONFIDENCE: 0) — DP1 must stay climate; do not overwrite with motion
+      // Temperature (CONFIDENCE: 0) - DP1 must stay climate; do not overwrite with motion
       // (duplicate key previously made DP1 always alarm_motion and broke catch-all climate).
       1: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 1 },
       3: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 0 }, // Soil sensor
@@ -314,4 +316,5 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 }
 
 module.exports = GenericTuyaDevice;
-
+return module.exports;
+});

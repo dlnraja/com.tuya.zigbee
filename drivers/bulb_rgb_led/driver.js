@@ -3,7 +3,7 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * P2839 — Align runListeners to driver.flow.compose.json IDs (was hollow bulb_rgb_*).
+ * P2839 - Align runListeners to driver.flow.compose.json IDs (was hollow bulb_rgb_*).
  */
 class SmartBulbRgbDriver extends ZigBeeDriver {
   async onInit() {

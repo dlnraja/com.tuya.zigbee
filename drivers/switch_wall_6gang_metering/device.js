@@ -1,9 +1,11 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 /**
- * P3013 — TS0601 6-gang wall panel with power metering (`_TZE284_hbxadcl0`).
+ * P3013 - TS0601 6-gang wall panel with power metering (`_TZE284_hbxadcl0`).
  * Source: Koenkk/zigbee-herdsman-converters PR #13085 (hammondses, 2026-09-04), TS0601_6gang_switch_2.
- * Gangs DP1–6 as switch_wall_6gang; adds DP20 kWh÷100, DP21 A÷1000, DP22 W÷10, DP23 V÷10.
+ * Gangs DP1-6 as switch_wall_6gang; adds DP20 kWh÷100, DP21 A÷1000, DP22 W÷10, DP23 V÷10.
  * DP15 here is power-on behaviour (not backlight) so it is kept internal and never written.
  */
 const Switch6GangDevice = require('../switch_wall_6gang/device');
@@ -23,3 +25,5 @@ class SwitchWall6GangMeteringDevice extends Switch6GangDevice {
 }
 
 module.exports = SwitchWall6GangMeteringDevice;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
@@ -11,7 +13,7 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
     const parentMappings = Object.getPrototypeOf(this).dpMappings || {};
     return {
       ...parentMappings,
-      17: { capability: 'measure_current', smartDivisor: true },   // mA → A
+      17: { capability: 'measure_current', smartDivisor: true },   // mA -> A
       18: { capability: 'measure_power', smartDivisor: true },     // W * 10
       19: { capability: 'measure_voltage', smartDivisor: true },   // V * 10
       20: { capability: 'meter_power', smartDivisor: true }        // kWh * 100
@@ -68,3 +70,5 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   }
 }
 module.exports = EnergyMeter3PhaseDevice;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 // A8: NaN Safety - use safeDivide/safeMultiply
 // P2647: air quality level / PM0.3 threshold flows (com.tuyalocal Test inspiration)
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
@@ -47,7 +49,7 @@ class WiFiAirQualityDevice extends TuyaLocalDevice {
       if (prev && prev === level) {return;}
       this._aqLevel = level;
       try { await this.setStoreValue('aq_level', level); } catch (_e) { /* soft */ }
-      if (!prev) {return;} // seed — no flow spam on first paint
+      if (!prev) {return;} // seed - no flow spam on first paint
       await this.triggerFlowCard('wifi_air_quality_level_changed', {
         level,
         previous_level: prev,
@@ -78,3 +80,5 @@ class WiFiAirQualityDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiAirQualityDevice;
+return module.exports;
+});

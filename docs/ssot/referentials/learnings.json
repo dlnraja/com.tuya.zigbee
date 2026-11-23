@@ -1,0 +1,257 @@
+{
+  "v": 1,
+  "items": [
+    {
+      "key": "lesson|_tz3210_5rta89nj|TS0601|window pusher routed as wall dimmer",
+      "kind": "lesson",
+      "couple": "_TZ3210_5rta89nj|TS0601",
+      "symptom": "MOES ZC-LP01 sliding window pusher would pair as a wall dimmer",
+      "cause": "stale local mfs hint (confidence 0.08, TS0601_dim1) listed the manufacturer on wall_dimmer_tuya, whose productId includes TS0601",
+      "check": "compose: couple is on curtain_motor, absent from wall_dimmer_tuya; dpMappings lock DP102=state DP104=position DP4=battery",
+      "fix": "move exact couple to curtain_motor, sacred DP map from Z2M/ZHC, onMapDeviceClass so already-paired devices keep the same id",
+      "evidence": "Z2M ZC-LP01; ZHC moes.ts; forum 156967 post 101",
+      "source": "forum-156967-101",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.95,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://www.zigbee2mqtt.io/devices/ZC-LP01.html",
+        "https://community.homey.app/t/156967/101"
+      ]
+    },
+    {
+      "key": "lesson|cover|DP2 vs DP3|target position overwrites actual",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "curtain tile stuck on last requested position; hand moves not shown",
+      "cause": "DP2 is target/set; actual position is often DP3 (or another report DP). Updating the tile from the target DP after the actual DP has reported hides the real position.",
+      "check": "CoverPositionSource.accept(2, x) is false after accept(3, y)",
+      "fix": "wire CoverPositionSource into UnifiedCoverBase as well as wifi_cover",
+      "evidence": "Tuya Local topic 154077 posts 485-489 (Andi, Mario/Mark)",
+      "source": "forum-154077-487",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.9,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/154077/487"
+      ]
+    },
+    {
+      "key": "lesson|_tz3250_int1a7ht|TS020C|GreenBlue GB740 motion",
+      "kind": "lesson",
+      "couple": "_TZ3250_int1a7ht|TS020C",
+      "symptom": "device request; ZHA exposes unused temp/humidity/lux and PIR stays off without a Tuya handshake",
+      "cause": "fingerprint missing from our motion drivers; advertised clusters are not proof of hardware",
+      "check": "pir_sensor_2 lists the exact couple; capabilities stay alarm_motion + battery (no invented temp/humidity)",
+      "fix": "add exact couple to pir_sensor_2 (IAS Zone already handled)",
+      "evidence": "forum 162420 post 1; ZHA issue 5709; Z2M TS020C page as family reference",
+      "source": "forum-162420-1",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.85,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/162420/1",
+        "https://github.com/zigpy/zha-device-handlers/issues/5709"
+      ]
+    },
+    {
+      "key": "lesson|flow-converter|re-pair|remap flows after driver move",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "after re-pair or driver move, Flows still point at the old device id",
+      "cause": "Homey binds flow cards to a device UUID; a new pairing gets a new id",
+      "check": "prefer onMapDeviceClass so the id is kept; if re-pair is required, changelog/digest/settings mention Flow Converter",
+      "fix": "in-place map first; settings preview + optional Flow Converter; do not request homey:manager:api on this device app",
+      "evidence": "forum 154906 (late4marshmellow Flow Converter, capability mapping since 1.2.0)",
+      "source": "forum-154906",
+      "workflow": "p3374-forum-otherapps",
+      "confidence": 0.95,
+      "date": "2026-11-22T02:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/154906",
+        "https://github.com/late4marshmellow/app.l4m.flowconverter",
+        "https://apps.developer.homey.app/the-basics/app/permissions"
+      ]
+    },
+    {
+      "key": "lesson|21313|temperature x10|radiator 163 instead of 16.3",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "Tuya Cloud tile showed 163 C for a 16.3 C electric radiator",
+      "cause": "Tuya often ships temperatures with a decimal scale; treating the raw integer as Celsius overshoots by 10",
+      "check": "TemperatureDivisorGuard scales 163 to 16.3 and leaves 16.3 untouched; learned after 3 samples; never re-applied to in-range values",
+      "fix": "Bounded per-device auto-detection (divisors 1/10/100) wired into TuyaLocalDevice._fromDeviceValue",
+      "evidence": "Tuya Cloud topic 21313 posts 2782 and 2786 (Calvin)",
+      "source": "forum-21313-2782",
+      "workflow": "p3384-forum-leads",
+      "confidence": 0.85,
+      "date": "2026-11-22T03:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/21313/2782"
+      ]
+    },
+    {
+      "key": "lesson|156967|scene remote double single-press ~1s",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "Scene remotes fire two single-press events about 1s apart after a restart",
+      "cause": "Two real frames; short transport dedup does not cover a 1s gap",
+      "check": "PostRestartPressDedup drops a second single within 1.5s only in the 120s post-start window; never drops typed double",
+      "fix": "Generic helper compatible with PressActionDedup, wired in ButtonDevice.triggerButtonPress",
+      "evidence": "MOES topic 156967 posts 99-141 (SunBeech, SergeP)",
+      "source": "forum-156967-99",
+      "workflow": "p3384-forum-leads",
+      "confidence": 0.75,
+      "date": "2026-11-22T03:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/156967/99"
+      ]
+    },
+    {
+      "key": "lesson|_tz3000_wkai4ga5|ts0044|duplicate trigger per press; missing long press|two cluster-6 frames per press (commandon/off/toggle + tuya 0xfd); transport-keyed dedup and double listener registration after re-init/migration",
+      "kind": "lesson",
+      "couple": "_TZ3000_wkai4ga5|TS0044",
+      "symptom": "duplicate trigger per press; missing long press",
+      "cause": "two cluster-6 frames per press (commandOn/Off/Toggle + Tuya 0xFD); transport-keyed dedup and double listener registration after re-init/migration",
+      "check": "assert PressActionDedup drops mixed transports for the same endpoint+action; installOnce on zclNode",
+      "fix": "dedup per endpoint+action in a short window; bind listeners once per zclNode; forward release only when sent (MOES long press about 5s)",
+      "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+      "source": "johan-issue-864",
+      "workflow": "p3362-forum-sweep",
+      "confidence": 0.9,
+      "date": "2026-11-22T00:47:00.000Z",
+      "sources": [
+        "johan-issue-864"
+      ],
+      "seen": 1
+    },
+    {
+      "key": "lesson|_tz3000_qja6nq5z|ts004f|extra presses, light fades, ring/dial|ts004f moes knob: one press arrives as on/off/toggle plus another path; rotation is a separate action; re-init can double-bind listeners",
+      "kind": "lesson",
+      "couple": "_TZ3000_qja6nq5z|TS004F",
+      "symptom": "extra presses, light fades, ring/dial",
+      "cause": "TS004F Moes knob: one press arrives as on/off/toggle plus another path; rotation is a separate action; re-init can double-bind listeners",
+      "check": "assert dimmer mode on smart_knob_rotary only; on/off/toggle collapse; rotate_left is not dropped; installOnce",
+      "fix": "PressActionDedup with on/off/toggle mapped to single; installOnce per zclNode; keep dimmer/levelControl for the ring",
+      "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+      "source": "johan-26439-5537",
+      "workflow": "p3362-forum-sweep",
+      "confidence": 0.85,
+      "date": "2026-11-22T00:55:00.000Z",
+      "sources": [
+        "johan-26439-5537"
+      ],
+      "seen": 1
+    },
+    {
+      "key": "lesson|_tz3000_ja5osu5g|ts004f|button stopped working|1-button ts004f scene remote (sibling of kaflzta4) needs 0x8004=event; a stuck dimmer setting or a 4-button/knob_rotary placement silences 0xfd",
+      "kind": "lesson",
+      "couple": "_TZ3000_ja5osu5g|TS004F",
+      "symptom": "button stopped working",
+      "cause": "1-button TS004F scene remote (sibling of kaflzta4) needs 0x8004=event; a stuck dimmer setting or a 4-button/knob_rotary placement silences 0xFD",
+      "check": "assert owners are only smart_knob; applyDesiredMode resets stuck dimmer to scene",
+      "fix": "Keep on smart_knob, force scene mode, never write command/dimmer unless the user opts in",
+      "evidence": "Johan topic 26439 post 5541 (read-only, IEEE anonymized). P2453/P2450 already locked the couple.",
+      "source": "johan-26439-5541",
+      "workflow": "p3362-forum-sweep",
+      "confidence": 0.85,
+      "date": "2026-11-22T00:55:00.000Z",
+      "sources": [
+        "johan-26439-5541"
+      ],
+      "seen": 1
+    },
+    {
+      "key": "lesson|_tze200_bjawzodf|ts0601|humidity x10; ty0201 pairing as a switch|ef00 lcd humidity is often raw x10; _tz3000_bjawzodf+ty0201 is a different zcl couple that must stay on lcdtemphumidsensor (not a switch)",
+      "kind": "lesson",
+      "couple": "_TZE200_bjawzodf|TS0601",
+      "symptom": "humidity x10; TY0201 pairing as a switch",
+      "cause": "EF00 LCD humidity is often raw x10; _TZ3000_bjawzodf+TY0201 is a different ZCL couple that must stay on lcdtemphumidsensor (not a switch)",
+      "check": "scaleHumidity(450)=45, 80=80; exact owners climate_sensor vs lcdtemphumidsensor, class sensor",
+      "fix": "Adaptive humidity scale (values >100 /10) on climate_sensor for bjawzodf; keep the TZ3000 TY0201/TS0201 couple on lcdtemphumidsensor",
+      "evidence": "Johan topic 26439 post 5540 (read-only). Z2M TS0601_temperature_humidity_sensor_1. P2266/P3295/P3141.",
+      "source": "johan-26439-5540",
+      "workflow": "p3362-forum-sweep",
+      "confidence": 0.9,
+      "date": "2026-11-22T00:55:00.000Z",
+      "sources": [
+        "johan-26439-5540"
+      ],
+      "seen": 1
+    },
+    {
+      "key": "lesson|hobeian|zg-204zm|radar present but no control|dp107/dp122 must be bool/enum (value writes are ignored); _tze200_kb5noeto is ias on pir_sensor_2, not this radar map",
+      "kind": "lesson",
+      "couple": "HOBEIAN|ZG-204ZM",
+      "symptom": "radar present but no control",
+      "cause": "DP107/DP122 must be bool/enum (VALUE writes are ignored); _TZE200_kb5noeto is IAS on pir_sensor_2, not this radar map",
+      "check": "getSensorConfig HOBEIAN/ZG-204ZM matches Z2M DP1/2/4/107/122; kb5noeto not in the ZG-204ZM radar block",
+      "fix": "Keep HOBEIAN + _TZE200_2aaelwxk on presence_sensor_radar with the Z2M dpMap; leave kb5noeto on pir_sensor_2",
+      "evidence": "Johan topic 26439 post 5538 (read-only). Z2M hobeian.ts / tuya.ts. P3141/P3155/P2421.",
+      "source": "johan-26439-5538",
+      "workflow": "p3362-forum-sweep",
+      "confidence": 0.85,
+      "date": "2026-11-22T00:55:00.000Z",
+      "sources": [
+        "johan-26439-5538"
+      ],
+      "seen": 1
+    },
+    {
+      "key": "lesson|21313|onoff listener and late setpoint caps",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "Missing Capability Listener: onoff; Wi-Fi thermostat exposed ambient only",
+      "cause": "onoff capability present without a listener; setpoint DPs never added the target cap",
+      "check": "ensureOnoffListener registers once; ensureSetpointCapability adds target_temperature on DPs 2/16/111 only, never removes ambient",
+      "fix": "OnoffAndSetpointGuard + TuyaLocalDevice hooks (21313 #2763/#2820)",
+      "evidence": "Tuya Cloud topic 21313 posts 2763 (Roelof_Nuberg) and 2820 (Regina_van_der_Laan)",
+      "source": "forum-21313-2763",
+      "workflow": "p3384-forum-leads",
+      "confidence": 0.8,
+      "date": "2026-11-22T03:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/21313/2763",
+        "https://community.homey.app/t/21313/2820"
+      ]
+    },
+    {
+      "key": "lesson|154077|packed setpoint DP118 field 5 and related quirks",
+      "kind": "lesson",
+      "couple": null,
+      "symptom": "Heat-pump target stuck; feeder dispensed after app restart; Nedis plug ignored ON/OFF after cmd 18 named DP 1; diffuser timer bound as mode; Mantra courtesy light",
+      "cause": "See Tuya Local 154077 #475-#540 (Andi and reporters)",
+      "check": "PackedStructDP field 5; FeederInitGuard never replays feed DPs; SwitchDpRefresh strips switch DPs from UPDATEDPS; TimerAsModeGuard; opt-in FanCourtesyQuirks",
+      "fix": "Generic helpers + opt-in settings; query on connect uses DP_QUERY",
+      "evidence": "Tuya Local topic 154077 posts 475-479, 477, 499, 537-540",
+      "source": "forum-154077-479",
+      "workflow": "p3384-forum-leads",
+      "confidence": 0.9,
+      "date": "2026-11-22T03:00:00.000Z",
+      "sources": [
+        "https://community.homey.app/t/154077/479",
+        "https://community.homey.app/t/154077/499",
+        "https://community.homey.app/t/154077/538",
+        "https://community.homey.app/t/154077/540"
+      ]
+    },
+    {
+      "key": "lesson|_tze284_rlytpmij|TS0601|ZHT-S01 was listed on presence radar",
+      "kind": "lesson",
+      "couple": "_TZE284_rlytpmij|TS0601",
+      "symptom": "Moes ZHT-S01 wall thermostat fingerprint lived on presence_sensor_radar",
+      "cause": "Casing expansion placed the official thermostat manufacturer on the radar driver",
+      "check": "compose: couple is on wall_thermostat, absent from presence_sensor_radar; DP 111/117/1/39 locked from Z2M",
+      "fix": "Move exact official couple, onMapDeviceClass so already-paired devices keep the same id",
+      "evidence": "Z2M ZHT-S01 page; zigbee-herdsman-converters moes.ts",
+      "source": "z2m-ZHT-S01",
+      "workflow": "p3384-forum-leads",
+      "confidence": 0.95,
+      "date": "2026-11-22T03:00:00.000Z",
+      "sources": [
+        "https://www.zigbee2mqtt.io/devices/ZHT-S01.html",
+        "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/moes.ts"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const Homey = require('homey');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -25,7 +27,7 @@ class socket_power_strip extends TuyaZigbeeDevice {
 			this.error('Error when reading device attributes ', err);
 		});
 
-    // WHY P2274/D009: Nous A11Z (_TZ3210_6cmeijtd+TS011F) — Z2M configureMagicPacket for independent L1/L2/L3
+    // WHY P2274/D009: Nous A11Z (_TZ3210_6cmeijtd+TS011F) - Z2M configureMagicPacket for independent L1/L2/L3
     const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
     if (mfr.includes('6cmeijtd') && subDeviceId !== 'socket2' && subDeviceId !== 'socket3') {
       safeSetTimeout(this, async () => {
@@ -45,3 +47,5 @@ class socket_power_strip extends TuyaZigbeeDevice {
 }
 
 module.exports = socket_power_strip;
+return module.exports;
+});

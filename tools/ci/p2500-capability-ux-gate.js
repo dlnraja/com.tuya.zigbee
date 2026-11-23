@@ -44,6 +44,10 @@ function main() {
 
   const helper = fs.readFileSync(path.join(ROOT, 'lib/utils/HomeyCapabilityUx.js'), 'utf8');
   if (!helper.includes('healSensorCapabilityGetable')) fail('helper missing healSensorCapabilityGetable');
+  if (!helper.includes('standardUnitFor')) fail('helper missing standardUnitFor (P3362)');
+  if (!fs.existsSync(path.join(ROOT, 'config/architecture/standard-capability-units.json'))) {
+    fail('missing config/architecture/standard-capability-units.json');
+  }
   if (!mustNeverGetableFalse('measure_battery')) fail('mustNeverGetableFalse(measure_battery)');
   if (mustNeverGetableFalse('button.1')) fail('button.1 must NOT be treated as sensor readable');
   if (!isButtonMaintenanceCap('button.2')) fail('button.2 should be maintenance cap');

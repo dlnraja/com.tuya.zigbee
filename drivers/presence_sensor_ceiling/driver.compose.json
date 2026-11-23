@@ -105,11 +105,13 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_luminance.distance": {
       "getable": true,
-      "preventInsights": true
+      "preventInsights": true,
+      "units": "m"
     }
   },
   "subDevices": [],
@@ -169,8 +171,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🎯 Radar Detection",
-        "fr": "🎯 Détection Radar"
+        "en": "Radar Detection",
+        "fr": "Détection Radar"
       },
       "children": [
         {
@@ -244,8 +246,8 @@
     {
       "type": "group",
       "label": {
-        "en": "💡 Relay Control",
-        "fr": "💡 Contrôle Relais"
+        "en": "Relay Control",
+        "fr": "Contrôle Relais"
       },
       "children": [
         {
@@ -328,8 +330,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🌡️ Calibration",
-        "fr": "🌡️ Calibration"
+        "en": "Calibration",
+        "fr": "Calibration"
       },
       "children": [
         {

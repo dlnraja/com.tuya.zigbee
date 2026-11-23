@@ -1,12 +1,14 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiPetFeederDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':   { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '3':   { capability: 'unknown' },
-      '4':   { capability: 'unknown' },
+      '3':   { capability: 'unknown', writable: false, readOnly: true },
+      '4':   { capability: 'unknown', writable: false, readOnly: true },
       '6':   { capability: 'unknown' },
       '12':  { capability: 'unknown' },
       '15':  { capability: 'measure_battery' },
@@ -45,3 +47,5 @@ class WiFiPetFeederDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiPetFeederDevice;
+return module.exports;
+});

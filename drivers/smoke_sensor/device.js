@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -38,7 +40,7 @@ function mapSmokeDp(profile, dp, raw) {
 }
 
 /**
- * P113: migrate bare ZigBeeDevice → TuyaZigbeeDevice for DeviceIO + IAS enroll
+ * P113: migrate bare ZigBeeDevice -> TuyaZigbeeDevice for DeviceIO + IAS enroll
  * + L14 safeSetCapabilityValue (was undefined on bare ZigBeeDevice).
  */
 class smoke_sensor extends TuyaZigbeeDevice {
@@ -101,3 +103,5 @@ class smoke_sensor extends TuyaZigbeeDevice {
 module.exports = smoke_sensor;
 module.exports.smokeProfileFor = smokeProfileFor;
 module.exports.mapSmokeDp = mapSmokeDp;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeMultiply, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
@@ -26,7 +28,7 @@ class WiFiLightDevice extends TuyaLocalDevice {
       '22': { capability: 'dim', writable: true,
         transform: (v) => Math.max(0, safeDivide(v - 10, 990)),
         reverseTransform: (v) => Math.round(safeMultiply(v, 990) + 10) },
-      // WHY(2026-10-10): Tuya temp_value 0 = warm .. 1000 = cool (tuya-local rgbcw_lightbulb 0..1000 → 2700..6500 K;
+      // WHY(2026-10-10): Tuya temp_value 0 = warm .. 1000 = cool (tuya-local rgbcw_lightbulb 0..1000 -> 2700..6500 K;
       // localtuya light.py maps 0 to the warmest mired unless "reverse" is set). Homey light_temperature is
       // 0 = cold .. 1 = warm, so the raw ratio was inverted. Opt-in setting color_temp_reversed restores the
       // raw ratio for the rare firmware that really is reversed.
@@ -87,7 +89,7 @@ class WiFiLightDevice extends TuyaLocalDevice {
     const saturation = this.getCapabilityValue('light_saturation');
     const value = this.getCapabilityValue('dim');
     // Modern encoding: "HHHHSSSSVVVV" (hex, H=0-360, S=0-1000, V=0-1000);
-    // older firmwares expect the 14-char encoding — reuse whatever the device reported.
+    // older firmwares expect the 14-char encoding - reuse whatever the device reported.
     const format = this._colorFormat === 'v1' ? 'v1' : 'v2';
     const color = encodeColor({
       hue,
@@ -154,3 +156,5 @@ class WiFiLightDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiLightDevice;
+return module.exports;
+});

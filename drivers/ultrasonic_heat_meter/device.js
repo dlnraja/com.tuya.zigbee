@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -15,7 +17,7 @@ class UltrasonicHeatMeterDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
 
   get dpMappings() {
     // WHY(P2580 / Z2M herdsman#13184 + ZHA reports): jt50ea5d heat meter uses
-    // DP7=metering switch (bool), DP8=cumulative heat — not the generic 1–5 map.
+    // DP7=metering switch (bool), DP8=cumulative heat - not the generic 1-5 map.
     const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
     if (mfr.includes('jt50ea5d')) {
       return {
@@ -54,3 +56,5 @@ class UltrasonicHeatMeterDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
 }
 
 module.exports = UltrasonicHeatMeterDevice;
+return module.exports;
+});

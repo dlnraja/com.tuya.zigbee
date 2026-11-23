@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Dimmer Air Purifier",
+    "en": "Dimmer for an air purifier",
     "nl": "Dimmer Air Purifier",
-    "fr": "Dimmer Air Purifier",
+    "fr": "Variateur pour purificateur d'air",
     "de": "Dimmer Luftreiniger"
   },
   "class": "light",
@@ -411,11 +411,13 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     }
   },
   "maintenanceActions": [

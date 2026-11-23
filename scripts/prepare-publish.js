@@ -389,6 +389,7 @@ try {
   // Empty or create destination directory
   fs.rmSync(destDir, { recursive: true, force: true });
   fs.mkdirSync(destDir, { recursive: true });
+  require('./ci/upload-manifest-ceiling.cjs').clearReadyMarker(destDir);
   console.log(`Cleared destination directory: ${destDir}`);
 
   // Copy everything except reserved-name entries
@@ -534,6 +535,7 @@ try {
     const compact = compactManifestFile(destAppJson, {
       maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
       maxDriverCombos: Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || undefined,
+      pendingSplitIds: p3229Splits.map((s) => s.id),
     });
     if (compact.overTotalLimit) {
       console.error(`FATAL: publish manifest still has ${compact.afterTotal} Zigbee identifier combinations after compaction.`);
@@ -575,8 +577,9 @@ try {
       const topupOn = Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_TOTAL) > 0;
       const maxTotal = topupOn ? require('./maintenance/ts0601-topup.cjs').ceilingFromEnv() : compact.maxTotalCombos;
       const maxDriver = (topupOn && Number(process.env.HOMEY_ZIGBEE_TOPUP_MAX_DRIVER)) || Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || 2000;
-      const r = sp.sourcedPassFile(p3201Source, destAppJson, { repoRoot: path.join(__dirname, '..'), maxTotal, maxDriver, branch: process.env.P3201_BRANCH || process.env.GITHUB_REF_NAME });
+      const r = sp.sourcedPassFile(p3201Source, destAppJson, { repoRoot: path.join(__dirname, '..'), maxTotal, maxDriver, branch: process.env.P3201_BRANCH || process.env.GITHUB_REF_NAME, pendingSplitIds: p3229Splits.map((s) => s.id) });
       p3201Source = null;
+      if (r.sacredDeferred && r.sacredDeferred.length) { console.log(`[P3351] ${r.sacredDeferred.length} sacred pin(s) on held driver(s) deferred until release: ${r.sacredDeferred.slice(0, 5).join(', ')}`); }
       console.log(`[P3201] sourced pass: ${r.before} -> ${r.after} / ${maxTotal}; ${r.deduped} duplicate-form combos freed, ${r.restored} source-backed couples restored, strong sourced in payload ${r.strongIn}/${r.strongInSource}`);
       if (r.after > maxTotal || r.driversAfter !== r.driversBefore || r.sacredMissing.length || r.snapshotMissing.length) {
         console.error('FATAL(P3201): sourced pass broke an invariant (ceiling, driver set, sacred pin or snapshot ratchet).');
@@ -679,6 +682,13 @@ try {
     } catch (stErr) {
       console.warn('[P3068] shared-text compaction skipped:', stErr.message);
     }
+    // P3342: lossless: drop driver keys Homey ignores (maintenanceActions, capabilityOptions) + locales beyond en/fr/nl/de
+    try {
+      const si = require('./maintenance/strip-inert-manifest.cjs').stripFile(destAppJson);
+      console.log(`[P3342] inert-key/locale strip -${(si.bytes / 1024).toFixed(1)} KB (inert keys ${si.inertDropped}, locales ${si.localeDropped}, default cap options ${si.capOptDropped}, empty/defaults ${si.emptyDropped})`);
+    } catch (siErr) {
+      console.warn('[P3342] inert-key/locale strip skipped:', siErr.message);
+    }
     const sizeMB = fs.statSync(destAppJson).size / (1024 * 1024);
     console.log(`Target app.json size (post Zigbee matrix compact): ${sizeMB.toFixed(2)} MB`);
     if (sizeMB > 4) {
@@ -712,8 +722,30 @@ try {
       const n = require('./publish-hold-release').splitContinuations(m, p3229Splits);
       fs.writeFileSync(destAppJson, JSON.stringify(m));
       console.log(`   P3229: split ${n} released continuation(s) back out of their root`);
+      // P3360: compaction deferred sacred pins on released continuations; they must be
+      // present after the split-back. Held-driver pins stay deferred until the hold step.
+      const pending = new Set(p3229Splits.map((s) => s.id));
+      const { assertSacredCouplesPresent, loadSacredKeepCouples } = require('./maintenance/compact-zigbee-identifiers.cjs');
+      const pins = loadSacredKeepCouples(path.join(__dirname, '..')).filter((c) => pending.has(c.driverId));
+      let misses = pins.length ? assertSacredCouplesPresent(m, pins) : [];
+      if (misses.length) {
+        const { reincludeMissingSacredDrivers } = require('./publish-hold-release');
+        const readded = reincludeMissingSacredDrivers(m, misses, p3229Splits);
+        if (readded.length) {
+          fs.writeFileSync(destAppJson, JSON.stringify(m));
+          console.log(`   P3360: re-included sacred continuation(s) after split-back: ${readded.join(', ')}`);
+          misses = pins.length ? assertSacredCouplesPresent(m, pins) : [];
+        }
+      }
+      if (misses.length) {
+        console.error('FATAL: sacred keep couples missing from publish manifest after P3229 split-back:');
+        for (const line of misses.slice(0, 20)) console.error(`  - ${line}`);
+        process.exit(1);
+      }
     } catch (e) { console.error(`FATAL: P3229 continuation split failed: ${e.message}`); process.exit(1); }
   }
+  // P3331: held driver folders hosted by a dormant published driver keep their JS in the payload.
+  let p3331KeepDirs = new Set();
   // 5a2) Publish hold (config/publish-hold-drivers.json).
   // WHY(Athom AggregateError since 9.0.1331, bisect J3 #3478 / J4 #3479): a driver that
   // breaks Athom processing is kept in source but left out of the upload payload.
@@ -724,13 +756,31 @@ try {
     if (fs.existsSync(holdFile)) {
       const hold = JSON.parse(fs.readFileSync(holdFile, 'utf8'));
       // P2830c: one-shot release of held ids (workflow_dispatch input release_held → PUBLISH_HOLD_RELEASE).
-      const { effectiveHoldIds, resolveReleaseValue } = require('./publish-hold-release');
-      const { ids, released } = effectiveHoldIds(hold, resolveReleaseValue(hold));
+      const { effectiveHoldIds, resolveReleaseValue, resolveSwap } = require('./publish-hold-release');
+      const swap = resolveSwap(hold); // P3292: throws on an invalid swap (fail closed)
+      const { ids, released } = effectiveHoldIds(hold, resolveReleaseValue(hold), swap.join(','));
       if (released.length) console.log(`[publish-hold] RELEASED for this run only: ${released.join(', ')}`);
+      if (swap.length) console.log(`[P3292] diagnostic swap: ${swap.join(', ')} left out of this Draft payload only (source unchanged)`);
       if (ids.size > 0) {
         const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
         const before = (manifest.drivers || []).length;
+        const heldClasses = Object.fromEntries((manifest.drivers || []).filter((d) => d && ids.has(d.id)).map((d) => [d.id, d.class]));
+        const heldEntries = Object.fromEntries((manifest.drivers || []).filter((d) => d && ids.has(d.id)).map((d) => [d.id, d]));
         manifest.drivers = (manifest.drivers || []).filter((d) => !ids.has(d.id));
+        // P3330: carry the exact couples of folded held drivers on their published target (payload only).
+        const { loadFolds, loadHosts, applyHeldFolds, retargetHostedCards } = require('./maintenance/apply-held-folds.cjs');
+        const repo = path.join(__dirname, '..');
+        const fr = applyHeldFolds(manifest, ids, loadFolds(repo), heldClasses, { heldEntries, hosts: loadHosts(repo) });
+        if (fr.errors.length) { throw new Error(`P3330 held-driver fold: ${fr.errors.join(' | ')}`); }
+        fr.applied.forEach((a) => console.log(`[${a.kind === 'host' ? 'P3331' : 'P3330'}] ${a.kind === 'host' ? 'hosted' : 'folded'} ${a.held} -> ${a.into}: ${a.couples} exact couple(s) (+${a.addedMakers} maker(s), +${a.addedPids} pid(s), ${a.parasites} cartesian combo(s) owned by no other driver${a.kind === 'host' ? `, +${a.settings} setting(s)` : ''})`));
+        // P3331: hosted held cards keep their ids and now name the host, so they ship instead of being dropped.
+        const retargeted = retargetHostedCards(manifest, fr.hostOf);
+        if (fr.keepDirs.length) { console.log(`[P3331] ${fr.keepDirs.length} held driver(s) hosted, ${retargeted} flow card(s) re-targeted to their host`); }
+        p3331KeepDirs = new Set(fr.keepDirs);
+        // P3360 class maps: held JS must also ship under lib/hosted/<id>/ (couples stay on the published host).
+        const classMaps = require('../lib/drivers/published-host-class-maps.json');
+        for (const m of classMaps.maps || []) { if (m && m.held) p3331KeepDirs.add(m.held); }
+
         // A card is dropped only when every driver its device filter names is held.
         const cardUsesHeld = (card) => {
           const args = Array.isArray(card && card.args) ? card.args : [];
@@ -752,7 +802,29 @@ try {
           }
         }
         fs.writeFileSync(destAppJson, JSON.stringify(manifest));
-        for (const id of ids) fs.rmSync(path.join(destDir, 'drivers', id), { recursive: true, force: true });
+        for (const id of ids) {
+          const dir = path.join(destDir, 'drivers', id);
+          // P3331: a hosted held driver ships only its JS, under lib/hosted/<id>/; every relative require is
+          // re-resolved from there and must land inside the payload (fail closed).
+          if (p3331KeepDirs.has(id) && fs.existsSync(dir)) {
+            const to = path.join(destDir, 'lib', 'hosted', id);
+            fs.mkdirSync(to, { recursive: true });
+            for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (!(e.isFile() && e.name.endsWith('.js'))) { continue; }
+              const js = fs.readFileSync(path.join(dir, e.name), 'utf8').replace(/require\((['"])(\.\.?\/[^'"]*)\1\)/g, (all, q, rel) => {
+                const target = path.posix.join('drivers', id, rel);
+                if (target.startsWith('drivers/') && target.split('/')[1] !== id && !manifest.drivers.some((d) => d.id === target.split('/')[1])) {
+                  throw new Error(`P3331 ${id}/${e.name} requires ${rel} but that driver is not in the payload`);
+                }
+                let next = path.posix.relative(path.posix.join('lib', 'hosted', id), target.split('/')[1] === id && target.startsWith('drivers/') ? path.posix.join('lib', 'hosted', id, target.split('/').slice(2).join('/')) : target);
+                if (!next.startsWith('.')) { next = `./${next}`; }
+                return `require(${q}${next}${q})`;
+              });
+              fs.writeFileSync(path.join(to, e.name), js);
+            }
+          }
+          fs.rmSync(dir, { recursive: true, force: true });
+        }
         const buildAppJson = path.join(__dirname, '..', '.homeybuild', 'app.json');
         if (fs.existsSync(path.dirname(buildAppJson))) fs.copyFileSync(destAppJson, buildAppJson);
         console.log(`[publish-hold] held back ${before - manifest.drivers.length} driver(s) [${[...ids].join(', ')}], ${cards} flow card(s)`);
@@ -769,7 +841,13 @@ try {
     const { loadPublishBaseline } = require('./maintenance/compact-zigbee-identifiers.cjs');
     const baseline = loadPublishBaseline(path.join(__dirname, '..'));
     if (!baseline) throw new Error('baseline couples file missing (test/fixtures/athom-last-test-package-couples.json)');
-    const r = checkBaseline(JSON.parse(fs.readFileSync(destAppJson, 'utf8')), baseline);
+    let swappedOut = new Set();
+    try {
+      const hf = path.join(__dirname, '..', 'config', 'publish-hold-drivers.json');
+      swappedOut = new Set(require('./publish-hold-release').resolveSwap(fs.existsSync(hf) ? readJson(hf) : { drivers: [] }));
+    } catch (_) { /* an invalid swap already failed step 5a2 */ }
+    const r = checkBaseline(JSON.parse(fs.readFileSync(destAppJson, 'utf8')), baseline, { swappedOut });
+    if (r.swappedOut) console.log(`[P3024b] ${r.swappedOut} couple(s) of the swapped-out driver(s) [${[...swappedOut].join(', ')}] are absent from this diagnostic Draft only`);
     if (r.missing.length) {
       console.error(`FATAL(P3024b): ${r.missing.length}/${r.total} couple(s) of Test package ${baseline.version} would disappear from the payload:`);
       for (const m of r.missing.slice(0, 20)) console.error(`  - ${m}`);
@@ -916,20 +994,68 @@ try {
     process.exit(1);
   }
 
+  // P3360: P3229 split-back re-inserts pre-strip continuation entries; rerun the lossless
+  // shrinks before the ASCII write and the P3342 byte ceiling.
+  try {
+    const tf = require('./maintenance/strip-redundant-title-formatted.cjs').stripFile(destAppJson);
+    console.log(`[P2830h] post-split removed ${tf.removed} redundant titleFormatted (${(tf.bytes / 1048576).toFixed(3)} MB, lossless)`);
+  } catch (tfErr) {
+    console.warn('[P2830h] post-split titleFormatted strip skipped:', tfErr.message);
+  }
+  try {
+    const st = require('./maintenance/compact-shared-text.cjs').compactFile(destAppJson);
+    console.log(`[P3068] post-split shared-text compaction -${(st.bytes / 1024).toFixed(1)} KB (locales ${st.localeDropped}, hints ${st.hintsCanon}, titles ${st.titlesCanon})`);
+  } catch (stErr) {
+    console.warn('[P3068] post-split shared-text compaction skipped:', stErr.message);
+  }
+  try {
+    const si = require('./maintenance/strip-inert-manifest.cjs').stripFile(destAppJson);
+    console.log(`[P3342] post-split inert-key/locale strip -${(si.bytes / 1024).toFixed(1)} KB (inert keys ${si.inertDropped}, locales ${si.localeDropped}, default cap options ${si.capOptDropped}, empty/defaults ${si.emptyDropped})`);
+  } catch (siErr) {
+    console.warn('[P3342] post-split inert-key/locale strip skipped:', siErr.message);
+  }
+
   // 5d) P3047: last write of the payload JSON. Every non-ASCII char is written as \uXXXX
   // (lossless, round trip checked), so app.json and the data files load as one-byte V8
   // strings on Homey (half the parse heap; Bastien OOM in JsonParser<unsigned short>).
   // Done here, not in the sources, so CI and enrichment writers keep readable UTF-8.
   try {
     const { asciiPublishPayload } = require('./maintenance/ascii-json.cjs');
-    const a = asciiPublishPayload(destDir);
-    console.log(`[P3047] ${a.files} JSON file(s) written as ASCII (app.json mode=${a.appJsonMode}, ${(a.appJsonBytes / 1048576).toFixed(2)} MB); parse text heap ${(a.textHeapBefore / 1048576).toFixed(2)} -> ${(a.textHeapAfter / 1048576).toFixed(2)} MB`);
+    // P3386: above the P3342 goal, app.json keeps Latin-1 raw (wide mode, still one-byte in V8).
+    let wideAboveBytes;
+    try { wideAboveBytes = require('./ci/upload-manifest-ceiling.cjs').policy().goalBytes; } catch (_) { wideAboveBytes = undefined; }
+    const a = asciiPublishPayload(destDir, { wideAboveBytes });
+    console.log(`[P3047] ${a.files} JSON file(s) written as ASCII (app.json mode=${a.appJsonMode}, ${(a.appJsonBytes / 1048576).toFixed(2)} MB${a.appJsonMode === 'wide' ? `, full ASCII would be ${a.appJsonAsciiBytes} B` : ''}); parse text heap ${(a.textHeapBefore / 1048576).toFixed(2)} -> ${(a.textHeapAfter / 1048576).toFixed(2)} MB`);
     if (a.appJsonBytes > 4 * 1024 * 1024) {
       console.error('FATAL(P3047): app.json is larger than 4MB after ASCII escaping. Athom will reject.');
       process.exit(1);
     }
   } catch (asciiErr) {
     console.error('FATAL(P3047): ASCII JSON step failed:', asciiErr.message);
+    process.exit(1);
+  }
+  // P3342: block growth of the upload manifest above config/upload-manifest-ceiling.json (Athom work per build).
+  {
+    const uc = require('./ci/upload-manifest-ceiling.cjs');
+    const r = uc.checkUploadManifest(destAppJson);
+    if (!r.ok) {
+      console.error(`FATAL(P3342): ${uc.describe(r)}. Shrink the manifest before adding (docs/knowledge/athom-driver-ceiling.md).`);
+      process.exit(1);
+    }
+    console.log(`[P3342] ${uc.describe(r)}`);
+  }
+
+  // 5e) P3312: payload JavaScript written with every char above U+00FF as \uXXXX. V8 keeps the
+  // source text of each loaded module for the life of the app; one emoji or arrow makes the whole
+  // file a two-byte string (measured on bastien-home: 692 boot modules, 16.2 MB of source text
+  // instead of 8.1 MB). Same values at runtime, every rewritten file must compile, else FATAL.
+  try {
+    const { latin1JsTree } = require('./maintenance/latin1-js.cjs');
+    const j = latin1JsTree(destDir);
+    console.log(`[P3312] ${j.files} JS file(s) made Latin-1 (${j.skipped.length} left as is); module source heap ${(j.textHeapBefore / 1048576).toFixed(2)} -> ${(j.textHeapAfter / 1048576).toFixed(2)} MB, bytes ${(j.bytesBefore / 1048576).toFixed(2)} -> ${(j.bytesAfter / 1048576).toFixed(2)} MB`);
+    for (const k of j.skipped.slice(0, 20)) {console.log(`  [P3312] left as is: ${path.relative(destDir, k.file)} (${k.skipped})`);}
+  } catch (jsErr) {
+    console.error('FATAL(P3312): Latin-1 JS step failed:', jsErr.message);
     process.exit(1);
   }
 
@@ -982,6 +1108,7 @@ try {
     }
     console.log(`[diagnostic-catalogue] ${driverCount} real drivers in ${destDir} (floor ${floor}). Provenance ${destDir}.provenance.json. Draft only; Test and Live are not promoted.`);
   }
+  require('./ci/upload-manifest-ceiling.cjs').writeReadyMarker(destAppJson);
   console.log(`Publish directory ready: ${destDir}`);
 
 } catch (err) {

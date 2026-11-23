@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-14T12:06:58.615Z",
+  "generated": "2026-11-22T13:17:38.149Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,17 +26,160 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 2
+    "issues": 36
   },
   "candidates": [],
   "skipped": [
     {
-      "issue": 3698,
+      "issue": 296,
+      "reason": "closed"
+    },
+    {
+      "issue": 300,
+      "reason": "closed"
+    },
+    {
+      "issue": 291,
+      "reason": "closed"
+    },
+    {
+      "issue": 2782,
       "reason": "not found"
     },
     {
-      "issue": 631,
+      "issue": 2763,
+      "reason": "not found"
+    },
+    {
+      "issue": 499,
       "reason": "pull request"
+    },
+    {
+      "issue": 504,
+      "reason": "pull request"
+    },
+    {
+      "issue": 509,
+      "reason": "pull request"
+    },
+    {
+      "issue": 5709,
+      "reason": "not found"
+    },
+    {
+      "issue": 3717,
+      "reason": "not found"
+    },
+    {
+      "issue": 2270,
+      "reason": "not found"
+    },
+    {
+      "issue": 864,
+      "reason": "not found"
+    },
+    {
+      "issue": 3684,
+      "reason": "not found"
+    },
+    {
+      "issue": 488,
+      "reason": "pull request"
+    },
+    {
+      "issue": 3715,
+      "reason": "not found"
+    },
+    {
+      "issue": 3716,
+      "reason": "not found"
+    },
+    {
+      "issue": 656,
+      "reason": "pull request"
+    },
+    {
+      "issue": 655,
+      "reason": "pull request"
+    },
+    {
+      "issue": 654,
+      "reason": "pull request"
+    },
+    {
+      "issue": 653,
+      "reason": "pull request"
+    },
+    {
+      "issue": 652,
+      "reason": "pull request"
+    },
+    {
+      "issue": 651,
+      "reason": "pull request"
+    },
+    {
+      "issue": 649,
+      "reason": "pull request"
+    },
+    {
+      "issue": 646,
+      "reason": "pull request"
+    },
+    {
+      "issue": 3714,
+      "reason": "not found"
+    },
+    {
+      "issue": 3708,
+      "reason": "not found"
+    },
+    {
+      "issue": 3709,
+      "reason": "not found"
+    },
+    {
+      "issue": 3710,
+      "reason": "not found"
+    },
+    {
+      "issue": 3705,
+      "reason": "not found"
+    },
+    {
+      "issue": 3706,
+      "reason": "not found"
+    },
+    {
+      "issue": 3707,
+      "reason": "not found"
+    },
+    {
+      "issue": 3704,
+      "reason": "not found"
+    },
+    {
+      "issue": 2862,
+      "reason": "not found"
+    },
+    {
+      "issue": 559,
+      "about": "non classé",
+      "author": "Lalla80111",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
+      "commit": "d9b79a966c",
+      "commitAt": "2026-11-15T16:24:29Z",
+      "ci": "pending",
+      "lastAuthor": "Lalla80111",
+      "reason": "CI pending"
+    },
+    {
+      "issue": 425,
+      "reason": "pull request"
+    },
+    {
+      "issue": 404,
+      "reason": "closed"
     }
   ]
 }

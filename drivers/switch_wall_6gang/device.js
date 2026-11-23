@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
@@ -7,7 +9,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 /**
  * 6-GANG SWITCH - v5.5.922 + ZCL-Only Mode (packetninja technique)
  * Physical button detection via attribute reports
- * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ * WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
  */
 const ZCL_ONLY_MANUFACTURERS_6G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
@@ -41,7 +43,7 @@ class Switch6GangDevice extends UnifiedSwitchBase {
    * then the historical switch_wall_6gang_* id. Never throws; null when neither exists.
    */
   _p3034OwnTriggerCard(baseId) {
-    const did = this.driver && this.driver.id;
+    const did = this._hostedAs || (this.driver && this.driver.id); // P3331: hosted on a dormant driver
     const ids = [];
     if (did && did !== 'switch_wall_6gang' && baseId.startsWith('switch_wall_6gang_')) {
       ids.push(`${did}_${baseId.slice('switch_wall_6gang_'.length)}`);
@@ -207,3 +209,5 @@ class Switch6GangDevice extends UnifiedSwitchBase {
 }
 module.exports = Switch6GangDevice;
 module.exports.sws6tzMeter = sws6tzMeter;
+return module.exports;
+});

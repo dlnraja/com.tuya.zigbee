@@ -1,11 +1,13 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const SmartKnobRotationMixin = require('../../lib/mixins/SmartKnobRotationMixin');
 
 /**
- * SmartKnobDevice — ButtonDevice + rotation UX (P2448/P2449)
- * Sacred couples: kaflzta4 = scene press; uri7ongn/g9g2xnch/… = rotary dimmer.
+ * SmartKnobDevice - ButtonDevice + rotation UX (P2448/P2449)
+ * Sacred couples: kaflzta4 = scene press; uri7ongn/g9g2xnch/... = rotary dimmer.
  * DeviceOperatingMode classifies; mixin enables levelControl + 0xFC when dimmer.
  */
 class SmartKnobDevice extends SmartKnobRotationMixin(ButtonDevice) {
@@ -30,7 +32,7 @@ class SmartKnobDevice extends SmartKnobRotationMixin(ButtonDevice) {
   }
 
   /**
-   * Hook press→hold window for press_and_rotate_* flow cards.
+   * Hook press->hold window for press_and_rotate_* flow cards.
    */
   async triggerButtonPress(buttonNumber, pressType = 'single', count = 1, options = {}) {
     const type = String(pressType || 'single').toLowerCase();
@@ -46,3 +48,5 @@ class SmartKnobDevice extends SmartKnobRotationMixin(ButtonDevice) {
 }
 
 module.exports = SmartKnobDevice;
+return module.exports;
+});

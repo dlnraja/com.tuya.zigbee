@@ -1,0 +1,134 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Promotes a healthy Athom Test build to Live only after objective gates pass, for master and
+#   stable regularly. Never promotes the Bastien house app.
+# Ideas from (thank you): Athom's official Homey app GitHub Actions (athombv); the Homey developer docs on
+#   build channels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# P3360: promote a healthy Test build to Live only after objective gates pass.
+# Live is automatic only after those gates, for master and stable only.
+# Bastien (com.dlnraja.tuya.zigbee.bastien) must NEVER be added to this matrix or promoted to Live.
+
+defaults:
+  run:
+    shell: bash
+
+name: Promote to Live
+
+# <!-- badges:start -->
+# [![Promote to Live](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/promote-live.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/promote-live.yml)
+# <!-- badges:end -->
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: 'App to promote (master or stable; never Bastien)'
+        required: true
+        default: 'master'
+        type: choice
+        options: [master, stable]
+      build:
+        description: 'Athom build number (optional; default tip Test)'
+        required: false
+        type: string
+      version:
+        description: 'Version, e.g. 9.0.1636 (optional)'
+        required: false
+        type: string
+      dry_run:
+        description: 'Evaluate gates only; do not call setChannel'
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    # Hourly. Evaluates master and stable. Bastien is never considered for Live.
+    - cron: '25 * * * *'
+
+permissions:
+  contents: read
+  actions: read
+
+
+# P2562 forfait + local-smart-learn (all workflows)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
+
+jobs:
+  promote:
+    name: Objective gates then Live (${{ matrix.app }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: promote-live-${{ matrix.app }}
+      cancel-in-progress: false
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [master, stable]
+    # Do not use matrix in a job-level if: GitHub rejects that at dispatch parse time (HTTP 422).
+    # Dispatch of one app still expands the matrix; the first step skips the other app.
+    # Bastien is never in the matrix and must never be added.
+    steps:
+      - name: Select app
+        id: want
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.app }}" ] && [ "${{ github.event.inputs.app }}" != "${{ matrix.app }}" ]; then
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping ${{ matrix.app }} (dispatch asked for ${{ github.event.inputs.app }})"
+          else
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Checkout
+        if: steps.want.outputs.go == 'true'
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        if: steps.want.outputs.go == 'true'
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      # Same path as Auto-Publish 44937269110: pinned homey@4.4.1 provides
+      # homey/services/AthomApi (wraps HOMEY_PAT as AthomCloudAPIToken).
+      - name: Install pinned Homey CLI (AthomApi)
+        if: steps.want.outputs.go == 'true'
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund homey@4.4.1
+      - name: Homey AthomApi module load
+        if: steps.want.outputs.go == 'true'
+        run: |
+          set -euo pipefail
+          node -e "const c=require('./.github/scripts/homey-apps-api-client'); if(!c.sdkModulesAvailable()) { console.error('AthomApi modules missing after homey@4.4.1 install'); process.exit(1);} console.log('Homey AthomApi modules loaded');"
+      - name: Promote if gates pass
+        if: steps.want.outputs.go == 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_HEADLESS: '1'
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          LIVE_APP: ${{ matrix.app }}
+          LIVE_BUILD: ${{ github.event.inputs.build || '' }}
+          LIVE_VERSION: ${{ github.event.inputs.version || '' }}
+        run: |
+          set -euo pipefail
+          ARGS=(--app "${LIVE_APP}")
+          [ -n "${LIVE_BUILD}" ] && ARGS+=(--build "${LIVE_BUILD}")
+          [ -n "${LIVE_VERSION}" ] && ARGS+=(--version "${LIVE_VERSION}")
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            ARGS+=(--dispatch)
+          fi
+          node .github/scripts/promote-live.js "${ARGS[@]}"

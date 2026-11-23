@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { equalsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
@@ -62,18 +64,18 @@ class AirQualityComprehensiveDevice extends SensorBase {
               minChange: 2,
             }
           ]);
-          this.log('[AIR-QUALITY] 📊 Attribute reporting configured successfully');
+          this.log('[AIR-QUALITY] [STAT] Attribute reporting configured successfully');
         } catch (err) {
-          this.log('[AIR-QUALITY] ⚠️ Attribute reporting config failed:', err.message);
+          this.log('[AIR-QUALITY] [WARN] Attribute reporting config failed:', err.message);
         }
       } else {
-        this.log('[AIR-QUALITY] ℹ️ TS0601 device - skipping ZCL attribute reporting, using Tuya DP protocol');
+        this.log('[AIR-QUALITY] [INFO] TS0601 device - skipping ZCL attribute reporting, using Tuya DP protocol');
       }
 
       // Prevents false low-battery alerts (e.g. _TZE200_8ygsuhe1 Smart Airbox is USB-powered)
       if (this.mainsPowered && this.hasCapability('measure_battery')) {
         await this.removeCapability('measure_battery').catch(() => { });
-        this.log('[AIR-QUALITY] 🔌 Mains-powered: removed measure_battery');
+        this.log('[AIR-QUALITY] [AC] Mains-powered: removed measure_battery');
       }
 
       // This Smart Airbox does not expose particulate measurements. Avoid stale,
@@ -87,19 +89,19 @@ class AirQualityComprehensiveDevice extends SensorBase {
       const dpMap = this.dpMappings || {};
       if (dpMap[21] && !this.hasCapability('measure_voc')) {
         await this.addCapability('measure_voc').catch(() => { });
-        this.log('[AIR-QUALITY] ➕ Added measure_voc capability');
+        this.log('[AIR-QUALITY] + Added measure_voc capability');
       }
       if (dpMap[22] && !this.hasCapability('measure_formaldehyde')) {
         await this.addCapability('measure_formaldehyde').catch(() => { });
-        this.log('[AIR-QUALITY] ➕ Added measure_formaldehyde capability');
+        this.log('[AIR-QUALITY] + Added measure_formaldehyde capability');
       }
 
-      this.log('[AIR-QUALITY] ✅ Ready');
+      this.log('[AIR-QUALITY] [OK] Ready');
     }, 'onNodeInit');
   }
 
   onDeleted() {
-    this.log('[AIR-QUALITY] 🗑️ Device deleted, cleaning up');
+    this.log('[AIR-QUALITY] [DEL] Device deleted, cleaning up');
     if (this._batteryHandler) {
       this._batteryHandler.destroy();
       this._batteryHandler = null;
@@ -113,3 +115,5 @@ class AirQualityComprehensiveDevice extends SensorBase {
 }
 
 module.exports = AirQualityComprehensiveDevice;
+return module.exports;
+});

@@ -146,6 +146,7 @@ const CONDITION_RULES = [
 function normTitle(t) {
   return String(t || '').toLowerCase()
     .replace(/!\{\{([^|}]*)\|[^}]*\}\}/g, '$1') // keep the positive branch
+    .replace(/(\s*\([^)]*\))+$/g, '') // P3363: ignore unique title suffixes such as (report)
     .replace(/\s+/g, ' ').replace(/[.…]+$/, '').trim();
 }
 

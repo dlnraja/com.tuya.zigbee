@@ -6,16 +6,20 @@ const assert = require('node:assert');
 const path = require('path');
 const P = require(path.join(__dirname, '..', '..', '.github', 'scripts', 'athom-retry-policy.js'));
 
-test('P3036 budgets: hang-up 1, transient 1, AggregateError 0, unknown 0', () => {
-  assert.strictEqual(P.budget(P.classify('processing_failed | stateMeta=socket hang up')), 1);
-  assert.strictEqual(P.budget(P.classify('ECONNRESET')), 1);
-  assert.strictEqual(P.budget(P.classify('AggregateError')), 0);
+test('P3311 budgets: hang-up 2, transient 2, invalid_state 1, AggregateError 0 (bare 1, P3341), unknown 0', () => {
+  assert.strictEqual(P.budget(P.classify('processing_failed | stateMeta=socket hang up')), 2);
+  assert.strictEqual(P.budget(P.classify('ECONNRESET')), 2);
+  assert.strictEqual(P.budget('invalid_state'), 1);
+  assert.strictEqual(P.budget(P.classify('AggregateError: x')), 0);
+  assert.strictEqual(P.budget(P.classify('AggregateError')), 1);
   assert.strictEqual(P.budget(P.classify('something new')), 0);
 });
 
-test('shouldRetry stops after the single hang-up retry', () => {
+test('shouldRetry stops after the second hang-up retry (3 attempts, P3311)', () => {
   assert.ok(P.shouldRetry('socket hang up', 0));
-  assert.ok(!P.shouldRetry('socket hang up', 1));
+  assert.ok(P.shouldRetry('socket hang up', 1));
+  assert.ok(!P.shouldRetry('socket hang up', 2));
+  assert.ok(!P.shouldRetry('AggregateError', 0));
 });
 
 test('backoff stays bounded for retries 3 and 4', () => {
@@ -23,15 +27,18 @@ test('backoff stays bounded for retries 3 and 4', () => {
 });
 
 const TPR = path.join(__dirname, '..', '..', '.github', 'scripts', 'transient-publish-retry.js');
-test('decide(): hang-up retries once, AggregateError never retries and asks for a bisect', { skip: !require('fs').existsSync(TPR) && 'master-only script' }, () => {
+test('decide(): hang-up retries twice, AggregateError with a message never retries and asks for a bisect', { skip: !require('fs').existsSync(TPR) && 'master-only script' }, () => {
   const { decide } = require(path.join(__dirname, '..', '..', '.github', 'scripts', 'transient-publish-retry.js'));
   const hang = [{ version: '9.0.1', state: 'processing_failed', stateMeta: 'socket hang up' }];
   const d = decide({ version: '9.0.1', builds: hang, retryCount: 0, reachTest: true });
   assert.ok(d.retry); assert.strictEqual(d.next, 1);
-  assert.ok(!decide({ version: '9.0.1', builds: hang, retryCount: 1, reachTest: true }).retry);
-  const agg = [{ version: '9.0.1', state: 'processing_failed', stateMeta: 'AggregateError' }];
+  const d2 = decide({ version: '9.0.1', builds: hang, retryCount: 1, reachTest: true });
+  assert.ok(d2.retry); assert.strictEqual(d2.next, 2);
+  assert.ok(!decide({ version: '9.0.1', builds: hang, retryCount: 2, reachTest: true }).retry);
+  const agg = [{ version: '9.0.1', state: 'processing_failed', stateMeta: 'AggregateError: x' }];
   const a0 = decide({ version: '9.0.1', builds: agg, retryCount: 0, reachTest: true });
   assert.ok(!a0.retry && a0.bisect);
   const tr = [{ version: '9.0.1', state: 'processing_failed', stateMeta: 'ECONNRESET' }];
-  assert.ok(!decide({ version: '9.0.1', builds: tr, retryCount: 1, reachTest: true }).retry);
+  assert.ok(decide({ version: '9.0.1', builds: tr, retryCount: 1, reachTest: true }).retry);
+  assert.ok(!decide({ version: '9.0.1', builds: tr, retryCount: 2, reachTest: true }).retry);
 });

@@ -1,18 +1,20 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 const FirmwareQuirks = require('../../lib/quirks/FirmwareQuirks');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      DIMMABLE BULB - v5.5.992 + Virtual Buttons                             ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║ LightBase handles: onoff, dim listeners completely                   ║
- * ║  v5.5.992: Added virtual toggle/dim up/down buttons                         ║
- * ║  DPs: 1=switch, 2=brightness, 3=min brightness, 4=countdown, 21=power-on    ║
- * ║  ZCL: 0x0006 On/Off, 0x0008 Level Control                                   ║
- * ║  Models: TS0501B, TS0502B, _TZ3210_*, _TZ3000_*                              ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      DIMMABLE BULB - v5.5.992 + Virtual Buttons                             |
+ * +==============================================================================+
+ * | LightBase handles: onoff, dim listeners completely                   |
+ * |  v5.5.992: Added virtual toggle/dim up/down buttons                         |
+ * |  DPs: 1=switch, 2=brightness, 3=min brightness, 4=countdown, 21=power-on    |
+ * |  ZCL: 0x0006 On/Off, 0x0008 Level Control                                   |
+ * |  Models: TS0501B, TS0502B, _TZ3210_*, _TZ3000_*                              |
+ * +==============================================================================+
  */
 class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
@@ -60,7 +62,7 @@ class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
       // ~10 min without Basic keep-alive reads (pair-scoped, lib/data/firmware-quirks.json).
       // https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
       try { FirmwareQuirks.startKeepAlive(this, zclNode); } catch (_e) { /* soft */ }
-      this.log('[DIM-BULB] v5.5.992 ✅ Ready + virtual buttons');
+      this.log('[DIM-BULB] v5.5.992 [OK] Ready + virtual buttons');
     }, 'onNodeInit');
   }
 
@@ -78,3 +80,5 @@ class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
 }
 
 module.exports = DimmableBulbDevice;
+return module.exports;
+});

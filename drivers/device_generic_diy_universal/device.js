@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 
@@ -21,7 +23,7 @@ class GenericDiyUniversalDevice extends TuyaSpecificClusterDevice {
       this.registerTuyaDatapoint(Number(dp), capability, { scale: divisor });
     }
 
-    // v9.0.416 (P92.124): instantiate the DIY bridge — its capabilities
+    // v9.0.416 (P92.124): instantiate the DIY bridge - its capabilities
     // (tuya_dp_value/string/raw/cluster_event) were declared but dead.
     try {
       const TuyaUniversalBridge = require('../../lib/TuyaUniversalBridge');
@@ -39,3 +41,5 @@ class GenericDiyUniversalDevice extends TuyaSpecificClusterDevice {
 }
 
 module.exports = GenericDiyUniversalDevice;
+return module.exports;
+});

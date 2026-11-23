@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.5.0",
-    "updated": "2026-09-23",
+    "updated": "2026-11-21",
     "why": "Three Athom apps — never blur App ID / version / purpose. Classify every change. Bastien house is private → promotes upstream only.",
     "doctrine": "docs/rules/DUAL_APP_VISION.md",
     "bastienDoctrine": "docs/rules/BASTIEN_HOUSE_APP.md",
@@ -11,7 +11,8 @@
     "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json",
     "recentTipsHuman": "docs/architecture/THREE_APP_RECENT_TIPS.md",
     "batteryAdaptiveSsot": "config/architecture/battery-adaptive-precision-ssot.json",
-    "interactionFlowSsot": "config/architecture/interaction-flow-cards-ssot.json"
+    "interactionFlowSsot": "config/architecture/interaction-flow-cards-ssot.json",
+    "lessons": "docs/rules/LESSONS_2026-11-21.md"
   },
   "alwaysBothSameSession": {
     "mandate": "EVERY BOTH reliability change must be surgically ported to stable-v5 in the SAME agent session as master — never leave LTS tip-lag for Peter/GH crashes/sacred couples",
@@ -35,7 +36,8 @@
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
       "tipHealthy": "9.0.1257",
-      "tipNote": "LIVE tip 9.0.1257 (P2741 MCU skip + P2740 antiflood). Update Test + Repair radar."
+      "tipNote": "LIVE tip 9.0.1257 (P2741 MCU skip + P2740 antiflood). Update Test + Repair radar.",
+      "live": "automatic after objective gates"
     },
     "stable": {
       "branch": "stable-v5",
@@ -46,7 +48,8 @@
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
       "tipHealthy": "5.12.340",
-      "tipNote": "LIVE tip 5.12.340 — Bastien house BOTH backport P2733–P2741 snappy wake + lux antiflood"
+      "tipNote": "LIVE tip 5.12.340 — Bastien house BOTH backport P2733–P2741 snappy wake + lux antiflood",
+      "live": "automatic after objective gates"
     },
     "bastien": {
       "branch": "bastien-home",
@@ -55,10 +58,11 @@
       "versionLine": "1.0.x",
       "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
       "cloneHint": "Documents/homey/bastien",
-      "publish": "Publish Zigbee Bastien workflow / soft-expect first (P2738) — App ID .bastien only; NEVER Universal or Stable slots",
-      "enrichment": "bastien_to_public_only",
+      "publish": "Publish Zigbee Bastien workflow, Test at any hour - App ID .bastien only; NEVER Universal or Stable slots; NEVER Athom Live",
+      "enrichment": "bastien_to_public_only — fixes, quirks, DPs and learned mappings flow regularly to master and stable-v5 (bastien-promote-upstream.yml), additive, anonymized, exact couple",
       "tipHealthy": "1.0.108",
-      "tipNote": "LIVE tip 1.0.108 P2741 (owner Install Test on Bastien account). Diag 6bdc3c5e @ 1.0.107 healthy."
+      "tipNote": "LIVE tip 1.0.108 P2741 (owner Install Test on Bastien account). Diag 6bdc3c5e @ 1.0.107 healthy.",
+      "live": "never — house Test / local install only; must never go to Athom Live"
     }
   },
   "identityNeverCopy": [

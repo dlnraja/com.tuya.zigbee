@@ -3,15 +3,15 @@
     {
       "id": "device_air_purifier_led_strip_led_strip_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report) (led strip turned on)",
+        "fr": "Allumé (rapport) (bandeau led allumé)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report) (led strip turned on)",
+        "fr": "Allumé (rapport) (bandeau led allumé)",
         "de": "Eingeschaltet",
         "nl": "Aangezet"
       }
@@ -19,15 +19,15 @@
     {
       "id": "device_air_purifier_led_strip_led_strip_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report) (led strip turned off)",
+        "fr": "Éteint (rapport) (bandeau led éteint)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report) (led strip turned off)",
+        "fr": "Éteint (rapport) (bandeau led éteint)",
         "de": "Ausgeschaltet",
         "nl": "Uitgezet"
       }
@@ -35,15 +35,15 @@
     {
       "id": "device_air_purifier_led_strip_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report)",
+        "fr": "Allumé (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report)",
+        "fr": "Allumé (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -51,15 +51,15 @@
     {
       "id": "device_air_purifier_led_strip_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report)",
+        "fr": "Éteint (rapport)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
+        "en": "Turned off (report)",
+        "fr": "Éteint (rapport)",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -136,28 +136,28 @@
       "id": "device_air_purifier_led_strip_led_strip_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport) (bandeau led est allumé)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{an|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumé|éteint}} (rapport) (bandeau led est allumé)"
       }
     },
     {
       "id": "device_air_purifier_led_strip_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumé|éteint}} (rapport)",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -167,15 +167,15 @@
     {
       "id": "device_air_purifier_led_strip_led_strip_turn_on",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report) (led strip turn on)",
+        "fr": "Allumer (rapport) (bandeau led allumer)",
         "nl": "Zet aan",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report) (led strip turn on)",
+        "fr": "Allumer (rapport) (bandeau led allumer)",
         "de": "Einschalten",
         "nl": "Aanzetten"
       }
@@ -183,15 +183,15 @@
     {
       "id": "device_air_purifier_led_strip_led_strip_turn_off",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report) (led strip turn off)",
+        "fr": "Éteindre (rapport) (bandeau led eteindre)",
         "nl": "Zet uit",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report) (led strip turn off)",
+        "fr": "Éteindre (rapport) (bandeau led eteindre)",
         "de": "Ausschalten",
         "nl": "Uitzetten"
       }
@@ -200,14 +200,14 @@
       "id": "device_air_purifier_led_strip_led_strip_toggle",
       "title": {
         "en": "Toggle on or off",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport) (bandeau bandeau led basculer)",
         "nl": "Aan of uit wisselen",
         "de": "Ein/Aus umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle on or off",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport) (bandeau bandeau led basculer)",
         "de": "Ein/Aus umschalten",
         "nl": "Aan of uit wisselen"
       }
@@ -215,15 +215,15 @@
     {
       "id": "device_air_purifier_led_strip_turn_on",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report)",
+        "fr": "Allumer (rapport)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
+        "en": "Turn on (report)",
+        "fr": "Allumer (rapport)",
         "nl": "Aanzetten",
         "de": "Einschalten"
       }
@@ -231,15 +231,15 @@
     {
       "id": "device_air_purifier_led_strip_turn_off",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report)",
+        "fr": "Éteindre (rapport)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
+        "en": "Turn off (report)",
+        "fr": "Éteindre (rapport)",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -248,14 +248,14 @@
       "id": "device_air_purifier_led_strip_toggle",
       "title": {
         "en": "Toggle",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport)",
         "nl": "Wisselen",
         "de": "Umschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Toggle",
-        "fr": "Basculer",
+        "fr": "Basculer (rapport)",
         "nl": "Wisselen",
         "de": "Umschalten"
       }

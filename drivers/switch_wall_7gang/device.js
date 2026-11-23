@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
@@ -7,7 +9,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 /**
  * 7-GANG SWITCH - v5.5.922 + ZCL-Only Mode (packetninja technique)
  * Physical button detection via attribute reports
- * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ * WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
  */
 const ZCL_ONLY_MANUFACTURERS_7G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
@@ -163,3 +165,5 @@ class Switch7GangDevice extends UnifiedSwitchBase {
   }
 }
 module.exports = Switch7GangDevice;
+return module.exports;
+});

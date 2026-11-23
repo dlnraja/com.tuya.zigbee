@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -51,7 +53,7 @@ const getDataValue = (dpValue) => {
 };
 
 /**
- * PIR mmWave Sensor — P127: TuyaZigbeeDevice + safe-timers
+ * PIR mmWave Sensor - P127: TuyaZigbeeDevice + safe-timers
  * Multi-path: IAS Zone + Tuya DP + ZCL illuminance/battery
  */
 class pir_mmwave_sensor extends TuyaZigbeeDevice {
@@ -96,10 +98,9 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
     }
 
     const ep1 = zclNode.endpoints[1];
-    if (ep1?.clusters?.[CLUSTER.IAS_ZONE.NAME]) {
-      ep1.clusters[CLUSTER.IAS_ZONE.NAME]
-        .on('attr.zoneStatus', this.onZoneStatusAttributeReport.bind(this));
-    }
+    // P3397: parallel RX (attr 0x0002 + IAS notification + occupancy 0x0406). The attribute
+    // report alone missed PIRs that only send zoneStatusChangeNotification.
+    require('../../lib/zigbee/ZoneStatusRx').attachMotionRx(this, zclNode);
     if (ep1?.clusters?.[CLUSTER.POWER_CONFIGURATION.NAME]) {
       ep1.clusters[CLUSTER.POWER_CONFIGURATION.NAME]
         .on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
@@ -158,7 +159,7 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
       batteryType: 'CR2032',
     });
     if (batteryLevel == null) { return; }
-    this.log('Battery raw:', batteryPercentageRemaining, '→', batteryLevel, '%');
+    this.log('Battery raw:', batteryPercentageRemaining, '->', batteryLevel, '%');
     this.safeSetCapabilityValue('measure_battery', batteryLevel).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     this.safeSetCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
@@ -275,3 +276,5 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
 }
 
 module.exports = pir_mmwave_sensor;
+return module.exports;
+});

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
@@ -188,11 +190,11 @@ class Switch4GangDevice extends BaseClass {
             }
           }
 
-          // WHY(P2330): compose declares gas_sensor_switch_4gang_* — never invent *_switch_4gang_*
+          // WHY(P2330): compose declares gas_sensor_switch_4gang_* - never invent *_switch_4gang_*
           if (isPhysical && (mode === 'auto' || mode === 'both' || mode === 'magic')) {
             if (typeof this._triggerPhysicalFlow === 'function') {
               this._triggerPhysicalFlow(epNum, value ? 'on' : 'off');
-              this.log(`[BSEED-4G] ✅ Physical/scene via mixin G${epNum} ${value ? 'ON' : 'OFF'}`);
+              this.log(`[BSEED-4G] [OK] Physical/scene via mixin G${epNum} ${value ? 'ON' : 'OFF'}`);
             } else if (typeof this._safeTriggerFlow === 'function') {
               const state = value ? 'on' : 'off';
               await this._safeTriggerFlow(
@@ -318,4 +320,5 @@ class Switch4GangDevice extends BaseClass {
   }
 }
 module.exports = Switch4GangDevice;
-
+return module.exports;
+});

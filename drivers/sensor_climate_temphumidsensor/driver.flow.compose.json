@@ -4,8 +4,8 @@
       "id": "sensor_climate_temphumidsensor_temperature_changed",
       "highlight": true,
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report)",
+        "fr": "Température changée (rapport)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -102,15 +102,15 @@
     {
       "id": "sensor_climate_temphumidsensor_temp_changed",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (short report)",
+        "fr": "Température changée (rapport court)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }

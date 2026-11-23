@@ -1,10 +1,10 @@
 {
   "id": "smoke_sensor",
   "name": {
-    "en": "Smoke Sensor",
+    "en": "Smoke Sensor (smoke sensor)",
     "nl": "Rookmelder",
     "de": "Rauchmelder",
-    "fr": "Détecteur de fumée"
+    "fr": "Détecteur de fumée (smoke sensor)"
   },
   "class": "sensor",
   "platforms": [
@@ -44,7 +44,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "zigbee": {

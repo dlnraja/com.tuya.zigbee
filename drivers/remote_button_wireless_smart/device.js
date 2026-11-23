@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 // A8: NaN Safety - use safeDivide/safeMultiply
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
@@ -857,7 +859,7 @@ class Button1GangDevice extends ButtonDevice {
     const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || '';
     const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     
-    // WHY(P2644/e8d98608 sibling): CI was never imported → ReferenceError killed onNodeInit
+    // WHY(P2644/e8d98608 sibling): CI was never imported -> ReferenceError killed onNodeInit
     const isSmartKnob = containsCI(modelId, 'TS004F')
       || containsCI(manufacturerName, 'gwkzibhs');
     
@@ -941,5 +943,5 @@ class Button1GangDevice extends ButtonDevice {
 // toggle = single, on = double, off = long (button_mode 'dimmer' keeps single).
 Button1GangDevice.RAW_ONOFF_PRESS_MAP = Object.freeze({ 2: 'single', 1: 'double', 0: 'long' });
 module.exports = Button1GangDevice;
-
-
+return module.exports;
+});

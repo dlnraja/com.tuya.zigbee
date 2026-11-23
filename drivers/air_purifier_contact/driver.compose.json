@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Air Purifier Contact",
+    "en": "Air purifier (contact)",
     "nl": "Air Purifier Contact",
-    "fr": "Air Purifier Contact",
+    "fr": "Purificateur d'air (contact)",
     "de": "Luftreiniger Kontakt"
   },
   "class": "sensor",
@@ -421,11 +421,13 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     }
   },
   "zigbee": {

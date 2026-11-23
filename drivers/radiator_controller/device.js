@@ -1,11 +1,13 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
 const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
 /**
- * Radiator Controller — P125: TuyaZigbeeDevice + safeSetTimeout + mainsPowered
+ * Radiator Controller - P125: TuyaZigbeeDevice + safeSetTimeout + mainsPowered
  */
 class RadiatorControllerDevice extends TuyaZigbeeDevice {
 
@@ -157,3 +159,5 @@ class RadiatorControllerDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = RadiatorControllerDevice;
+return module.exports;
+});

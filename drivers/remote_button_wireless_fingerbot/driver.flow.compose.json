@@ -36,7 +36,7 @@
       "id": "remote_button_wireless_fingerbot_button_wire_208e1",
       "title": {
         "en": "Physical ON",
-        "fr": "Physique ON",
+        "fr": "Allumé physiquement",
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       },
@@ -49,7 +49,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Physical ON",
-        "fr": "Physique ON",
+        "fr": "Allumé physiquement",
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       }
@@ -58,14 +58,14 @@
       "id": "remote_button_wireless_fingerbot_button_wire_5bcb0",
       "title": {
         "en": "Physical OFF",
-        "fr": "Physique OFF",
+        "fr": "Éteint physiquement",
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
       "args": [],
       "titleFormatted": {
         "en": "Physical OFF",
-        "fr": "Physique OFF",
+        "fr": "Éteint physiquement",
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       }
@@ -199,15 +199,15 @@
     {
       "id": "remote_button_wireless_fingerbot_button_wire_5042e",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
@@ -261,8 +261,8 @@
     {
       "id": "remote_button_wireless_fingerbot_measure_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (measurement)",
+        "fr": "Puissance changée (mesure)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },

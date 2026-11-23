@@ -206,11 +206,13 @@
       "min": 0,
       "max": 120,
       "step": 1,
-      "decimals": 0
+      "decimals": 0,
+      "units": "°C"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     }
   },
   "ui": {

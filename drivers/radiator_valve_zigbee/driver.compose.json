@@ -23,12 +23,14 @@
       "min": 5,
       "max": 35,
       "step": 0.5,
-      "decimals": 1
+      "decimals": 1,
+      "units": "°C"
     },
     "measure_temperature": {
       "decimals": 1,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "button.1": {
       "title": {
@@ -41,7 +43,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "zigbee": {

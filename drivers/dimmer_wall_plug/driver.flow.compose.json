@@ -35,8 +35,8 @@
     {
       "id": "dimmer_wall_plug_energy_monitor_measure_powe_3c902",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (measurement)",
+        "fr": "Puissance changée (mesure)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
@@ -60,8 +60,8 @@
     {
       "id": "dimmer_wall_plug_energy_monitor_measure_volt_65f8b",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée",
+        "en": "Voltage changed (measurement)",
+        "fr": "Tension changée (mesure)",
         "nl": "Spanning gewijzigd",
         "de": "Spannung geändert"
       },
@@ -85,8 +85,8 @@
     {
       "id": "dimmer_wall_plug_energy_monitor_measure_curr_31d28",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé",
+        "en": "Current changed (measurement)",
+        "fr": "Courant changé (mesure)",
         "nl": "Stroom gewijzigd",
         "de": "Strom geändert"
       },
@@ -135,15 +135,15 @@
     {
       "id": "dimmer_wall_plug_energy_monitor_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
@@ -187,8 +187,8 @@
     {
       "id": "dimmer_wall_plug_voltage_changed",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée",
+        "en": "Voltage changed (report)",
+        "fr": "Tension changée (rapport)",
         "nl": "Spanning gewijzigd",
         "de": "Spannung geändert"
       },
@@ -212,8 +212,8 @@
     {
       "id": "dimmer_wall_plug_current_changed",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé",
+        "en": "Current changed (report)",
+        "fr": "Courant changé (rapport)",
         "nl": "Stroom gewijzigd",
         "de": "Strom geändert"
       },

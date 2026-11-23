@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "Remote Control Dimmer (Lidl/Tuya)",
-    "fr": "Télécommande Variateur (Lidl/Tuya)",
+    "fr": "Télécommande Variateur",
     "nl": "Afstandsbediening Dimmer (Lidl/Tuya)",
     "de": "Fernbedienung Dimmer (Lidl/Tuya)"
   },
@@ -105,7 +105,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "settings": [

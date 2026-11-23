@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaDpProfileDevice = require('../../lib/devices/TuyaDpProfileDevice');
 const { sendEf00DpMaxFallback } = require('../../lib/zigbee/Ef00OnlyInterview');
@@ -61,7 +63,7 @@ class KeypadAlarmWke502zDevice extends TuyaDpProfileDevice {
   }
 
   _onKeypadSession(dp, raw) {
-    // WHY(P3067, Z2M daewoo.ts): DP25 is sent only at keypad start-up — the hub-mode flag (DP101) and the
+    // WHY(P3067, Z2M daewoo.ts): DP25 is sent only at keypad start-up - the hub-mode flag (DP101) and the
     // volatile options were reset by the power cycle, so send them again.
     if (dp === 25) {
       this._hubModeSent = false;
@@ -134,7 +136,7 @@ class KeypadAlarmWke502zDevice extends TuyaDpProfileDevice {
   }
 
   _ensureHubMode() {
-    // WHY(P3067, Z2M daewoo.ts): DP101 resets at every power cycle — send once per app session and after
+    // WHY(P3067, Z2M daewoo.ts): DP101 resets at every power cycle - send once per app session and after
     // each start-up report (DP25), not once forever.
     if (this._hubModeSent) { return; }
     this._hubModeSent = true;
@@ -145,3 +147,5 @@ class KeypadAlarmWke502zDevice extends TuyaDpProfileDevice {
 }
 
 module.exports = KeypadAlarmWke502zDevice;
+return module.exports;
+});

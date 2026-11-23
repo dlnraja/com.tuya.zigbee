@@ -184,6 +184,34 @@ function narrowBaselineCouples(baseline) {
   return out;
 }
 
+
+/** P3360: a graduated ex-hosted driver may keep its full manufacturer list in source
+ * (couple-removal guard / P3039d), but the payload must only advertise the free makers
+ * already listed in held-driver-folds.json. Otherwise P3206 would move Test-package
+ * couples off the published driver that shipped them (P3024b).
+ */
+function applyHostedPayloadMakerAllowlist(manifest, repoRoot, heldIds) {
+  const file = path.join(repoRoot, 'lib', 'drivers', 'held-driver-folds.json');
+  if (!fs.existsSync(file)) return 0;
+  let doc;
+  try { doc = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (_) { return 0; }
+  const folds = doc.folds || {};
+  let n = 0;
+  for (const d of manifest.drivers || []) {
+    if (!d || heldIds.has(d.id) || !d.zigbee) continue;
+    const f = folds[d.id];
+    if (!f || f.kind !== 'host' || !Array.isArray(f.manufacturerName) || !f.manufacturerName.length) continue;
+    const allow = new Set(f.manufacturerName.map(String));
+    const before = d.zigbee.manufacturerName || [];
+    const next = before.filter((m) => allow.has(String(m)));
+    if (next.length !== before.length) {
+      d.zigbee.manufacturerName = next;
+      n += 1;
+    }
+  }
+  return n;
+}
+
 /** Every exact couple of the baseline as [{mfr, pid, driverId}]. */
 function baselineCouples(baseline) {
   const out = [];
@@ -577,6 +605,10 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
   // P3085: held ids, explicit (opts.holdIds) or from config/publish-hold-drivers.json.
   let heldIds = opts.holdIds instanceof Set ? opts.holdIds : new Set(opts.holdIds || []);
   if (!opts.holdIds && baseline) heldIds = loadHoldIds(repoRoot);
+  const hostedAllowlisted = applyHostedPayloadMakerAllowlist(manifest, repoRoot, heldIds);
+  // P3360: released continuations are folded into their root only for compaction, then
+  // split back (P3229). Their sacred pins must not fail as "driver missing" during that window.
+  const pendingSplitIds = opts.pendingSplitIds instanceof Set ? opts.pendingSplitIds : new Set(opts.pendingSplitIds || []);
   const baselineResolved = baseline
     ? resolveBaselinePins(manifest, baseline, heldIds)
     : { pins: [], unresolved: [], moved: 0, total: 0 };
@@ -1038,7 +1070,16 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
 
   // Final exact-case sacred audit (pass1 sacredMissing can be stale after pass2)
   sacredMissing.length = 0;
-  for (const miss of assertSacredCouplesPresent(manifest, sacredAll)) {
+  // P3351: a pin on a HELD driver absent from this manifest (e.g. a held continuation that
+  // prepare-publish folded into its root, P3229) cannot ship by definition: defer it (logged)
+  // instead of failing prepare-publish with "driver missing in publish". Released or plain
+  // drivers are still audited strictly, except P3360: a released continuation that is only
+  // absent because of the temporary pre-compaction fold (pendingSplitIds) is deferred too;
+  // prepare-publish re-audits the pin after the split-back.
+  const presentIds = new Set((manifest.drivers || []).map((d) => d && d.id));
+  const sacredDeferred = sacredAll.filter((c) => !presentIds.has(c.driverId) && (heldIds.has(c.driverId) || pendingSplitIds.has(c.driverId)));
+  if (sacredDeferred.length) { logLines.push(`[compact-zigbee] P3351/P3360: ${sacredDeferred.length} sacred pin(s) on held or pending-split driver(s) deferred: ${sacredDeferred.slice(0, 5).map((c) => `${c.mfr}+${c.pid}@${c.driverId}`).join(', ')}`); }
+  for (const miss of assertSacredCouplesPresent(manifest, sacredAll.filter((c) => !sacredDeferred.includes(c)))) {
     sacredMissing.push(miss);
   }
   afterTotal = rawTotal();

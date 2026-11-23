@@ -54,7 +54,8 @@
         "da": "Batteri"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "energy": {

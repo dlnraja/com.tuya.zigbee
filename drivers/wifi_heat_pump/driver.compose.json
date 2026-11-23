@@ -2,7 +2,7 @@
   "id": "wifi_heat_pump",
   "name": {
     "en": "WiFi Heat Pump (Tuya Local)",
-    "fr": "Pompe à chaleur WiFi (Tuya Local)",
+    "fr": "Pompe à chaleur WiFi",
     "nl": "WiFi Warmtepomp (Tuya Lokaal)",
     "de": "WiFi Wärmepumpe (Tuya Lokal)"
   },
@@ -18,7 +18,8 @@
     "target_temperature": {
       "min": 5,
       "max": 45,
-      "step": 1
+      "step": 1,
+      "units": "°C"
     },
     "button.1": {
       "title": {
@@ -28,6 +29,9 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_temperature": {
+      "units": "°C"
     }
   },
   "pair": [
@@ -195,6 +199,49 @@
     {
       "$extends": [
         "localtuya_advanced"
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Packed setpoint (opt-in)",
+        "fr": "Consigne compacte (opt-in)",
+        "de": "Gepackter Sollwert (opt-in)",
+        "nl": "Verpakte instelwaarde (opt-in)"
+      },
+      "children": [
+        {
+          "id": "packed_setpoint_dp",
+          "type": "number",
+          "label": {
+            "en": "Packed setpoint DP",
+            "fr": "DP de consigne compacte",
+            "de": "Gepackter Sollwert-DP",
+            "nl": "DP van verpakte instelwaarde"
+          },
+          "hint": {
+            "en": "Tuya Local 154077: use 118 when the target lives inside a parameter-group block. 0 disables this."
+          },
+          "value": 0,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "id": "packed_setpoint_field",
+          "type": "number",
+          "label": {
+            "en": "Packed setpoint field",
+            "fr": "Champ de consigne compacte",
+            "de": "Gepacktes Sollwert-Feld",
+            "nl": "Veld van verpakte instelwaarde"
+          },
+          "hint": {
+            "en": "1-based field index in the packed int32 block. Use 5 for the heat-pump capture in 154077 #479. 0 disables this."
+          },
+          "value": 0,
+          "min": 0,
+          "max": 64
+        }
       ]
     }
   ],

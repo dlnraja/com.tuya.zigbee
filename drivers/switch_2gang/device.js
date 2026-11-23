@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
@@ -18,15 +20,15 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  *   - Energy metering via metering (0x0702)
  *   - Physical button detection: single / double/long / triple per gang
  *   - BSEED ZCL-only mode: _TZ3000_l9brjwau (Pieter_Pessers forum)
- *   v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter
+ *   v5.9.23: GROUP ISOLATION FIX - remove group memberships + broadcast filter
  *   v8.1.0: Fixed timer scheduling bugs in reporting retry logic
  * 
  */
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 2-gang
-// P139: _TZ3000_w5xztuy7 (Kanbros #2130) — TS0002 touch 2-gang; only EP1 worked
+// P139: _TZ3000_w5xztuy7 (Kanbros #2130) - TS0002 touch 2-gang; only EP1 worked
 // until forced into multi-endpoint ZCL onOff path (same family as other BSEED).
-// P141: TYZB01 TS0012 family (Oz/Lonsonho/Moes) — pure multi-EP OnOff (0/4/5/6),
+// P141: TYZB01 TS0012 family (Oz/Lonsonho/Moes) - pure multi-EP OnOff (0/4/5/6),
 // EndDevice even with neutral; no 0xEF00 / no electricalMeasurement (Z2M TS0012).
 const ZCL_ONLY_MANUFACTURERS_2G = [
   '_TZ3000_l9brjwau', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
@@ -55,7 +57,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
       if (!onOff) {
         throw new Error(`[BSEED-2G] EP${gang} onOff cluster missing`);
       }
-      // WHY(P2460 / GH#546): writeAttributes({onOff}) does NOT switch BSEED relays —
+      // WHY(P2460 / GH#546): writeAttributes({onOff}) does NOT switch BSEED relays -
       // Homey generic Zigbee works because it sends setOn/setOff commands.
       if (typeof this.markAppCommand === 'function') {
         this.markAppCommand(gang, value);
@@ -104,7 +106,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
 
   async onNodeInit({ zclNode }) {
     if (this.isZclOnlyDevice) {
-      this.log('[SWITCH-2G] ⚡ ZCL-ONLY MODE (BSEED)');
+      this.log('[SWITCH-2G] [PWR] ZCL-ONLY MODE (BSEED)');
       this.zclNode = zclNode;
       await this._initZclOnlyMode(zclNode);
       return;
@@ -113,7 +115,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
     // v5.5.43: Cleanup orphan capabilities
     await this._cleanupOrphanCapabilities();
 
-    // v5.13.1: CRITICAL FIX — Call super.onNodeInit() to register capability listeners
+    // v5.13.1: CRITICAL FIX - Call super.onNodeInit() to register capability listeners
     await super.onNodeInit({ zclNode });
 
     // v5.5.26: Setup power measurement for ZCL devices
@@ -141,7 +143,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
 
     for (const cap of currentCaps) {
       if (!validCaps.includes(cap)) {
-        this.log(`[SWITCH-2G] 🗑️ Removing orphan capability: ${cap}`);
+        this.log(`[SWITCH-2G] [DEL] Removing orphan capability: ${cap}`);
         await this.removeCapability(cap).catch(e => {
           this.log(`[SWITCH-2G] Failed to remove ${cap}: ${e.message}`);
         });
@@ -166,12 +168,12 @@ class Switch2GangDevice extends UnifiedSwitchBase {
       || endpoint.clusters['2820'];
 
     if (elecCluster) {
-      this.log('[SWITCH-2G] ✅ electricalMeasurement cluster found');
+      this.log('[SWITCH-2G] [OK] electricalMeasurement cluster found');
 
       if (typeof elecCluster.on === 'function') {
         elecCluster.on('attr.activePower', (value) => {
           const watts = smartParse(value, null, { capability: 'measure_power' });
-          this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
+          this.log(`[ZCL-DATA] switch.power raw=${value} -> ${watts}W`);
           if (this.hasCapability('measure_power')) {
             this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => {});
           }
@@ -179,7 +181,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
 
         elecCluster.on('attr.rmsVoltage', (value) => {
           const volts = smartParse(value, null, { capability: 'measure_voltage' });
-          this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
+          this.log(`[ZCL-DATA] switch.voltage raw=${value} -> ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
             this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => {});
           }
@@ -187,7 +189,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
 
         elecCluster.on('attr.rmsCurrent', (value) => {
           const amps = smartParse(value, null, { capability: 'measure_current' }) || 0;
-          this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
+          this.log(`[ZCL-DATA] switch.current raw=${value} -> ${amps}A`);
           if (this.hasCapability('measure_current')) {
             this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => {});
           }
@@ -205,12 +207,12 @@ class Switch2GangDevice extends UnifiedSwitchBase {
       || endpoint.clusters['1794'];
 
     if (meteringCluster) {
-      this.log('[SWITCH-2G] ✅ metering cluster found');
+      this.log('[SWITCH-2G] [OK] metering cluster found');
 
       if (typeof meteringCluster.on === 'function') {
         meteringCluster.on('attr.currentSummationDelivered', (value) => {
           const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
-          this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
+          this.log(`[ZCL-DATA] switch.energy raw=${value} -> ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
             this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => {});
           }
@@ -224,7 +226,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
 
   /**
    * v8.1.0: Configure electrical reporting with retry on Zigbee startup
-   * FIXED: timer scheduling — delay was being multiplied into the callback return value
+   * FIXED: timer scheduling - delay was being multiplied into the callback return value
    */
   async _configureElectricalReporting(retryCount = 0) {
     try {
@@ -254,11 +256,11 @@ class Switch2GangDevice extends UnifiedSwitchBase {
           minChange: 10
         }
       ]);
-      this.log('[SWITCH-2G] ✅ electricalMeasurement reporting configured');
+      this.log('[SWITCH-2G] [OK] electricalMeasurement reporting configured');
     } catch (e) {
       const msg = e?.message || String(e);
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
-        this.log(`[SWITCH-2G] ⏳ Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
+        this.log(`[SWITCH-2G] [WAIT] Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
         this._electricalReportingRetryTimer = this.homey.setTimeout(() => {
           if (this._destroyed) {return;}
           this._configureElectricalReporting(retryCount + 1).catch(() => {});
@@ -271,7 +273,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
 
   /**
    * v8.1.0: Configure metering reporting with retry on Zigbee startup
-   * FIXED: timer scheduling — delay was being multiplied into the callback return value
+   * FIXED: timer scheduling - delay was being multiplied into the callback return value
    */
   async _configureMeteringReporting(retryCount = 0) {
     try {
@@ -285,11 +287,11 @@ class Switch2GangDevice extends UnifiedSwitchBase {
           minChange: 1
         }
       ]);
-      this.log('[SWITCH-2G] ✅ metering reporting configured');
+      this.log('[SWITCH-2G] [OK] metering reporting configured');
     } catch (e) {
       const msg = e?.message || String(e);
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
-        this.log(`[SWITCH-2G] ⏳ Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
+        this.log(`[SWITCH-2G] [WAIT] Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
         this._meteringReportingRetryTimer = this.homey.setTimeout(() => {
           if (this._destroyed) {return;}
           this._configureMeteringReporting(retryCount + 1).catch(() => {});
@@ -349,8 +351,8 @@ class Switch2GangDevice extends UnifiedSwitchBase {
    * Enhanced with physical button flow triggers (packetninja technique)
    */
   async _initZclOnlyMode(zclNode) {
-    await this._migrateCapabilities().catch(e => this.log(`[BSEED-2G] ⚠️ Migrate: ${e.message}`));
-    // P141: TS001x / BSEED ZCL-only have no 0x0B04/0x0702 — strip phantom energy UI
+    await this._migrateCapabilities().catch(e => this.log(`[BSEED-2G] [WARN] Migrate: ${e.message}`));
+    // P141: TS001x / BSEED ZCL-only have no 0x0B04/0x0702 - strip phantom energy UI
     for (const phantom of ['measure_power', 'measure_voltage', 'measure_current', 'meter_power']) {
       if (this.hasCapability(phantom)) {
         await this.removeCapability(phantom).catch(e => this.log(`[BSEED-2G] strip ${phantom}: ${e.message}`));
@@ -367,7 +369,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
     this._zclNode = zclNode;
     this._isZclOnlyMode = true;
 
-    // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships per EP
+    // v5.9.23: GROUP ISOLATION - remove all Zigbee group memberships per EP
     await this._removeGroupMemberships(zclNode);
 
     this._lastCommandedGang = null;
@@ -414,7 +416,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
             this.safeSetCapabilityValue(capName, invertedValue).catch(() => {});
             const invertedCluster = getOnOffCluster(epNum);
             if (invertedCluster) {
-              // WHY(P2460): setOn/setOff — not writeAttributes — for BSEED relays
+              // WHY(P2460): setOn/setOff - not writeAttributes - for BSEED relays
               if (invertedValue && typeof invertedCluster.setOn === 'function') {
                 await invertedCluster.setOn().catch(() => {});
               } else if (!invertedValue && typeof invertedCluster.setOff === 'function') {
@@ -430,7 +432,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
               const card = this.homey.flow.getDeviceTriggerCard(flowId);
               if (card) {
                 await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-                this.log(`[BSEED-2G] ✅ Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+                this.log(`[BSEED-2G] [OK] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
               }
             } catch (e) { }
           }
@@ -440,7 +442,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
               const card = this.homey.flow.getDeviceTriggerCard(sceneId);
               if (card) {
                 await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-                this.log(`[BSEED-2G] ✅ Scene G${epNum} ${value ? 'on' : 'off'}`);
+                this.log(`[BSEED-2G] [OK] Scene G${epNum} ${value ? 'on' : 'off'}`);
               }
             } catch (e) { }
           }
@@ -449,7 +451,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
       this.log(`[BSEED-2G] EP${epNum} attr listener registered`);
     }
 
-    // v5.8.72: PacketNinja pattern — configure onOff reporting per endpoint
+    // v5.8.72: PacketNinja pattern - configure onOff reporting per endpoint
     for (const epNum of [1, 2]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.configureReporting === 'function') {
@@ -457,14 +459,14 @@ class Switch2GangDevice extends UnifiedSwitchBase {
           await onOff.configureReporting({
             onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
           });
-          this.log(`[BSEED-2G] ✅ EP${epNum} onOff reporting configured`);
+          this.log(`[BSEED-2G] [OK] EP${epNum} onOff reporting configured`);
         } catch (err) {
           this.log(`[BSEED-2G] EP${epNum} configureReporting failed: ${err.message}`);
         }
       }
     }
 
-    // v5.8.72: PacketNinja pattern — read initial onOff state per endpoint
+    // v5.8.72: PacketNinja pattern - read initial onOff state per endpoint
     for (const epNum of [1, 2]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.readAttributes === 'function') {
@@ -483,7 +485,7 @@ class Switch2GangDevice extends UnifiedSwitchBase {
     }
 
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-2G] ✅ BSEED ZCL-only mode ready (packetninja v990+v8.1.0)');
+    this.log('[SWITCH-2G] [OK] BSEED ZCL-only mode ready (packetninja v990+v8.1.0)');
   }
 
   /**
@@ -525,3 +527,5 @@ class Switch2GangDevice extends UnifiedSwitchBase {
 }
 
 module.exports = Switch2GangDevice;
+return module.exports;
+});

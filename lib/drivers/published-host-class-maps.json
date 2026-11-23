@@ -1,0 +1,139 @@
+{
+  "_why": "P3360 / P3085 leftover held drivers: their exact couples already shipped on a published host (see the last Test package). Map those couples on the host via onMapDeviceClass so paired devices keep the published driver id but get the held class and capabilities. Couples are not moved and the held id stays held.",
+  "maps": [
+    {
+      "held": "co_sensor_dcr_co",
+      "into": "smart_air_detection_box",
+      "manufacturerName": [
+        "_TZE200_7bztmfm1",
+        "_tze200_7bztmfm1",
+        "_TZE200_7BZTMFM1",
+        "_tze200_7BZTMFM1",
+        "_TZE204_7bztmfm1",
+        "_tze204_7bztmfm1",
+        "_TZE204_7BZTMFM1",
+        "_tze204_7BZTMFM1"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "class": "sensor",
+      "hostClass": "sensor",
+      "capabilities": [
+        "alarm_co",
+        "measure_co"
+      ],
+      "capabilitiesOptions": {}
+    },
+    {
+      "held": "co_sensor_dcr_co",
+      "into": "device_air_purifier_plug",
+      "manufacturerName": [
+        "_TZE200_7bztmfm1",
+        "_tze200_7bztmfm1",
+        "_TZE200_7BZTMFM1",
+        "_tze200_7BZTMFM1",
+        "_TZE204_7bztmfm1",
+        "_tze204_7bztmfm1",
+        "_TZE204_7BZTMFM1",
+        "_tze204_7BZTMFM1"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "class": "sensor",
+      "hostClass": "socket",
+      "capabilities": [
+        "alarm_co",
+        "measure_co"
+      ],
+      "capabilitiesOptions": {}
+    },
+    {
+      "held": "fan_light_tuya_5_levels",
+      "into": "humidifier",
+      "manufacturerName": [
+        "_TZE284_ikul00sx",
+        "_tze284_ikul00sx"
+      ],
+      "productId": [
+        "TS0601",
+        "TS0601_humid"
+      ],
+      "class": "fan",
+      "hostClass": "fan",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "onoff.light",
+        "dim.light"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "title": {
+            "en": "Fan speed",
+            "fr": "Vitesse ventilateur"
+          }
+        },
+        "onoff.light": {
+          "title": {
+            "en": "Light",
+            "fr": "Lumi\u00e8re"
+          }
+        },
+        "dim.light": {
+          "title": {
+            "en": "Light level",
+            "fr": "Luminosit\u00e9"
+          }
+        }
+      }
+    },
+    {
+      "held": "motion_sensor_excellux_zg104plv",
+      "into": "motion_sensor_switch",
+      "manufacturerName": [
+        "PIRIV01",
+        "piriv01"
+      ],
+      "productId": [
+        "Excellux"
+      ],
+      "class": "sensor",
+      "hostClass": "socket",
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "measure_luminance"
+      ],
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "units": "%"
+        }
+      }
+    },
+    {
+      "held": "vibration_sensor_excellux_zg103v",
+      "into": "motion_sensor_switch",
+      "manufacturerName": [
+        "VABRATE",
+        "vabrate",
+        "Vabrate"
+      ],
+      "productId": [
+        "Excellux"
+      ],
+      "class": "sensor",
+      "hostClass": "socket",
+      "capabilities": [
+        "alarm_vibration",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "measure_battery": {
+          "units": "%"
+        }
+      }
+    }
+  ]
+}

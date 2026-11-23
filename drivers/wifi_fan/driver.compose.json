@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Fan (Tuya Local)",
-    "fr": "Ventilateur WiFi (Tuya Local)",
+    "fr": "Ventilateur WiFi",
     "nl": "WiFi Ventilator (Tuya Lokaal)",
     "de": "WiFi Ventilator (Tuya Lokal)",
     "es": "Ventilador WiFi (Tuya Local)"
@@ -195,6 +195,59 @@
     {
       "$extends": [
         "localtuya_advanced"
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Fan quirks (opt-in)",
+        "fr": "Particularités du ventilateur (opt-in)",
+        "de": "Ventilator-Besonderheiten (opt-in)",
+        "nl": "Ventilatorafwijkingen (opt-in)"
+      },
+      "children": [
+        {
+          "id": "keep_light_off_when_fan_off",
+          "type": "checkbox",
+          "label": {
+            "en": "Keep the light off when the fan turns off",
+            "fr": "Éteindre la lumière à l'arrêt du ventilateur",
+            "de": "Licht aus lassen, wenn der Ventilator ausgeht",
+            "nl": "Licht uit laten als de ventilator uitgaat"
+          },
+          "hint": {
+            "en": "Mantra courtesy-light quirk (154077 #539-#540). Off by default."
+          },
+          "value": false
+        },
+        {
+          "id": "remember_direction_off",
+          "type": "checkbox",
+          "label": {
+            "en": "Remember direction while the fan is off",
+            "fr": "Mémoriser le sens à l'arrêt",
+            "de": "Drehrichtung merken, wenn der Ventilator aus ist",
+            "nl": "Draairichting onthouden als de ventilator uit is"
+          },
+          "hint": {
+            "en": "Send the remembered direction together with power on. Off by default."
+          },
+          "value": false
+        },
+        {
+          "id": "speed_as_text",
+          "type": "checkbox",
+          "label": {
+            "en": "Send speed as text",
+            "fr": "Envoyer la vitesse en texte",
+            "de": "Geschwindigkeit als Text senden",
+            "nl": "Snelheid als tekst versturen"
+          },
+          "hint": {
+            "en": "Some fans expect speed DP values as \"1\"-\"32\" strings. Off by default."
+          },
+          "value": false
+        }
       ]
     }
   ],

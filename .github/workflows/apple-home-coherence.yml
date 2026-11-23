@@ -1,0 +1,173 @@
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekday Apple Home / Insights coherence: add missing standard units, check official app.json
+#   and flow ids, no eager big JSON; commit [skip ci] only when tests pass, otherwise fail with a job summary
+#   and open no PR.
+# Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
+#   levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
+#   posting stays off or ledger-gated.
+# <<< about
+# >>> about (P3362) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# What it does: Weekday Apple Home / Insights coherence: add missing standard units, check official app.json and flow ids, no eager big JSON; commit [skip ci] only when tests pass, otherwise fail with a job summary and open no PR.
+# Ideas from (thank you): GitHub Actions docs, rhysd (actionlint), the Athom homey CLI docs for the validate levels.
+# Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public posting stays off or ledger-gated.
+# <<< about
+# Apple Home / Insights coherence (P3362)
+# Triggers: weekdays 11:00 UTC (~12:00 Europe/Paris in CET, 13:00 in CEST) + workflow_dispatch
+# Secrets: GITHUB_TOKEN only | Free, no AI, no paid services, opens no PR
+# Kill switch: vars.APPLE_HOME_COHERENCE_DISABLED == 'true' or config/ci/apple-home-coherence.json enabled=false
+# Dry run: inputs.dry_run or vars.APPLE_HOME_COHERENCE_DRY == 'true' (report only, no commit)
+# Each branch job checks out that branch, applies safe additive unit fixes, runs the
+# deterministic gates, and commits with [skip ci] only when tests pass.
+name: Apple Home coherence (P3362)
+
+on:
+  schedule:
+    - cron: '0 11 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: apply locally, report, do not commit or push'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apple-home-coherence-${{ github.workflow }}-${{ github.event.inputs.dry_run || 'schedule' }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+# P2542 forfait / local-first (auto-injected)
+env:
+  AI_PLAN_MODE: 'forfait'
+  AI_FORCE_LOCAL: 'true'
+  AI_ALLOW_REMOTE: 'false'
+  AI_ALLOW_PAID: 'false'
+  AI_ENSEMBLE: 'false'
+  FORUM_AUTO_POST: '0'
+  GITHUB_RESOLVER_COMMENT: '0'
+  SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+  AI_MAP_REDUCE: 'false'
+  AI_FULL_CONTEXT: 'false'
+  GMAIL_DIAG_AI_MAX: '0'
+  LOCAL_SMART_LEARN: 'true'
+  LOCAL_ENERGY_LEARN: 'true'
+
+jobs:
+  coherence:
+    if: ${{ vars.APPLE_HOME_COHERENCE_DISABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [master, stable-v5, bastien-home]
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ matrix.branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Kill switch (config)
+        id: gate
+        run: |
+          run=true
+          if [ -f config/ci/apple-home-coherence.json ]; then
+            enabled=$(node -e "const c=require('./config/ci/apple-home-coherence.json'); process.stdout.write(String(c.enabled!==false))")
+            if [ "$enabled" != "true" ]; then
+              echo "Kill switch: config/ci/apple-home-coherence.json enabled=false"
+              run=false
+            fi
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node 22
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
+        run: npm ci --ignore-scripts
+
+      - name: Apply safe additive unit fixes
+        if: steps.gate.outputs.run == 'true'
+        run: node scripts/ci/apple-home-coherence.cjs --apply
+
+      - name: Official app.json regen when compose changed
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          if git diff --quiet -- drivers .homeycompose app.json; then
+            echo "No compose/app.json changes"
+          else
+            if [ -f scripts/maintenance/regen-appjson-from-compose.cjs ]; then
+              node scripts/maintenance/regen-appjson-from-compose.cjs
+            fi
+            if [ -f scripts/maintenance/build-held-host-profiles.cjs ]; then
+              node scripts/maintenance/build-held-host-profiles.cjs
+            fi
+          fi
+
+      - name: Rule checks
+        if: steps.gate.outputs.run == 'true'
+        run: node scripts/ci/apple-home-coherence.cjs --check
+
+      - name: Targeted tests
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          node --test --test-timeout=180000 \
+            test/critical/p3362-standard-capability-units.test.js \
+            test/critical/p3354-capability-option-defaults.test.js \
+            test/critical/p3272-startup-json-provenance.test.js \
+            test/critical/p3361-ts0043-battery-history-units.test.js
+          if [ -f test/critical/p3079-compose-parity.test.js ]; then
+            npx mocha --timeout 180000 test/critical/p3079-compose-parity.test.js
+          fi
+          if [ -f test/critical/p2553-history-fleet-enable.test.js ]; then
+            npx mocha --timeout 60000 test/critical/p2553-history-fleet-enable.test.js test/critical/p2500-homey-capability-ux.test.js
+          fi
+
+      - name: Caps and commit
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY: ${{ (github.event_name == 'workflow_dispatch' && inputs.dry_run) || (github.event_name == 'schedule' && vars.APPLE_HOME_COHERENCE_DRY == 'true') }}
+        run: |
+          git add -A -- drivers app.json lib/utils/HomeyCapabilityUx.js lib/drivers/held-host-profiles.json \
+            config/architecture/standard-capability-units.json config/architecture/homekit-same-type-harmonize.json \
+            config/ci/apple-home-coherence.json config/ci/bastien-anon-learnings.json || true
+          # Only tracked coherence artefacts; never stage reports or secrets
+          mapfile -t changed < <(git diff --cached --name-only)
+          count=${#changed[@]}
+          echo "Staged files: $count"
+          printf '%s\n' "${changed[@]}" | head -50
+          echo "Changed files: $count" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$count" -eq 0 ]; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          max=$(node -e "const c=require('./config/ci/apple-home-coherence.json'); process.stdout.write(String((c.caps&&c.caps.maxFilesChanged)||400))")
+          if [ "$count" -gt "$max" ]; then
+            echo "::error::P3362 cap exceeded: $count files > $max. No commit, no PR."
+            echo "FAIL: file cap $count > $max" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          if [ "$DRY" = "true" ]; then
+            echo "Dry run: not committing $count files"
+            echo "Dry run, $count files would be committed" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bash scripts/ci/bot-commit-guard.sh
+          git commit -m "fix(P3362): Apple Home / Insights coherence auto-apply [skip ci]"
+          bash .github/scripts/git-push-retry.sh --branch "${{ matrix.branch }}"
+          echo "Committed and pushed to ${{ matrix.branch }}" >> "$GITHUB_STEP_SUMMARY"

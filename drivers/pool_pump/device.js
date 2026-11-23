@@ -1,3 +1,6 @@
+'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
@@ -17,7 +20,7 @@ class PoolPumpDevice extends UnifiedPlugBase {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
-      this.log('Pool Pump Controller ✅ v9.7.3 Ready');
+      this.log('Pool Pump Controller [OK] v9.7.3 Ready');
     }, 'onNodeInit');
   }
 
@@ -28,3 +31,5 @@ class PoolPumpDevice extends UnifiedPlugBase {
 }
 
 module.exports = PoolPumpDevice;
+return module.exports;
+});

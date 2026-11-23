@@ -1,10 +1,12 @@
-"use strict";
+'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require("../../lib/tuya/TuyaZigbeeDevice");
 const { Cluster, CLUSTER, ZCLDataTypes } = require("zigbee-clusters");
 
 /**
- * Tuya Dimmer Module TS110E — P125: TuyaZigbeeDevice (L14) + mainsPowered
+ * Tuya Dimmer Module TS110E - P125: TuyaZigbeeDevice (L14) + mainsPowered
  */
 
 class TuyaLevelControl extends Cluster {
@@ -100,3 +102,5 @@ class TuyaDimmerTS110E extends TuyaZigbeeDevice {
 }
 
 module.exports = TuyaDimmerTS110E;
+return module.exports;
+});

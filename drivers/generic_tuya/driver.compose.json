@@ -23,7 +23,8 @@
         "fr": "Température"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "title": {
@@ -31,7 +32,8 @@
         "fr": "Humidité"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "button.1": {
       "title": {
@@ -44,7 +46,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "energy": {

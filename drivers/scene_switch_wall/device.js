@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
@@ -14,9 +16,11 @@ class SceneSwitchWallDevice extends ButtonDevice {
     
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
     
-    this.log('[SCENE_SWITCH_WALL] 🔘 v10.0.0 initialized via ButtonDevice');
+    this.log('[SCENE_SWITCH_WALL] [BTN] v10.0.0 initialized via ButtonDevice');
   }
 
 }
 
 module.exports = SceneSwitchWallDevice;
+return module.exports;
+});

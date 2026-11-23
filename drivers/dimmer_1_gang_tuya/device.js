@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -54,7 +56,7 @@ class dimmer_1_gang_tuya extends TuyaSpecificClusterDevice {
         });
         this.hasListenersAttached = true;
       } else {
-        this.log('[DIMMER1] Tuya cluster missing after compensation — passive RX via DeviceIO');
+        this.log('[DIMMER1] Tuya cluster missing after compensation - passive RX via DeviceIO');
       }
     }
   }
@@ -80,7 +82,7 @@ class dimmer_1_gang_tuya extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('dim', async (value) => {
-      // WHY(P2360): MCU brightness 0–1000 clamp (Z2M #32305) — never raw *1000 overflow
+      // WHY(P2360): MCU brightness 0-1000 clamp (Z2M #32305) - never raw *1000 overflow
       const brightness = toTuyaBrightness(value);
       this.log('brightness:', brightness);
       
@@ -149,3 +151,5 @@ class dimmer_1_gang_tuya extends TuyaSpecificClusterDevice {
 }
 
 module.exports = dimmer_1_gang_tuya;
+return module.exports;
+});

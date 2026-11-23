@@ -1,0 +1,930 @@
+{
+ "_generated": "scripts/maintenance/build-held-host-profiles.cjs (do not edit)",
+ "profiles": {
+  "air_conditioner_aetz01": {
+   "into": "device_generic_tuya",
+   "class": "thermostat",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "hvac_system_mode",
+    "fan_mode",
+    "measure_power",
+    "meter_power"
+   ],
+   "capabilitiesOptions": {
+    "target_temperature": {
+     "min": 16,
+     "max": 30,
+     "step": 1,
+     "units": "°C"
+    },
+    "hvac_system_mode": {
+     "values": [
+      {
+       "id": "cool",
+       "title": {
+        "en": "Cool",
+        "fr": "Froid"
+       }
+      },
+      {
+       "id": "dry",
+       "title": {
+        "en": "Dry",
+        "fr": "Déshumidification"
+       }
+      },
+      {
+       "id": "fan_only",
+       "title": {
+        "en": "Fan only",
+        "fr": "Ventilation"
+       }
+      }
+     ]
+    },
+    "measure_temperature": {
+     "units": "°C"
+    },
+    "measure_power": {
+     "units": "W"
+    },
+    "meter_power": {
+     "units": "kWh"
+    }
+   }
+  },
+  "curtain_sonoff_mini_zbrbs": {
+   "into": "sensor_contact_presence",
+   "class": "windowcoverings",
+   "hostClass": "sensor",
+   "capabilities": [
+    "windowcoverings_set"
+   ],
+   "capabilitiesOptions": {}
+  },
+  "energy_meter_3ch_bidirectional": {
+   "into": "device_generic_tuya",
+   "class": "socket",
+   "hostClass": "other",
+   "capabilities": [
+    "meter_power",
+    "meter_power.produced",
+    "measure_power",
+    "onoff",
+    "measure_voltage",
+    "measure_current.a",
+    "measure_current.b",
+    "measure_current.c",
+    "measure_power.a",
+    "measure_power.b",
+    "measure_power.c",
+    "measure_power_factor.a",
+    "measure_power_factor.b",
+    "measure_power_factor.c",
+    "meter_power.a",
+    "meter_power.reverse_a",
+    "meter_power.b",
+    "meter_power.reverse_b",
+    "meter_power.c",
+    "meter_power.reverse_c",
+    "measure_temperature"
+   ],
+   "capabilitiesOptions": {
+    "meter_power.produced": {
+     "title": {
+      "en": "Energy produced",
+      "fr": "Énergie produite",
+      "nl": "Geproduceerde energie",
+      "de": "Erzeugte Energie"
+     },
+     "units": "kWh"
+    },
+    "measure_current.a": {
+     "title": {
+      "en": "Current A",
+      "fr": "Courant A",
+      "nl": "Stroom A",
+      "de": "Strom A"
+     },
+     "units": "A"
+    },
+    "measure_power.a": {
+     "title": {
+      "en": "Power A",
+      "fr": "Puissance A",
+      "nl": "Vermogen A",
+      "de": "Leistung A"
+     },
+     "units": "W"
+    },
+    "measure_power_factor.a": {
+     "title": {
+      "en": "Power factor A",
+      "fr": "Facteur de puissance A",
+      "nl": "Arbeidsfactor A",
+      "de": "Leistungsfaktor A"
+     }
+    },
+    "meter_power.a": {
+     "title": {
+      "en": "Energy A",
+      "fr": "Énergie A",
+      "nl": "Energie A",
+      "de": "Energie A"
+     },
+     "units": "kWh"
+    },
+    "meter_power.reverse_a": {
+     "title": {
+      "en": "Reverse energy A",
+      "fr": "Énergie inverse A",
+      "nl": "Teruggeleverde energie A",
+      "de": "Rückspeisung A"
+     },
+     "units": "kWh"
+    },
+    "measure_current.b": {
+     "title": {
+      "en": "Current B",
+      "fr": "Courant B",
+      "nl": "Stroom B",
+      "de": "Strom B"
+     },
+     "units": "A"
+    },
+    "measure_power.b": {
+     "title": {
+      "en": "Power B",
+      "fr": "Puissance B",
+      "nl": "Vermogen B",
+      "de": "Leistung B"
+     },
+     "units": "W"
+    },
+    "measure_power_factor.b": {
+     "title": {
+      "en": "Power factor B",
+      "fr": "Facteur de puissance B",
+      "nl": "Arbeidsfactor B",
+      "de": "Leistungsfaktor B"
+     }
+    },
+    "meter_power.b": {
+     "title": {
+      "en": "Energy B",
+      "fr": "Énergie B",
+      "nl": "Energie B",
+      "de": "Energie B"
+     },
+     "units": "kWh"
+    },
+    "meter_power.reverse_b": {
+     "title": {
+      "en": "Reverse energy B",
+      "fr": "Énergie inverse B",
+      "nl": "Teruggeleverde energie B",
+      "de": "Rückspeisung B"
+     },
+     "units": "kWh"
+    },
+    "measure_current.c": {
+     "title": {
+      "en": "Current C",
+      "fr": "Courant C",
+      "nl": "Stroom C",
+      "de": "Strom C"
+     },
+     "units": "A"
+    },
+    "measure_power.c": {
+     "title": {
+      "en": "Power C",
+      "fr": "Puissance C",
+      "nl": "Vermogen C",
+      "de": "Leistung C"
+     },
+     "units": "W"
+    },
+    "measure_power_factor.c": {
+     "title": {
+      "en": "Power factor C",
+      "fr": "Facteur de puissance C",
+      "nl": "Arbeidsfactor C",
+      "de": "Leistungsfaktor C"
+     }
+    },
+    "meter_power.c": {
+     "title": {
+      "en": "Energy C",
+      "fr": "Énergie C",
+      "nl": "Energie C",
+      "de": "Energie C"
+     },
+     "units": "kWh"
+    },
+    "meter_power.reverse_c": {
+     "title": {
+      "en": "Reverse energy C",
+      "fr": "Énergie inverse C",
+      "nl": "Teruggeleverde energie C",
+      "de": "Rückspeisung C"
+     },
+     "units": "kWh"
+    },
+    "meter_power": {
+     "units": "kWh"
+    },
+    "measure_power": {
+     "units": "W"
+    },
+    "measure_voltage": {
+     "units": "V"
+    },
+    "measure_temperature": {
+     "units": "°C"
+    }
+   }
+  },
+  "gpo_double_light_mg_au03": {
+   "into": "device_generic_tuya",
+   "class": "socket",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff.l1",
+    "onoff.l2",
+    "onoff.l3",
+    "meter_power",
+    "measure_current",
+    "measure_power",
+    "measure_voltage",
+    "child_lock",
+    "onoff"
+   ],
+   "capabilitiesOptions": {
+    "onoff": {
+     "title": {
+      "en": "All outlets",
+      "fr": "Toutes les sorties",
+      "nl": "Alle uitgangen",
+      "de": "Alle Ausgänge"
+     }
+    },
+    "onoff.l1": {
+     "title": {
+      "en": "Channel 1",
+      "fr": "Canal 1",
+      "nl": "Kanaal 1",
+      "de": "Kanal 1"
+     }
+    },
+    "onoff.l2": {
+     "title": {
+      "en": "Channel 2",
+      "fr": "Canal 2",
+      "nl": "Kanaal 2",
+      "de": "Kanal 2"
+     }
+    },
+    "onoff.l3": {
+     "title": {
+      "en": "Channel 3",
+      "fr": "Canal 3",
+      "nl": "Kanaal 3",
+      "de": "Kanal 3"
+     }
+    },
+    "meter_power": {
+     "units": "kWh"
+    },
+    "measure_current": {
+     "units": "A"
+    },
+    "measure_power": {
+     "units": "W"
+    },
+    "measure_voltage": {
+     "units": "V"
+    }
+   }
+  },
+  "gpo_double_mg_gpo02z": {
+   "into": "device_generic_tuya",
+   "class": "socket",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff.l1",
+    "onoff.l2",
+    "meter_power",
+    "measure_current",
+    "measure_power",
+    "measure_voltage",
+    "child_lock",
+    "onoff"
+   ],
+   "capabilitiesOptions": {
+    "onoff": {
+     "title": {
+      "en": "All outlets",
+      "fr": "Toutes les sorties",
+      "nl": "Alle uitgangen",
+      "de": "Alle Ausgänge"
+     }
+    },
+    "onoff.l1": {
+     "title": {
+      "en": "Channel 1",
+      "fr": "Canal 1",
+      "nl": "Kanaal 1",
+      "de": "Kanal 1"
+     }
+    },
+    "onoff.l2": {
+     "title": {
+      "en": "Channel 2",
+      "fr": "Canal 2",
+      "nl": "Kanaal 2",
+      "de": "Kanal 2"
+     }
+    },
+    "meter_power": {
+     "units": "kWh"
+    },
+    "measure_current": {
+     "units": "A"
+    },
+    "measure_power": {
+     "units": "W"
+    },
+    "measure_voltage": {
+     "units": "V"
+    }
+   }
+  },
+  "heiman_siren": {
+   "into": "smart_rcbo",
+   "class": "other",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff",
+    "measure_battery"
+   ],
+   "capabilitiesOptions": {
+    "measure_battery": {
+     "units": "%"
+    },
+    "onoff": {
+     "title": {
+      "en": "Siren",
+      "fr": "Sirène",
+      "nl": "Sirene",
+      "de": "Sirene"
+     }
+    }
+   }
+  },
+  "keypad_alarm_wke502z": {
+   "into": "device_generic_tuya",
+   "class": "homealarm",
+   "hostClass": "other",
+   "capabilities": [
+    "measure_battery",
+    "alarm_tamper",
+    "homealarm_state",
+    "alarm_generic"
+   ],
+   "capabilitiesOptions": {
+    "measure_battery": {
+     "units": "%"
+    },
+    "alarm_generic": {
+     "title": {
+      "en": "SOS",
+      "fr": "SOS",
+      "nl": "SOS",
+      "de": "SOS"
+     }
+    }
+   }
+  },
+  "presence_radar_aoyan_ay204t": {
+   "into": "sensor_contact_presence",
+   "class": "sensor",
+   "hostClass": "sensor",
+   "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "alarm_human",
+    "measure_luminance.distance"
+   ],
+   "capabilitiesOptions": {
+    "alarm_human": {
+     "title": {
+      "en": "Human presence",
+      "nl": "Menselijke aanwezigheid",
+      "fr": "Présence humaine",
+      "de": "Menschliche Anwesenheit",
+      "es": "Presencia humana"
+     },
+     "insightsTitleTrue": {
+      "en": "Presence detected",
+      "nl": "Aanwezigheid gedetecteerd",
+      "fr": "Présence détectée",
+      "de": "Anwesenheit erkannt",
+      "es": "Presencia detectada"
+     },
+     "insightsTitleFalse": {
+      "en": "No presence",
+      "nl": "Geen aanwezigheid",
+      "fr": "Aucune présence",
+      "de": "Keine Anwesenheit",
+      "es": "Sin presencia"
+     },
+     "getable": true,
+     "preventInsights": false
+    },
+    "alarm_motion": {
+     "title": {
+      "en": "Motion alarm",
+      "nl": "Bewegingsalarm",
+      "fr": "Alarme de mouvement",
+      "de": "Bewegungsalarm",
+      "es": "Alarma de movimiento"
+     },
+     "preventInsights": true,
+     "getable": true
+    },
+    "measure_luminance.distance": {
+     "title": {
+      "en": "Detection Distance",
+      "fr": "Distance de Détection",
+      "nl": "Detectieafstand",
+      "de": "Erkennungsdistanz"
+     },
+     "units": "m",
+     "getable": true,
+     "preventInsights": true
+    },
+    "measure_luminance": {
+     "getable": true,
+     "preventInsights": false,
+     "units": "lx"
+    }
+   }
+  },
+  "siren_moes_mg_bjq002": {
+   "into": "device_generic_tuya",
+   "class": "other",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff",
+    "volume_set",
+    "onoff.night_light"
+   ],
+   "capabilitiesOptions": {
+    "onoff.night_light": {
+     "title": {
+      "en": "Night light",
+      "fr": "Veilleuse",
+      "nl": "Nachtlampje",
+      "de": "Nachtlicht"
+     }
+    }
+   }
+  },
+  "smoke_sensor_ts0601_dp": {
+   "into": "device_generic_tuya",
+   "class": "sensor",
+   "hostClass": "other",
+   "capabilities": [
+    "alarm_smoke",
+    "alarm_tamper",
+    "measure_battery"
+   ],
+   "capabilitiesOptions": {
+    "measure_battery": {
+     "units": "%"
+    }
+   }
+  },
+  "switch_2gang_ts0002": {
+   "into": "switch_plug_1",
+   "class": "socket",
+   "hostClass": "socket",
+   "capabilities": [
+    "onoff",
+    "onoff.gang2"
+   ],
+   "capabilitiesOptions": {}
+  },
+  "switch_wall_6gang_metering": {
+   "into": "device_generic_tuya",
+   "class": "socket",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
+    "onoff.gang5",
+    "onoff.gang6",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power"
+   ],
+   "capabilitiesOptions": {
+    "onoff": {
+     "title": {
+      "en": "Gang 1",
+      "fr": "Gang 1"
+     }
+    },
+    "onoff.gang2": {
+     "title": {
+      "en": "Gang 2",
+      "fr": "Gang 2"
+     }
+    },
+    "onoff.gang3": {
+     "title": {
+      "en": "Gang 3",
+      "fr": "Gang 3"
+     }
+    },
+    "onoff.gang4": {
+     "title": {
+      "en": "Gang 4",
+      "fr": "Gang 4"
+     }
+    },
+    "onoff.gang5": {
+     "title": {
+      "en": "Gang 5",
+      "fr": "Gang 5"
+     }
+    },
+    "onoff.gang6": {
+     "title": {
+      "en": "Gang 6",
+      "fr": "Gang 6"
+     }
+    },
+    "measure_power": {
+     "units": "W"
+    },
+    "measure_voltage": {
+     "units": "V"
+    },
+    "measure_current": {
+     "units": "A"
+    },
+    "meter_power": {
+     "units": "kWh"
+    }
+   }
+  },
+  "thermostat_vrf_bvrf_l001": {
+   "into": "device_generic_tuya",
+   "class": "thermostat",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff",
+    "hvac_system_mode",
+    "target_temperature",
+    "measure_temperature",
+    "child_lock",
+    "fan_mode"
+   ],
+   "capabilitiesOptions": {
+    "target_temperature": {
+     "min": 16,
+     "max": 32,
+     "step": 1,
+     "units": "°C"
+    },
+    "measure_temperature": {
+     "units": "°C"
+    }
+   }
+  },
+  "ufh_controller_ch8z": {
+   "into": "device_generic_tuya",
+   "class": "heater",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff.l1",
+    "onoff.l2",
+    "onoff.l3",
+    "onoff.l4",
+    "onoff.l5",
+    "onoff.l6",
+    "onoff.l7",
+    "onoff.l8",
+    "child_lock"
+   ],
+   "capabilitiesOptions": {
+    "onoff.l1": {
+     "title": {
+      "en": "Zone 1",
+      "fr": "Zone 1",
+      "nl": "Zone 1",
+      "de": "Zone 1"
+     }
+    },
+    "onoff.l2": {
+     "title": {
+      "en": "Zone 2",
+      "fr": "Zone 2",
+      "nl": "Zone 2",
+      "de": "Zone 2"
+     }
+    },
+    "onoff.l3": {
+     "title": {
+      "en": "Zone 3",
+      "fr": "Zone 3",
+      "nl": "Zone 3",
+      "de": "Zone 3"
+     }
+    },
+    "onoff.l4": {
+     "title": {
+      "en": "Zone 4",
+      "fr": "Zone 4",
+      "nl": "Zone 4",
+      "de": "Zone 4"
+     }
+    },
+    "onoff.l5": {
+     "title": {
+      "en": "Zone 5",
+      "fr": "Zone 5",
+      "nl": "Zone 5",
+      "de": "Zone 5"
+     }
+    },
+    "onoff.l6": {
+     "title": {
+      "en": "Zone 6",
+      "fr": "Zone 6",
+      "nl": "Zone 6",
+      "de": "Zone 6"
+     }
+    },
+    "onoff.l7": {
+     "title": {
+      "en": "Zone 7",
+      "fr": "Zone 7",
+      "nl": "Zone 7",
+      "de": "Zone 7"
+     }
+    },
+    "onoff.l8": {
+     "title": {
+      "en": "Zone 8",
+      "fr": "Zone 8",
+      "nl": "Zone 8",
+      "de": "Zone 8"
+     }
+    }
+   }
+  },
+  "ufh_controller_pro_line_x10": {
+   "into": "device_generic_tuya",
+   "class": "heater",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff",
+    "onoff.z1",
+    "onoff.z2",
+    "onoff.z3",
+    "onoff.z4",
+    "onoff.z5",
+    "onoff.z6",
+    "onoff.z7",
+    "onoff.z8",
+    "alarm_generic.pump",
+    "alarm_generic.boiler",
+    "hvac_system_mode"
+   ],
+   "capabilitiesOptions": {
+    "onoff": {
+     "title": {
+      "en": "Main power",
+      "fr": "Alimentation principale",
+      "nl": "Hoofdschakelaar",
+      "de": "Hauptschalter"
+     }
+    },
+    "alarm_generic.pump": {
+     "title": {
+      "en": "Pump running",
+      "fr": "Pompe en marche",
+      "nl": "Pomp actief",
+      "de": "Pumpe läuft"
+     }
+    },
+    "alarm_generic.boiler": {
+     "title": {
+      "en": "Boiler contact on",
+      "fr": "Contact chaudière actif",
+      "nl": "Ketelcontact aan",
+      "de": "Kesselkontakt an"
+     }
+    },
+    "hvac_system_mode": {
+     "values": [
+      {
+       "id": "cool",
+       "title": {
+        "en": "Cool",
+        "fr": "Froid",
+        "nl": "Koelen",
+        "de": "Kühlen"
+       }
+      },
+      {
+       "id": "heat",
+       "title": {
+        "en": "Heat",
+        "fr": "Chaud",
+        "nl": "Verwarmen",
+        "de": "Heizen"
+       }
+      }
+     ]
+    },
+    "onoff.z1": {
+     "title": {
+      "en": "Zone 1",
+      "fr": "Zone 1",
+      "nl": "Zone 1",
+      "de": "Zone 1"
+     }
+    },
+    "onoff.z2": {
+     "title": {
+      "en": "Zone 2",
+      "fr": "Zone 2",
+      "nl": "Zone 2",
+      "de": "Zone 2"
+     }
+    },
+    "onoff.z3": {
+     "title": {
+      "en": "Zone 3",
+      "fr": "Zone 3",
+      "nl": "Zone 3",
+      "de": "Zone 3"
+     }
+    },
+    "onoff.z4": {
+     "title": {
+      "en": "Zone 4",
+      "fr": "Zone 4",
+      "nl": "Zone 4",
+      "de": "Zone 4"
+     }
+    },
+    "onoff.z5": {
+     "title": {
+      "en": "Zone 5",
+      "fr": "Zone 5",
+      "nl": "Zone 5",
+      "de": "Zone 5"
+     }
+    },
+    "onoff.z6": {
+     "title": {
+      "en": "Zone 6",
+      "fr": "Zone 6",
+      "nl": "Zone 6",
+      "de": "Zone 6"
+     }
+    },
+    "onoff.z7": {
+     "title": {
+      "en": "Zone 7",
+      "fr": "Zone 7",
+      "nl": "Zone 7",
+      "de": "Zone 7"
+     }
+    },
+    "onoff.z8": {
+     "title": {
+      "en": "Zone 8",
+      "fr": "Zone 8",
+      "nl": "Zone 8",
+      "de": "Zone 8"
+     }
+    }
+   }
+  },
+  "valve_novato_zpv01": {
+   "into": "device_generic_tuya",
+   "class": "other",
+   "hostClass": "other",
+   "capabilities": [
+    "onoff",
+    "measure_battery"
+   ],
+   "capabilitiesOptions": {
+    "onoff": {
+     "title": {
+      "en": "Valve",
+      "fr": "Vanne",
+      "nl": "Klep",
+      "de": "Ventil"
+     }
+    },
+    "measure_battery": {
+     "getable": true,
+     "preventInsights": false,
+     "units": "%"
+    }
+   }
+  },
+  "water_leak_aoyan_ay222z": {
+   "into": "sensor_contact_presence",
+   "class": "sensor",
+   "hostClass": "sensor",
+   "capabilities": [
+    "alarm_water",
+    "measure_battery",
+    "alarm_tamper",
+    "button.1"
+   ],
+   "capabilitiesOptions": {
+    "alarm_water": {
+     "title": {
+      "en": "Water Detected",
+      "fr": "Eau Détectée"
+     },
+     "getable": true,
+     "preventInsights": false
+    },
+    "button.1": {
+     "title": {
+      "en": "Button 1",
+      "fr": "Bouton 1"
+     },
+     "maintenanceAction": true,
+     "getable": false,
+     "setable": false
+    },
+    "measure_battery": {
+     "getable": true,
+     "preventInsights": false,
+     "units": "%"
+    },
+    "alarm_tamper": {
+     "getable": true,
+     "preventInsights": false
+    }
+   }
+  },
+  "water_leak_blitzwolf_bw_is9": {
+   "into": "switch_plug_1",
+   "class": "sensor",
+   "hostClass": "socket",
+   "capabilities": [
+    "alarm_water",
+    "measure_battery",
+    "alarm_tamper",
+    "button.1"
+   ],
+   "capabilitiesOptions": {
+    "alarm_water": {
+     "title": {
+      "en": "Water Detected",
+      "fr": "Eau Détectée"
+     },
+     "getable": true,
+     "preventInsights": false
+    },
+    "button.1": {
+     "title": {
+      "en": "Button 1",
+      "fr": "Bouton 1"
+     },
+     "maintenanceAction": true,
+     "getable": false,
+     "setable": false
+    },
+    "measure_battery": {
+     "getable": true,
+     "preventInsights": false,
+     "units": "%"
+    },
+    "alarm_tamper": {
+     "getable": true,
+     "preventInsights": false
+    }
+   }
+  }
+ }
+}

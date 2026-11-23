@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Sensor Contact Climate",
+    "en": "Contact and climate sensor",
     "nl": "Sensor Contact Climate",
-    "fr": "Sensor Contact Climate",
+    "fr": "Capteur de contact et climat",
     "de": "Kontakt- & Klimasensor"
   },
   "class": "sensor",
@@ -527,15 +527,18 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_contact": {
       "getable": true,
@@ -547,7 +550,8 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "alarm_water": {
       "getable": true,

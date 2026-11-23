@@ -106,7 +106,82 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.1621] - 2026-11-15
+## [9.0.1638] - 2026-11-23
+
+New: thermostats & climate sensors. Fixed: pairing and device recognition, lights and dimmers & Flow cards and device settings. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1637] - 2026-11-22
+
+New: Flow cards. Fixed: memory and timers, pairing and device recognition and buttons and remotes & climate sensors (ZG-204ZM). Plus 21 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1636] - 2026-11-22
+
+The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss.
+---
+
+ [9.0.1635] - 2026-11-21
+
+Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1634] - 2026-11-21
+
+Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).
+---
+
+ [9.0.1633] - 2026-11-17
+
+Changed: homeyignore CI screenshots so the gate stops blocking the version write-back; cap a publish chain at 3 uploads.
+---
+
+ [9.0.1631] - 2026-11-17
+
+Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).
+---
+
+ [9.0.1630] - 2026-11-17
+
+Changed: lossless upload-archive trim and a ratchet on archive size and file count; count the publish retry chain per error class.
+---
+
+ [9.0.1629] - 2026-11-17
+
+Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).
+---
+
+ [9.0.1628] - 2026-11-17
+
+Fixed: lights and dimmers. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1627] - 2026-11-17
+
+New: lights and dimmers and energy meters. Fixed: pairing and device recognition and safety sensors & climate sensors. Plus 8 other changes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1626] - 2026-11-17
+
+Fixed: pairing and device recognition, general reliability (TS0601) and device settings. Faster: lights and dimmers. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1624] - 2026-11-15
+
+Changed: keep the contract - a changed DP value still logs once more before the per-DP log throt....
+---
+
+ [9.0.1623] - 2026-11-15
+
+Reliability: 2 small fixes in the app core. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1622] - 2026-11-15
+
+Fixed: pairing and device recognition. Behind the scenes: tests and publishing checks.
+---
+
+ [9.0.1621] - 2026-11-15
 
 Fixed: safety sensors & memory and timers, wall switches & pairing and device recognition and device settings. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.
 ---

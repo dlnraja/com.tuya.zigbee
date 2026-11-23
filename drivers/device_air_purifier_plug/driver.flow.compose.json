@@ -35,8 +35,8 @@
     {
       "id": "device_air_purifier_plug_energy_monitor_meas_f4410",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report)",
+        "fr": "Puissance changée (rapport)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
@@ -60,8 +60,8 @@
     {
       "id": "device_air_purifier_plug_energy_monitor_meas_ad923",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée",
+        "en": "Voltage changed (report) (device air purifier plug)",
+        "fr": "Tension changée (rapport) (device purificateur d'air prise)",
         "nl": "Spanning gewijzigd",
         "de": "Spannung geändert"
       },
@@ -85,8 +85,8 @@
     {
       "id": "device_air_purifier_plug_energy_monitor_meas_450a0",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé",
+        "en": "Current changed (report) (device air purifier plug)",
+        "fr": "Courant changé (rapport) (device purificateur d'air prise)",
         "nl": "Stroom gewijzigd",
         "de": "Strom geändert"
       },
@@ -135,15 +135,15 @@
     {
       "id": "device_air_purifier_plug_energy_monitor_powe_0da55",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report) (purifier plug energy monitor)",
+        "fr": "Puissance changée (rapport) (purificateur prise energy monitor)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (report) (purifier plug energy monitor)",
+        "fr": "Puissance changée (rapport) (purificateur prise energy monitor)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
@@ -187,8 +187,8 @@
     {
       "id": "device_air_purifier_plug_measure_power_changed",
       "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
+        "en": "Power changed (measurement)",
+        "fr": "Puissance changée (mesure)",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
@@ -212,8 +212,8 @@
     {
       "id": "device_air_purifier_plug_voltage_changed",
       "title": {
-        "en": "Voltage changed",
-        "fr": "Tension changée",
+        "en": "Voltage changed (report)",
+        "fr": "Tension changée (rapport)",
         "nl": "Spanning gewijzigd",
         "de": "Spannung geändert"
       },
@@ -237,8 +237,8 @@
     {
       "id": "device_air_purifier_plug_current_changed",
       "title": {
-        "en": "Current changed",
-        "fr": "Courant changé",
+        "en": "Current changed (report)",
+        "fr": "Courant changé (rapport)",
         "nl": "Stroom gewijzigd",
         "de": "Strom geändert"
       },

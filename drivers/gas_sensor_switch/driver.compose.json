@@ -623,9 +623,9 @@
     }
   ],
   "name": {
-    "en": "Gas Sensor Switch",
+    "en": "Gas sensor switch",
     "nl": "Gas Sensor Switch",
-    "fr": "Gas Sensor Switch",
+    "fr": "Interrupteur de capteur de gaz",
     "de": "Gassensor-Schalter"
   },
   "platforms": [
@@ -711,7 +711,8 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "alarm_co": {
       "getable": true,

@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const ContactSourceLatch = require('../../lib/sensors/ContactSourceLatch');
@@ -19,7 +21,7 @@ class ZigBeeContactSensorDevice extends UnifiedSensorBase {
     if (capability === 'alarm_contact') {
       const finalValue = value;
       // WHY(P2763b): single source of truth DP1 > IAS (lib/sensors/ContactSourceLatch).
-      // latch is complementary — never block the contact path.
+      // latch is complementary - never block the contact path.
       const isIAS = this._iasOriginatedAlarm === true;
       this._iasOriginatedAlarm = false;
       if (!ContactSourceLatch.applyToDevice(this, isIAS, finalValue)) {return;}
@@ -54,3 +56,5 @@ class ZigBeeContactSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = ZigBeeContactSensorDevice;
+return module.exports;
+});

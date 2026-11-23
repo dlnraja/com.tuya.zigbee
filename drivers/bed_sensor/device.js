@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const {
@@ -68,9 +70,9 @@ class BedSensorDevice extends UnifiedSensorBase {
    */
   _handleBatteryDP(dp, value) {
     if (dp === 4) {
-      // Binary battery: 0=depleted, 1=OK — never invent fake % (P115/P120)
+      // Binary battery: 0=depleted, 1=OK - never invent fake % (P115/P120)
       if (value === 0) {
-        this.log('[BED] Battery DP4: depleted (0) → alarm only, no fake %');
+        this.log('[BED] Battery DP4: depleted (0) -> alarm only, no fake %');
         if (!this._destroyed && this.hasCapability('alarm_battery')) {
           this.safeSetCapabilityValue('alarm_battery', true).catch(() => {});
         }
@@ -78,7 +80,7 @@ class BedSensorDevice extends UnifiedSensorBase {
         return;
       }
       if (value === 1) {
-        this.log('[BED] Battery DP4: OK (1) → 100%');
+        this.log('[BED] Battery DP4: OK (1) -> 100%');
         if (!this._destroyed) {
           if (this.hasCapability('alarm_battery')) {
             this.safeSetCapabilityValue('alarm_battery', false).catch(() => {});
@@ -255,3 +257,5 @@ class BedSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = BedSensorDevice;
+return module.exports;
+});

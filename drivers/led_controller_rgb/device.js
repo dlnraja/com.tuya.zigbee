@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
@@ -11,7 +13,7 @@ class LEDControllerRGBDevice extends UnifiedLightBase {
   // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
-  // WHY P2272: Z2M#32594 bjoccxbi RGB+CCT — brightness MCU 0–1000 (not /10)
+  // WHY P2272: Z2M#32594 bjoccxbi RGB+CCT - brightness MCU 0-1000 (not /10)
   get dpMappings() {
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
@@ -55,3 +57,5 @@ class LEDControllerRGBDevice extends UnifiedLightBase {
 }
 
 module.exports = LEDControllerRGBDevice;
+return module.exports;
+});

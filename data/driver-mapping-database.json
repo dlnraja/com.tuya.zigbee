@@ -149,13 +149,13 @@
       "air_purifier"
     ],
     "_TZ3000_bjawzodf": [
-      "air_purifier"
+      "lcdtemphumidsensor"
     ],
     "_TZE200_bjawzodf": [
-      "air_purifier"
+      "climate_sensor"
     ],
     "_TZE200_zl1kmjqx": [
-      "air_purifier"
+      "lcdtemphumidsensor_3"
     ],
     "_TZE200_locansqn": [
       "air_purifier"
@@ -670,16 +670,13 @@
       "air_purifier_climate"
     ],
     "_tz3000_bjawzodf": [
-      "air_purifier",
-      "air_purifier_climate"
+      "lcdtemphumidsensor"
     ],
     "_tze200_bjawzodf": [
-      "air_purifier",
       "climate_sensor"
     ],
     "_tze200_zl1kmjqx": [
-      "air_purifier",
-      "climate_sensor"
+      "lcdtemphumidsensor_3"
     ],
     "_tze200_locansqn": [
       "air_purifier"
@@ -1222,7 +1219,7 @@
       "sensor_climate_temphumidsensor"
     ],
     "_TZ3000_BJAWZODF": [
-      "air_purifier_climate"
+      "lcdtemphumidsensor"
     ],
     "_TZ3000_DOWJ6GYI": [
       "air_purifier_climate"
@@ -6307,7 +6304,7 @@
       "climate_sensor"
     ],
     "_TZE200_ZL1KMJQX": [
-      "climate_sensor"
+      "lcdtemphumidsensor_3"
     ],
     "_TZE200_ZLWR0RAF": [
       "climate_sensor"

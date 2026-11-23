@@ -13,6 +13,8 @@ const TARGETS = {
   bastien: { workflow: 'bastien-publish.yml', ref: 'bastien-home' },
 };
 const MAX_MARKER_AGE_H = 48;
+// t1025u: Bastien may be re-dispatched at any hour. P3036 quotas/spacing/busy still apply
+// in the dispatched publish workflow itself.
 
 // artifacts: [{name, created_at, expired}], runs: [{created_at, status}] newest first for that workflow+branch.
 function deferredDecision({ key, artifacts, runs, now = Date.now() }) {

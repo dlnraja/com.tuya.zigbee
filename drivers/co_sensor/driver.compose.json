@@ -141,11 +141,15 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_tamper": {
       "getable": true,
       "preventInsights": false
+    },
+    "measure_co": {
+      "units": "ppm"
     }
   },
   "settings": [

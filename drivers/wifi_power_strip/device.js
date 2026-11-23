@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 const { handleDp17 } = require('../../lib/tuya-local/Dp17EnergyHandler');
 
@@ -42,7 +44,7 @@ class WiFiPowerStripDevice extends TuyaLocalDevice {
     await super.onDeleted();
   }
 
-  /** P2705: DP17 energy — per-device auto-detection, meter never drops */
+  /** P2705: DP17 energy - per-device auto-detection, meter never drops */
   async _processDPUpdate(dps) {
     await super._processDPUpdate(dps);
     try { await handleDp17(this, dps); } catch (e) { this.error('[DP17] energy handling failed:', e.message); }
@@ -50,3 +52,5 @@ class WiFiPowerStripDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiPowerStripDevice;
+return module.exports;
+});

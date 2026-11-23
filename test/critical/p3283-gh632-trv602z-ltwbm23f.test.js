@@ -139,4 +139,11 @@ console.log(JSON.stringify({
     const base = fs.readFileSync(path.join(ROOT, 'lib/devices/UnifiedThermostatBase.js'), 'utf8');
     assert.match(base, /dpProfile === 'trv602z'/);
   });
+
+  it('keeps the remaining zhc TRV602Z DPs as additive internal state (no new capability)', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'drivers/device_radiator_valve/device.js'), 'utf8');
+    for (const dp of [110, 111, 113, 114, 118, 119, 120, 121, 127]) {
+      assert.match(src, new RegExp(`\\n\\s+${dp}: \\{ internal: true`), `DP${dp}`);
+    }
+  });
 });

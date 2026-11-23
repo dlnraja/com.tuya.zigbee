@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -13,7 +15,7 @@ const { safeSetTimeout } = require('../../lib/utils/safe-timers');
  * WHY: Interview only advertises EP1 (lux + battery + 0xE002). Temp/humidity
  *      report on undeclared EP2 AFTER Tuya magic packet (Basic 0xFFFE).
  * HOW: Virtual EP2 listeners + magic on init/announce + delayed re-enchant.
- * Contre quoi: lux-only tiles; EP2 configureReporting/read → UNSUPPORTED (0x86).
+ * Contre quoi: lux-only tiles; EP2 configureReporting/read -> UNSUPPORTED (0x86).
  */
 class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
 
@@ -96,7 +98,7 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
   }
 
   _scheduleMagicRetries(zclNode) {
-    // Sleepy Neo may miss first handshake; Abysim: first report ~1–2 min after enchant
+    // Sleepy Neo may miss first handshake; Abysim: first report ~1-2 min after enchant
     for (const delayMs of [2500, 30000]) {
       safeSetTimeout(this, () => {
         this._sendQaaysMagicPacket(zclNode).catch(() => {});
@@ -112,7 +114,7 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
     const endpointOne = zclNode?.endpoints?.[1];
 
     if (!endpointOne) {
-      this.log('[QAAYS] Endpoint 1 unavailable — illuminance/battery bindings skipped');
+      this.log('[QAAYS] Endpoint 1 unavailable - illuminance/battery bindings skipped');
     }
 
     await this._sendQaaysMagicPacket(zclNode);
@@ -130,7 +132,7 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
         },
       ]).catch((err) => this.log('[QAAYS] Battery reporting configuration unavailable:', err.message));
 
-      // WHY: Abysim — EP2 direct read/configureReporting returns UNSUPPORTED_ATTRIBUTE (0x86).
+      // WHY: Abysim - EP2 direct read/configureReporting returns UNSUPPORTED_ATTRIBUTE (0x86).
       // Rely on unsolicited reports after magic packet (same as Z2M / custom ZHA quirk).
     }
 
@@ -197,7 +199,7 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
     const raw = Number(measuredValue);
     if (!Number.isFinite(raw)) { return; }
     const temperatureOffset = Number(this.getSetting('temperature_offset')) || 0;
-    // ZCL TemperatureMeasurement is always centi-degrees (/100) — Abysim: 2640 → 26.40°C
+    // ZCL TemperatureMeasurement is always centi-degrees (/100) - Abysim: 2640 -> 26.40°C
     const parsedValue = this.getSetting('temperature_decimals') === '2'
       ? Math.round((raw / 100) * 100) / 100
       : Math.round((raw / 100) * 10) / 10;
@@ -209,7 +211,7 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
     const raw = Number(measuredValue);
     if (!Number.isFinite(raw)) { return; }
     const humidityOffset = Number(this.getSetting('humidity_offset')) || 0;
-    // ZCL RelativeHumidity is always /100 — Abysim: 4100 → 41.00%
+    // ZCL RelativeHumidity is always /100 - Abysim: 4100 -> 41.00%
     const parsedValue = this.getSetting('humidity_decimals') === '2'
       ? Math.round((raw / 100) * 100) / 100
       : Math.round((raw / 100) * 10) / 10;
@@ -259,3 +261,5 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
 }
 
 module.exports = LcdTempHumidLuxSensor;
+return module.exports;
+});

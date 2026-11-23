@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
@@ -15,7 +17,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * 
  * ManufacturerName: _TZE204_nvxorhcj, etc.
  * ProductId: TS0601
- * WHY(P2395/B10): no Physical/Virtual double-wrap — already on TuyaZigbeeDevice.
+ * WHY(P2395/B10): no Physical/Virtual double-wrap - already on TuyaZigbeeDevice.
  */
 const ZCL_ONLY_MANUFACTURERS_8G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
@@ -199,3 +201,5 @@ class Switch8GangDevice extends UnifiedSwitchBase {
   }
 }
 module.exports = Switch8GangDevice;
+return module.exports;
+});

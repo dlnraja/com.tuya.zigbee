@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 class PowerMeterDevice extends UnifiedPlugBase {
@@ -37,7 +39,7 @@ class PowerMeterDevice extends UnifiedPlugBase {
     await this._safeInvoke(async () => { // v9.7.3: Unified initialization
       await super.onNodeInit({ zclNode  });
       if (this._isSpm01v25()) {this._startSpm01Poll();}
-      this.log('[POWER-METER] ✅ v9.7.3 Standardized initialization complete');
+      this.log('[POWER-METER] [OK] v9.7.3 Standardized initialization complete');
     }, 'onNodeInit');
   }
 
@@ -75,3 +77,5 @@ class PowerMeterDevice extends UnifiedPlugBase {
 }
 
 module.exports = PowerMeterDevice;
+return module.exports;
+});

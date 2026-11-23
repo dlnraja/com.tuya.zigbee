@@ -1,10 +1,12 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { installWallSceneRemoteHybrid } = require('../../lib/devices/WallSceneRemoteHybridInit');
 
 /**
- * WallRemote2GangDevice — 2-btn wall scene remote
+ * WallRemote2GangDevice - 2-btn wall scene remote
  * P2609: hybrid RX fleet
  */
 class WallRemote2GangDevice extends ButtonDevice {
@@ -37,3 +39,5 @@ class WallRemote2GangDevice extends ButtonDevice {
 }
 
 module.exports = WallRemote2GangDevice;
+return module.exports;
+});

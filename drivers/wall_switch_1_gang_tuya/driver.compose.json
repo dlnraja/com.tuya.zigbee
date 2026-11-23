@@ -1,7 +1,7 @@
 {
   "id": "wall_switch_1_gang_tuya",
   "name": {
-    "en": "1 Gang Wall Switch",
+    "en": "1 Gang Wall Switch (wall switch 1 gang tuya)",
     "fr": "Interrupteur mural 1 voie",
     "de": "Wandschalter 1-fach",
     "nl": "Wandschakelaar 1-voudig"
@@ -109,7 +109,8 @@
         "de": "Batterie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "ui": {

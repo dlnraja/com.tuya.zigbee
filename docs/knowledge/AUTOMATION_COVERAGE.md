@@ -30,6 +30,8 @@ never block a job.
 | Bases de connaissances (≈ 06:20) | existing `homey-knowledge-refresh.yml`, `kb-refresh.yml` | |
 | Gmail diags (≈ 12:00) | existing `fetch-diags.yml`, `gmail-diagnostics.yml` (CI secrets; AI providers optional) | |
 | Homey réponses (anti-flood) | `scripts/automation/reply-candidates.cjs` in `automation-loop.yml` → `data/progress/reply-candidates.json` | **candidates only, never posted by CI** |
+| Store text and changelogs (t996u / t998u) | `store-text-coherence.yml` (Tue 05:10 UTC + `workflow_dispatch`) | Kill switch `STORE_TEXT_COHERENCE_DISABLED=true`. `GITHUB_TOKEN` only. Safe auto-commit, `[skip ci]`, never removes ids. Leftovers are a report artifact (no new issue). |
+| Forum request digest (P3362) | `forum-poll.yml` step `request_digest` (`scripts/scanners/forum-request-digest.js`), cron of the existing poller | public Discourse JSON, GITHUB_TOKEN only, kill switch `FORUM_REQUEST_DIGEST_DISABLED`; writes `data/ssot/forum-request-digest.json`, `data/progress/candidate-tasks.json`, `data/progress/forum-reply-candidates.json`; **never posts, never opens PRs** |
 | Athom publish watch | `.github/scripts/athom-publish-policy.js` (P3036 + P3048) in every upload path | CI never triggers an upload |
 | Self-maintenance (t539u) | `automation-loop.yml` (self-maintain, watchdog), existing `storage-cleanup.yml` (caches / artifacts), Dependabot | see below |
 
@@ -120,3 +122,14 @@ every branch through the API. The port branches get the byte-identical `athom-pu
 `test/critical/p3036-athom-publish-policy.test.js`), the gate action, the scripts in `scripts/automation/`,
 `data/automation/failure-patterns.json`, the platform-budget report artifact, the journal `merge=union` rule and
 the `p3048-*` tests, so a manual `workflow_dispatch` on a branch uses the same code.
+
+## Intake triage and referentials (P3362)
+
+- `intake-triage.yml` (cron 45 2,8,14,20 UTC, plus issue/PR/discussion events): deterministic
+  protocol, consult referentials first, escalate malfunctions, optional safe add/move, write
+  back learnings. Kill switch `INTAKE_TRIAGE_DISABLED`. Never posts.
+- `referentials.yml` (cron 20 3,11,19 UTC): incremental enrich and regenerate of
+  `docs/ssot/referentials/`. Kill switch `REFERENTIALS_DISABLED`.
+- Writer workflows (forum-poll, fetch-diags, upstream-thread-miner, fleet-intelligent-enrich)
+  also call `build-referentials.js --enrich --from=...` and may commit the catalogue.
+- Forum request digest remains inside `forum-poll.yml` (no second poller).

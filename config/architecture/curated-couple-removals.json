@@ -1,5 +1,5 @@
 {
-  "_why": "Couples removed ON PURPOSE from a driver. Bots (auto-fix-all, master->stable/bastien sync, enrich/promote) must never add them back. Checked by tools/ci/automation-couple-guard.js (DENY_READDED). Case-insensitive. Add an entry whenever a human-reviewed fix removes a couple.",
+  "_why": "Couples removed ON PURPOSE from a driver. Bots (auto-fix-all, master->stable/bastien sync, enrich/promote) must never add them back. Checked by tools/ci/automation-couple-guard.js (DENY_READDED) at commit and enforced during enrichment by tools/ci/strip-curated-couple-removals.js (P3395, fleet-enrich phase + workflow step before the gates). Case-insensitive. Add an entry whenever a human-reviewed fix removes a couple.",
   "removals": [
     {
       "driver": "button_wireless_4",

@@ -1,0 +1,198 @@
+{
+ "v": 1,
+ "items": [
+  {
+   "symptom": "empty-capabilities",
+   "label": "tile or capability stays empty",
+   "causes": [
+    {
+     "id": "scale-mismatch",
+     "rank": 1,
+     "checks": [
+      "compare DP scale to Z2M/ZHA (div, mul, 0-1 vs 0-100)"
+     ],
+     "fixes": [
+      "scale to the official Homey capability range"
+     ],
+     "confidence": 0.85
+    },
+    {
+     "id": "dp-unmapped",
+     "rank": 2,
+     "checks": [
+      "upstream DP has no capability in device.js"
+     ],
+     "fixes": [
+      "map the exact DP to an official capability"
+     ],
+     "confidence": 0.75
+    },
+    {
+     "id": "reporting-config",
+     "rank": 3,
+     "checks": [
+      "bindings, attribute reporting, read-only refresh"
+     ],
+     "fixes": [
+      "request DPs read-only; fix reporting/bind"
+     ],
+     "confidence": 0.65
+    }
+   ]
+  },
+  {
+   "symptom": "works-badly",
+   "label": "user reports it works badly (presumed true)",
+   "causes": [
+    {
+     "id": "scale-mismatch",
+     "rank": 1,
+     "checks": [
+      "DP/cluster conversion vs upstream"
+     ],
+     "fixes": [
+      "fix scaling, divisor, enum or inversion"
+     ],
+     "confidence": 0.8
+    },
+    {
+     "id": "firmware-quirk",
+     "rank": 2,
+     "checks": [
+      "appVersion / firmware notes in the couple card"
+     ],
+     "fixes": [
+      "quirk path for that firmware"
+     ],
+     "confidence": 0.6
+    },
+    {
+     "id": "known-wrong-behavior",
+     "rank": 3,
+     "checks": [
+      "already-supported-but-behaves-wrong history"
+     ],
+     "fixes": [
+      "apply the recorded fix; do not close as already supported"
+     ],
+     "confidence": 0.9
+    }
+   ]
+  },
+  {
+   "symptom": "unexpected-property",
+   "label": "tuya.datapoint unexpected property",
+   "causes": [
+    {
+     "id": "datapoint-shape",
+     "rank": 1,
+     "checks": [
+      "sendStructuredDatapoint vs raw"
+     ],
+     "fixes": [
+      "accept the reported property shape"
+     ],
+     "confidence": 0.8
+    }
+   ]
+  },
+  {
+   "symptom": "no-status",
+   "label": "cannot read status without sending a command",
+   "causes": [
+    {
+     "id": "missing-readonly-refresh",
+     "rank": 1,
+     "checks": [
+      "requestAllDPs readOnly",
+      "DP for position vs set"
+     ],
+     "fixes": [
+      "status query that does not toggle the device"
+     ],
+     "confidence": 0.85
+    }
+   ]
+  },
+  {
+   "symptom": "crash",
+   "label": "crash or OOM",
+   "causes": [
+    {
+     "id": "driver-crash",
+     "rank": 1,
+     "checks": [
+      "diag/crash ledgers for the driver"
+     ],
+     "fixes": [
+      "fix the crashing path; keep the driver id"
+     ],
+     "confidence": 0.7
+    }
+   ]
+  },
+  {
+   "symptom": "wrong-class",
+   "label": "paired as the wrong class",
+   "causes": [
+    {
+     "id": "misplaced-couple",
+     "rank": 1,
+     "checks": [
+      "sources vs current owner",
+      "git history of the couple"
+     ],
+     "fixes": [
+      "move the exact couple with a migration path"
+     ],
+     "confidence": 0.8
+    },
+    {
+     "id": "parasite-combo",
+     "rank": 2,
+     "checks": [
+      "mfr x pid cross-product on the driver"
+     ],
+     "fixes": [
+      "exact-pair or continuation; do not add cartesian parasites"
+     ],
+     "confidence": 0.75
+    }
+   ]
+  },
+  {
+   "symptom": "invalid-flow-card",
+   "label": "invalid_flow_card_id or missing flow",
+   "causes": [
+    {
+     "id": "flow-card-id",
+     "rank": 1,
+     "checks": [
+      "app-level vs driver flow ids; never remove published ids"
+     ],
+     "fixes": [
+      "stop firing the missing card; add a legal card if needed"
+     ],
+     "confidence": 0.85
+    }
+   ]
+  },
+  {
+   "symptom": "sleepy-battery",
+   "label": "battery or sleepy device does not report",
+   "causes": [
+    {
+     "id": "sleepy-tx",
+     "rank": 1,
+     "checks": [
+      "IAS zone / poll / interview on wake"
+     ],
+     "fixes": [
+      "configure reporting for sleepy devices"
+     ],
+     "confidence": 0.7
+    }
+   ]
+  }
+ ]
+}

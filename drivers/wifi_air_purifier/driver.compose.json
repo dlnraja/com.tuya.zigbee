@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Air Purifier (Tuya Local)",
-    "fr": "Purificateur d'air WiFi (Tuya Local)",
+    "fr": "Purificateur d'air WiFi",
     "nl": "WiFi Luchtreiniger (Tuya Lokaal)",
     "de": "WiFi Luftreiniger (Tuya Lokal)",
     "es": "Purificador de aire WiFi (Tuya Local)"
@@ -232,15 +232,18 @@
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "ui": {

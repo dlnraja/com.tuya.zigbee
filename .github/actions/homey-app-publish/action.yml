@@ -77,6 +77,8 @@ runs:
           npm install --omit=dev --ignore-scripts --no-audit --no-fund
         fi
         node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR"
+        # P3356: ratchet on the exact tar the CLI uploads (file count + tar bytes); blocks growth past config/upload-archive-ceiling.json.
+        node "$GITHUB_WORKSPACE/scripts/ci/upload-archive-ceiling.cjs" "$PUBLISH_DIR" || { echo "::error::P3356 upload archive ceiling exceeded, not uploading (see lines above)"; exit 1; }
         # v9.0.287 (P74): Bumped limits to 50/50 MB. With .homeyignore pruning
         # (mfs_db.json, dev artifacts, branding assets) the source directory
         # is ~40 MB. The gzipped tarball is ~18 MB (well under Homey's tar limit).
@@ -114,6 +116,8 @@ runs:
           node "$GITHUB_WORKSPACE/scripts/ci/publish-payload-identity.cjs" verify "$PUBLISH_DIR" "$IDENTITY_SNAP" --phase "$1"
         }
 
+        # P3310: block an empty, truncated or wrong package (exact upload dir; manifest saved as artifact).
+        HOMEY_EXPECTED_VERSION="${HOMEY_EXPECTED_VERSION:-$(node -p "require('$GITHUB_WORKSPACE/app.json').version")}" node "$GITHUB_WORKSPACE/.github/scripts/pre-upload-completeness-guard.js" "$PUBLISH_DIR" || { echo "::error::P3310 pre-upload completeness guard blocked the upload (wrong, empty or incomplete package; see lines above)"; exit 1; }
         run_homey_cli_publish() {
           if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
             HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"

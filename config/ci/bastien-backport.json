@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "id": "P3388-bastien-backport",
+    "updated": "2026-11-22",
+    "why": "Owner rule t1022u: every master fix must reach the Bastien house app regularly, from a free GitHub Actions workflow, pushed only 23:00-06:00 Paris. Selection is deterministic (no AI). Alt-control (P3380-P3383) is not for Bastien.",
+    "workflow": ".github/workflows/bastien-backport-nightly.yml",
+    "script": "tools/ci/bastien-backport.js",
+    "excludeIdsWhy": {
+      "P3331": "master held-driver hosting (driver ceiling infra, master only)",
+      "P3360": "Live promotion is master/stable only, never Bastien",
+      "P3380-P3383": "alt-control paths, not for Bastien"
+    }
+  },
+  "includeTypes": [
+    "fix",
+    "feat",
+    "perf"
+  ],
+  "excludeIds": [
+    "P3331",
+    "P3360",
+    "P3380",
+    "P3381",
+    "P3382",
+    "P3383"
+  ],
+  "excludeSubjectPatterns": [
+    "\\[auto:",
+    "alt[- ]?control",
+    "^chore\\(version\\)",
+    "^Merge "
+  ],
+  "excludeBodyPatterns": [
+    "\\[no-bastien\\]",
+    "[Mm]aster only",
+    "never Bastien",
+    "not for Bastien",
+    "Bastien-excluded"
+  ],
+  "requireAnyPathPrefix": [
+    "lib/",
+    "drivers/",
+    "app.js"
+  ],
+  "dropPathPrefixes": [
+    ".github/",
+    "app.json",
+    ".homeycompose/app.json",
+    "package.json",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    ".homeychangelog.json",
+    "README",
+    "data/status/",
+    "docs/ssot/referentials/"
+  ],
+  "manualPathPatterns": [
+    "driver\\.compose\\.json$",
+    "driver\\.flow\\.compose\\.json$",
+    "driver\\.settings\\.compose\\.json$",
+    "^\\.homeycompose/"
+  ],
+  "lookbackDays": 21,
+  "maxPicksPerRun": 12,
+  "maxConflictAttempts": 3,
+  "maxRedAttempts": 2,
+  "sinceDate": "2026-11-15",
+  "maxAttemptsPerRun": 40
+}

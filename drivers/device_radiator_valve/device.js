@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const ThermostatMeteringDps = require('../../lib/tuya/ThermostatMeteringDps');
 
@@ -22,7 +24,7 @@ const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
  * 
  */
 // WHY(P3067 family 5): ME168 differs from ME167 only above DP7 (Z2M avatto.ts ME168_AVATTO):
-// DP14 window detection switch, DP15 window state (0 = open, trueFalseEnum0) — not a battery %,
+// DP14 window detection switch, DP15 window state (0 = open, trueFalseEnum0) - not a battery %,
 // DP101 comfort temp /10, DP103 boost time min, DP104 boost countdown, DP105 eco temp /10.
 const ME168_RE = /_tze200_(cxakecfo|ybsqljjg|4aijvczq|r5ksy7qo)$/i;
 const ME168_DPS = {
@@ -42,11 +44,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   /**
    * Detect DP profile based on manufacturerName
    * Profile B (ME167 / TS0601_thermostat_3): AVATTO ME167 + EARU + ogx8u5z6 family
-   * WHY P2278: _TZE204_ogx8u5z6 uses DP4/5 /10 + DP47 cal (Z2M#25199 / ZHA#4124) — not Profile A
+   * WHY P2278: _TZE204_ogx8u5z6 uses DP4/5 /10 + DP47 cal (Z2M#25199 / ZHA#4124) - not Profile A
    */
   /**
    * WHY(P2822 / GH#560): zb_manufacturer_name can be empty early in boot / after
-   * Repair — fall back to store + zclNode so ME167 tails still win over Profile A.
+   * Repair - fall back to store + zclNode so ME167 tails still win over Profile A.
    */
   _resolveMfr() {
     try {
@@ -81,11 +83,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       // WHY(#560 TRV06 _TZE200_rxq4iti9): Z2M tuya.ts lists these in the same ME167/TRV06 definition (DP4 setpoint, DP5 temp)
       'rxq4iti9', 'yqgbrdyo', '6rdj8dzm', 'jkfbph7l', 'rxntag7i', '4utwozi2',
       'rv6iuyxb', 'c6wv4xyo', 'hvaxb2tc', 'ogx8u5z6',
-      // WHY(P2818/#2261): ANTIK ATK-TRV02 `_TZE200_fl8cuafl` — retail TV02-class (manual InS/AdA);
+      // WHY(P2818/#2261): ANTIK ATK-TRV02 `_TZE200_fl8cuafl` - retail TV02-class (manual InS/AdA);
       // not yet in Z2M herdsman; soft ME167 map (DP4/5 ÷10) until user DP sniff proves otherwise.
       'fl8cuafl',
       // WHY(P3067 family 5): AVATTO / Girier ME168 (Z2M avatto.ts ME168_AVATTO, Domoticz z4d TS0601-ME168):
-      // DP2 mode, DP3 work state, DP4 setpoint /10, DP5 temperature /10, DP6 battery, DP7 lock, DP35 fault —
+      // DP2 mode, DP3 work state, DP4 setpoint /10, DP5 temperature /10, DP6 battery, DP7 lock, DP35 fault -
       // the ME167 core. Profile A read DP3 as setpoint and DP4 as temperature.
       'cxakecfo', 'ybsqljjg', '4aijvczq', 'r5ksy7qo',
     ];
@@ -120,22 +122,33 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         15: { internal: true, type: 'window_open', transform: (v) => Number(v) === 1 },
         47: { internal: true, type: 'temp_calibration', writable: true, divisor: 10, setting: 'temperature_calibration' },
         122: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
+        // WHY(GH#632 / zhc TRV602Z, additive + non-blocking): remaining Z2M DPs are kept as internal
+        // state (no new capability, no app.json growth); schedules 102-108 stay raw/unparsed.
+        110: { internal: true, type: 'motor_thrust', transform: (v) => ['strong', 'middle', 'weak'][Number(v)] ?? null },
+        111: { internal: true, type: 'display_brightness', transform: (v) => ['high', 'medium', 'low'][Number(v)] ?? null },
+        113: { internal: true, type: 'screen_orientation', transform: (v) => ['up', 'down'][Number(v)] ?? null },
+        114: { internal: true, type: 'valve_position', divisor: 10 },
+        118: { internal: true, type: 'boost_countdown' },
+        119: { internal: true, type: 'comfort_temp', divisor: 10 },
+        120: { internal: true, type: 'eco_temp', divisor: 10 },
+        121: { internal: true, type: 'holiday_temp', divisor: 10 },
+        127: { internal: true, type: 'hysteresis', transform: (v) => ['comfort', 'eco'][Number(v)] ?? null },
       };
     }
 
     if (this.dpProfile === 'me167') {
       // Profile B: AVATTO ME167/TRV06 / thermostat_3 DP mapping
-      // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 are always ÷10 — never smartDivisor
-      // (auto-detect can leave raw tenths as °C → looks empty/wrong after pair).
+      // WHY(P2598 / Z2M#25199 / Michaelp #2253): DP4/5 are always ÷10 - never smartDivisor
+      // (auto-detect can leave raw tenths as °C -> looks empty/wrong after pair).
       const me167 = {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', divisor: 10 },
         5: { capability: 'measure_temperature', divisor: 10 },
-        // WHY(#560 / Z2M TRV06): DP6 = battery % — never treat DP4 as battery (Profile A bug / tip-lag)
+        // WHY(#560 / Z2M TRV06): DP6 = battery % - never treat DP4 as battery (Profile A bug / tip-lag)
         6: { capability: 'measure_battery', divisor: 1 },
         7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
-        // Complementary battery DPs (Z2M thermostat_3 variants) — keep alarm on 35
+        // Complementary battery DPs (Z2M thermostat_3 variants) - keep alarm on 35
         13: { capability: 'measure_battery', divisor: 1 },
         15: { capability: 'measure_battery', divisor: 1 },
         // WHY(#560 / Z2M TS0601_thermostat_3 `errorOrBatteryLow`): DP35 is a fault bitmap, bit 0 = battery low.
@@ -145,7 +158,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         39: { internal: true, type: 'anti_scaling', writable: true },
         // WHY P2278: ogx8u5z6 stores tenths (ZHA#4124); other ME167 = whole °C (Z2M raw)
         47: { internal: true, type: 'temp_calibration', writable: true, divisor: calDivisor, setting: 'temperature_calibration' },
-        // WHY(P2598 / Z2M#25199 IoT): eco complementary — do not wipe existing maps
+        // WHY(P2598 / Z2M#25199 IoT): eco complementary - do not wipe existing maps
         101: { internal: true, type: 'eco_mode', writable: true },
         102: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
       };
@@ -203,7 +216,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   async _stripPhantomHumidity() {
     if (!this._isNoHumidityTrv()) {return;}
-    // WHY(P3045 / #560): proven phantom, not a guess — the Z2M TS0601_thermostat_3 definition (EARU TRV06,
+    // WHY(P3045 / #560): proven phantom, not a guess - the Z2M TS0601_thermostat_3 definition (EARU TRV06,
     // this exact couple) has no humidity DP and exposes no humidity, and Z2M disc. #24659 lists none either.
     // Any value on measure_humidity can only come from a misrouted DP, so it is removed even when non-null,
     // and the capability is forbidden so hot-swap / dynamic managers never re-add it.
@@ -224,7 +237,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    */
   /**
    * WHY(#560 artisare 19/10, TRV06 _TZE200_rxq4iti9): "battery shows no value". Z2M TS0601_thermostat_3
-   * (EARU/AVATTO TRV06 whitelabel) has NO battery percentage DP — only battery_low inside the DP35 fault
+   * (EARU/AVATTO TRV06 whitelabel) has NO battery percentage DP - only battery_low inside the DP35 fault
    * bitmap, and DP35 is rarely sent. So for this exact couple: show alarm_battery from pairing (false until
    * DP35 bit0 says otherwise) and drop an empty measure_battery. If a battery % DP (6/13/15) ever arrives,
    * measure_battery is re-added lazily in _handleDP, so nothing real is lost.
@@ -241,7 +254,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    * Z2M TS0601_thermostat_3 (EARU TRV06 whitelabel, this exact couple) declares the setpoint with a
    * 0.5 °C step and DP4/DP5 divideBy10; ZHA tuya_trv.py uses x*10 / x//10 (tenths). So the default is
    * now 0.5 °C / 1 decimal, and the device teaches us: if it echoes a half-degree request back rounded
-   * to a whole degree (DP4), the 1 °C step is learned per device (store) — no re-pair, no user answer.
+   * to a whole degree (DP4), the 1 °C step is learned per device (store) - no re-pair, no user answer.
    */
   async _alignTrv06WholeDegree() {
     if (!this._isNoHumidityTrv() || !this.hasCapability('target_temperature')) { return; }
@@ -258,7 +271,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     }
   }
 
-  /** P3244: TX value for DP4 — tenths, half-degree snap; whole degree only once learned from the device. */
+  /** P3244: TX value for DP4 - tenths, half-degree snap; whole degree only once learned from the device. */
   _trv06SetpointTx(v) {
     const n = Number(v);
     if (!this._isNoHumidityTrv()) { return n; }
@@ -326,7 +339,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _handleDP(dpId, raw) {
-    // P3101 (t656u): firmware-limit compensation — real battery DP disables the estimate; DP35 bit0 -> flagged store estimate
+    // P3101 (t656u): firmware-limit compensation - real battery DP disables the estimate; DP35 bit0 -> flagged store estimate
     try {
       if (this.__fwLimit) {
         this.__fwLimit.handleDp(dpId);
@@ -353,7 +366,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   async onNodeInit({ zclNode }) {
     // WHY(P2569/P2573 / Michaelp #2244): ogx8u5z6 interview is EF00-only
-    // ([0,4,5,61184] ± 0xED00) — force pure Tuya DP BEFORE Hybrid base init.
+    // ([0,4,5,61184] ± 0xED00) - force pure Tuya DP BEFORE Hybrid base init.
     try {
       const { forcePureTuyaDp } = require('../../lib/zigbee/Ef00OnlyInterview');
       forcePureTuyaDp(this);
@@ -458,17 +471,17 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         const c = lookup(mfr, pid);
         this.error(
           `[MISROUTE-P2326] ${mfr}+${pid} is locked to ${c?.canonicalDriver || 'curtain_motor'} `
-          + '— remove this device and re-pair under Curtain / Window Coverings (not Radiator Valve).',
+          + '- remove this device and re-pair under Curtain / Window Coverings (not Radiator Valve).',
         );
       } else if (!mfr) {
-        this.log('[TRV-P2326] manufacturerName still empty after ensure — pair identity incomplete');
+        this.log('[TRV-P2326] manufacturerName still empty after ensure - pair identity incomplete');
       }
     } catch (e) {
       this.log('[TRV-P2326] misroute check skipped:', e?.message || e);
     }
 
     // WHY(P2594): after mfr settings filled, lock me167 maps + re-arm EF00 RX
-    // (super thermostat init may have run with empty mfr → wrong/empty dynamic maps)
+    // (super thermostat init may have run with empty mfr -> wrong/empty dynamic maps)
     try {
       if (this.dpProfile === 'me167' || this.dpProfile === 'trv602z') {
         this._dynamicDpMappings = { ...this._dynamicDpMappings || {}, ...this.dpMappings };
@@ -497,7 +510,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Register onoff/mode listeners AFTER identity (me167 needs DP4 not DP3)
     this._setupTRVListeners();
 
-    // WHY(P2593 / Michaelp #2253): caps stay null until first EF00 report — nudge query
+    // WHY(P2593 / Michaelp #2253): caps stay null until first EF00 report - nudge query
     this._scheduleTrvDpRefresh();
 
     // v5.11.105: SONOFF TRVZB ZCL features (child_lock, open_window, frost_protection, valve)
@@ -574,7 +587,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   /**
-   * WHY(P2598 / Michaelp #2253): sleepy me167 wakes briefly — re-query sacred DPs on announce.
+   * WHY(P2598 / Michaelp #2253): sleepy me167 wakes briefly - re-query sacred DPs on announce.
    */
   async onEndDeviceAnnounce() {
     try {
@@ -590,7 +603,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       if (this._dataRecoveryManager) { this._dataRecoveryManager.forceRecovery?.(); }
     } catch (_e3) { /* soft */ }
     try {
-      this.log('[TRV] P2598 endDeviceAnnounce → DP refresh');
+      this.log('[TRV] P2598 endDeviceAnnounce -> DP refresh');
       this._scheduleTrvDpRefresh();
     } catch (_e2) { /* soft */ }
   }
@@ -612,7 +625,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   _setupTRVListeners() {
-    // WHY(P2598 / Michaelp #2253): never close over a stale profile — read live dpProfile
+    // WHY(P2598 / Michaelp #2253): never close over a stale profile - read live dpProfile
     // each TX so late identity (empty mfr at first tick) cannot lock standard DP3 forever.
 
     // On/Off - NOT handled by parent (standard profile only)
@@ -653,7 +666,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   /**
    * WHY(P2593 / Michaelp #2253): Homey zigbee-clusters rejects legacy
-   * args with value/type keys → "unexpected property".
+   * args with value/type keys -> "unexpected property".
    * Prefer TuyaEF00Manager / UniversalDriverInit (datatype + Buffer data).
    */
   async _sendTuyaDP(dp, value, type = 'value') {
@@ -746,7 +759,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         now.getDay() === 0 ? 7 : now.getDay() // Sunday=7 in Tuya format
       ]);
 
-      // WHY(P2823b): full EF00 args — bare {dp,datatype,data} trips zigbee-clusters
+      // WHY(P2823b): full EF00 args - bare {dp,datatype,data} trips zigbee-clusters
       // ("unexpected property") on some tips; structured path matches P2711/P2593.
       const { sendStructuredDatapoint } = require('../../lib/helpers/UniversalDriverInit');
       await sendStructuredDatapoint(tuyaCluster, 36, payload, 'raw');
@@ -760,6 +773,5 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 }
 
 module.exports = RadiatorValveDevice;
-
-
-
+return module.exports;
+});

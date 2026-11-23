@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { ciGet: _ciGet } = require('../../lib/utils/TuyaNormalizer');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
@@ -8,19 +10,19 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      ENERGY MONITOR PLUG - v5.5.255 INTELLIGENT ENERGY MANAGEMENT           ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  - Auto-detects energy meter type per manufacturerName                       ║
- * ║  - Supports ZCL (TS011F) and Tuya DP (TS0601) protocols                     ║
- * ║  - Dynamic divisors for power/voltage/current/energy                         ║
- * ║  - Intelligent mode for mixed protocol devices                        ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      ENERGY MONITOR PLUG - v5.5.255 INTELLIGENT ENERGY MANAGEMENT           |
+ * +==============================================================================+
+ * |  - Auto-detects energy meter type per manufacturerName                       |
+ * |  - Supports ZCL (TS011F) and Tuya DP (TS0601) protocols                     |
+ * |  - Dynamic divisors for power/voltage/current/energy                         |
+ * |  - Intelligent mode for mixed protocol devices                        |
+ * +==============================================================================+
  */
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// ===============================================================================
 // ENERGY DEVICE CONFIGURATION DATABASE
-// ═══════════════════════════════════════════════════════════════════════════════
+// ===============================================================================
 
 const ENERGY_DEVICE_CONFIGS = {
   // Type A: Standard Tuya DP Energy (TS0601) - DP 17/18/19/20
@@ -260,7 +262,7 @@ class RemoteButtonWirelessPlugDevice extends PhysicalButtonMixin(VirtualButtonMi
       this.log(`[ENERGY] Specialized Config: ${config.configName || 'TUYA_DP_STANDARD'}`);
       // v5.13.1: Initialize physical and virtual buttons
       await this.initPhysicalButtonDetection(zclNode);
-      this.log('[ENERGY] ✅ v9.7.3 Energy monitor plug ready');
+      this.log('[ENERGY] [OK] v9.7.3 Energy monitor plug ready');
     }, 'onNodeInit');
   }
 
@@ -272,3 +274,5 @@ class RemoteButtonWirelessPlugDevice extends PhysicalButtonMixin(VirtualButtonMi
 
 
 module.exports = RemoteButtonWirelessPlugDevice;
+return module.exports;
+});

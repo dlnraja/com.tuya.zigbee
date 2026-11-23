@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -90,7 +92,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[TRV-ZIGBEE] 🔥 Initializing comprehensive TRV driver...');
+    this.log('[TRV-ZIGBEE] [HOT] Initializing comprehensive TRV driver...');
 
     // TRV-specific DP mappings
     this.dpMappings = {
@@ -135,7 +137,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
       this.registerCapabilityListener('child_lock', this.onChildLockChange.bind(this));
     }
 
-    this.log('[TRV-ZIGBEE] ✅ Comprehensive TRV initialized');
+    this.log('[TRV-ZIGBEE] [OK] Comprehensive TRV initialized');
   }
 
   async onTargetTemperatureChange(value) {
@@ -270,4 +272,5 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
 }
 
 module.exports = RadiatorValveZigbeeDevice;
-
+return module.exports;
+});

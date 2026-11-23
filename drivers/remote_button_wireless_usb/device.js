@@ -1,3 +1,6 @@
+'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
@@ -6,7 +9,7 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
   meter_power: { divisor: 1000 },      // currentSummationDelivered raw Wh -> kWh
   measure_power: { divisor: 0.1 },     // activePower raw 0.1W units -> W
@@ -246,7 +249,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
       this.log('[USB_DONGLE] Energy reporting configured' );
     } catch (err) {
       this.error('[USB_DONGLE] Failed to configure energy reporting, will retry:', err.message);
-      // Retry 1 min plus tard si le Zigbee stack n'était pas prÃªt
+      // Retry 1 min plus tard si le Zigbee stack n'était pas prêt
       this.homey.setTimeout(() => { if (this._destroyed) {return;} this._configureEnergyReporting(zclNode); }, 60 * 1000);
     }
   }
@@ -260,5 +263,5 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
 }
 
 module.exports = UsbDongleDualRepeaterDevice;
-
-
+return module.exports;
+});

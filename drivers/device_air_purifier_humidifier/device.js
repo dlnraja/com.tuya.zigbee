@@ -1,10 +1,12 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
- * Smart Humidifier — P125: TuyaZigbeeDevice (L14) + mainsPowered
+ * Smart Humidifier - P125: TuyaZigbeeDevice (L14) + mainsPowered
  *
  * DP1: On/Off | DP2: Target humidity | DP3: Current humidity
  * DP5: Mist level | DP12: Water shortage
@@ -94,3 +96,5 @@ class HumidifierDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = HumidifierDevice;
+return module.exports;
+});

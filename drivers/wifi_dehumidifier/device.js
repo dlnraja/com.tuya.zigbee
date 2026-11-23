@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
@@ -25,6 +27,20 @@ class WiFiDehumidifierDevice extends TuyaLocalDevice {
     };
   }
 
+  /**
+   * P3372 (forum 146735 #509): the declared "Water tank is full" card was never fired.
+   * Fire it on the rising edge of alarm_water, whatever DP set it.
+   */
+  async _setLocalCapabilityValue(capability, value) {
+    const was = capability === 'alarm_water' && typeof this.getCapabilityValue === 'function'
+      ? this.getCapabilityValue('alarm_water') === true : null;
+    const res = await super._setLocalCapabilityValue(capability, value);
+    if (capability === 'alarm_water' && value === true && was === false) {
+      this.triggerFlowCard?.('wifi_dehumidifier_water_full').catch?.(() => {});
+    }
+    return res;
+  }
+
   async onInit() {
     await super.onInit();
     for (const cap of ['measure_humidity', 'measure_temperature', 'alarm_water', 'target_humidity']) {
@@ -45,3 +61,5 @@ class WiFiDehumidifierDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiDehumidifierDevice;
+return module.exports;
+});

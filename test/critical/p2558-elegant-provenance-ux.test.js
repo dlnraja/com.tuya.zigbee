@@ -35,18 +35,18 @@ describe('P2558 elegant provenance UX', () => {
     assert.equal(meas.units, 'W');
 
     const est = DP.buildProvenanceCapabilityOptions({ title: { en: 'Power', fr: 'Puissance' }, units: 'W' }, 'estimated');
-    assert.match(est.title.en, /≈ estimated/);
-    assert.match(est.title.fr, /≈ estimé/);
-    assert.match(est.units, /≈/);
+    assert.match(est.title.en, /(?:≈|~=) estimated/);
+    assert.match(est.title.fr, /(?:≈|~=) estimé/);
+    assert.match(est.units, /≈|~=/);
 
     const calc = DP.buildProvenanceCapabilityOptions({ title: { en: 'Current' }, units: 'A' }, 'calculated');
     assert.match(calc.title.en, /ƒ calculated/);
     assert.match(calc.units, /ƒ/);
 
     const pred = DP.buildProvenanceCapabilityOptions({ title: { en: 'Battery', fr: 'Batterie' }, units: '%' }, 'predicted');
-    assert.match(pred.title.en, /→ predicted/);
-    assert.match(pred.title.fr, /→ prévu/);
-    assert.match(pred.units, /→/);
+    assert.match(pred.title.en, /(?:→|->) predicted/);
+    assert.match(pred.title.fr, /(?:→|->) prévu/);
+    assert.match(pred.units, /→|->/);
   });
 
   it('originFromReason maps battery decay → predicted', () => {

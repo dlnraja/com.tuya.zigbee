@@ -1,0 +1,150 @@
+{
+  "note": "Weekly upstream safety net 2026-11-16 (P3345). Couples added upstream between zhc c18c32d and f368dcd that were not placed: class or DP map unverified. Additive leads only, nothing removed.",
+  "source": "Koenkk/zigbee-herdsman-converters f368dcd",
+  "since": "2026-11-16",
+  "leads": [
+    {
+      "mfr": "_TZE200_nhxzhga5",
+      "pid": "TS0601",
+      "candidate": "thermostatic_radiator_valve",
+      "why": "Ecobuy Well ME173 TRV (zhc tuya.ts #13731); DP map not checked against our TRV profiles"
+    },
+    {
+      "mfr": "_TYST11_yfmeg60f",
+      "pid": "fmeg60f\\u0000",
+      "candidate": "thermostatic_radiator_valve",
+      "why": "Fontastic TRV (zhc fontastic.ts #13602); productId has a trailing NUL, needs a matching decision before adding"
+    },
+    {
+      "mfr": "_TYST12_snr3p274",
+      "pid": "TY0A01",
+      "candidate": "(none)",
+      "why": "Intelbras IFR 7001 mortise lock (zhc intelbras.ts #13801); no Zigbee lock driver fits"
+    },
+    {
+      "mfr": "_TZD200_rdbronta",
+      "pid": "TS0202",
+      "candidate": "motion_sensor?",
+      "why": "HYSYIOT HS206Z PIR (zhc tuya.ts); IAS occupancy + DP12 pir_delay; new family"
+    },
+    {
+      "mfr": "_TZD200_8sql5jcj",
+      "pid": "TS0202|TS0601",
+      "candidate": "sensor_climate_motion?",
+      "why": "HYSYIOT HS207Z 5-in-1 (PIR, lux, vibration, T/H), also _TZE200_/_TZE204_8sql5jcj; new family"
+    },
+    {
+      "mfr": "_TZD200_bgjlfsuy",
+      "pid": "TS0202|TS0601",
+      "candidate": "presence_sensor_radar?",
+      "why": "HYSYIOT HS209Z PIR + mmWave, also _TZE200_bgjlfsuy; new family"
+    },
+    {
+      "mfr": "_TZE200_euszleja",
+      "pid": "TS0601",
+      "candidate": "siren?",
+      "why": "Lincukoo G08A-Z20T sound/light siren, also _TZE204_ and _TZE28C1000000_euszleja; DP1 alarm_state enum differs from our siren DP1 onoff"
+    },
+    {
+      "mfr": "_TZE284_6l44ypoc",
+      "pid": "TS0601",
+      "candidate": "presence_sensor_radar?",
+      "why": "CTL-Mini-DTP-TYZ/AC radar+PIR (also _TZE284_qvmmpbye); DP map not extracted"
+    },
+    {
+      "mfr": "_TZE284_ksqviprv",
+      "pid": "TS0601",
+      "candidate": "fan coil thermostat?",
+      "why": "HeatHUB HHST001 fan coil thermostat (also _TZE284_zgisddrg); no fan-coil driver checked"
+    },
+    {
+      "mfr": "_TZD200_y0rvjm11",
+      "pid": "TS0601",
+      "candidate": "water_valve_garden?",
+      "why": "HOBEIAN ZG-308Z irrigation valve; DP1 switch, DP11 countdown, DP7 battery, weather DPs"
+    },
+    {
+      "mfr": "_TZE28C1000000_gheewd2t",
+      "pid": "TS0601",
+      "candidate": "dimmer_2_gang_tuya?",
+      "why": "Zemismart ZMD-208-2 2-gang screen dimmer (dpLight both gangs on endpoint 1)"
+    },
+    {
+      "mfr": "_TZE28C1000000_goecjd1t",
+      "pid": "TS0601",
+      "candidate": "energy meter (not TRV)",
+      "why": "AVATTO ZWPM16 meter; siblings _TZE204/_TZE284_goecjd1t sit on radiator_valve (wrong class, family decision pending)"
+    },
+    {
+      "mfr": "_TZE28C1000000_2fnssffc",
+      "pid": "TS0601",
+      "candidate": "energy meter (not TRV)",
+      "why": "Moes ZM6LT1 CT meter; sibling on thermostatic_radiator_valve (wrong class lead since 2026-10-27)"
+    },
+    {
+      "mfr": "_TZE284_0or4eirj",
+      "pid": "TS0601",
+      "candidate": "panel (none)",
+      "why": "Tuya 07P4 4-gang LCD panel; reports with EF00 0x0A dataReportAlt (decoder not implemented)"
+    },
+    {
+      "mfr": "_TZE204_vfnf7zhq",
+      "pid": "TS0601",
+      "candidate": "din_rail_switch?",
+      "why": "Nous D1Z DIN rail switch with metering (DP16 state, DP1 energy, prepayment DPs); DP layout vs our din_rail drivers not checked"
+    },
+    {
+      "mfr": "_TZ3000_9dm33lp8",
+      "pid": "TS011F",
+      "candidate": "2-gang outdoor socket?",
+      "why": "Lupus LS12136 2-gang outdoor socket without meter; no published 2-gang TS011F driver confirmed (outdoor_2_socket has no ids)"
+    },
+    {
+      "mfr": "_TZ3210_z1kba38n",
+      "pid": "TS011F",
+      "candidate": "2-gang socket?",
+      "why": "Nova Digital SA-T2 2-gang socket; same driver question as 9dm33lp8"
+    },
+    {
+      "mfr": "_TZE284_yfttaycl",
+      "pid": "TS0601",
+      "candidate": "sound sensor (not sound_sensor_tuya)",
+      "why": "Lincukoo N02-Z10T noise sensor (zhc lincukoo.ts), also _TZE2841000000_yfttaycl; sound_sensor_tuya is an exact-pair driver for _TZE204_r6kfl9ta (DP101/102 layout differs: N02 uses DP1 dB, DP12 battery, DP14/21/22 thresholds)"
+    }
+  ],
+  "wrongClassStillOpen": [],
+  "structural": [
+    "zhc #13672/#13678 NEO NAS-AB06B2 (nlrfgpny family on siren): alarm_state enum, alarm_switch, tamper and battery DPs; our generic siren map was not checked against it",
+    "zhc #13704/#13814 Nous A7Z: switch type option removed/hidden upstream",
+    "zhc #13729 Tuya SDM01: voltage/current/power/energy per variant fixed (din_rail_meter owners to compare)",
+    "zhc #13832 ME202WZ: liquid depth may exceed installation height (water_tank_monitor clamp check)",
+    "ZHA #5610 NOUS E9 gas detector: lifecycle sensor was inverted (check our gas driver polarity)",
+    "ZHA #5601 BSEED TS0726 2-gang read-attribute spell (behaviour change, soak on master first)"
+  ],
+  "readyButBudgetBlocked": [
+    {
+      "mfr": "_TZD200_5ziwcyoe",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "why": "HYSYIOT HS204ZX = HOBEIAN ZG-204ZX (zhc hobeian.ts); DP profile already wired in configs.js. Class verified; not placed because master manifest-budget parasites would exceed 65423 (presence_sensor_radar has 56 pids, about 53 parasite combos per new maker). Needs a presence continuation or a reviewed budget raise."
+    },
+    {
+      "mfr": "_TZD200_gfng0whq",
+      "pid": "TS0601",
+      "driver": "presence_sensor_radar",
+      "why": "HYSYIOT HS204ZL = HOBEIAN ZG-204ZL (zhc hobeian.ts), siblings on presence_sensor_radar. Class verified; not placed because master manifest-budget parasites would exceed 65423 (presence_sensor_radar has 56 pids, about 53 parasite combos per new maker). Needs a presence continuation or a reviewed budget raise."
+    },
+    {
+      "mfr": "_TZD200_vfh3tuo1",
+      "pid": "TS0202",
+      "driver": "presence_sensor_radar",
+      "why": "HYSYIOT HS204ZV = HOBEIAN ZG-204ZV (zhc hobeian.ts); DP profile already wired in configs.js. Class verified; not placed because master manifest-budget parasites would exceed 65423 (presence_sensor_radar has 56 pids, about 53 parasite combos per new maker). Needs a presence continuation or a reviewed budget raise."
+    },
+    {
+      "mfr": "_TZ3000_a8mhmsol",
+      "pid": "TS0002",
+      "driver": "switch_2gang",
+      "why": "2 gang switch module (zhc tuya.ts #13707). Class verified; not placed because master manifest-budget parasites would exceed 65423 (presence_sensor_radar has 56 pids, about 53 parasite combos per new maker). Needs a presence continuation or a reviewed budget raise."
+    }
+  ]
+}

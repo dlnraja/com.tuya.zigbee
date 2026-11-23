@@ -16,12 +16,14 @@
  *                     2026-11-08, more room (still finite): master 120 min/1 per day/120 min
  *                     across apps -> 30 min/6 per day/15 min across apps; stable and bastien
  *                     60 min/4 per day -> 15 min/12 per day. Failed builds do not count.
- *                     One hang-up retry may bypass spacing (it still waits >= 5 min).
+ *                     An automatic transport retry may bypass spacing (it still waits >= 5 min).
  *                     AggregateError still trips the breaker and is not cleared here.
  *   3. classify     : transient (socket hang up, ECONNRESET, ETIMEDOUT, 5xx, timeouts,
- *                     invalid_state) -> exactly 1 retry, backoff >= 5 min, breaker untouched;
+ *                     invalid_state) -> bumped retries (transport: 2 = 3 attempts, 5/15/30 min backoff;
+ *                     invalid_state: 1), breaker untouched;
  *                     real (AggregateError, processing_failed, validation) -> no retry, breaker
- *                     trips, diagnostic.
+ *                     trips, diagnostic. P3341: a BARE AggregateError (stateMeta exactly
+ *                     "AggregateError", empty message) gets exactly ONE retry first.
  *   4. breaker      : the single automatic retry of a transient failure is never blocked.
  *
  * This file is byte-identical on master, stable-v5 and bastien-home (test p3036 checks the
@@ -56,13 +58,53 @@ const APPS = {
   },
 };
 
-const RETRY = { maxRetries: 1, backoffMinS: 300, jitterS: 60, hangupRetryMinGapMin: 5 };
+// P3311 (15/11/2026, build #3704 socket hang up on the 347 diagnostic): a TRANSPORT failure (socket hang up,
+// ECONNRESET, ETIMEDOUT, 5xx, timeouts) gets up to 2 bumped retries = 3 attempts per chain, progressive backoff
+// 5 / 15 / 30 min (+ jitter). invalid_state keeps ONE retry, real rejections (AggregateError, processing_failed
+// without a transient cause, validation) keep NONE. Every retry is a strictly higher version, uploads only after
+// the idle wait, and the same-version guard + orphan logic (P3293) stop any duplicate build.
+// P3341 (16/11/2026, owner go 03:03 Paris): a BARE AggregateError (Athom stateMeta exactly "AggregateError",
+// empty message = Node net multi-address connect failure, see docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md)
+// gets exactly ONE retry with the first P3311 backoff. It keeps cls 'real': the breaker blocks every normal run,
+// only retry 1 of the chain is exempt, and a second failure trips the breaker. With a message it gets none.
+const RETRY = { maxBareAggregateRetries: 1, maxRetries: 1, maxTransportRetries: 2, backoffMinS: 300, backoffScheduleS: [300, 900, 1800], jitterS: 60, hangupRetryMinGapMin: 5 };
+const TRANSPORT_KINDS = new Set(['socket hang up', 'transient']);
+const BARE_AGGREGATE_KIND = 'AggregateError-bare';
+// P3355: a chain counts its retries per class. "<total>:t<transport>a<bare>" (parseInt keeps the total for
+// old readers). Transport kinds (and invalid_state) share the t bucket, a bare AggregateError has the a bucket,
+// and a chain never exceeds maxChainRetries. A legacy plain number counts every prior retry for the current class.
+// P3357 (user rule 2026-11-15): at most 3 uploads per chain (1 initial + 2 retries) whatever the error mix, then
+// stop and notify; the single bare-AggregateError retry counts inside those 3.
+RETRY.maxChainUploads = 3;
+RETRY.maxChainRetries = RETRY.maxChainUploads - 1;
+const CHAIN_RE = /^(\d+):t(\d+)a(\d+)$/;
+function parseRetryChain(v) {
+  const s = String(v === undefined || v === null ? '' : v).trim().toLowerCase();
+  const m = CHAIN_RE.exec(s);
+  if (m) return { total: Number(m[1]), transport: Number(m[2]), bare: Number(m[3]), typed: true };
+  const n = retryCountOf(s);
+  return n ? { total: n, transport: null, bare: null, typed: false } : { total: 0, transport: 0, bare: 0, typed: true };
+}
+function formatRetryChain({ transport = 0, bare = 0 } = {}) {
+  const t = Number(transport) || 0; const a = Number(bare) || 0;
+  return `${t + a}:t${t}a${a}`;
+}
+function chainClassCount(chain, kind) {
+  if (!chain.typed) return chain.total;
+  return kind === BARE_AGGREGATE_KIND ? chain.bare : chain.transport;
+}
+function retryBudget(kind) {
+  if (kind === BARE_AGGREGATE_KIND) return RETRY.maxBareAggregateRetries;
+  return TRANSPORT_KINDS.has(kind) ? RETRY.maxTransportRetries : RETRY.maxRetries;
+}
 
 const TRANSIENT_RE = /socket hang up|ECONNRESET|ECONNABORTED|ETIMEDOUT|EPIPE|EAI_AGAIN|fetch failed|Timeout after \d+ms|timed? ?out|specified key|NoSuchKey|too many requests|\b429\b|\b5\d\d\b|Bad Gateway|Service Unavailable|Gateway Time-?out|Internal Server Error/i;
 const INVALID_STATE_RE = /invalid[_ ]state|another build .*processing|already (being )?processing/i;
 const AGGREGATE_RE = /AggregateError/i;
 const VALIDATION_RE = /validation (error|failed)|failed to validate|invalid (app\.json|manifest|driver)|schema error|is not allowed|must (be|have)\b|homey app validate/i;
-const FINAL_RE = /^(test|live|draft|processing_failed|revoked|failed|rejected|approved)$/i;
+const FINAL_RE = /^(test|live|draft|processing_failed|revoked|failed|rejected|approved|superseded)$/i;
+// P3360: Athom may mark an older build as superseded once a newer one is Test; that is terminal, not busy.
+
 const CODE_FILE_RE = /(\.(c|m)?js|\.ts)$|(^|\/)package(-lock)?\.json$/i;
 
 function appPolicy(appId, env = process.env) {
@@ -95,6 +137,22 @@ function buildText(b) {
   return parts.join(' ');
 }
 
+// P3341: bare = no message at all. Build object: every non-empty error field is exactly "AggregateError".
+// Text (logs, status rows): a stateMeta-shaped bare token and no AggregateError carrying a message anywhere.
+const ERR_FIELD_KEY_RE = /err|reason|message|log|fail|meta|detail/i;
+const AGG_WITH_MSG_RE = /AggregateError\s*[:[]/i;
+const AGG_BARE_TOKEN_RE = /(?:stateMeta\s*[=:]\s*AggregateError(?=\s*(?:$|[|,;)\]}]))|"[a-zA-Z]*(?:err|reason|message|meta|detail)[a-zA-Z]*"\s*:\s*"\s*AggregateError\s*"|\(AggregateError\))/im;
+function isBareAggregate(input) {
+  if (input && typeof input === 'object') {
+    const vals = Object.entries(input).filter(([k, v]) => k !== 'state' && ERR_FIELD_KEY_RE.test(k) && v != null && String(typeof v === 'string' ? v : JSON.stringify(v)).trim())
+      .map(([, v]) => (typeof v === 'string' ? v : JSON.stringify(v)).trim());
+    return vals.length > 0 && vals.every((v) => v === 'AggregateError');
+  }
+  const t = String(input || '').trim();
+  if (t === 'AggregateError') return true;
+  return !AGG_WITH_MSG_RE.test(t) && AGG_BARE_TOKEN_RE.test(t);
+}
+
 /** classify(textOrBuild) -> { kind, cls: 'transient' | 'real' | 'none' } */
 function classify(input) {
   const text = typeof input === 'string' ? input : buildText(input);
@@ -102,7 +160,7 @@ function classify(input) {
   if (!text.trim()) return { kind: 'unknown', cls: 'real' };
   if (state && FINAL_RE.test(state) && !/processing_failed|failed|rejected|revoked/i.test(state)) return { kind: 'ok', cls: 'none' };
   // AggregateError wins even when the same output also mentions a hang-up (Athom-side packaging failure).
-  if (AGGREGATE_RE.test(text)) return { kind: 'AggregateError', cls: 'real' };
+  if (AGGREGATE_RE.test(text)) return { kind: isBareAggregate(input) ? BARE_AGGREGATE_KIND : 'AggregateError', cls: 'real' };
   if (VALIDATION_RE.test(text)) return { kind: 'validation', cls: 'real' };
   if (INVALID_STATE_RE.test(text)) return { kind: 'invalid_state', cls: 'transient' };
   if (/socket hang up/i.test(text)) return { kind: 'socket hang up', cls: 'transient' };
@@ -111,21 +169,47 @@ function classify(input) {
   return { kind: 'unknown', cls: 'real' };
 }
 
-function backoffSeconds(rnd = Math.random()) {
+// retryIndex 0 = first retry (5 min), 1 = second (15 min), 2+ = 30 min; always + 0..jitterS s.
+function backoffSeconds(rnd = Math.random(), retryIndex = 0) {
   const r = Math.min(Math.max(Number(rnd) || 0, 0), 0.999999);
-  return RETRY.backoffMinS + Math.floor(r * (RETRY.jitterS + 1));
+  const sch = RETRY.backoffScheduleS;
+  const i = Math.min(Math.max(Math.floor(Number(retryIndex) || 0), 0), sch.length - 1);
+  return Math.max(RETRY.backoffMinS, sch[i]) + Math.floor(r * (RETRY.jitterS + 1));
 }
 
 /**
  * retryDecision({ kind|text, retriesDone, idleWaited }) -> { retry, kind, cls, backoffS, tripBreaker, diagnose, reason }
- * Transient: exactly one retry (retriesDone 0 -> retry), backoff >= 300 s, never trips the breaker.
+ * Transient: transport kinds get RETRY.maxTransportRetries (2) retries, invalid_state RETRY.maxRetries (1);
+ * backoff 300 / 900 / 1800 s (+ jitter) by retry index; never trips the breaker.
  * invalid_state retries only after the idle wait proved the previous build is final.
  * Real: no retry, trips the breaker, asks for a diagnostic.
  */
-function retryDecision({ kind, cls, text, retriesDone = 0, idleWaited = true, rnd } = {}) {
+function retryDecision({ kind, cls, text, retriesDone = 0, idleWaited = true, rnd, chain } = {}) {
   const c = kind ? { kind, cls: cls || classify(kind).cls } : classify(text || '');
-  const done = Number(retriesDone) || 0;
   if (c.cls === 'none') return { retry: false, ...c, backoffS: 0, tripBreaker: false, diagnose: false, reason: 'no failure' };
+  if (chain !== undefined && chain !== null) {
+    const ch = typeof chain === 'object' ? chain : parseRetryChain(chain);
+    const d = retryDecision({ kind: c.kind, cls: c.cls, retriesDone: chainClassCount(ch, c.kind), idleWaited, rnd });
+    if (d.retry && ch.total >= RETRY.maxChainRetries) {
+      return { ...d, retry: false, backoffS: 0, tripBreaker: c.cls === 'real', diagnose: true,
+        reason: `${c.kind}: the chain already made ${ch.total + 1} of its ${RETRY.maxChainUploads} uploads (${RETRY.maxChainRetries} retries used), stop and report` };
+    }
+    if (d.retry) {
+      const t = ch.typed ? ch.transport : 0; const a = ch.typed ? ch.bare : 0;
+      d.next = formatRetryChain(c.kind === BARE_AGGREGATE_KIND ? { transport: t, bare: a + 1 } : { transport: t + 1, bare: a });
+      if (!ch.typed) d.next = String(ch.total + 1);
+    }
+    return d;
+  }
+  const done = Number(retriesDone) || 0;
+  if (c.kind === BARE_AGGREGATE_KIND) {
+    if (done >= RETRY.maxBareAggregateRetries) {
+      return { retry: false, ...c, backoffS: 0, tripBreaker: true, diagnose: true,
+        reason: `${c.kind}: the single identical retry is already used (${done + 1} attempts): breaker trips, diagnostic needed` };
+    }
+    return { retry: true, ...c, backoffS: backoffSeconds(rnd, done), tripBreaker: false, diagnose: false,
+      reason: `${c.kind} (empty message, Node connect failure): single identical retry ${done + 1}/${RETRY.maxBareAggregateRetries} after >= ${RETRY.backoffScheduleS[0]}s (P3341)` };
+  }
   if (c.cls === 'real') {
     return { retry: false, ...c, backoffS: 0, tripBreaker: true, diagnose: true,
       reason: `${c.kind} is a real failure: no automatic retry, breaker trips, diagnostic needed` };
@@ -134,12 +218,14 @@ function retryDecision({ kind, cls, text, retriesDone = 0, idleWaited = true, rn
     return { retry: false, ...c, backoffS: 0, tripBreaker: false, diagnose: false,
       reason: 'invalid_state without a completed idle wait: no retry (next slot)' };
   }
-  if (done >= RETRY.maxRetries) {
+  const max = retryBudget(c.kind);
+  if (done >= max) {
     return { retry: false, ...c, backoffS: 0, tripBreaker: false, diagnose: true,
-      reason: `${c.kind}: the single automatic retry is already used, wait for the next slot` };
+      reason: `${c.kind}: ${max === 1 ? 'the single automatic retry is' : `all ${max} automatic retries are`} already used (${done + 1} attempts), stop and report` };
   }
-  return { retry: true, ...c, backoffS: backoffSeconds(rnd), tripBreaker: false, diagnose: false,
-    reason: `${c.kind} is transient: retry ${done + 1}/${RETRY.maxRetries} after >= ${RETRY.backoffMinS}s` };
+  const backoffS = backoffSeconds(rnd, done);
+  return { retry: true, ...c, backoffS, tripBreaker: false, diagnose: false,
+    reason: `${c.kind} is transient: retry ${done + 1}/${max} after >= ${RETRY.backoffScheduleS[Math.min(done, RETRY.backoffScheduleS.length - 1)]}s` };
 }
 
 // ── 4. breaker ───────────────────────────────────────────────────────────────────────────────
@@ -158,13 +244,23 @@ function isFailed(b) { return !!b && /processing_failed|failed|rejected/i.test(S
 
 /** The one exemption: transient_retry=1 dispatched for a latest build that failed transiently. */
 function singleRetryExempt({ builds, transientRetry } = {}) {
-  const n = retryCountOf(transientRetry);
+  const ch = parseRetryChain(transientRetry);
+  const total = ch.total;
   const latest = sortBuilds(builds)[0];
-  if (n !== 1) return { exempt: false, reason: n ? `retry ${n} exceeds the single retry` : 'not a retry run' };
+  if (!total) return { exempt: false, reason: 'not a retry run' };
+  // P3355: typed chains are bounded by the chain cap; legacy numbers keep the old transport cap.
+  const cap = ch.typed ? RETRY.maxChainRetries : RETRY.maxTransportRetries;
+  if (total > cap) return { exempt: false, reason: `retry ${total} exceeds the ${cap} automatic retries of a chain (max ${RETRY.maxChainUploads} uploads)` };
   if (!latest || !isFailed(latest)) return { exempt: false, reason: 'latest build is not a failure' };
   const c = classify(latest);
+  const n = chainClassCount(ch, c.kind);
+  if (c.kind === BARE_AGGREGATE_KIND) {
+    if (n > RETRY.maxBareAggregateRetries) return { exempt: false, reason: `retry ${n} exceeds the single retry of ${c.kind}` };
+    return { exempt: true, reason: `single identical retry ${n}/${RETRY.maxBareAggregateRetries} after ${c.kind} on #${latest.id} (P3341)` };
+  }
   if (c.cls !== 'transient') return { exempt: false, reason: `latest failure is ${c.kind} (real)` };
-  return { exempt: true, reason: `single automatic retry after ${c.kind} on #${latest.id}` };
+  if (n > retryBudget(c.kind)) return { exempt: false, reason: `retry ${n} exceeds the ${retryBudget(c.kind)} retry budget of ${c.kind}` };
+  return { exempt: true, reason: `automatic retry ${n}/${retryBudget(c.kind)} after ${c.kind} on #${latest.id}` };
 }
 
 /** breakerAssess({ builds, n }) -> tripped when the latest build failed for a real reason or the last n all failed. */
@@ -253,7 +349,7 @@ function slotDecision({ appId, builds, outcomes, snapshotOk = true, eventName, t
   const last = ev[0];
   if (exempt.exempt) {
     if (last && nowMs - last.t < RETRY.hangupRetryMinGapMin * 60000) {
-      return { go: false, reason: `single retry must wait >= ${RETRY.hangupRetryMinGapMin} min after the failed build`, deferred: true };
+      return { go: false, reason: `automatic retry must wait >= ${RETRY.hangupRetryMinGapMin} min after the failed build`, deferred: true };
     }
     return { go: true, reason: `${exempt.reason}: spacing bypassed once`, deferred: false };
   }
@@ -363,10 +459,12 @@ function publishDisposition({ breakerSkip, gateGo, payloadChanged, athomFinal } 
 }
 
 module.exports = {
+  BARE_AGGREGATE_KIND, isBareAggregate,
   POLICY_VERSION, APPS, RETRY, TRANSIENT_RE, CODE_FILE_RE,
-  appPolicy, appIdForKey, classify, backoffSeconds, retryDecision,
-  singleRetryExempt, breakerAssess, retryCountOf, slotDecision, busyBuild, uploadEvents, crossAppEvents,
+  appPolicy, appIdForKey, classify, backoffSeconds, retryDecision, retryBudget, TRANSPORT_KINDS,
+  singleRetryExempt, breakerAssess, retryCountOf, parseRetryChain, formatRetryChain, slotDecision, busyBuild, uploadEvents, crossAppEvents,
   evaluateCi, missingCiAction, runState, isCodeFile, isBuildInputFile, affectsCiIdentity, packedPayloadChanged, publishDisposition, isTrue, versionOnlyDiff,
+  jsonVersionOnlyChange, localCodeChanged,
 };
 
 // ── CLI ──────────────────────────────────────────────────────────────────────────────────────
@@ -407,9 +505,9 @@ async function gh(apiPath, { method = 'GET', body } = {}) {
   return res.status === 204 ? null : res.json();
 }
 
-function git(args) {
+function git(args, cwd = ROOT) {
   const { execFileSync } = require('child_process');
-  return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  return execFileSync('git', args, { cwd, maxBuffer: 256 * 1024 * 1024, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
 }
 
 function localAncestry(sha, depth) {
@@ -424,13 +522,34 @@ function versionOnlyDiff(patch) {
   const lines = String(patch || '').split('\n').filter((l) => /^[+-]/.test(l) && !/^(\+\+\+|---) /.test(l));
   return lines.length > 0 && lines.every((l) => /^[+-]\s*"version"\s*:/.test(l));
 }
-function localCodeChanged(from, to, pick = isCodeFile) {
+// P3353: the root app.json is a compact one-line file, so its -U0 diff is the whole manifest and the
+// line check above never matched a bot bump (572e48a4f3 held on "CI missing"). Compare the parsed JSON
+// with only the version fields removed (top-level "version", package-lock packages[""].version).
+function jsonVersionOnlyChange(beforeText, afterText) {
+  let a; let b;
+  try { a = JSON.parse(beforeText); b = JSON.parse(afterText); } catch { return false; }
+  if (!a || !b || typeof a !== 'object' || typeof b !== 'object' || Array.isArray(a) || Array.isArray(b)) return false;
+  if (JSON.stringify(a) === JSON.stringify(b)) return false;
+  const strip = (o) => {
+    const c = { ...o };
+    delete c.version;
+    if (c.packages && typeof c.packages === 'object' && c.packages[''] && typeof c.packages[''] === 'object') {
+      c.packages = { ...c.packages, '': { ...c.packages[''] } };
+      delete c.packages[''].version;
+    }
+    return JSON.stringify(c);
+  };
+  return strip(a) === strip(b);
+}
+const VERSIONED_JSON_RE = /(^|\/)(?:package(?:-lock)?\.json|app\.json|\.homeycompose\/app\.json)$/i;
+function localCodeChanged(from, to, pick = isCodeFile, cwd = ROOT) {
   try {
-    const files = git(['diff', '--no-renames', '--name-only', from, to]).split('\n').filter(Boolean);
+    const files = git(['diff', '--no-renames', '--name-only', from, to], cwd).split('\n').filter(Boolean);
     return files.filter(pick).some((f) => {
       const norm = String(f).replace(/\\/g, '/');
-      if (!/(^|\/)(?:package(?:-lock)?\.json|app\.json|\.homeycompose\/app\.json)$/i.test(norm)) return true;
-      try { return !versionOnlyDiff(git(['diff', '--no-renames', '-U0', from, to, '--', f])); } catch { return true; }
+      if (!VERSIONED_JSON_RE.test(norm)) return true;
+      try { if (versionOnlyDiff(git(['diff', '--no-renames', '-U0', from, to, '--', f], cwd))) return false; } catch { return true; }
+      try { return !jsonVersionOnlyChange(git(['show', `${from}:${f}`], cwd), git(['show', `${to}:${f}`], cwd)); } catch { return true; }
     });
   } catch { return null; }
 }
@@ -553,7 +672,10 @@ async function main() {
     return;
   }
   if (cmd === 'fallback') {
-    const d = retryDecision({ text: readStdin(), retriesDone: isTrue(process.env.ATHOM_RETRY_USED) ? 1 : 0 });
+    // In-run fallback: ONE re-upload per run, whatever the chain budget (P3311 keeps it single).
+    const used = isTrue(process.env.ATHOM_RETRY_USED);
+    const d = used ? { retry: false, kind: classify(readStdin()).kind, reason: 'in-run fallback already used (one per run)' }
+      : retryDecision({ text: readStdin(), retriesDone: 0 });
     console.log(d.retry ? `RETRY ${d.backoffS}` : `STOP ${d.kind} ${d.reason}`);
     return;
   }

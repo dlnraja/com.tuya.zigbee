@@ -51,15 +51,18 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_human": {
       "getable": true,
@@ -67,7 +70,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_co": {
       "getable": true,
@@ -771,7 +775,6 @@
       }
     }
   ],
-  
   "id": "sensor_gas_presence",
   "version": "1.0.0"
 }

@@ -392,11 +392,16 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
+    },
+    "target_temperature": {
+      "units": "°C"
     }
   },
   "ui": {

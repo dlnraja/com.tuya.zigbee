@@ -76,7 +76,7 @@ describe('P3021c PowerEnergySanity (forum #2092)', () => {
     assert.strictEqual(S.getStatus(d).factor, 1000);
     assert.ok(Math.abs(b.last - b.e / 1000) < 1e-9);
     assert.strictEqual(d.store[S.STORE_KEY].factor, 1000);
-    assert.ok(d.logs.some(l => l.includes('🚩')));
+    assert.ok(d.logs.some(l => l.includes('🚩') || l.includes('[FLAG]')));
     // reload from store (reboot)
     delete d._powerEnergySanity;
     assert.ok(Math.abs(S.checkEnergy(d, 5000, { now: b.t + MIN }) - 5) < 1e-9);

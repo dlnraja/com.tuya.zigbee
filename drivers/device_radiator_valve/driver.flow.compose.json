@@ -28,8 +28,8 @@
     {
       "id": "device_radiator_valve_radiator_valve_measure_52847",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (measurement)",
+        "fr": "Température changée (mesure)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
@@ -53,15 +53,15 @@
     {
       "id": "device_radiator_valve_radiator_valve_temp_ch_6f21b",
       "title": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report)",
+        "fr": "Température changée (rapport)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
+        "en": "Temperature changed (report)",
+        "fr": "Température changée (rapport)",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }

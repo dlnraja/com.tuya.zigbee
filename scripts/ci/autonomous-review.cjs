@@ -101,6 +101,19 @@ function listsContain(driver, mfr, pid) {
   return mfrs.includes(norm(mfr)) && pids.includes(String(pid).toUpperCase());
 }
 
+function normalizeSources(sources) {
+  const out = {};
+  for (const [rawKey, entry] of Object.entries(sources || {})) {
+    if (!entry) continue;
+    const parts = String(rawKey).split('|');
+    const mfr = entry.mfr || parts[0];
+    const pid = entry.pid || parts[1];
+    if (!mfr || !pid) continue;
+    out[coupleKey(mfr, pid)] = entry;
+  }
+  return out;
+}
+
 function reviewDiff(before, after, sources) {
   const historical = new Set(reviewCouples({ before, after: before, sources }).problems);
   const head = reviewCouples({ before, after, sources });
@@ -109,13 +122,15 @@ function reviewDiff(before, after, sources) {
 }
 
 function reviewCouples({ before, after, sources }) {
+  sources = normalizeSources(sources);
   const prev = indexExact(before, sources);
   const next = indexExact(after, sources);
   const problems = [];
   const moved = [];
   for (const [key, rows] of next) {
     if (rows.length > 1) {
-      problems.push(`couple ${key} is in ${rows.length} drivers: ${rows.map((r) => r.driverId).join(', ')}`);
+      // P3323: sorted ids so a historical duplicate matches whatever order drivers were loaded in
+      problems.push(`couple ${key} is in ${rows.length} drivers: ${rows.map((r) => r.driverId).sort().join(', ')}`);
     }
   }
   for (const [key, rows] of prev) {
@@ -187,10 +202,20 @@ function assertionProfile(src) {
   };
 }
 
-function assertionsWeakened(beforeSrc, afterSrc) {
+// Runner shims under test/_support/ forward it.skip/it.only to mocha or node:test;
+// a forwarder is not a skipped test, so only the strict-assertion count applies there.
+function isRunnerSupport(file) {
+  return /(^|\/)test\/_support\//.test(String(file || '').replace(/\\/g, '/'));
+}
+
+function assertionsWeakened(beforeSrc, afterSrc, opts = {}) {
   const before = assertionProfile(beforeSrc);
   const after = assertionProfile(afterSrc);
   const problems = [];
+  if (opts.forwarder) {
+    if (after.strict < before.strict) problems.push(`strict assertions decreased ${before.strict} -> ${after.strict}`);
+    return { ok: problems.length === 0, problems, before, after };
+  }
   if (after.skip > before.skip) problems.push(`.skip increased ${before.skip} -> ${after.skip}`);
   if (after.only > before.only) problems.push(`.only increased ${before.only} -> ${after.only}`);
   if (after.strict < before.strict) problems.push(`strict assertions decreased ${before.strict} -> ${after.strict}`);
@@ -374,7 +399,7 @@ function runAssertions(base) {
     let before = '';
     try { after = fs.readFileSync(path.join(ROOT, file), 'utf8'); } catch { continue; }
     try { before = git(['show', `${base}:${file}`]); } catch { before = ''; }
-    const verdict = assertionsWeakened(before, after);
+    const verdict = assertionsWeakened(before, after, { forwarder: isRunnerSupport(file) });
     for (const problem of verdict.problems) problems.push(`${file}: ${problem}`);
   }
   return { ok: problems.length === 0, problems };
@@ -458,7 +483,7 @@ function main(argv) {
 }
 
 module.exports = {
-  exactPairs, reviewCouples, reviewDiff, replayCompaction, assertionsWeakened, assertionProfile,
+  exactPairs, reviewCouples, reviewDiff, replayCompaction, assertionsWeakened, assertionProfile, isRunnerSupport,
   targetedTests, identityProblems, botApprovalVerdict, couplesPresent, IDENTITIES, GENERIC_CHANGELOG,
 };
 

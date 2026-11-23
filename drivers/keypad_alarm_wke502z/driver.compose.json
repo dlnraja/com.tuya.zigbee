@@ -2,7 +2,7 @@
   "id": "keypad_alarm_wke502z",
   "name": {
     "en": "Alarm keypad (Daewoo WKE502Z)",
-    "fr": "Clavier d’alarme (Daewoo WKE502Z)",
+    "fr": "Clavier d'alarme (Daewoo WKE502Z)",
     "nl": "Alarmtoetsenbord (Daewoo WKE502Z)",
     "de": "Alarmtastatur (Daewoo WKE502Z)"
   },
@@ -20,6 +20,9 @@
     "alarm_generic"
   ],
   "capabilitiesOptions": {
+    "measure_battery": {
+      "units": "%"
+    },
     "alarm_generic": {
       "title": {
         "en": "SOS",

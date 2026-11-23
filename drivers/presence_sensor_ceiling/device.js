@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
@@ -13,7 +15,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
-      this.log('[CEILING] 🚀 v8.0.0 Modernizing...');
+      this.log('[CEILING] [GO] v8.0.0 Modernizing...');
       
       // Initialize v8 components
       this._inference = new IntelligentPresenceInference(this);
@@ -28,7 +30,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       // Relay control initialization
       await this._setupRelayControl(zclNode);
 
-      this.log('[CEILING] ✅ Ready');
+      this.log('[CEILING] [OK] Ready');
     }, 'onNodeInit');
   }
 
@@ -68,7 +70,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
    * Main Tuya DP processing entry point
    */
   async onTuyaDP(dpId, value, dpType) {
-    this.log(`[CEILING] 📥 DP${dpId} [type=${dpType}] = ${value}`);
+    this.log(`[CEILING] [IN] DP${dpId} [type=${dpType}] = ${value}`);
 
     // 1. Static Mappings
     switch (dpId) {
@@ -131,7 +133,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
     if (this._discovery) {
       const result = this._discovery.analyzeDP(dpId, value);
       if (result && result.confidence >= 80) {
-        this.log(`[CEILING] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value}`);
+        this.log(`[CEILING] [SMART] Discovery: DP${dpId} -> ${result.capability}=${result.value}`);
         return this.safeSetCapabilityValue(result.capability, result.value).catch(() => {});
       }
     }
@@ -205,3 +207,5 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = CeilingPresenceSensorDevice;
+return module.exports;
+});

@@ -1,10 +1,10 @@
 {
   "id": "smoke_sensor3",
   "name": {
-    "en": "Smoke Sensor",
+    "en": "Smoke Sensor (smoke sensor3)",
     "nl": "Rookmelder",
     "de": "Rauchmelder",
-    "fr": "Détecteur de fumée"
+    "fr": "Détecteur de fumée (smoke sensor3)"
   },
   "class": "sensor",
   "platforms": [
@@ -101,7 +101,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_smoke": {
       "getable": true,

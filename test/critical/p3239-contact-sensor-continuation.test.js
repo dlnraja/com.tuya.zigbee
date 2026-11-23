@@ -17,11 +17,14 @@ describe('P3239 contact_sensor_2 continuation', () => {
   const root = j('drivers/contact_sensor/driver.compose.json');
   const cont = j('drivers/contact_sensor_2/driver.compose.json');
 
-  it('registry links contact_sensor -> contact_sensor_2 and it is held', () => {
+  it('registry links contact_sensor -> contact_sensor_2 and it is held or P3360-graduated', () => {
     DC.clearCache(); const reg = DC.load(ROOT);
     assert.strictEqual(reg.rootOf('contact_sensor_2'), 'contact_sensor');
     assert.ok(reg.entry('contact_sensor').full);
-    assert.ok(j('config/publish-hold-drivers.json').drivers.some((d) => d.id === 'contact_sensor_2'));
+    { const hold = j('config/publish-hold-drivers.json');
+      const held = (hold.drivers || []).some((d) => d.id === 'contact_sensor_2');
+      const graduated = /P3360|Athom #488/.test(String((hold._graduated || {}).contact_sensor_2 || ''));
+      assert.ok(held || graduated); }
   });
 
   it('carries exactly the moved makers, short TS0203/TY0203/DS01 pids, none left on the root (one couple one driver)', () => {

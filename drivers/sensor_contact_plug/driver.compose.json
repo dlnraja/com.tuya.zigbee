@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Sensor Contact Plug",
+    "en": "Contact sensor on a plug",
     "nl": "Sensor Contact Plug",
-    "fr": "Capteur de Contact Plug",
+    "fr": "Capteur de contact sur prise",
     "de": "Sensor Kontaktstecker",
     "es": "Sensor de Contacto Plug"
   },
@@ -685,19 +685,23 @@
     "measure_power": {
       "approximated": true,
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "W"
     },
     "meter_power": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "kWh"
     },
     "measure_current": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "A"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     },
     "alarm_contact": {
       "getable": true,
@@ -709,7 +713,8 @@
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     }
   },
   "ui": {

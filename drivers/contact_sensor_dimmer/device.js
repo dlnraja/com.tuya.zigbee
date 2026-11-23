@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHelper');
 
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
@@ -10,7 +12,7 @@ class ContactSensorDimmerDevice extends TuyaZigbeeDevice {
     ZclBatteryMonitor.attach(this, zclNode);
     await super.onNodeInit({ zclNode });
     // v9.0.418 (P92.126): tamper bit was never fed on this hybrid
-    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] [WARN] ' + e.message); }
     this.log('Contact Sensor Dimmer v5.9.12 Ready');
   }
 
@@ -64,3 +66,5 @@ class ContactSensorDimmerDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = ContactSensorDimmerDevice;
+return module.exports;
+});

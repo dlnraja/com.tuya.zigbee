@@ -1,3 +1,6 @@
+'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 "use strict";
@@ -56,7 +59,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
                     // Override goToLiftPercentage to enforce blind to open/close completely
                     if (value === 0 || value === 1) {
                         this.debug(
-                            `set → \`windowcoverings_set\`: ${value} → setParser → ${
+                            `set -> \`windowcoverings_set\`: ${value} -> setParser -> ${
                                 value === 1 ? UP_OPEN : DOWN_CLOSE
                             }`
                         );
@@ -92,7 +95,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
                         percentageLiftValue: Math.round(mappedValue),
                     };
                     this.debug(
-                        `set → \`windowcoverings_set\`: ${value} → setParser → goToLiftPercentage`,
+                        `set -> \`windowcoverings_set\`: ${value} -> setParser -> goToLiftPercentage`,
                         gotToLiftPercentageCommand
                     );
                     // Send goToLiftPercentage command
@@ -141,7 +144,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
         }
 
         const moveOpen = this.homey.flow.getActionCard("curtain_module_2_gang_move_open_2gang");
-        // WHY: listener is shared by all devices of this driver (last registration wins) — act on the Flow's device, not the registering one.
+        // WHY: listener is shared by all devices of this driver (last registration wins) - act on the Flow's device, not the registering one.
         moveOpen.registerRunListener(async (args, state) => {
             const dev = (args && args.device) || this;
             const ep = (dev.getData?.() || {}).subDeviceId === "secondModule" ? 2 : 1;
@@ -236,3 +239,5 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
 }
 
 module.exports = curtain_module_2_gang;
+return module.exports;
+});

@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "WiFi Dimmer (Tuya Local)",
-    "fr": "Variateur WiFi (Tuya Local)",
+    "fr": "Variateur WiFi",
     "nl": "WiFi Dimmer (Tuya Lokaal)",
     "de": "WiFi-Dimmer (Tuya Lokal)",
     "es": "Regulador WiFi (Tuya Local)"
@@ -206,6 +206,69 @@
     {
       "$extends": [
         "localtuya_advanced"
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Dimming",
+        "fr": "Variation",
+        "de": "Dimmen",
+        "nl": "Dimmen"
+      },
+      "children": [
+        {
+          "id": "brightness_scale",
+          "type": "dropdown",
+          "value": "auto",
+          "label": {
+            "en": "Brightness scale",
+            "fr": "Échelle de luminosité",
+            "de": "Helligkeitsskala",
+            "nl": "Helderheidsschaal"
+          },
+          "hint": {
+            "en": "Auto picks the scale from the device (default 10-1000). If 0-100 % in Smart Life is squeezed into a third of the Homey slider, choose 0-255.",
+            "fr": "Auto choisit l'échelle selon l'appareil (10-1000 par défaut). Si 0-100 % dans Smart Life tient dans un tiers du curseur Homey, choisissez 0-255."
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            },
+            {
+              "id": "0-100",
+              "label": {
+                "en": "0-100",
+                "fr": "0-100"
+              }
+            },
+            {
+              "id": "0-255",
+              "label": {
+                "en": "0-255",
+                "fr": "0-255"
+              }
+            },
+            {
+              "id": "10-1000",
+              "label": {
+                "en": "10-1000",
+                "fr": "10-1000"
+              }
+            },
+            {
+              "id": "0-1000",
+              "label": {
+                "en": "0-1000",
+                "fr": "0-1000"
+              }
+            }
+          ]
+        }
       ]
     }
   ],

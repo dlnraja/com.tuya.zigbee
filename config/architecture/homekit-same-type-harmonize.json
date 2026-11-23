@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "id": "P3362-homekit-same-type-harmonize",
+    "updated": "2026-11-21",
+    "classify": "BOTH",
+    "why": "Curated, deterministic mapping for same-type Homey / Apple Home coherence. The weekday workflow may auto-apply only the safe actions listed here. It never invents a mfr+pid couple or a DP."
+  },
+  "actions": {
+    "missingStandardUnits": {
+      "autoApply": true,
+      "safe": true
+    },
+    "sameTypeCapabilityAdd": {
+      "autoApply": false,
+      "safe": false,
+      "note": "Adding a capability requires a sourced DP or a documented compensation. Report gaps only until a row is curated below."
+    },
+    "customCapabilityOrFlowCompensation": {
+      "autoApply": false,
+      "safe": false,
+      "note": "Only when an explicit drivers[] or class+capability row is curated with a source."
+    }
+  },
+  "classExpectations": {
+    "sensor": [
+      "measure_battery"
+    ],
+    "thermostat": [
+      "target_temperature",
+      "measure_temperature"
+    ],
+    "socket": [
+      "onoff"
+    ],
+    "light": [
+      "onoff"
+    ]
+  },
+  "capabilityAdds": [],
+  "flowCardAdds": []
+}

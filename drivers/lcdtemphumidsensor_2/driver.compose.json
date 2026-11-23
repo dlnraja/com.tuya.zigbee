@@ -1,8 +1,8 @@
 {
   "id": "lcdtemphumidsensor2",
   "name": {
-    "en": "LCD Temperature & Humidity Sensor",
-    "fr": "Capteur de température et d'humidité LCD",
+    "en": "LCD Temperature & Humidity Sensor (lcdtemphumidsensor 2)",
+    "fr": "Capteur de température et d'humidité LCD (lcdtemphumidsensor 2)",
     "de": "Temperatur- & Feuchtesensor LCD",
     "nl": "Temperatuur- & vochtsensor LCD"
   },
@@ -76,15 +76,18 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   }
 }

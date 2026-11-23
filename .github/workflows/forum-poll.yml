@@ -1,5 +1,6 @@
 # >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
-# What it does: Every four hours: scans the forum thread, PMs and screenshots for device data. Never posts.
+# What it does: Every four hours: scans topic 140352 and other Homey app threads via public Discourse JSON.
+#   Writes a structured request digest, candidate tasks and reply candidates into the SSOT. Never posts.
 # Ideas from (thank you): the Homey Community forum members who share fingerprints and diagnostics (read-only,
 #   never quoted); Discourse for its public JSON/RSS endpoints.
 # Ground rules: free GitHub minutes; any AI step is optional and stays inside included free quotas; public
@@ -64,6 +65,7 @@ env:
 jobs:
   forum-poll:
     name: 🌍 Poll Homey Forum
+    if: ${{ vars.FORUM_POLL_DISABLED != 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
@@ -157,6 +159,60 @@ jobs:
           node scripts/ci/safe-auto-commit.js --id=forum-apps-cat --max-per-day=4 \
             --message="chore(ledger): forum Apps category digests" \
             --paths="data/leads/forum-lastseen.json data/ssot/thread-digests.json docs/knowledge/forum-apps/category-7.md"
+
+      # P3362 (t994u/t998u): incremental request + peer-app idea digest from public Discourse JSON.
+      # Reuses this workflow (no second poller). GITHUB_TOKEN only. Never posts, never opens PRs or issues.
+      # Kill switch: vars.FORUM_REQUEST_DIGEST_DISABLED=true
+      - name: Forum request digest (read-only, candidates only)
+        id: request_digest
+        if: vars.FORUM_REQUEST_DIGEST_DISABLED != 'true'
+        continue-on-error: true
+        timeout-minutes: 6
+        run: |
+          node scripts/scanners/forum-request-digest.js \
+            --budget=${{ vars.FORUM_DIGEST_BUDGET || '80' }} \
+            --per-topic=${{ vars.FORUM_DIGEST_PER_TOPIC || '20' }} \
+            --satellites=${{ vars.FORUM_DIGEST_SATELLITES || '6' }}
+          node scripts/ci/digest-guard.js --delta \
+            data/ssot/forum-request-digest.json \
+            data/ssot/thread-digests.json \
+            data/progress/candidate-tasks.json \
+            data/progress/forum-reply-candidates.json \
+            data/leads/digest-candidates.json \
+            data/leads/forum-request-digest-cursor.json \
+            || { git checkout -- data/ssot/forum-request-digest.json data/ssot/thread-digests.json data/progress/candidate-tasks.json data/progress/forum-reply-candidates.json data/leads/digest-candidates.json data/leads/forum-request-digest-cursor.json 2>/dev/null; exit 1; }
+
+      - name: Commit forum request digest (gated)
+        if: vars.SCRAPE_COMMIT == '1' && vars.FORUM_REQUEST_DIGEST_DISABLED != 'true' && steps.request_digest.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=forum-request-digest --max-per-day=8 \
+            --message="chore(ledger): forum request digest and reply candidates" \
+            --paths="data/ssot/forum-request-digest.json data/ssot/thread-digests.json data/progress/candidate-tasks.json data/progress/forum-reply-candidates.json data/leads/digest-candidates.json data/leads/forum-request-digest-cursor.json"
+      # P3362 (t1005u): append forum findings to the referentials (consult/write-back loop).
+      - name: Enrich referentials from the forum digest
+        id: refs_enrich
+        if: vars.REFERENTIALS_DISABLED != 'true'
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node scripts/scanners/build-referentials.js --enrich --from=forum-poll
+
+      - name: Commit referential enrichments (gated)
+        if: vars.SCRAPE_COMMIT == '1' && vars.REFERENTIALS_DISABLED != 'true' && steps.refs_enrich.outcome == 'success'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SAFE_AUTO_COMMIT_NO_COMMENT: '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/ci/safe-auto-commit.js --id=referentials-enrich --max-per-day=12 \
+            --message="chore(ssot): enrich referentials from forum-poll" \
+            --paths="docs/ssot/referentials"
 
       - name: 🌍 Poll Forum
         id: poll
@@ -453,6 +509,9 @@ jobs:
             reports/forum-verify-*/
             reports/bastien-promote-latest.json
             .github/state/inbox-diag-harvest/
+            data/ssot/forum-request-digest.json
+            data/progress/candidate-tasks.json
+            data/progress/forum-reply-candidates.json
           if-no-files-found: warn
           retention-days: 7
       # P3069: short summary through the shared helper, on success and on failure.

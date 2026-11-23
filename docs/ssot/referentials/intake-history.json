@@ -1,0 +1,275 @@
+{
+ "v": 1,
+ "items": [
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_qja6nq5z|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5537",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_qja6nq5z|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5537",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_qja6nq5z|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5537",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_ja5osu5g|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5541",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5541 (read-only, IEEE anonymized). P2453/P2450 already locked the couple.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_qja6nq5z|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5537",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_ja5osu5g|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5541",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5541 (read-only, IEEE anonymized). P2453/P2450 already locked the couple.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_qja6nq5z|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5537",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_ja5osu5g|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5541",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5541 (read-only, IEEE anonymized). P2453/P2450 already locked the couple.",
+   "url": ""
+  },
+  {
+   "couple": "_TZE200_bjawzodf|TS0601",
+   "status": "lesson",
+   "source": "johan-26439-5540",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.9,
+   "evidence": "Johan topic 26439 post 5540 (read-only). Z2M TS0601_temperature_humidity_sensor_1. P2266/P3295/P3141.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_qja6nq5z|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5537",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_ja5osu5g|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5541",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5541 (read-only, IEEE anonymized). P2453/P2450 already locked the couple.",
+   "url": ""
+  },
+  {
+   "couple": "_TZE200_bjawzodf|TS0601",
+   "status": "lesson",
+   "source": "johan-26439-5540",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.9,
+   "evidence": "Johan topic 26439 post 5540 (read-only). Z2M TS0601_temperature_humidity_sensor_1. P2266/P3295/P3141.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_qja6nq5z|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5537",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_ja5osu5g|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5541",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5541 (read-only, IEEE anonymized). P2453/P2450 already locked the couple.",
+   "url": ""
+  },
+  {
+   "couple": "_TZE200_bjawzodf|TS0601",
+   "status": "lesson",
+   "source": "johan-26439-5540",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.9,
+   "evidence": "Johan topic 26439 post 5540 (read-only). Z2M TS0601_temperature_humidity_sensor_1. P2266/P3295/P3141.",
+   "url": ""
+  },
+  {
+   "couple": "HOBEIAN|ZG-204ZM",
+   "status": "lesson",
+   "source": "johan-26439-5538",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5538 (read-only). Z2M hobeian.ts / tuya.ts. P3141/P3155/P2421.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_wkai4ga5|TS0044",
+   "status": "lesson",
+   "source": "johan-issue-864",
+   "date": "2026-11-22T00:47:00.000Z",
+   "confidence": 0.9,
+   "evidence": "JohanBendz/com.tuya.zigbee issues #864 and #793, commits around 2024-10-12 (v0.2.71-v0.2.73). Reporters RBouroubi, roxart, SunBeech. Forum 26439/5542 read-only lesson (v0.3.4 regression after revamp, gone after Homey restart post-migration).",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_qja6nq5z|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5537",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5537 (read-only). DeviceOperatingMode KNOB_MFR already lists qja6nq5z.",
+   "url": ""
+  },
+  {
+   "couple": "_TZ3000_ja5osu5g|TS004F",
+   "status": "lesson",
+   "source": "johan-26439-5541",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5541 (read-only, IEEE anonymized). P2453/P2450 already locked the couple.",
+   "url": ""
+  },
+  {
+   "couple": "_TZE200_bjawzodf|TS0601",
+   "status": "lesson",
+   "source": "johan-26439-5540",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.9,
+   "evidence": "Johan topic 26439 post 5540 (read-only). Z2M TS0601_temperature_humidity_sensor_1. P2266/P3295/P3141.",
+   "url": ""
+  },
+  {
+   "couple": "HOBEIAN|ZG-204ZM",
+   "status": "lesson",
+   "source": "johan-26439-5538",
+   "date": "2026-11-22T00:55:00.000Z",
+   "confidence": 0.85,
+   "evidence": "Johan topic 26439 post 5538 (read-only). Z2M hobeian.ts / tuya.ts. P3141/P3155/P2421.",
+   "url": ""
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "alt_dp_map_set",
+  "title": {
+    "en": "Map Tuya DPs to capabilities",
+    "fr": "Associer des DP Tuya à des capacités",
+    "nl": "Tuya-DPs aan capabilities koppelen",
+    "de": "Tuya-DPs Fähigkeiten zuordnen"
+  },
+  "titleFormatted": {
+    "en": "Map DPs [[mapping]] on [[device]]",
+    "fr": "Associer les DP [[mapping]] sur [[device]]"
+  },
+  "hint": {
+    "en": "Format dp:capability[:divisor[:offset]], several with \";\". Example 101:measure_temperature:10;102:alarm_contact. Standard capabilities only; stored on the device, survives updates.",
+    "fr": "Format dp:capacité[:diviseur[:décalage]], plusieurs avec « ; ». Exemple 101:measure_temperature:10;102:alarm_contact. Capacités standard uniquement ; gardé sur l'appareil."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device"
+    },
+    {
+      "type": "text",
+      "name": "mapping",
+      "title": {
+        "en": "Mapping",
+        "fr": "Association"
+      },
+      "placeholder": {
+        "en": "101:measure_temperature:10",
+        "fr": "101:measure_temperature:10"
+      }
+    }
+  ]
+}

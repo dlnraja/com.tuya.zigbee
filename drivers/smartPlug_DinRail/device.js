@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER, Cluster, ZCLDataTypes} = require('zigbee-clusters');
@@ -6,7 +8,7 @@ const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
+// Energy scaling divisors - ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
 // The device also reports acPowerMultiplier/acPowerDivisor and metering multiplier/divisor attributes
 // (see commented-out block below), but fixed divisors are used here to match the original behavior.
 const ENERGY_DIVISORS = {
@@ -740,3 +742,5 @@ module.exports = smartplug;
     }
   }
 } */
+return module.exports;
+});

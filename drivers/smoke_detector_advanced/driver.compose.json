@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Smart Smoke Detector Advanced",
-    "fr": "Smart Smoke Detector Advanced",
+    "en": "Advanced smoke detector",
+    "fr": "Détecteur de fumée avancé",
     "nl": "Rookmelder",
     "de": "Rauchmelder"
   },
@@ -342,15 +342,18 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_tamper": {
       "getable": true,

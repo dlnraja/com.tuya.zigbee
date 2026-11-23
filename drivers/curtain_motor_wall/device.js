@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 // v5.5.295: Fix "Class extends value undefined" stderr error
 // Use try-catch to handle potential circular dependency issues
@@ -16,14 +18,14 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      CURTAIN / COVER MOTOR - v5.7.9 Enhanced Communication                  ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.7.9: Exponential backoff, wake-up ping, health monitoring              ║
- * ║  v5.6.0: Bidirectional physical/virtual button support                     ║
- * ║  DPs: 1-15,101-105 | ZCL: 258,6,8,EF00                                     ║
- * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * +==============================================================================+
+ * |      CURTAIN / COVER MOTOR - v5.7.9 Enhanced Communication                  |
+ * +==============================================================================+
+ * |  v5.7.9: Exponential backoff, wake-up ping, health monitoring              |
+ * |  v5.6.0: Bidirectional physical/virtual button support                     |
+ * |  DPs: 1-15,101-105 | ZCL: 258,6,8,EF00                                     |
+ * |  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      |
+ * +==============================================================================+
  */
 class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedCoverBase)) {
 
@@ -82,13 +84,13 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       if (!this.hasCapability('measure_luminance')) {
         try {
           await this.addCapability('measure_luminance');
-          this.log('[CURTAIN] ✅ Added measure_luminance capability');
+          this.log('[CURTAIN] [OK] Added measure_luminance capability');
         } catch (e) { /* ignore */ }
       }
       if (!this.hasCapability('button')) {
         try {
           await this.addCapability('button');
-          this.log('[CURTAIN] ✅ Added button capability');
+          this.log('[CURTAIN] [OK] Added button capability');
         } catch (e) { /* ignore */ }
       }
     } else {
@@ -96,7 +98,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       for (const cap of ['measure_luminance', 'button', 'measure_battery']) {
         if (this.hasCapability(cap)) {
           this.removeCapability(cap).catch(() => {});
-          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ZCL curtain`);
+          this.log(`[CURTAIN] [DEL] Removed incorrect ${cap} from ZCL curtain`);
         }
       }
     }
@@ -109,7 +111,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       await this._setupTuyaDPListener();
       await this._applyCalibrationSettings();
     } else {
-      this.log('[CURTAIN] ℹ️ ZCL device - skipping Tuya DP listener and calibration');
+      this.log('[CURTAIN] [INFO] ZCL device - skipping Tuya DP listener and calibration');
     }
 
     // v5.6.0: Initialize bidirectional button support
@@ -119,7 +121,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // v5.7.9: Start connection health monitor
     this._startHealthMonitor();
 
-    this.log('[CURTAIN] v5.7.9 ✅ Ready with enhanced communication');
+    this.log('[CURTAIN] v5.7.9 [OK] Ready with enhanced communication');
   }
 
   /**
@@ -138,17 +140,17 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       // Skip if no failures tracked
       if (!this._commFailures || this._commFailures < 1) {return;}
 
-      this.log('[CURTAIN] 🔍 Running health check...');
+      this.log('[CURTAIN] [SCAN] Running health check...');
       try {
         await this._wakeUpDevice();
         // If wake-up succeeds, clear the warning
         if (this._commFailures > 0) {
           this._commFailures = 0;
           this.unsetWarning().catch(() => {});
-          this.log('[CURTAIN] ✅ Health check passed - device responsive');
+          this.log('[CURTAIN] [OK] Health check passed - device responsive');
         }
       } catch (e) {
-        this.log('[CURTAIN] ⚠️ Health check failed - device may be offline');
+        this.log('[CURTAIN] [WARN] Health check failed - device may be offline');
       }
     }, 300000); // Every 5 minutes
   }
@@ -180,10 +182,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         tuyaCluster.on('dataReport', (data) => {
           this._handleTuyaDP(data);
         });
-        this.log('[CURTAIN] ✅ Tuya DP listener registered');
+        this.log('[CURTAIN] [OK] Tuya DP listener registered');
       }
     } catch (err) {
-      this.log('[CURTAIN] ⚠️ Tuya DP listener setup failed:', err.message);
+      this.log('[CURTAIN] [WARN] Tuya DP listener setup failed:', err.message);
     }
   }
 
@@ -202,14 +204,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     if ((dp === 14 || dp === 104) && this.hasCapability('measure_luminance')) {
       const lux = typeof value === 'number' ? value : parseInt(value, 10) || 0;
       this.safeSetCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
-      this.log(`[CURTAIN] 💡 Lux: ${lux}`);
+      this.log(`[CURTAIN] [HINT] Lux: ${lux}`);
     }
 
     // Battery - DP13
     if (dp === 13 && this.hasCapability('measure_battery')) {
       const battery = typeof value === 'number' ? value : parseInt(value, 10) || 0;
       this.safeSetCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
-      this.log(`[CURTAIN] 🔋 Battery: ${battery}%`);
+      this.log(`[CURTAIN] [BAT] Battery: ${battery}%`);
     }
 
     // Button press - DP15 or DP105
@@ -223,7 +225,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async _handleButtonPress(value) {
     if (this._destroyed) {return;}
-    this.log(`[CURTAIN] 🔘 Button pressed: ${value}`);
+    this.log(`[CURTAIN] [BTN] Button pressed: ${value}`);
     try {
       // Set button capability to trigger flows
       await this._safeSetCapability('button', true);
@@ -236,7 +238,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         await triggerCard.trigger(this, { button: 1, scene: 'pressed' }).catch(() => { });
       }
     } catch (err) {
-      this.log('[CURTAIN] ⚠️ Button trigger error:', err.message);
+      this.log('[CURTAIN] [WARN] Button trigger error:', err.message);
     }
   }
 
@@ -284,7 +286,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         await this._sendTuyaDP(5, 1, 'bool');
       }
     } catch (err) {
-      this.log('[CURTAIN] ⚠️ Could not apply calibration:', err.message);
+      this.log('[CURTAIN] [WARN] Could not apply calibration:', err.message);
     }
   }
 
@@ -310,3 +312,5 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 }
 
 module.exports = CurtainMotorDevice;
+return module.exports;
+});

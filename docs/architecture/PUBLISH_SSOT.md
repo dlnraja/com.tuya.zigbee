@@ -68,6 +68,7 @@ Implementation: `scripts/lib/soft-expect-decision.js` · Gate: `npm run check:p2
 | `dashboard-monitor` `Timeout after 10000ms` | Use `HOMEY_API_TIMEOUT_MS=120000` + soft-alert |
 | Verify expected version still `draft`/`processing_failed` but older Test healthy | `verify-test-version.js` soft-continues (P2325) |
 | Human one-shot retry | `workflow_dispatch` + `force_publish` → `direct-api-publish --force` (P2384) |
+| Bare `AggregateError` (stateMeta exactly that, P3341) | ONE identical bumped retry after the P3311 backoff, only if Athom holds a final failed build for that version; second failure → breaker + notice. With a message → no retry |
 
 Gate: `npm run check:p2325`
 
@@ -146,3 +147,11 @@ Gates / helpers:
 - `scripts/lib/soft-expect-decision.js` (`isTransientAthomFailure` / `softAlertDecision`)
 
 See also: [PROTOCOL_TX_RX_SSOT.md](./PROTOCOL_TX_RX_SSOT.md) (IAS skip) · [DUAL_APP_VISION.md](../rules/DUAL_APP_VISION.md)
+
+## Shipped JavaScript Latin-1 and package images (P3320)
+
+Shipped JS must be Latin-1 source (no raw character above U+00FF). Use ASCII tags or `\uXXXX` escapes.
+Do not package unreferenced or heavy logos or images; keep Athom-required `small` / `large` / `xlarge`.
+Gate: `tools/ci/p3320-shipped-latin1-assets-gate.js` (rules-gates `p3320-latin1`, core / pre-push).
+Safety net: P3312 still escapes payload JS at publish. Details: `docs/rules/SHIPPED_JS_LATIN1.md`.
+

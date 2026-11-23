@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { setupDoorWindowSensor, handleDoorWindowSettings } = require('../../lib/devices/DoorWindowContactHelper');
 
@@ -7,7 +9,7 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 /**
  * Door/Window contact sensor (IAS zone).
  * v9.0.415 (P92.123): full IAS enrollment + initial read + invert setting
- * via DoorWindowContactHelper — the bare listener-only version left
+ * via DoorWindowContactHelper - the bare listener-only version left
  * devices un-enrolled (zoneState "notEnrolled"), so contact states never
  * changed (forum Peter_van_Werkhoven #2108/#2114/#2118).
  */
@@ -32,3 +34,5 @@ class doorwindowsensor extends TuyaZigbeeDevice {
 }
 
 module.exports = doorwindowsensor;
+return module.exports;
+});

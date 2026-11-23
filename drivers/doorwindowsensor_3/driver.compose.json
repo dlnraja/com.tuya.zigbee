@@ -1,8 +1,8 @@
 {
   "id": "doorwindowsensor_3",
   "name": {
-    "en": "Door & Window Sensor",
-    "fr": "Capteur de porte et fenêtre",
+    "en": "Door & Window Sensor (TS0001)",
+    "fr": "Capteur de porte et fenêtre (TS0001)",
     "de": "Tür- & Fenstersensor",
     "nl": "Deur- & raamsensor"
   },
@@ -98,7 +98,8 @@
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "settings": [

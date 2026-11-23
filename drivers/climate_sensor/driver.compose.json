@@ -33,19 +33,23 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_humidity": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_voltage": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "V"
     }
   },
   "zigbee": {
@@ -397,7 +401,6 @@
       "_tze204_zrctll6o",
       "_tze204_zuepxzck",
       "_tze284_16m4bgsv",
-      "_tze284_1di7ujzp",
       "_tze284_1emhi5mm",
       "_tze284_432zhuwe",
       "_tze284_4cqhd2ha",
@@ -865,7 +868,6 @@
       "_TZE204_zrctll6o",
       "_TZE204_zuepxzck",
       "_TZE284_16m4bgsv",
-      "_TZE284_1di7ujzp",
       "_TZE284_1emhi5mm",
       "_TZE284_432zhuwe",
       "_TZE284_4cqhd2ha",
@@ -1708,8 +1710,6 @@
       "_tze204_ZUEPXZCK",
       "_TZE284_16M4BGSV",
       "_tze284_16M4BGSV",
-      "_TZE284_1DI7UJZP",
-      "_tze284_1DI7UJZP",
       "_TZE284_1EMHI5MM",
       "_tze284_1EMHI5MM",
       "_TZE284_432ZHUWE",
@@ -2036,8 +2036,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🌡️ Calibration (v5.5.28)",
-        "fr": "🌡️ Calibration (v5.5.28)"
+        "en": "Calibration (v5.5.28)",
+        "fr": "Calibration (v5.5.28)"
       },
       "children": [
         {
@@ -2109,10 +2109,10 @@
     {
       "type": "group",
       "label": {
-        "en": "🕒 Time Sync (v5.5.384)",
-        "fr": "🕒 Sync Heure (v5.5.384)",
-        "nl": "🕒 Tijdsync (v5.5.384)",
-        "de": "🕒 Zeitsync (v5.5.384)"
+        "en": "Time Sync (v5.5.384)",
+        "fr": "Sync Heure (v5.5.384)",
+        "nl": "Tijdsync (v5.5.384)",
+        "de": "Zeitsync (v5.5.384)"
       },
       "children": [
         {
@@ -2135,71 +2135,71 @@
             {
               "id": "auto",
               "label": {
-                "en": "🔄 Auto-detect (recommended)",
-                "fr": "🔄 Auto-détection (recommandé)"
+                "en": "Auto-detect (recommended)",
+                "fr": "Auto-détection (recommandé)"
               }
             },
             {
               "id": "tuya_timestamp",
               "label": {
-                "en": "📺 LCD Sensor (8-byte epoch 2000)",
-                "fr": "📺 Capteur LCD (8 octets epoch 2000)"
+                "en": "LCD Sensor (8-byte epoch 2000)",
+                "fr": "Capteur LCD (8 octets epoch 2000)"
               }
             },
             {
               "id": "tuya_ts_unix",
               "label": {
-                "en": "📺 LCD Sensor Unix (8-byte epoch 1970)",
-                "fr": "📺 Capteur LCD Unix (8 octets epoch 1970)"
+                "en": "LCD Sensor Unix (8-byte epoch 1970)",
+                "fr": "Capteur LCD Unix (8 octets epoch 1970)"
               }
             },
             {
               "id": "tuya_standard",
               "label": {
-                "en": "📅 Tuya Standard (7-byte local)",
-                "fr": "📅 Tuya Standard (7 octets local)"
+                "en": "Tuya Standard (7-byte local)",
+                "fr": "Tuya Standard (7 octets local)"
               }
             },
             {
               "id": "tuya_utc_string",
               "label": {
-                "en": "📅 Tuya UTC (7-byte UTC)",
-                "fr": "📅 Tuya UTC (7 octets UTC)"
+                "en": "Tuya UTC (7-byte UTC)",
+                "fr": "Tuya UTC (7 octets UTC)"
               }
             },
             {
               "id": "tuya_mcu",
               "label": {
-                "en": "🔧 Tuya MCU (9-byte with header)",
-                "fr": "🔧 Tuya MCU (9 octets avec header)"
+                "en": "Tuya MCU (9-byte with header)",
+                "fr": "Tuya MCU (9 octets avec header)"
               }
             },
             {
               "id": "tuya_extended",
               "label": {
-                "en": "🌍 Tuya Extended (9-byte + timezone)",
-                "fr": "🌍 Tuya Étendu (9 octets + fuseau)"
+                "en": "Tuya Extended (9-byte + timezone)",
+                "fr": "Tuya Étendu (9 octets + fuseau)"
               }
             },
             {
               "id": "tuya_full_tz",
               "label": {
-                "en": "🌍 Tuya Full TZ (10-byte + DST)",
-                "fr": "🌍 Tuya Full TZ (10 octets + DST)"
+                "en": "Tuya Full TZ (10-byte + DST)",
+                "fr": "Tuya Full TZ (10 octets + DST)"
               }
             },
             {
               "id": "zigbee_2000",
               "label": {
-                "en": "⏱️ Zigbee 2000 (4-byte epoch 2000)",
-                "fr": "⏱️ Zigbee 2000 (4 octets epoch 2000)"
+                "en": "⏱ Zigbee 2000 (4-byte epoch 2000)",
+                "fr": "⏱ Zigbee 2000 (4 octets epoch 2000)"
               }
             },
             {
               "id": "unix_1970",
               "label": {
-                "en": "⏱️ Unix 1970 (4-byte epoch 1970)",
-                "fr": "⏱️ Unix 1970 (4 octets epoch 1970)"
+                "en": "⏱ Unix 1970 (4-byte epoch 1970)",
+                "fr": "⏱ Unix 1970 (4 octets epoch 1970)"
               }
             }
           ]
@@ -2224,15 +2224,15 @@
             {
               "id": "auto",
               "label": {
-                "en": "🔄 Auto (Homey timezone)",
-                "fr": "🔄 Auto (fuseau Homey)"
+                "en": "Auto (Homey timezone)",
+                "fr": "Auto (fuseau Homey)"
               }
             },
             {
               "id": "utc",
               "label": {
-                "en": "🌐 UTC (GMT+0)",
-                "fr": "🌐 UTC (GMT+0)"
+                "en": "UTC (GMT+0)",
+                "fr": "UTC (GMT+0)"
               }
             },
             {
@@ -2284,9 +2284,9 @@
     {
       "type": "group",
       "label": {
-        "en": "🔔 Alarm Thresholds (E002)",
-        "fr": "🔔 Seuils d'alarme (E002)",
-        "nl": "🔔 Alarm drempels (E002)"
+        "en": "Alarm Thresholds (E002)",
+        "fr": "Seuils d'alarme (E002)",
+        "nl": "Alarm drempels (E002)"
       },
       "children": [
         {
@@ -2362,8 +2362,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🧪 Debug (Expert)",
-        "fr": "🧪 Debug (Expert)"
+        "en": "Debug (Expert)",
+        "fr": "Debug (Expert)"
       },
       "children": [
         {
@@ -2375,8 +2375,8 @@
           },
           "value": false,
           "hint": {
-            "en": "⚠️ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
-            "fr": "⚠️ EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
+            "en": "EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+            "fr": "EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
           }
         }
       ]

@@ -310,6 +310,8 @@ jobs:
           else
             npm install --omit=dev --ignore-scripts --no-audit --no-fund
           fi
+          # P3310: block an empty, truncated or wrong package (exact upload dir; manifest saved as artifact).
+          HOMEY_EXPECTED_VERSION="${HOMEY_EXPECTED_VERSION:-$(node -p "require('$GITHUB_WORKSPACE/app.json').version")}" node "$GITHUB_WORKSPACE/.github/scripts/pre-upload-completeness-guard.js" "$PUBLISH_DIR" || { echo "::error::P3310 pre-upload completeness guard blocked the upload (wrong, empty or incomplete package; see lines above)"; exit 1; }
           run_homey_cli_publish() {
             if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
               HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"

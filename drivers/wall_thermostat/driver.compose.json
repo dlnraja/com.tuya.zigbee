@@ -211,7 +211,11 @@
       "_tze204_zxkwaztm",
       "_TZE204_ZXKWAZTM",
       "_TZE204_zxkwaztm",
-      "_tze204_ZXKWAZTM"
+      "_tze204_ZXKWAZTM",
+      "_TZE284_rlytpmij",
+      "_tze284_rlytpmij",
+      "_TZE284_RLYTPMIJ",
+      "_tze284_RLYTPMIJ"
     ],
     "productId": [
       "TS0003",
@@ -297,11 +301,13 @@
     "target_temperature": {
       "min": 5,
       "max": 35,
-      "step": 0.5
+      "step": 0.5,
+      "units": "°C"
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     }
   },
   "ui": {

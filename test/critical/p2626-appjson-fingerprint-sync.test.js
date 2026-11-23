@@ -47,12 +47,45 @@ describe('P2626 app.json sacred-couple sync (no virtualdriver steal)', () => {
     assert.ok(d);
     assert.ok(hasMfr(d.zigbee, /vsxvaj9i/i), 'vsxvaj9i missing from button_wireless_3 app.json — Homey uses virtualdriver');
     assert.ok(hasPid(d.zigbee, 'TS0043'));
+    const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_3/driver.compose.json'), 'utf8'));
     for (const cap of ['button.1', 'button.2', 'button.3']) {
       assert.ok((d.capabilities || []).includes(cap), `missing ${cap}`);
-      // committed app.json is slimmed (options re-composed at build, same as accepted 9.0.1385):
-      // the device-view lock lives in driver.compose.json.
-      const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_3/driver.compose.json'), 'utf8'));
-      assert.equal(compose.capabilitiesOptions?.[cap]?.maintenanceAction, false, `${cap} must be device-view`);
+      // Compose lock kept. Official app.json must also keep the flags:
+      // postbuild sanitize used to strip them from the uploaded
+      // .homeybuild/app.json even though `homey app build` had re-composed them.
+      assert.equal(compose.capabilitiesOptions?.[cap]?.maintenanceAction, false, `${cap} must be device-view in compose`);
+      assert.equal(d.capabilitiesOptions?.[cap]?.maintenanceAction, false, `${cap} must be device-view in committed app.json`);
+    }
+  });
+
+  it('postbuild sanitize keeps built device-view flags for button_wireless_3', () => {
+    const { stripGeneratedButtonOptions } = require('../../scripts/maintenance/sanitize-manifest.cjs');
+    const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_3/driver.compose.json'), 'utf8'));
+    // Shape produced by `homey app build`: flags present. npm postbuild /
+    // prepare-publish then ran sanitize-manifest and used to drop button.*
+    // getable/setable/maintenanceAction, including device-view buttons.
+    const built = {
+      drivers: [{
+        id: 'button_wireless_3',
+        capabilities: compose.capabilities,
+        capabilitiesOptions: JSON.parse(JSON.stringify(compose.capabilitiesOptions || {})),
+      }],
+    };
+    assert.equal(stripGeneratedButtonOptions(built), 0);
+    const d2 = built.drivers[0];
+    for (const cap of ['button.1', 'button.2', 'button.3']) {
+      assert.equal(d2.capabilitiesOptions?.[cap]?.maintenanceAction, false, `${cap} must stay device-view after sanitize`);
+      assert.equal(d2.capabilitiesOptions?.[cap]?.getable, false, `${cap} getable`);
+      assert.equal(d2.capabilitiesOptions?.[cap]?.setable, false, `${cap} setable`);
+    }
+    const builtPath = path.join(ROOT, '.homeybuild', 'app.json');
+    if (fs.existsSync(builtPath)) {
+      const packaged = JSON.parse(fs.readFileSync(builtPath, 'utf8'));
+      const pd = (packaged.drivers || []).find((x) => x.id === 'button_wireless_3');
+      assert.ok(pd, 'button_wireless_3 in .homeybuild/app.json');
+      for (const cap of ['button.1', 'button.2', 'button.3']) {
+        assert.equal(pd.capabilitiesOptions?.[cap]?.maintenanceAction, false, `${cap} must be device-view in built package`);
+      }
     }
   });
 

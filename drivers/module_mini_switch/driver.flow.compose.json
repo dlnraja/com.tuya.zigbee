@@ -3,8 +3,8 @@
     {
       "id": "module_mini_switch_onoff_true",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report) (module mini switch)",
+        "fr": "Allumé (rapport) (module mini interrupteur)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
@@ -24,15 +24,15 @@
     {
       "id": "module_mini_switch_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report)",
+        "fr": "Allumé (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
+        "en": "Turned on (report)",
+        "fr": "Allumé (rapport)",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }

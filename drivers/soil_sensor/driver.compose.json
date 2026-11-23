@@ -26,7 +26,8 @@
         "de": "Bodenfeuchtigkeit"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "measure_humidity": {
       "title": {
@@ -36,7 +37,8 @@
         "de": "Luftfeuchtigkeit"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     },
     "alarm_water": {
       "title": {
@@ -54,7 +56,8 @@
         "fr": "Engrais (EC)",
         "nl": "Bemesting (EC)",
         "de": "Dünger (EC)"
-      }
+      },
+      "units": "µS/cm"
     },
     "measure_conductivity": {
       "title": {
@@ -62,7 +65,8 @@
         "fr": "Fertilité du Sol (EC)",
         "nl": "Bodemvruchtbaarheid (EC)",
         "de": "Bodenfruchtbarkeit (EC)"
-      }
+      },
+      "units": "µS/cm"
     },
     "button.1": {
       "title": {
@@ -75,15 +79,18 @@
     },
     "measure_temperature": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "°C"
     },
     "measure_luminance": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "lx"
     },
     "measure_battery": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "energy": {
@@ -413,7 +420,27 @@
       "_TZE200_0ints6w",
       "_TZE204_0ints6w",
       "_tze200_0ints6w",
-      "_tze204_0ints6w"
+      "_tze204_0ints6w",
+      "_TZD200_7khnomgh",
+      "_tzd200_7khnomgh",
+      "_TZD200_7KHNOMGH",
+      "_tzd200_7KHNOMGH",
+      "_TZE200_7sa1ogeny",
+      "_tze200_7sa1ogeny",
+      "_TZE200_7SA1OGENY",
+      "_tze200_7SA1OGENY",
+      "_TZD200_7sa1ogeny",
+      "_tzd200_7sa1ogeny",
+      "_TZD200_7SA1OGENY",
+      "_tzd200_7SA1OGENY",
+      "_TZE200_sa1ogeny",
+      "_tze200_sa1ogeny",
+      "_TZE200_SA1OGENY",
+      "_tze200_SA1OGENY",
+      "_TZD200_sa1ogeny",
+      "_tzd200_sa1ogeny",
+      "_TZD200_SA1OGENY",
+      "_tzd200_SA1OGENY"
     ],
     "productId": [
       "CS-201Z",
@@ -455,8 +482,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🌡️ Calibration (v5.5.330 Hobeian)",
-        "fr": "🌡️ Calibration (v5.5.330 Hobeian)"
+        "en": "Calibration (v5.5.330 Hobeian)",
+        "fr": "Calibration (v5.5.330 Hobeian)"
       },
       "children": [
         {
@@ -542,8 +569,8 @@
     {
       "type": "group",
       "label": {
-        "en": "⚠️ Alerts (v5.5.330 Hobeian)",
-        "fr": "⚠️ Alertes (v5.5.330 Hobeian)"
+        "en": "Alerts (v5.5.330 Hobeian)",
+        "fr": "Alertes (v5.5.330 Hobeian)"
       },
       "children": [
         {
@@ -567,8 +594,8 @@
     {
       "type": "group",
       "label": {
-        "en": "⚙️ Settings (v5.5.330 Hobeian)",
-        "fr": "⚙️ Paramètres (v5.5.330 Hobeian)"
+        "en": "Settings (v5.5.330 Hobeian)",
+        "fr": "Paramètres (v5.5.330 Hobeian)"
       },
       "children": [
         {

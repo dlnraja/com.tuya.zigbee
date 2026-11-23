@@ -2,7 +2,7 @@
   "name": {
     "en": "Device Air Purifier Din",
     "nl": "Luchtreiniger Din",
-    "fr": "Purificateur d'air Din",
+    "fr": "Purificateur d'air Din (device purificateur d'air din)",
     "de": "Luftreiniger Din",
     "es": "Purificador de aire Din"
   },
@@ -75,7 +75,8 @@
     },
     "measure_pm25": {
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "µg/m³"
     }
   },
   "settings": [

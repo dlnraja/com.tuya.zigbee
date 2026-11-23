@@ -25,8 +25,10 @@ const RADAR_NOT_ON_CURTAIN = [
   '_TZE200_hyhl5y36',
   '_TZE204_ycke4deo',
   '_TZE284_ozf4e02o',
-  '_TZE284_rlytpmij',
 ];
+
+/** Official Z2M/ZHC Moes ZHT-S01 thermostat; was parked on the radar driver. */
+const ZHT_S01_MFR = '_TZE284_rlytpmij';
 
 describe('P2698 publish CI + diag dashboard soft shell', () => {
   it('climate_sensor has measure_battery without alarm_battery', () => {
@@ -69,6 +71,22 @@ describe('P2698 publish CI + diag dashboard soft shell', () => {
         `${m} must remain on presence_sensor_radar`,
       );
     }
+  });
+
+  it('ZHT-S01 rlytpmij lives on wall_thermostat, not on radar or curtain_motor', () => {
+    const curtain = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'drivers/curtain_motor/driver.compose.json'), 'utf8'),
+    );
+    const radar = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'drivers/presence_sensor_radar/driver.compose.json'), 'utf8'),
+    );
+    const wall = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'drivers/wall_thermostat/driver.compose.json'), 'utf8'),
+    );
+    const has = (list, m) => (list || []).some((x) => String(x).toLowerCase() === m.toLowerCase());
+    assert.ok(!has((curtain.zigbee || {}).manufacturerName, ZHT_S01_MFR), 'rlytpmij must not be on curtain_motor');
+    assert.ok(!has((radar.zigbee || {}).manufacturerName, ZHT_S01_MFR), 'rlytpmij must not stay on presence_sensor_radar');
+    assert.ok(has((wall.zigbee || {}).manufacturerName, ZHT_S01_MFR), 'rlytpmij must live on wall_thermostat');
   });
 
   it('prune-fp-collision-bleed --check exits 0', () => {

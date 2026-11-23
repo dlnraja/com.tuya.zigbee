@@ -3,6 +3,11 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class PresenceSensorRadarDriver extends ZigBeeDriver {
+  // P3331: dormant host (lib/drivers/held-driver-folds.json): an exact hosted couple runs its held device class.
+  onMapDeviceClass(device) {
+    return require('../../lib/drivers/HeldDriverFolds').foldedDeviceClass('sensor_contact_presence', device) || require('./device');
+  }
+
 async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) {return;}

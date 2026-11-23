@@ -1,4 +1,6 @@
 'use strict';
+// P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
+require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -115,7 +117,7 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
     await this._setupTuyaDPListeners(zclNode);
-    this.log('[CLIMATE-HYBRID-LEGACY] ✅ Climate presence sensor ready');
+    this.log('[CLIMATE-HYBRID-LEGACY] [OK] Climate presence sensor ready');
   }
 
   _handleTuyaResponse(data) {
@@ -221,3 +223,5 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
 }
 
 module.exports = ClimateSensorPresenceDevice;
+return module.exports;
+});

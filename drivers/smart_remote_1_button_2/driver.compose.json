@@ -1,8 +1,8 @@
 {
   "id": "smart_remote_1_button_2",
   "name": {
-    "en": "1 button Smart Remote Controller",
-    "fr": "Télécommande intelligente à 1 bouton",
+    "en": "1 button Smart Remote Controller (smart remote 1 button 2)",
+    "fr": "Télécommande intelligente à 1 bouton (smart remote 1 button 2)",
     "nl": "1 knops slimme afstandsbediening",
     "de": "1-Tasten-Fernbedienung",
     "es": "Control remoto inteligente de 1 botón"
@@ -165,7 +165,8 @@
         "de": "Batterie"
       },
       "getable": true,
-      "preventInsights": false
+      "preventInsights": false,
+      "units": "%"
     }
   },
   "metadata": {
