@@ -26,7 +26,10 @@ class pir_sensor_2 extends TuyaZigbeeDevice {
 				}
 			},
 		});
-	
+
+		// P3401 (forum 140352 #2277): TS020C also reports occupancy as Tuya DP1 (0 = presence) and
+		// illuminance on 0xE002 attr 0xE001. Receive-only, parallel to the IAS path above, TS020C only.
+		require('../../lib/zigbee/Ts020cRx').attach(this, zclNode);
 	}
 
 	onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
