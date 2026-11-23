@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-03T11:20:55.567Z",
+  "generated": "2026-11-23T09:03:10.335Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
-    "threads": 565,
-    "covered": 457,
+    "threads": 567,
+    "covered": 459,
     "behaviour": 100,
     "dual-couple": 6,
     "missing-couple": 2,
@@ -12090,7 +12090,9 @@
     {
       "n": 1469,
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469",
-      "state": "open",
+      "state": "closed",
+      "closedAt": "2026-11-15T17:25:20Z",
+      "reason": "completed",
       "canonical": 1013,
       "batches": [
         "70",
@@ -13664,6 +13666,48 @@
           "pid": "TS0001",
           "drivers": [
             "fingerbot"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1557,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1557",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE204_cvub6xbb",
+          "pid": "TS0601",
+          "drivers": [
+            "wall_thermostat"
+          ]
+        },
+        {
+          "mfr": "_TZ3210_j4pdtz9v",
+          "pid": "TS0001",
+          "drivers": [
+            "fingerbot"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1559,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1559",
+      "state": "closed",
+      "closedAt": "2026-11-16T18:12:22Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE200_bjawzodf",
+          "pid": "TS0601",
+          "drivers": [
+            "climate_sensor"
           ]
         }
       ],
