@@ -132,7 +132,7 @@ describe('P3397 IAS zoneStatus Bitmap decoding', () => {
     const ias = { writeAttributes: async (a) => { writes.push(a); }, readAttributes: async () => ({}) };
     const bad = { log() {}, homey: { zigbee: { ieeeAddress: '0000000000000000' } }, getStoreValue: () => null, setStoreValue: async () => {} };
     assert.strictEqual(await writeCieAddress(bad, ias).catch(() => false), false);
-    const good = { log() {}, homey: { zigbee: { ieeeAddress: '00:17:88:01:02:03:04:05' } }, getStoreValue: () => null, setStoreValue: async () => {} };
+    const good = { log() {}, homey: { zigbee: { ieeeAddress: '0x0017880102030405' } }, getStoreValue: () => null, setStoreValue: async () => {} };
     assert.strictEqual(await writeCieAddress(good, ias), true);
     assert.deepStrictEqual(Object.keys(writes[writes.length - 1]), ['iasCIEAddress']);
   });
