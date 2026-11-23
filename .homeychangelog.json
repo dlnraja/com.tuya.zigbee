@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.259": {
+    "en": "Fixed: device settings: driver-preference uses SDK3 homey.settings instead of SDK2 ManagerSettings (P3400).",
+    "fr": "Corrigé : réglages des appareils : driver-preference uses SDK3 homey.settings instead of SDK2 ManagerSettings (P3400)."
+  },
   "1.0.258": {
     "en": "Changed: decode remaining IAS zoneStatus readers via ZoneStatusRx.",
     "fr": "Modifié : decode remaining IAS zoneStatus readers via ZoneStatusRx."
