@@ -231,9 +231,13 @@
       ]
     }
   ],
-  "5.12.566": {
+  "5.12.567": {
     "en": "Next stable update in preparation: this note is replaced by the list of its changes when the version is published.",
     "fr": "Prochaine mise à jour stable en préparation : cette note est remplacée par la liste de ses changements à la publication."
+  },
+  "5.12.566": {
+    "en": "Changed: decode remaining IAS zoneStatus readers via ZoneStatusRx.",
+    "fr": "Modifié : decode remaining IAS zoneStatus readers via ZoneStatusRx."
   },
   "5.12.565": {
     "en": "Fixed: presence radars & motion sensors.",
