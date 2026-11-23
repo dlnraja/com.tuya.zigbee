@@ -374,11 +374,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (!allowWithoutAlarmBit) {
       const zs = payload?.zoneStatus !== undefined ? payload.zoneStatus : payload;
       let rawAlarm = false;
-      if (zs && typeof zs === 'object') {
-        rawAlarm = !!(zs.alarm1 || zs.alarm2
-          || (typeof zs.get === 'function' && (zs.get('alarm1') || zs.get('alarm2'))));
-      } else if (typeof zs === 'number' && Number.isFinite(zs)) {
-        rawAlarm = (zs & 0x03) !== 0;
+      // P3398: one robust decoder (Bitmap, Buffer, {type:'Buffer'}, number) via ZoneStatusRx.
+      const zsBits = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(zs);
+      if (zsBits) {
+        rawAlarm = zsBits.alarm1 || zsBits.alarm2;
+      } else if (zs && typeof zs === 'object' && typeof zs.get === 'function') {
+        rawAlarm = !!(zs.get('alarm1') || zs.get('alarm2'));
       }
       observeRaw(this, rawAlarm, 'sos');
       const { value: logicalAlarm, meta } = applyPolarity(this, rawAlarm, 'sos');

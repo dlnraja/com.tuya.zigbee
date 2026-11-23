@@ -66,9 +66,9 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
             if (iasZone?.readAttributes) {
                 const attrs = await iasZone.readAttributes(['zoneStatus', 'zoneState']).catch(() => null);
                 if (attrs?.zoneStatus !== undefined) {
-                    const zs = typeof attrs.zoneStatus === 'number'
-                        ? attrs.zoneStatus
-                        : attrs.zoneStatus?.alarm1 || attrs.zoneStatus?.alarm2 ? 1 : 0;
+                    // P3398: map16 Bitmap / Buffer / number -> number (ZoneStatusRx).
+                    const zsBits = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(attrs.zoneStatus);
+                    const zs = zsBits ? zsBits.value : 0;
                     this._receivedDpData = true; // any data path alive
                     await this.safeSetCapabilityValue('alarm_water', Boolean(zs & 0x03)).catch(() => {});
                     this.log(`[WATER-TUYA] Initial IAS zoneStatus=${zs} -> alarm_water=${Boolean(zs & 0x03)}`);
