@@ -5,7 +5,7 @@ const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const Homey = require('homey');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const { debug, CLUSTER } = require('zigbee-clusters');
+const { debug } = require('zigbee-clusters');
 
 class SlimMotionSensor extends TuyaZigbeeDevice {
 
@@ -21,7 +21,9 @@ class SlimMotionSensor extends TuyaZigbeeDevice {
 		// left every capability dead). Works on existing pairings, no re-pair.
 		require('../../lib/zigbee/ZoneStatusRx').attachMotionRx(this, zclNode, {
 			onStatus: (motion, bits, source) => {
-				if (source === 'ias-notify') this.log('IASZoneStatusChangeNotification received:', bits && bits.value);
+				if (source === 'ias-notify') {
+					this.log('IASZoneStatusChangeNotification received:', bits && bits.value);
+				}
 			},
 		});
 	}
@@ -29,7 +31,9 @@ class SlimMotionSensor extends TuyaZigbeeDevice {
 	onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
 		this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
 		const bits = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(zoneStatus);
-		if (!bits) return;
+		if (!bits) {
+			return;
+		}
 		this.safeSetCapabilityValue('alarm_motion', bits.alarm1 || bits.alarm2).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 		this.safeSetCapabilityValue('alarm_battery', bits.battery).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
