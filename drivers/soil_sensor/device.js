@@ -100,6 +100,15 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     return _includesCI(zg303Mfrs, manufacturer);
   }
 
+  // P3401: Excellux ZS-300TF / ZS-301Z (exact couples _TZE284_hdml1aav|TS0601 and
+  // _TZE2841000000_hdml1aav|TS0601, Z2M tuya.ts) has its own DP layout (forum 140352 #2278/#2279).
+  get isZs300TfVariant() {
+    const { isZs300Tf } = require('../../lib/profiles/ZsSoil300TfProfile');
+    const manufacturer = this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || this.getStoreValue?.('zb_manufacturer_name') || '';
+    const productId = this.getData?.()?.productId || this.getSetting?.('zb_model_id') || this.getStoreValue?.('zb_model_id') || '';
+    return isZs300Tf(manufacturer, productId);
+  }
+
   // P3019: Arteco ZS-SF00 (exact couple A89G12C|Arteco, Z2M tuya.ts) has its own DP layout.
   get isZsSf00Variant() {
     const { isZsSf00 } = require('../../lib/profiles/ZsSf00Profile');
@@ -365,6 +374,38 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         return;
       }
     } catch (_e) { /* fail-open: keep the existing path */ }
+
+    // WHY(P3401): ZS-300TF / ZS-301Z: DP102 = illuminance, DP107 = temperature calibration,
+    // DP111 = water warning, DP115/116 = fertility threshold/warning. DPs outside the Z2M map
+    // are dropped instead of reaching the universal auto-temp guess (0 / 0.1 C overwrite).
+    if (this.isZs300TfVariant) {
+      const { decode } = require('../../lib/profiles/ZsSoil300TfProfile');
+      const r = decode(dp, parsedValue);
+      if (r) {
+        if (r.skip) {
+          this.log(`[SOIL] ZS-300TF DP${dp} = ${parsedValue} not mapped (outside Z2M map)`);
+          return;
+        }
+        this.log(`[SOIL] ZS-300TF DP${dp} -> ${r.capability || r.store} = ${r.value}`);
+        if (r.capability) {
+          if (this.hasCapability(r.capability)) { this.safeSetCapabilityValue(r.capability, r.value).catch(() => { }); }
+          if (r.capability === 'measure_ec' && this.hasCapability('measure_conductivity')) {
+            this.safeSetCapabilityValue('measure_conductivity', r.value).catch(() => { });
+          }
+          if (r.capability === 'measure_humidity.soil') { this._triggerMoistureFlows?.(r.value); }
+          if (r.capability === 'measure_temperature') { this._triggerTemperatureFlows?.(r.value); }
+          if (r.capability === 'measure_ec') { this._triggerECFlows?.(r.value); }
+        } else if (r.store) {
+          // Read inside the microtask so back-to-back DPs of one frame do not overwrite each other.
+          Promise.resolve().then(() => {
+            const cur = Object.assign({}, (this.getStoreValue && this.getStoreValue('device_reported')) || {});
+            cur[r.store] = r.value;
+            return this.setStoreValue && this.setStoreValue('device_reported', cur);
+          }).catch(() => { });
+        }
+        return;
+      }
+    }
 
     // WHY(P3019): ZS-SF00 reuses DP102/103/106/107/111 with other meanings than the generic
     // soil map (Z2M tuya.ts ZS-SF00). Couple-locked; unknown DPs fall through to the generic path.
