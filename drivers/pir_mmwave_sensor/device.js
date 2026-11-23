@@ -98,10 +98,9 @@ class pir_mmwave_sensor extends TuyaZigbeeDevice {
     }
 
     const ep1 = zclNode.endpoints[1];
-    if (ep1?.clusters?.[CLUSTER.IAS_ZONE.NAME]) {
-      ep1.clusters[CLUSTER.IAS_ZONE.NAME]
-        .on('attr.zoneStatus', this.onZoneStatusAttributeReport.bind(this));
-    }
+    // P3397: parallel RX (attr 0x0002 + IAS notification + occupancy 0x0406). The attribute
+    // report alone missed PIRs that only send zoneStatusChangeNotification.
+    require('../../lib/zigbee/ZoneStatusRx').attachMotionRx(this, zclNode);
     if (ep1?.clusters?.[CLUSTER.POWER_CONFIGURATION.NAME]) {
       ep1.clusters[CLUSTER.POWER_CONFIGURATION.NAME]
         .on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));

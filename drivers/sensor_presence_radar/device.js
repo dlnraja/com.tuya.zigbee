@@ -1105,7 +1105,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const iasZone = ep1.clusters?.iasZone || ep1.clusters?.ssIasZone || ep1.clusters?.[1280];
       const permissiveConfig = this._getSensorConfig?.() || {};if (iasZone?.on) {
         iasZone.on('attr.zoneStatus', (status) => {
-          const sn = typeof status === 'number' ? status : status?.data?.[0] || 0;
+          // WHY(P3397): zoneStatus is a map16 Bitmap object; `& 0x03` on it is always 0.
+          const sn = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(status)?.value;
+          if (sn === undefined) {return;}
           const raw = (sn & 0x03) !== 0;
           const motion = this._applyPresenceInversion(raw );
           if (permissiveConfig.noIasMotion && this._hasTuyaDPCluster !== false) {
@@ -1118,7 +1120,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       });
         if (!iasZone.onZoneStatusChangeNotification) {
           iasZone.onZoneStatusChangeNotification = (p) => {
-            const s = p?.zoneStatus ?? p?.data?.[0] ?? 0;
+            const s = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(p)?.value;
+            if (s === undefined) {return;}
             const motion = this._applyPresenceInversion((s & 0x03) !== 0);
             if (permissiveConfig.noIasMotion && this._hasTuyaDPCluster !== false) {
               this.log(`[RADAR] IAS notification: ${s} -> SKIPPED (noIasMotion, has Tuya DP)`);
@@ -1955,29 +1958,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this.log(`[RADAR] [WARN] Could not read zone state: ${e.message}`);
       }
 
-      // Step 2: Get Homey's IEEE address for CIE
-      let homeyIeee = null;
-      try {
-        // Try multiple sources for Homey's IEEE address
-        homeyIeee = this.homey?.zigbee?.ieeeAddress;
-        if (!homeyIeee) {
-          // Try to get from first router or use a valid address
-          homeyIeee = zclNode?.networkAddress?.ieeeAddr || this.getData()?.token;
-        }
-        if (!homeyIeee || homeyIeee === '0000000000000000' ) {
-          // Use a default valid address format
-          homeyIeee = '0x00124b0000000000';
-        }
-        this.log(`[RADAR] Homey IEEE for CIE: ${homeyIeee}`);
-      } catch (e) {
-        homeyIeee = '0x00124b0000000000';
-      }
-
-      // Step 3: Write IAS CIE address with retry
+      // Step 2+3 (P3397): write the REAL coordinator IEEE into iasCIEAddress.
+      // WHY: the old code wrote `iasCieAddress` (not a zigbee-clusters attribute -> TypeError,
+      // nothing sent) and fell back to a placeholder / the device's own IEEE, which would
+      // redirect the sensor's notifications away from Homey once the name was right.
       for (let attempt = 1; attempt <= 3; attempt++) {
         try {
-          await iasZone.writeAttributes({ iasCieAddress: homeyIeee });
-          this.log(`[RADAR]  Wrote IAS CIE address (attempt ${attempt})`);
+          const wrote = await require('../../lib/zigbee/ZoneStatusRx').writeCieAddress(this, iasZone);
+          this.log(wrote ? `[RADAR]  Wrote IAS CIE address (attempt ${attempt})` : '[RADAR] No trusted coordinator IEEE - CIE left to Homey');
           break;
         } catch (e) {
           this.log(`[RADAR] [WARN] Could not write IAS CIE (attempt ${attempt}): ${e.message}`);
@@ -2067,7 +2055,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // Attribute change listener - v5.5.790: Apply presence inversion
     iasZone.on('attr.zoneStatus', (status) => {
-      const statusNum = typeof status === 'object' ? status?.data?.[0] || 0  : typeof status === 'number' ? status : 0;
+      // WHY(P3397): Bitmap object -> number (status.data was undefined -> motion always false).
+      const statusNum = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(status)?.value;
+      if (statusNum === undefined) {return;}
       const alarm1 = (statusNum & 0x01) !== 0;
       const alarm2 = (statusNum & 0x02) !== 0;
       const rawMotion = alarm1 || alarm2;
@@ -2083,14 +2073,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // Zone status change notification (ZCL command) - v5.5.790: Apply presence inversion
     iasZone.onZoneStatusChangeNotification = (payload) => {
-      const status = payload?.zoneStatus ?? payload?.data?.[0] ?? 0;
-      const rawMotion = (status & 0x03) !== 0;
+      const zsNum = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(payload)?.value;
+      if (zsNum === undefined) {return;}
+      const rawMotion = (zsNum & 0x03) !== 0;
       const motion = this._applyPresenceInversion(rawMotion );
       if (effectiveNoIasMotion) {
-        this.log(`[RADAR] IAS notification: ${status} -> raw=${rawMotion} -> SKIPPED (noIasMotion)`);
+        this.log(`[RADAR] IAS notification: ${zsNum} -> raw=${rawMotion} -> SKIPPED (noIasMotion)`);
         return;
       }
-      this.log(`[RADAR] IAS zoneStatusChangeNotification: ${status} -> raw=${rawMotion} -> ${motion}`);
+      this.log(`[RADAR] IAS zoneStatusChangeNotification: ${zsNum} -> raw=${rawMotion} -> ${motion}`);
       this.safeSetCapabilityValue('alarm_motion', motion).catch(() => { });
       this._triggerPresenceFlows(motion);
     };

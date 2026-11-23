@@ -18,11 +18,10 @@ class motion_sensor_2 extends TuyaZigbeeDevice {
 
     // ---- IAS Zone Enrollment (Fix #337: _TZE200_3towulqd stays "notEnrolled") ----
     try {
-      const iasCluster = zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME];
+      const iasCluster = zclNode?.endpoints?.[1]?.clusters?.[CLUSTER.IAS_ZONE.NAME];
       // Write CIE address to enroll the IAS zone
-      await iasCluster.writeAttributes({
-        iasCIEAddress: this.homey ? this.homey.zigbee.getHubAddress() : '00:00:00:00:00:00:00:00'
-      }).catch(err => {
+      // P3397: real coordinator IEEE only (getHubAddress() is not an SDK method; never a zero CIE).
+      await require('../../lib/zigbee/ZoneStatusRx').writeCieAddress(this, iasCluster).catch(err => {
         this.log('IAS CIE write fallback (non-critical):', err.message);
       });
     } catch (err) {
@@ -66,14 +65,17 @@ class motion_sensor_2 extends TuyaZigbeeDevice {
     }
 
     // alarm_motion handler (IAS Zone)
-    zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME]
-      .onZoneStatusChangeNotification = payload => {
-        this.onZoneStatusChangeNotification(payload);
-      };
+    // P3397: TS0601/TS0225 variants of this driver have no iasZone / illuminance cluster on
+    // endpoint 1; the unguarded access threw here, before the Tuya DP listeners below, so the
+    // tile showed capabilities that never moved. Parallel RX: IAS notification + attr 0x0002
+    // + occupancy 0x0406, guarded.
+    require('../../lib/zigbee/ZoneStatusRx').attachMotionRx(this, zclNode);
 
     // measure_illuminance handler
-    zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
-      .on('attr.measuredValue', this.onIlluminanceMeasuredAttributeReport.bind(this));
+    const illum = zclNode?.endpoints?.[1]?.clusters?.[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME];
+    if (illum && typeof illum.on === 'function') {
+      illum.on('attr.measuredValue', this.onIlluminanceMeasuredAttributeReport.bind(this));
+    }
 
     if (zclNode?.endpoints?.[1]?.clusters?.tuya) {
       zclNode.endpoints[1].clusters.tuya.on('reporting', async value => {
@@ -102,8 +104,10 @@ class motion_sensor_2 extends TuyaZigbeeDevice {
 
   // Handle motion status alarms
   async onZoneStatusChangeNotification({ zoneStatus }) {
-    this.log('Motion status:', zoneStatus.alarm1);
-    await this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+    const bits = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(zoneStatus);
+    if (!bits) {return;}
+    this.log('Motion status:', bits.alarm1 || bits.alarm2);
+    await this.safeSetCapabilityValue('alarm_motion', bits.alarm1 || bits.alarm2).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   // Handle illuminance attribute reports
