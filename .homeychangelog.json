@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.258": {
+    "en": "Changed: decode remaining IAS zoneStatus readers via ZoneStatusRx.",
+    "fr": "Modifié : decode remaining IAS zoneStatus readers via ZoneStatusRx."
+  },
   "1.0.257": {
     "en": "Fixed: presence radars & motion sensors and pairing and device recognition. Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : radars de présence & détecteurs de mouvement et appairage et reconnaissance des appareils. En coulisses : tests et contrôles de publication."
