@@ -263,10 +263,24 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       const config = this._getEnergyConfig();
       this.log(`[ENERGY] Specialized Config: ${config.configName || 'TUYA_DP_STANDARD'}`);
       // v5.13.1: Initialize physical and virtual buttons
+      // P3400 (#559): exact-couple ZCL scale authority (TS011F reports plain V/W/mA, 1/100 kWh) - after identity is filled
+      try {
+        if (_includesCI(['_TZ3210_xzhnra8x', '_TZ3210_w0qqde0g'], mfr) && !this._zclAuthority) {
+          const { ZclScaleAuthority } = require('../../lib/energy/ZclScaleAuthority');
+          this._zclAuthority = new ZclScaleAuthority(this);
+          this._zclAuthority.attach(zclNode || this.zclNode);
+        }
+      } catch (e) { this.log('[ENERGY] P3400 authority skipped:', e && e.message); }
       await this.initPhysicalButtonDetection(zclNode);
       await this.initVirtualButtons();
       this.log('[ENERGY] [OK] v9.7.3 Energy monitor plug ready');
     }, 'onNodeInit');
+  }
+
+  // P3400 (#559): every energy write passes the scale authority (no-op for other couples)
+  async safeSetCapabilityValue(capability, value) {
+    const a = this._zclAuthority;
+    return super.safeSetCapabilityValue(capability, a ? a.correct(capability, value) : value);
   }
 
   onDeleted() {
