@@ -58,7 +58,10 @@ env:
 jobs:
   validate:
     name: 🔍 Universal Validation (SDK 3 Strict)
-    if: github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]'
+    # P3397: the P3036 publish gate dispatches this workflow with GITHUB_TOKEN (actor
+    # github-actions[bot]); skipping that dispatch left CI "missing" forever on [skip ci] tips
+    # (Auto-Publish 45098864644 deferred 23/11). A dispatch is always an explicit CI request.
+    if: github.event_name == 'workflow_dispatch' || (github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]')
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
