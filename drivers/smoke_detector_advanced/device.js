@@ -130,11 +130,8 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
       const iasZone = zclNode.endpoints[1]?.clusters.iasZone;
       if (!iasZone) {return;}
 
-      const ieeeAddress = this.homey.zigbee?.ieeeAddress || await this.homey.zigbee?.getIeeeAddress?.();
-
-      if (ieeeAddress) {
-        await iasZone.writeAttributes({ iasCieAddress: ieeeAddress }).catch(() => {});
-      }
+      // P3397: iasCIEAddress (iasCieAddress threw before any frame); real coordinator IEEE only.
+      await require('../../lib/zigbee/ZoneStatusRx').writeCieAddress(this, iasZone).catch(() => {});
     } catch (e) { }
   }
 
