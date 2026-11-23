@@ -183,10 +183,9 @@ class RainSensorDevice extends UnifiedSensorBase {
 
       // Try to write CIE address
       try {
-        const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
-        if (homeyIeeeAddress) {
-          await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
-          this.log('[RAIN-IAS] CIE address written:', homeyIeeeAddress);
+        // P3397: iasCIEAddress (iasCieAddress threw before any frame); real coordinator IEEE only.
+        if (await require('../../lib/zigbee/ZoneStatusRx').writeCieAddress(this, iasCluster)) {
+          this.log('[RAIN-IAS] CIE address written');
         }
       } catch (cieErr) {
         this.log('[RAIN-IAS] CIE address write (normal if already set):', cieErr.message);
@@ -206,8 +205,10 @@ class RainSensorDevice extends UnifiedSensorBase {
 
       // Attribute listener for zone status (SDK3 event-based)
       iasCluster.on('attr.zoneStatus', (status) => {
-        const raining = (status & 0x01) !== 0 || (status & 0x02) !== 0;
-        this.log(`[RAIN-IAS] Zone attr status: ${status} raining=${raining}`);
+        // WHY(P3397): map16 Bitmap, `& 0x01` on it was always 0.
+        const raining = require('../../lib/zigbee/ZoneStatusRx').zoneStatusMotion(status);
+        if (raining === null) {return;}
+        this.log(`[RAIN-IAS] Zone attr status: raining=${raining}`);
 
         if (this.hasCapability('alarm_water')) {
           this.safeSetCapabilityValue('alarm_water', raining).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));

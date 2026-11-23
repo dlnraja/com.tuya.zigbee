@@ -1086,10 +1086,9 @@ class MotionSensorDevice extends UnifiedSensorBase {
       // v5.5.517: Try to write CIE address for proper enrollment
       // v9.0.251 (P60): Fire-and-forget for sleepy EndDevices (ZG-204ZM etc.)
       SleepyInit.fireAndForget(this, (async () => {
-        const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
-        if (homeyIeeeAddress) {
-          await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
-          this.log('[MOTION-IAS] [OK] CIE address written:', homeyIeeeAddress);
+        // P3397: iasCIEAddress (iasCieAddress threw before any frame); real coordinator IEEE only.
+        if (await require('../../lib/zigbee/ZoneStatusRx').writeCieAddress(this, iasCluster)) {
+          this.log('[MOTION-IAS]  CIE address written');
         }
       })(), { name: 'writeCieAddress' });
 
@@ -1133,16 +1132,19 @@ class MotionSensorDevice extends UnifiedSensorBase {
         // v5.5.299: Mark device as awake on zone status changes
         this._markDeviceAwake();
 
-        let motion = (status & 0x01) !== 0 || (status & 0x02) !== 0;
+        // WHY(P3397): status is a map16 Bitmap; `status & 0x01` was always 0 -> motion always false.
+        const zsBits = require('../../lib/zigbee/ZoneStatusRx').zoneStatusBits(status);
+        if (!zsBits) {return;}
+        let motion = zsBits.alarm1 || zsBits.alarm2;
         
         // v5.5.840: FORUM FIX - Apply invert_presence setting
         const invertSetting = this.getSetting?.('invert_presence');
         if (invertSetting) {
           motion = !motion;
-          this.log(`[IAS] [SYNC] Motion inversion applied: ${(status & 0x01) !== 0 || (status & 0x02) !== 0} -> ${motion}`);
+          this.log(`[IAS] [SYNC] Motion inversion applied: ${zsBits.alarm1 || zsBits.alarm2} -> ${motion}`);
         }
         
-        this.log(`[ZCL-DATA] motion_sensor.zone_status raw=${status} -> alarm_motion=${motion}`);
+        this.log(`[ZCL-DATA] motion_sensor.zone_status raw=0x${zsBits.value.toString(16)} -> alarm_motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
           await this.safeSetCapabilityValue('alarm_motion', motion).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
