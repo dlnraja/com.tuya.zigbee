@@ -1,6 +1,6 @@
 # Digest automatique (P3048)
 
-_Généré le 23/11/2026 16:54:41 (heure de Paris) par `scripts/automation/digest.cjs`, sans IA, sans envoi : ni mail, ni post, ni commentaire._
+_Généré le 24/11/2026 16:47:06 (heure de Paris) par `scripts/automation/digest.cjs`, sans IA, sans envoi : ni mail, ni post, ni commentaire._
 
 ## Versions
 
@@ -35,17 +35,15 @@ _Généré le 23/11/2026 16:54:41 (heure de Paris) par `scripts/automation/diges
 - Plafonds actifs dans auto-publish-on-push.yml : total 15500, par driver 1500, top-up 20000.
 - Workflows rattrapés par une simple relance (instables) : aucun
 - Échecs répétés (même signature ≥ 2) : CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) d21382127725 ×2, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) b81376c1da58 ×8, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) 7cb53e213373 ×2, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) b4093e189b03 ×2, CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) 6d2c80d14bb1 ×3, Node 22 runtime tests 985eb7e70d8b ×2, Node 22 runtime tests 5be26e541885 ×4, Node 22 runtime tests 351d901e2c87 ×6, Node 22 runtime tests 57f650364735 ×2, Node 22 runtime tests b446e2740f9d ×2, Node 22 runtime tests 4b363edeecc7 ×4, Autonomous review 2a1553568063 ×3, Autonomous review 5f7fe9c41b03 ×4, Autonomous review 6b7f6cfbf7a6 ×9, Autonomous review 943a14060e21 ×5, 🚦 PR Gate 3e56b4b8d95d ×2, 🚦 PR Gate a614dec56b7b ×4, Homey App Validate (all levels) 36aeff16af05 ×5, Homey App Validate (all levels) a3ea004b0cdf ×5, Platform Budget (P3026) eab905b90fc9 ×2, 🔍 Syntax Check & SDK3 Validation 4343ee8f200b ×2, Auto-Publish on Push 51495f0dd5d1 ×2, Publish Zigbee Bastien 350159bda9fd ×3, Promote to Live 406e02a0541f ×2, Promote to Live 24abaa36c2ec ×3
-- Watchdog : 69 workflows planifiés, 12 alerte(s)
-  - repeated-failure `.github/workflows/autonomous-review.yml` : 3 failures in 72 h: Autonomous review failed on fix/p3330-sacred-keep-collision (critical tests / Full critical suite: code-or-test)
-  - repeated-failure `.github/workflows/node22-tests.yml` : 4 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)
-  - repeated-failure `.github/workflows/homey-app-validate.yml` : 5 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: code-or-test)
-  - repeated-failure `.github/workflows/autonomous-review.yml` : 4 failures in 72 h: Autonomous review failed on master (staged publish validate / Compose, stage, validate, guard: unknown)
-  - repeated-failure `.github/workflows/pr-gate.yml` : 4 failures in 72 h: 🚦 PR Gate failed on fix/rakazo-stable-v5-cleanup-emojis-ci (🚦 Version + Sacred Couple + routing / 🧪 Critical routing tests (mocha): no-log)
-  - repeated-failure `.github/workflows/node22-tests.yml` : 6 failures in 72 h: Node 22 runtime tests failed on cursor/stable-sleepy-tx-a632 (test / Full suite on Node 22: no-log)
-  - repeated-failure `.github/workflows/autonomous-review.yml` : 9 failures in 72 h: Autonomous review failed on stable-v5 (critical tests / Full critical suite: no-log)
-  - repeated-failure `.github/workflows/ci-self-check.yml` : 8 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on stable-v5 (self-check / app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless): no-log)
-  - repeated-failure `.github/workflows/homey-app-validate.yml` : 5 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: no-log)
+- Watchdog : 69 workflows planifiés, 8 alerte(s)
+  - stale `promote-live.yml` : no scheduled run for 10 h (expected <= 8 h)
+  - repeated-failure `.github/workflows/autonomous-review.yml` : 3 failures in 72 h: Autonomous review failed on master (staged publish validate / Compose, stage, validate, guard: unknown)
+  - repeated-failure `.github/workflows/homey-app-validate.yml` : 3 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: code-or-test)
   - repeated-failure `.github/workflows/ci-self-check.yml` : 3 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on bastien-home (self-check / Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse): code-or-test)
+  - repeated-failure `.github/workflows/autonomous-review.yml` : 5 failures in 72 h: Autonomous review failed on bastien-home (semantic review / Exact couples, weakened tests, identity: unknown)
+  - repeated-failure `.github/workflows/node22-tests.yml` : 3 failures in 72 h: Node 22 runtime tests failed on cursor/stable-sleepy-tx-a632 (test / Full suite on Node 22: no-log)
+  - repeated-failure `.github/workflows/node22-tests.yml` : 4 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): no-log)
+  - repeated-failure `.github/workflows/node22-tests.yml` : 3 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)
 
 ## Candidats de réponse (rien n'est publié automatiquement)
 
@@ -53,5 +51,5 @@ Aucun.
 
 ## Journal
 
-121 ligne(s) sur 72 h dans `data/progress/automation-journal.jsonl`.
+65 ligne(s) sur 72 h dans `data/progress/automation-journal.jsonl`.
 

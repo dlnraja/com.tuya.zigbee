@@ -1,60 +1,24 @@
 {
-  "at": "2026-11-23T15:54:21.690Z",
+  "at": "2026-11-24T15:46:43.041Z",
   "checked": 69,
   "findings": [
     {
-      "kind": "repeated-failure",
-      "sig": "ci-2a1553568063",
-      "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "3 failures in 72 h: Autonomous review failed on fix/p3330-sacred-keep-collision (critical tests / Full critical suite: code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-5be26e541885",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "4 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-36aeff16af05",
-      "wf": ".github/workflows/homey-app-validate.yml",
-      "detail": "5 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: code-or-test)"
+      "kind": "stale",
+      "sig": "51b1a88060ce",
+      "wf": "promote-live.yml",
+      "detail": "no scheduled run for 10 h (expected <= 8 h)"
     },
     {
       "kind": "repeated-failure",
       "sig": "ci-5f7fe9c41b03",
       "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "4 failures in 72 h: Autonomous review failed on master (staged publish validate / Compose, stage, validate, guard: unknown)"
+      "detail": "3 failures in 72 h: Autonomous review failed on master (staged publish validate / Compose, stage, validate, guard: unknown)"
     },
     {
       "kind": "repeated-failure",
-      "sig": "ci-a614dec56b7b",
-      "wf": ".github/workflows/pr-gate.yml",
-      "detail": "4 failures in 72 h: 🚦 PR Gate failed on fix/rakazo-stable-v5-cleanup-emojis-ci (🚦 Version + Sacred Couple + routing / 🧪 Critical routing tests (mocha): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-351d901e2c87",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "6 failures in 72 h: Node 22 runtime tests failed on cursor/stable-sleepy-tx-a632 (test / Full suite on Node 22: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-6b7f6cfbf7a6",
-      "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "9 failures in 72 h: Autonomous review failed on stable-v5 (critical tests / Full critical suite: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-b81376c1da58",
-      "wf": ".github/workflows/ci-self-check.yml",
-      "detail": "8 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on stable-v5 (self-check / app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless): no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-a3ea004b0cdf",
+      "sig": "ci-36aeff16af05",
       "wf": ".github/workflows/homey-app-validate.yml",
-      "detail": "5 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: no-log)"
+      "detail": "3 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: code-or-test)"
     },
     {
       "kind": "repeated-failure",
@@ -70,9 +34,21 @@
     },
     {
       "kind": "repeated-failure",
+      "sig": "ci-351d901e2c87",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "3 failures in 72 h: Node 22 runtime tests failed on cursor/stable-sleepy-tx-a632 (test / Full suite on Node 22: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
       "sig": "ci-4b363edeecc7",
       "wf": ".github/workflows/node22-tests.yml",
       "detail": "4 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-5be26e541885",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "3 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)"
     }
   ]
 }

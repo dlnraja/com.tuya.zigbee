@@ -1,6 +1,6 @@
 {
  "version": 1,
- "watermark": "2026-11-23T15:53:04.712Z",
+ "watermark": "2026-11-24T15:45:02.190Z",
  "seen": [
   "self-maintain:2026-10-25",
   "ci-fail:40227923450:1",
@@ -563,15 +563,18 @@
   "ci-fail:45047996827:1",
   "ci-fail:45045584385:1",
   "ci-fail:45042530622:1",
-  "ci-fail:45042530643:1"
+  "ci-fail:45042530643:1",
+  "watchdog-run:2026-11-23",
+  "automation-loop:2026-11-23",
+  "self-maintain:2026-11-24"
  ],
  "workflows": {
   "self-maintain": {
-   "ok": 29,
+   "ok": 30,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 29,
+   "okStreak": 30,
    "failStreak": 0,
    "last": [
     "ok",
@@ -585,7 +588,7 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-23T15:52:40.831Z",
+   "lastAt": "2026-11-24T15:45:02.190Z",
    "hint": "relax"
   },
   "ci-self-check.yml": {
@@ -782,11 +785,10 @@
    "ok": 7,
    "fail": 0,
    "transient": 0,
-   "warn": 21,
+   "warn": 22,
    "okStreak": 7,
    "failStreak": 0,
    "last": [
-    "ok",
     "warn",
     "warn",
     "warn",
@@ -794,18 +796,19 @@
     "warn",
     "ok",
     "ok",
+    "warn",
     "warn",
     "warn"
    ],
-   "lastAt": "2026-11-22T13:17:18.324Z",
+   "lastAt": "2026-11-23T15:54:21.688Z",
    "hint": "normal"
   },
   "automation-loop": {
-   "ok": 28,
+   "ok": 29,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 28,
+   "okStreak": 29,
    "failStreak": 0,
    "last": [
     "ok",
@@ -819,7 +822,7 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-22T13:17:39.253Z",
+   "lastAt": "2026-11-23T15:54:41.373Z",
    "hint": "relax"
   },
   "publish-stable.yml": {

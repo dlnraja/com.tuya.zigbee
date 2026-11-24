@@ -913,6 +913,22 @@
    "ref": "v26.136.0",
    "title": "v26.136.0",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.136.0"
+  },
+  {
+   "at": "2026-11-24T15:45:05.269Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "af92a0ea84",
+   "title": "fix(novadigital_midpanel8_controller): make dp 77 optional",
+   "url": "https://github.com/make-all/tuya-local/commit/af92a0ea846f898c1b4341c425bd130c14da22d5"
+  },
+  {
+   "at": "2026-11-24T15:45:05.269Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "d36575e490",
+   "title": "fix(neptun_smartplus_waterleak): use correct type for dp 1",
+   "url": "https://github.com/make-all/tuya-local/commit/d36575e49089017a8e2c7703e80928319841a5d4"
   }
  ]
 }
