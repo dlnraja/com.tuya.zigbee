@@ -909,16 +909,19 @@
   ],
   "9.0.1639": {
     "en": "Fixed: presence radars & motion sensors, Flow cards and climate sensors. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : radars de présence & détecteurs de mouvement, cartes Flow et capteurs d'ambiance. Et 1 autre changement dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Corrigé : radars de présence & détecteurs de mouvement, cartes Flow et capteurs d'ambiance. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.1638": {
-    "en": "New: thermostats & climate sensors. Fixed: pairing and device recognition, lights and dimmers & Flow cards and device settings. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "New: thermostats & climate sensors. Fixed: pairing and device recognition, lights and dimmers & Flow cards and device settings. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : thermostats & capteurs climatiques. Corrigé : appairage et reconnaissance des appareils, éclairages et variateurs & cartes Flow et réglages des appareils. Et 15 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.1637": {
-    "en": "New: Flow cards. Fixed: memory and timers, pairing and device recognition and buttons and remotes & climate sensors (ZG-204ZM). Plus 21 other changes in the app core. Behind the scenes: tests and publishing checks."
+    "en": "New: Flow cards. Fixed: memory and timers, pairing and device recognition and buttons and remotes & climate sensors (ZG-204ZM). Plus 21 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : cartes Flow. Corrigé : mémoire et minuteries, appairage et reconnaissance des appareils et boutons et télécommandes & capteurs climatiques (ZG-204ZM). Et 21 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "9.0.1636": {
-    "en": "The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss."
+    "en": "The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss.",
+    "fr": "The Test build now includes previously held drivers in the payload. Packaged images were deduplicated without quality loss."
   },
   "9.0.1635": {
     "en": "Fixed: lights and dimmers and device settings. Plus 7 other changes in the app core. Behind the scenes: tests and publishing checks.",
