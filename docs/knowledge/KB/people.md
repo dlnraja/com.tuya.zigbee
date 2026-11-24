@@ -13,6 +13,7 @@ Handles and their contributions, extracted from CREDITS.md (no personal data).
 - **make-all/tuya-local** - Tuya Local for Home Assistant (YAML config DP mappings)
 - **rospogrigio/localtuya and forks (e.g. xZetsubou/hass-localtuya)** (GPL-3.0) - localtuya and forks: inspiration only, no code copied. Behaviour notes in our own words: `docs/automation/localtuya-study.md`.
 - **dresden-elektronik/deconz-rest-plugin** - deCONZ Tuya support and Data Point Protocol documentation
+- **Bastien house diagnostics, 2026-11-06/07 (redacted, P3265)** — ideas only, no log text copied into the repo. Repeated `JSON.parse` out-of-memory on a two-byte source while the heap sat near 56MB (file not named by the stack), and a sleepy `_TZ3000_vsxvaj9i`+`TS0043` remote whose Basic read faile
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
 - **JohanBendz** — develop-0.4 engineering notes, reimplemented in our own code (no code copied): unknown-DP log flood guard ([#1501](https://github.com/JohanBendz/com.tuya.zigbee/issues/1501)), colour-temperature safe range + best-effort vendor RGB mode ([#1502](https://github.com/JohanBendz/com.tu

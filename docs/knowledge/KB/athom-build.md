@@ -7,6 +7,7 @@
 Detailed notes:
 - [GitHub Actions — mesure et optimisation (10/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ACTIONS_OPTIMIZATION.md)
 - [Athom AggregateError on master — bisect result (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_AGGREGATEERROR_BISECT_2026-10-10.md)
+- [P3340: what Athom's "AggregateError" is, and why master stops at 347 (16/11/2026, Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_AGGREGATEERROR_P3340.md)
 - [Athom / Homey publish limits — what we know (2026-10-10, Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_LIMITS.md)
 - [New driver ids rejected by Athom (AggregateError) — offline analysis 2026-10-11 (Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_NEW_DRIVER_REJECTION_2026-10-11.md)
 - [Athom "processing failed": diagnosis (20/10/2026, P2902)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/ATHOM_PROCESSING_FAILED_2026-10-20.md)
@@ -20,3 +21,6 @@ Detailed notes:
 - [P2924 — "socket hang up": where it happens and what we changed (21/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/P2924_SOCKET_HANG_UP_2026-10-21.md)
 - [P3036: Athom publish policy (green CI, spacing, one retry, bisect exit)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/P3036_ATHOM_PUBLISH_POLICY.md)
 - [led_controller_spi_tuya — Athom AggregateError bisect (19/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/SPI_ATHOM_BISECT_2026-10-19.md)
+- [AggregateError and the `energy_` setting prefix](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/aggregateerror-energy-prefix.md)
+- [AggregateError: the five "isolated" drivers have no common content defect (2026-11-15)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/aggregateerror-isolated-drivers.md)
+- [Athom driver-count ceiling and the AggregateError (P3330, 15/11/2026 Paris)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/athom-driver-ceiling.md)

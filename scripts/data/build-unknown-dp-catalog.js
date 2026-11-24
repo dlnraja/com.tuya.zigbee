@@ -23,7 +23,7 @@ const ROOT = path.join(__dirname, '..', '..');
 const { NAME_CAP, VETO_CAP } = require('../../lib/zigbee/DpCatalogDecoder');
 const OUT = path.join(ROOT, 'lib', 'zigbee', 'data', 'unknown-dp-catalog.json');
 
-function build({ z2m, knowledge, tuyaDps, zhaQuirks, deconz }) {
+function build({ z2m, knowledge, tuyaDps, zhaQuirks, deconz, previous }) {
   const couples = new Map(); // key -> Map(dp -> name)
   const convs = new Map(); // key -> Map(dp -> converter token)  (P3018)
   const put = (mfr, pid, dp, name, conv, override = true) => {
@@ -78,6 +78,28 @@ function build({ z2m, knowledge, tuyaDps, zhaQuirks, deconz }) {
       put(mfr, pid, dp, info && info.name, Number.isFinite(div) && div > 1 ? `div:${div}` : (sameMeaning ? prev : null));
     }
   }
+  // P3405: zero-loss regeneration. WHY: an upstream refresh can drop a DP (zhc removed _TZE204_zxkwaztm
+  // DP68) or a couple; the catalogue only ever grows. Every couple+DP of the previous catalogue that no
+  // current source provides is kept with its previous name and converter (fill-only, never overrides).
+  build.lastKept = 0;
+  for (const [key, pi] of Object.entries((previous && previous.idx) || {})) {
+    const flat = previous.profiles && previous.profiles[pi];
+    if (!Array.isArray(flat)) { continue; }
+    const cvRow = (previous.cv && previous.cv[pi]) || [];
+    const k = key;
+    for (let i = 0; i < flat.length; i += 2) {
+      const dp = Number(flat[i]);
+      if (couples.has(k) && couples.get(k).has(dp)) { continue; }
+      const name = previous.names && previous.names[flat[i + 1]];
+      const ci = cvRow[i / 2];
+      const conv = Number.isInteger(ci) && ci >= 0 && previous.convs ? previous.convs[ci] : null;
+      if (!name) { continue; }
+      if (!couples.has(k)) { couples.set(k, new Map()); convs.set(k, new Map()); }
+      couples.get(k).set(dp, String(name).slice(0, 48));
+      if (conv) { convs.get(k).set(dp, String(conv).slice(0, 160)); }
+      build.lastKept++;
+    }
+  }
   const names = [...new Set([...couples.values()].flatMap((m) => [...m.values()]))].sort();
   const nameIdx = new Map(names.map((n, i) => [n, i]));
   const convList = [...new Set([...convs.values()].flatMap((m) => [...m.values()]))].sort();
@@ -124,11 +146,13 @@ if (require.main === module) {
   const tdPath = path.join(ROOT, 'scripts', 'data', 'z2m-tuya-dps.json');
   const tuyaDps = fs.existsSync(tdPath) ? JSON.parse(fs.readFileSync(tdPath, 'utf8')) : null;
   const opt = (f) => { const p = path.join(ROOT, 'scripts', 'data', f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null; };
-  const out = build({ z2m, knowledge, tuyaDps, zhaQuirks: opt('zha-quirk-dps.json'), deconz: opt('deconz-tuya-dps.json') });
+  let previous = null;
+  try { previous = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : null; } catch (_e) { previous = null; }
+  const out = build({ z2m, knowledge, tuyaDps, zhaQuirks: opt('zha-quirk-dps.json'), deconz: opt('deconz-tuya-dps.json'), previous });
   out.generated = (tuyaDps && tuyaDps.date) || (z2m && z2m.date) || null;
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(out));
-  console.log(`unknown-dp-catalog: fill=${JSON.stringify(build.lastFill)} ${Object.keys(out.idx).length} couples, ${out.profiles.length} profiles, ${out.names.length} names, ${fs.statSync(OUT).size} bytes`);
+  console.log(`unknown-dp-catalog: fill=${JSON.stringify(build.lastFill)} kept=${build.lastKept} ${Object.keys(out.idx).length} couples, ${out.profiles.length} profiles, ${out.names.length} names, ${fs.statSync(OUT).size} bytes`);
 }
 
 module.exports = { build };

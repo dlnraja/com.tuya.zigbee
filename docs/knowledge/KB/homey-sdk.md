@@ -13,6 +13,7 @@ Related notes:
 - [Homey forum — Apps category + zigbee tag digest (2026-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FORUM_APPS_CATEGORY_DIGEST_2026-10.md)
 - [Forum Homey — fils clés (10/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/FORUM_THREADS_DIGEST.md)
 - [Diagnostics et crashs Homey reçus par Gmail (01/08 → 10/10/2026)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/GMAIL_DIAGNOSTICS_2026-08-10.md)
+- [Homey deep cross-research (skill notes, P3362)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_DEEP_CROSS_RESEARCH.md)
 - [Homey firmware & Zigbee stack: research notes (2026-10-10)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_FIRMWARE.md)
 - [Homey news 2025-2026: what it means for this app (queue #101-#106)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_NEWS_2026_AUDIT.md)
 - [Homey SDK, CLI and developer news — October 2026 (our summary)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/docs/knowledge/HOMEY_SDK_NEWS_2026-10.md)
