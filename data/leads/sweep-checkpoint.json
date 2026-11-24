@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T03:59:31.460Z",
+  "updated": "2026-11-24T09:02:01.258Z",
   "threads": {
     "21313": {
       "lastPost": 2823,
@@ -23294,10 +23294,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 31
       }
     },
@@ -24558,7 +24560,7 @@
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json",
-          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/c24e81cf01c121583887acea24e647c3496ebd9a/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
         "sources": 32
       }
@@ -25510,10 +25512,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 32
       }
     },
@@ -47385,10 +47389,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 31
       }
     },
@@ -47811,7 +47817,7 @@
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json",
-          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/c24e81cf01c121583887acea24e647c3496ebd9a/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
         "sources": 32
       }
@@ -57391,10 +57397,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 31
       }
     },
@@ -57660,7 +57668,7 @@
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json",
-          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/c24e81cf01c121583887acea24e647c3496ebd9a/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
         "sources": 32
       }
@@ -58151,10 +58159,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 32
       }
     },
@@ -59684,10 +59694,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 31
       }
     },
@@ -59953,7 +59965,7 @@
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json",
-          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/c24e81cf01c121583887acea24e647c3496ebd9a/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
         "sources": 32
       }
@@ -60444,10 +60456,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 32
       }
     },
@@ -61999,10 +62013,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 31
       }
     },
@@ -62268,7 +62284,7 @@
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json",
-          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/c24e81cf01c121583887acea24e647c3496ebd9a/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
         "sources": 32
       }
@@ -62759,10 +62775,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 32
       }
     },
@@ -64292,10 +64310,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 31
       }
     },
@@ -64561,7 +64581,7 @@
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json",
-          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/c24e81cf01c121583887acea24e647c3496ebd9a/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
         "sources": 32
       }
@@ -65052,10 +65072,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 32
       }
     },
@@ -66585,10 +66607,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 31
       }
     },
@@ -66854,7 +66878,7 @@
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json",
-          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/c24e81cf01c121583887acea24e647c3496ebd9a/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
         "sources": 32
       }
@@ -67345,10 +67369,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 32
       }
     },
@@ -68878,10 +68904,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 31
       }
     },
@@ -69147,7 +69175,7 @@
         "candidates": [
           "https://www.zigbee2mqtt.io/devices/PS-S04D.html",
           "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/master/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json",
-          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/a4c17adfa04abc63637ad17de7f85256a825a2cb/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
+          "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/c24e81cf01c121583887acea24e647c3496ebd9a/devices/xiaomi/xiaomi_fp300_presence_multi_sensor.json"
         ],
         "sources": 32
       }
@@ -69638,10 +69666,12 @@
       "why": "request-no-identity",
       "crossResearch": {
         "at": "2026-11-24",
-        "verdict": "no-action",
-        "confidence": 0,
+        "verdict": "lead",
+        "confidence": 0.2,
         "couples": [],
-        "candidates": [],
+        "candidates": [
+          "https://zigbee.blakadder.com/Sonoff_ZBDongle-P.html"
+        ],
         "sources": 32
       }
     },
