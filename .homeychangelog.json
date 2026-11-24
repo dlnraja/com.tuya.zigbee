@@ -5,8 +5,8 @@
     "fr": "Corrigé : radars de présence & détecteurs de mouvement (TS0601)."
   },
   "1.0.259": {
-    "en": "Fixed: device settings: driver-preference uses SDK3 homey.settings instead of SDK2 ManagerSettings (P3400).",
-    "fr": "Corrigé : réglages des appareils : driver-preference uses SDK3 homey.settings instead of SDK2 ManagerSettings (P3400)."
+    "en": "Fixed: device settings: driver-preference uses SDK3 homey.settings instead of SDK2 ManagerSettings.",
+    "fr": "Corrigé : réglages des appareils : driver-preference uses SDK3 homey.settings instead of SDK2 ManagerSettings."
   },
   "1.0.258": {
     "en": "Changed: decode remaining IAS zoneStatus readers via ZoneStatusRx.",
@@ -17,8 +17,8 @@
     "fr": "Corrigé : radars de présence & détecteurs de mouvement et appairage et reconnaissance des appareils. En coulisses : tests et contrôles de publication."
   },
   "1.0.256": {
-    "en": "Fixed: climate sensors: port host-env strict preload and LCD sibling guard (P3390, P3396).",
-    "fr": "Corrigé : capteurs d'ambiance : port host-env strict preload and LCD sibling guard (P3390, P3396)."
+    "en": "Fixed: climate sensors: port host-env strict preload and LCD sibling guard.",
+    "fr": "Corrigé : capteurs d'ambiance : port host-env strict preload and LCD sibling guard."
   },
   "1.0.255": {
     "en": "Changed: ship Bastien lcdtemphumidsensor under a trial ceiling of 29.",
@@ -30,7 +30,7 @@
   },
   "1.0.253": {
     "en": "New: thermostats & climate sensors. Fixed: device settings, climate sensors and fans and air purifiers & Flow cards (TS0043). Plus 10 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : thermostats & capteurs d'ambiance. Corrigé : réglages des appareils, capteurs d'ambiance et ventilateurs et purificateurs & cartes Flow (TS0043). Et 10 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : thermostats & capteurs d'ambiance. Corrigé : réglages des appareils, capteurs d'ambiance et ventilateurs et purificateurs & cartes Flow (TS0043). Et 10 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.252": {
     "en": "Changed: sync app.json, source-key lookup, mocha test isolation; lint ratchet regression in UnifiedCoverBase.",
@@ -38,7 +38,7 @@
   },
   "1.0.251": {
     "en": "New: Flow cards. Fixed: pairing and device recognition, general reliability (ZG-301Z) and Flow cards. Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Nouveau : cartes Flow. Corrigé : appairage et reconnaissance des appareils, fiabilité générale (ZG-301Z) et cartes Flow. Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "fr": "Nouveau : cartes Flow. Corrigé : appairage et reconnaissance des appareils, fiabilité générale (ZG-301Z) et cartes Flow. Et 2 autres changements dans le coeur de l'app. En coulisses : tests et contrôles de publication."
   },
   "1.0.249": {
     "en": "Fixed: device settings (ZG-301Z), buttons and remotes and battery reporting. Behind the scenes: tests and publishing checks.",
@@ -101,24 +101,24 @@
     "fr": "v1.0.223 : Fiabilité : 1 petite correction dans le coeur de l'app."
   },
   "1.0.222": {
-    "en": "Reliability: 1 small fix in the app core.",
-    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app."
+    "en": "Changed: port upstream-watch state push through git-push-retry.sh to stable-v5.",
+    "fr": "Modifié : port upstream-watch state push through git-push-retry.sh to stable-v5."
   },
   "1.0.221": {
     "en": "Fixed: smart plugs & energy meters (TS011F).",
     "fr": "Corrigé : prises connectées & compteurs d'énergie (TS011F)."
   },
   "1.0.220": {
-    "en": "Reliability: 1 small fix in the app core.",
-    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app."
+    "en": "Fixed: memory and timers. Plus 1 other change in the app core.",
+    "fr": "Corrigé : mémoire et minuteries. Et 1 autre changement dans le coeur de l'app."
   },
   "1.0.219": {
     "en": "v1.0.219: maintenance build, same devices and behaviour as v1.0.218; only a CI guard changed (the market-couples job now refuses to commit an app.json that was not built from compose).",
     "fr": "v1.0.219 : version de maintenance, mêmes appareils et même comportement que la v1.0.218; seul un contrôle CI a changé (le job market-couples refuse désormais de committer un app.json non généré depuis compose)."
   },
   "1.0.218": {
-    "en": "Maintenance build: same devices and behaviour as the previous version (publishing and test tooling only).",
-    "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
+    "en": "New: wall switches. Fixed: general reliability (ZG-301Z), Wi-Fi devices & pairing and device recognition and energy meters & wall switches (SPM01V1-GT). Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : interrupteurs. Corrigé : fiabilité générale (ZG-301Z), appareils Wi-Fi & appairage et reconnaissance des appareils et compteurs d'énergie & interrupteurs (SPM01V1-GT). En coulisses : tests et contrôles de publication."
   },
   "1.0.217": {
     "en": "Fixed: memory and timers, Wi-Fi devices & the Repair screen, climate sensors (TS0201) and wall switches. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
@@ -145,8 +145,8 @@
     "fr": "Mises à jour de la base d'appareils et de la fiabilité."
   },
   "1.0.211": {
-    "en": "Reliability: 1 small fix in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Fiabilité : 1 petite correction dans le coeur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Changed: sacred pins for yenbr4om and _TZ3000_bjawzodf.",
+    "fr": "Modifié : sacred pins for yenbr4om et _TZ3000_bjawzodf."
   },
   "1.0.210": {
     "en": "Device database and reliability updates.",
