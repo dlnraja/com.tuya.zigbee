@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-11-23T11:16:55.889Z",
+  "updated": "2026-11-24T12:56:49.024Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -37699,6 +37699,224 @@
       "quirk": true,
       "credit": "Homey Community Forum members (tag: zigbee)",
       "seenAt": "2026-11-23T11:16:55.330Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33800",
+      "summary": "issue #33800 (closed) by GwadaBoy, about: request — `_TZE204_uvvsxqrb` `TS0601`",
+      "mfrs": [
+        "_TZE204_uvvsxqrb"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-24T12:56:42.164Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33801",
+      "summary": "issue #33801 (open) by Ryan6-VRC, about: cover — `_TZE284_6hrnp30w`",
+      "mfrs": [
+        "_TZE284_6hrnp30w"
+      ],
+      "pids": [],
+      "dps": [
+        7,
+        3,
+        11,
+        10,
+        12,
+        16,
+        20
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-24T12:56:42.164Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33799",
+      "summary": "issue #33799 (open) by gregbert42, about: unclassified",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1,
+        4,
+        111,
+        113,
+        102,
+        101
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-24T12:56:42.164Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33806",
+      "summary": "issue #33806 (open) by eyzee-au, about: `_TZ3000_6ycqll7a` `TS011F`",
+      "mfrs": [
+        "_TZ3000_6ycqll7a"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-24T12:56:42.164Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/27427",
+      "summary": "issue #27427 (closed) by ZTHawk, about: `_TZE204_hcxvyxa5`",
+      "mfrs": [
+        "_TZE204_hcxvyxa5"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-24T12:56:42.165Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33811",
+      "summary": "issue #33811 (open) by zloyglide, about: `_TZE204_aoclfnxz` `TS0601`",
+      "mfrs": [
+        "_TZE204_aoclfnxz"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-24T12:56:42.165Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33810",
+      "summary": "issue #33810 (open) by jascham, about: light, energy — `_TZ3000_djhsq2ff` `_TZ3000_w1tcofu8` `TS0001`",
+      "mfrs": [
+        "_TZ3000_djhsq2ff",
+        "_TZ3000_w1tcofu8"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-24T12:56:42.165Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/161814/16",
+      "summary": "post #16 by Bent_Lauritsen",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-11-24T12:56:45.777Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/152695/218",
+      "summary": "post #218 by Marcel_Visser",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-11-24T12:56:46.002Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/162503",
+      "summary": "new app topic #162503, about: flow cards (review for ideas; credit author)",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-24T12:56:46.920Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/90749/2403",
+      "summary": "post #2403 by martijnpoppen",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-24T12:56:47.540Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/147496/262",
+      "summary": "post #262 by Ole_Markus_With",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-24T12:56:47.958Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/162169/26",
+      "summary": "post #26 by Roy_PEDRINIS",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-24T12:56:48.152Z"
+    },
+    {
+      "source": "homey-forum-tag-app",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/63027/416",
+      "summary": "post #416 by Rick_Molnar",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (tag: app)",
+      "seenAt": "2026-11-24T12:56:48.574Z"
     }
   ]
 }
