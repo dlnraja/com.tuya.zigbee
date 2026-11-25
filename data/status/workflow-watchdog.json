@@ -1,48 +1,12 @@
 {
-  "at": "2026-11-24T15:46:43.041Z",
+  "at": "2026-11-25T15:30:47.888Z",
   "checked": 69,
   "findings": [
     {
       "kind": "stale",
-      "sig": "51b1a88060ce",
-      "wf": "promote-live.yml",
+      "sig": "7d65ac8624e8",
+      "wf": "publish-hold-bisect.yml",
       "detail": "no scheduled run for 10 h (expected <= 8 h)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-5f7fe9c41b03",
-      "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "3 failures in 72 h: Autonomous review failed on master (staged publish validate / Compose, stage, validate, guard: unknown)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-36aeff16af05",
-      "wf": ".github/workflows/homey-app-validate.yml",
-      "detail": "3 failures in 72 h: Homey App Validate (all levels) failed on master (validate / Publish payload build + size/structure report: code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-6d2c80d14bb1",
-      "wf": ".github/workflows/ci-self-check.yml",
-      "detail": "3 failures in 72 h: CI self-check (actionlint + YAML + hygiene + manifest/data/lint gates) failed on bastien-home (self-check / Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse): code-or-test)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-943a14060e21",
-      "wf": ".github/workflows/autonomous-review.yml",
-      "detail": "5 failures in 72 h: Autonomous review failed on bastien-home (semantic review / Exact couples, weakened tests, identity: unknown)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-351d901e2c87",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "3 failures in 72 h: Node 22 runtime tests failed on cursor/stable-sleepy-tx-a632 (test / Full suite on Node 22: no-log)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-4b363edeecc7",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "4 failures in 72 h: Node 22 runtime tests failed on bastien-home (test / node:test strict (P3057-3): no-log)"
     },
     {
       "kind": "repeated-failure",
