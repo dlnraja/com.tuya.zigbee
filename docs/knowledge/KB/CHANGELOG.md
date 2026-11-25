@@ -23,3 +23,4 @@
 - 2026-11-16 weekly upstream (P3345): 19 exact couples placed on master and pinned (4 more parked by the parasite budget), 5 wrong-class couples moved with evidence (l8bfzlcd, 1di7ujzp, lbhh5o6z x2, iik0pquw), 17 leads parked, see UPSTREAM_WEEKLY_2026-11-16.md
 - 2026-11-24 content 69dc3d0e0de5: 88 files updated, 94 total
 - 2026-11-24 kb-daily (P3405): matrix refreshed (3730 upstream couples; master absent 579 / complete 951), DP catalogue zero-loss keep rule (growth +70 couples parked: 180 KB budget), 8 absent + 3 wrong-class couples parked (payload caps full), see UPSTREAM_DAILY_2026-11-24.md
+- 2026-11-25 content 060281d1c77a: 79 files updated, 94 total

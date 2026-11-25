@@ -4,6 +4,7 @@ First commit that names each P-number; summary is the commit subject. Details li
 
 | P | date | commit | subject |
 |---|---|---|---|
+| P3405 | 2026-11-24 | [eb031fd36](https://github.com/dlnraja/com.tuya.zigbee/commit/eb031fd367e826cda1eb1a246b5a274878a5fbb9) | fix(P3405): KB daily 2026-11-24 - zero-loss DP catalogue regeneration (keep previous couples/DPs), coverage matrix + harvests refreshed (3730 upstream couples;  |
 | P3404 | 2026-11-23 | [e4641ba24](https://github.com/dlnraja/com.tuya.zigbee/commit/e4641ba249db289257a3835eaec0dda77a6d03e0) | fix(P3404): Apple Home coherence skips branches without the P3362 script instead of failing (run 45278502197) [skip ci] |
 | P3401 | 2026-11-23 | [176a399c5](https://github.com/dlnraja/com.tuya.zigbee/commit/176a399c5365c8022b147266d6f45a1379d7db9a) | fix(P3401): pir_sensor_2 TS020C parallel RX - Tuya DP1 occupancy (0 = presence), DP4 battery, 0xE002 attr 0xE001 illuminance, IAS path kept [skip ci] |
 | P3400 | 2026-11-23 | [f2619dc47](https://github.com/dlnraja/com.tuya.zigbee/commit/f2619dc47fa0b9bbe9cafdcb8a85bfe7984fc92a) | fix(P3400): driver-preference uses SDK3 homey.settings instead of SDK2 ManagerSettings [skip ci] |
@@ -31,7 +32,7 @@ First commit that names each P-number; summary is the commit subject. Details li
 | P3366 | 2026-11-22 | [8f9643688](https://github.com/dlnraja/com.tuya.zigbee/commit/8f9643688e5bcb4114a7f9c35d2bd72c8146d8e3) | fix(ci): keep P3366 deferred-test strict assertions after t1025u [skip ci] |
 | P3365 | 2026-11-22 | [fa8c8a5c9](https://github.com/dlnraja/com.tuya.zigbee/commit/fa8c8a5c99fdba97c17ed678f1339a2bffd4fa12) | fix(P3364/P3365): Bastien relays - Tuya onOff settings reach the device and ZG-301Z commands go ZCL only [skip ci] |
 | P3364 | 2026-11-22 | [fa8c8a5c9](https://github.com/dlnraja/com.tuya.zigbee/commit/fa8c8a5c99fdba97c17ed678f1339a2bffd4fa12) | fix(P3364/P3365): Bastien relays - Tuya onOff settings reach the device and ZG-301Z commands go ZCL only [skip ci] |
-| P3363 | 2026-11-22 | [f26472372](https://github.com/dlnraja/com.tuya.zigbee/commit/f264723729e1f1ecbced519d5371a704ab36cd8d) | chore(P3363): changelog and store-text coherence [auto:store-text-coherence] [skip ci] |
+| P3363 | 2026-11-24 | [23aeb20df](https://github.com/dlnraja/com.tuya.zigbee/commit/23aeb20dfed3a6e4c232df4d1d2a342b112f0f6f) | chore(P3363): changelog and store-text coherence [auto:store-text-coherence] [skip ci] |
 | P3362 | 2026-11-23 | [e4641ba24](https://github.com/dlnraja/com.tuya.zigbee/commit/e4641ba249db289257a3835eaec0dda77a6d03e0) | fix(P3404): Apple Home coherence skips branches without the P3362 script instead of failing (run 45278502197) [skip ci] |
 | P3361 | 2026-11-21 | [d6491c85b](https://github.com/dlnraja/com.tuya.zigbee/commit/d6491c85bcb01e358ded6005dfd8484b4369491b) | fix(P3361): restore battery History units (%) on TS004x and other measure_battery devices [skip ci] |
 | P3360b | 2026-11-22 | [b19801dbb](https://github.com/dlnraja/com.tuya.zigbee/commit/b19801dbbf5c10ebef2ffaee55184da37ef0beca) | fix(P3360b): PublishedHostClassMap loads held classes only via lib/hosted shims [skip ci] |
@@ -167,7 +168,7 @@ First commit that names each P-number; summary is the commit subject. Details li
 | P3138c | 2026-11-01 | [78d3a2f05](https://github.com/dlnraja/com.tuya.zigbee/commit/78d3a2f05b1425e31ebf6cf99763f160ad8d6e0b) | P3138c: source-digest inline house-data regex fallback (branch-portable) |
 | P3138b | 2026-11-01 | [8f2640954](https://github.com/dlnraja/com.tuya.zigbee/commit/8f2640954a60703ab5e99669626415fb624e33af) | P3138b: forfait env + short about entries for enrich/miner workflows |
 | P3137 | 2026-11-01 | [6c17b08c1](https://github.com/dlnraja/com.tuya.zigbee/commit/6c17b08c1e9b8f512f931330204957cbebe5356d) | P3137: button_wireless_4 TS0044 additive skipBatteryReporting (ZHA #1746/PR #2288) + test |
-| P3136 | 2026-11-23 | [8929d6bda](https://github.com/dlnraja/com.tuya.zigbee/commit/8929d6bda85809a7fdc9bcead7bd09ca29781733) | chore(ssot): refresh couple-sources ledger (P3136) [skip ci] [auto:ssot-couple-enrich] [skip ci] |
+| P3136 | 2026-11-25 | [340ff8694](https://github.com/dlnraja/com.tuya.zigbee/commit/340ff8694499208b562c792fde52b8751ae5cf19) | chore(ssot): refresh couple-sources ledger (P3136) [skip ci] [auto:ssot-couple-enrich] [skip ci] |
 | P3136c | 2026-11-01 | [170a97500](https://github.com/dlnraja/com.tuya.zigbee/commit/170a97500a9f53cf29f8d1f249d70a7aadf38113) | P3136c: drop gate run artifacts from P3136 commit |
 | P3136b | 2026-11-01 | [dcc9379ab](https://github.com/dlnraja/com.tuya.zigbee/commit/dcc9379abd948f643798d903ce83c1831d6df44a) | P3136: SSOT couple-sources ledger + enrich workflow; P3136b: ZHA #1746 TS0042 curated facts |
 | P3135 | 2026-11-01 | [4433366dc](https://github.com/dlnraja/com.tuya.zigbee/commit/4433366dc7419b76349e578ea5d4d45aa3bf8ec4) | ci(P3135): mocha globals for lint |
@@ -256,7 +257,7 @@ First commit that names each P-number; summary is the commit subject. Details li
 | P3050 | 2026-10-25 | [942f4eec8](https://github.com/dlnraja/com.tuya.zigbee/commit/942f4eec80751a8116c18319cc59226ebda3ddd2) | docs(P3050): changelog/journal match the final #577 behaviour (awaited sendData + 12 s guard, flow cards, smoke-test fix) |
 | P3050b | 2026-10-25 | [36d41251d](https://github.com/dlnraja/com.tuya.zigbee/commit/36d41251d878aa3a3852f27780c14b486ff1fc98) | fix(P3050b): quarantined UniversalTuyaParser.legacy requires resolve from lib/tuya/_quarantine (lib smoke-test failed every PR, incl. #577) |
 | P3049 | 2026-10-25 | [dda546ab0](https://github.com/dlnraja/com.tuya.zigbee/commit/dda546ab09bfe4cb11dca1852c3155a868c2cfa1) | fix(P3049): js-syntax-audit creates .github/state before writing its report (pr-gate ENOENT on every PR, untracked dir on master/bastien-home); test [skip ci] |
-| P3048 | 2026-11-23 | [311cbbe0c](https://github.com/dlnraja/com.tuya.zigbee/commit/311cbbe0c809d18b9c7ed8e4b4261059ab7d64db) | chore(automation): journal + digest (P3048, no AI) [auto:automation-loop] [skip ci] |
+| P3048 | 2026-11-25 | [edadc5ca5](https://github.com/dlnraja/com.tuya.zigbee/commit/edadc5ca5ba4c6ebb60e6dd7e890bdd2130a961d) | chore(automation): journal + digest (P3048, no AI) [auto:automation-loop] [skip ci] |
 | P3047 | 2026-10-25 | [1f45b06c7](https://github.com/dlnraja/com.tuya.zigbee/commit/1f45b06c72bedb2cbd3383ec7c4fd3b9c9f019fe) | fix(P3047): publish payload JSON written as ASCII (\uXXXX, lossless) — one-byte V8 strings, parse heap halved |
 | P3046 | 2026-10-25 | [8daf9532d](https://github.com/dlnraja/com.tuya.zigbee/commit/8daf9532d2d5ba6267467ac535d9a747a0276d5a) | fix(P3046): Bastien OOM — stop cloning the full flow-id set per device (one set per driver) |
 | P3045 | 2026-10-25 | [866912401](https://github.com/dlnraja/com.tuya.zigbee/commit/86691240153e63288ed04f79782ab01ef6977bfb) | fix(P3045): memory reads survive ENOENT (V8 heap fallback); undeclared Flow cards get a log-once stand-in; 145 mapping profiles aligned with their compose; #560 |
@@ -664,7 +665,7 @@ First commit that names each P-number; summary is the commit subject. Details li
 | P2610 | 2026-09-20 | [7deaec5d4](https://github.com/dlnraja/com.tuya.zigbee/commit/7deaec5d42d433660aecb57e438ddd36ef6eddf9) | feat(P2610): Bastien external multi-source enrich outbound tip 9.0.1095 |
 | P2609 | 2026-09-20 | [7fb3d70f4](https://github.com/dlnraja/com.tuya.zigbee/commit/7fb3d70f4ec32880419244d5f087c5f0673e2d23) | test(P2609): soften workflow assert for Bastien publish yml |
 | P2608 | 2026-09-19 | [182135e92](https://github.com/dlnraja/com.tuya.zigbee/commit/182135e920761b727e55c48fc1a7ab2481a3dc4f) | feat(P2608): wall 3-btn TS0043 hybrid ZCL/0xFD/E000/EF00/raw RX tip 9.0.1093 |
-| P2607 | 2026-11-23 | [93da848ec](https://github.com/dlnraja/com.tuya.zigbee/commit/93da848ec98791532140b42aa2f4aca74f4b8038) | chore(P2607): autonomous Bastien→master promote [skip ci] |
+| P2607 | 2026-11-24 | [2aa811948](https://github.com/dlnraja/com.tuya.zigbee/commit/2aa811948b09bdc40c3e08e1bfd0b40adb31efe1) | chore(P2607): autonomous Bastien→master promote [skip ci] |
 | P2606 | 2026-09-19 | [233cd1ad2](https://github.com/dlnraja/com.tuya.zigbee/commit/233cd1ad28c8a6ef287eaf44c110a59476f2f44a) | fix(P2606): Bastien publish runs homey app build before prepare |
 | P2605 | 2026-10-01 | [1a63e15f4](https://github.com/dlnraja/com.tuya.zigbee/commit/1a63e15f4d6690c05f8632fda52b8d5db7970eb6) | test(P2533): accept the evidence-backed TZE200 nkjintbl on switch_2gang (P2605), still forbid TZE204/TZE284 bleed |
 | P2605b | 2026-09-19 | [ff735e9dd](https://github.com/dlnraja/com.tuya.zigbee/commit/ff735e9dd4c0bfa9b0bc1d202cc196725e2fc120) | fix(P2605b): restore clrdrnya couple profile for p2579 tip 9.0.1091 |

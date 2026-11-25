@@ -8,16 +8,16 @@ Statuses: **absent** (no driver), **compacted** (in app.json, dropped from the p
 
 | Source | Version / commit | Tuya couples | Non-Tuya couples (out of scope) | Note |
 |---|---|---:|---:|---|
-| z2m | 26.136.0 | 2258 | 0 |  |
-| zha | 19fa63e101 (2026-11-23) | 537 | 98 |  |
+| z2m | 26.137.0 | 2265 | 0 |  |
+| zha | b17fd22d6d (2026-11-25) | 537 | 98 |  |
 | deconz | c24e81cf01 (2026-11-08) | 400 | 346 |  |
 | johan | 61577d8ec2 (2026-10-25) | 1284 | 65 | driver lists are mfr×pid cross products (Homey semantics) |
 | blakadder | d96e8aaf72 (2025-10-03) | 626 | 0 | 63 ambiguous ids skipped |
 | hubitat | 355d1d6c10 (2026-11-22) | 556 | 194 |  |
-| smartthings | SmartThingsCommunity/SmartThingsEdgeDrivers@ce823618ff, Mariano-Github/Edge-Drivers-Beta@88f56fd204 | 550 | 1254 |  |
+| smartthings | SmartThingsCommunity/SmartThingsEdgeDrivers@b01c9e1848, Mariano-Github/Edge-Drivers-Beta@88f56fd204 | 550 | 1254 |  |
 | iobroker | 327293b138 (2026-11-22) | 0 | 0 | device definitions come from zigbee-herdsman-converters; only adapter-local fingerprints are counted |
 | domoticz | dcead2ff51 (2026-11-23) | 402 | 21 |  |
-| tasmota | 6d1a2e430e (2026-11-23) | 10 | 1 |  |
+| tasmota | 0078ac6c28 (2026-11-25) | 10 | 1 |  |
 
 Wi-Fi / LAN projects (tuya-local, localtuya, tinytuya, esphome) belong to the separate wifi-local matrix: leads only here.
 
@@ -35,13 +35,13 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 
 | Source | Branch | Total | Absent | Compacted | Wrong class | Partial | Complete |
 |---|---|---:|---:|---:|---:|---:|---:|
-| all | master | 3730 | 579 | 1872 | 4 | 324 | 951 |
-| all | stable-v5 | 3730 | 627 | 2366 | 9 | 138 | 590 |
-| all | bastien-home | 3730 | 565 | 2362 | 7 | 147 | 649 |
-| z2m | master | 2258 | 203 | 1214 | 4 | 324 | 513 |
-| z2m | stable-v5 | 2258 | 237 | 1572 | 9 | 138 | 302 |
-| z2m | bastien-home | 2258 | 175 | 1590 | 7 | 147 | 339 |
-| zha | master | 537 | 41 | 271 | 0 | 77 | 148 |
+| all | master | 3737 | 585 | 1873 | 4 | 302 | 973 |
+| all | stable-v5 | 3737 | 634 | 2366 | 9 | 138 | 590 |
+| all | bastien-home | 3737 | 572 | 2362 | 7 | 147 | 649 |
+| z2m | master | 2265 | 209 | 1215 | 4 | 302 | 535 |
+| z2m | stable-v5 | 2265 | 244 | 1572 | 9 | 138 | 302 |
+| z2m | bastien-home | 2265 | 182 | 1590 | 7 | 147 | 339 |
+| zha | master | 537 | 41 | 271 | 0 | 76 | 149 |
 | zha | stable-v5 | 537 | 32 | 370 | 2 | 32 | 101 |
 | zha | bastien-home | 537 | 38 | 368 | 1 | 32 | 98 |
 | deconz | master | 400 | 30 | 205 | 0 | 27 | 138 |
@@ -50,7 +50,7 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 | johan | master | 1284 | 101 | 692 | 0 | 40 | 451 |
 | johan | stable-v5 | 1284 | 125 | 831 | 1 | 23 | 304 |
 | johan | bastien-home | 1284 | 112 | 789 | 1 | 24 | 358 |
-| blakadder | master | 626 | 61 | 284 | 0 | 53 | 228 |
+| blakadder | master | 626 | 61 | 284 | 0 | 52 | 229 |
 | blakadder | stable-v5 | 626 | 62 | 400 | 3 | 29 | 132 |
 | blakadder | bastien-home | 626 | 63 | 412 | 2 | 28 | 121 |
 | hubitat | master | 556 | 66 | 309 | 0 | 41 | 140 |
@@ -59,7 +59,7 @@ The payload cap (15,500 couples, our own heuristic shared with the publish workf
 | smartthings | master | 550 | 134 | 226 | 0 | 13 | 177 |
 | smartthings | stable-v5 | 550 | 137 | 278 | 0 | 13 | 122 |
 | smartthings | bastien-home | 550 | 141 | 274 | 0 | 11 | 124 |
-| domoticz | master | 402 | 13 | 218 | 0 | 44 | 127 |
+| domoticz | master | 402 | 13 | 218 | 0 | 43 | 128 |
 | domoticz | stable-v5 | 402 | 16 | 294 | 1 | 19 | 72 |
 | domoticz | bastien-home | 402 | 16 | 288 | 0 | 18 | 80 |
 | tasmota | master | 10 | 1 | 6 | 0 | 2 | 1 |
