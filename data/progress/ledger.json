@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-26T17:15:30.160Z",
+ "updated": "2026-11-26T21:48:40.816Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -14343,6 +14343,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T13:31:56.000Z"
+  },
+  "diag:d577065aa1edbedf": {
+   "status": "done",
+   "date": "2026-11-26",
+   "hash": "be0a84997776286a",
+   "note": "device_issue mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "device_issue",
+   "mailDate": "2026-11-26T16:45:58.000Z"
   },
   "diag:d5b066984ff7118b": {
    "status": "done",
