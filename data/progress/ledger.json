@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-26T13:07:36.828Z",
+ "updated": "2026-11-26T16:10:07.110Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -6956,6 +6956,15 @@
    "couples": [
     "_TZ3210_j4pdtz9v|TS0001"
    ]
+  },
+  "diag:0e4f4ad8535fea0e": {
+   "status": "done",
+   "date": "2026-11-26",
+   "hash": "b1fd2839047d7995",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-26T08:59:12.000Z"
   },
   "diag:0e6a3e2410f0404b": {
    "status": "done",
