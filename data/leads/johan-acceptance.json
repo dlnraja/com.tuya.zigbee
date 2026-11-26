@@ -1,13 +1,13 @@
 {
-  "generated": "2026-11-25T13:29:05.245Z",
+  "generated": "2026-11-26T13:07:37.547Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
-    "threads": 580,
-    "covered": 470,
-    "behaviour": 101,
-    "dual-couple": 6,
+    "threads": 584,
+    "covered": 472,
+    "behaviour": 102,
+    "dual-couple": 7,
     "missing-couple": 3,
     "missingCouples": 3
   },
@@ -14208,6 +14208,76 @@
         }
       ],
       "acceptance": "covered"
+    },
+    {
+      "n": 1576,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1576",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE200_crq3r3la",
+          "pid": "CK-BL702-MWS-01(7016)",
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1579,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1579",
+      "state": "open",
+      "regression": true,
+      "objectives": [
+        "row"
+      ],
+      "coverage": [],
+      "acceptance": "behaviour"
+    },
+    {
+      "n": 1582,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1582",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_mhhxxjrs",
+          "pid": "TS0003",
+          "drivers": [
+            "switch_3gang"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1584,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1584",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_skueekg3",
+          "pid": "TS000F",
+          "drivers": [
+            "switch_1gang",
+            "switch_module_whd02"
+          ]
+        },
+        {
+          "mfr": "_TYZB01_gr6rozze",
+          "pid": "TS0011",
+          "drivers": [
+            "switch_1gang"
+          ]
+        }
+      ],
+      "acceptance": "dual-couple"
     }
   ]
 }
