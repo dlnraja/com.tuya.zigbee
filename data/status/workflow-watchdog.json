@@ -1,11 +1,11 @@
 {
-  "at": "2026-11-25T15:30:47.888Z",
+  "at": "2026-11-26T15:03:31.046Z",
   "checked": 69,
   "findings": [
     {
       "kind": "stale",
-      "sig": "7d65ac8624e8",
-      "wf": "publish-hold-bisect.yml",
+      "sig": "51b1a88060ce",
+      "wf": "promote-live.yml",
       "detail": "no scheduled run for 10 h (expected <= 8 h)"
     },
     {
