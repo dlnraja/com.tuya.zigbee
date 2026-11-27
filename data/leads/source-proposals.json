@@ -1,6 +1,6 @@
 {
   "$comment": "Change-driven proposals from data/sources/registry.json. Identifiers + our own one-line summaries; review before landing (W4 couples, research first).",
-  "updated": "2026-11-26T11:29:36.929Z",
+  "updated": "2026-11-27T11:26:00.417Z",
   "proposals": [
     {
       "source": "z2m-issues",
@@ -38683,6 +38683,579 @@
       "quirk": false,
       "credit": "Homey Community Forum app authors (tag: app)",
       "seenAt": "2026-11-26T11:29:36.483Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33832",
+      "summary": "issue #33832 (open) by nstefy, about: unclassified",
+      "mfrs": [
+        "_TZE284_3mzb0sdz"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-27T11:25:50.388Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33834",
+      "summary": "issue #33834 (open) by cviannabr, about: `_TZB210_3zfp8mki` `TS0505B`",
+      "mfrs": [
+        "_TZB210_3zfp8mki",
+        "_TZB210_rkgngb5o"
+      ],
+      "pids": [
+        "TS0505B",
+        "TS0501B"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-27T11:25:50.388Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33836",
+      "summary": "issue #33836 (closed) by 6bishnoi, about: request — `_TZE284_kwi6bbk4` `TS0601`",
+      "mfrs": [
+        "_TZE284_kwi6bbk4"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-27T11:25:50.388Z"
+    },
+    {
+      "source": "z2m-issues",
+      "kind": "issues",
+      "ref": "https://github.com/Koenkk/zigbee2mqtt/issues/33838",
+      "summary": "issue #33838 (open) by waynethomas69, about: energy, error — `_TZ3000_kqvb5akv`",
+      "mfrs": [
+        "_TZ3000_kqvb5akv"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Koen Kanters and zigbee2mqtt contributors",
+      "seenAt": "2026-11-27T11:25:50.388Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/5828",
+      "summary": "issue #5828 (open) by rf7809, about: request — `_TZE284_6ocnqlhn`",
+      "mfrs": [
+        "_TZE284_6ocnqlhn"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        32,
+        50,
+        131,
+        16,
+        6
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-27T11:25:51.345Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5804",
+      "summary": "PR #5804 (closed) by zigpy-review-bot, about: switch — `TS0601`",
+      "mfrs": [
+        "_TZE200_9mahtqtg"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-27T11:25:51.345Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/5815",
+      "summary": "issue #5815 (open) by zigpy-review-bot, about: button",
+      "mfrs": [],
+      "pids": [
+        "TS004F",
+        "TS0021",
+        "TS0046",
+        "TS0041",
+        "TS0044"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-27T11:25:51.345Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/5286",
+      "summary": "issue #5286 (open) by julianjwong, about: presence, request — `_TZE284_gnpflcoq` `TS0601`",
+      "mfrs": [
+        "_TZE284_gnpflcoq"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1,
+        2,
+        102,
+        4,
+        7,
+        8,
+        9,
+        11,
+        12,
+        101,
+        103
+      ],
+      "bug": true,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-27T11:25:51.345Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/5833",
+      "summary": "issue #5833 (open) by fedx-dev, about: cover, battery, request — `_TZE200_9caxna4s` `TS0301`",
+      "mfrs": [
+        "_TZE200_9caxna4s"
+      ],
+      "pids": [
+        "TS0301"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-27T11:25:51.345Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5834",
+      "summary": "PR #5834 (open) by soosp, about: climate sensor",
+      "mfrs": [
+        "_TZE200_lve3dvpy",
+        "_TZE200_qrztc3ev"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        10,
+        11
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-27T11:25:51.346Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/pull/5835",
+      "summary": "PR #5835 (open) by soosp, about: request",
+      "mfrs": [
+        "_TZE200_nnrfa68v",
+        "_TZE200_qrztc3ev"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-27T11:25:51.346Z"
+    },
+    {
+      "source": "zha-quirks",
+      "kind": "converters",
+      "ref": "https://github.com/zigpy/zha-device-handlers/issues/5837",
+      "summary": "issue #5837 (open) by ysheigit, about: switch, request — `_TZE284_dvosyycn` `TS0601`",
+      "mfrs": [
+        "_TZE284_dvosyycn"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        1
+      ],
+      "bug": false,
+      "quirk": true,
+      "credit": "zigpy / zha-device-handlers contributors (Apache-2.0)",
+      "seenAt": "2026-11-27T11:25:51.346Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1574",
+      "summary": "PR #1574 (closed) by JohanBendz, about: request",
+      "mfrs": [
+        "_TZE204_ltwbm23f"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        4,
+        5,
+        3,
+        6,
+        114
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.614Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1575",
+      "summary": "PR #1575 (closed) by JohanBendz, about: thermostat, request",
+      "mfrs": [
+        "_TZE284_ne4pikwm"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [
+        101,
+        103,
+        102,
+        3,
+        105
+      ],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.614Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1562",
+      "summary": "issue #1562 (open) by JohanBendz, about: unclassified",
+      "mfrs": [
+        "_TZE200_locansqn",
+        "_TZ3000_mhhxxjrs",
+        "_TZE204_vjpaih9f",
+        "_TZE284_vjpaih9f",
+        "_TZE204_ex3rcdha",
+        "_TZ3210_a04acm9s",
+        "_TZE200_r32ctezx",
+        "_TZE204_dzuqwsyg",
+        "_TZE204_yvx5lh6k",
+        "_TZ3210_iiacqpdz",
+        "_TZ3000_ywubfuvt",
+        "_TZ3210_ngqk6jia",
+        "_TZE200_zo0cfekv",
+        "_TZE204_jtbgusdc",
+        "_TZE204_o9gyszw2",
+        "_TZE284_ne4pikwm",
+        "_TZE204_xalsoe3m",
+        "_TZE200_rhgsbacq"
+      ],
+      "pids": [
+        "TS0003",
+        "TS0601",
+        "TS0001",
+        "TS110E",
+        "TS0603",
+        "TS1002",
+        "TS0013",
+        "TS0201",
+        "TS011F"
+      ],
+      "dps": [
+        1,
+        4,
+        5,
+        3,
+        2,
+        7,
+        12,
+        8,
+        9,
+        11,
+        101,
+        102,
+        105,
+        27,
+        16,
+        50,
+        39,
+        24,
+        40,
+        38,
+        13,
+        111,
+        106,
+        6,
+        114,
+        15,
+        107,
+        104
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.614Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1576",
+      "summary": "issue #1576 (open) by Dragangbg, about: presence, request — `_TZE200_crq3r3la`",
+      "mfrs": [
+        "_TZE200_crq3r3la"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.614Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1585",
+      "summary": "issue #1585 (open) by Charcotus, about: cover, light, request — `_TZB210_tmi0rihb` `TS0505B`",
+      "mfrs": [
+        "_TZB210_tmi0rihb"
+      ],
+      "pids": [
+        "TS0505B"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.615Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1584",
+      "summary": "PR #1584 (closed) by JohanBendz, about: plug — `TS011F`",
+      "mfrs": [
+        "_TZ3000_hdc8bbha",
+        "_TZ3000_skueekg3",
+        "_TZ3000_prd023wy",
+        "_TZ3000_5ftkaulg",
+        "_TZ3000_aetquff4",
+        "_TYZB01_gr6rozze",
+        "_TZ3000_etx8inrk",
+        "_TZ3000_2xlvlnez"
+      ],
+      "pids": [
+        "TS011F",
+        "TS000F",
+        "TS0001",
+        "TS0011"
+      ],
+      "dps": [
+        101,
+        1
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.615Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1583",
+      "summary": "PR #1583 (closed) by JohanBendz, about: thermostat",
+      "mfrs": [
+        "_TZE204_vjpaih9f",
+        "_TZE284_vjpaih9f"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.615Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1582",
+      "summary": "PR #1582 (closed) by JohanBendz, about: switch",
+      "mfrs": [
+        "_TZ3000_mhhxxjrs"
+      ],
+      "pids": [
+        "TS0003"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.615Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1581",
+      "summary": "PR #1581 (closed) by JohanBendz, about: climate sensor",
+      "mfrs": [],
+      "pids": [],
+      "dps": [
+        1,
+        5
+      ],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.615Z"
+    },
+    {
+      "source": "johan",
+      "kind": "converters",
+      "ref": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1579",
+      "summary": "issue #1579 (open) by JohanBendz, about: unclassified",
+      "mfrs": [
+        "_TZ3000_2xlvlnez"
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Johan Bendz and com.tuya.zigbee contributors",
+      "seenAt": "2026-11-27T11:25:52.615Z"
+    },
+    {
+      "source": "homey-forum",
+      "kind": "forum",
+      "ref": "https://community.homey.app/t/26439/5545",
+      "summary": "post #5545 by Vitalii",
+      "mfrs": [
+        "_TZ3000_ja5osu5g"
+      ],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": false,
+      "credit": "Homey Community Forum members",
+      "seenAt": "2026-11-27T11:25:53.228Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/153353/444",
+      "summary": "post #444 by Giovanni4312",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": false,
+      "quirk": true,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-27T11:25:53.682Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/153353/446",
+      "summary": "post #446 by micke_011",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-27T11:25:53.682Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/153353/447",
+      "summary": "post #447 by micke_011",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-27T11:25:53.682Z"
+    },
+    {
+      "source": "homey-forum-apps-category",
+      "kind": "forum-app",
+      "ref": "https://community.homey.app/t/156345/222",
+      "summary": "post #222 by Tarecco",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum app authors (Apps category)",
+      "seenAt": "2026-11-27T11:25:54.264Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/152695/219",
+      "summary": "post #219 by Maikel_Van_de_Wouw",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-11-27T11:25:56.475Z"
+    },
+    {
+      "source": "homey-forum-tag-zigbee",
+      "kind": "forum-zigbee",
+      "ref": "https://community.homey.app/t/161814/34",
+      "summary": "post #34 by robertklep",
+      "mfrs": [],
+      "pids": [],
+      "dps": [],
+      "bug": true,
+      "quirk": false,
+      "credit": "Homey Community Forum members (tag: zigbee)",
+      "seenAt": "2026-11-27T11:25:57.102Z"
     }
   ]
 }
