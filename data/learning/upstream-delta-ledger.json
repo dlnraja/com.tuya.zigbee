@@ -1073,6 +1073,78 @@
    "ref": "1250f75d23",
    "title": "Remove redundant power config cluster from some Tuya remotes (#5290)",
    "url": "https://github.com/zigpy/zha-device-handlers/commit/1250f75d23eb9d518b75ce5e8b9f9bec781ec61b"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9a1fd5db1f",
+   "title": "feat: Thermosphere TS0601_thermostat_thermosphere: support weekly heating schedules (#13898)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9a1fd5db1fea1cb9e98c933d3cdfc2f4ea209021"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "beae9caf4a",
+   "title": "fix: NodOn TRV-4-1-00: report valve opening and heating demand correctly, restore child lock and mir",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/beae9caf4a42c7020c75bc1cea5af5ecb86d50a1"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "6e764d1df7",
+   "title": "fix(detect): Detect `_TZ3000_npg02xft` as EMOS IP-3010S (#13938)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/6e764d1df7c42f0a8b2b0a2aca6d6fac2c6000e0"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "PRo25/com.tuya.zigbee",
+   "title": "To add support to additional device manufacturers of switch modules and presence sensors",
+   "url": "https://github.com/PRo25/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "telenut/com.tuya.zigbee",
+   "title": "telenut/com.tuya.zigbee",
+   "url": "https://github.com/telenut/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.12.0b2",
+   "title": "2026.12.0b2",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.12.0b2"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.12.0b1",
+   "title": "2026.12.0b1",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.12.0b1"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.12.0b0",
+   "title": "2026.12.0b0",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.12.0b0"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.3",
+   "title": "2026.11.3",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.3"
   }
  ]
 }

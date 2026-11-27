@@ -1,18 +1,5 @@
 {
-  "at": "2026-11-26T15:03:31.046Z",
+  "at": "2026-11-27T14:57:58.028Z",
   "checked": 69,
-  "findings": [
-    {
-      "kind": "stale",
-      "sig": "51b1a88060ce",
-      "wf": "promote-live.yml",
-      "detail": "no scheduled run for 10 h (expected <= 8 h)"
-    },
-    {
-      "kind": "repeated-failure",
-      "sig": "ci-5be26e541885",
-      "wf": ".github/workflows/node22-tests.yml",
-      "detail": "3 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): code-or-test)"
-    }
-  ]
+  "findings": []
 }
