@@ -26,6 +26,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
   }
   _processDPUpdate(dps) {
     super._processDPUpdate(dps);
+    if (dps && typeof dps === 'object') {this._updateEnvSensorFromDps(dps);}
     // DP201: received IR code during learning
     if (dps['201'] && this._learningActive && this._pendingCodeName) {
       this._learnedCodes[this._pendingCodeName] = dps['201'];
@@ -68,6 +69,31 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     this.log('Device deleted, cleaning up');
     await super.onDeleted();
   }
+  _updateEnvSensorFromDps(dps) {
+    const rawTemp = dps['101'] ?? dps[101];
+    if (typeof rawTemp === 'number' && Number.isFinite(rawTemp)) {
+      const tempC = Math.abs(rawTemp) > 80 ? Math.round(rawTemp) / 10 : rawTemp;
+      if (tempC >= -40 && tempC <= 85) {
+        this._setDynamicEnvCapability('measure_temperature', tempC);
+      }
+    }
+    const rawHum = dps['102'] ?? dps[102];
+    if (typeof rawHum === 'number' && Number.isFinite(rawHum) && rawHum >= 0 && rawHum <= 100) {
+      this._setDynamicEnvCapability('measure_humidity', rawHum);
+    }
+  }
+
+  _setDynamicEnvCapability(cap, value) {
+    if (this._destroyed) {return;}
+    const write = () => this.safeSetCapabilityValue(cap, value).catch(() => {});
+    if (typeof this.hasCapability === 'function' && !this.hasCapability(cap)) {
+      if (typeof this.addCapability !== 'function') {return;}
+      Promise.resolve(this.addCapability(cap)).then(write).catch(() => {});
+      return;
+    }
+    write();
+  }
+
 }
 
 module.exports = WiFiIRRemoteDevice;
