@@ -106,7 +106,15 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
   }
 
   get mainsPowered() {
-    return this._getDeviceIdentity().manufacturerName === KNOWN_MAINS_MANUFACTURER;
+    const id = this._getDeviceIdentity();
+    if (id.manufacturerName === KNOWN_MAINS_MANUFACTURER) {return true;}
+    if (id.manufacturerName === J37_BATTERY_MANUFACTURER) {return false;}
+    const ps = this._zclNode?.endpoints?.[1]?.clusters?.basic?.attributes?.powerSource;
+    const rawPs = ps?.value ?? ps;
+    if (rawPs === 1 || rawPs === 4 || rawPs === 'mains' || rawPs === 'dc' || rawPs === 'mainsSinglePhase') {
+      return true;
+    }
+    return false;
   }
 
   /**
