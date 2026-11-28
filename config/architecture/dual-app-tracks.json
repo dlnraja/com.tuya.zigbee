@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "version": "1.5.0",
-    "updated": "2026-09-23",
+    "version": "1.6.0",
+    "updated": "2026-11-28",
     "why": "Three Athom apps — never blur App ID / version / purpose. Classify every change. Bastien house is private → promotes upstream only.",
     "doctrine": "docs/rules/DUAL_APP_VISION.md",
     "bastienDoctrine": "docs/rules/BASTIEN_HOUSE_APP.md",
@@ -11,7 +11,9 @@
     "intelligentIrSsot": "config/architecture/intelligent-ir-ssot.json",
     "recentTipsHuman": "docs/architecture/THREE_APP_RECENT_TIPS.md",
     "batteryAdaptiveSsot": "config/architecture/battery-adaptive-precision-ssot.json",
-    "interactionFlowSsot": "config/architecture/interaction-flow-cards-ssot.json"
+    "interactionFlowSsot": "config/architecture/interaction-flow-cards-ssot.json",
+    "lessons": "docs/rules/LESSONS_2026-11-21.md",
+    "threeAppIdentityNote": "Each branch is an independent Homey app with its own App ID, version line, store name, driver scope, and specificity. Never copy identity fields or blur branch scopes."
   },
   "alwaysBothSameSession": {
     "mandate": "EVERY BOTH reliability change must be surgically ported to stable-v5 in the SAME agent session as master — never leave LTS tip-lag for Peter/GH crashes/sacred couples",
@@ -34,8 +36,13 @@
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
-      "tipHealthy": "9.0.1252",
-      "tipNote": "LIVE Athom tip #3371=9.0.1252 (P2736) — #3365–#3367/#3370 PF socket hang soft-continued (P139/P2732). No Universal spam while tip healthy."
+      "tipHealthy": "9.0.1642",
+      "tipNote": "LIVE/Test tip 9.0.1642 (P3404-P3415: IR/Wi-Fi/OEM pairing, Smart Flows, HomeKit/Matter 1.5, Pronto 900A macros, crash fixes, energy algorithms, workflow hygiene, driver coherence).",
+      "live": "automatic after objective gates",
+      "driverCountSnapshot": 476,
+      "hasApi": true,
+      "publicSupportChannel": true,
+      "specificity": "Main public app (Test & Store channel): full feature set (Wi-Fi/IR/Matter/HomeKit, Smart Flows, full CI/CD workflows, 476 drivers). Target for GitHub issues & Homey Community forum replies."
     },
     "stable": {
       "branch": "stable-v5",
@@ -45,8 +52,13 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.339",
-      "tipNote": "LIVE #247 testing 5.12.339 (P2730) — healthy; #248 soft-continue if PF"
+      "tipHealthy": "5.12.571",
+      "tipNote": "Stable tip 5.12.571 — surgical reliability/coherence ports P3404-P3415; identity and scope strictly isolated from master.",
+      "live": "automatic after objective gates",
+      "driverCountSnapshot": 445,
+      "hasApi": true,
+      "publicSupportChannel": true,
+      "specificity": "Conservative LTS stable branch: reliability & verified surgical backports only, preserving 5.12.x version line, .stable App ID, and 445-driver scope."
     },
     "bastien": {
       "branch": "bastien-home",
@@ -55,10 +67,15 @@
       "versionLine": "1.0.x",
       "purpose": "Private house-only Homey Pro for Bastien — live install/soak; promote learnings upstream surgically",
       "cloneHint": "Documents/homey/bastien",
-      "publish": "Publish Zigbee Bastien workflow / soft-expect first (P2738) — App ID .bastien only; NEVER Universal or Stable slots",
-      "enrichment": "bastien_to_public_only",
-      "tipHealthy": "1.0.111",
-      "tipNote": "LIVE tip 1.0.111 P2747 tagged Flows emit."
+      "publish": "Publish Zigbee Bastien workflow, Test at any hour - App ID .bastien only; NEVER Universal or Stable slots; NEVER Athom Live",
+      "enrichment": "bastien_to_public_only — fixes, quirks, DPs and learned mappings flow regularly to master and stable-v5 (bastien-promote-upstream.yml), additive, anonymized, exact couple",
+      "tipHealthy": "1.0.262",
+      "tipNote": "Private tip 1.0.262 — house soak with P3404-P3415 reliability/coherence ports; never publishes to Universal/Stable slots or Athom Live.",
+      "live": "never — house Test / local install only; must never go to Athom Live",
+      "driverCountSnapshot": 445,
+      "hasApi": true,
+      "publicSupportChannel": false,
+      "specificity": "Private dedicated app for Bastien house Homey Pro: unique house settings, private soak/validation, 445-driver scope; promotes anonymized learnings upstream only, never Athom Live or public forum target."
     }
   },
   "identityNeverCopy": [
@@ -531,6 +548,18 @@
     "p2734_bastien_bidir_soft_ui_complementary": {
       "tag": "BOTH",
       "note": "skipUiPulse softPulsePhysicalUi bi-dir + softArmComplementaryIo"
+    },
+    "p3414_workflow_hygiene_portability": {
+      "tag": "MASTER_ONLY",
+      "note": "Workflow hygiene raw-push 4->2 (auto-fix & bug-report on git-push-retry.sh), CI test Windows/Linux bash portability, mirror-ci-grep timer doc (BOTH for IntelligentIRRouter.js)"
+    },
+    "p3415_driver_coherence_compatibility": {
+      "tag": "BOTH",
+      "note": "UnifiedLightBase EstimatedEnergyCaps (Cat A 27->9), presence_detector pair + null-safe flows, 20-21 drivers platforms/connectivity synced to app.json across all 3 tracks without altering app identity"
+    },
+    "p3416_three_app_tracks_ssot": {
+      "tag": "BOTH",
+      "note": "Explicit 3-branch specificity & uniqueness matrix in dual-app-tracks.json + learnings + critical identity guard test"
     }
   },
   "ci": {
@@ -644,5 +673,11 @@
       "tag": "BOTH",
       "note": "Precise % + volts via non-linear curves per pile/akku/lithium techno (LiFePO4, NiMH, Li-SOCl2…) — no linear (V-2.5)/0.5; Stable surgical"
     }
+  },
+  "publicRepliesPolicy": {
+    "githubAndForumTargetBranch": "master",
+    "githubAndForumTargetApp": "Universal Tuya (com.dlnraja.tuya.zigbee)",
+    "neverReferencePrivateTrack": "bastien-home (com.dlnraja.tuya.zigbee.bastien)",
+    "note": "Public GitHub issues (#632, #559, etc.) and Homey Community forum replies always cite the Universal Tuya (master) Test version unless a user explicitly runs Tuya Unified (Stable)."
   }
 }
