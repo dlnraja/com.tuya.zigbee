@@ -42,7 +42,7 @@ out.smoke = ['_TZE200_vawy74yh', '_TZE204_vawy74yh', '_TZE284_vawy74yh'].map((m)
 });
 const CO = require('./drivers/co_sensor/device.js');
 const get = (C) => Object.getOwnPropertyDescriptor(C.prototype, 'dpMappings').get;
-const co = (mfr) => { const m = get(CO).call({ _isSmokeOnly: CO.prototype._isSmokeOnly, getSetting: () => mfr });
+const co = (mfr) => { const m = get(CO).call({ _isSmokeOnly: CO.prototype._isSmokeOnly, _isNousE12: CO.prototype._isNousE12, getSetting: () => mfr });
   return [m[1].capability, m[1].transform ? [m[1].transform(0), m[1].transform(1)] : null]; };
 out.co = [co('_TZE200_vawy74yh'), co('_TZE204_l4daccga')];
 const CL = require('./drivers/climate_sensor/device.js');
