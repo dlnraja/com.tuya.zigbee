@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-23T05:02:40.065Z",
+ "updated": "2026-11-27T16:58:20.521Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -138,8 +138,8 @@
   },
   "autopilot-issue:559": {
    "status": "deferred",
-   "date": "2026-11-16",
-   "hash": "1a59d3e86ac5a154",
+   "date": "2026-11-23",
+   "hash": "1ddbbfb7953c273c",
    "note": "already-supported: supported and referenced by a fix commit; owner replies (draft in autopilot report), never auto-closed",
    "by": "repo-autopilot",
    "kind": "already-supported",
@@ -157,7 +157,7 @@
    "counts": {
     "dps": 0,
     "diag": 2,
-    "fixCommits": 3
+    "fixCommits": 4
    }
   },
   "autopilot-issue:560": {
@@ -276,8 +276,8 @@
   },
   "autopilot-issue:632": {
    "status": "pending",
-   "date": "2026-11-09",
-   "hash": "e8a27218da773be0",
+   "date": "2026-11-23",
+   "hash": "4645eadfad7df5b5",
    "note": "fix-in-code: supported, symptom(s): unknown-device, battery; owner replies (draft in autopilot report), never auto-closed",
    "by": "repo-autopilot",
    "kind": "fix-in-code",
@@ -294,7 +294,7 @@
    ],
    "counts": {
     "dps": 0,
-    "diag": 0,
+    "diag": 1,
     "fixCommits": 0
    }
   },
@@ -6957,6 +6957,15 @@
     "_TZ3210_j4pdtz9v|TS0001"
    ]
   },
+  "diag:0e4f4ad8535fea0e": {
+   "status": "done",
+   "date": "2026-11-26",
+   "hash": "b1fd2839047d7995",
+   "note": "diagnostic mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "diagnostic",
+   "mailDate": "2026-11-26T08:59:12.000Z"
+  },
   "diag:0e6a3e2410f0404b": {
    "status": "done",
    "date": "2026-10-24",
@@ -7173,6 +7182,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-11-03T15:00:21.000Z"
+  },
+  "diag:151d183c6aede396": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "9bc93bb15b203bbb",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T07:34:54.000Z"
   },
   "diag:1561a2251b04dbec": {
    "status": "done",
@@ -7427,6 +7445,15 @@
    "kind": "general",
    "mailDate": "2026-10-18T22:37:54.000Z"
   },
+  "diag:1c01102a0622b189": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "053c530a5565d04c",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T09:50:10.000Z"
+  },
   "diag:1c1cffe237ea5c2e": {
    "status": "done",
    "date": "2026-10-25",
@@ -7498,6 +7525,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T08:32:27.000Z"
+  },
+  "diag:1df768fd9d521261": {
+   "status": "done",
+   "date": "2026-11-25",
+   "hash": "fc9caa12175d9269",
+   "note": "general mail; nothing new to act on",
+   "by": "gmail-diagnostics",
+   "kind": "general",
+   "mailDate": "2026-11-25T15:36:23.000Z"
   },
   "diag:1e30955c3ce9284b": {
    "status": "pending",
@@ -7663,6 +7699,15 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-11-15T16:39:24.000Z"
+  },
+  "diag:22748a9f5f5beeb7": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "1849db745455f957",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T09:50:00.000Z"
   },
   "diag:22b5e259c122473e": {
    "status": "done",
@@ -8762,6 +8807,15 @@
    "kind": "github",
    "mailDate": "2026-10-25T20:44:30.000Z"
   },
+  "diag:3e49a7796d395909": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "e673fe2d11fedd7f",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T10:40:35.000Z"
+  },
   "diag:3e7d01d2c511a65a": {
    "status": "done",
    "date": "2026-10-21",
@@ -9212,6 +9266,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T00:40:23.000Z"
   },
+  "diag:4e58d2b1e26aaabf": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "ffa14ddddf4eef4c",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:37:13.000Z"
+  },
   "diag:4e784c9e59a54af2": {
    "status": "done",
    "date": "2026-10-26",
@@ -9522,6 +9585,15 @@
    "mailDate": "2026-10-21T10:50:37.000Z",
    "errors": 1
   },
+  "diag:56390b6419dd8119": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "ffdffb01f95ee896",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T10:27:12.000Z"
+  },
   "diag:565c6e36f27c8add": {
    "status": "done",
    "date": "2026-10-20",
@@ -9530,6 +9602,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-20T07:33:13.000Z"
+  },
+  "diag:566dc1e5e10bd688": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "43a213a9e59f166b",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T09:24:29.000Z"
   },
   "diag:567da6bf59ffd6fd": {
    "status": "done",
@@ -9584,6 +9665,15 @@
    "by": "gmail-diagnostics",
    "kind": "github",
    "mailDate": "2026-10-23T18:21:56.000Z"
+  },
+  "diag:577e162ead394e98": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "e1b6de7d516b7ed9",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T09:36:21.000Z"
   },
   "diag:5795c54d081c4304": {
    "status": "done",
@@ -10056,6 +10146,15 @@
    "kind": "device_issue",
    "mailDate": "2026-11-22T06:19:30.000Z"
   },
+  "diag:640a185d44406be0": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "3bdf127328be7a6f",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:43:19.000Z"
+  },
   "diag:6426b8710a0cfa8f": {
    "status": "done",
    "date": "2026-10-21",
@@ -10380,6 +10479,15 @@
    "kind": "general",
    "mailDate": "2026-11-22T16:56:52.000Z"
   },
+  "diag:6c6e99d97350baa3": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "0b07d62244b4b642",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T10:40:29.000Z"
+  },
   "diag:6ca7062d6826b7c8": {
    "status": "done",
    "date": "2026-10-31",
@@ -10643,6 +10751,15 @@
    "kind": "general",
    "mailDate": "2026-10-21T11:07:49.000Z"
   },
+  "diag:76a31e9d0d999940": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "5d950d59ea4b54dc",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:17:35.000Z"
+  },
   "diag:76abc0b5fb78707d": {
    "status": "done",
    "date": "2026-10-27",
@@ -10669,6 +10786,15 @@
    "by": "fetch-diags",
    "kind": "github",
    "mailDate": "2026-10-31T21:26:13.000Z"
+  },
+  "diag:77cf290e9e3516ff": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "7ad56b54b7716a04",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T10:27:28.000Z"
   },
   "diag:77d613c2d1bd69eb": {
    "status": "done",
@@ -11598,6 +11724,15 @@
    "kind": "github",
    "mailDate": "2026-10-26T17:02:29.000Z"
   },
+  "diag:90f2e1c2f26aa7ec": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "2ca146ccc10af08b",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T09:50:15.000Z"
+  },
   "diag:91ae5a25475c98db": {
    "status": "pending",
    "date": "2026-10-31",
@@ -11849,6 +11984,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-11-22T00:21:42.000Z"
+  },
+  "diag:96e8be0b1423dd81": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "90dd4b47c2d7c32d",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T07:34:40.000Z"
   },
   "diag:96fa8514ef1bd00c": {
    "status": "done",
@@ -12472,6 +12616,15 @@
    "kind": "github",
    "mailDate": "2026-10-26T13:32:33.000Z"
   },
+  "diag:a66438e02209d550": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "30cfd658ac3565cf",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T07:45:14.000Z"
+  },
   "diag:a6a05dc427fcafe1": {
    "status": "done",
    "date": "2026-10-24",
@@ -12774,6 +12927,15 @@
    "kind": "general",
    "mailDate": "2026-11-22T19:16:20.000Z"
   },
+  "diag:aecae47b24ce6771": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "7574fbef83a1869c",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:20:18.000Z"
+  },
   "diag:af1d3720df9c5a38": {
    "status": "done",
    "date": "2026-10-24",
@@ -12936,6 +13098,15 @@
    "kind": "general",
    "mailDate": "2026-10-27T00:16:54.000Z"
   },
+  "diag:b2ff659a09d0b989": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "a03225bd41d2f705",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T09:24:14.000Z"
+  },
   "diag:b304fc83ec7b2865": {
    "status": "done",
    "date": "2026-11-15",
@@ -13018,6 +13189,15 @@
    "kind": "general",
    "mailDate": "2026-10-25T12:45:22.000Z"
   },
+  "diag:b52e227c9e463f0f": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "672e63b0049cddaf",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:17:49.000Z"
+  },
   "diag:b56e986b15261fde": {
    "status": "done",
    "date": "2026-10-24",
@@ -13085,6 +13265,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-10-21T10:04:11.000Z"
+  },
+  "diag:b75ce16e5130cb80": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "a428f71da710a88b",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:31:23.000Z"
   },
   "diag:b78e0b5d099fc482": {
    "status": "done",
@@ -13195,6 +13384,15 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-18T22:09:24.000Z"
+  },
+  "diag:b97e141ba7cf7817": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "08b53fbcca6d3a1b",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T07:45:00.000Z"
   },
   "diag:b9b05102cce74ac4": {
    "status": "done",
@@ -13422,6 +13620,15 @@
    "kind": "device_issue",
    "mailDate": "2026-11-17T12:47:10.000Z"
   },
+  "diag:c131d61b756da21f": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "ce806a92656d759e",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:37:29.000Z"
+  },
   "diag:c14a77987787ac84": {
    "status": "done",
    "date": "2026-11-07",
@@ -13430,6 +13637,15 @@
    "by": "gmail-diagnostics",
    "kind": "general",
    "mailDate": "2026-11-07T17:46:17.000Z"
+  },
+  "diag:c14dd40cc133fb9a": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "47d5fb2f78e28473",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T07:46:08.000Z"
   },
   "diag:c184de3829783339": {
    "status": "done",
@@ -13556,6 +13772,15 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-11-02T09:14:55.000Z"
+  },
+  "diag:c5171c49d5dd1807": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "511b8dc084d2dc63",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T10:38:14.000Z"
   },
   "diag:c5973fe3f413a52c": {
    "status": "done",
@@ -13864,6 +14089,15 @@
    "kind": "general",
    "mailDate": "2026-10-24T13:47:43.000Z"
   },
+  "diag:cc98c22ba3efec24": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "37313a2e2e767301",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T10:40:20.000Z"
+  },
   "diag:ccdd99446f767f86": {
    "status": "pending",
    "date": "2026-10-21",
@@ -14110,6 +14344,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T13:31:56.000Z"
   },
+  "diag:d577065aa1edbedf": {
+   "status": "done",
+   "date": "2026-11-26",
+   "hash": "be0a84997776286a",
+   "note": "device_issue mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "device_issue",
+   "mailDate": "2026-11-26T16:45:58.000Z"
+  },
   "diag:d5b066984ff7118b": {
    "status": "done",
    "date": "2026-11-16",
@@ -14235,6 +14478,15 @@
    "by": "fetch-diags",
    "kind": "general",
    "mailDate": "2026-11-22T19:16:18.000Z"
+  },
+  "diag:d77061332e8670e4": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "a71281f96411fc7f",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:20:15.000Z"
   },
   "diag:d778803397e0192f": {
    "status": "done",
@@ -15227,6 +15479,15 @@
    "kind": "general",
    "mailDate": "2026-10-20T08:09:17.000Z"
   },
+  "diag:f4b1fc6266c0d1e5": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "ee47211afc0908f2",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:37:23.000Z"
+  },
   "diag:f54c8ca471452dd0": {
    "status": "done",
    "date": "2026-10-25",
@@ -15515,6 +15776,24 @@
    "by": "tuya-deep-diag",
    "kind": "general",
    "mailDate": "2026-10-19T09:13:54.000Z"
+  },
+  "diag:fbcfab220a7e990a": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "6824a15005800a76",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T06:31:10.000Z"
+  },
+  "diag:fbf68df772b00b57": {
+   "status": "done",
+   "date": "2026-11-23",
+   "hash": "35c9a138c6fca246",
+   "note": "general mail; nothing new to act on",
+   "by": "fetch-diags",
+   "kind": "general",
+   "mailDate": "2026-11-23T07:45:12.000Z"
   },
   "diag:fc6bb74e66f895cb": {
    "status": "pending",
@@ -17292,60 +17571,99 @@
    "by": "advance-sweep"
   },
   "dlnraja-issue:241": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-04-13T03:11:30Z"
+   "upstreamUpdatedAt": "2026-04-13T03:11:30Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-13T03:11:30Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:242": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-04-12T15:17:24Z"
+   "upstreamUpdatedAt": "2026-04-12T15:17:24Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-12T15:17:24Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:243": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-04-13T03:11:30Z"
+   "upstreamUpdatedAt": "2026-04-13T03:11:30Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-13T03:11:30Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:244": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-12T12:43:59Z"
+   "upstreamUpdatedAt": "2026-04-12T12:43:59Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-12T12:43:59Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:245": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-04-12T14:20:50Z"
+   "upstreamUpdatedAt": "2026-04-12T14:20:50Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-12T14:20:50Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:246": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-12T15:22:38Z"
+   "upstreamUpdatedAt": "2026-04-12T15:22:38Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-12T15:22:38Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:247": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T07:59:40Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:248": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-13T04:12:43Z"
+   "upstreamUpdatedAt": "2026-04-13T04:12:43Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-13T04:12:43Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:249": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-13T05:25:40Z"
+   "upstreamUpdatedAt": "2026-04-13T05:25:40Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-13T05:25:40Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:25": {
    "status": "deferred",
@@ -17359,39 +17677,94 @@
    "by": "advance-sweep"
   },
   "dlnraja-issue:250": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-04-13T10:09:35Z"
+   "upstreamUpdatedAt": "2026-04-13T10:09:35Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-13T10:09:35Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:251": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T07:59:58Z",
+   "note": "closed issue; identities covered (_TYZB01_hlla45kx,_TYZB01_iuepbmpv,_TZ3000_uwkja6z1)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:252": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-05-06T12:11:54Z"
+   "upstreamUpdatedAt": "2026-05-06T12:11:54Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-06T12:11:54Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:253": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:03:28Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:254": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:03:45Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:255": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:04:02Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:256": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-14T04:07:30Z"
+   "upstreamUpdatedAt": "2026-04-14T04:07:30Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-14T04:07:30Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:257": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:04:20Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:258": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-04-14T09:34:24Z"
+   "upstreamUpdatedAt": "2026-04-14T09:34:24Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-14T09:34:24Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:259": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-14T14:42:38Z"
+   "upstreamUpdatedAt": "2026-04-14T14:42:38Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-14T14:42:38Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:26": {
    "status": "done",
@@ -17405,32 +17778,90 @@
    "by": "advance-sweep"
   },
   "dlnraja-issue:260": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-04-28T14:24:30Z"
+   "upstreamUpdatedAt": "2026-04-28T14:24:30Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-28T14:24:30Z",
+   "note": "closed issue; identities covered (_TZE284_fhvpaltk)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:261": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:05:12Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:262": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:04:52Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:263": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:05:32Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:264": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-15T04:07:44Z"
+   "upstreamUpdatedAt": "2026-04-15T04:07:44Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-15T04:07:44Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:265": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:05:49Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:266": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-04-16T20:56:04Z"
+   "upstreamUpdatedAt": "2026-04-16T20:56:04Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-16T20:56:04Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:267": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-15T10:13:22Z"
+   "upstreamUpdatedAt": "2026-04-15T10:13:22Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-15T10:13:22Z",
+   "note": "closed issue; identities covered (_TZ2000_a476raq2,_TZ2000_xogb73am,_TZ2000_avdnvykf)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:268": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:06:13Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:269": {
+   "status": "done",
+   "date": "2026-11-23",
+   "updatedAt": "2026-05-24T08:06:44Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:27": {
    "status": "done",
@@ -17444,60 +17875,106 @@
    "by": "advance-sweep"
   },
   "dlnraja-issue:270": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-16T04:21:22Z"
+   "upstreamUpdatedAt": "2026-04-16T04:21:22Z",
+   "date": "2026-11-23",
+   "updatedAt": "2026-04-16T04:21:22Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:271": {
+   "status": "done",
+   "date": "2026-11-24",
+   "updatedAt": "2026-05-24T08:07:10Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:272": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-04-21T05:30:22Z"
+   "upstreamUpdatedAt": "2026-04-21T05:30:22Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-21T05:30:22Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:273": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-21T05:30:11Z"
+   "upstreamUpdatedAt": "2026-04-21T05:30:11Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-21T05:30:11Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:274": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-04-19T22:36:26Z"
+   "upstreamUpdatedAt": "2026-04-19T22:36:26Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-19T22:36:26Z",
+   "note": "merged PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:275": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-28T14:24:27Z"
+   "upstreamUpdatedAt": "2026-04-28T14:24:27Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-28T14:24:27Z",
+   "note": "closed issue; identities covered (_TZE200_xlppj4f5)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:276": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 19,
-   "upstreamUpdatedAt": "2026-05-13T16:06:02Z"
+   "upstreamUpdatedAt": "2026-05-13T16:06:02Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-05-13T16:06:02Z",
+   "note": "closed issue; identities covered (_TZE284_rqcuwlsa,_TZE608_c75zqghm)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:277": {
+   "status": "done",
+   "date": "2026-11-24",
+   "updatedAt": "2026-05-24T08:07:27Z",
+   "note": "closed issue; identities covered (_TZ3000_mw1pqqqt,_TZ3000_2uollq9d,_TZE200_hl0ss9oa)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:278": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-04-21T05:30:48Z"
+   "upstreamUpdatedAt": "2026-04-21T05:30:48Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-21T05:30:48Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:279": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-21T10:04:52Z"
+   "upstreamUpdatedAt": "2026-04-21T10:04:52Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-21T10:04:52Z",
+   "note": "closed issue; identities covered (_TZE284_6ocnqlhn,_TZE200_lvkk0hdg,_TZE200_khah2lkr)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:28": {
    "status": "done",
@@ -17511,53 +17988,102 @@
    "by": "advance-sweep"
   },
   "dlnraja-issue:280": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-21T10:04:44Z"
+   "upstreamUpdatedAt": "2026-04-21T10:04:44Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-21T10:04:44Z",
+   "note": "closed issue; identities covered (_TZ3000_vd43bbfq,_TZ3000_ke7pzj5d,_TZ3000_fccpjz5z)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:281": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-21T10:04:34Z"
+   "upstreamUpdatedAt": "2026-04-21T10:04:34Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-21T10:04:34Z",
+   "note": "closed issue; identities covered (_TZ3000_vd43bbfq,_TZ3000_ke7pzj5d,_TZ3000_fccpjz5z)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:282": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-22T10:04:01Z"
+   "upstreamUpdatedAt": "2026-04-22T10:04:01Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-22T10:04:01Z",
+   "note": "closed issue; identities covered (_TZ3000_vd43bbfq,_TZ3000_ke7pzj5d,_TZ3000_fccpjz5z)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:283": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-27T12:52:28Z"
+   "upstreamUpdatedAt": "2026-04-27T12:52:28Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-27T12:52:28Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:284": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-04-23T04:36:49Z"
+   "upstreamUpdatedAt": "2026-04-23T04:36:49Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-23T04:36:49Z",
+   "note": "merged PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:285": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-04-23T10:05:55Z"
+   "upstreamUpdatedAt": "2026-04-23T10:05:55Z",
+   "date": "2026-11-24",
+   "updatedAt": "2026-04-23T10:05:55Z",
+   "note": "closed issue; identities covered (_TZ3000_vd43bbfq,_TZ3000_ke7pzj5d,_TZ3000_fccpjz5z)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:286": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:07:44Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:287": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:08:01Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:288": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-27T18:46:31Z"
+   "upstreamUpdatedAt": "2026-04-27T18:46:31Z",
+   "date": "2026-11-25",
+   "updatedAt": "2026-04-27T18:46:31Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:289": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:08:33Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:29": {
    "status": "done",
@@ -17570,26 +18096,87 @@
    "note": "closed issue; identities covered (_TZE200_2aaelwxk,_TZE200_kb5noeto,_TZE200_tyffvoij)",
    "by": "advance-sweep"
   },
+  "dlnraja-issue:290": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:08:50Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:291": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:09:08Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:292": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:09:25Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:293": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:09:42Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:294": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:10:04Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
   "dlnraja-issue:295": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-04-28T07:14:15Z"
+   "upstreamUpdatedAt": "2026-04-28T07:14:15Z",
+   "date": "2026-11-25",
+   "updatedAt": "2026-04-28T07:14:15Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:296": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-28T12:55:49Z"
+   "upstreamUpdatedAt": "2026-04-28T12:55:49Z",
+   "date": "2026-11-25",
+   "updatedAt": "2026-04-28T12:55:49Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:297": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:10:24Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:298": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:10:42Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:299": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-04-29T12:46:35Z"
+   "upstreamUpdatedAt": "2026-04-29T12:46:35Z",
+   "date": "2026-11-25",
+   "updatedAt": "2026-04-29T12:46:35Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:3": {
    "status": "deferred",
@@ -17613,40 +18200,95 @@
    "note": "closed issue; identities covered (_TZ3000_yj6k7vfo)",
    "by": "advance-sweep"
   },
+  "dlnraja-issue:300": {
+   "status": "done",
+   "date": "2026-11-25",
+   "updatedAt": "2026-05-24T08:10:59Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:301": {
+   "status": "done",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-06T11:47:49Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
   "dlnraja-issue:302": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-05-06T11:47:15Z"
+   "upstreamUpdatedAt": "2026-05-06T11:47:15Z",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-06T11:47:15Z",
+   "note": "closed issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:303": {
+   "status": "done",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-06T11:48:23Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:304": {
+   "status": "done",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-06T11:51:26Z",
+   "note": "closed issue; identities covered (_TYST11_2dpplnsn,_TYST11_fzo2pocs,_TYST11_pisltm67)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:305": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 17,
-   "upstreamUpdatedAt": "2026-05-14T07:53:14Z"
+   "upstreamUpdatedAt": "2026-05-14T07:53:14Z",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-14T07:53:14Z",
+   "note": "closed issue; identities covered (_TZE608_c75zqghm)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:306": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-05-04T07:37:27Z"
+   "upstreamUpdatedAt": "2026-05-04T07:37:27Z",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-04T07:37:27Z",
+   "note": "merged PR; identities covered (historical)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:307": {
+   "status": "done",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-24T07:59:12Z",
+   "note": "closed issue; identities covered (_TZE200_s8gkrkxk,_TZ3000_vd43bbfq,_TZ3000_1dd0d5yi)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:308": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-05-06T11:47:11Z"
+   "upstreamUpdatedAt": "2026-05-06T11:47:11Z",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-06T11:47:11Z",
+   "note": "closed issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:309": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-05-06T11:47:08Z"
+   "upstreamUpdatedAt": "2026-05-06T11:47:08Z",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-06T11:47:08Z",
+   "note": "closed issue; identities covered (_TZE204_81yrt3lo,_TZE284_81yrt3lo)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:31": {
    "status": "done",
@@ -17660,32 +18302,69 @@
    "by": "advance-sweep"
   },
   "dlnraja-issue:310": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-05-05T15:16:26Z"
+   "upstreamUpdatedAt": "2026-05-05T15:16:26Z",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-05T15:16:26Z",
+   "note": "merged PR; identities covered (historical)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:311": {
+   "status": "done",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-24T07:59:22Z",
+   "note": "closed issue; identities covered (_TZ3000_ztc6ggyl,_TZ3000_0dumfk2z,_TZ3000_dfgbtub0)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:312": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-05-21T12:19:25Z"
+   "upstreamUpdatedAt": "2026-05-21T12:19:25Z",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-21T12:19:25Z",
+   "note": "closed issue; identities covered (_TZE284_fhvpaltk)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:313": {
+   "status": "done",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-24T07:58:54Z",
+   "note": "closed issue; identities covered (_TZ3000_ztc6ggyl,_TZ3000_0dumfk2z,_TZ3000_dfgbtub0)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:314": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-05-17T06:45:22Z"
+   "upstreamUpdatedAt": "2026-05-17T06:45:22Z",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-17T06:45:22Z",
+   "note": "closed issue; identities covered (_TZ3000_b4awzgct)",
+   "by": "advance-sweep"
+  },
+  "dlnraja-issue:315": {
+   "status": "done",
+   "date": "2026-11-26",
+   "updatedAt": "2026-05-24T07:58:29Z",
+   "note": "closed issue; identities covered (_TZ3000_ztc6ggyl,_TZ3000_0dumfk2z,_TZ3000_dfgbtub0)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:316": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-05-11T15:09:24Z"
+   "upstreamUpdatedAt": "2026-05-11T15:09:24Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-11T15:09:24Z",
+   "note": "closed issue; identities covered (_TZ3000_fllyghyj)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:317": {
    "status": "pending",
@@ -17695,18 +18374,26 @@
    "upstreamUpdatedAt": "2026-05-13T16:03:38Z"
   },
   "dlnraja-issue:318": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-05-14T09:08:39Z"
+   "upstreamUpdatedAt": "2026-05-14T09:08:39Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-14T09:08:39Z",
+   "note": "closed issue; identities covered (_TZE204_81yrt3lo,_TZE200_81yrt3lo)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:319": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-05-13T15:59:09Z"
+   "upstreamUpdatedAt": "2026-05-13T15:59:09Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-13T15:59:09Z",
+   "note": "closed issue; identities covered (_TZ3000_402vrq2i)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:32": {
    "status": "done",
@@ -17720,74 +18407,114 @@
    "by": "advance-sweep"
   },
   "dlnraja-issue:320": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-05-13T15:55:33Z"
+   "upstreamUpdatedAt": "2026-05-13T15:55:33Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-13T15:55:33Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:321": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-05-18T07:26:43Z"
+   "upstreamUpdatedAt": "2026-05-18T07:26:43Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-18T07:26:43Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:322": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-05-31T08:06:41Z"
+   "upstreamUpdatedAt": "2026-05-31T08:06:41Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-31T08:06:41Z",
+   "note": "closed issue; identities covered (_TZ3000_famkxci2)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:323": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-05-24T07:58:03Z"
+   "upstreamUpdatedAt": "2026-05-24T07:58:03Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-24T07:58:03Z",
+   "note": "closed issue; identities covered (_TZE204_81yrt3lo)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:324": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-06-07T08:18:35Z"
+   "upstreamUpdatedAt": "2026-06-07T08:18:35Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-06-07T08:18:35Z",
+   "note": "closed issue; identities covered (_TZE200_hl0ss9oa)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:325": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-05-24T07:57:59Z"
+   "upstreamUpdatedAt": "2026-05-24T07:57:59Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-24T07:57:59Z",
+   "note": "closed issue; identities covered (_TZE200_ka8l86iu,_TZE284_ka8l86iu)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:326": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-07-12T09:07:50Z"
+   "upstreamUpdatedAt": "2026-07-12T09:07:50Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-07-12T09:07:50Z",
+   "note": "closed issue; identities covered (_TZE200_u6x1zyv2)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:327": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-05-25T13:50:52Z"
+   "upstreamUpdatedAt": "2026-05-25T13:50:52Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-25T13:50:52Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:328": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 22,
-   "upstreamUpdatedAt": "2026-06-07T08:17:20Z"
+   "upstreamUpdatedAt": "2026-06-07T08:17:20Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-06-07T08:17:20Z",
+   "note": "closed issue; identities covered (_TZE200_seq9cm6u)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:329": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 15,
-   "upstreamUpdatedAt": "2026-06-03T18:50:21Z"
+   "upstreamUpdatedAt": "2026-06-03T18:50:21Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-06-03T18:50:21Z",
+   "note": "closed issue; identities covered (_TZE204_81yrt3lo)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:33": {
    "status": "done",
@@ -17801,11 +18528,15 @@
    "by": "advance-sweep"
   },
   "dlnraja-issue:330": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-05-25T13:50:53Z"
+   "upstreamUpdatedAt": "2026-05-25T13:50:53Z",
+   "date": "2026-11-27",
+   "updatedAt": "2026-05-25T13:50:53Z",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "dlnraja-issue:331": {
    "status": "pending",
@@ -26295,6 +27026,30 @@
    "note": "couples-present",
    "by": "advance-sweep"
   },
+  "forum:140352#2270": {
+   "status": "done",
+   "date": "2026-11-23",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2272": {
+   "status": "deferred",
+   "date": "2026-11-23",
+   "note": "diag-only",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2278": {
+   "status": "deferred",
+   "date": "2026-11-23",
+   "note": "request-no-identity",
+   "by": "advance-sweep"
+  },
+  "forum:140352#2279": {
+   "status": "done",
+   "date": "2026-11-23",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
   "forum:140352#235": {
    "status": "deferred",
    "date": "2026-10-13",
@@ -30729,6 +31484,30 @@
    "note": "couples-present",
    "by": "advance-sweep"
   },
+  "forum:26439#5541": {
+   "status": "done",
+   "date": "2026-11-23",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#5542": {
+   "status": "done",
+   "date": "2026-11-23",
+   "note": "couples-present",
+   "by": "advance-sweep"
+  },
+  "forum:26439#5544": {
+   "status": "done",
+   "date": "2026-11-25",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
+  "forum:26439#5545": {
+   "status": "done",
+   "date": "2026-11-27",
+   "note": "mfr-known",
+   "by": "advance-sweep"
+  },
   "forum:89271#10": {
    "status": "done",
    "date": "2026-10-11",
@@ -33602,7 +34381,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-02T06:46:58Z",
+   "upstreamUpdatedAt": "2026-11-24T22:50:24Z",
    "date": "2026-10-10",
    "note": "couple(s) already present in drivers (_TZE200_ckud7u2l/TS0601)",
    "by": "advance-sweep"
@@ -34036,7 +34815,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T20:30:17Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:16Z",
    "mailDate": "2026-10-02",
    "mailEvents": [
     "comment"
@@ -34047,7 +34826,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T15:57:58Z"
+   "upstreamUpdatedAt": "2026-11-24T23:54:17Z"
   },
   "johan-issue:1236": {
    "status": "pending",
@@ -34121,7 +34900,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T10:25:51Z"
+   "upstreamUpdatedAt": "2026-11-24T23:54:15Z"
   },
   "johan-issue:1242": {
    "status": "pending",
@@ -34152,7 +34931,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-29T08:49:48Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:14Z",
    "mailDate": "2026-09-29",
    "mailEvents": [
     "comment"
@@ -34380,7 +35159,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:23:29Z"
+   "upstreamUpdatedAt": "2026-11-24T23:54:07Z"
   },
   "johan-issue:1264": {
    "status": "pending",
@@ -34465,7 +35244,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-01T08:23:38Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:13Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34488,7 +35267,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-10-01T16:09:13Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:12Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34511,7 +35290,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T08:34:02Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:11Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34522,7 +35301,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-30T22:06:12Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:10Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34569,7 +35348,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T08:34:26Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:14Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34609,7 +35388,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-01T08:34:32Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:08Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34639,7 +35418,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:34:38Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:09Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34650,7 +35429,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-01T08:34:57Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:15Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34661,7 +35440,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T08:35:00Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:14Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34672,7 +35451,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 20,
-   "upstreamUpdatedAt": "2026-10-03T10:21:30Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:20Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment",
@@ -34717,7 +35496,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-03T08:52:04Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:16Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -34740,7 +35519,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-02T21:56:57Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:12Z",
    "mailDate": "2026-10-02",
    "mailEvents": [
     "comment"
@@ -34795,11 +35574,11 @@
    ]
   },
   "johan-issue:1298": {
-   "status": "done",
+   "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-03T14:47:42Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:19Z",
    "commit": "bca6ae7052",
    "date": "2026-10-03",
    "updatedAt": "2026-10-03T14:47:42Z",
@@ -34808,7 +35587,8 @@
    "mailEvents": [
     "comment",
     "merge"
-   ]
+   ],
+   "reopenedBy": "new-comment"
   },
   "johan-issue:1299": {
    "status": "pending",
@@ -34847,7 +35627,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-02T20:49:55Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:21Z",
    "mailDate": "2026-10-02",
    "mailEvents": [
     "comment"
@@ -34870,7 +35650,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 5,
-   "upstreamUpdatedAt": "2026-10-01T08:45:18Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:22Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34905,7 +35685,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-01T08:45:23Z",
+   "upstreamUpdatedAt": "2026-11-24T23:54:06Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -34974,7 +35754,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 14,
-   "upstreamUpdatedAt": "2026-09-30T22:03:35Z",
+   "upstreamUpdatedAt": "2026-11-24T23:47:17Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -35009,7 +35789,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 16,
-   "upstreamUpdatedAt": "2026-10-01T08:45:30Z",
+   "upstreamUpdatedAt": "2026-11-24T23:35:08Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -35080,7 +35860,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 13,
-   "upstreamUpdatedAt": "2026-10-01T08:43:44Z",
+   "upstreamUpdatedAt": "2026-11-24T23:35:07Z",
    "mailDate": "2026-09-30",
    "mailEvents": [
     "comment"
@@ -35113,7 +35893,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 16,
-   "upstreamUpdatedAt": "2026-10-03T07:57:00Z",
+   "upstreamUpdatedAt": "2026-11-24T23:35:02Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -35320,7 +36100,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 22,
-   "upstreamUpdatedAt": "2026-10-02T06:59:02Z",
+   "upstreamUpdatedAt": "2026-11-24T23:35:06Z",
    "mailDate": "2026-10-02",
    "mailEvents": [
     "comment"
@@ -35353,7 +36133,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T22:35:46Z",
+   "upstreamUpdatedAt": "2026-11-24T23:35:04Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -35412,7 +36192,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 23,
-   "upstreamUpdatedAt": "2026-10-01T09:05:49Z",
+   "upstreamUpdatedAt": "2026-11-24T23:35:02Z",
    "mailDate": "2026-02-01",
    "mailEvents": [
     "comment"
@@ -35519,7 +36299,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-02T22:19:58Z",
+   "upstreamUpdatedAt": "2026-11-24T23:35:00Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -35530,7 +36310,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T22:01:49Z",
+   "upstreamUpdatedAt": "2026-11-24T23:34:59Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -35548,7 +36328,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-30T22:10:04Z"
+   "upstreamUpdatedAt": "2026-11-24T23:35:05Z"
   },
   "johan-issue:1358": {
    "status": "pending",
@@ -35562,7 +36342,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T09:06:08Z",
+   "upstreamUpdatedAt": "2026-11-24T23:35:01Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -35580,7 +36360,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 7,
-   "upstreamUpdatedAt": "2026-10-01T09:06:13Z",
+   "upstreamUpdatedAt": "2026-11-24T23:28:24Z",
    "mailDate": "2026-04-17",
    "mailEvents": [
     "comment"
@@ -35602,7 +36382,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-02T22:01:47Z",
+   "upstreamUpdatedAt": "2026-11-24T23:28:28Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -35648,7 +36428,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 9,
-   "upstreamUpdatedAt": "2026-10-25T19:16:38Z",
+   "upstreamUpdatedAt": "2026-11-24T23:28:32Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -35846,7 +36626,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-01T09:15:21Z",
+   "upstreamUpdatedAt": "2026-11-24T23:28:26Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -35892,7 +36672,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-10-02T19:38:37Z",
+   "upstreamUpdatedAt": "2026-11-24T23:28:30Z",
    "mailDate": "2026-10-02",
    "mailEvents": [
     "comment",
@@ -35939,7 +36719,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 12,
-   "upstreamUpdatedAt": "2026-10-26T07:20:48Z",
+   "upstreamUpdatedAt": "2026-11-24T23:28:34Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -36140,7 +36920,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 11,
-   "upstreamUpdatedAt": "2026-10-01T09:17:29Z",
+   "upstreamUpdatedAt": "2026-11-24T23:18:50Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -36151,7 +36931,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 16,
-   "upstreamUpdatedAt": "2026-10-02T22:43:04Z",
+   "upstreamUpdatedAt": "2026-11-24T23:18:32Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -36327,7 +37107,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-01T10:27:56Z",
+   "upstreamUpdatedAt": "2026-11-24T23:18:54Z",
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
@@ -36416,7 +37196,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T22:20:06Z",
+   "upstreamUpdatedAt": "2026-11-24T23:18:48Z",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment"
@@ -36484,7 +37264,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-30T22:06:14Z"
+   "upstreamUpdatedAt": "2026-11-24T23:18:56Z"
   },
   "johan-issue:1433": {
    "status": "pending",
@@ -36526,7 +37306,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-26T07:03:39Z"
+   "upstreamUpdatedAt": "2026-11-24T23:18:52Z"
   },
   "johan-issue:1439": {
    "status": "pending",
@@ -36599,7 +37379,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T10:29:17Z"
+   "upstreamUpdatedAt": "2026-11-24T23:13:08Z"
   },
   "johan-issue:1448": {
    "status": "pending",
@@ -36665,7 +37445,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-03T09:10:24Z"
+   "upstreamUpdatedAt": "2026-11-24T23:13:16Z"
   },
   "johan-issue:1456": {
    "status": "pending",
@@ -36679,7 +37459,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T22:30:44Z"
+   "upstreamUpdatedAt": "2026-11-24T23:13:13Z"
   },
   "johan-issue:1458": {
    "status": "pending",
@@ -36723,7 +37503,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 6,
-   "upstreamUpdatedAt": "2026-10-03T07:13:06Z"
+   "upstreamUpdatedAt": "2026-11-24T20:30:01Z"
   },
   "johan-issue:1462": {
    "status": "pending",
@@ -36779,7 +37559,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 31,
-   "upstreamUpdatedAt": "2026-10-26T07:20:49Z"
+   "upstreamUpdatedAt": "2026-11-15T17:25:13Z"
   },
   "johan-issue:147": {
    "status": "done",
@@ -36803,7 +37583,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-09-28T15:18:14Z"
+   "upstreamUpdatedAt": "2026-11-24T22:50:06Z"
   },
   "johan-issue:1472": {
    "status": "pending",
@@ -36817,14 +37597,14 @@
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-09-27T23:03:00Z"
+   "upstreamUpdatedAt": "2026-11-24T23:13:03Z"
   },
   "johan-issue:1474": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-10-01T11:05:48Z"
+   "upstreamUpdatedAt": "2026-11-24T23:13:06Z"
   },
   "johan-issue:1475": {
    "status": "done",
@@ -36842,21 +37622,21 @@
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-10-01T11:07:43Z"
+   "upstreamUpdatedAt": "2026-11-24T23:13:11Z"
   },
   "johan-issue:1477": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-09-28T22:11:25Z"
+   "upstreamUpdatedAt": "2026-11-24T23:13:10Z"
   },
   "johan-issue:1478": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-10-01T11:05:41Z"
+   "upstreamUpdatedAt": "2026-11-24T23:09:01Z"
   },
   "johan-issue:1479": {
    "status": "pending",
@@ -36887,7 +37667,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-03T23:25:55Z"
+   "upstreamUpdatedAt": "2026-11-24T23:08:59Z"
   },
   "johan-issue:1482": {
    "status": "pending",
@@ -36936,7 +37716,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-09-28T22:09:04Z"
+   "upstreamUpdatedAt": "2026-11-24T23:08:57Z"
   },
   "johan-issue:1489": {
    "status": "pending",
@@ -36974,7 +37754,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T19:46:42Z"
+   "upstreamUpdatedAt": "2026-11-24T23:08:53Z"
   },
   "johan-issue:1493": {
    "status": "pending",
@@ -37002,14 +37782,14 @@
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-10-01T11:05:46Z"
+   "upstreamUpdatedAt": "2026-11-26T19:45:26Z"
   },
   "johan-issue:1497": {
    "status": "pending",
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-10-01T10:43:45Z"
+   "upstreamUpdatedAt": "2026-11-24T23:08:50Z"
   },
   "johan-issue:1498": {
    "status": "pending",
@@ -37198,7 +37978,7 @@
   "johan-issue:1522": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T22:54:09Z"
   },
   "johan-issue:1523": {
    "status": "pending",
@@ -37228,7 +38008,7 @@
   "johan-issue:1528": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T22:54:30Z"
   },
   "johan-issue:1529": {
    "status": "pending",
@@ -37258,7 +38038,7 @@
   "johan-issue:1532": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": "2026-10-25T19:18:06Z"
+   "upstreamUpdatedAt": "2026-11-24T22:54:21Z"
   },
   "johan-issue:1533": {
    "status": "pending",
@@ -37318,7 +38098,7 @@
   "johan-issue:1542": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T22:50:25Z"
   },
   "johan-issue:1543": {
    "status": "pending",
@@ -37328,32 +38108,32 @@
   "johan-issue:1544": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T22:50:19Z"
   },
   "johan-issue:1545": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T23:13:04Z"
   },
   "johan-issue:1546": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T22:50:13Z"
   },
   "johan-issue:1547": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T22:50:41Z"
   },
   "johan-issue:1548": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T23:18:34Z"
   },
   "johan-issue:1549": {
    "status": "pending",
    "kind": "issue",
-   "upstreamUpdatedAt": null
+   "upstreamUpdatedAt": "2026-11-24T22:50:08Z"
   },
   "johan-issue:155": {
    "status": "done",
@@ -37365,6 +38145,56 @@
    "note": "closed PR; identities covered (_TZ3000_jl7qyupf)",
    "by": "advance-sweep"
   },
+  "johan-issue:1550": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1551": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-24T22:50:46Z"
+  },
+  "johan-issue:1552": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-24T22:50:01Z"
+  },
+  "johan-issue:1553": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-24T22:50:53Z"
+  },
+  "johan-issue:1554": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-24T22:51:02Z"
+  },
+  "johan-issue:1555": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-24T22:49:55Z"
+  },
+  "johan-issue:1556": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": "2026-11-24T23:08:56Z"
+  },
+  "johan-issue:1557": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-26T17:48:32Z"
+  },
+  "johan-issue:1558": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1559": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
   "johan-issue:156": {
    "status": "done",
    "kind": "issue",
@@ -37374,6 +38204,56 @@
    "date": "2026-10-10",
    "note": "closed issue; identities covered (_TZ3000_jl7qyupf)",
    "by": "advance-sweep"
+  },
+  "johan-issue:1560": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1561": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1562": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-25T22:34:28Z"
+  },
+  "johan-issue:1563": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1564": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1565": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1566": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1567": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1568": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1569": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
   },
   "johan-issue:157": {
    "status": "done",
@@ -37385,6 +38265,56 @@
    "note": "closed issue; identities covered (_TZ3000_wzauvbcs)",
    "by": "advance-sweep"
   },
+  "johan-issue:1570": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1571": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1572": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1573": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1574": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1575": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1576": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-25T22:55:52Z"
+  },
+  "johan-issue:1577": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1578": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1579": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": "2026-11-26T11:59:02Z"
+  },
   "johan-issue:158": {
    "status": "done",
    "kind": "issue",
@@ -37394,6 +38324,36 @@
    "date": "2026-10-10",
    "note": "closed issue; identities covered (_TZ3000_gjnozsaz)",
    "by": "advance-sweep"
+  },
+  "johan-issue:1580": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1581": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1582": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1583": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1584": {
+   "status": "pending",
+   "kind": "pr",
+   "upstreamUpdatedAt": null
+  },
+  "johan-issue:1585": {
+   "status": "pending",
+   "kind": "issue",
+   "upstreamUpdatedAt": null
   },
   "johan-issue:159": {
    "status": "done",
@@ -37430,7 +38390,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-09-28T19:28:15Z",
+   "upstreamUpdatedAt": "2026-11-24T22:49:52Z",
    "date": "2026-10-10",
    "note": "open issue; identities covered (_TZ1800_ladpngdx)",
    "by": "advance-sweep"
@@ -41921,7 +42881,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 1,
-   "upstreamUpdatedAt": "2026-07-12T21:31:26Z",
+   "upstreamUpdatedAt": "2026-11-24T22:54:07Z",
    "date": "2026-10-15",
    "note": "open issue; identities covered (_TZE200_r32ctezx)",
    "by": "advance-sweep"
@@ -45677,32 +46637,44 @@
    "by": "advance-sweep"
   },
   "johan-issue:856": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-11T21:06:49Z"
+   "upstreamUpdatedAt": "2024-09-11T21:06:49Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_imaccztn)",
+   "by": "advance-sweep"
   },
   "johan-issue:857": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2024-09-02T22:11:07Z"
+   "upstreamUpdatedAt": "2024-09-02T22:11:07Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_cjfmu5he,_TZ3210_eymunffl)",
+   "by": "advance-sweep"
   },
   "johan-issue:858": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-10T20:01:42Z"
+   "upstreamUpdatedAt": "2024-09-10T20:01:42Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE200_a8sdabtg)",
+   "by": "advance-sweep"
   },
   "johan-issue:859": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2025-06-28T12:53:35Z"
+   "upstreamUpdatedAt": "2025-06-28T12:53:35Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3210_ol1uhvza)",
+   "by": "advance-sweep"
   },
   "johan-issue:86": {
    "status": "done",
@@ -45715,49 +46687,67 @@
    "by": "advance-sweep"
   },
   "johan-issue:860": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2024-09-07T23:27:29Z"
+   "upstreamUpdatedAt": "2024-09-07T23:27:29Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_w0ypwa1f,_TYZB01_ymcdbl3u,_TZ3000_o4cjetlm)",
+   "by": "advance-sweep"
   },
   "johan-issue:861": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-05-11T23:16:44Z"
+   "upstreamUpdatedAt": "2024-05-11T23:16:44Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_qeuvnohg)",
+   "by": "advance-sweep"
   },
   "johan-issue:862": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-06T22:38:38Z"
+   "upstreamUpdatedAt": "2024-09-06T22:38:38Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_qeuvnohg)",
+   "by": "advance-sweep"
   },
   "johan-issue:863": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-11T20:12:24Z"
+   "upstreamUpdatedAt": "2024-09-11T20:12:24Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE200_rccxox8p)",
+   "by": "advance-sweep"
   },
   "johan-issue:864": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 25,
-   "upstreamUpdatedAt": "2024-10-12T21:54:22Z"
+   "upstreamUpdatedAt": "2024-10-12T21:54:22Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_wkai4ga5,_TZ3000_dfgbtub0,_TZ3000_uaa99arv)",
+   "by": "advance-sweep"
   },
   "johan-issue:865": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:16:28Z"
+   "upstreamUpdatedAt": "2026-09-28T10:16:28Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE200_2aaelwxk)",
+   "by": "advance-sweep"
   },
   "johan-issue:866": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -45766,10 +46756,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3210_s9lumfhn)",
+   "by": "advance-sweep"
   },
   "johan-issue:867": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
@@ -45778,10 +46771,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE200_vvmbj46n)",
+   "by": "advance-sweep"
   },
   "johan-issue:868": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -45790,10 +46786,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE200_n8dljorx)",
+   "by": "advance-sweep"
   },
   "johan-issue:869": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 23,
@@ -45801,7 +46800,10 @@
    "mailDate": "2026-03-05",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "date": "2026-11-23",
+   "note": "open issue; identities covered (_TZ3210_j4pdtz9v)",
+   "by": "advance-sweep"
   },
   "johan-issue:87": {
    "status": "done",
@@ -45814,42 +46816,57 @@
    "by": "advance-sweep"
   },
   "johan-issue:870": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-07T23:25:02Z"
+   "upstreamUpdatedAt": "2024-09-07T23:25:02Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3210_ol1uhvza)",
+   "by": "advance-sweep"
   },
   "johan-issue:871": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-08T00:03:19Z"
+   "upstreamUpdatedAt": "2024-09-08T00:03:19Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE200_2se8efxh)",
+   "by": "advance-sweep"
   },
   "johan-issue:872": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-22T20:31:48Z"
+   "upstreamUpdatedAt": "2024-09-22T20:31:48Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (TUYATEC-nzrrvgco)",
+   "by": "advance-sweep"
   },
   "johan-issue:873": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-07T23:56:47Z"
+   "upstreamUpdatedAt": "2024-09-07T23:56:47Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE200_myd45weu)",
+   "by": "advance-sweep"
   },
   "johan-issue:874": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 8,
-   "upstreamUpdatedAt": "2024-09-09T12:24:13Z"
+   "upstreamUpdatedAt": "2024-09-09T12:24:13Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE204_myd45weu,_TZE200_myd45weu)",
+   "by": "advance-sweep"
   },
   "johan-issue:875": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
@@ -45858,17 +46875,23 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-23",
+   "note": "closed issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:876": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-08-31T14:25:32Z"
+   "upstreamUpdatedAt": "2024-08-31T14:25:32Z",
+   "date": "2026-11-23",
+   "note": "merged PR; identities covered (_TZ3000_8yhypbo7,_TZ3000_hkcpblrs)",
+   "by": "advance-sweep"
   },
   "johan-issue:877": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
@@ -45877,21 +46900,30 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_fukaa7nc,_TZ3000_ko6v90pg)",
+   "by": "advance-sweep"
   },
   "johan-issue:878": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-06T22:38:26Z"
+   "upstreamUpdatedAt": "2024-09-06T22:38:26Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_qeuvnohg)",
+   "by": "advance-sweep"
   },
   "johan-issue:879": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-22T20:16:58Z"
+   "upstreamUpdatedAt": "2024-09-22T20:16:58Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE204_dcnsggvz)",
+   "by": "advance-sweep"
   },
   "johan-issue:88": {
    "status": "done",
@@ -45904,7 +46936,7 @@
    "by": "advance-sweep"
   },
   "johan-issue:880": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 4,
@@ -45912,10 +46944,13 @@
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "date": "2026-11-23",
+   "note": "open issue; identities covered (_TZE200_7eue9vhc)",
+   "by": "advance-sweep"
   },
   "johan-issue:881": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -45924,38 +46959,53 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_u3oupgdy)",
+   "by": "advance-sweep"
   },
   "johan-issue:882": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-06T15:41:10Z"
+   "upstreamUpdatedAt": "2024-09-06T15:41:10Z",
+   "date": "2026-11-23",
+   "note": "merged PR; identities covered (_TZ3210_up3pngle)",
+   "by": "advance-sweep"
   },
   "johan-issue:883": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-06-11T17:49:12Z"
+   "upstreamUpdatedAt": "2024-06-11T17:49:12Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZE204_myd45weu)",
+   "by": "advance-sweep"
   },
   "johan-issue:884": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-08-31T14:42:58Z"
+   "upstreamUpdatedAt": "2024-08-31T14:42:58Z",
+   "date": "2026-11-23",
+   "note": "merged PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "johan-issue:885": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-22T20:09:38Z"
+   "upstreamUpdatedAt": "2024-09-22T20:09:38Z",
+   "date": "2026-11-23",
+   "note": "closed issue; identities covered (_TZ3000_p8alo7qa)",
+   "by": "advance-sweep"
   },
   "johan-issue:886": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 4,
@@ -45963,28 +47013,40 @@
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "date": "2026-11-24",
+   "note": "open issue; identities covered (_TZE204_ijxvkhd0)",
+   "by": "advance-sweep"
   },
   "johan-issue:887": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-29T20:55:31Z"
+   "upstreamUpdatedAt": "2024-09-29T20:55:31Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3000_cqlnswn0,_TYZB01_dr6sduka,_TZ3000_s8r1qoyq)",
+   "by": "advance-sweep"
   },
   "johan-issue:888": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-02T21:31:46Z"
+   "upstreamUpdatedAt": "2024-09-02T21:31:46Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3000_6zvw8ham)",
+   "by": "advance-sweep"
   },
   "johan-issue:889": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-12-17T21:47:49Z"
+   "upstreamUpdatedAt": "2024-12-17T21:47:49Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3210_ol1uhvza)",
+   "by": "advance-sweep"
   },
   "johan-issue:89": {
    "status": "done",
@@ -45997,21 +47059,27 @@
    "by": "advance-sweep"
   },
   "johan-issue:890": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-02T21:17:18Z"
+   "upstreamUpdatedAt": "2024-09-02T21:17:18Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3210_ol1uhvza)",
+   "by": "advance-sweep"
   },
   "johan-issue:891": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-02T13:23:14Z"
+   "upstreamUpdatedAt": "2024-09-02T13:23:14Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZE200_a8sdabtg)",
+   "by": "advance-sweep"
   },
   "johan-issue:892": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
@@ -46020,31 +47088,43 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3000_wut53hfm)",
+   "by": "advance-sweep"
   },
   "johan-issue:893": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-02T13:21:13Z"
+   "upstreamUpdatedAt": "2024-09-02T13:21:13Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3000_msl6wxk9)",
+   "by": "advance-sweep"
   },
   "johan-issue:894": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-02T13:17:03Z"
+   "upstreamUpdatedAt": "2024-09-02T13:17:03Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3000_qaaysllp)",
+   "by": "advance-sweep"
   },
   "johan-issue:895": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-10T19:48:47Z"
+   "upstreamUpdatedAt": "2024-09-10T19:48:47Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZE200_vvmbj46n)",
+   "by": "advance-sweep"
   },
   "johan-issue:896": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
@@ -46053,28 +47133,40 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZE204_cirvgep4,_TZE200_yjjdcqsq)",
+   "by": "advance-sweep"
   },
   "johan-issue:897": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-02T22:03:43Z"
+   "upstreamUpdatedAt": "2024-09-02T22:03:43Z",
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3000_wuep9zng)",
+   "by": "advance-sweep"
   },
   "johan-issue:898": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-08-31T14:27:18Z"
+   "upstreamUpdatedAt": "2024-08-31T14:27:18Z",
+   "date": "2026-11-24",
+   "note": "merged PR; identities covered (_TZ3000_qaa59zqd)",
+   "by": "advance-sweep"
   },
   "johan-issue:899": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-08-31T14:27:47Z"
+   "upstreamUpdatedAt": "2024-08-31T14:27:47Z",
+   "date": "2026-11-24",
+   "note": "merged PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "johan-issue:9": {
    "status": "done",
@@ -46097,7 +47189,7 @@
    "by": "advance-sweep"
   },
   "johan-issue:900": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
@@ -46106,10 +47198,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-24",
+   "note": "closed issue; identities covered (_TZ3210_0jxeoadc)",
+   "by": "advance-sweep"
   },
   "johan-issue:901": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46118,31 +47213,43 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "closed issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:902": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2025-11-10T11:34:46Z"
+   "upstreamUpdatedAt": "2025-11-10T11:34:46Z",
+   "date": "2026-11-25",
+   "note": "closed issue; identities covered (_TZE204_1fuxihti,_TZE204_ejh6owwz)",
+   "by": "advance-sweep"
   },
   "johan-issue:903": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-12T10:25:03Z"
+   "upstreamUpdatedAt": "2024-09-12T10:25:03Z",
+   "date": "2026-11-25",
+   "note": "closed issue; identities covered (_TZE200_rccxox8p)",
+   "by": "advance-sweep"
   },
   "johan-issue:904": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-09-28T10:55:36Z"
+   "upstreamUpdatedAt": "2026-09-28T10:55:36Z",
+   "date": "2026-11-25",
+   "note": "closed PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "johan-issue:905": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46151,10 +47258,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "closed issue; request-no-identity; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:906": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
@@ -46163,10 +47273,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "closed issue; identities covered (_TZE204_myd45weu)",
+   "by": "advance-sweep"
   },
   "johan-issue:907": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46175,10 +47288,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "closed issue; identities covered (_TZ3218_awarhusb)",
+   "by": "advance-sweep"
   },
   "johan-issue:908": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 5,
@@ -46187,14 +47303,20 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "closed issue; identities covered (_TZE284_sgabhwa6,_TZE284_aao3yzhs)",
+   "by": "advance-sweep"
   },
   "johan-issue:909": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-07-12T21:33:09Z"
+   "upstreamUpdatedAt": "2026-07-12T21:33:09Z",
+   "date": "2026-11-25",
+   "note": "open issue; identities covered (_TZE284_p3dbf6qs)",
+   "by": "advance-sweep"
   },
   "johan-issue:91": {
    "status": "done",
@@ -46207,7 +47329,7 @@
    "by": "advance-sweep"
   },
   "johan-issue:910": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 4,
@@ -46216,10 +47338,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "closed issue; identities covered (_TZE204_laokfqwu)",
+   "by": "advance-sweep"
   },
   "johan-issue:911": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 7,
@@ -46227,7 +47352,10 @@
    "mailDate": "2026-10-01",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "open issue; identities covered (_TZ3210_eymunffl)",
+   "by": "advance-sweep"
   },
   "johan-issue:912": {
    "status": "pending",
@@ -46237,7 +47365,7 @@
    "upstreamUpdatedAt": "2024-09-11T05:48:01Z"
   },
   "johan-issue:913": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 1,
@@ -46245,10 +47373,13 @@
    "mailDate": "2026-09-29",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "open issue; identities covered (_TZ3000_8uxxzz4b,_TZ3000_do6txrcw,_TZ3000_hy6ncvmw)",
+   "by": "advance-sweep"
   },
   "johan-issue:914": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46257,42 +47388,60 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-25",
+   "note": "closed issue; identities covered (_TZ3000_mh9px7cq)",
+   "by": "advance-sweep"
   },
   "johan-issue:915": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 4,
-   "upstreamUpdatedAt": "2026-09-28T10:55:34Z"
+   "upstreamUpdatedAt": "2026-09-28T10:55:34Z",
+   "date": "2026-11-25",
+   "note": "closed PR; identities covered (_TZ3000_g8n1n7lg,_TZ3000_imaccztn,_TZ3000_hhiodade)",
+   "by": "advance-sweep"
   },
   "johan-issue:916": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-22T20:07:06Z"
+   "upstreamUpdatedAt": "2024-09-22T20:07:06Z",
+   "date": "2026-11-26",
+   "note": "closed issue; identities covered (_TZ3000_ysdv91bk)",
+   "by": "advance-sweep"
   },
   "johan-issue:917": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 0,
-   "upstreamUpdatedAt": "2024-09-22T20:08:55Z"
+   "upstreamUpdatedAt": "2024-09-22T20:08:55Z",
+   "date": "2026-11-26",
+   "note": "closed issue; identities covered (_TZ3000_mklgayek)",
+   "by": "advance-sweep"
   },
   "johan-issue:918": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-10T19:54:57Z"
+   "upstreamUpdatedAt": "2024-09-10T19:54:57Z",
+   "date": "2026-11-26",
+   "note": "closed issue; identities covered (_TZ3000_w05exif3)",
+   "by": "advance-sweep"
   },
   "johan-issue:919": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 3,
-   "upstreamUpdatedAt": "2026-10-01T16:09:06Z"
+   "upstreamUpdatedAt": "2026-10-01T16:09:06Z",
+   "date": "2026-11-26",
+   "note": "open issue; identities covered (_TZ3000_ctbafvhm,_TZ3000_os0wy3vh,_TZ3000_26gjlugm)",
+   "by": "advance-sweep"
   },
   "johan-issue:92": {
    "status": "done",
@@ -46305,39 +47454,54 @@
    "by": "advance-sweep"
   },
   "johan-issue:920": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-08-31T14:36:37Z"
+   "upstreamUpdatedAt": "2024-08-31T14:36:37Z",
+   "date": "2026-11-26",
+   "note": "merged PR; identities covered (_TZE200_a8sdabtg)",
+   "by": "advance-sweep"
   },
   "johan-issue:921": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-09-11T19:10:04Z"
+   "upstreamUpdatedAt": "2024-09-11T19:10:04Z",
+   "date": "2026-11-26",
+   "note": "closed issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:922": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-08-28T09:21:19Z"
+   "upstreamUpdatedAt": "2024-08-28T09:21:19Z",
+   "date": "2026-11-26",
+   "note": "closed issue; identities covered (_TZ3000_xr3htd96)",
+   "by": "advance-sweep"
   },
   "johan-issue:923": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-07-12T21:33:16Z"
+   "upstreamUpdatedAt": "2026-07-12T21:33:16Z",
+   "date": "2026-11-26",
+   "note": "open issue; identities covered (_TZE204_fwondbzy)",
+   "by": "advance-sweep"
   },
   "johan-issue:924": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 0,
-   "upstreamUpdatedAt": "2026-07-12T21:33:18Z"
+   "upstreamUpdatedAt": "2026-07-12T21:33:18Z",
+   "date": "2026-11-26",
+   "note": "open issue; identities covered (_TZE204_muvkrjr5)",
+   "by": "advance-sweep"
   },
   "johan-issue:925": {
    "status": "deferred",
@@ -46345,30 +47509,37 @@
    "state": "closed",
    "comments": 3,
    "upstreamUpdatedAt": "2026-10-03T08:06:34Z",
-   "date": "2026-10-04",
-   "note": "iHorn LH02121: app scope + zoneType proof needed",
+   "date": "2026-11-26",
+   "note": "closed issue; request-no-identity; research or diag needed",
    "mailDate": "2026-10-03",
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "by": "advance-sweep"
   },
   "johan-issue:926": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2024-09-09T15:18:33Z"
+   "upstreamUpdatedAt": "2024-09-09T15:18:33Z",
+   "date": "2026-11-26",
+   "note": "closed issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:927": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 6,
-   "upstreamUpdatedAt": "2024-09-07T22:41:50Z"
+   "upstreamUpdatedAt": "2024-09-07T22:41:50Z",
+   "date": "2026-11-26",
+   "note": "merged PR; identities covered (_TZE204_yjjdcqsq,_TZE200_vvmbj46n)",
+   "by": "advance-sweep"
   },
   "johan-issue:928": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46377,14 +47548,20 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-26",
+   "note": "closed issue; identities covered (_TZE204_dapwryy7)",
+   "by": "advance-sweep"
   },
   "johan-issue:929": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-06T18:14:59Z"
+   "upstreamUpdatedAt": "2024-09-06T18:14:59Z",
+   "date": "2026-11-26",
+   "note": "closed issue; identities covered (_TZ3000_abrsvsou)",
+   "by": "advance-sweep"
   },
   "johan-issue:93": {
    "status": "done",
@@ -46397,21 +47574,27 @@
    "by": "advance-sweep"
   },
   "johan-issue:930": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-06T15:40:48Z"
+   "upstreamUpdatedAt": "2024-09-06T15:40:48Z",
+   "date": "2026-11-26",
+   "note": "merged PR; identities covered (_TZ3000_abrsvsou)",
+   "by": "advance-sweep"
   },
   "johan-issue:931": {
-   "status": "pending",
+   "status": "done",
    "kind": "pr",
    "state": "closed",
    "comments": 1,
-   "upstreamUpdatedAt": "2024-09-06T22:04:13Z"
+   "upstreamUpdatedAt": "2024-09-06T22:04:13Z",
+   "date": "2026-11-27",
+   "note": "merged PR; identities covered (historical)",
+   "by": "advance-sweep"
   },
   "johan-issue:932": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46420,10 +47603,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZ3218_awarhusb)",
+   "by": "advance-sweep"
   },
   "johan-issue:933": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46432,17 +47618,23 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZ3218_t9ynfz4x,_TZ3218_awarhusb)",
+   "by": "advance-sweep"
   },
   "johan-issue:934": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 3,
-   "upstreamUpdatedAt": "2024-09-09T12:15:26Z"
+   "upstreamUpdatedAt": "2024-09-09T12:15:26Z",
+   "date": "2026-11-27",
+   "note": "closed issue; request-no-identity; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:935": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46451,7 +47643,10 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZ3210_p9ao60da)",
+   "by": "advance-sweep"
   },
   "johan-issue:936": {
    "status": "pending",
@@ -46461,25 +47656,34 @@
    "upstreamUpdatedAt": "2026-07-12T21:33:25Z"
   },
   "johan-issue:937": {
-   "status": "pending",
+   "status": "deferred",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-09-11T08:41:07Z"
+   "upstreamUpdatedAt": "2024-09-11T08:41:07Z",
+   "date": "2026-11-27",
+   "note": "closed issue; diag-only; research or diag needed",
+   "by": "advance-sweep"
   },
   "johan-issue:938": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-09-11T19:09:12Z"
+   "upstreamUpdatedAt": "2024-09-11T19:09:12Z",
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZ3000_au2o5e6q)",
+   "by": "advance-sweep"
   },
   "johan-issue:939": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
-   "upstreamUpdatedAt": "2024-09-10T19:42:08Z"
+   "upstreamUpdatedAt": "2024-09-10T19:42:08Z",
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZ3000_zl1kmjqx)",
+   "by": "advance-sweep"
   },
   "johan-issue:94": {
    "status": "done",
@@ -46492,7 +47696,7 @@
    "by": "advance-sweep"
   },
   "johan-issue:940": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
@@ -46501,10 +47705,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZ3290_u9xac5rv,_TZ3290_gnlsafc7,_TZE200_ikvncluo)",
+   "by": "advance-sweep"
   },
   "johan-issue:941": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 1,
@@ -46512,10 +47719,13 @@
    "mailDate": "2026-10-02",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "open issue; identities covered (_TZ3000_dziaict4,_TZ3000_5tqxpine,_TZ3000_abci1hiu)",
+   "by": "advance-sweep"
   },
   "johan-issue:942": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
@@ -46524,10 +47734,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZE200_kb5noeto)",
+   "by": "advance-sweep"
   },
   "johan-issue:943": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 1,
@@ -46536,10 +47749,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZE200_fzo2pocs)",
+   "by": "advance-sweep"
   },
   "johan-issue:944": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "closed",
    "comments": 2,
@@ -46548,10 +47764,13 @@
    "mailEvents": [
     "comment",
     "close"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "closed issue; identities covered (_TZE204_5cuocqty)",
+   "by": "advance-sweep"
   },
   "johan-issue:945": {
-   "status": "pending",
+   "status": "done",
    "kind": "issue",
    "state": "open",
    "comments": 4,
@@ -46559,7 +47778,10 @@
    "mailDate": "2026-09-29",
    "mailEvents": [
     "comment"
-   ]
+   ],
+   "date": "2026-11-27",
+   "note": "open issue; identities covered (_TZE204_ztqnh5cg,_TZE204_7gclukjs,_TZE204_laokfqwu)",
+   "by": "advance-sweep"
   },
   "johan-issue:946": {
    "status": "pending",
@@ -46752,7 +47974,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 10,
-   "upstreamUpdatedAt": "2026-10-25T19:16:47Z",
+   "upstreamUpdatedAt": "2026-11-24T22:50:12Z",
    "mailDate": "2026-09-30",
    "mailEvents": [
     "comment"
@@ -46775,7 +47997,7 @@
    "kind": "issue",
    "state": "open",
    "comments": 2,
-   "upstreamUpdatedAt": "2026-10-02T19:42:37Z",
+   "upstreamUpdatedAt": "2026-11-24T22:50:00Z",
    "mailDate": "2026-10-02",
    "mailEvents": [
     "comment"
@@ -47993,7 +49215,7 @@
   },
   "workflow-run:fleet-intelligent-enrich": {
    "status": "done",
-   "date": "2026-11-22",
+   "date": "2026-11-24",
    "hash": "fed9a26e03a4b39d",
    "note": "run summary: 10 counter(s)",
    "by": "fleet-intelligent-enrich",
@@ -48009,23 +49231,23 @@
     "delta.mfrs": 2,
     "delta.pids": 0
    },
-   "lastChangeRun": "45071725898"
+   "lastChangeRun": "45384728013"
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
-   "date": "2026-11-20",
-   "hash": "5b1ebfa3f745cb05",
+   "date": "2026-11-27",
+   "hash": "771de5017dc0bfdf",
    "note": "run summary: 6 counter(s)",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
     "merged": 0,
     "branchesDeleted": 1,
-    "issues": 6,
+    "issues": 7,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "44765764703"
+   "lastChangeRun": "46037527402"
   }
  }
 }

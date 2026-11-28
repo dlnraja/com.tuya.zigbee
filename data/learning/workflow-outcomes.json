@@ -1,6 +1,6 @@
 {
  "version": 1,
- "watermark": "2026-11-22T13:16:07.990Z",
+ "watermark": "2026-11-27T14:56:31.194Z",
  "seen": [
   "self-maintain:2026-10-25",
   "ci-fail:40227923450:1",
@@ -543,15 +543,49 @@
   "ci-fail:44964591756:1",
   "ci-fail:44958418798:1",
   "ci-fail:44955401709:1",
-  "ci-fail:44929853492:1"
+  "ci-fail:44929853492:1",
+  "watch:7356bb049710",
+  "watch:ci-36aeff16af05",
+  "watch:ci-5f7fe9c41b03",
+  "watchdog-run:2026-11-22",
+  "automation-loop:2026-11-22",
+  "self-maintain:2026-11-23",
+  "ci-fail:45139686381:1",
+  "ci-fail:45083992888:1",
+  "ci-fail:45075364135:1",
+  "ci-fail:45071608132:1",
+  "ci-fail:45071608131:1",
+  "ci-fail:45071608060:1",
+  "ci-fail:45066607552:1",
+  "ci-fail:45066450460:1",
+  "ci-fail:45062875101:1",
+  "ci-fail:45062873515:1",
+  "ci-fail:45047996827:1",
+  "ci-fail:45045584385:1",
+  "ci-fail:45042530622:1",
+  "ci-fail:45042530643:1",
+  "watchdog-run:2026-11-23",
+  "automation-loop:2026-11-23",
+  "self-maintain:2026-11-24",
+  "watch:51b1a88060ce",
+  "watchdog-run:2026-11-24",
+  "automation-loop:2026-11-24",
+  "self-maintain:2026-11-25",
+  "ci-fail:45552585406:1",
+  "watchdog-run:2026-11-25",
+  "automation-loop:2026-11-25",
+  "self-maintain:2026-11-26",
+  "watchdog-run:2026-11-26",
+  "automation-loop:2026-11-26",
+  "self-maintain:2026-11-27"
  ],
  "workflows": {
   "self-maintain": {
-   "ok": 28,
+   "ok": 33,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 28,
+   "okStreak": 33,
    "failStreak": 0,
    "last": [
     "ok",
@@ -565,18 +599,17 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-22T13:15:25.480Z",
+   "lastAt": "2026-11-27T14:56:31.194Z",
    "hint": "relax"
   },
   "ci-self-check.yml": {
    "ok": 0,
-   "fail": 64,
+   "fail": 65,
    "transient": 0,
    "warn": 7,
    "okStreak": 0,
-   "failStreak": 64,
+   "failStreak": 65,
    "last": [
-    "fail",
     "fail",
     "fail",
     "fail",
@@ -585,9 +618,10 @@
     "fail",
     "fail",
     "fail",
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-11-22T13:15:56.427Z",
+   "lastAt": "2026-11-23T15:52:53.075Z",
    "hint": "backoff"
   },
   "pr-gate.yml": {
@@ -614,11 +648,11 @@
   },
   "node22-tests.yml": {
    "ok": 0,
-   "fail": 152,
-   "transient": 7,
+   "fail": 155,
+   "transient": 8,
    "warn": 7,
    "okStreak": 0,
-   "failStreak": 152,
+   "failStreak": 155,
    "last": [
     "fail",
     "fail",
@@ -629,9 +663,9 @@
     "fail",
     "fail",
     "fail",
-    "fail"
+    "transient"
    ],
-   "lastAt": "2026-11-22T13:16:07.362Z",
+   "lastAt": "2026-11-25T15:29:19.334Z",
    "hint": "backoff"
   },
   "syntax-check.yml": {
@@ -680,15 +714,16 @@
   },
   "fleet-intelligent-enrich.yml": {
    "ok": 0,
-   "fail": 1,
+   "fail": 2,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 1,
+   "failStreak": 2,
    "last": [
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-10-25T19:51:56.351Z",
+   "lastAt": "2026-11-23T15:52:55.894Z",
    "hint": "normal"
   },
   "auto-fix-and-publish.yml": {
@@ -737,11 +772,11 @@
   },
   "auto-publish-on-push.yml": {
    "ok": 0,
-   "fail": 11,
+   "fail": 12,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 11,
+   "failStreak": 12,
    "last": [
     "fail",
     "fail",
@@ -754,37 +789,37 @@
     "fail",
     "fail"
    ],
-   "lastAt": "2026-11-22T13:15:30.844Z",
+   "lastAt": "2026-11-23T15:52:49.065Z",
    "hint": "backoff"
   },
   "workflow-watchdog": {
    "ok": 7,
    "fail": 0,
    "transient": 0,
-   "warn": 20,
+   "warn": 25,
    "okStreak": 7,
    "failStreak": 0,
    "last": [
-    "ok",
-    "ok",
-    "warn",
-    "warn",
-    "warn",
     "warn",
     "warn",
     "ok",
     "ok",
+    "warn",
+    "warn",
+    "warn",
+    "warn",
+    "warn",
     "warn"
    ],
-   "lastAt": "2026-11-21T13:26:00.924Z",
+   "lastAt": "2026-11-26T15:03:31.044Z",
    "hint": "normal"
   },
   "automation-loop": {
-   "ok": 27,
+   "ok": 32,
    "fail": 0,
    "transient": 0,
    "warn": 0,
-   "okStreak": 27,
+   "okStreak": 32,
    "failStreak": 0,
    "last": [
     "ok",
@@ -798,7 +833,7 @@
     "ok",
     "ok"
    ],
-   "lastAt": "2026-11-21T13:26:14.713Z",
+   "lastAt": "2026-11-26T15:03:52.647Z",
    "hint": "relax"
   },
   "publish-stable.yml": {
@@ -909,11 +944,11 @@
   },
   "homey-app-validate.yml": {
    "ok": 0,
-   "fail": 15,
+   "fail": 16,
    "transient": 0,
-   "warn": 1,
+   "warn": 2,
    "okStreak": 0,
-   "failStreak": 15,
+   "failStreak": 16,
    "last": [
     "fail",
     "fail",
@@ -923,19 +958,19 @@
     "fail",
     "fail",
     "fail",
-    "fail",
+    "warn",
     "fail"
    ],
-   "lastAt": "2026-11-22T13:16:07.990Z",
+   "lastAt": "2026-11-23T15:52:57.274Z",
    "hint": "backoff"
   },
   "validate.yml": {
    "ok": 0,
-   "fail": 5,
+   "fail": 6,
    "transient": 0,
    "warn": 2,
    "okStreak": 0,
-   "failStreak": 5,
+   "failStreak": 6,
    "last": [
     "fail",
     "fail",
@@ -943,9 +978,10 @@
     "warn",
     "warn",
     "fail",
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-11-14T12:05:36.989Z",
+   "lastAt": "2026-11-23T15:52:45.186Z",
    "hint": "backoff"
   },
   "secret-scan.yml": {
@@ -994,11 +1030,11 @@
   },
   "autonomous-review.yml": {
    "ok": 0,
-   "fail": 37,
+   "fail": 40,
    "transient": 0,
-   "warn": 3,
+   "warn": 4,
    "okStreak": 0,
-   "failStreak": 37,
+   "failStreak": 40,
    "last": [
     "fail",
     "fail",
@@ -1006,12 +1042,12 @@
     "fail",
     "fail",
     "fail",
-    "fail",
+    "warn",
     "fail",
     "fail",
     "fail"
    ],
-   "lastAt": "2026-11-22T13:16:01.659Z",
+   "lastAt": "2026-11-23T15:53:03.250Z",
    "hint": "backoff"
   },
   "capability-coherence.yml": {
@@ -1071,22 +1107,25 @@
   },
   "bastien-publish.yml": {
    "ok": 0,
-   "fail": 1,
+   "fail": 4,
    "transient": 0,
    "warn": 0,
    "okStreak": 0,
-   "failStreak": 1,
+   "failStreak": 4,
    "last": [
+    "fail",
+    "fail",
+    "fail",
     "fail"
    ],
-   "lastAt": "2026-11-22T13:15:57.334Z",
-   "hint": "normal"
+   "lastAt": "2026-11-23T15:53:04.712Z",
+   "hint": "backoff"
   },
   "promote-live.yml": {
    "ok": 0,
    "fail": 5,
    "transient": 0,
-   "warn": 0,
+   "warn": 1,
    "okStreak": 0,
    "failStreak": 5,
    "last": [
@@ -1094,10 +1133,24 @@
     "fail",
     "fail",
     "fail",
-    "fail"
+    "fail",
+    "warn"
    ],
-   "lastAt": "2026-11-22T13:16:06.660Z",
+   "lastAt": "2026-11-24T15:46:43.006Z",
    "hint": "backoff"
+  },
+  "publish-self-heal.yml": {
+   "ok": 0,
+   "fail": 0,
+   "transient": 0,
+   "warn": 1,
+   "okStreak": 0,
+   "failStreak": 0,
+   "last": [
+    "warn"
+   ],
+   "lastAt": "2026-11-22T13:17:18.284Z",
+   "hint": "normal"
   }
  }
 }

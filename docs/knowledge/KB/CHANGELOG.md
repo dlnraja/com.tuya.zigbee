@@ -21,3 +21,5 @@
 - 2026-11-03 kb-daily: matrix refreshed (master absent 521→516, complete 680→954), P3252 moved 3 wrong-class couples (ojzhk75b, wzk0x7fq, qoi1aqxg) with pins, 10 compaction losses and 3 wrong-class leads parked, see UPSTREAM_DAILY_2026-11-03.md
 - 2026-11-16 kb-daily (P3343): 5 exact couples placed on master and pinned (3 new `_TZE28C1000000_` couples from zhc 26.132.0 + wowrpxxu, azjhlyvy from 2026-11-15), see UPSTREAM_DAILY_2026-11-16.md
 - 2026-11-16 weekly upstream (P3345): 19 exact couples placed on master and pinned (4 more parked by the parasite budget), 5 wrong-class couples moved with evidence (l8bfzlcd, 1di7ujzp, lbhh5o6z x2, iik0pquw), 17 leads parked, see UPSTREAM_WEEKLY_2026-11-16.md
+- 2026-11-24 content 69dc3d0e0de5: 88 files updated, 94 total
+- 2026-11-24 kb-daily (P3405): matrix refreshed (3730 upstream couples; master absent 579 / complete 951), DP catalogue zero-loss keep rule (growth +70 couples parked: 180 KB budget), 8 absent + 3 wrong-class couples parked (payload caps full), see UPSTREAM_DAILY_2026-11-24.md

@@ -78,7 +78,13 @@ jobs:
         id: gate
         run: |
           run=true
-          if [ -f config/ci/apple-home-coherence.json ]; then
+          # P3404: P3362 tooling lives on master only for now; a branch without it is skipped, not failed
+          if [ ! -f scripts/ci/apple-home-coherence.cjs ]; then
+            echo "::notice::P3362 script absent on ${{ matrix.branch }}; coherence skipped (port pending)"
+            echo "Skipped: scripts/ci/apple-home-coherence.cjs absent on ${{ matrix.branch }}" >> "$GITHUB_STEP_SUMMARY"
+            run=false
+          fi
+          if [ "$run" = "true" ] && [ -f config/ci/apple-home-coherence.json ]; then
             enabled=$(node -e "const c=require('./config/ci/apple-home-coherence.json'); process.stdout.write(String(c.enabled!==false))")
             if [ "$enabled" != "true" ]; then
               echo "Kill switch: config/ci/apple-home-coherence.json enabled=false"

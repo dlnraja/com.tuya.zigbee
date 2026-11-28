@@ -1,17 +1,18 @@
 {
-  "generated": "2026-11-03T11:20:55.567Z",
+  "generated": "2026-11-27T13:06:16.387Z",
   "source": "data/leads/johan-canonical-index.json",
   "repo": "JohanBendz/com.tuya.zigbee",
   "note": "Acceptance view, structured fields only. missing-couple = identity cited upstream with no home driver here (verify real hardware before adding, W4). behaviour = needs physical test, not a pairing gap.",
   "summary": {
-    "threads": 565,
-    "covered": 457,
-    "behaviour": 100,
-    "dual-couple": 6,
-    "missing-couple": 2,
-    "missingCouples": 2
+    "threads": 584,
+    "covered": 472,
+    "behaviour": 102,
+    "dual-couple": 7,
+    "missing-couple": 3,
+    "missingCouples": 3
   },
   "missingCouples": [
+    "_TZ3000_bzzgvet0|Zbeacon",
     "_TZ3210_iiacqpdz|TS011F",
     "_TZB210_rkgngb5o|EP1"
   ],
@@ -2133,6 +2134,23 @@
           "pid": "TS011F",
           "drivers": [
             "button_wireless_2"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 544,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/544",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE200_r32ctezx",
+          "pid": "TS0601",
+          "drivers": [
+            "fan_controller"
           ]
         }
       ],
@@ -8785,7 +8803,9 @@
     {
       "n": 1287,
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1287",
-      "state": "open",
+      "state": "closed",
+      "closedAt": "2026-11-24T23:47:34Z",
+      "reason": "duplicate",
       "batches": [
         "64"
       ],
@@ -8972,6 +8992,13 @@
         },
         {
           "mfr": "_TZE200_zvo63cmo",
+          "pid": "TS0601",
+          "drivers": [
+            "curtain_motor"
+          ]
+        },
+        {
+          "mfr": "_TZE200_sfqyhvpv",
           "pid": "TS0601",
           "drivers": [
             "curtain_motor"
@@ -9212,7 +9239,9 @@
         "65"
       ],
       "regression": false,
-      "objectives": [],
+      "objectives": [
+        "row"
+      ],
       "coverage": [
         {
           "mfr": "_TZE200_rhgsbacq",
@@ -9222,7 +9251,7 @@
           ]
         }
       ],
-      "acceptance": "covered"
+      "acceptance": "behaviour"
     },
     {
       "n": 1306,
@@ -9341,6 +9370,7 @@
       "n": 1313,
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1313",
       "state": "open",
+      "canonical": 1557,
       "batches": [
         "65"
       ],
@@ -9766,7 +9796,9 @@
         "85"
       ],
       "regression": true,
-      "objectives": [],
+      "objectives": [
+        "row"
+      ],
       "coverage": [
         {
           "mfr": "_TZ3000_qkixdnon",
@@ -10319,7 +10351,8 @@
         "92",
         "93",
         "94",
-        "105"
+        "105",
+        "6"
       ],
       "regression": true,
       "objectives": [
@@ -11092,7 +11125,8 @@
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1403",
       "state": "open",
       "batches": [
-        "67"
+        "67",
+        "5"
       ],
       "regression": false,
       "objectives": [],
@@ -11115,7 +11149,8 @@
       "batches": [
         "67",
         "103",
-        "104"
+        "104",
+        "5"
       ],
       "regression": false,
       "objectives": [
@@ -11397,7 +11432,8 @@
       "state": "open",
       "batches": [
         "68",
-        "101"
+        "101",
+        "5"
       ],
       "regression": false,
       "objectives": [],
@@ -12090,7 +12126,9 @@
     {
       "n": 1469,
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1469",
-      "state": "open",
+      "state": "closed",
+      "closedAt": "2026-11-15T17:25:20Z",
+      "reason": "completed",
       "canonical": 1013,
       "batches": [
         "70",
@@ -13311,6 +13349,28 @@
       "acceptance": "behaviour"
     },
     {
+      "n": 1492,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1492",
+      "state": "open",
+      "canonical": 1366,
+      "batches": [
+        "69",
+        "92"
+      ],
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_ywubfuvt",
+          "pid": "TS0002",
+          "drivers": [
+            "wall_switch_2gang_1way"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
       "n": 1493,
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1493",
       "state": "closed",
@@ -13601,6 +13661,25 @@
       "acceptance": "covered"
     },
     {
+      "n": 1522,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1522",
+      "state": "closed",
+      "closedAt": "2026-11-24T22:54:11Z",
+      "reason": "duplicate",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE200_r32ctezx",
+          "pid": "TS0601",
+          "drivers": [
+            "fan_controller"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
       "n": 1525,
       "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1525",
       "state": "closed",
@@ -13668,6 +13747,555 @@
         }
       ],
       "acceptance": "covered"
+    },
+    {
+      "n": 1544,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1544",
+      "state": "closed",
+      "closedAt": "2026-11-24T22:50:21Z",
+      "reason": "duplicate",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE200_seq9cm6u",
+          "pid": "TS0601",
+          "drivers": [
+            "bed_sensor"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1546,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1546",
+      "state": "closed",
+      "closedAt": "2026-11-24T22:50:15Z",
+      "reason": "duplicate",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_nrfkrgf4",
+          "pid": "TS0046",
+          "drivers": [
+            "button_wireless_6"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1549,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1549",
+      "state": "closed",
+      "closedAt": "2026-11-24T22:50:09Z",
+      "reason": "duplicate",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_b4awzgct",
+          "pid": "TS0041",
+          "drivers": [
+            "button_wireless_1"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1554,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1554",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE200_bjawzodf",
+          "pid": "TS0601",
+          "drivers": [
+            "climate_sensor"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1555,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1555",
+      "state": "closed",
+      "closedAt": "2026-11-24T22:49:57Z",
+      "reason": "duplicate",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ1800_ladpngdx",
+          "pid": "TS0211",
+          "drivers": [
+            "doorbell"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1556,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1556",
+      "state": "closed",
+      "closedAt": "2026-11-26T19:44:57Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_ywubfuvt",
+          "pid": "TS0002",
+          "drivers": [
+            "wall_switch_2gang_1way"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1557,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1557",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE204_cvub6xbb",
+          "pid": "TS0601",
+          "drivers": [
+            "wall_thermostat"
+          ]
+        },
+        {
+          "mfr": "_TZ3210_j4pdtz9v",
+          "pid": "TS0001",
+          "drivers": [
+            "fingerbot"
+          ]
+        },
+        {
+          "mfr": "_TZ1800_ladpngdx",
+          "pid": "TS0211",
+          "drivers": [
+            "doorbell"
+          ]
+        },
+        {
+          "mfr": "_TZE200_kb5noeto",
+          "pid": "TS0601",
+          "drivers": [
+            "pir_sensor_2"
+          ]
+        },
+        {
+          "mfr": "_TZ3210_7jnk7l3k",
+          "pid": "TS011F",
+          "drivers": [
+            "button_wireless_2"
+          ]
+        },
+        {
+          "mfr": "_TZ3210_ngqk6jia",
+          "pid": "TS110E",
+          "drivers": [
+            "wall_dimmer_tuya"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_kfu8zapd",
+          "pid": "TS0044",
+          "drivers": [
+            "button_wireless_4"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_y4che4dc",
+          "pid": "TS0001",
+          "drivers": [
+            "switch_1gang"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_blhvsaqf",
+          "pid": "TS0001",
+          "drivers": [
+            "wall_switch_1gang_1way"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_l9brjwau",
+          "pid": "TS0002",
+          "drivers": [
+            "wall_switch_2gang_1way"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_qkixdnon",
+          "pid": "TS0003",
+          "drivers": [
+            "switch_3gang"
+          ]
+        },
+        {
+          "mfr": "_TZ3002_pzao9ls1",
+          "pid": "TS0726",
+          "drivers": [
+            "wall_switch_4gang_1way"
+          ]
+        },
+        {
+          "mfr": "_TZE200_amp6tsvy",
+          "pid": "TS0601",
+          "drivers": [
+            "switch_1gang"
+          ]
+        },
+        {
+          "mfr": "_TZ3210_dwytrmda",
+          "pid": "TS130F",
+          "drivers": [
+            "wall_curtain_switch"
+          ]
+        },
+        {
+          "mfr": "_TZE200_pay2byax",
+          "pid": "TS0601",
+          "drivers": [
+            "contact_sensor_zigbee"
+          ]
+        },
+        {
+          "mfr": "_TZ3210_tgvtvdoc",
+          "pid": "TS0207",
+          "drivers": [
+            "rain_sensor"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_o9f2zqln",
+          "pid": "TS0207",
+          "drivers": [
+            "rain_sensor"
+          ]
+        },
+        {
+          "mfr": "_TZE204_dcnsggvz",
+          "pid": "TS0601",
+          "drivers": [
+            "dimmer_1_gang_tuya"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1559,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1559",
+      "state": "closed",
+      "closedAt": "2026-11-16T18:12:22Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE200_bjawzodf",
+          "pid": "TS0601",
+          "drivers": [
+            "climate_sensor"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1562,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1562",
+      "state": "open",
+      "regression": true,
+      "objectives": [
+        "row"
+      ],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_mhhxxjrs",
+          "pid": "TS0003",
+          "drivers": [
+            "switch_3gang"
+          ]
+        },
+        {
+          "mfr": "_TZE284_vjpaih9f",
+          "pid": "TS0601",
+          "drivers": [
+            "climate_sensor"
+          ]
+        },
+        {
+          "mfr": "_TZE204_ex3rcdha",
+          "pid": "TS0601",
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        },
+        {
+          "mfr": "_TZ3210_a04acm9s",
+          "pid": "TS0001",
+          "drivers": [
+            "fingerbot"
+          ]
+        },
+        {
+          "mfr": "_TZE200_r32ctezx",
+          "pid": "TS0601",
+          "drivers": [
+            "fan_controller"
+          ]
+        },
+        {
+          "mfr": "_TZ3210_ngqk6jia",
+          "pid": "TS110E",
+          "drivers": [
+            "wall_dimmer_tuya"
+          ]
+        },
+        {
+          "mfr": "_TZE284_ne4pikwm",
+          "pid": "TS0601",
+          "drivers": [
+            "radiator_valve"
+          ]
+        },
+        {
+          "mfr": "_TZE200_rhgsbacq",
+          "pid": "TS0601",
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_bzzgvet0",
+          "pid": "Zbeacon",
+          "drivers": []
+        },
+        {
+          "mfr": "_TZ3000_i9w5mehz",
+          "pid": "TS0002",
+          "drivers": [
+            "switch_2gang"
+          ]
+        },
+        {
+          "mfr": "_TZE204_s139roas",
+          "pid": "TS0601",
+          "drivers": [
+            "climate_sensor"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_skueekg3",
+          "pid": "TS0001",
+          "drivers": [
+            "switch_1gang"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_bzzgvet0",
+          "pid": "TS0001",
+          "drivers": [
+            "switch_1gang"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_gbshwgag",
+          "pid": "TS0001",
+          "drivers": [
+            "switch_1gang"
+          ]
+        },
+        {
+          "mfr": "_TZE200_zo0cfekv",
+          "pid": "TS0601",
+          "drivers": [
+            "wall_switch_3gang_1way"
+          ]
+        },
+        {
+          "mfr": "_TZE284_8se38w3c",
+          "pid": "TS0601",
+          "drivers": [
+            "climate_sensor"
+          ]
+        },
+        {
+          "mfr": "_TZE200_seq9cm6u",
+          "pid": "TS0601",
+          "drivers": [
+            "bed_sensor"
+          ]
+        },
+        {
+          "mfr": "_TZE200_lvkk0hdg",
+          "pid": "TS0601",
+          "drivers": [
+            "water_tank_monitor"
+          ]
+        },
+        {
+          "mfr": "_TZE200_u6x1zyv2",
+          "pid": "TS0601",
+          "drivers": [
+            "rain_sensor"
+          ]
+        }
+      ],
+      "acceptance": "missing-couple"
+    },
+    {
+      "n": 1573,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1573",
+      "state": "closed",
+      "closedAt": "2026-11-25T07:01:34Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE204_xtrnjaoz",
+          "pid": "TS0601",
+          "drivers": [
+            "curtain_motor"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1574,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1574",
+      "state": "closed",
+      "closedAt": "2026-11-25T07:05:29Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE204_ltwbm23f",
+          "pid": "TS0601",
+          "drivers": [
+            "climate_sensor"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1575,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1575",
+      "state": "closed",
+      "closedAt": "2026-11-25T07:08:55Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE284_ne4pikwm",
+          "pid": "TS0601",
+          "drivers": [
+            "radiator_valve"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1576,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1576",
+      "state": "open",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZE200_crq3r3la",
+          "pid": "CK-BL702-MWS-01(7016)",
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1579,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1579",
+      "state": "open",
+      "regression": true,
+      "objectives": [
+        "row"
+      ],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_2xlvlnez",
+          "pid": "TS011F",
+          "drivers": [
+            "button_wireless_plug"
+          ]
+        }
+      ],
+      "acceptance": "behaviour"
+    },
+    {
+      "n": 1582,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1582",
+      "state": "closed",
+      "closedAt": "2026-11-26T19:44:58Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_mhhxxjrs",
+          "pid": "TS0003",
+          "drivers": [
+            "switch_3gang"
+          ]
+        }
+      ],
+      "acceptance": "covered"
+    },
+    {
+      "n": 1584,
+      "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1584",
+      "state": "closed",
+      "closedAt": "2026-11-26T19:44:55Z",
+      "regression": false,
+      "objectives": [],
+      "coverage": [
+        {
+          "mfr": "_TZ3000_skueekg3",
+          "pid": "TS000F",
+          "drivers": [
+            "switch_1gang",
+            "switch_module_whd02"
+          ]
+        },
+        {
+          "mfr": "_TYZB01_gr6rozze",
+          "pid": "TS0011",
+          "drivers": [
+            "switch_1gang"
+          ]
+        },
+        {
+          "mfr": "_TZ3000_2xlvlnez",
+          "pid": "TS011F",
+          "drivers": [
+            "button_wireless_plug"
+          ]
+        }
+      ],
+      "acceptance": "dual-couple"
     }
   ]
 }

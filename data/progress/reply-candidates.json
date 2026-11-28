@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22T13:17:38.149Z",
+  "generated": "2026-11-27T14:58:16.690Z",
   "note": "P3048: candidates only. No workflow posts, comments or reacts. A human (or the Grok Bot anti-flood routine) decides.",
   "limits": {
     "autoPost": false,
@@ -26,10 +26,41 @@
   },
   "scanned": {
     "commits": 300,
-    "issues": 36
+    "issues": 29
   },
   "candidates": [],
   "skipped": [
+    {
+      "issue": 3718,
+      "reason": "not found"
+    },
+    {
+      "issue": 2277,
+      "reason": "not found"
+    },
+    {
+      "issue": 2278,
+      "reason": "not found"
+    },
+    {
+      "issue": 559,
+      "about": "non classé",
+      "author": "Lalla80111",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
+      "commit": "26dfb9362d",
+      "commitAt": "2026-11-23T08:34:23Z",
+      "ci": "pending",
+      "lastAuthor": "Lalla80111",
+      "reason": "CI pending"
+    },
+    {
+      "issue": 2275,
+      "reason": "not found"
+    },
+    {
+      "issue": 3717,
+      "reason": "not found"
+    },
     {
       "issue": 296,
       "reason": "closed"
@@ -64,10 +95,6 @@
     },
     {
       "issue": 5709,
-      "reason": "not found"
-    },
-    {
-      "issue": 3717,
       "reason": "not found"
     },
     {
@@ -125,61 +152,6 @@
     {
       "issue": 646,
       "reason": "pull request"
-    },
-    {
-      "issue": 3714,
-      "reason": "not found"
-    },
-    {
-      "issue": 3708,
-      "reason": "not found"
-    },
-    {
-      "issue": 3709,
-      "reason": "not found"
-    },
-    {
-      "issue": 3710,
-      "reason": "not found"
-    },
-    {
-      "issue": 3705,
-      "reason": "not found"
-    },
-    {
-      "issue": 3706,
-      "reason": "not found"
-    },
-    {
-      "issue": 3707,
-      "reason": "not found"
-    },
-    {
-      "issue": 3704,
-      "reason": "not found"
-    },
-    {
-      "issue": 2862,
-      "reason": "not found"
-    },
-    {
-      "issue": 559,
-      "about": "non classé",
-      "author": "Lalla80111",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/559",
-      "commit": "d9b79a966c",
-      "commitAt": "2026-11-15T16:24:29Z",
-      "ci": "pending",
-      "lastAuthor": "Lalla80111",
-      "reason": "CI pending"
-    },
-    {
-      "issue": 425,
-      "reason": "pull request"
-    },
-    {
-      "issue": 404,
-      "reason": "closed"
     }
   ]
 }

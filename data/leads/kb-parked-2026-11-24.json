@@ -1,0 +1,107 @@
+{
+  "generated": "2026-11-24",
+  "routine": "Homey bases de connaissances (kb-daily-2026-11-24)",
+  "why": "Exact upstream couples absent from all 3 branches. Not placed: every branch payload is at its cap (master 15500 + TS0601 top-up 19999/20000, stable-v5 15493/15500, bastien-home 15500/15500). Measured on master: adding _TZ3000_9il3ag1z + _TZ3000_sjb7pafq + _TZE28C1000000_cvub6xbb drops shipped _TZ3000_krwtzhfd/TS004F (smart_knob); adding only _TZE28C1000000_cvub6xbb (pinned) drops every shipped form of _TZE200_awepdiwi (soil_sensor) via the top-up reshuffle. Zero-loss rule wins, so they wait for compaction headroom.",
+  "couples": [
+    {
+      "mfr": "_TZ3000_9il3ag1z",
+      "pid": "TS0001",
+      "target": "switch_1gang",
+      "tier": "confirmed",
+      "evidence": "same zhc definition as _TZ3000_n6fqajob (in switch_1gang)",
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/tuya.ts#L10098"
+    },
+    {
+      "mfr": "_TZ3000_sjb7pafq",
+      "pid": "TS0002",
+      "target": "switch_2gang",
+      "tier": "confirmed",
+      "evidence": "same zhc definition (TS0002_limited) as _TZ3000_mtnpt6ws (in switch_2gang)",
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/tuya.ts#L9694"
+    },
+    {
+      "mfr": "_TZE28C1000000_cvub6xbb",
+      "pid": "TS0601",
+      "target": "wall_thermostat",
+      "tier": "confirmed",
+      "evidence": "same zhc TGM50-ZB definition as _TZE204_cvub6xbb/_TZE284_cvub6xbb (wall_thermostat, complete)",
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/tuya.ts#L15926"
+    },
+    {
+      "mfr": "_TZE204_jrtvxwvy",
+      "pid": "TS0601",
+      "target": "floor/wall thermostat (DP map to verify)",
+      "tier": "provisional",
+      "evidence": "own zhc definition TS0601_floor_thermostat_jrtvxwvy; DP set differs from our thermostat profiles",
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/tuya.ts#L22982"
+    },
+    {
+      "mfr": "_TZE204_lnsk1ead",
+      "pid": "TS0601",
+      "target": "din_rail_meter (DP map to verify)",
+      "tier": "provisional",
+      "evidence": "MoveSmart MS-JT-63 DIN switch with power monitoring",
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/movesmart.ts#L10"
+    },
+    {
+      "mfr": "_TZE20C1000000_9segdjw4",
+      "pid": "TS0601",
+      "target": "3-channel bidirectional energy meter (DP map to verify)",
+      "tier": "provisional",
+      "evidence": "Nova Digital MS-TRI-ZB",
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/nova_digital.ts#L355"
+    },
+    {
+      "mfr": "_TZE2841000000_sonkaxrd",
+      "pid": "TS0601",
+      "target": "CO sensor class (not climate_sensor)",
+      "tier": "provisional",
+      "evidence": "Nous E12 carbon monoxide alarm; sibling _TZE284_sonkaxrd sits in climate_sensor (wrong class, compacted out of the payload)",
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/nous.ts#L16"
+    },
+    {
+      "mfr": "_TZE28C1000000_ac0fhfiq",
+      "pid": "TS0601",
+      "target": "bidirectional energy meter (not climate_sensor)",
+      "tier": "provisional",
+      "evidence": "zhc TS0601_bidirectional_energy meter (150 A clamp); siblings _TZE204_/_TZE284_ac0fhfiq sit in climate_sensor (wrong class, compacted out)",
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/tuya.ts#L19817"
+    }
+  ],
+  "wrong_class": [
+    {
+      "mfr": "_TZE284_sonkaxrd",
+      "pid": "TS0601",
+      "now": "climate_sensor",
+      "target": "CO sensor",
+      "shipped": false,
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/nous.ts#L16"
+    },
+    {
+      "mfr": "_TZE204_ac0fhfiq",
+      "pid": "TS0601",
+      "now": "climate_sensor",
+      "target": "energy meter",
+      "shipped": false,
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/tuya.ts#L19817"
+    },
+    {
+      "mfr": "_TZE284_ac0fhfiq",
+      "pid": "TS0601",
+      "now": "climate_sensor",
+      "target": "energy meter",
+      "shipped": false,
+      "src": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80014f11cd3234e0e7371d1aace44e08982/src/devices/tuya.ts#L19817"
+    }
+  ],
+  "not_merged_runtime_data": [
+    {
+      "file": "lib/zigbee/data/inferred-dp-family.json",
+      "why": "regeneration would drop 5 inferred families (*|ceiling_fan, *|co_sensor, *|sensor_motion_presence, TS0001|sensor_motion_presence, n:status); kept at HEAD until build-inferred-dp-family.js gets the same zero-loss keep as P3405"
+    },
+    {
+      "file": "lib/zigbee/data/unknown-dp-catalog.json",
+      "why": "regenerated catalogue (+70 couples, +145 DPs, 12 renames from project knowledge/upstream, 0 lost with P3405) is 186274 B > 180000 B budget (test/critical/p3018b-dp-sources.test.js); needs a size gain (e.g. drop duplicate case keys or shard) before it can ship. Master would gain partial 324->302, complete 951->973."
+    }
+  ]
+}

@@ -889,6 +889,262 @@
    "ref": "v26.135.0",
    "title": "v26.135.0",
    "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.135.0"
+  },
+  {
+   "at": "2026-11-23T15:53:04.824Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "d1c26d21de",
+   "title": "feat(add): 100050768800 https://github.com/Koenkk/zigbee2mqtt/issues/33777",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/d1c26d21dec746200f378ada1506fa7415b6bf6a"
+  },
+  {
+   "at": "2026-11-23T15:53:04.824Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9bb230d6bd",
+   "title": "feat: Tuya WHD02: expose inching control (#13879)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9bb230d6bd294a459abee1bb5a9bb4fb868c5fd9"
+  },
+  {
+   "at": "2026-11-23T15:53:04.824Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.136.0",
+   "title": "v26.136.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.136.0"
+  },
+  {
+   "at": "2026-11-24T15:45:05.269Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "af92a0ea84",
+   "title": "fix(novadigital_midpanel8_controller): make dp 77 optional",
+   "url": "https://github.com/make-all/tuya-local/commit/af92a0ea846f898c1b4341c425bd130c14da22d5"
+  },
+  {
+   "at": "2026-11-24T15:45:05.269Z",
+   "source": "tuya-local",
+   "kind": "commit",
+   "ref": "d36575e490",
+   "title": "fix(neptun_smartplus_waterleak): use correct type for dp 1",
+   "url": "https://github.com/make-all/tuya-local/commit/d36575e49089017a8e2c7703e80928319841a5d4"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "b86a9babc4",
+   "title": "fix(detect): Detect `_TZE2841000000_zm8zpwas` as Novato ZPV-01 https://github.com/Koenkk/zigbee2mqtt",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/b86a9babc43474d3e6dcf5e20dc0e59b8dcd36bf"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "82a807de07",
+   "title": "fix: Namron 4566702 Edge Thermostat: restore energy reporting (#13929)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/82a807de0731416c58178bceba949a197f53e8e2"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "f6d941495b",
+   "title": "Revert \"fix: Tuya PJ-MGW1203: fix energy resetting instead of accumulating\" (#13915)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/f6d941495bb04f1b71ae070f3300eb358e828fb7"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "cd1d570bb2",
+   "title": "fix(detect): Detect _TZE284_q9xty0ad as Tuya _TZE204_q9xty0ad (#13904)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/cd1d570bb22944057c8189376278a3d4684ca7fe"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "997c3892c0",
+   "title": "fix: Tuya ME202WZ: report `liquid_level_percent` accurately (#13903)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/997c3892c0cd11d9f982c78f5dc226b50c750592"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zhc-rel",
+   "kind": "release",
+   "ref": "v26.137.0",
+   "title": "v26.137.0",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases/tag/v26.137.0"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "b17fd22d6d",
+   "title": "Build against the released zha 2.5.0 (#5829)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/b17fd22d6db3e2049f9f5abd863e52bbe58e231e"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "6b38eb953f",
+   "title": "Port the Tuya TS0601 multi-gang switch quirks to v2 (#5804)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/6b38eb953f074a3014596d848e0c23baf4375ec3"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "735b07ef27",
+   "title": "Port the Tuya TS0601 multi-gang dimmer quirks to v2 (#5801)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/735b07ef274ae763852ab112edcee1aeb715dcd6"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "b0774ad5b8",
+   "title": "Mark endpoints added by a v2 quirk as initialized (#5826)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/b0774ad5b8d42e5ad78c9ad832548d3e2f457dba"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "6ff66c3c5c",
+   "title": "Add child devices to quirks v2 (#5456)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/6ff66c3c5cf3acee6b46b039d5fc42cbfd715313"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "9cadd00c25",
+   "title": "Add button event entities to Tuya scene remotes (#5488)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/9cadd00c25e443998223a0430bb95b19b6620546"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "302d32a78c",
+   "title": "Let v1 quirks expose button event entities (#5485)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/302d32a78c89dfe3f6b3e93f5ae6ec78a43cb011"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "8bdda5fbfd",
+   "title": "Skip custom quirks that fail to register instead of failing startup (#5820)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/8bdda5fbfd469a8f1f2b804f58dead338dcdf831"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "de9e07cfbe",
+   "title": "Add button event entities to the quirk builder (#5480)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/de9e07cfbe1b9e521382feef2548802c1d519fd4"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "5baf5d2779",
+   "title": "Convert Schneider outlet to quirks v2, add missing controls (#4521)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/5baf5d2779005acae0d71a6b64234fe960f6ba29"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "ba697246eb",
+   "title": "Require zha 2.5.0, built from its dev commit until released (#5817)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/ba697246eb91257dfff848ae494ca6509e75b8e0"
+  },
+  {
+   "at": "2026-11-25T15:29:19.421Z",
+   "source": "zha-quirks",
+   "kind": "commit",
+   "ref": "1250f75d23",
+   "title": "Remove redundant power config cluster from some Tuya remotes (#5290)",
+   "url": "https://github.com/zigpy/zha-device-handlers/commit/1250f75d23eb9d518b75ce5e8b9f9bec781ec61b"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "9a1fd5db1f",
+   "title": "feat: Thermosphere TS0601_thermostat_thermosphere: support weekly heating schedules (#13898)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/9a1fd5db1fea1cb9e98c933d3cdfc2f4ea209021"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "beae9caf4a",
+   "title": "fix: NodOn TRV-4-1-00: report valve opening and heating demand correctly, restore child lock and mir",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/beae9caf4a42c7020c75bc1cea5af5ecb86d50a1"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "zhc",
+   "kind": "commit",
+   "ref": "6e764d1df7",
+   "title": "fix(detect): Detect `_TZ3000_npg02xft` as EMOS IP-3010S (#13938)",
+   "url": "https://github.com/Koenkk/zigbee-herdsman-converters/commit/6e764d1df7c42f0a8b2b0a2aca6d6fac2c6000e0"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "PRo25/com.tuya.zigbee",
+   "title": "To add support to additional device manufacturers of switch modules and presence sensors",
+   "url": "https://github.com/PRo25/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "johan-forks",
+   "kind": "fork-push",
+   "ref": "telenut/com.tuya.zigbee",
+   "title": "telenut/com.tuya.zigbee",
+   "url": "https://github.com/telenut/com.tuya.zigbee"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.12.0b2",
+   "title": "2026.12.0b2",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.12.0b2"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.12.0b1",
+   "title": "2026.12.0b1",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.12.0b1"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.12.0b0",
+   "title": "2026.12.0b0",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.12.0b0"
+  },
+  {
+   "at": "2026-11-27T14:56:33.814Z",
+   "source": "ha-core-rel",
+   "kind": "release",
+   "ref": "2026.11.3",
+   "title": "2026.11.3",
+   "url": "https://github.com/home-assistant/core/releases/tag/2026.11.3"
   }
  ]
 }

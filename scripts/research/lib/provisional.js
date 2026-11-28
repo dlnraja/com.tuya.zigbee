@@ -170,6 +170,8 @@ function updateCheckpoint(root, results) {
     if (r.verdict === 'provisional' && !hosted.has(it.id)) continue;
     if (map[r.verdict]) it.status = map[r.verdict];
   }
+  // P3400: statuses moved above; recount so stats never go stale (527 shown for 1612 needs-info).
+  cp.stats = cp.items.reduce((a, it) => { a[it.status] = (a[it.status] || 0) + 1; return a; }, {});
   cp.updated = new Date().toISOString(); fs.writeFileSync(f, `${JSON.stringify(cp, null, 2)}\n`);
 }
 
