@@ -58,19 +58,25 @@ async onInit() {
    * v5.5.362: Register enhanced actions with individual try-catch for each card
    * CRITICAL FIX: Each getActionCard wrapped to prevent driver crash
    */
-  async _registerEnhancedActions() {
-    const getAction = (id) => {
-      try {
-        const card = this.homey.flow.getActionCard(id);
-        return card && typeof card.registerRunListener === 'function' ? card : null;
-      } catch (e) {
-        return null;
-      }
-    };
-
-    // Enhanced learn IR code action
+  _getActionCard(id) {
     try {
-      const card = getAction('ir_blaster_learn_code');
+      const card = this.homey.flow.getActionCard(id);
+      return card && typeof card.registerRunListener === 'function' ? card : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async _registerEnhancedActions() {
+    this._registerCoreIrActions();
+    this._registerLibraryAndLearnedActions();
+    this._registerTvActions();
+    this.log('Action registration complete');
+  }
+
+  _registerCoreIrActions() {
+    try {
+      const card = this._getActionCard('ir_blaster_learn_code');
       if (card) {
         card.registerRunListener(async (args) => {
           const device = args.device;
@@ -78,18 +84,15 @@ async onInit() {
             this.log('[FLOW] Action: Device not ready or missing enhanced learn method');
             return false;
           }
-
           const { code_name, protocol, frequency, category } = args;
           const duration = args.duration_seconds ?? args.duration ?? 30;
           this.log(`Enhanced IR learning: "${code_name}" - ${protocol}@${frequency}Hz for ${duration}s`);
-
           await device._enableAdvancedLearnMode(duration, {
             protocol: protocol || 'auto',
             frequency: frequency || 38000,
             codeName: code_name,
             category: category || 'uncategorized'
           });
-
           return true;
         });
         this.log(' ir_blaster_learn_code registered');
@@ -98,9 +101,8 @@ async onInit() {
       this.log(' ir_blaster_learn_code not available:', err.message);
     }
 
-    // Enhanced send IR code action
     try {
-      const card = getAction('ir_blaster_send_code');
+      const card = this._getActionCard('ir_blaster_send_code');
       if (card) {
         card.registerRunListener(async (args) => {
           const device = args.device;
@@ -108,16 +110,13 @@ async onInit() {
             this.log('[FLOW] Action: Device not ready or missing enhanced send method');
             return false;
           }
-
           const { ir_code, protocol, frequency, repeat } = args;
           this.log(`Enhanced IR send: "${ir_code}" with options`);
-
           await device.sendEnhancedIRCode(ir_code, {
             protocol: protocol || null,
             frequency: frequency || null,
             repeat: repeat || 1
           });
-
           return true;
         });
         this.log(' ir_blaster_send_code registered');
@@ -126,9 +125,8 @@ async onInit() {
       this.log(' ir_blaster_send_code not available:', err.message);
     }
 
-    // v5.5.362: Send by category action with proper error handling
     try {
-      const card = getAction('ir_blaster_send_by_category');
+      const card = this._getActionCard('ir_blaster_send_by_category');
       if (card) {
         card.registerRunListener(async (args) => {
           const device = args.device;
@@ -136,16 +134,13 @@ async onInit() {
             this.log('[FLOW] Action: Device not ready or missing category method');
             return false;
           }
-
           const { category, code_name } = args;
           this.log(`Sending IR code "${code_name}" from category "${category}"`);
-
           const codes = device.getCodesByCategory(category);
           if (!codes || !codes[code_name]) {
             this.log(`[FLOW] Code "${code_name}" not found in category "${category}"`);
             return false;
           }
-
           await device.sendIRCode(codes[code_name]);
           return true;
         });
@@ -155,9 +150,8 @@ async onInit() {
       this.log(' ir_blaster_send_by_category not available:', err.message);
     }
 
-    // v5.5.606: AC command action (SmartIR compatible)
     try {
-      const card = getAction('ir_blaster_send_ac_command');
+      const card = this._getActionCard('ir_blaster_send_ac_command');
       if (card) {
         card.registerRunListener(async (args) => {
           const device = args.device;
@@ -165,18 +159,19 @@ async onInit() {
             return false;
           }
           const { mode, temperature, fan_speed } = args;
-          return await device.sendACCommand(mode, temperature, fan_speed);
+          return device.sendACCommand(mode, temperature, fan_speed);
         });
         this.log(' ir_blaster_send_ac_command registered');
       }
     } catch (err) {
       this.log(' ir_blaster_send_ac_command not available:', err.message);
     }
+  }
 
-    // v5.12: Send by brand (IRDB)
+  _registerLibraryAndLearnedActions() {
     if (IRCodeLibrary) {
       try {
-        const card = getAction('ir_blaster_send_by_brand');
+        const card = this._getActionCard('ir_blaster_send_by_brand');
         if (card) {
           card.registerRunListener(async (args) => {
             const dev = args.device;
@@ -203,9 +198,8 @@ async onInit() {
       } catch (e) { this.log(' ir_blaster_send_by_brand:', e.message); }
     }
 
-    // v5.12: Send Learned Command (autocomplete)
     try {
-      const card = getAction('ir_blaster_send_learned');
+      const card = this._getActionCard('ir_blaster_send_learned');
       if (card) {
         card.registerRunListener(async (args) => {
           const d = args.device;
@@ -227,9 +221,8 @@ async onInit() {
       }
     } catch (e) { this.log(' ir_blaster_send_learned:', e.message); }
 
-    // v5.12: Delete Stored IR Code (autocomplete)
     try {
-      const card = getAction('ir_blaster_delete_code');
+      const card = this._getActionCard('ir_blaster_delete_code');
       if (card) {
         card.registerRunListener(async (args) => {
           const d = args.device;
@@ -249,9 +242,8 @@ async onInit() {
       }
     } catch (e) { this.log(' ir_blaster_delete_code:', e.message); }
 
-    // v5.12: Send Raw IR Code (Pronto Hex / Base64)
     try {
-      const card = getAction('ir_blaster_send_raw');
+      const card = this._getActionCard('ir_blaster_send_raw');
       if (card) {
         card.registerRunListener(async (args) => {
           const d = args.device;
@@ -265,8 +257,9 @@ async onInit() {
         this.log(' ir_blaster_send_raw registered');
       }
     } catch (e) { this.log(' ir_blaster_send_raw:', e.message); }
+  }
 
-    // v5.12: TV/Media virtual buttons - each sends a learned code by function name
+  _registerTvActions() {
     const tvButtons = [
       'tv_power', 'tv_vol_up', 'tv_vol_down', 'tv_mute',
       'tv_ch_up', 'tv_ch_down', 'tv_input', 'tv_menu',
@@ -274,7 +267,7 @@ async onInit() {
     ];
     for (const btn of tvButtons) {
       try {
-        const card = getAction(`ir_blaster_${btn}`);
+        const card = this._getActionCard(`ir_blaster_${btn}`);
         if (card) {
           card.registerRunListener(async (args) => {
             const d = args.device;
@@ -294,8 +287,6 @@ async onInit() {
       }
     }
 
-    // v9.x: Send TV Command (inline card from driver.compose.json)
-    // Mappe la commande sur un code appris, sinon sur la bibliothèque IRDB par marque.
     try {
       const tvCommandMap = {
         'Power': 'tv_power',
@@ -309,7 +300,7 @@ async onInit() {
         'OK/Enter': 'tv_ok',
         'Back': 'tv_back'
       };
-      const card = getAction('ir_blaster_send_tv_command')
+      const card = this._getActionCard('ir_blaster_send_tv_command')
         || (typeof this.homey.flow.getDeviceActionCard === 'function'
           ? this.homey.flow.getDeviceActionCard('ir_blaster_send_tv_command')
           : null);
@@ -321,14 +312,12 @@ async onInit() {
           if (!d) {return false;}
           const { brand, command } = args;
 
-          // 1) Code appris correspondant à la commande
           const learnedKey = tvCommandMap[command];
           if (learnedKey && d._learnedCodes && d._learnedCodes[learnedKey]) {
             await d.sendIRCode(d._learnedCodes[learnedKey]);
             return true;
           }
 
-          // 2) Bibliothèque IRDB par marque
           if (IRCodeLibrary && brand) {
             const c = IRCodeLibrary.getCode(brand, 'TV', command);
             if (c?.code) {
@@ -345,8 +334,6 @@ async onInit() {
     } catch (e) {
       this.log(' ir_blaster_send_tv_command:', e.message);
     }
-
-    this.log('Action registration complete');
   }
 
   /**

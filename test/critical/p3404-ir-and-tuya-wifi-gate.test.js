@@ -37,7 +37,7 @@ test('P3404: IRCodeLibrary resolves brand/category/function case-insensitively a
 
 test('P3404: ir_blaster driver Flow registration is null-safe when cards are absent', () => {
   const src = fs.readFileSync(path.join(ROOT, 'drivers/ir_blaster/driver.js'), 'utf8');
-  assert.ok(src.includes('const getAction = (id) =>'), 'Expected null-safe getAction helper');
+  assert.ok(src.includes('_getActionCard(id)') || src.includes('const getAction = (id) =>'), 'Expected null-safe action card helper');
   assert.ok(src.includes('const getCondition = (id) =>'), 'Expected null-safe getCondition helper');
   assert.ok(src.includes("IRCodeLibrary.getCode(brand, 'TV', command)"), 'Expected TV category in send_tv_command');
 });
