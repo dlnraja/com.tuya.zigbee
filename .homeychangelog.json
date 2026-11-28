@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.261": {
+    "en": "Fixed: crash fixes, Flow cards, wall switches & battery reporting (TS0043) and energy meters (TS011F). Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : plantages, cartes Flow, interrupteurs & niveau de batterie (TS0043) et compteurs d'énergie (TS011F). En coulisses : tests et contrôles de publication."
+  },
   "1.0.260": {
     "en": "Fixed: presence radars & motion sensors (TS0601).",
     "fr": "Corrigé : radars de présence & détecteurs de mouvement (TS0601)."
