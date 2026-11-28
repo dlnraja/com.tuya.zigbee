@@ -17,9 +17,7 @@ const { standardUnitFor, hasDeclaredUnits } = require('../../lib/utils/HomeyCapa
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const APP_FLOW_IDS = [
-  'home_mode_changed',
   'capability_value_changed_generic',
-  'device_interaction',
 ];
 const EAGER_JSON_FORBIDDEN = [
   'data/product-reference.json',
