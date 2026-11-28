@@ -53,6 +53,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
   _processDPUpdate(dps) {
     super._processDPUpdate(dps);
     if (!dps || typeof dps !== 'object') {return;}
+    this._updateEnvSensorFromDps(dps);
     if (!this._irControlType) {
       const t = WifiIR.detectControlType(dps);
       if (t) {
@@ -67,6 +68,37 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     if (code) {
       this._finishLearnCapture(code).catch((e) => this.error('[WIFI-IR] learn capture:', e.message));
     }
+  }
+
+  /**
+   * P3408: S06Pro / S08 / S16 / S16 Pro Wi-Fi IR + Temp/Humidity combo blasters
+   * report current temperature on DP 101 (typically x10, e.g. 256 -> 25.6 C)
+   * and relative humidity on DP 102 (0..100 %). Capabilities are added lazily
+   * only when the device actually emits those DPs.
+   */
+  _updateEnvSensorFromDps(dps) {
+    const rawTemp = dps['101'] ?? dps[101];
+    if (typeof rawTemp === 'number' && Number.isFinite(rawTemp)) {
+      const tempC = Math.abs(rawTemp) > 80 ? Math.round(rawTemp) / 10 : rawTemp;
+      if (tempC >= -40 && tempC <= 85) {
+        this._setDynamicEnvCapability('measure_temperature', tempC);
+      }
+    }
+    const rawHum = dps['102'] ?? dps[102];
+    if (typeof rawHum === 'number' && Number.isFinite(rawHum) && rawHum >= 0 && rawHum <= 100) {
+      this._setDynamicEnvCapability('measure_humidity', rawHum);
+    }
+  }
+
+  _setDynamicEnvCapability(cap, value) {
+    if (this._destroyed) {return;}
+    const write = () => this.safeSetCapabilityValue(cap, value).catch(() => {});
+    if (typeof this.hasCapability === 'function' && !this.hasCapability(cap)) {
+      if (typeof this.addCapability !== 'function') {return;}
+      Promise.resolve(this.addCapability(cap)).then(write).catch(() => {});
+      return;
+    }
+    write();
   }
 
   async _writeDps(dps) {
