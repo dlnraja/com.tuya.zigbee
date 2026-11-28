@@ -1,51 +1,13 @@
 {
-  "timestamp": "2026-11-16T06:32:47.376Z",
+  "timestamp": "2026-11-28T11:18:24.234Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 5,
+  "changeCount": 0,
   "skippedCount": 83,
   "highSeverityCount": 0,
-  "byAction": {
-    "compose_exclusive": 5
-  },
-  "changes": [
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE284_1DI7UJZP",
-      "from": "climate_sensor",
-      "to": "water_leak_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE204_IIK0PQUW",
-      "from": "curtain_motor",
-      "to": "wall_switch_4_gang_tuya"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE204_LBHH5O6Z",
-      "from": "curtain_motor",
-      "to": "wall_switch_4_gang_tuya"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZE284_LBHH5O6Z",
-      "from": "curtain_motor",
-      "to": "wall_switch_4_gang_tuya"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3002_L8BFZLCD",
-      "from": "switch_4gang",
-      "to": "switch_1gang"
-    }
-  ],
+  "byAction": {},
+  "changes": [],
   "skipped": [
     {
       "reason": "registry_driver_missing",

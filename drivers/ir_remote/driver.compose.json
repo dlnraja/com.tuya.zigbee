@@ -217,5 +217,9 @@
       "usageOn": 1,
       "usageOff": 1
     }
-  }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": []
 }

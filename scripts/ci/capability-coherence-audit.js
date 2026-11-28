@@ -15,7 +15,7 @@ const HK = new Set(['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temp
   'measure_battery', 'windowcoverings_set', 'windowcoverings_state', 'target_temperature', 'thermostat_mode',
   'locked', 'volume_set', 'speaker_playing', 'fan_speed', 'alarm_generic', 'button', 'homealarm_state',
   'measure_power', 'meter_power']);
-const BASE_WIRED = /UnifiedSwitchBase|UnifiedPlugBase|VirtualEnergy|EstimatedEnergyCaps/;
+const BASE_WIRED = /UnifiedSwitchBase|UnifiedPlugBase|UnifiedLightBase|VirtualEnergy|EstimatedEnergyCaps/;
 
 function run(root) {
   const dd = path.join(root, 'drivers');
