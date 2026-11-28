@@ -912,8 +912,7 @@
     "fr": "Version de maintenance : mêmes appareils et même comportement que la précédente (outils de publication et de test uniquement)."
   },
   "9.0.1640": {
-    "en": "Fixed: lights and dimmers & wall switches (TS0043). Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : éclairages et variateurs & interrupteurs (TS0043). Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Fixed: lights and dimmers & wall switches (TS0043). Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1639": {
     "en": "Fixed: presence radars & motion sensors, Flow cards and climate sensors. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks."
@@ -985,9 +984,5 @@
   "9.0.1620": {
     "en": "Changed: rename energy_source off the reserved energy_ prefix.",
     "fr": "Modifié : rename energy_source off the reserved energy_ prefix."
-  },
-  "9.0.1619": {
-    "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run.",
-    "fr": "Brouillon de diagnostic uniquement : l'envoi inclut les vrais pilotes source que les publications ordinaires retiennent encore, pour rester au-dessus de 350 appareils. Le canal Test n'est pas modifié par cet envoi."
   }
 }
