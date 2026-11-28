@@ -822,6 +822,114 @@
         "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
         "sibling_pids": "_TZ3290_8xzb2ghn|TS1201"
       }
+    },
+    {
+      "couple": "_TZE204_zajeikkt|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver led_controller_rgb (Z2M SP107E-Zigbee LED music controller, zhc tuya.ts @ed29f80 L32038); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "z2m:SP107E-Zigbee; zhc:SP107E-Zigbee",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE204_zajeikkt|TS0601"
+      }
+    },
+    {
+      "couple": "_tze204_zajeikkt|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver led_controller_rgb (Z2M SP107E-Zigbee LED music controller, zhc tuya.ts @ed29f80 L32038); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE204_zajeikkt|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE20C_ycab9txf|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver siren (Z2M Novato ZAS-01P smart siren, zhc tuya.ts @ed29f80 L31091); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "z2m:ZAS-01P; zhc:ZAS-01P",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE20C_ycab9txf|TS0601"
+      }
+    },
+    {
+      "couple": "_tze20c_ycab9txf|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver siren (Z2M Novato ZAS-01P smart siren, zhc tuya.ts @ed29f80 L31091); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE20C_ycab9txf|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_xr5yfele|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver wall_thermostat (Z2M Tervix 119710 room thermostat, zhc tuya.ts @ed29f80 L15540); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "z2m:119710; zhc:119710",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE284_xr5yfele|TS0601"
+      }
+    },
+    {
+      "couple": "_tze284_xr5yfele|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver wall_thermostat (Z2M Tervix 119710 room thermostat, zhc tuya.ts @ed29f80 L15540); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE284_xr5yfele|TS0601"
+      }
     }
   ]
 }

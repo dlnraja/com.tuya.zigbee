@@ -35,32 +35,39 @@
    "mfr": "_TZE204_zajeikkt",
    "pid": "TS0601",
    "host": "universal_zigbee",
-   "status": "provisional",
+   "status": "promoted",
    "confidence": 0.6,
    "item": "dlnraja-issue:588",
    "evidence": "mfr in evidence + unique productId in references",
    "refs": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80/src/devices/tuya.ts#L32038",
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L30677",
     "https://www.zigbee2mqtt.io/devices/SP107E-Zigbee.html"
    ],
    "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
-   "since": "2026-11-01"
+   "since": "2026-11-01",
+   "driver": "led_controller_rgb",
+   "at": "2026-11-28",
+   "reason": "P3423: same placement as bastien-home P3038c; exact zhc definition"
   },
   {
    "mfr": "_TZE20C_ycab9txf",
    "pid": "TS0601",
    "host": "universal_zigbee",
-   "status": "provisional",
+   "status": "promoted",
    "confidence": 0.6,
    "item": "dlnraja-issue:588",
    "evidence": "mfr in evidence + unique productId in references",
    "refs": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80/src/devices/tuya.ts#L31091",
     "https://www.zigbee2mqtt.io/devices/ZAS-01P.html",
-    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L29730",
-    "https://www.zigbee2mqtt.io/devices/ZAS-01P.html"
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L29730"
    ],
    "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
-   "since": "2026-11-01"
+   "since": "2026-11-01",
+   "driver": "siren",
+   "at": "2026-11-28",
+   "reason": "P3423: same placement as bastien-home P3038c; exact zhc definition"
   },
   {
    "mfr": "_TZE284_48ye65rk",
@@ -95,16 +102,32 @@
    "mfr": "_TZE284_xr5yfele",
    "pid": "TS0601",
    "host": "universal_zigbee",
-   "status": "provisional",
+   "status": "promoted",
    "confidence": 0.6,
    "item": "dlnraja-issue:588",
    "evidence": "mfr in evidence + unique productId in references",
    "refs": [
+    "https://github.com/Koenkk/zigbee-herdsman-converters/blob/ed29f80/src/devices/tuya.ts#L15540",
     "https://github.com/Koenkk/zigbee-herdsman-converters/blob/7462b541b367c301057aee995e6e6756e5f7e985/src/devices/tuya.ts#L14771",
     "https://www.zigbee2mqtt.io/devices/119710.html"
    ],
    "why": "no sibling manufacturerName of the reference is on a specific driver with this productId",
-   "since": "2026-11-01"
+   "since": "2026-11-01",
+   "driver": "wall_thermostat",
+   "at": "2026-11-28",
+   "reason": "P3423: same placement as bastien-home P3038c; exact zhc definition"
+  },
+  {
+   "mfr": "_TZ3290_acv1biec",
+   "pid": "TS1201",
+   "host": "ir_blaster",
+   "status": "unconfirmed",
+   "confidence": 0.5,
+   "item": "P3404",
+   "evidence": "added with P3404 next to _TZ3290_8xzb2ghn; no external reference found (absent from zhc tuya.ts @ed29f80)",
+   "refs": [],
+   "why": "kept on ir_blaster (additive, never removed); not status provisional so the universal_zigbee promote/demote loop leaves it alone; promote once an interview, diag or upstream definition confirms it",
+   "since": "2026-11-28"
   }
  ]
 }

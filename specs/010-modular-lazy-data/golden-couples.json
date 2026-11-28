@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28T19:35:19.100Z",
+ "generated": "2026-11-28T19:36:43.499Z",
  "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -1095,9 +1095,9 @@
    "pidSha": "a42dded92aa1c0bd"
   },
   "led_controller_rgb": {
-   "mfr": 5,
+   "mfr": 6,
    "pid": 3,
-   "mfrSha": "90c57e838d0e2123",
+   "mfrSha": "c02e59fc5ef53275",
    "pidSha": "595ceeb0a007d0a4"
   },
   "led_strip": {
@@ -1701,9 +1701,9 @@
    "pidSha": "a9c4fb702866c494"
   },
   "siren": {
-   "mfr": 36,
+   "mfr": 37,
    "pid": 5,
-   "mfrSha": "cbe8cc50e4f8f396",
+   "mfrSha": "193f3fe2ed9bd11c",
    "pidSha": "755f3a2789bcea58"
   },
   "siren_moes_mg_bjq002": {
@@ -2247,9 +2247,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "universal_zigbee": {
-   "mfr": 53,
+   "mfr": 50,
    "pid": 66,
-   "mfrSha": "02656dd8c03d24e7",
+   "mfrSha": "af8f2b94a0b59c86",
    "pidSha": "93b18540f1bb98f9"
   },
   "usb_dongle_dual_repeater": {
@@ -2463,9 +2463,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "wall_thermostat": {
-   "mfr": 49,
+   "mfr": 50,
    "pid": 2,
-   "mfrSha": "bac74b7d05a0b810",
+   "mfrSha": "62f5f2c542596796",
    "pidSha": "a56800d53024720a"
   },
   "water_detector": {
