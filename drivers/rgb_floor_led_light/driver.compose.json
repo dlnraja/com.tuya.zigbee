@@ -79,5 +79,8 @@
   ],
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }
