@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-28T12:18:54.467Z",
+ "updated": "2026-11-28T15:49:52.620Z",
  "checkpoints": {
   "resume": "data/leads/resume-checkpoint.json",
   "deepRead": "data/leads/deep-read-checkpoint.json",
@@ -276,8 +276,8 @@
   },
   "autopilot-issue:632": {
    "status": "pending",
-   "date": "2026-11-23",
-   "hash": "4645eadfad7df5b5",
+   "date": "2026-11-28",
+   "hash": "95a324b6108dc8e3",
    "note": "fix-in-code: supported, symptom(s): unknown-device, battery; owner replies (draft in autopilot report), never auto-closed",
    "by": "repo-autopilot",
    "kind": "fix-in-code",
@@ -290,7 +290,7 @@
     "TS0601"
    ],
    "drivers": [
-    "climate_sensor"
+    "device_radiator_valve"
    ],
    "counts": {
     "dps": 0,
@@ -49346,19 +49346,19 @@
   },
   "workflow-run:repo-autopilot": {
    "status": "done",
-   "date": "2026-11-27",
-   "hash": "771de5017dc0bfdf",
+   "date": "2026-11-28",
+   "hash": "f17b1e847c2366eb",
    "note": "run summary: 6 counter(s)",
    "by": "repo-autopilot",
    "counts": {
     "closed": 0,
     "merged": 0,
-    "branchesDeleted": 1,
+    "branchesDeleted": 0,
     "issues": 7,
     "external": 0,
     "leadsAdded": 0
    },
-   "lastChangeRun": "46037527402"
+   "lastChangeRun": "46161604869"
   }
  }
 }
