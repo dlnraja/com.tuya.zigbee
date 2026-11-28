@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "killSwitchVar": "APPLE_HOME_COHERENCE_DISABLED",
+  "dryRunVar": "APPLE_HOME_COHERENCE_DRY",
+  "timezoneNote": "Schedule is weekdays 11:00 UTC, which is 12:00 Europe/Paris in CET and 13:00 in CEST.",
+  "caps": {
+    "maxFilesChanged": 400,
+    "maxDriverTouches": 400,
+    "timeoutMinutes": 40
+  },
+  "branches": [
+    "master",
+    "stable-v5",
+    "bastien-home"
+  ],
+  "commitMessage": "fix(P3362): Apple Home / Insights coherence auto-apply [skip ci]",
+  "openPullRequests": false,
+  "secrets": [
+    "GITHUB_TOKEN"
+  ]
+}

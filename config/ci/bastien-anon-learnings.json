@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "id": "P3362-bastien-anon-learnings",
+    "updated": "2026-11-21",
+    "classify": "BOTH",
+    "why": "Anonymized lessons from the Bastien house app, with no rooms, device names, IEEE addresses or schedules. The weekday workflow ports checks (not personal data) to master and stable-v5."
+  },
+  "items": [
+    {
+      "id": "battery-history-units",
+      "rule": "measure_battery requires units % for Insights History",
+      "status": "applied",
+      "patch": "P3361"
+    },
+    {
+      "id": "standard-sensor-units",
+      "rule": "measure_temperature/humidity/power/voltage/current/energy/lux and siblings require standard units",
+      "status": "applied",
+      "patch": "P3362"
+    },
+    {
+      "id": "flow-ids-kept",
+      "rule": "App-level flow card ids home_mode_changed, capability_value_changed_generic, device_interaction must stay in the official compose form",
+      "status": "guarded",
+      "patch": "P3079/P3361"
+    },
+    {
+      "id": "official-appjson",
+      "rule": "Committed app.json is the official compose rebuild, never a normalise() rewrite",
+      "status": "guarded",
+      "patch": "P3079"
+    },
+    {
+      "id": "no-eager-big-json",
+      "rule": "Startup must not eagerly parse large JSON (product-reference, mfs_db, dp_registry, driver-mapping)",
+      "status": "guarded",
+      "patch": "P3272/P3362"
+    }
+  ]
+}
