@@ -10,7 +10,10 @@
 const assert = require('assert');
 const path = require('path');
 const audit = require('../scripts/ci/capability-coherence-audit');
-const BASE = {"A":27,"B":346,"C":184};
+// P3422 (2026-11-28): B 346 -> 349 = ir_blaster_zs06 (exact-pair split of ir_blaster, same capability set) adds the same
+// HomeKit-unmapped volume_up/volume_down/channel_up/channel_down entries ir_blaster already has (net +3, stale slack 1).
+// A tightened 27 -> 9 (current count).
+const BASE = {"A":9,"B":349,"C":184};
 
 describe('P3135 capability coherence audit (ratchet)', () => {
   const r = audit.run(path.join(__dirname, '..'));

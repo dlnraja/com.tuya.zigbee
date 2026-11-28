@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-23T08:01:10.999Z",
- "drivers": 420,
+ "generated": "2026-11-28T19:35:19.100Z",
+ "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
    "mfr": 1,
@@ -87,9 +87,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "air_quality_co2": {
-   "mfr": 28,
+   "mfr": 29,
    "pid": 5,
-   "mfrSha": "1e13d804c807909c",
+   "mfrSha": "c85402107361e2d1",
    "pidSha": "b6008010923a3ead"
   },
   "air_quality_comprehensive": {
@@ -195,9 +195,9 @@
    "pidSha": "5fdfeb44cebcaeb5"
   },
   "button_wireless_2": {
-   "mfr": 88,
+   "mfr": 86,
    "pid": 95,
-   "mfrSha": "8228305315f313e8",
+   "mfrSha": "0fe7d6b82dbc0a44",
    "pidSha": "2758d5b225d86524"
   },
   "button_wireless_3": {
@@ -825,9 +825,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "energy_meter_3phase": {
-   "mfr": 20,
+   "mfr": 21,
    "pid": 2,
-   "mfrSha": "73248cf5689937c4",
+   "mfrSha": "05ad587e6c855a1f",
    "pidSha": "1e6b96caf8d5722c"
   },
   "energy_meter_din": {
@@ -1035,10 +1035,16 @@
    "pidSha": "09fff199fe173c21"
   },
   "ir_blaster": {
-   "mfr": 39,
+   "mfr": 40,
    "pid": 5,
-   "mfrSha": "55bad9943aadc7fc",
+   "mfrSha": "ad0c22ea7e8da10a",
    "pidSha": "22e4403748643810"
+  },
+  "ir_blaster_zs06": {
+   "mfr": 2,
+   "pid": 1,
+   "mfrSha": "88b1eb82678dcfe5",
+   "pidSha": "2c694333d47510ce"
   },
   "keypad_alarm_wke502z": {
    "mfr": 1,
@@ -1107,9 +1113,9 @@
    "pidSha": "64ee7873940d7e1e"
   },
   "led_strip_rgbw": {
-   "mfr": 9,
+   "mfr": 10,
    "pid": 10,
-   "mfrSha": "45a92b2a76b5953d",
+   "mfrSha": "37ae703f51137945",
    "pidSha": "fa55309130755b56"
   },
   "light_bulb_dimmable_tunable": {
@@ -1977,9 +1983,9 @@
    "pidSha": "d885bcbf1a605531"
   },
   "switch_1gang": {
-   "mfr": 356,
+   "mfr": 357,
    "pid": 38,
-   "mfrSha": "5894476102a23588",
+   "mfrSha": "81be6a14bd49937f",
    "pidSha": "fd65b1d55ed8db6a"
   },
   "switch_2_gang": {
@@ -2013,9 +2019,9 @@
    "pidSha": "1c2e035cec82b333"
   },
   "switch_3gang": {
-   "mfr": 80,
+   "mfr": 81,
    "pid": 46,
-   "mfrSha": "6b698aa0a9726824",
+   "mfrSha": "38b2306427de0dc0",
    "pidSha": "870729bf5269aac9"
   },
   "switch_4_gang_metering": {
