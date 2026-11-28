@@ -65,6 +65,60 @@
       "rule": "Sleepy CR2032 remotes (skipBatteryReporting/snappyRelayFlow/noEf00Tx) must skip forced magic-packet TX on periodic wake and repeat app restarts to preserve idle battery life",
       "status": "guarded",
       "patch": "P2739/P3402"
+    },
+    {
+      "id": "mesh-tx-health-advisor-zero-tx",
+      "rule": "MeshTxHealthAdvisor warns passively on >30% TX error rates (6h cooldown) and checks Z2M-aligned lastSeen thresholds (25h battery / 4h mains) without extra Zigbee TX",
+      "status": "guarded",
+      "patch": "P3403"
+    },
+    {
+      "id": "ir-blaster-case-insensitive-irdb-and-null-safe-flows",
+      "rule": "IRCodeLibrary must resolve brand/category/function case-insensitively and IrBlasterDriver must null-guard every Flow card listener registration",
+      "status": "guarded",
+      "patch": "P3404"
+    },
+    {
+      "id": "wifi-31-driver-tuya-categories-and-flipper-ir",
+      "rule": "TuyaLocalDriver maintains a 31-driver DRIVER_TUYA_CATEGORIES SSOT for SmartLife pairing prioritization while IRFormatConverter parses Flipper Zero .ir raw blocks",
+      "status": "guarded",
+      "patch": "P3405"
+    },
+    {
+      "id": "smart-flows-baseline-and-quiet-hours",
+      "rule": "IdleAutoOffSoft and LuxAdaptiveDim must call triggerCapabilityListener for physical commands, WelcomeHomeSoft must respect QuietHoursGuard, and SmartFlowManager must treat the first post-init report as baseline only",
+      "status": "guarded",
+      "patch": "P3406"
+    },
+    {
+      "id": "wifi-ir-combo-env-dps-and-oem-guidance",
+      "rule": "wifi_ir_remote dynamically exposes DP 101 temperature and DP 102 humidity on S06Pro/S08/S16 blasters, and TuyaLocalDriver exposes 24 OEM white-label brands with localized SmartLife & key-rotation guidance",
+      "status": "guarded",
+      "patch": "P3408"
+    },
+    {
+      "id": "homey-apple-homekit-matter-15-sync",
+      "rule": "MatterCompatibilityLayer converts Homey <-> Matter 1.5 <-> Apple HomeKit bidirectionally (0.5 C thermostats, inverted covers/contact sensors, mireds Adaptive Lighting, stateless switch hints)",
+      "status": "guarded",
+      "patch": "P3409"
+    },
+    {
+      "id": "pronto-900a-macros-and-learned-export",
+      "rule": "IRFormatConverter expands condensed 900A NEC Pronto Hex and IntelligentIRRouter supports bounded multi-step IR macros (sendSequence) and learned-code Pronto Hex export",
+      "status": "guarded",
+      "patch": "P3410"
+    },
+    {
+      "id": "wall-switch-zcldatatypes-no-undef",
+      "rule": "wall_switch_2_gang and wall_switch_3_gang must import ZCLDataTypes and guard indicatorMode/basic cluster access to prevent ReferenceError/TypeError crashes",
+      "status": "guarded",
+      "patch": "P3411"
+    },
+    {
+      "id": "energy-gamma-trapezoidal-calibration",
+      "rule": "PowerEstimator supports gamma/RGB dimming, trapezoidal kWh integration and V*I*PF fallback; PowerSelfCalibration anchors to standby with outlier dampening; ZclScaleAuthority repairs both /10 and x10 mains voltages",
+      "status": "guarded",
+      "patch": "P3412"
     }
   ]
 }
