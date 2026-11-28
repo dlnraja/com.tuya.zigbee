@@ -48,13 +48,6 @@ class Switch1GangDevice extends UnifiedSwitchBase {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       const reportingConfigs = [
-        ...(this.mainsPowered && this.getSetting?.('power_source') !== 'battery' ? [] : [{
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }]),
         {
           cluster: 'haElectricalMeasurement',
           attributeName: 'activePower',
@@ -77,6 +70,16 @@ class Switch1GangDevice extends UnifiedSwitchBase {
           minChange: 10,
         }
       ];
+      const powerSource = typeof this.getSetting === 'function' ? this.getSetting('power_source') : 'auto';
+      if (!this.mainsPowered || powerSource === 'battery') {
+        reportingConfigs.unshift({
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        });
+      }
       await this.configureAttributeReporting(reportingConfigs);
       this.log('Attribute reporting configured successfully');
     } catch (err) {
