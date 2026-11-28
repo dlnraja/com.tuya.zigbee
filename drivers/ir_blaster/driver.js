@@ -59,99 +59,116 @@ async onInit() {
    * CRITICAL FIX: Each getActionCard wrapped to prevent driver crash
    */
   async _registerEnhancedActions() {
+    const getAction = (id) => {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        return card && typeof card.registerRunListener === 'function' ? card : null;
+      } catch (e) {
+        return null;
+      }
+    };
+
     // Enhanced learn IR code action
     try {
-      const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_learn_code'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args, state) => {
-        const device = args.device;
-        if (!device || typeof device._enableAdvancedLearnMode !== 'function') {
-          this.log('[FLOW] Action: Device not ready or missing enhanced learn method');
-          return false;
-        }
+      const card = getAction('ir_blaster_learn_code');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device || typeof device._enableAdvancedLearnMode !== 'function') {
+            this.log('[FLOW] Action: Device not ready or missing enhanced learn method');
+            return false;
+          }
 
-        const { code_name, protocol, frequency, category } = args;
-        const duration = args.duration_seconds ?? args.duration ?? 30;
-        this.log(`Enhanced IR learning: "${code_name}" - ${protocol}@${frequency}Hz for ${duration}s`);
+          const { code_name, protocol, frequency, category } = args;
+          const duration = args.duration_seconds ?? args.duration ?? 30;
+          this.log(`Enhanced IR learning: "${code_name}" - ${protocol}@${frequency}Hz for ${duration}s`);
 
-        await device._enableAdvancedLearnMode(duration, {
-          protocol: protocol || 'auto',
-          frequency: frequency || 38000,
-          codeName: code_name,
-          category: category || 'uncategorized'
+          await device._enableAdvancedLearnMode(duration, {
+            protocol: protocol || 'auto',
+            frequency: frequency || 38000,
+            codeName: code_name,
+            category: category || 'uncategorized'
+          });
+
+          return true;
         });
-
-        return true;
-      });
-      this.log(' ir_blaster_learn_code registered');
+        this.log(' ir_blaster_learn_code registered');
+      }
     } catch (err) {
       this.log(' ir_blaster_learn_code not available:', err.message);
     }
 
     // Enhanced send IR code action
     try {
-      const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_code'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args, state) => {
-        const device = args.device;
-        if (!device || typeof device.sendEnhancedIRCode !== 'function') {
-          this.log('[FLOW] Action: Device not ready or missing enhanced send method');
-          return false;
-        }
+      const card = getAction('ir_blaster_send_code');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device || typeof device.sendEnhancedIRCode !== 'function') {
+            this.log('[FLOW] Action: Device not ready or missing enhanced send method');
+            return false;
+          }
 
-        const { ir_code, protocol, frequency, repeat } = args;
-        this.log(`Enhanced IR send: "${ir_code}" with options`);
+          const { ir_code, protocol, frequency, repeat } = args;
+          this.log(`Enhanced IR send: "${ir_code}" with options`);
 
-        await device.sendEnhancedIRCode(ir_code, {
-          protocol: protocol || null,
-          frequency: frequency || null,
-          repeat: repeat || 1
+          await device.sendEnhancedIRCode(ir_code, {
+            protocol: protocol || null,
+            frequency: frequency || null,
+            repeat: repeat || 1
+          });
+
+          return true;
         });
-
-        return true;
-      });
-      this.log(' ir_blaster_send_code registered');
+        this.log(' ir_blaster_send_code registered');
+      }
     } catch (err) {
       this.log(' ir_blaster_send_code not available:', err.message);
     }
 
     // v5.5.362: Send by category action with proper error handling
     try {
-      const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_by_category'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args, state) => {
-        const device = args.device;
-        if (!device || typeof device.getCodesByCategory !== 'function') {
-          this.log('[FLOW] Action: Device not ready or missing category method');
-          return false;
-        }
+      const card = getAction('ir_blaster_send_by_category');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device || typeof device.getCodesByCategory !== 'function') {
+            this.log('[FLOW] Action: Device not ready or missing category method');
+            return false;
+          }
 
-        const { category, code_name } = args;
-        this.log(`Sending IR code "${code_name}" from category "${category}"`);
+          const { category, code_name } = args;
+          this.log(`Sending IR code "${code_name}" from category "${category}"`);
 
-        const codes = device.getCodesByCategory(category);
-        if (!codes || !codes[code_name]) {
-          this.log(`[FLOW] Code "${code_name}" not found in category "${category}"`);
-          return false;
-        }
+          const codes = device.getCodesByCategory(category);
+          if (!codes || !codes[code_name]) {
+            this.log(`[FLOW] Code "${code_name}" not found in category "${category}"`);
+            return false;
+          }
 
-        await device.sendIRCode(codes[code_name]);
-        return true;
-      });
-      this.log(' ir_blaster_send_by_category registered');
+          await device.sendIRCode(codes[code_name]);
+          return true;
+        });
+        this.log(' ir_blaster_send_by_category registered');
+      }
     } catch (err) {
       this.log(' ir_blaster_send_by_category not available:', err.message);
     }
 
     // v5.5.606: AC command action (SmartIR compatible)
     try {
-      const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_ac_command'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args, state) => {
-        const device = args.device;
-        if (!device || typeof device.sendACCommand !== 'function') {
-          return false;
-        }
-        const { mode, temperature, fan_speed } = args;
-        return await device.sendACCommand(mode, temperature, fan_speed);
-      });
-      this.log(' ir_blaster_send_ac_command registered');
+      const card = getAction('ir_blaster_send_ac_command');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device || typeof device.sendACCommand !== 'function') {
+            return false;
+          }
+          const { mode, temperature, fan_speed } = args;
+          return await device.sendACCommand(mode, temperature, fan_speed);
+        });
+        this.log(' ir_blaster_send_ac_command registered');
+      }
     } catch (err) {
       this.log(' ir_blaster_send_ac_command not available:', err.message);
     }
@@ -159,86 +176,94 @@ async onInit() {
     // v5.12: Send by brand (IRDB)
     if (IRCodeLibrary) {
       try {
-        const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_by_brand'); } catch (e) { return null; } })();
-        card.registerRunListener(async (args) => {
-          const dev = args.device;
-          if (!dev) {return false;}
-          const b = args.brand?.name || args.brand;
-          const t = args.device_type?.name || args.device_type;
-          const f = args.function_name?.name || args.function_name;
-          const c = IRCodeLibrary.getCode(b, t, f);
-          if (!c?.code) { this.log('[IRDB] No code:', b, t, f); return false; }
-          await dev.sendIRCode(c.code);
-          return true;
-        });
-        card.registerArgumentAutocompleteListener('brand', async (q) => {
-          return IRCodeLibrary.getBrands().filter(b => b.toLowerCase().includes(q.toLowerCase())).slice(0, 20).map(b => ({ name: b }));
-        });
-        card.registerArgumentAutocompleteListener('device_type', async (q, a) => {
-          return IRCodeLibrary.getCategories(a.brand?.name || '').filter(c => c.toLowerCase().includes(q.toLowerCase())).map(c => ({ name: c }));
-        });
-        card.registerArgumentAutocompleteListener('function_name', async (q, a) => {
-          return IRCodeLibrary.getFunctions(a.brand?.name || '', a.device_type?.name || '').filter(f => f.toLowerCase().includes(q.toLowerCase())).slice(0, 30).map(f => ({ name: f }));
-        });
-        this.log(' ir_blaster_send_by_brand registered');
+        const card = getAction('ir_blaster_send_by_brand');
+        if (card) {
+          card.registerRunListener(async (args) => {
+            const dev = args.device;
+            if (!dev) {return false;}
+            const b = args.brand?.name || args.brand;
+            const t = args.device_type?.name || args.device_type;
+            const f = args.function_name?.name || args.function_name;
+            const c = IRCodeLibrary.getCode(b, t, f);
+            if (!c?.code) { this.log('[IRDB] No code:', b, t, f); return false; }
+            await dev.sendIRCode(c.code);
+            return true;
+          });
+          card.registerArgumentAutocompleteListener('brand', async (q) => {
+            return IRCodeLibrary.getBrands().filter(b => b.toLowerCase().includes(q.toLowerCase())).slice(0, 20).map(b => ({ name: b }));
+          });
+          card.registerArgumentAutocompleteListener('device_type', async (q, a) => {
+            return IRCodeLibrary.getCategories(a.brand?.name || '').filter(c => c.toLowerCase().includes(q.toLowerCase())).map(c => ({ name: c }));
+          });
+          card.registerArgumentAutocompleteListener('function_name', async (q, a) => {
+            return IRCodeLibrary.getFunctions(a.brand?.name || '', a.device_type?.name || '').filter(f => f.toLowerCase().includes(q.toLowerCase())).slice(0, 30).map(f => ({ name: f }));
+          });
+          this.log(' ir_blaster_send_by_brand registered');
+        }
       } catch (e) { this.log(' ir_blaster_send_by_brand:', e.message); }
     }
 
     // v5.12: Send Learned Command (autocomplete)
     try {
-      const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_learned'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args) => {
-        const d = args.device;
-        if (!d || !d._learnedCodes) {return false;}
-        const n = args.code_name?.name || args.code_name;
-        const c = d._learnedCodes[n];
-        if (!c) { this.log('[FLOW] Code not found:', n); return false; }
-        await d.sendIRCode(c);
-        return true;
-      });
-      card.registerArgumentAutocompleteListener('code_name', async (q, a) => {
-        const d = a.device;
-        if (!d || !d._learnedCodes) {return [];}
-        return Object.keys(d._learnedCodes)
-          .filter(n => n.toLowerCase().includes(q.toLowerCase()))
-          .map(n => ({ name: n }));
-      });
-      this.log(' ir_blaster_send_learned registered');
+      const card = getAction('ir_blaster_send_learned');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const d = args.device;
+          if (!d || !d._learnedCodes) {return false;}
+          const n = args.code_name?.name || args.code_name;
+          const c = d._learnedCodes[n];
+          if (!c) { this.log('[FLOW] Code not found:', n); return false; }
+          await d.sendIRCode(c);
+          return true;
+        });
+        card.registerArgumentAutocompleteListener('code_name', async (q, a) => {
+          const d = a.device;
+          if (!d || !d._learnedCodes) {return [];}
+          return Object.keys(d._learnedCodes)
+            .filter(n => n.toLowerCase().includes(q.toLowerCase()))
+            .map(n => ({ name: n }));
+        });
+        this.log(' ir_blaster_send_learned registered');
+      }
     } catch (e) { this.log(' ir_blaster_send_learned:', e.message); }
 
     // v5.12: Delete Stored IR Code (autocomplete)
     try {
-      const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_delete_code'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args) => {
-        const d = args.device;
-        if (!d || typeof d.deleteStoredCode !== 'function') {return false;}
-        const n = args.code_name?.name || args.code_name;
-        await d.deleteStoredCode(n);
-        return true;
-      });
-      card.registerArgumentAutocompleteListener('code_name', async (q, a) => {
-        const d = a.device;
-        if (!d || !d._learnedCodes) {return [];}
-        return Object.keys(d._learnedCodes)
-          .filter(n => n.toLowerCase().includes(q.toLowerCase()))
-          .map(n => ({ name: n }));
-      });
-      this.log(' ir_blaster_delete_code registered');
+      const card = getAction('ir_blaster_delete_code');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const d = args.device;
+          if (!d || typeof d.deleteStoredCode !== 'function') {return false;}
+          const n = args.code_name?.name || args.code_name;
+          await d.deleteStoredCode(n);
+          return true;
+        });
+        card.registerArgumentAutocompleteListener('code_name', async (q, a) => {
+          const d = a.device;
+          if (!d || !d._learnedCodes) {return [];}
+          return Object.keys(d._learnedCodes)
+            .filter(n => n.toLowerCase().includes(q.toLowerCase()))
+            .map(n => ({ name: n }));
+        });
+        this.log(' ir_blaster_delete_code registered');
+      }
     } catch (e) { this.log(' ir_blaster_delete_code:', e.message); }
 
     // v5.12: Send Raw IR Code (Pronto Hex / Base64)
     try {
-      const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_raw'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args) => {
-        const d = args.device;
-        if (!d || typeof d.sendEnhancedIRCode !== 'function') {return false;}
-        await d.sendEnhancedIRCode(args.raw_code, {
-          frequency: args.frequency || null,
-          repeat: args.repeat || 1
+      const card = getAction('ir_blaster_send_raw');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const d = args.device;
+          if (!d || typeof d.sendEnhancedIRCode !== 'function') {return false;}
+          await d.sendEnhancedIRCode(args.raw_code, {
+            frequency: args.frequency || null,
+            repeat: args.repeat || 1
+          });
+          return true;
         });
-        return true;
-      });
-      this.log(' ir_blaster_send_raw registered');
+        this.log(' ir_blaster_send_raw registered');
+      }
     } catch (e) { this.log(' ir_blaster_send_raw:', e.message); }
 
     // v5.12: TV/Media virtual buttons - each sends a learned code by function name
@@ -249,19 +274,21 @@ async onInit() {
     ];
     for (const btn of tvButtons) {
       try {
-        const card = (() => { try { return this.homey.flow.getActionCard(`ir_blaster_${btn}`); } catch (e) { return null; } })();
-        card.registerRunListener(async (args) => {
-          const d = args.device;
-          if (!d || !d._learnedCodes) {return false;}
-          const code = d._learnedCodes[btn];
-          if (!code) {
-            this.log(`[TV] No learned code for "${btn}" - teach it first`);
-            return false;
-          }
-          await d.sendIRCode(code);
-          return true;
-        });
-        this.log(` ir_blaster_${btn} registered`);
+        const card = getAction(`ir_blaster_${btn}`);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            const d = args.device;
+            if (!d || !d._learnedCodes) {return false;}
+            const code = d._learnedCodes[btn];
+            if (!code) {
+              this.log(`[TV] No learned code for "${btn}" - teach it first`);
+              return false;
+            }
+            await d.sendIRCode(code);
+            return true;
+          });
+          this.log(` ir_blaster_${btn} registered`);
+        }
       } catch (e) {
         this.log(` ir_blaster_${btn}:`, e.message);
       }
@@ -282,40 +309,38 @@ async onInit() {
         'OK/Enter': 'tv_ok',
         'Back': 'tv_back'
       };
-      const card = (typeof this.homey.flow.getActionCard === 'function'
-        ? this.homey.flow.getActionCard('ir_blaster_send_tv_command')
-        : null)
+      const card = getAction('ir_blaster_send_tv_command')
         || (typeof this.homey.flow.getDeviceActionCard === 'function'
           ? this.homey.flow.getDeviceActionCard('ir_blaster_send_tv_command')
           : null);
       if (!card || typeof card.registerRunListener !== 'function') {
         this.log('[TV] ir_blaster_send_tv_command card unavailable');
       } else {
-      card.registerRunListener(async (args) => {
-        const d = args.device;
-        if (!d) {return false;}
-        const { brand, command } = args;
+        card.registerRunListener(async (args) => {
+          const d = args.device;
+          if (!d) {return false;}
+          const { brand, command } = args;
 
-        // 1) Code appris correspondant à la commande
-        const learnedKey = tvCommandMap[command];
-        if (learnedKey && d._learnedCodes && d._learnedCodes[learnedKey]) {
-          await d.sendIRCode(d._learnedCodes[learnedKey]);
-          return true;
-        }
-
-        // 2) Bibliothèque IRDB par marque
-        if (IRCodeLibrary && brand) {
-          const c = IRCodeLibrary.getCode(brand, 'tv', command);
-          if (c?.code) {
-            await d.sendIRCode(c.code);
+          // 1) Code appris correspondant à la commande
+          const learnedKey = tvCommandMap[command];
+          if (learnedKey && d._learnedCodes && d._learnedCodes[learnedKey]) {
+            await d.sendIRCode(d._learnedCodes[learnedKey]);
             return true;
           }
-        }
 
-        this.log(`[TV] No code for "${command}" (brand: ${brand || 'n/a'}) - teach it first`);
-        return false;
-      });
-      this.log(' ir_blaster_send_tv_command registered');
+          // 2) Bibliothèque IRDB par marque
+          if (IRCodeLibrary && brand) {
+            const c = IRCodeLibrary.getCode(brand, 'TV', command);
+            if (c?.code) {
+              await d.sendIRCode(c.code);
+              return true;
+            }
+          }
+
+          this.log(`[TV] No code for "${command}" (brand: ${brand || 'n/a'}) - teach it first`);
+          return false;
+        });
+        this.log(' ir_blaster_send_tv_command registered');
       }
     } catch (e) {
       this.log(' ir_blaster_send_tv_command:', e.message);
@@ -367,67 +392,82 @@ async onInit() {
    * v5.5.362: Register enhanced conditions with individual try-catch
    */
   async _registerEnhancedConditions() {
+    const getCondition = (id) => {
+      try {
+        const card = this.homey.flow.getConditionCard(id);
+        return card && typeof card.registerRunListener === 'function' ? card : null;
+      } catch (e) {
+        return null;
+      }
+    };
+
     // IR learning active condition
     try {
-      const card = (() => { try { return this.homey.flow.getConditionCard('ir_blaster_learning_active'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args, state) => {
-        const device = args.device;
-        if (!device || device._learningState === undefined) {
-          return false;
-        }
+      const card = getCondition('ir_blaster_learning_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device || device._learningState === undefined) {
+            return false;
+          }
 
-        // Check if learning state is LEARNING (1)
-        const isLearning = device._learningState === 1;
-        this.log(`IR learning active check: ${isLearning}`);
-        return isLearning;
-      });
-      this.log(' ir_blaster_learning_active condition registered');
+          // Check if learning state is LEARNING (1)
+          const isLearning = device._learningState === 1;
+          this.log(`IR learning active check: ${isLearning}`);
+          return isLearning;
+        });
+        this.log(' ir_blaster_learning_active condition registered');
+      }
     } catch (err) {
       this.log(' ir_blaster_learning_active not available:', err.message);
     }
 
     // IR code exists condition
     try {
-      const card = (() => { try { return this.homey.flow.getConditionCard('ir_blaster_code_exists'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args, state) => {
-        const device = args.device;
-        const { code_name } = args;
+      const card = getCondition('ir_blaster_code_exists');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const device = args.device;
+          const { code_name } = args;
 
-        if (!device || !device._learnedCodes) {
-          return false;
-        }
+          if (!device || !device._learnedCodes) {
+            return false;
+          }
 
-        const exists = !!device._learnedCodes[code_name];
-        this.log(`IR code "${code_name}" exists: ${exists}`);
-        return exists;
-      });
-      this.log(' ir_blaster_code_exists condition registered');
+          const exists = !!device._learnedCodes[code_name];
+          this.log(`IR code "${code_name}" exists: ${exists}`);
+          return exists;
+        });
+        this.log(' ir_blaster_code_exists condition registered');
+      }
     } catch (err) {
       this.log(' ir_blaster_code_exists not available:', err.message);
     }
 
     // IR protocol detected condition
     try {
-      const card = (() => { try { return this.homey.flow.getConditionCard('ir_blaster_protocol_detected'); } catch (e) { return null; } })();
-      card.registerRunListener(async (args, state) => {
-        const device = args.device;
-        const { code_name, protocol } = args;
+      const card = getCondition('ir_blaster_protocol_detected');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          const device = args.device;
+          const { code_name, protocol } = args;
 
-        if (!device || !device._learnedCodes || !device._protocolAnalysis) {
-          return false;
-        }
+          if (!device || !device._learnedCodes || !device._protocolAnalysis) {
+            return false;
+          }
 
-        const code = device._learnedCodes[code_name];
-        if (!code) {return false;}
+          const code = device._learnedCodes[code_name];
+          if (!code) {return false;}
 
-        const analysis = device._protocolAnalysis[code];
-        if (!analysis) {return false;}
+          const analysis = device._protocolAnalysis[code];
+          if (!analysis) {return false;}
 
-        const matches = analysis.protocol === protocol;
-        this.log(`Protocol "${protocol}" detected for "${code_name}": ${matches}`);
-        return matches;
-      });
-      this.log(' ir_blaster_protocol_detected condition registered');
+          const matches = analysis.protocol === protocol;
+          this.log(`Protocol "${protocol}" detected for "${code_name}": ${matches}`);
+          return matches;
+        });
+        this.log(' ir_blaster_protocol_detected condition registered');
+      }
     } catch (err) {
       this.log(' ir_blaster_protocol_detected not available:', err.message);
     }
