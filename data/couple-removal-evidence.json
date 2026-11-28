@@ -714,6 +714,114 @@
         "git_history": "b1eeea0715 fix(ci): satisfy case, lint, and syntax gates for TRV602Z | c2accabc81 fix(trv): pair TRV602Z _TZE204_ltwbm23f as a radiator valve | 3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
         "sibling_pids": "_TZE284_ltwbm23f|TS0601"
       }
+    },
+    {
+      "couple": "_TZ3290_8xzb2ghn|TS0002",
+      "driver": "button_wireless_2",
+      "pr": "P3422",
+      "verdict": "Tuya TS1201 IR blaster (Z2M ZS06), not a 2-button remote: added to button_wireless_2 only by the July 2026 bulk mfr sync (P44/P54 cross-product with the driver's 95 pids); no source (Z2M, ZHA, deCONZ, Blakadder, Johan, forum, diags) lists it with TS0002; the exact couple _TZ3290_8xzb2ghn|TS1201 moves to the exact-pair driver ir_blaster_zs06 (P3422, same runtime as ir_blaster). Removal clears 214 P3039d parasitic combos.",
+      "sources": {
+        "z2m": "not listed for TS0002",
+        "zha": "not listed for TS0002",
+        "deconz": "not listed for TS0002",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0002",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_8xzb2ghn|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_8xzb2ghn|TS0601",
+      "driver": "button_wireless_2",
+      "pr": "P3422",
+      "verdict": "Tuya TS1201 IR blaster (Z2M ZS06), not a 2-button remote: added to button_wireless_2 only by the July 2026 bulk mfr sync (P44/P54 cross-product with the driver's 95 pids); no source (Z2M, ZHA, deCONZ, Blakadder, Johan, forum, diags) lists it with TS0601; the exact couple _TZ3290_8xzb2ghn|TS1201 moves to the exact-pair driver ir_blaster_zs06 (P3422, same runtime as ir_blaster). Removal clears 214 P3039d parasitic combos.",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_8xzb2ghn|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_uc8lwbi2|TS0002",
+      "driver": "button_wireless_2",
+      "pr": "P3422",
+      "verdict": "Tuya TS1201 IR blaster (Z2M ZS06), not a 2-button remote: added to button_wireless_2 only by the July 2026 bulk mfr sync (P44/P54 cross-product with the driver's 95 pids); no source (Z2M, ZHA, deCONZ, Blakadder, Johan, forum, diags) lists it with TS0002; the exact couple _TZ3290_uc8lwbi2|TS1201 moves to the exact-pair driver ir_blaster_zs06 (P3422, same runtime as ir_blaster). Removal clears 214 P3039d parasitic combos.",
+      "sources": {
+        "z2m": "not listed for TS0002",
+        "zha": "not listed for TS0002",
+        "deconz": "not listed for TS0002",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0002",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_uc8lwbi2|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_uc8lwbi2|TS0601",
+      "driver": "button_wireless_2",
+      "pr": "P3422",
+      "verdict": "Tuya TS1201 IR blaster (Z2M ZS06), not a 2-button remote: added to button_wireless_2 only by the July 2026 bulk mfr sync (P44/P54 cross-product with the driver's 95 pids); no source (Z2M, ZHA, deCONZ, Blakadder, Johan, forum, diags) lists it with TS0601; the exact couple _TZ3290_uc8lwbi2|TS1201 moves to the exact-pair driver ir_blaster_zs06 (P3422, same runtime as ir_blaster). Removal clears 214 P3039d parasitic combos.",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_uc8lwbi2|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_uc8lwbi2|TS1201",
+      "driver": "ir_blaster",
+      "pr": "P3422",
+      "verdict": "Not dropped: moved. Z2M ZS06 (TS1201) IR blaster; the exact couple _TZ3290_uc8lwbi2|TS1201 moves from ir_blaster to the exact-pair driver ir_blaster_zs06 (same device.js/driver.js runtime, same capabilities). On ir_blaster it also crossed TS0601/TS0002/TS0601_repeater/ZG-IR01 (P3039d parasitic combos). Added to ir_blaster today by P3404/P3417, never in a master Athom package.",
+      "sources": {
+        "z2m": "z2m:KCTW1Z; zhc:KCTW1Z",
+        "zha": "not listed for TS1201",
+        "deconz": "not listed for TS1201",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS1201",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_uc8lwbi2|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_8xzb2ghn|TS1201",
+      "driver": "ir_blaster",
+      "pr": "P3422",
+      "verdict": "Not dropped: moved. Z2M ZS06 (TS1201) IR blaster; the exact couple _TZ3290_8xzb2ghn|TS1201 moves from ir_blaster to the exact-pair driver ir_blaster_zs06 (same device.js/driver.js runtime, same capabilities). On ir_blaster it also crossed TS0601/TS0002/TS0601_repeater/ZG-IR01 (P3039d parasitic combos). Added to ir_blaster today by P3404/P3417, never in a master Athom package.",
+      "sources": {
+        "z2m": "z2m:KCTW1Z; zhc:KCTW1Z",
+        "zha": "not listed for TS1201",
+        "deconz": "not listed for TS1201",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS1201",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_8xzb2ghn|TS1201"
+      }
     }
   ]
 }

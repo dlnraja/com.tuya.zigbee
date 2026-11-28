@@ -10,19 +10,22 @@ const IRCodeLibrary = require(path.join(ROOT, 'lib/ir/IRCodeLibrary'));
 const TuyaWhiteLabelCatalog = require(path.join(ROOT, 'lib/tuya-local/TuyaWhiteLabelCatalog'));
 const TuyaAuthCatalog = require(path.join(ROOT, 'lib/tuya-local/TuyaAuthCatalog'));
 
-test('P3404: ir_blaster driver.compose.json includes verified Z2M TS1201 IDs (_TZ3290_8xzb2ghn & _TZ3290_acv1biec)', () => {
-  const compose = JSON.parse(
-    fs.readFileSync(path.join(ROOT, 'drivers/ir_blaster/driver.compose.json'), 'utf8')
-  );
-  const mfrs = compose.zigbee.manufacturerName;
-  for (const id of [
-    '_TZ3290_8xzb2ghn',
-    '_tz3290_8xzb2ghn',
-    '_TZ3290_acv1biec',
-    '_tz3290_acv1biec',
-  ]) {
-    assert.ok(mfrs.includes(id), `Expected ${id} in ir_blaster manufacturerName`);
+test('P3404: ir_blaster keeps _TZ3290_acv1biec; ZS06 _TZ3290_8xzb2ghn (Z2M TS1201) lives on its exact-pair driver', () => {
+  // P3422: _TZ3290_8xzb2ghn moved to drivers/ir_blaster_zs06 (TS1201 only, same runtime) so it no longer
+  // crosses ir_blaster / button_wireless_2 pids (P3039d). Same ids asserted, plus exclusivity and pid.
+  const read = (id) => JSON.parse(fs.readFileSync(path.join(ROOT, `drivers/${id}/driver.compose.json`), 'utf8'));
+  const ir = read('ir_blaster');
+  const zs06 = read('ir_blaster_zs06');
+  for (const id of ['_TZ3290_acv1biec', '_tz3290_acv1biec']) {
+    assert.ok(ir.zigbee.manufacturerName.includes(id), `Expected ${id} in ir_blaster manufacturerName`);
   }
+  for (const id of ['_TZ3290_8xzb2ghn', '_tz3290_8xzb2ghn']) {
+    assert.ok(zs06.zigbee.manufacturerName.includes(id), `Expected ${id} in ir_blaster_zs06 manufacturerName`);
+    assert.ok(!ir.zigbee.manufacturerName.includes(id), `${id} must be on one driver only`);
+  }
+  assert.ok(zs06.zigbee.productId.includes('TS1201'));
+  assert.deepStrictEqual([...new Set(zs06.zigbee.productId.map((x) => x.toUpperCase()))], ['TS1201']);
+  assert.deepStrictEqual(zs06.capabilities, ir.capabilities, 'same capabilities as ir_blaster');
 });
 
 test('P3404: IRCodeLibrary resolves brand/category/function case-insensitively and handles null fn safely', () => {

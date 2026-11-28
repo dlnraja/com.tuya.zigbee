@@ -31,8 +31,11 @@ describe('P2636 dzwgk7e2+TS0042 2-btn (phantom 4EP)', () => {
     // only; raw 376 -> 352, unique 95 -> 89, 0 orphans (config/architecture/p3077-phantom-decisions.json).
     // 2026-11-01 (P3146): wkai4ga5 removed (TS0042 was a forum-table cross-product, evidence in
     // data/couple-removal-evidence.json; its TS0044 couple stays on scene_switch_4); raw 352 -> 348, unique 89 -> 88.
-    assert.ok((c.zigbee.manufacturerName || []).length >= 348);
-    assert.ok(new Set((c.zigbee.manufacturerName || []).map((x) => String(x).toLowerCase())).size >= 88);
+    // 2026-11-28 (P3422): ZS06 IR blaster makers 8xzb2ghn + uc8lwbi2 (Z2M ZS06, TS1201; July bulk import here, no TS1201 on
+    // this driver, so no device could match) moved to drivers/ir_blaster_zs06; evidence in data/couple-removal-evidence.json;
+    // raw 348 -> 340, unique 88 -> 86, 0 orphans.
+    assert.ok((c.zigbee.manufacturerName || []).length >= 340);
+    assert.ok(new Set((c.zigbee.manufacturerName || []).map((x) => String(x).toLowerCase())).size >= 86);
     // 2026-10-11 second-source round: 9 TS0003/TS0013 3-gang + r0pmi2p3 TS0014 moved to switch_3_gang/switch_4gang (curated removals). 2026-10-11 johan-only round: key8kk7r+rrjr1q0u (3-btn) and zl1kmjqx (temp sensor) moved out (curated removals); qewo8dlz TS0013 3-gang moved to switch_3_gang (W4). 2026-10-11: _TZ3000_yw5tvzsk (TS0043, Johan+deCONZ) moved to button_wireless_3 (curated removal)
   });
 
