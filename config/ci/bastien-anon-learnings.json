@@ -124,6 +124,31 @@
       "id": "P3416",
       "area": "multi-track-ssot",
       "rule": "Always distinguish master (com.dlnraja.tuya.zigbee, 9.0.x, 476 drivers), stable-v5 (com.dlnraja.tuya.zigbee.stable, 5.12.x, 445 drivers), and bastien-home (com.dlnraja.tuya.zigbee.bastien, 1.0.x, 445 drivers): preserve each track identity, version line, and driver scope; cite Universal Tuya (master) in public GitHub/forum replies."
+    },
+    {
+      "id": "P3420",
+      "area": "sleepy-remotes",
+      "rule": "Bind genOnOff once on sleepy CR2032 remotes rather than re-binding on every app restart."
+    },
+    {
+      "id": "P3424",
+      "area": "pairing-ux",
+      "rule": "Wire setUserPreferredDriver so the user-selected pairing driver is respected."
+    },
+    {
+      "id": "P3425",
+      "area": "co-safety",
+      "rule": "Nous E12 CO alarm (_TZE284_sonkaxrd) belongs on co_sensor (DP1 enum 0 = CO alarm, DP2 ppm, DP9 self-test not tamper)."
+    },
+    {
+      "id": "P3426",
+      "area": "energy-clamp",
+      "rule": "PJ-MGW1203 clamp (cjbofhxw) uses parallel RX switching to DP18/19/20 + accumulated DP101 Wh -> kWh once DP18/19/20 is observed."
+    },
+    {
+      "id": "P3427",
+      "area": "publish-ci",
+      "rule": "When [skip ci] commits land on master, dispatch unified-ci.yml alongside auto-publish-on-push.yml so all 4 P3036 required CI workflows pass and unblock Homey App Store publish."
     }
   ],
   "updated": "2026-11-28"
