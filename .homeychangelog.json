@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.263": {
+    "en": "New: device support (TS0505B, TS1201, TS004F), energy meters & lights and dimmers, IR remotes and climate sensors. Plus 11 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Nouveau : prise en charge des appareils (TS0505B, TS1201, TS004F), compteurs d'énergie & éclairages et variateurs, télécommandes IR et capteurs d'ambiance. Et 11 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "1.0.262": {
     "en": "Fixed: buttons and remotes (TS0043): block ZCL Global frames and TSN=0xFD from firing phantom TS0043 button toggles.",
     "fr": "Corrigé : boutons et télécommandes (TS0043) : block ZCL Global frames and TSN=0xFD from firing phantom TS0043 button toggles."
