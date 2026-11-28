@@ -3,6 +3,7 @@
 require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
 
 
+const { includesCI: _includesCI } = require('../../lib/utils/TuyaNormalizer');
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
