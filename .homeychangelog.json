@@ -1,5 +1,9 @@
 {
   "changelog": [],
+  "1.0.262": {
+    "en": "Fixed: buttons and remotes (TS0043): block ZCL Global frames and TSN=0xFD from firing phantom TS0043 button toggles.",
+    "fr": "Corrigé : boutons et télécommandes (TS0043) : block ZCL Global frames and TSN=0xFD from firing phantom TS0043 button toggles."
+  },
   "1.0.261": {
     "en": "Fixed: crash fixes, Flow cards, wall switches & battery reporting (TS0043) and energy meters (TS011F). Behind the scenes: tests and publishing checks.",
     "fr": "Corrigé : plantages, cartes Flow, interrupteurs & niveau de batterie (TS0043) et compteurs d'énergie (TS011F). En coulisses : tests et contrôles de publication."
