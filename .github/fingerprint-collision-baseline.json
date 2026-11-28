@@ -6353,6 +6353,20 @@
         "usb_outlet_advanced"
       ],
       "note": "P2820 dual"
+    },
+    {
+      "key": "_tz3290_uc8lwbi2|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "ir_blaster"
+      ]
+    },
+    {
+      "key": "_tz3290_uc8lwbi2|TS0601",
+      "drivers": [
+        "button_wireless_2",
+        "ir_blaster"
+      ]
     }
   ]
 }

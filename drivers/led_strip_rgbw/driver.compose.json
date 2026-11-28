@@ -6,7 +6,12 @@
     "de": "RGBW LED Streifen"
   },
   "class": "light",
-  "energy": { "approximation": { "usageOn": 15, "usageOff": 0.5 } },
+  "energy": {
+    "approximation": {
+      "usageOn": 15,
+      "usageOff": 0.5
+    }
+  },
   "capabilities": [
     "light_hue",
     "light_saturation",
@@ -49,7 +54,11 @@
       "_TZ3000_obacbukl",
       "_tz3000_obacbukl",
       "_TZ3000_OBACBUKL",
-      "_tz3000_OBACBUKL"
+      "_tz3000_OBACBUKL",
+      "_TZB210_tmi0rihb",
+      "_tzb210_tmi0rihb",
+      "_TZB210_TMI0RIHB",
+      "_tzb210_TMI0RIHB"
     ],
     "productId": [
       "E11-G13",
