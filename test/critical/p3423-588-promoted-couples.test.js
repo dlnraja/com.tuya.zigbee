@@ -1,8 +1,8 @@
 'use strict';
-/* global describe, it */
 // P3423 (2026-11-28 Paris): the 3 issue #588 provisional couples with an exact zhc definition (@ed29f80) leave the
 // generic host universal_zigbee for their exact driver, as bastien-home already does (P3038c); acv1biec is recorded
 // as unconfirmed on ir_blaster and never removed.
+const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');

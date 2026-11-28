@@ -1,7 +1,7 @@
 'use strict';
-/* global describe, it */
 // P3424: setUserPreferredDriver had no caller, so the user-choice lock in safe-auto-migrate / driver-switcher never
 // engaged. The pairing driver is now recorded on onAdded (never overwriting) and cleared on onDeleted.
+const { describe, it } = require('../_support/dual-runner');
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
