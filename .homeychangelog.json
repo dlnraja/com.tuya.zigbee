@@ -907,9 +907,12 @@
       ]
     }
   ],
+  "9.0.1640": {
+    "en": "Fixed: lights and dimmers & wall switches (TS0043). Plus 2 other changes in the app core. Behind the scenes: tests and publishing checks.",
+    "fr": "Corrigé : éclairages et variateurs & interrupteurs (TS0043). Et 2 autres changements dans le cœur de l'app. En coulisses : tests et contrôles de publication."
+  },
   "9.0.1639": {
-    "en": "Fixed: presence radars & motion sensors, Flow cards and climate sensors. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks.",
-    "fr": "Corrigé : radars de présence & détecteurs de mouvement, cartes Flow et capteurs d'ambiance. Et 1 autre changement dans le coeur de l'app. En coulisses : tests et contrôles de publication."
+    "en": "Fixed: presence radars & motion sensors, Flow cards and climate sensors. Plus 1 other change in the app core. Behind the scenes: tests and publishing checks."
   },
   "9.0.1638": {
     "en": "New: thermostats & climate sensors. Fixed: pairing and device recognition, lights and dimmers & Flow cards and device settings. Plus 15 other changes in the app core. Behind the scenes: tests and publishing checks.",
@@ -982,9 +985,5 @@
   "9.0.1619": {
     "en": "Diagnostic draft only: the upload includes the real source drivers that ordinary publishes still hold back, so the payload stays above 350 drivers. The Test channel is not changed by this run.",
     "fr": "Brouillon de diagnostic uniquement : l'envoi inclut les vrais pilotes source que les publications ordinaires retiennent encore, pour rester au-dessus de 350 appareils. Le canal Test n'est pas modifié par cet envoi."
-  },
-  "9.0.1618": {
-    "en": "Changed: do not reuse a red run after a manifest change; note that the keyfob endpoint lists IAS ACE; declare the keyfob IAS ACE cluster and hold the failed AOYAN probe; satisfy the lint ratchet for the budget line.",
-    "fr": "Modifié : ne pas réutiliser une exécution rouge après un changement de manifeste; noter que le point de terminaison du porte-clés déclare IAS ACE; déclarer le cluster IAS ACE du porte-clés et conserver la sonde AOYAN en échec; respecter le cliquet de lint pour la ligne de budget."
   }
 }
