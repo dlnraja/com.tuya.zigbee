@@ -119,6 +119,12 @@
       "rule": "PowerEstimator supports gamma/RGB dimming, trapezoidal kWh integration and V*I*PF fallback; PowerSelfCalibration anchors to standby with outlier dampening; ZclScaleAuthority repairs both /10 and x10 mains voltages",
       "status": "guarded",
       "patch": "P3412"
+    },
+    {
+      "id": "P3416",
+      "area": "multi-track-ssot",
+      "rule": "Always distinguish master (com.dlnraja.tuya.zigbee, 9.0.x, 476 drivers), stable-v5 (com.dlnraja.tuya.zigbee.stable, 5.12.x, 445 drivers), and bastien-home (com.dlnraja.tuya.zigbee.bastien, 1.0.x, 445 drivers): preserve each track identity, version line, and driver scope; cite Universal Tuya (master) in public GitHub/forum replies."
     }
-  ]
+  ],
+  "updated": "2026-11-28"
 }
