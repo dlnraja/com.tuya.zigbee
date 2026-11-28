@@ -168,6 +168,7 @@ jobs:
           node --test test/ci/p3025-git-push-retry.test.js test/ci/p3025-push-with-retry.test.js test/ci/p3025-workflow-hygiene-gate.test.js test/ci/p3025-hook-deps-check.test.js test/ci/p3025-appjson-compose-drift.test.js test/ci/p3025-lint-ratchet.test.js
           if [ -f test/critical/p3069-report-writer.test.js ]; then node --test test/critical/p3069-report-writer.test.js test/critical/p3069-report-ratchet.test.js test/critical/p3069-workflow-about.test.js; fi
           if [ -f test/critical/p3402-ts0043-phantom-global-frame-gate.test.js ]; then node --test test/critical/p3402-ts0043-phantom-global-frame-gate.test.js; fi
+          for f in test/critical/p3404-*.test.js test/critical/p3405-*.test.js test/critical/p3406-*.test.js test/critical/p3408-*.test.js test/critical/p3409-*.test.js test/critical/p3410-*.test.js test/critical/p3411-*.test.js test/critical/p3412-*.test.js; do [ -f "$f" ] && node --test "$f"; done
 
       - name: Short summary (shared report helper)
         if: always()

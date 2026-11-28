@@ -22,9 +22,11 @@
   },
   "wifiDps": {
     "send": "201",
-    "learnReceive": "202"
+    "learnReceive": "202",
+    "temperature": "101",
+    "humidity": "102"
   },
-  "formats": ["pronto", "broadlink", "globalcache", "hex", "zosung", "tuya_opaque"],
+  "formats": ["pronto", "pronto_900a", "flipper_raw", "broadlink", "globalcache", "hex", "zosung", "tuya_opaque"],
   "wizard": "assets/ir/ir_setup_wizard.html",
   "router": "lib/ir/IntelligentIRRouter.js",
   "converter": "lib/ir/IRFormatConverter.js",
@@ -68,6 +70,10 @@
     "wizard_sender_pick",
     "learned_rename_delete",
     "homey_pro_2023_pronto_tx_only",
-    "p2501_ir_flood_guard"
+    "p2501_ir_flood_guard",
+    "p3404_case_insensitive_irdb_and_null_safe_flows",
+    "p3405_flipper_zero_ir_raw",
+    "p3408_wifi_ir_combo_temp_hum_dps",
+    "p3410_pronto_900a_macros_and_pronto_export"
   ]
 }
