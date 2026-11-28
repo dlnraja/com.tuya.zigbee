@@ -33,7 +33,8 @@ describe('P2598 Michaelp #2253 me167 ÷10 + live profile', () => {
   it('setpoint listener reads live this.dpProfile', () => {
     const src = fs.readFileSync(TRV, 'utf8');
     assert.ok(src.includes('never close over a stale profile'));
-    assert.ok(src.includes("const dp = this.dpProfile === 'me167' ? 4 : 3"));
+    // WHY(P3283): TRV602Z shares DP4 with me167. me167 must still read live dpProfile and TX DP4, not DP3.
+    assert.ok(src.includes("const dp = this.dpProfile === 'me167' || this.dpProfile === 'trv602z' ? 4 : 3"));
     assert.ok(src.includes('P2598 endDeviceAnnounce'));
   });
 
