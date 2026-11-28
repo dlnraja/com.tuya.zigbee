@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "1.6.0",
+    "version": "1.7.0",
     "updated": "2026-11-28",
     "why": "Three Athom apps — never blur App ID / version / purpose. Classify every change. Bastien house is private → promotes upstream only.",
     "doctrine": "docs/rules/DUAL_APP_VISION.md",
@@ -37,9 +37,9 @@
       "cloneHint": "Documents/homey/master",
       "publish": "Auto-Publish on Push → Homey Test",
       "tipHealthy": "9.0.1642",
-      "tipNote": "LIVE/Test tip 9.0.1642 (P3404-P3415: IR/Wi-Fi/OEM pairing, Smart Flows, HomeKit/Matter 1.5, Pronto 900A macros, crash fixes, energy algorithms, workflow hygiene, driver coherence).",
+      "tipNote": "Published Test tip 9.0.1642 (477 drivers; P3404-P3426 incl. ir_blaster_zs06 split, #588 couples, setUserPreferredDriver, Nous E12 CO sensor, PJ-MGW1203 clamp, Z2M Nov 2026 devices).",
       "live": "automatic after objective gates",
-      "driverCountSnapshot": 476,
+      "driverCountSnapshot": 477,
       "hasApi": true,
       "publicSupportChannel": true,
       "specificity": "Main public app (Test & Store channel): full feature set (Wi-Fi/IR/Matter/HomeKit, Smart Flows, full CI/CD workflows, 476 drivers). Target for GitHub issues & Homey Community forum replies."
@@ -52,8 +52,8 @@
       "purpose": "Reliability LTS only — no feature managers unless human-promoted",
       "cloneHint": "Documents/homey/stable",
       "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish",
-      "tipHealthy": "5.12.571",
-      "tipNote": "Stable tip 5.12.571 — surgical reliability/coherence ports P3404-P3415; identity and scope strictly isolated from master.",
+      "tipHealthy": "5.12.573",
+      "tipNote": "Stable tip 5.12.573 (445 drivers; P3404-P3426 surgical reliability ports incl. P3420 CR2032 bind-once, P3424 setUserPreferredDriver, P3425 Nous E12 CO, P3426 PJ-MGW1203 clamp).",
       "live": "automatic after objective gates",
       "driverCountSnapshot": 445,
       "hasApi": true,
@@ -69,8 +69,8 @@
       "cloneHint": "Documents/homey/bastien",
       "publish": "Publish Zigbee Bastien workflow, Test at any hour - App ID .bastien only; NEVER Universal or Stable slots; NEVER Athom Live",
       "enrichment": "bastien_to_public_only — fixes, quirks, DPs and learned mappings flow regularly to master and stable-v5 (bastien-promote-upstream.yml), additive, anonymized, exact couple",
-      "tipHealthy": "1.0.262",
-      "tipNote": "Private tip 1.0.262 — house soak with P3404-P3415 reliability/coherence ports; never publishes to Universal/Stable slots or Athom Live.",
+      "tipHealthy": "1.0.263",
+      "tipNote": "Private tip 1.0.263 (445 drivers; house soak with P3420/P3424/P3425/P3426 reliability ports; never public/Athom Live).",
       "live": "never — house Test / local install only; must never go to Athom Live",
       "driverCountSnapshot": 445,
       "hasApi": true,
@@ -560,6 +560,30 @@
     "p3416_three_app_tracks_ssot": {
       "tag": "BOTH",
       "note": "Explicit 3-branch specificity & uniqueness matrix in dual-app-tracks.json + learnings + critical identity guard test"
+    },
+    "p3417_p3418_cross_source_z2m_nov2026": {
+      "tag": "BOTH",
+      "note": "Added _TZB210_tmi0rihb (TS0505B led_strip_rgbw), _TZ3290_uc8lwbi2 (ZS06 ir_blaster), and 4 Z2M Nov 2026 devices (_TZE204_vw5ufrvc, _TZE284_73llxjvf, _TZ3000_djhsq2ff, _TZ3000_3hjasqun)"
+    },
+    "p3420_sleepy_cr2032_bind_once": {
+      "tag": "BOTH",
+      "note": "Sleepy CR2032 remotes bind genOnOff once instead of on every app restart"
+    },
+    "p3422_ir_blaster_zs06_split": {
+      "tag": "MASTER_ONLY",
+      "note": "Dedicated ir_blaster_zs06 driver split on master (477 drivers)"
+    },
+    "p3424_user_preferred_driver": {
+      "tag": "BOTH",
+      "note": "Wire setUserPreferredDriver so the pairing driver remains the user choice"
+    },
+    "p3425_nous_e12_co_sensor": {
+      "tag": "BOTH",
+      "note": "Move Nous E12 CO alarm (_TZE284_sonkaxrd / _TZE2841000000_sonkaxrd) from climate_sensor to co_sensor with DP1 alarm_co, DP2 ppm, no DP9 tamper"
+    },
+    "p3426_pj_mgw1203_clamp": {
+      "tag": "BOTH",
+      "note": "PJ-MGW1203 clamp (_TZE28C1000000_cjbofhxw) decodes DP18/19/20 and accumulates DP101 Wh into kWh"
     }
   },
   "ci": {
