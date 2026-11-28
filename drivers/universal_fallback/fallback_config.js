@@ -114,11 +114,7 @@ const CLUSTER_MAP = {
   65535: [],                             // 0xFFFF - Wildcard, skip
 
   // -- Occupancy Detection --------------------------------------------
-  1030: ['alarm_motion'],                // OccupancySensing (0x0406) - motion
   1032: ['alarm_motion'],                // OccupancySensingExt (0x0408)
-
-  // -- Electrical / Switch Types --------------------------------------
-  17:   ['onoff'],                        // MultistateInput (0x0011) - sometimes switch endpoint
 };
 
 /**
