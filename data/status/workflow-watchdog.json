@@ -1,5 +1,60 @@
 {
-  "at": "2026-11-27T14:57:58.028Z",
+  "at": "2026-11-28T14:08:07.189Z",
   "checked": 69,
-  "findings": []
+  "findings": [
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-2a1553568063",
+      "wf": ".github/workflows/autonomous-review.yml",
+      "detail": "4 failures in 72 h: Autonomous review failed on master (critical tests / Full critical suite: unknown)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-351d901e2c87",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "6 failures in 72 h: Node 22 runtime tests failed on stable-v5 (test / Full suite on Node 22: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-4343ee8f200b",
+      "wf": ".github/workflows/syntax-check.yml",
+      "detail": "7 failures in 72 h: 🔍 Syntax Check & SDK3 Validation failed on master (syntax-check / P2138 BSEED dimmer + Poll Control tests: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-d1ec9f0993a2",
+      "wf": ".github/workflows/code-quality.yml",
+      "detail": "5 failures in 72 h: code-quality failed on stable-v5 (Quality Checks / Anti-bot + P2138 sacred-couple matrix + P244x flow/knob: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-6da7f9ded5b7",
+      "wf": ".github/workflows/unified-ci.yml",
+      "detail": "4 failures in 72 h: 🛡️ Unified CI/CD Orchestrator failed on master (🔍 Universal Validation (SDK 3 Strict) / 🔍 Fingerprint Collision Check: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-29c30aad5645",
+      "wf": ".github/workflows/syntax-check.yml",
+      "detail": "3 failures in 72 h: 🔍 Syntax Check & SDK3 Validation failed on master (syntax-check / Check TITAN v5 lifecycle patterns: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-57f650364735",
+      "wf": ".github/workflows/node22-tests.yml",
+      "detail": "3 failures in 72 h: Node 22 runtime tests failed on master (strict / node:test strict (P3057-3): no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-6b7f6cfbf7a6",
+      "wf": ".github/workflows/autonomous-review.yml",
+      "detail": "4 failures in 72 h: Autonomous review failed on master (critical tests / Full critical suite: no-log)"
+    },
+    {
+      "kind": "repeated-failure",
+      "sig": "ci-7c75a5a143eb",
+      "wf": ".github/workflows/code-quality.yml",
+      "detail": "3 failures in 72 h: code-quality failed on master (Quality Checks / P244x flow/knob + family gates: no-log)"
+    }
+  ]
 }
