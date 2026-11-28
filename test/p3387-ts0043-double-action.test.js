@@ -14,7 +14,7 @@ const testApi = global.describe && global.it ? global : require('node:test');
 const { describe, it } = testApi;
 
 const { planSnappyCards } = require('../lib/buttons/SnappyCardPlan');
-const { isDuplicate, installZclTsnGate, tsnOf } = require('../lib/buttons/ZclTsnGate');
+const { isDuplicate, installZclTsnGate, tsnOf, WINDOW_MS } = require('../lib/buttons/ZclTsnGate');
 
 const TRIGGERS = require('../drivers/button_wireless_3/driver.flow.compose.json').triggers.map((t) => t.id);
 
@@ -110,7 +110,7 @@ describe('P3387 ZCL TSN gate (Z2M hasAlreadyProcessedMessage idea)', () => {
     // Same TSN on another endpoint is another button.
     assert.strictEqual(isDuplicate(st, 2, 6, fdSingle(7), { now: 2000 }).drop, false);
     // After the window the same bytes are accepted again.
-    assert.strictEqual(isDuplicate(st, 1, 6, fdSingle(7), { now: 1000 + 6000 }).drop, false);
+    assert.strictEqual(isDuplicate(st, 1, 6, fdSingle(7), { now: 1000 + WINDOW_MS + 1000 }).drop, false); // window is 10 s since the Z2M alignment (69ed1b1085)
   });
 
   it('never drops a typed double report that follows a single', () => {

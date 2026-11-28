@@ -41,7 +41,7 @@ test('dual runner maps onto the active runner (node:test outside mocha) and emul
 test('homey stub only replaces the CLI entry, with an SDK-shaped Device class', () => {
   const { install } = require('../_support/homey-stub');
   const resolved = require.resolve('homey');
-  const isCli = /[\\/]bin[\\/]homey\.js$/.test(resolved);
+  const isCli = /[\\/]bin[\\/]homey\.js$/.test(resolved) || resolved.endsWith(require('path').sep + 'homey.js');
   assert.strictEqual(install(), isCli);
   if (isCli) {
     // Read the cache entry install() owns: under mocha every critical file shares one process and

@@ -219,6 +219,16 @@
       "reason": "P3417: Z2M ZS06 IR blaster (TS1201)",
       "source": "P3417 / Z2M Tuya ZS06",
       "date": "2026-11-28"
+    },
+    {
+      "couple": "_TZ3290_8xzb2ghn|TS1201",
+      "drivers": [
+        "button_wireless_2",
+        "ir_blaster"
+      ],
+      "reason": "P3404: _TZ3290_8xzb2ghn is an IR blaster (TS1201) added to ir_blaster; Cartesian overlap with button_wireless_2 (TS0002/TS0601) kept without removal",
+      "source": "P3404 / Z2M ZS06 IR blaster",
+      "date": "2026-11-28"
     }
   ]
 }

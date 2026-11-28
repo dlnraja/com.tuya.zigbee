@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-22T00:16:45.815Z",
+  "updated": "2026-11-28T17:12:40.239Z",
   "checkpoints": {
     "journal": "docs/progress/JOURNAL.md"
   },
@@ -35,6 +35,14 @@
       "attempts": 1,
       "branch": "stable-v5",
       "note": "P3368: store-text-coherence.yml (P3363) called scripts/ci/safe-auto-commit.js missing on stable-v5; ported from master + test",
+      "by": "homey-ci-prs"
+    },
+    "ci-attempt:stable-v5/ci-self-check-about+fp-collision-8xzb2ghn+p2803+p3312+p3020+p3387+golden": {
+      "status": "done",
+      "date": "2026-11-28",
+      "attempts": 1,
+      "branch": "stable-v5",
+      "note": "P3413b: about header mojibake (55bfee5d27) regenerated; _tz3290_8xzb2ghn TS0002/TS0601 dual baselined+reviewed as master 306f0665c1 (IR blaster added to ir_blaster by P3404 9743b59c6d); app.json key order (P3414) re-synced to compose; stale P2803 climate_sensor autowire entries dropped (P3402 registers them); FeatureFlowCards x mojibake; p3020/p3387 tests aligned (master cd61d5ba53 / 10 s window); golden climate_sensor 508->506 for PR #634 TRV602Z move + evidence from master",
       "by": "homey-ci-prs"
     }
   }

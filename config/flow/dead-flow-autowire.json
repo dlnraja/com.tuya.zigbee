@@ -208,36 +208,6 @@
       "cap": "alarm_water",
       "op": true
     },
-    "climate_sensor_temperature_above": {
-      "driver": "climate_sensor",
-      "cap": "measure_temperature",
-      "op": "above",
-      "arg": "temp"
-    },
-    "climate_sensor_temperature_below": {
-      "driver": "climate_sensor",
-      "cap": "measure_temperature",
-      "op": "below",
-      "arg": "temp"
-    },
-    "climate_sensor_humidity_above": {
-      "driver": "climate_sensor",
-      "cap": "measure_humidity",
-      "op": "above",
-      "arg": "humidity"
-    },
-    "climate_sensor_humidity_below": {
-      "driver": "climate_sensor",
-      "cap": "measure_humidity",
-      "op": "below",
-      "arg": "humidity"
-    },
-    "climate_sensor_battery_voltage_below": {
-      "driver": "climate_sensor",
-      "cap": "measure_voltage",
-      "op": "below",
-      "arg": "voltage"
-    },
     "climate_sensor_presence_sensor_climate_presence_sensor_radar_is_present_sensor_presence_radar": {
       "driver": "climate_sensor_presence",
       "cap": "alarm_human",
