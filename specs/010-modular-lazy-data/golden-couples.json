@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28T19:39:43.526Z",
+ "generated": "2026-11-28T19:45:58.005Z",
  "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -1299,9 +1299,9 @@
    "pidSha": "4e00cbb3c4a786ba"
   },
   "power_clamp_meter": {
-   "mfr": 9,
+   "mfr": 10,
    "pid": 11,
-   "mfrSha": "81c4f009eb80cd4b",
+   "mfrSha": "a47be117c3139382",
    "pidSha": "74df414b6b5ef7ae"
   },
   "power_meter": {

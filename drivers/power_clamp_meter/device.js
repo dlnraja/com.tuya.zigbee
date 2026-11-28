@@ -208,6 +208,43 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     return '3phase';
   }
 
+  _p3426IsMgw1203Mfr() {
+    const mfr = String(this._cachedMfr || this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '').toLowerCase();
+    return ['_tze204_cjbofhxw', '_tze284_cjbofhxw', '_tze28c1000000_cjbofhxw'].includes(mfr);
+  }
+
+  _p3426MgwActive(n) {
+    if (n === 18 || n === 19 || n === 20) {
+      if (!this._p3426Mgw) { this._p3426Mgw = true; this.setStoreValue('p3426_mgw1203', true).catch(() => {}); }
+      return true;
+    }
+    if (this._p3426Mgw || this.getStoreValue('p3426_mgw1203')) { this._p3426Mgw = true; return true; }
+    return false;
+  }
+
+  _p3426Set(cap, v) {
+    if (Number.isFinite(v) && this.hasCapability(cap)) { this.safeSetCapabilityValue(cap, v).catch(() => {}); }
+  }
+
+  _p3426AddEnergy(num) {
+    if (!Number.isFinite(num) || num < 0) {return;}
+    const prev = Number(this.getStoreValue('p3426_energy_kwh')) || Number(this.getCapabilityValue('meter_power')) || 0;
+    const total = Math.round((prev + (num / 1000)) * 1000) / 1000;
+    this.setStoreValue('p3426_energy_kwh', total).catch(() => {});
+    this._p3426Set('meter_power', total);
+  }
+
+  _p3426HandleMgw1203(dp, value) {
+    const n = Number(dp);
+    if (!this._p3426IsMgw1203Mfr() || !this._p3426MgwActive(n)) {return false;}
+    const num = Number(value);
+    if (n === 18) { this._p3426Set('measure_current', num / 1000); return true; }
+    if (n === 19) { this._p3426Set('measure_power', num / 10); return true; }
+    if (n === 20) { this._p3426Set('measure_voltage', num / 10); return true; }
+    if (n === 101) { this._p3426AddEnergy(num); return true; }
+    return false;
+  }
+
   _learnProfileFromDp(dp) {
     if (this._learnedProfile) { return; }
     const mfr = this._cachedMfr ||
@@ -286,6 +323,11 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     this._learnProfileFromDp(dp);
     const profile = this.meterProfile;
     this._p3298Log(dp, `[DP${dp}] = ${value} (profile: ${profile})`);
+
+    // P3426: PJ-MGW1203 / PJ-1203-W clamp (_TZE204/_TZE284/_TZE28C1000000_cjbofhxw, Z2M tuya.ts @ed29f80):
+    // DP18 current A/1000, DP19 power W/10, DP20 voltage V/10, DP101 = energy of the last interval (Wh/1000 kWh),
+    // added to a running total. Parallel RX: the legacy PJ-1203A decode stays until the device sends DP18/19/20.
+    if (this._p3426HandleMgw1203(dp, value)) {return;}
 
     // 
     // v5.7.5: PJ-1203A 2-CHANNEL BIDIRECTIONAL (FIXED per Z2M #18419)
