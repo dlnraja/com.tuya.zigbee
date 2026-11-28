@@ -1,5 +1,6 @@
 'use strict';
 // P3255d (t824u): bot [skip ci] data commits go to bot/data; one daily fold into master, human edits kept.
+const { describe, it } = require('../_support/dual-runner'); // P3020: node --test and mocha
 const assert = require('assert');
 const fs = require('fs');
 const os = require('os');
@@ -23,7 +24,8 @@ function repo() {
 }
 const env = { GITHUB_ACTIONS: 'true', BOT_BATCH_TEST: '1' };
 
-describe('P3255d bot data batching', () => {
+describe('P3255d bot data batching', function () {
+  this.timeout(30000);
   it('eligibility: only [skip ci] commits touching only defer paths', () => {
     const P = B.loadCfg(ROOT).deferPaths;
     assert.ok(B.eligible([{ msg: 'x [skip ci]', files: ['data/leads/a.json'] }], P));

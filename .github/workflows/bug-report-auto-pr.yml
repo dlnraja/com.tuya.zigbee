@@ -113,7 +113,7 @@ jobs:
           git diff --cached --quiet && echo "No changes" && exit 0
           [ -f scripts/ci/bot-commit-guard.sh ] && { bash scripts/ci/bot-commit-guard.sh || exit 1; }  # P3093
           git commit -m "fix: auto-fix for #${ISSUE} — ${{ steps.bug.outputs.summary }} [skip ci]"
-          git push origin "$BRANCH"
+          bash .github/scripts/git-push-retry.sh --branch "$BRANCH"
           gh pr create -R dlnraja/com.tuya.zigbee \
             --title "fix: #${ISSUE} — ${{ steps.bug.outputs.summary }}" \
             --body "Auto-generated fix for #${ISSUE}\n\n${{ steps.bug.outputs.details }}\n\nCloses #${ISSUE}" \

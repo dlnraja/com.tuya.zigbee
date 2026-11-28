@@ -3,18 +3,6 @@
   "findings": [
     {
       "rule": "raw-push",
-      "file": ".github/workflows/auto-fix-and-publish.yml",
-      "key": "count",
-      "count": 1
-    },
-    {
-      "rule": "raw-push",
-      "file": ".github/workflows/bug-report-auto-pr.yml",
-      "key": "count",
-      "count": 1
-    },
-    {
-      "rule": "raw-push",
       "file": ".github/workflows/homey-knowledge-refresh.yml",
       "key": "count",
       "count": 1

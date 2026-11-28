@@ -391,46 +391,18 @@ jobs:
                 exit 0
               fi
             fi
-            git fetch origin "$BRANCH"
-            if ! git merge-base --is-ancestor "origin/$BRANCH" HEAD; then
-              # Rebase conflicts (typically app.json version bumps raced with a
-              # concurrent push) used to fail the whole run. Auto-fix commits
-              # are idempotent and regenerated next run, so on conflict we
-              # abort and resync to origin instead of failing.
-              if ! git rebase -X ours "origin/$BRANCH"; then
-                echo "::warning::Rebase conflict on origin/$BRANCH; dropping auto-fix commit and resyncing (fixes are regenerated on the next run)"
-                git rebase --abort || true
-                git reset --hard "origin/$BRANCH"
-              fi
-            else
-              echo "origin/$BRANCH is already an ancestor of HEAD; skipping rebase"
-            fi
-            # P198: retry push on concurrent ref lock / non-fast-forward races
-            pushed=0
-            for attempt in 1 2 3 4; do
-              if git push origin HEAD:"refs/heads/$BRANCH"; then
-                pushed=1
-                break
-              fi
-              echo "::warning::Auto-fix push attempt ${attempt} failed; fetch+rebase and retry"
-              git fetch origin "$BRANCH"
-              if ! git rebase -X ours "origin/$BRANCH"; then
-                git rebase --abort || true
-                git reset --hard "origin/$BRANCH"
-                echo "::warning::Giving up auto-fix push after rebase conflict (regenerated next run)"
-                exit 0
-              fi
-              sleep $((attempt * 3))
-            done
-            if [ "$pushed" != "1" ]; then
-              echo "::warning::Auto-fix push exhausted retries; skipping (regenerated next run)"
+            # P198/P3025: race-safe push via shared helper (fetch + rebase -X ours + exponential backoff + jitter)
+            rc=0
+            bash .github/scripts/git-push-retry.sh --branch "$BRANCH" --prefer-remote --attempts 4 || rc=$?
+            if [ "$rc" -eq 3 ] || [ "$rc" -eq 4 ]; then
+              echo "::warning::Auto-fix push exited ${rc} (conflict/race); resyncing to origin/$BRANCH (regenerated next run)"
+              git fetch origin "$BRANCH" || true
+              git reset --hard "origin/$BRANCH" || true
               exit 0
+            elif [ "$rc" -ne 0 ]; then
+              echo "::error::Auto-fix push blocked with exit ${rc}"
+              exit "$rc"
             fi
-            git fetch origin "$BRANCH"
-            git merge-base --is-ancestor HEAD "origin/$BRANCH" || {
-              echo "::warning::Auto-fix commit HEAD not reachable from origin/$BRANCH after push (race); OK next run"
-              exit 0
-            }
           else
             echo "No auto-fix changes to commit"
           fi

@@ -8,7 +8,8 @@ const os = require('os');
 const path = require('path');
 const { execFileSync, spawn } = require('child_process');
 
-const HELPER = path.resolve(__dirname, '../../.github/scripts/git-push-retry.sh');
+const BASH = process.platform === 'win32' && fs.existsSync('C:\\Program Files\\Git\\bin\\bash.exe') ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash';
+const HELPER = path.resolve(__dirname, '../../.github/scripts/git-push-retry.sh').replace(/\\/g, '/');
 const ENV = { ...process.env, PUSH_RETRY_BASE_S: '0', PUSH_RETRY_JITTER_S: '1', PUSH_RETRY_ATTEMPTS: '6', GIT_TERMINAL_PROMPT: '0', PUSH_RETRY_MIN_GAP_MIN: '0' }; // P3197: no 15-min master gap (P3196) in tests
 const git = (cwd, ...a) => execFileSync('git', a, { cwd, encoding: 'utf8' }).trim();
 function clone(dir, origin, name) {
@@ -19,7 +20,7 @@ function clone(dir, origin, name) {
 }
 function run(cwd, args = []) {
   return new Promise((resolve) => {
-    const p = spawn('bash', [HELPER, '--branch', 'master', ...args], { cwd, env: ENV });
+    const p = spawn(BASH, [HELPER, '--branch', 'master', ...args], { cwd, env: ENV });
     let out = ''; p.stdout.on('data', (d) => { out += d; }); p.stderr.on('data', (d) => { out += d; });
     // P3075: a stuck helper is killed before the mocha timeout so the failure shows its log.
     const guard = setTimeout(() => { out += '\n[P3075] helper killed after 100 s'; p.kill('SIGKILL'); }, 100000);

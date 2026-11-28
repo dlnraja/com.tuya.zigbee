@@ -7,10 +7,12 @@ const os = require('os');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
+const BASH = process.platform === 'win32' && fs.existsSync('C:\\Program Files\\Git\\bin\\bash.exe') ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash';
 const LIB = path.resolve(__dirname, '../../.githooks/lib-deps-check.sh');
 const HOOKS = path.resolve(__dirname, '../../.githooks');
 
 describe('P3025 hook deps check', function () {
+  this.timeout(30000);
   let dir;
   before(() => {
     dir = fs.mkdtempSync(path.join(os.tmpdir(), 'p3025d-'));
@@ -18,8 +20,8 @@ describe('P3025 hook deps check', function () {
     fs.mkdirSync(path.join(dir, '.githooks'));
     fs.copyFileSync(LIB, path.join(dir, '.githooks/lib-deps-check.sh'));
   });
-  after(() => { fs.rmSync(dir, { recursive: true, force: true }); });
-  const run = () => spawnSync('bash', ['-c', '. .githooks/lib-deps-check.sh && echo "SOURCED_OK $NODE_BIN"'],
+  after(() => { try { fs.rmSync(dir, { recursive: true, force: true, maxRetries: 3 }); } catch (_) { /* ignore */ } });
+  const run = () => spawnSync(BASH, ['-c', '. .githooks/lib-deps-check.sh && echo "SOURCED_OK $NODE_BIN"'],
     { cwd: dir, encoding: 'utf8', env: { ...process.env, HOOKS_AUTO_NPM_CI: '0' } });
 
   it('blocks with an actionable message when node_modules is missing', () => {
@@ -39,7 +41,7 @@ describe('P3025 hook deps check', function () {
   });
 
   it('pre-commit and pre-push both source the deps check; pre-push runs the CI rules-gates core profile', () => {
-    for (const h of ['pre-commit', 'pre-push']) assert.match(fs.readFileSync(path.join(HOOKS, h), 'utf8'), /lib-deps-check\.sh/);
+    for (const h of ['pre-commit', 'pre-push']) { assert.match(fs.readFileSync(path.join(HOOKS, h), 'utf8'), /lib-deps-check\.sh/); }
     assert.match(fs.readFileSync(path.join(HOOKS, 'pre-push'), 'utf8'), /rules-gates\.js --profile=core/);
   });
 });
