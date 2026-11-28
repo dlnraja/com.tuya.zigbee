@@ -8,7 +8,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const Homey = require('homey');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const { debug, CLUSTER } = require('zigbee-clusters');
+const { CLUSTER, ZCLDataTypes } = require('zigbee-clusters');
 
 class wall_switch_2_gang extends UnifiedSwitchBase {
 
@@ -27,13 +27,13 @@ class wall_switch_2_gang extends UnifiedSwitchBase {
             const indicatorMode = await this.zclNode.endpoints[1].clusters.onOff.readAttributes(['indicatorMode']);     
             this.log("Indicator Mode supported by device");
             await this.setSettings({
-              indicator_mode: ZCLDataTypes.enum8IndicatorMode.args[0][indicatorMode.indicatorMode].toString()
+              indicator_mode: String(ZCLDataTypes?.enum8IndicatorMode?.args?.[0]?.[indicatorMode?.indicatorMode] ?? indicatorMode?.indicatorMode ?? '')
             });
         } catch (error) {
         this.log("This device does not support Indicator Mode", error);
         }
 
-        if (!this.isSubDevice()) {
+        if (!this.isSubDevice() && zclNode?.endpoints?.[1]?.clusters?.basic) {
             await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus'])
             .catch(err => {
                 this.error('Error when reading device attributes ', err);
