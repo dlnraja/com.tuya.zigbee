@@ -95,5 +95,8 @@
   "images": {
     "small": "/drivers/dimmable_recessed_led/assets/images/small.png",
     "large": "/drivers/dimmable_recessed_led/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

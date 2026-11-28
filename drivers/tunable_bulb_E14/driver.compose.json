@@ -121,5 +121,8 @@
   "images": {
     "small": "/drivers/tunable_bulb_E14/assets/images/small.png",
     "large": "/drivers/tunable_bulb_E14/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

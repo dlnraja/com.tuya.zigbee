@@ -84,5 +84,8 @@
   "images": {
     "small": "/drivers/rgb_spot_GU10/assets/images/small.png",
     "large": "/drivers/rgb_spot_GU10/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

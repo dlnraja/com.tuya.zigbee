@@ -82,5 +82,8 @@
   "images": {
     "small": "/drivers/rgb_led_light_bar/assets/images/small.png",
     "large": "/drivers/rgb_led_light_bar/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

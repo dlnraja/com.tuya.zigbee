@@ -80,5 +80,8 @@
   "images": {
     "small": "/drivers/tunable_bulb_E27/assets/images/small.png",
     "large": "/drivers/tunable_bulb_E27/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

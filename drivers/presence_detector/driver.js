@@ -44,7 +44,7 @@ class PresenceDetectorDriver extends Driver {
             id: `presence_virtual_${Date.now()}`,
           },
           settings: {
-            monitored_devices: [],
+            monitored_devices: '',
             presence_threshold: 40,
             absence_threshold: 10,
             timeout_minutes: 10,
@@ -97,44 +97,57 @@ class PresenceDetectorDriver extends Driver {
    * @private
    */
   _registerFlowCards() {
+    const safeAction = (id, fn) => {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        if (card) {card.registerRunListener(fn);}
+      } catch (err) {
+        this.log(`[PRESENCE_DRIVER] Action card ${id} skipped: ${err.message}`);
+      }
+    };
+    const safeCondition = (id, fn) => {
+      try {
+        const card = this.homey.flow.getConditionCard(id);
+        if (card) {card.registerRunListener(fn);}
+      } catch (err) {
+        this.log(`[PRESENCE_DRIVER] Condition card ${id} skipped: ${err.message}`);
+      }
+    };
+
     // Action: Force presence in room
-    this.homey.flow.getActionCard('virtual_presence_force_present')
-      .registerRunListener(async (args) => {
-        if (args.device && typeof args.device.forcePresent === 'function') {
-          await args.device.forcePresent();
-          return true;
-        }
-        return false;
-      });
+    safeAction('virtual_presence_force_present', async (args) => {
+      if (args.device && typeof args.device.forcePresent === 'function') {
+        await args.device.forcePresent();
+        return true;
+      }
+      return false;
+    });
 
     // Action: Force clear in room
-    this.homey.flow.getActionCard('virtual_presence_force_clear')
-      .registerRunListener(async (args) => {
-        if (args.device && typeof args.device.forceClear === 'function') {
-          await args.device.forceClear();
-          return true;
-        }
-        return false;
-      });
+    safeAction('virtual_presence_force_clear', async (args) => {
+      if (args.device && typeof args.device.forceClear === 'function') {
+        await args.device.forceClear();
+        return true;
+      }
+      return false;
+    });
 
     // Condition: Room is occupied
-    this.homey.flow.getConditionCard('virtual_presence_is_occupied')
-      .registerRunListener(async (args) => {
-        if (args.device && typeof args.device.isPresent === 'function') {
-          return args.device.isPresent();
-        }
-        return false;
-      });
+    safeCondition('virtual_presence_is_occupied', async (args) => {
+      if (args.device && typeof args.device.isPresent === 'function') {
+        return args.device.isPresent();
+      }
+      return false;
+    });
 
     // Condition: Confidence above threshold
-    this.homey.flow.getConditionCard('virtual_presence_confidence_above')
-      .registerRunListener(async (args) => {
-        if (args.device && typeof args.device.getConfidence === 'function') {
-          const threshold = args.threshold || 50;
-          return args.device.getConfidence() >= threshold;
-        }
-        return false;
-      });
+    safeCondition('virtual_presence_confidence_above', async (args) => {
+      if (args.device && typeof args.device.getConfidence === 'function') {
+        const threshold = args.threshold || 50;
+        return args.device.getConfidence() >= threshold;
+      }
+      return false;
+    });
   }
 }
 

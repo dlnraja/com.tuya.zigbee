@@ -81,5 +81,8 @@
   "images": {
     "small": "/drivers/rgb_bulb_E14/assets/images/small.png",
     "large": "/drivers/rgb_bulb_E14/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

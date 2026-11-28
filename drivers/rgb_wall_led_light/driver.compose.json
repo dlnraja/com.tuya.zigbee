@@ -89,5 +89,8 @@
   "images": {
     "small": "/drivers/rgb_wall_led_light/assets/images/small.png",
     "large": "/drivers/rgb_wall_led_light/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }

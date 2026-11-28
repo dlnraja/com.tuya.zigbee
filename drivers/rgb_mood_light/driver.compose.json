@@ -91,5 +91,8 @@
   "images": {
     "small": "/drivers/rgb_mood_light/assets/images/small.png",
     "large": "/drivers/rgb_mood_light/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ]
 }
