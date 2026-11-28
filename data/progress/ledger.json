@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T19:45:00.000Z",
+ "updated": "2026-11-28T17:21:17.683Z",
  "checkpoints": {
   "journal": "docs/progress/JOURNAL.md",
   "p3092-autofix-bastien-changelog-dup": {
@@ -39,6 +39,12 @@
    "status": "done",
    "date": "2026-10-25",
    "note": "autofix attempt 1/3, signature node22-tests|Full suite on Node 22|p2830f+p3020+case-variants+gledopto-spi; additive: P3042b test port, dual-runner binds, 87 lowercase/canonical forms of P3038c couples, SPI test keeps R16 long form apart",
+   "by": "homey-ci-prs"
+  },
+  "ciprs-20261128-bastien-autofix": {
+   "status": "done",
+   "date": "2026-11-28",
+   "note": "autofix attempt 1/3, signatures: ci-self-check|Report ratchet|ci-self-check.yml about header stale (cp1252 mojibake 776c238a45); node22-tests+autonomous-review|node:test strict/critical|NEW COLLISION _tz3290_8xzb2ghn TS0002/TS0601 + P2803 climate_sensor stale map + P3320 U+2014 FeatureFlowCards + P3387 TSN window 10s + P3079 key order + spec010 golden climate_sensor (PR #634 move). runs 46165319344/46165319339/46165319402",
    "by": "homey-ci-prs"
   }
  }

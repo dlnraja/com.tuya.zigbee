@@ -14,7 +14,7 @@ const testApi = global.describe && global.it ? global : require('node:test');
 const { describe, it } = testApi;
 
 const { planSnappyCards } = require('../lib/buttons/SnappyCardPlan');
-const { isDuplicate, installZclTsnGate, tsnOf } = require('../lib/buttons/ZclTsnGate');
+const { isDuplicate, installZclTsnGate, tsnOf, WINDOW_MS } = require('../lib/buttons/ZclTsnGate');
 
 const TRIGGERS = require('../drivers/button_wireless_3/driver.flow.compose.json').triggers.map((t) => t.id);
 
@@ -109,8 +109,16 @@ describe('P3387 ZCL TSN gate (Z2M hasAlreadyProcessedMessage idea)', () => {
     assert.strictEqual(isDuplicate(st, 1, 6, fdSingle(8), { now: 2000 }).drop, false);
     // Same TSN on another endpoint is another button.
     assert.strictEqual(isDuplicate(st, 2, 6, fdSingle(7), { now: 2000 }).drop, false);
-    // After the window the same bytes are accepted again.
-    assert.strictEqual(isDuplicate(st, 1, 6, fdSingle(7), { now: 1000 + 6000 }).drop, false);
+    // After the window the same bytes are accepted again. The window is read from the module
+    // (6 s at P3387, 10 s since the Z2M alignment) so a tuned window never desyncs this test.
+    assert.strictEqual(isDuplicate(st, 1, 6, fdSingle(7), { now: 2000 + WINDOW_MS + 1 }).drop, false);
+  });
+
+  it('keeps the TSN window aligned with Z2M (10 s) and still drops a retransmit at 6 s', () => {
+    assert.strictEqual(WINDOW_MS, 10000);
+    const st = {};
+    assert.strictEqual(isDuplicate(st, 1, 6, fdSingle(7), { now: 0 }).drop, false);
+    assert.strictEqual(isDuplicate(st, 1, 6, fdSingle(7), { now: 6000 }).drop, true);
   });
 
   it('never drops a typed double report that follows a single', () => {

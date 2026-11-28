@@ -1,4 +1,4 @@
-# >>> about (P3069) â€” generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
+# >>> about (P3069) — generated from .github/workflow-about.json, edit there then run scripts/ci/workflow-about.js --write
 # What it does: Checks the CI files themselves: actionlint, YAML, hygiene, report shape and lint ratchets;
 #   fails only on new debt.
 # Ideas from (thank you): GitHub Actions docs; rhysd (actionlint); the Athom homey CLI docs for the validate
@@ -100,7 +100,7 @@ jobs:
           echo "${ACTIONLINT_SHA256}  /tmp/al.tgz" | sha256sum -c -
           tar -xzf /tmp/al.tgz -C /tmp actionlint
 
-      - name: actionlint (0 findings on master/stable/bastien at P3025 â€” any finding is a regression)
+      - name: actionlint (0 findings on master/stable/bastien at P3025 — any finding is a regression)
         run: /tmp/actionlint -color -shellcheck= -pyflakes=
 
       - name: YAML parse (every workflow/action file)
@@ -117,31 +117,31 @@ jobs:
       - name: Hygiene ratchet (pins, Node 20 actions, node-version, timeouts, raw pushes)
         run: node scripts/ci/workflow-hygiene-gate.js
 
-      - name: Stray file guard (no #-named files, no .txt under drivers/ â€” pasted pages, P3081)
+      - name: Stray file guard (no #-named files, no .txt under drivers/ — pasted pages, P3081)
         run: node scripts/ci/stray-file-gate.cjs
 
-      - name: Report ratchet (about headers, no pasted third-party text, report shape â€” may only shrink)
+      - name: Report ratchet (about headers, no pasted third-party text, report shape — may only shrink)
         id: report_ratchet
         run: |
           if [ -f scripts/ci/workflow-about.js ]; then node scripts/ci/workflow-about.js --check; fi
           if [ -f scripts/ci/report-structure-ratchet.js ]; then node scripts/ci/report-structure-ratchet.js
-          else echo "report ratchet absent on this branch â€” skipped"; fi
+          else echo "report ratchet absent on this branch — skipped"; fi
 
-      - name: app.json â†” compose drift (fingerprints + flow titleFormatted, lossless)
+      - name: app.json ↔ compose drift (fingerprints + flow titleFormatted, lossless)
         run: node scripts/ci/appjson-compose-drift-gate.js
 
       # P3243 (02/11/2026 Paris): lessons of 02/11 wired into CI on every branch.
-      - name: Driver signature duplicate gate (P3238 â€” new driver identical to an existing one is refused)
+      - name: Driver signature duplicate gate (P3238 — new driver identical to an existing one is refused)
         run: |
           if [ -f scripts/ci/driver-signature-dup-gate.js ]; then node scripts/ci/driver-signature-dup-gate.js
-          else echo "driver-signature-dup-gate absent on this branch â€” skipped"; fi
+          else echo "driver-signature-dup-gate absent on this branch — skipped"; fi
 
       - name: Continuation chain rules (rootOf aliasing; continuation only when root is full, P3206)
         run: |
           if [ -f scripts/ci/driver-continuations-check.js ]; then node scripts/ci/driver-continuations-check.js
-          else echo "driver-continuations-check absent on this branch â€” skipped"; fi
+          else echo "driver-continuations-check absent on this branch — skipped"; fi
 
-      - name: Manifest budget + parasite combos (P3243 â€” Athom refuses any never-published driver, likely a size limit)
+      - name: Manifest budget + parasite combos (P3243 — Athom refuses any never-published driver, likely a size limit)
         run: |
           node scripts/ci/manifest-budget.js --gate --json="$RUNNER_TEMP/manifest-budget.json"
           if [ -f scripts/perf/zero-parasite-plan.js ]; then node scripts/perf/zero-parasite-plan.js --strong | head -20; fi
@@ -149,7 +149,7 @@ jobs:
       - name: DP shards fresh (stale shards = silent fallback to the full catalogue)
         run: |
           if [ -f scripts/data/build-dp-shards.js ]; then node scripts/data/build-dp-shards.js --check
-          else echo "scripts/data/build-dp-shards.js absent on this branch â€” skipped"; fi
+          else echo "scripts/data/build-dp-shards.js absent on this branch — skipped"; fi
 
       - name: Install deps for lint ratchet (npm ci, retried; failover npm install)
         run: |
@@ -159,7 +159,7 @@ jobs:
       - name: Compose parity (rebuild from compose == committed app.json, P3079)
         run: node scripts/ci/compose-parity-gate.cjs
 
-      - name: Lint ratchet (lib/ drivers/ â€” total may only go down, no file may get worse)
+      - name: Lint ratchet (lib/ drivers/ — total may only go down, no file may get worse)
         run: node scripts/ci/lint-ratchet.js
 
       - name: Push helper + hygiene + data gate tests
