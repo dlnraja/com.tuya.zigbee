@@ -140,6 +140,114 @@
       }
     },
     {
+      "couple": "_TZE200_iwn0gpzz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3190",
+      "verdict": "wrong driver: Tuya SPM01V2.5 1P+N energy meter (Z2M/ZHC SPM01V2.5, deCONZ SPM01, tuya-local zemismart spm); bulk-added by P44; moved to power_meter",
+      "sources": {
+        "z2m": "z2m:SPM01V2.5; zhc:SPM01V2.5",
+        "zha": "not listed for TS0601",
+        "deconz": "deconz:1 Phase Energy meter SPM01",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "kkossev Tuya Zigbee Metering Plug CHANGELOG mentions iwn0gpzz (checked by hand)",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE200_iwn0gpzz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE204_iwn0gpzz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3190",
+      "verdict": "wrong driver: Tuya SPM01V2.5 1P+N energy meter (Z2M/ZHC SPM01V2.5, deCONZ SPM01, tuya-local zemismart spm); bulk-added by P44; moved to power_meter",
+      "sources": {
+        "z2m": "z2m:SPM01V2.5; zhc:SPM01V2.5",
+        "zha": "not listed for TS0601",
+        "deconz": "deconz:1 Phase Energy meter SPM01",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "kkossev Tuya Zigbee Metering Plug CHANGELOG mentions iwn0gpzz (checked by hand)",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE204_iwn0gpzz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_iwn0gpzz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3190",
+      "verdict": "wrong driver: Tuya SPM01V2.5 1P+N energy meter (Z2M/ZHC SPM01V2.5, deCONZ SPM01, tuya-local zemismart spm); bulk-added by P44; moved to power_meter",
+      "sources": {
+        "z2m": "z2m:SPM01V2.5; zhc:SPM01V2.5",
+        "zha": "not listed for TS0601",
+        "deconz": "deconz:1 Phase Energy meter SPM01",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "kkossev Tuya Zigbee Metering Plug CHANGELOG mentions iwn0gpzz (checked by hand)",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_iwn0gpzz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_wbhaespm|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3191",
+      "verdict": "wrong driver: SUTON STB3L-125-ZJ DIN RCBO energy meter (Z2M/ZHC STB3L-125-ZJ, zigpy/zha test tze204-wbhaespm, zha-device-handlers ts0601_power.py); bulk-added by P44; moved to smart_breaker",
+      "sources": {
+        "z2m": "z2m:STB3L-125-ZJ; zhc:STB3L-125-ZJ",
+        "zha": "zigpy/zha tests/data/devices/tze204-wbhaespm-ts0601; zhaquirks/tuya/ts0601_power.py (checked by hand 2026-11-01)",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE200_wbhaespm|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE204_wbhaespm|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3191",
+      "verdict": "wrong driver: SUTON STB3L-125-ZJ DIN RCBO energy meter (Z2M/ZHC STB3L-125-ZJ, zigpy/zha test tze204-wbhaespm, zha-device-handlers ts0601_power.py); bulk-added by P44; moved to smart_breaker",
+      "sources": {
+        "z2m": "z2m:STB3L-125-ZJ; z2m:ZXB3-125; zhc:STB3L-125-ZJ; zhc:ZXB3-125",
+        "zha": "zigpy/zha tests/data/devices/tze204-wbhaespm-ts0601; zhaquirks/tuya/ts0601_power.py (checked by hand 2026-11-01)",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE204_wbhaespm|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_wbhaespm|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3191",
+      "verdict": "wrong driver: SUTON STB3L-125-ZJ DIN RCBO energy meter (Z2M/ZHC STB3L-125-ZJ, zigpy/zha test tze204-wbhaespm, zha-device-handlers ts0601_power.py); bulk-added by P44; moved to smart_breaker",
+      "sources": {
+        "z2m": "z2m:STB3L-125-ZJ; zhc:STB3L-125-ZJ",
+        "zha": "zigpy/zha tests/data/devices/tze204-wbhaespm-ts0601; zhaquirks/tuya/ts0601_power.py (checked by hand 2026-11-01)",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_wbhaespm|TS0601"
+      }
+    },
+    {
       "couple": "_TZE284_9ern5sfh|TS0601",
       "driver": "lcdtemphumidsensor",
       "pr": "P3204",
@@ -302,30 +410,120 @@
       }
     },
     {
-      "couple": "_TZE200_zl1kmjqx|TS0601",
-      "driver": "button_wireless_2",
-      "pr": "P3321",
-      "verdict": "moved to lcdtemphumidsensor_3: real hardware is a TS0601 LCD temp/humidity sensor per Zigbee2MQTT TS0601_temperature_humidity_sensor_1, ZHA tuya_sensor.py and deCONZ; not a 2-button remote",
+      "couple": "_TZE200_stvgmdjz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3218",
+      "verdict": "moved to switch_1gang (DP1 onoff); SFL02 switch is not a climate sensor",
       "sources": {
-        "z2m": "z2m:TS0601_temperature_humidity_sensor_1; zhc:TS0601_temperature_humidity_sensor_1",
-        "zha": "zha:zhaquirks/tuya/tuya_sensor.py",
-        "deconz": "deconz:Tuya multi sensor (TS0601)",
-        "blakadder": "not in scripts/sync/data/blakadder.json",
-        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
-        "johan": "johan:lcdtemphumidsensor_3",
-        "forum": "no forum lead",
-        "diags": "no diag report",
-        "git_history": "ff0d4b9217 fix(P3321): recommend lcdtemphumidsensor_3 for _TZE200_zl1kmjqx / TS0601 | 383290373b test(ci): P3199 no third-party email in fixture",
-        "sibling_pids": "_TZE200_zl1kmjqx|TS0601"
+        "z2m": "z2m:SFL02 moes.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_stvgmdjz|TS0601"
       }
     },
     {
-      "couple": "_tze200_zl1kmjqx|TS0601",
-      "driver": "button_wireless_2",
-      "pr": "P3321",
-      "verdict": "moved to lcdtemphumidsensor_3: real hardware is a TS0601 LCD temp/humidity sensor per Zigbee2MQTT TS0601_temperature_humidity_sensor_1, ZHA tuya_sensor.py and deCONZ; not a 2-button remote",
+      "couple": "_TZE284_stvgmdjz|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3218",
+      "verdict": "moved to switch_1gang (DP1 onoff); SFL02 switch is not a climate sensor",
       "sources": {
-        "z2m": "not listed for TS0601",
+        "z2m": "z2m:SFL02 moes.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE284_stvgmdjz|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_ydkqbmpt|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3218",
+      "verdict": "moved to switch_1gang (DP1 onoff); SFL02 switch is not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SFL02 moes.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_ydkqbmpt|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_z3u99qxt|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3218",
+      "verdict": "moved to switch_1gang (DP1 onoff); SFL02 switch is not a climate sensor",
+      "sources": {
+        "z2m": "z2m:SFL02 moes.ts",
+        "zha": "not checked",
+        "deconz": "not checked",
+        "blakadder": "not checked",
+        "hubitat": "not checked",
+        "johan": "not checked",
+        "forum": "not checked",
+        "diags": "none",
+        "git_history": "climate_sensor bulk import",
+        "sibling_pids": "_TZE200_z3u99qxt|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_ojzhk75b|TS0601",
+      "driver": "water_tank_monitor",
+      "pr": "P3252",
+      "verdict": "wrong driver: Tuya TS0601_dimmer_1_gang_1 1-gang dimmer (Z2M/ZHC TS0601_dimmer_1_gang_1, Johan wall_dimmer_tuya); its Z2M siblings live in wall_dimmer_tuya; moved to wall_dimmer_tuya",
+      "sources": {
+        "z2m": "z2m:TS0601_dimmer_1_gang_1; zhc:TS0601_dimmer_1_gang_1",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "maker in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "johan:wall_dimmer_tuya",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE200_ojzhk75b|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE200_wzk0x7fq|TS0601",
+      "driver": "curtain_motor",
+      "pr": "P3252",
+      "verdict": "wrong driver: HOBEIAN ZG-102ZM vibration sensor (Z2M/ZHC ZG-102ZM; misattribution registry canonicalDriver vibration_sensor, siblings jfw0a4aa/yjryxpot there); moved to vibration_sensor",
+      "sources": {
+        "z2m": "z2m:ZG-102ZM; zhc:ZG-102ZM",
+        "zha": "zha:zhaquirks/tuya/tuya_contact.py",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE200_wzk0x7fq|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_qoi1aqxg|TS0601",
+      "driver": "button_wireless",
+      "pr": "P3252",
+      "verdict": "wrong driver: Moes FWJZCEH18A001 roller blind motor (Z2M/ZHC FWJZCEH18A001, sibling _TZE2841000000_u68q868h in curtain_motor); moved to curtain_motor",
+      "sources": {
+        "z2m": "z2m:FWJZCEH18A001; zhc:FWJZCEH18A001",
         "zha": "not listed for TS0601",
         "deconz": "not listed for TS0601",
         "blakadder": "not in scripts/sync/data/blakadder.json",
@@ -333,17 +531,17 @@
         "johan": "not listed for TS0601",
         "forum": "no forum lead",
         "diags": "no diag report",
-        "git_history": "ff0d4b9217 fix(P3321): recommend lcdtemphumidsensor_3 for _TZE200_zl1kmjqx / TS0601 | 383290373b test(ci): P3199 no third-party email in fixture",
-        "sibling_pids": "_TZE200_zl1kmjqx|TS0601"
+        "git_history": "4ec01c0fe7 feat(P92.62): couverture casse 4-combos pairing (3996 variantes) — tout firmware case-insensitive au pairing [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 4bca3ddfe8 fix(P92): publish compactor priority + forum bugs + WiFi local-first + security hardening",
+        "sibling_pids": "_TZE284_qoi1aqxg|TS0601"
       }
     },
     {
-      "couple": "_TZE200_ZL1KMJQX|TS0601",
-      "driver": "button_wireless_2",
-      "pr": "P3321",
-      "verdict": "moved to lcdtemphumidsensor_3: real hardware is a TS0601 LCD temp/humidity sensor per Zigbee2MQTT TS0601_temperature_humidity_sensor_1, ZHA tuya_sensor.py and deCONZ; not a 2-button remote",
+      "couple": "_TZE204_sdykkwsu|TS0601",
+      "driver": "energy_meter_3phase",
+      "pr": "P3253",
+      "verdict": "wrong driver: AVATTO ZDMS16-US-W2 2-channel dimmer (Z2M/ZHC avatto.ts, DP1/2/7/8 = dimmer_2_gang_tuya V1_MULTI_GANG_DIMMER layout); moved to dimmer_2_gang_tuya",
       "sources": {
-        "z2m": "not listed for TS0601",
+        "z2m": "z2m:ZDMS16-US-W2; zhc:ZDMS16-US-W2",
         "zha": "not listed for TS0601",
         "deconz": "not listed for TS0601",
         "blakadder": "not in scripts/sync/data/blakadder.json",
@@ -351,17 +549,17 @@
         "johan": "not listed for TS0601",
         "forum": "no forum lead",
         "diags": "no diag report",
-        "git_history": "ff0d4b9217 fix(P3321): recommend lcdtemphumidsensor_3 for _TZE200_zl1kmjqx / TS0601 | 383290373b test(ci): P3199 no third-party email in fixture",
-        "sibling_pids": "_TZE200_zl1kmjqx|TS0601"
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE204_sdykkwsu|TS0601"
       }
     },
     {
-      "couple": "_tze200_ZL1KMJQX|TS0601",
-      "driver": "button_wireless_2",
-      "pr": "P3321",
-      "verdict": "moved to lcdtemphumidsensor_3: real hardware is a TS0601 LCD temp/humidity sensor per Zigbee2MQTT TS0601_temperature_humidity_sensor_1, ZHA tuya_sensor.py and deCONZ; not a 2-button remote",
+      "couple": "_TZE204_zxkwaztm|TS0601",
+      "driver": "curtain_motor",
+      "pr": "P3253",
+      "verdict": "wrong driver: Moes ZHT-S03 wall thermostat (Z2M/ZHC moes.ts, DP1/16/24/40 = wall_thermostat BHT layout); moved to wall_thermostat",
       "sources": {
-        "z2m": "not listed for TS0601",
+        "z2m": "z2m:ZHT-S03; zhc:ZHT-S03",
         "zha": "not listed for TS0601",
         "deconz": "not listed for TS0601",
         "blakadder": "not in scripts/sync/data/blakadder.json",
@@ -369,8 +567,98 @@
         "johan": "not listed for TS0601",
         "forum": "no forum lead",
         "diags": "no diag report",
-        "git_history": "ff0d4b9217 fix(P3321): recommend lcdtemphumidsensor_3 for _TZE200_zl1kmjqx / TS0601 | 383290373b test(ci): P3199 no third-party email in fixture",
-        "sibling_pids": "_TZE200_zl1kmjqx|TS0601"
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE204_zxkwaztm|TS0601"
+      }
+    },
+    {
+      "couple": "_TZ3002_l8bfzlcd|TS0726",
+      "driver": "switch_4gang",
+      "pr": "P3345",
+      "verdict": "wrong driver: zhc tuya.ts TS0726_1_gang lists it with _TZ3000_ovbvmhiq and _TZ3002_wowrpxxu (1-gang switch with neutral), not a 4-gang; moved to switch_1gang",
+      "sources": {
+        "z2m": "z2m:TS0726_1_gang; zhc:TS0726_1_gang",
+        "zha": "not listed for TS0726",
+        "deconz": "not listed for TS0726",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0726",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
+        "sibling_pids": "_TZ3002_l8bfzlcd|TS0726"
+      }
+    },
+    {
+      "couple": "_TZE284_1di7ujzp|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3345",
+      "verdict": "wrong driver: zhc nous.ts Nous E13 water leak or shortage sensor (same definition as _TZE284_pfbtmgo1), not a climate sensor; moved to water_leak_sensor",
+      "sources": {
+        "z2m": "z2m:E13; zhc:E13",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
+        "sibling_pids": "_TZE284_1di7ujzp|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE204_lbhh5o6z|TS0601",
+      "driver": "curtain_motor",
+      "pr": "P3345",
+      "verdict": "wrong driver: zhc tuya.ts TS0601_switch_4_gang_1 (AVATTO ZWSMD-4 4-gang switch) and JohanBendz wall_switch_4_gang_tuya; not a cover; moved to wall_switch_4_gang_tuya",
+      "sources": {
+        "z2m": "z2m:TS0601_switch_4_gang_1; zhc:TS0601_switch_4_gang_1",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
+        "sibling_pids": "_TZE204_lbhh5o6z|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_lbhh5o6z|TS0601",
+      "driver": "curtain_motor",
+      "pr": "P3345",
+      "verdict": "wrong driver: zhc tuya.ts TS0601_switch_4_gang_1 (AVATTO ZWSMD-4 4-gang switch); not a cover; moved to wall_switch_4_gang_tuya",
+      "sources": {
+        "z2m": "z2m:TS0601_switch_4_gang_1; zhc:TS0601_switch_4_gang_1",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
+        "sibling_pids": "_TZE284_lbhh5o6z|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE204_iik0pquw|TS0601",
+      "driver": "curtain_motor",
+      "pr": "P3345",
+      "verdict": "wrong driver: zhc tuya.ts TS0601_switch_4_gang_1 (ZYXH TY-04Z 4-gang switch) and JohanBendz wall_switch_4_gang_tuya; not a cover; moved to wall_switch_4_gang_tuya",
+      "sources": {
+        "z2m": "z2m:TS0601_switch_4_gang_1; zhc:TS0601_switch_4_gang_1",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "johan:wall_switch_4_gang_tuya",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
+        "sibling_pids": "_TZE204_iik0pquw|TS0601"
       }
     },
     {
@@ -425,6 +713,294 @@
         "diags": "no diag report",
         "git_history": "b1eeea0715 fix(ci): satisfy case, lint, and syntax gates for TRV602Z | c2accabc81 fix(trv): pair TRV602Z _TZE204_ltwbm23f as a radiator valve | 3f3e746def chore(xr): cross-research diags [auto:xr-fetch-diags] [skip ci]",
         "sibling_pids": "_TZE284_ltwbm23f|TS0601"
+      }
+    },
+    {
+      "couple": "_TZ3290_8xzb2ghn|TS0002",
+      "driver": "button_wireless_2",
+      "pr": "P3422",
+      "verdict": "Tuya TS1201 IR blaster (Z2M ZS06), not a 2-button remote: added to button_wireless_2 only by the July 2026 bulk mfr sync (P44/P54 cross-product with the driver's 95 pids); no source (Z2M, ZHA, deCONZ, Blakadder, Johan, forum, diags) lists it with TS0002; the exact couple _TZ3290_8xzb2ghn|TS1201 moves to the exact-pair driver ir_blaster_zs06 (P3422, same runtime as ir_blaster). Removal clears 214 P3039d parasitic combos.",
+      "sources": {
+        "z2m": "not listed for TS0002",
+        "zha": "not listed for TS0002",
+        "deconz": "not listed for TS0002",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0002",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_8xzb2ghn|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_8xzb2ghn|TS0601",
+      "driver": "button_wireless_2",
+      "pr": "P3422",
+      "verdict": "Tuya TS1201 IR blaster (Z2M ZS06), not a 2-button remote: added to button_wireless_2 only by the July 2026 bulk mfr sync (P44/P54 cross-product with the driver's 95 pids); no source (Z2M, ZHA, deCONZ, Blakadder, Johan, forum, diags) lists it with TS0601; the exact couple _TZ3290_8xzb2ghn|TS1201 moves to the exact-pair driver ir_blaster_zs06 (P3422, same runtime as ir_blaster). Removal clears 214 P3039d parasitic combos.",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_8xzb2ghn|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_uc8lwbi2|TS0002",
+      "driver": "button_wireless_2",
+      "pr": "P3422",
+      "verdict": "Tuya TS1201 IR blaster (Z2M ZS06), not a 2-button remote: added to button_wireless_2 only by the July 2026 bulk mfr sync (P44/P54 cross-product with the driver's 95 pids); no source (Z2M, ZHA, deCONZ, Blakadder, Johan, forum, diags) lists it with TS0002; the exact couple _TZ3290_uc8lwbi2|TS1201 moves to the exact-pair driver ir_blaster_zs06 (P3422, same runtime as ir_blaster). Removal clears 214 P3039d parasitic combos.",
+      "sources": {
+        "z2m": "not listed for TS0002",
+        "zha": "not listed for TS0002",
+        "deconz": "not listed for TS0002",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0002",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_uc8lwbi2|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_uc8lwbi2|TS0601",
+      "driver": "button_wireless_2",
+      "pr": "P3422",
+      "verdict": "Tuya TS1201 IR blaster (Z2M ZS06), not a 2-button remote: added to button_wireless_2 only by the July 2026 bulk mfr sync (P44/P54 cross-product with the driver's 95 pids); no source (Z2M, ZHA, deCONZ, Blakadder, Johan, forum, diags) lists it with TS0601; the exact couple _TZ3290_uc8lwbi2|TS1201 moves to the exact-pair driver ir_blaster_zs06 (P3422, same runtime as ir_blaster). Removal clears 214 P3039d parasitic combos.",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_uc8lwbi2|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_uc8lwbi2|TS1201",
+      "driver": "ir_blaster",
+      "pr": "P3422",
+      "verdict": "Not dropped: moved. Z2M ZS06 (TS1201) IR blaster; the exact couple _TZ3290_uc8lwbi2|TS1201 moves from ir_blaster to the exact-pair driver ir_blaster_zs06 (same device.js/driver.js runtime, same capabilities). On ir_blaster it also crossed TS0601/TS0002/TS0601_repeater/ZG-IR01 (P3039d parasitic combos). Added to ir_blaster today by P3404/P3417, never in a master Athom package.",
+      "sources": {
+        "z2m": "z2m:KCTW1Z; zhc:KCTW1Z",
+        "zha": "not listed for TS1201",
+        "deconz": "not listed for TS1201",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS1201",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_uc8lwbi2|TS1201"
+      }
+    },
+    {
+      "couple": "_TZ3290_8xzb2ghn|TS1201",
+      "driver": "ir_blaster",
+      "pr": "P3422",
+      "verdict": "Not dropped: moved. Z2M ZS06 (TS1201) IR blaster; the exact couple _TZ3290_8xzb2ghn|TS1201 moves from ir_blaster to the exact-pair driver ir_blaster_zs06 (same device.js/driver.js runtime, same capabilities). On ir_blaster it also crossed TS0601/TS0002/TS0601_repeater/ZG-IR01 (P3039d parasitic combos). Added to ir_blaster today by P3404/P3417, never in a master Athom package.",
+      "sources": {
+        "z2m": "z2m:KCTW1Z; zhc:KCTW1Z",
+        "zha": "not listed for TS1201",
+        "deconz": "not listed for TS1201",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS1201",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "51a86ac373 v9.0.217: 431 drivers, 2737 FPs [skip ci] | a98486fc78 fix(P44): R9 — 5 typo fixes + 1450 mfrs + 17 pids to driver.compose.json | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZ3290_8xzb2ghn|TS1201"
+      }
+    },
+    {
+      "couple": "_TZE204_zajeikkt|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver led_controller_rgb (Z2M SP107E-Zigbee LED music controller, zhc tuya.ts @ed29f80 L32038); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "z2m:SP107E-Zigbee; zhc:SP107E-Zigbee",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE204_zajeikkt|TS0601"
+      }
+    },
+    {
+      "couple": "_tze204_zajeikkt|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver led_controller_rgb (Z2M SP107E-Zigbee LED music controller, zhc tuya.ts @ed29f80 L32038); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE204_zajeikkt|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE20C_ycab9txf|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver siren (Z2M Novato ZAS-01P smart siren, zhc tuya.ts @ed29f80 L31091); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "z2m:ZAS-01P; zhc:ZAS-01P",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE20C_ycab9txf|TS0601"
+      }
+    },
+    {
+      "couple": "_tze20c_ycab9txf|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver siren (Z2M Novato ZAS-01P smart siren, zhc tuya.ts @ed29f80 L31091); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE20C_ycab9txf|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_xr5yfele|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver wall_thermostat (Z2M Tervix 119710 room thermostat, zhc tuya.ts @ed29f80 L15540); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "z2m:119710; zhc:119710",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE284_xr5yfele|TS0601"
+      }
+    },
+    {
+      "couple": "_tze284_xr5yfele|TS0601",
+      "driver": "universal_zigbee",
+      "pr": "P3423",
+      "verdict": "issue #588 provisional promoted: moves to the exact driver wall_thermostat (Z2M Tervix 119710 room thermostat, zhc tuya.ts @ed29f80 L15540); same move as bastien-home P3038c",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
+        "sibling_pids": "_TZE284_xr5yfele|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_sonkaxrd|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3425",
+      "verdict": "Nous E12 carbon monoxide alarm (Z2M nous.ts E12, zhc @ed29f80), not a climate sensor: moves to co_sensor with its own DP map (DP1 enum 0 = CO alarm, DP2 ppm)",
+      "sources": {
+        "z2m": "z2m:E12; zhc:E12",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_sonkaxrd|TS0601"
+      }
+    },
+    {
+      "couple": "_tze284_sonkaxrd|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3425",
+      "verdict": "Nous E12 carbon monoxide alarm (Z2M nous.ts E12, zhc @ed29f80), not a climate sensor: moves to co_sensor with its own DP map (DP1 enum 0 = CO alarm, DP2 ppm)",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_sonkaxrd|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_SONKAXRD|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3425",
+      "verdict": "Nous E12 carbon monoxide alarm (Z2M nous.ts E12, zhc @ed29f80), not a climate sensor: moves to co_sensor with its own DP map (DP1 enum 0 = CO alarm, DP2 ppm)",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_sonkaxrd|TS0601"
+      }
+    },
+    {
+      "couple": "_tze284_SONKAXRD|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3425",
+      "verdict": "Nous E12 carbon monoxide alarm (Z2M nous.ts E12, zhc @ed29f80), not a climate sensor: moves to co_sensor with its own DP map (DP1 enum 0 = CO alarm, DP2 ppm)",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_sonkaxrd|TS0601"
       }
     }
   ]

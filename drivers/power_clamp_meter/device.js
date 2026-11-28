@@ -1,13 +1,12 @@
 'use strict';
 // P3389 lazy device class (P3389: body runs on first use; see lib/utils/LazyDeviceClass.js)
 require('../../lib/utils/LazyDeviceClass').lazyDeviceClass(module, () => {
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const { MeterWriteCoalescer, KeyedLogThrottle } = require('../../lib/utils/MeterWriteCoalescer'); // P3298
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
-'use strict';
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
-
+const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const { MeterWriteCoalescer, KeyedLogThrottle } = require('../../lib/utils/MeterWriteCoalescer'); // P3298
 
 /**
  * CT Clamp Power Meter Device
@@ -193,8 +192,8 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw',   // Matsee Plus variant (Z2M #15359)
       '_TZE28C1000000_81yrt3lo'                  // New variant (Issue #329, Z2M #26403)
     ];
-    // Compare the device manufacturer. The previous test compared the list to
-    // itself and always returned pj1203a, including for a real 3-phase meter.
+    // v5.7.10: FIX - actually compare the device mfr (previous code tested the
+    // list against itself and ALWAYS returned 'pj1203a', even for 3-phase meters)
     if (includesCI(pj1203aIds, mfr)) { return 'pj1203a'; }
     // Known 3-phase clamps (Z2M #15359 family). A later PJ-looking DP must not override this.
     const threePhaseIds = ['_TZE200_nslr42tt', '_TZE204_nslr42tt'];
@@ -207,6 +206,43 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       return this._learnedProfile;
     }
     return '3phase';
+  }
+
+  _p3426IsMgw1203Mfr() {
+    const mfr = String(this._cachedMfr || this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '').toLowerCase();
+    return ['_tze204_cjbofhxw', '_tze284_cjbofhxw', '_tze28c1000000_cjbofhxw'].includes(mfr);
+  }
+
+  _p3426MgwActive(n) {
+    if (n === 18 || n === 19 || n === 20) {
+      if (!this._p3426Mgw) { this._p3426Mgw = true; this.setStoreValue('p3426_mgw1203', true).catch(() => {}); }
+      return true;
+    }
+    if (this._p3426Mgw || this.getStoreValue('p3426_mgw1203')) { this._p3426Mgw = true; return true; }
+    return false;
+  }
+
+  _p3426Set(cap, v) {
+    if (Number.isFinite(v) && this.hasCapability(cap)) { this.safeSetCapabilityValue(cap, v).catch(() => {}); }
+  }
+
+  _p3426AddEnergy(num) {
+    if (!Number.isFinite(num) || num < 0) {return;}
+    const prev = Number(this.getStoreValue('p3426_energy_kwh')) || Number(this.getCapabilityValue('meter_power')) || 0;
+    const total = Math.round((prev + (num / 1000)) * 1000) / 1000;
+    this.setStoreValue('p3426_energy_kwh', total).catch(() => {});
+    this._p3426Set('meter_power', total);
+  }
+
+  _p3426HandleMgw1203(dp, value) {
+    const n = Number(dp);
+    if (!this._p3426IsMgw1203Mfr() || !this._p3426MgwActive(n)) {return false;}
+    const num = Number(value);
+    if (n === 18) { this._p3426Set('measure_current', num / 1000); return true; }
+    if (n === 19) { this._p3426Set('measure_power', num / 10); return true; }
+    if (n === 20) { this._p3426Set('measure_voltage', num / 10); return true; }
+    if (n === 101) { this._p3426AddEnergy(num); return true; }
+    return false;
   }
 
   _learnProfileFromDp(dp) {
@@ -223,6 +259,12 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     }
   }
 
+  /**
+   * These DP numbers are the bidirectional clamp map already used for PJ-1203A.
+   * A 3-phase classification still receives them when the manufacturer name is
+   * missing (logs b3f8c2c6 and b2e9ffe8). Owning them here stops the generic
+   * radar/climate fallback from claiming the same numbers.
+   */
   get dpMappings() {
     return {
       101: { capability: 'measure_power' },
@@ -281,6 +323,11 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     this._learnProfileFromDp(dp);
     const profile = this.meterProfile;
     this._p3298Log(dp, `[DP${dp}] = ${value} (profile: ${profile})`);
+
+    // P3426: PJ-MGW1203 / PJ-1203-W clamp (_TZE204/_TZE284/_TZE28C1000000_cjbofhxw, Z2M tuya.ts @ed29f80):
+    // DP18 current A/1000, DP19 power W/10, DP20 voltage V/10, DP101 = energy of the last interval (Wh/1000 kWh),
+    // added to a running total. Parallel RX: the legacy PJ-1203A decode stays until the device sends DP18/19/20.
+    if (this._p3426HandleMgw1203(dp, value)) {return;}
 
     // 
     // v5.7.5: PJ-1203A 2-CHANNEL BIDIRECTIONAL (FIXED per Z2M #18419)
@@ -477,32 +524,32 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
       this._p3298Log(dp, `[FALLBACK]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
       break;
 
-    case 105:
+    case 105: // Power B (W ÷ 10) - same scale as the bidirectional clamp
       this._setMeter('measure_power.phase2', safeDivide(value, 10));
       break;
 
-    case 110:
-    case 121:
+    case 110: // Power factor A (÷ 100)
+    case 121: // Power factor B (÷ 100)
       this._setMeter('measure_power_factor', safeDivide(value, 100));
       break;
 
-    case 111:
+    case 111: // AC frequency (Hz ÷ 100). 4908 -> 49.08 Hz in logs b3f8c2c6 / b2e9ffe8.
       this._setMeter('measure_frequency', safeDivide(value, 100));
       break;
 
-    case 112:
+    case 112: // Voltage (V ÷ 10). 2256 -> 225.6 V in the same logs.
       this._setMeter('measure_voltage', safeDivide(value, 10));
       break;
 
-    case 113:
+    case 113: // Current A (A ÷ 1000)
       this._setMeter('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio));
       break;
 
-    case 114:
+    case 114: // Current B (A ÷ 1000)
       this._setMeter('measure_current.phase2', safeMultiply(safeDivide(value, 1000), this._ctRatio));
       break;
 
-    case 115:
+    case 115: // Total power (W ÷ 10)
       this._setMeter('measure_power', safeDivide(value, 10));
       break;
 
@@ -532,6 +579,9 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
     this._p3298Log('total_energy', `[METER]  Total Energy: ${total} kWh (A:${energyA} + B:${energyB})`);
   }
 
+  // v5.7.10: Defensive guard against wrong-family energy divisors (forum ×660 bug).
+  // safeSetCapabilityValue is installed on ZigBeeDevice.prototype by app.js
+  // (lib/utils/SafeCapability mixin); fall back to raw set if mixin absent.
   // WHY(P3298, CPU-limit diags b3f8c2c6/b2e9ffe8): bursts of clamp frames wrote every meter capability and logged
   // every DP. Meter writes are now coalesced per capability (identical values skipped, bursts -> latest value
   // within 2 s) and DP log lines are throttled per DP (one per minute with a muted count). No value is dropped
@@ -567,6 +617,9 @@ class PowerClampMeterDevice extends TuyaZigbeeDevice {
   }
 
   async _p3298RawSet(capability, value) {
+    if (capability === 'meter_power' || capability === 'meter_power.exported') {
+      value = EnergyJumpGuard.check(this, value);
+    }
     if (typeof super.safeSetCapabilityValue === 'function') {
       return super.safeSetCapabilityValue(capability, value);
     }
