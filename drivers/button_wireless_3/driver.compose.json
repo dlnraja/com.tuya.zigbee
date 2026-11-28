@@ -428,7 +428,7 @@
         "en": "Enable Power Estimation",
         "fr": "Activer Estimation Puissance"
       },
-      "value": true,
+      "value": false,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
@@ -463,7 +463,7 @@
         "en": "Enable Time Sync",
         "fr": "Activer Synchro Heure"
       },
-      "value": true,
+      "value": false,
       "hint": {
         "en": "Sync device time with Homey",
         "fr": "Synchroniser l'heure du device avec Homey"
