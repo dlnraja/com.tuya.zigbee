@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28T19:36:43.499Z",
+ "generated": "2026-11-28T19:39:43.526Z",
  "drivers": 421,
  "snapshot": {
   "air_conditioner_aetz01": {
@@ -291,9 +291,9 @@
    "pidSha": "3427697d0c296c9d"
   },
   "climate_sensor": {
-   "mfr": 481,
+   "mfr": 480,
    "pid": 32,
-   "mfrSha": "2f13653e5e5de93c",
+   "mfrSha": "0a1e9e920df41676",
    "pidSha": "4809a771f46a5606"
   },
   "climate_sensor_2": {
@@ -357,9 +357,9 @@
    "pidSha": "455c46e8c8549693"
   },
   "co_sensor": {
-   "mfr": 9,
+   "mfr": 11,
    "pid": 3,
-   "mfrSha": "74f09cbd07f32144",
+   "mfrSha": "aa5fec26891b395c",
    "pidSha": "98aaec19a4fb45ff"
   },
   "co_sensor_dcr_co": {

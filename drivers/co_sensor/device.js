@@ -13,6 +13,14 @@ const SMOKE_ONLY_DPS = {
   15: { capability: 'measure_battery', divisor: 1 },
 };
 
+// P3425: Nous E12 carbon monoxide alarm _TZE284_sonkaxrd (Z2M nous.ts E12, zhc @ed29f80): DP1 co_status enum,
+// 0 = alarm (trueFalseEnum0), DP2 CO ppm raw, DP9 = self-test running (not tamper), no battery % DP.
+const NOUS_E12_MFRS = new Set(['_tze284_sonkaxrd', '_tze2841000000_sonkaxrd']);
+const NOUS_E12_DPS = {
+  1: { capability: 'alarm_co', transform: (v) => Number(v) === 0 },
+  2: { capability: 'measure_co', divisor: 1 },
+};
+
 /**
  * COSensorDevice - v8.0.0
  * Carbon Monoxide sensor implementation using UnifiedSensorBase.
@@ -32,8 +40,16 @@ class COSensorDevice extends UnifiedSensorBase {
     return SMOKE_ONLY_MFRS.has(String(mfr).toLowerCase());
   }
 
+  /** P3425: Nous E12 (enum 0 = CO alarm). */
+  _isNousE12() {
+    let mfr = '';
+    try { mfr = this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || ''; } catch (_e) { /* soft */ }
+    return NOUS_E12_MFRS.has(String(mfr).toLowerCase());
+  }
+
   get dpMappings() {
     if (this._isSmokeOnly()) { return SMOKE_ONLY_DPS; }
+    if (this._isNousE12()) { return NOUS_E12_DPS; }
     return {
       1: { capability: 'alarm_co', type: 'bool' },
       2: { capability: 'measure_co', divisor: 1 },

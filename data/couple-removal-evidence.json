@@ -930,6 +930,78 @@
         "git_history": "05b124135c chore(xr): cross-research issues [auto:xr-auto-bot-issue-triage] [skip ci]",
         "sibling_pids": "_TZE284_xr5yfele|TS0601"
       }
+    },
+    {
+      "couple": "_TZE284_sonkaxrd|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3425",
+      "verdict": "Nous E12 carbon monoxide alarm (Z2M nous.ts E12, zhc @ed29f80), not a climate sensor: moves to co_sensor with its own DP map (DP1 enum 0 = CO alarm, DP2 ppm)",
+      "sources": {
+        "z2m": "z2m:E12; zhc:E12",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_sonkaxrd|TS0601"
+      }
+    },
+    {
+      "couple": "_tze284_sonkaxrd|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3425",
+      "verdict": "Nous E12 carbon monoxide alarm (Z2M nous.ts E12, zhc @ed29f80), not a climate sensor: moves to co_sensor with its own DP map (DP1 enum 0 = CO alarm, DP2 ppm)",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_sonkaxrd|TS0601"
+      }
+    },
+    {
+      "couple": "_TZE284_SONKAXRD|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3425",
+      "verdict": "Nous E12 carbon monoxide alarm (Z2M nous.ts E12, zhc @ed29f80), not a climate sensor: moves to co_sensor with its own DP map (DP1 enum 0 = CO alarm, DP2 ppm)",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_sonkaxrd|TS0601"
+      }
+    },
+    {
+      "couple": "_tze284_SONKAXRD|TS0601",
+      "driver": "climate_sensor",
+      "pr": "P3425",
+      "verdict": "Nous E12 carbon monoxide alarm (Z2M nous.ts E12, zhc @ed29f80), not a climate sensor: moves to co_sensor with its own DP map (DP1 enum 0 = CO alarm, DP2 ppm)",
+      "sources": {
+        "z2m": "not listed for TS0601",
+        "zha": "not listed for TS0601",
+        "deconz": "not listed for TS0601",
+        "blakadder": "not in scripts/sync/data/blakadder.json",
+        "hubitat": "not in local data (no Hubitat dump in repo); check by hand",
+        "johan": "not listed for TS0601",
+        "forum": "no forum lead",
+        "diags": "no diag report",
+        "git_history": "03544ef392 feat(P92.61): caseless complet — variante canonique pairing (2515), mfs_db dedupe, cache LRU TuyaNormalizer, migration 12 hotspots [skip ci] | fdd7b376ad fix(P92.47): 4950 variantes de casse (anti unknown device) + compacteur par groupes de casse (0 purge) + version 9.0.373 | 7b64ef71f1 v9.0.192: 430 drivers, 2637 FPs [skip ci]",
+        "sibling_pids": "_TZE284_sonkaxrd|TS0601"
+      }
     }
   ]
 }
