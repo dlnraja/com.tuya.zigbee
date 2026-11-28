@@ -89,4 +89,15 @@ describe('P3402 TS0043 phantom ZCL Global / idle battery / climate_sensor condit
     assert.equal(adviseMeshTxHealth(dev, null, { counters: { txErrors: 270, txTotal: 620 }, now: 4000 }), false);
     assert.ok(getSleepyPairingTip('fr').includes('emplacement final'));
   });
+
+  it('evaluateLastSeenHealth flags silently dropped battery (>25h) and mains (>4h) devices with zero TX', () => {
+    const { evaluateLastSeenHealth } = require('../../lib/zigbee/MeshTxHealthAdvisor');
+    const now = 100 * 3600 * 1000;
+    const batteryDev = { mainsPowered: false, getStoreValue: () => now - 26 * 3600 * 1000 };
+    const mainsDev = { mainsPowered: true, getStoreValue: () => now - 5 * 3600 * 1000 };
+    const freshDev = { mainsPowered: false, getStoreValue: () => now - 2 * 3600 * 1000 };
+    assert.equal(evaluateLastSeenHealth(batteryDev, { now }).stale, true);
+    assert.equal(evaluateLastSeenHealth(mainsDev, { now }).stale, true);
+    assert.equal(evaluateLastSeenHealth(freshDev, { now }).stale, false);
+  });
 });
