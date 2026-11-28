@@ -72,4 +72,21 @@ describe('P3402 TS0043 phantom ZCL Global / idle battery / climate_sensor condit
     assert.ok(ids.has('climate-sensor-condition-listeners'));
     assert.ok(ids.has('ts0043-idle-magic-packet-zero-tx'));
   });
+
+  it('MeshTxHealthAdvisor warns above 30% TX errors, throttles repeats, and ignores healthy/small samples', () => {
+    const { adviseMeshTxHealth, getSleepyPairingTip } = require('../../lib/zigbee/MeshTxHealthAdvisor');
+    const logs = [];
+    const dev = { log: (m) => logs.push(m) };
+    // Small sample: silent
+    assert.equal(adviseMeshTxHealth(dev, null, { counters: { txErrors: 2, txTotal: 3 }, now: 1000 }), false);
+    // Healthy 5%: silent
+    assert.equal(adviseMeshTxHealth(dev, null, { counters: { txErrors: 5, txTotal: 100 }, now: 2000 }), false);
+    // High 43% (268/618): warns once
+    assert.equal(adviseMeshTxHealth(dev, null, { counters: { txErrors: 268, txTotal: 618 }, now: 3000 }), true);
+    assert.equal(logs.length, 1);
+    assert.ok(logs[0].includes('43%') && logs[0].includes('final location'));
+    // Immediate repeat: throttled
+    assert.equal(adviseMeshTxHealth(dev, null, { counters: { txErrors: 270, txTotal: 620 }, now: 4000 }), false);
+    assert.ok(getSleepyPairingTip('fr').includes('emplacement final'));
+  });
 });
