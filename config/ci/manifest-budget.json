@@ -1,10 +1,17 @@
 {
  "max": {
-  "appBytes": 3185277,
+  "appBytes": 3206382,
   "combos": 126988,
   "parasites": 65610,
-  "appDrivers": 476
+  "appDrivers": 477
  },
  "hypothesis": "athom-manifest-size-limit (P3243): any never-published driver -> AggregateError",
- "updated": "2026-11-22"
+ "updated": "2026-11-28",
+ "raised": [
+  {
+   "at": "2026-11-28",
+   "by": "P3422",
+   "why": "one new exact-pair driver ir_blaster_zs06 (TS1201 + _TZ3290_8xzb2ghn/_TZ3290_uc8lwbi2, Z2M ZS06) split from ir_blaster to end the button_wireless_2 mfr x pid collision; re-exports ir_blaster code. Athom AggregateError was traced to packaged file count (athombv/homey-apps-sdk-issues#488, P3360), and 9.0.1636 reached Test at 368 drivers; this adds 1 driver. appBytes uses the standard +20000 ratchet slack; combos/parasites unchanged."
+  }
+ ]
 }

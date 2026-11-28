@@ -1,5 +1,5 @@
 {
-  "_why": "P3238: drivers that already shared class+capabilities with another driver when the duplicate-signature gate landed. Never add an id here by hand: make the new driver a registered continuation or put its couples on the existing driver. P3360 (2026-11-21): also lists never-published source drivers graduated after Athom #488 so they can ship; they already existed in source and were previously hold-exempt, not newly created duplicates.",
+  "_why": "P3238: drivers that already shared class+capabilities with another driver when the duplicate-signature gate landed. Never add an id here by hand: make the new driver a registered continuation or put its couples on the existing driver. P3360 (2026-11-21): also lists never-published source drivers graduated after Athom #488 so they can ship; they already existed in source and were previously hold-exempt, not newly created duplicates. P3422 (2026-11-28): ir_blaster + ir_blaster_zs06 added; ir_blaster_zs06 is the exact-pair split of ir_blaster for _TZ3290_8xzb2ghn/_TZ3290_uc8lwbi2 + TS1201 (Z2M ZS06), re-exports ir_blaster device/driver (zero logic duplication), needed because those mfrs collided with button_wireless_2 (cartesian mfr x pid); not a continuation since ir_blaster is not combo-full.",
   "since": "2026-11-02",
   "drivers": [
     "air_purifier_climate",
@@ -73,6 +73,8 @@
     "heiman_siren",
     "hybrid_light_sensor",
     "illuminance_sensor",
+    "ir_blaster",
+    "ir_blaster_zs06",
     "lcdtemphumidsensor",
     "lcdtemphumidsensor_2",
     "lcdtemphumidsensor_3",
