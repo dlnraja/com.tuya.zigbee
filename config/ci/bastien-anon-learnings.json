@@ -1,7 +1,7 @@
 {
   "_meta": {
     "id": "P3362-bastien-anon-learnings",
-    "updated": "2026-11-21",
+    "updated": "2026-11-28",
     "classify": "BOTH",
     "why": "Anonymized lessons from the Bastien house app, with no rooms, device names, IEEE addresses or schedules. The weekday workflow ports checks (not personal data) to master and stable-v5."
   },
@@ -35,6 +35,36 @@
       "rule": "Startup must not eagerly parse large JSON (product-reference, mfs_db, dp_registry, driver-mapping)",
       "status": "guarded",
       "patch": "P3272/P3362"
+    },
+    {
+      "id": "ts0043-phantom-global-frames",
+      "rule": "WallSceneRemoteHybridInit and ButtonE000RawInterceptor must reject ZCL Global frames (!clusterSpecific), TSN=0xFD byte scans, and phantom endpoints (> maxButtons) so sleepy remotes never fire ghost toggles",
+      "status": "guarded",
+      "patch": "P3402"
+    },
+    {
+      "id": "ts0043-same-ms-aps-retry-debounce",
+      "rule": "ButtonDevice single-press debounce must guard timeSinceLastButton >= 0 (same-ms parallel RX) with >=350ms APS retry floor to prevent ON-then-OFF toggle bounce",
+      "status": "guarded",
+      "patch": "P3402"
+    },
+    {
+      "id": "plug-energy-monitor-undef-import",
+      "rule": "Runtime drivers must pass no-undef ratchet (P3065) with explicit TuyaNormalizer imports to prevent ReferenceError crashes",
+      "status": "guarded",
+      "patch": "P3065/P3402"
+    },
+    {
+      "id": "climate-sensor-condition-listeners",
+      "rule": "ClimateSensorDriver must register run listeners for temperature/humidity above/below and battery voltage below condition cards so threshold Flows work even when already above/below threshold",
+      "status": "guarded",
+      "patch": "P3402"
+    },
+    {
+      "id": "ts0043-idle-magic-packet-zero-tx",
+      "rule": "Sleepy CR2032 remotes (skipBatteryReporting/snappyRelayFlow/noEf00Tx) must skip forced magic-packet TX on periodic wake and repeat app restarts to preserve idle battery life",
+      "status": "guarded",
+      "patch": "P2739/P3402"
     }
   ]
 }
